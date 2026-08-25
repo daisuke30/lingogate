@@ -40,6 +40,16 @@ export const MAX_UNKNOWN_FOR_NEW = 2;
  * than an explicitly-unknown one, so it doesn't block a card as hard. */
 export const UNSET_WEIGHT = 0.5;
 
+/** A RU content word that never resolved to a band1 deck word (band1 lemma not
+ * found, or the sentence's source data simply has a low lemma-link rate — this
+ * is common for handwritten lessons/notes, vs. the LINGO-011 core deck where
+ * lemmas are exhaustively tagged). Weighted higher than "unset": an unlinked
+ * word can't be judged at all, so treat it as *more* likely unknown than a
+ * linked-but-unjudged word, not less — otherwise long, low-link-rate sentences
+ * slip past the new-card filter with an artificially low score (bug report
+ * 2026-08-26: lesson/note sentences appearing as an early new card). */
+export const UNLINKED_WEIGHT = 0.75;
+
 /** Seeded stability (days) for a sentence whose target word the learner already
  * knows: long interval, so it only resurfaces as an occasional forgetting check.
  * interval(S)==S at 0.9 retention, so this is ~60 days out. */
@@ -95,7 +105,8 @@ export function seedKnownReviewStatesForLemmas(
 // --- New-card scoring --------------------------------------------------------
 
 export interface SentenceScore {
-  /** unknown-word count + UNSET_WEIGHT * unset-word count. */
+  /** unknown-word count + UNSET_WEIGHT * unset-word count + UNLINKED_WEIGHT *
+   * unlinked-word count (RU tokens that never resolved to a wordId). */
   unknownScore: number;
   /** Ordering key within an unknown-score tier: target lemma rank if the target
    * is known, else the lowest rank among the sentence's not-yet-known words. */
@@ -106,7 +117,13 @@ function rankOf(w: DeckWord): number {
   return w.rank ?? Number.MAX_SAFE_INTEGER;
 }
 
-/** Score a sentence against the current knowledge map for new-card selection. */
+/** Score a sentence against the current knowledge map for new-card selection.
+ * `s.wordIds` only contains lemmas that successfully linked to a band1 deck
+ * word — a sentence can have real RU words that never linked (band1-external
+ * vocab, or a low-link-rate source like handwritten lessons/notes). Those
+ * unlinked words are unjudgeable by definition, so they count *against*
+ * eligibility via UNLINKED_WEIGHT, computed from `s.tokenCount` (the real RU
+ * content-word count) minus the linked count. */
 export function scoreSentence(
   s: Sentence,
   knowledge: KnowledgeMap,
@@ -129,7 +146,9 @@ export function scoreSentence(
       if (rankOf(w) < minNotKnownRank) minNotKnownRank = rankOf(w);
     }
   }
-  const unknownScore = unknown + UNSET_WEIGHT * unset;
+  const linkedCount = s.wordIds.length;
+  const unlinked = s.tokenCount != null ? Math.max(0, s.tokenCount - linkedCount) : 0;
+  const unknownScore = unknown + UNSET_WEIGHT * unset + UNLINKED_WEIGHT * unlinked;
   let sortRank = targetRank ?? (Number.isFinite(minNotKnownRank) ? minNotKnownRank : null);
   if (sortRank == null) sortRank = s.minRank ?? Number.MAX_SAFE_INTEGER;
   return { unknownScore, sortRank };

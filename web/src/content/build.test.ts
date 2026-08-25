@@ -47,4 +47,16 @@ describe("content build", () => {
     // Every target lemma is a real deck word (so calibration/scoring can link it).
     for (const s of targeted.slice(0, 50)) expect(lemmas.has(s.targetLemma)).toBe(true);
   });
+
+  it("computes a RU tokenCount >= linked wordIds for every sentence (LINGO-010 fix)", () => {
+    for (const s of deck.sentences) {
+      expect(typeof s.tokenCount).toBe("number");
+      // tokenCount is the real RU word count; linked lemmas can only be a subset.
+      expect(s.tokenCount).toBeGreaterThanOrEqual(s.wordIds.length);
+    }
+    // The reported bug: low-lemma-link-rate lesson/note sentences exist and now
+    // carry a nonzero unlinked gap (previously invisible to the scorer).
+    const gappy = deck.sentences.filter((s: any) => s.tokenCount - s.wordIds.length >= 5);
+    expect(gappy.length).toBeGreaterThan(0);
+  });
 });

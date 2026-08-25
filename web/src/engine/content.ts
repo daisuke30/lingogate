@@ -31,6 +31,10 @@ export interface Sentence {
   wordIds: number[];
   /** Min frequency rank among covered words; null if none. New-card ordering key. */
   minRank: number | null;
+  /** Real RU content-word count (LINGO-010 fix), vs. wordIds.length which only
+   * counts lemmas that resolved to a deck word. undefined/null for synthetic
+   * test sentences that don't set it — treated as "no unlinked words". */
+  tokenCount?: number | null;
 }
 
 export interface DeckWord {

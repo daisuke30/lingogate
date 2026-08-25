@@ -8,6 +8,8 @@ import {
   seedKnownReviewStatesForLemmas,
   knowledgeUpdatesFromOutcomes,
   KNOWN_SEED_STABILITY_DAYS,
+  MAX_UNKNOWN_FOR_NEW,
+  UNLINKED_WEIGHT,
 } from "./calibration";
 import type { KnowledgeMap } from "./calibration";
 
@@ -24,6 +26,7 @@ function sentence(
   wordIds: number[],
   targetLemma: string | null,
   minRank: number | null,
+  tokenCount: number | null = null,
 ): Sentence {
   return {
     id,
@@ -39,6 +42,7 @@ function sentence(
     targetLemma,
     wordIds,
     minRank,
+    tokenCount,
   };
 }
 
@@ -99,6 +103,27 @@ describe("scoreSentence (unknown weighting)", () => {
     expect(sc.unknownScore).toBe(0);
     expect(sc.sortRank).toBe(2);
   });
+
+  // Bug report 2026-08-26: lesson/note sentences (low lemma-link rate) were
+  // scoring as if they had almost no unknown words, because unlinked RU tokens
+  // (real words that never resolved to a wordId) contributed nothing at all.
+  it("counts RU tokens that never linked to a wordId against the score (unlinked weight)", () => {
+    const knowledge = knownThrough(100); // both linked words known
+    // 9-word RU sentence, only 2 lemmas successfully linked (lesson-style).
+    const s = sentence("Long", [1, 2], "w2", 1, 9);
+    const sc = scoreSentence(s, knowledge, wordById);
+    // unknown=0, unset=0, unlinked=9-2=7 -> 7 * 0.75 = 5.25
+    expect(sc.unknownScore).toBeCloseTo(7 * UNLINKED_WEIGHT, 6);
+    expect(sc.unknownScore).toBeGreaterThan(MAX_UNKNOWN_FOR_NEW);
+  });
+
+  it("a fully-linked core sentence of the same length has no unlinked penalty", () => {
+    const knowledge = knownThrough(100);
+    // Same word count as tokenCount (every RU word linked) -> unlinked = 0.
+    const s = sentence("Core", [1, 2, 3, 4], "w2", 1, 4);
+    const sc = scoreSentence(s, knowledge, wordById);
+    expect(sc.unknownScore).toBe(0); // all 4 words known, none unlinked
+  });
 });
 
 describe("ContentStore.newSentences knowledge ordering", () => {
@@ -126,6 +151,26 @@ describe("ContentStore.newSentences knowledge ordering", () => {
     expect(out.length).toBe(4);
     // sC has minRank 101, the others minRank 1 -> sC must be last.
     expect(out[out.length - 1]).toBe("sC");
+  });
+
+  it("a 9-word lesson sentence with only 2 linked lemmas is excluded (unlinked weight)", () => {
+    const knowledge = knownThrough(100);
+    const coreLike = sentence("sCoreLike", [1, 2], "w2", 1, 2); // fully linked, 2/2
+    const lessonLike = sentence("sLessonLike", [3, 4], "w4", 3, 9); // 9 tokens, 2 linked
+    const store = new ContentStore(deckOf(words, [coreLike, lessonLike]), [], knowledge);
+    const out = store.newSentences(1, new Set(), 10).map((s) => s.id);
+    expect(out).toEqual(["sCoreLike"]); // lessonLike's score (5.25) > MAX_UNKNOWN_FOR_NEW
+  });
+
+  it("orders a fully-linked core sentence before a lower-link-rate one with the same eligible score tier", () => {
+    const knowledge = knownThrough(100); // w101/w102 are not in the map -> unset
+    // sCore: 2 tokens, both linked; target unset -> score 0.5.
+    const core = sentence("sCore", [1, 101], "w101", 1, 2);
+    // sLong: 5 tokens, only 3 linked (2 unlinked); target unset -> 0.5 + 2*0.75 = 2.0.
+    const long = sentence("sLong", [1, 2, 102], "w102", 1, 5);
+    const store = new ContentStore(deckOf(words, [long, core]), [], knowledge);
+    const out = store.newSentences(1, new Set(), 10).map((s) => s.id);
+    expect(out).toEqual(["sCore", "sLong"]); // both eligible (<=2), core sorts first
   });
 });
 

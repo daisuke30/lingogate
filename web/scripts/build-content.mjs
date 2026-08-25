@@ -48,6 +48,17 @@ function bandFromFilename(path) {
   return m ? parseInt(m[1], 10) : 1;
 }
 
+// Content-word token count of a RU string, punctuation excluded. Hyphenated
+// words (по-русски) and numbers count as a single token. This is intentionally
+// crude (no morphology) — it only needs to be a reasonable proxy for "how many
+// real words are in this sentence" so build-time unlinked-word detection
+// (LINGO-010 calibration bug fix) can tell a short core sentence from a long
+// lesson/note sentence with a low lemma-link rate.
+function tokenizeRuCount(text) {
+  const matches = String(text ?? "").match(/[\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)*/gu);
+  return matches ? matches.length : 0;
+}
+
 function wordPaths(dataDir) {
   return globSync(join(dataDir, "words_band*.jsonl")).sort();
 }
@@ -127,6 +138,10 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
         targetLemma: s.target_lemma ?? null,
         wordIds,
         minRank,
+        // LINGO-010 fix: real RU content-word count, vs. wordIds.length (only
+        // successfully-linked lemmas) — the gap is "unlinked" words the
+        // calibration scorer can no longer ignore.
+        tokenCount: tokenizeRuCount(s.ru),
       });
     }
   }
