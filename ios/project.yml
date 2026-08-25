@@ -1,0 +1,192 @@
+name: LingoGate
+options:
+  bundleIdPrefix: tech.inoma.lingogate
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"          # iPhone のみ
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""                 # ← 勝田がXcodeの Signing & Capabilities で Personal Team を選択
+    SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+
+# ------------------------------------------------------------------
+# ローカル SwiftPM パッケージ（UI非依存のコアロジック）
+#   QuizEngine = FSRSスケジューラ＋出題ロジック＋SQLite薄ラッパ（LINGO-004）。
+#   Screen Time API等に依存せず、macOSでも `swift test` 可能（Android移植を見据えた分離）。
+# ------------------------------------------------------------------
+packages:
+  QuizEngine:
+    path: QuizEngine
+
+targets:
+  # ------------------------------------------------------------------
+  # 本体アプリ
+  # ------------------------------------------------------------------
+  LingoGate:
+    type: application
+    platform: iOS
+    sources:
+      - Shared
+      - LingoGate
+      # 例文DB（LINGO-001 パイプラインの成果物）をアプリのリソースとして直接参照する。
+      # コピースクリプトを持たず、pipeline/ の生成物を単一の真実として同梱する。
+      # 起動時に QuizEngine.DBOpen が書込可能領域へ冪等コピーする。
+      - path: ../pipeline/lingogate.db
+        type: file
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.inoma.lingogate
+        CODE_SIGN_ENTITLEMENTS: LingoGate/LingoGate.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    info:
+      path: LingoGate/Info.plist
+      properties: &lingoGateURLSchemeProperties
+        CFBundleDisplayName: LingoGate
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UIApplicationSupportsIndirectInputEvents: true
+        # automationOnly モードで対象アプリ→LingoGate→対象アプリへ復帰するための
+        # URLスキームと、復帰先アプリを open できるかを問い合わせるスキーム一覧。
+        CFBundleURLTypes:
+          - CFBundleURLName: tech.inoma.lingogate
+            CFBundleURLSchemes: [lingogate]
+        LSApplicationQueriesSchemes:
+          - tiktok
+          - snssdk1233
+          - youtube
+          - vnd.youtube
+          - twitter
+          - instagram
+          - fb
+          - reddit
+          - vk
+          - telegram
+          - tg
+          - whatsapp
+    dependencies:
+      - target: ShieldConfigurationExt
+      - target: ShieldActionExt
+      - target: DeviceActivityMonitorExt
+      - package: QuizEngine
+        product: QuizEngine
+
+  # ------------------------------------------------------------------
+  # Phase 0（LINGO-003結果: 無料 Personal Team は Family Controls 非対応）。
+  # entitlements 一切なし（Family Controls も App Group も付けない）＝
+  # 無料 Personal Team で署名が通ることを最優先した退避ターゲット。
+  # シールド3拡張は埋め込まない。automationOnly 専用（lingogate:// スキームのみ生命線）。
+  # 既存 LingoGate ターゲット・拡張は温存（Developer Program 加入後にそちらへ戻る）。
+  # ------------------------------------------------------------------
+  LingoGatePhase0:
+    type: application
+    platform: iOS
+    sources:
+      - Shared
+      # LingoGate/Info.plist は LingoGate ターゲット自身の生成 Info.plist。除外しないと
+      # 「よそのターゲットの Info.plist」としてこちらのリソースにも同梱され、
+      # バンドル直下の Info.plist（自分の info.path 由来）とファイル名衝突する。
+      - path: LingoGate
+        excludes:
+          - "Info.plist"
+      - path: ../pipeline/lingogate.db
+        type: file
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.inoma.lingogate.phase0
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: "DEBUG PHASE0"
+        # CODE_SIGN_ENTITLEMENTS を意図的に設定しない（entitlements ファイルなし）。
+    info:
+      # LingoGate/ フォルダの外に置く: LingoGate と LingoGatePhase0 は同じ "LingoGate" ソース
+      # フォルダを共有するため、生成 Info.plist をその中に置くと互いの sources グロブが
+      # 相手の Info.plist まで拾ってリソースとして同梱し、バンドル直下の Info.plist と
+      # ファイル名衝突（Multiple commands produce）を起こす。専用フォルダに分離する。
+      path: LingoGatePhase0/Info.plist
+      properties:
+        <<: *lingoGateURLSchemeProperties
+        CFBundleDisplayName: "LingoGate (Phase 0)"
+    dependencies:
+      - package: QuizEngine
+        product: QuizEngine
+
+  # ------------------------------------------------------------------
+  # 遮断画面の見た目（ShieldConfiguration extension）
+  # ------------------------------------------------------------------
+  ShieldConfigurationExt:
+    type: app-extension
+    platform: iOS
+    sources:
+      - Shared
+      - ShieldConfigurationExt
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.inoma.lingogate.ShieldConfigurationExt
+        CODE_SIGN_ENTITLEMENTS: ShieldConfigurationExt/ShieldConfigurationExt.entitlements
+    info:
+      path: ShieldConfigurationExt/Info.plist
+      properties:
+        CFBundleDisplayName: LingoGate Shield
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettingsUI.shield-configuration-service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShieldConfigurationExtension
+
+  # ------------------------------------------------------------------
+  # 遮断画面のボタン応答（ShieldAction extension）
+  # ------------------------------------------------------------------
+  ShieldActionExt:
+    type: app-extension
+    platform: iOS
+    sources:
+      - Shared
+      - ShieldActionExt
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.inoma.lingogate.ShieldActionExt
+        CODE_SIGN_ENTITLEMENTS: ShieldActionExt/ShieldActionExt.entitlements
+    info:
+      path: ShieldActionExt/Info.plist
+      properties:
+        CFBundleDisplayName: LingoGate Shield Action
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettings.shield-action-service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShieldActionExtension
+
+  # ------------------------------------------------------------------
+  # スケジュール監視・再シールド（DeviceActivityMonitor extension）
+  # ------------------------------------------------------------------
+  DeviceActivityMonitorExt:
+    type: app-extension
+    platform: iOS
+    sources:
+      - Shared
+      - DeviceActivityMonitorExt
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.inoma.lingogate.DeviceActivityMonitorExt
+        CODE_SIGN_ENTITLEMENTS: DeviceActivityMonitorExt/DeviceActivityMonitorExt.entitlements
+    info:
+      path: DeviceActivityMonitorExt/Info.plist
+      properties:
+        CFBundleDisplayName: LingoGate Monitor
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.deviceactivity.monitor-extension
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).DeviceActivityMonitorExtension

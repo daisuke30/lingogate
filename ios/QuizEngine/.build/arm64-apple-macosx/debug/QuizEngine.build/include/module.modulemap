@@ -1,0 +1,3 @@
+module QuizEngine {
+    header "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngine.build/include/QuizEngine-Swift.h"
+}

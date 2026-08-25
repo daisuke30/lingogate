@@ -1,0 +1,669 @@
+{
+"images": {
+"IMG_7894": {
+"date_hint": "2024-06-19",
+"processed": true,
+"n_entries": 5
+},
+"IMG_7898": {
+"date_hint": "2024-06-21",
+"processed": true,
+"n_entries": 4
+},
+"IMG_7904": {
+"date_hint": "2024-06-25",
+"processed": true,
+"n_entries": 2
+},
+"IMG_7905": {
+"date_hint": "2024-06-25",
+"processed": true,
+"n_entries": 5
+},
+"IMG_7939": {
+"date_hint": "2024-07-04",
+"processed": true,
+"n_entries": 3
+},
+"IMG_7960": {
+"date_hint": "2024-07-10",
+"processed": true,
+"n_entries": 4
+},
+"IMG_7990": {
+"date_hint": "2024-07-12",
+"processed": true,
+"n_entries": 5
+},
+"IMG_8046": {
+"date_hint": "2024-07-16",
+"processed": true,
+"n_entries": 5
+},
+"IMG_8059": {
+"date_hint": "2024-07-18",
+"processed": true,
+"n_entries": 5
+},
+"IMG_8062": {
+"date_hint": "2024-07-20",
+"processed": true,
+"n_entries": 4
+},
+"IMG_8069": {
+"date_hint": "2024-07-23",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9627": {
+"date_hint": "2024-08-01",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9632": {
+"date_hint": "2024-08-06",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9633": {
+"date_hint": "2024-08-08",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9635": {
+"date_hint": "2024-08-09",
+"processed": true,
+"n_entries": 3
+},
+"IMG_9638": {
+"date_hint": "2024-08-14",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9639": {
+"date_hint": "2024-08-14",
+"processed": true,
+"n_entries": 4
+},
+"IMG_9644": {
+"date_hint": "2024-08-20",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9654": {
+"date_hint": "2024-08-26",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9656": {
+"date_hint": "2024-08-28",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9658": {
+"date_hint": "2024-08-28",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9659": {
+"date_hint": "2024-08-29",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9661": {
+"date_hint": "2024-08-30",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9663": {
+"date_hint": "2024-09-03",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9667": {
+"date_hint": "2024-09-04",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9668": {
+"date_hint": "2024-09-05",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9683": {
+"date_hint": "2024-09-10",
+"processed": true,
+"n_entries": 5
+},
+"IMG_9768": {
+"date_hint": "2024-09-16",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0073": {
+"date_hint": "2024-09-26",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0079": {
+"date_hint": "2024-09-27",
+"processed": true,
+"n_entries": 2
+},
+"IMG_0124": {
+"date_hint": "2024-10-08",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0125": {
+"date_hint": "2024-10-10",
+"processed": true,
+"n_entries": 10
+},
+"IMG_0130": {
+"date_hint": "2024-10-10",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0133": {
+"date_hint": "2024-10-12",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0141": {
+"date_hint": "2024-10-15",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0142": {
+"date_hint": "2024-10-15",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0143": {
+"date_hint": "2024-10-15",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0145": {
+"date_hint": "2024-10-16",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0147": {
+"date_hint": "2024-10-18",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0152": {
+"date_hint": "2024-10-22",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0161": {
+"date_hint": "2024-10-22",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0164": {
+"date_hint": "2024-10-23",
+"processed": true,
+"n_entries": 17
+},
+"IMG_0173": {
+"date_hint": "2024-10-24",
+"processed": true,
+"n_entries": 2
+},
+"IMG_0176": {
+"date_hint": "2024-10-30",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0177": {
+"date_hint": "2024-11-01",
+"processed": true,
+"n_entries": 3
+},
+"IMG_0182": {
+"date_hint": "2024-11-03",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0188": {
+"date_hint": "2024-11-07",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0192": {
+"date_hint": "2024-11-07",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0193": {
+"date_hint": "2024-11-09",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0200": {
+"date_hint": "2024-11-13",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0202": {
+"date_hint": "2024-11-13",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0203": {
+"date_hint": "2024-11-13",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0205": {
+"date_hint": "2024-11-15",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0208": {
+"date_hint": "2024-11-16",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0209": {
+"date_hint": "2024-11-16",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0226": {
+"date_hint": "2024-11-19",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0227": {
+"date_hint": "2024-11-19",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0228": {
+"date_hint": "2024-11-21",
+"processed": true,
+"n_entries": 8
+},
+"IMG_0229": {
+"date_hint": "2024-11-21",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0231": {
+"date_hint": "2024-11-21",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0232": {
+"date_hint": "2024-11-21",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0233": {
+"date_hint": "2024-11-23",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0234": {
+"date_hint": "2024-11-23",
+"processed": true,
+"n_entries": 4
+},
+"IMG_0235": {
+"date_hint": "2024-11-26",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0236": {
+"date_hint": "2024-11-26",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0239": {
+"date_hint": "2024-11-27",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0243": {
+"date_hint": "2024-11-30",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0252": {
+"date_hint": "2024-12-04",
+"processed": true,
+"n_entries": 4
+},
+"IMG_0255": {
+"date_hint": "2024-12-05",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0257": {
+"date_hint": "2024-12-06",
+"processed": true,
+"n_entries": 10
+},
+"IMG_0307": {
+"date_hint": "2024-12-11",
+"processed": true,
+"n_entries": 2
+},
+"IMG_0309": {
+"date_hint": "2024-12-12",
+"processed": true,
+"n_entries": 19
+},
+"IMG_0310": {
+"date_hint": "2024-12-13",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0312": {
+"date_hint": "2024-12-16",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0315": {
+"date_hint": "2024-12-18",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0317": {
+"date_hint": "2024-12-19",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0319": {
+"date_hint": "2024-12-21",
+"processed": true,
+"n_entries": 4
+},
+"IMG_0323": {
+"date_hint": "2024-12-23",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0328": {
+"date_hint": "2024-12-25",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0329": {
+"date_hint": "2024-12-25",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0332": {
+"date_hint": "2025-01-02",
+"processed": true,
+"n_entries": 9
+},
+"IMG_0335": {
+"date_hint": "2025-01-08",
+"processed": true,
+"n_entries": 7
+},
+"IMG_0351": {
+"date_hint": "2025-01-09",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0367": {
+"date_hint": "2025-01-14",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0386": {
+"date_hint": "2025-01-20",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0387": {
+"date_hint": "2025-01-22",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0388": {
+"date_hint": "2025-01-23",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0390": {
+"date_hint": "2025-01-24",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0394": {
+"date_hint": "2025-01-28",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0396": {
+"date_hint": "2025-01-30",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0403": {
+"date_hint": "2025-01-30",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0416": {
+"date_hint": "2025-02-05",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0435": {
+"date_hint": "2025-02-07",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0439": {
+"date_hint": "2025-02-11",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0441": {
+"date_hint": "2025-02-13",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0444": {
+"date_hint": "2025-02-15",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0450": {
+"date_hint": "2025-02-17",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0454": {
+"date_hint": "2025-02-19",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0456": {
+"date_hint": "2025-02-20",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0458": {
+"date_hint": "2025-02-20",
+"processed": true,
+"n_entries": 8
+},
+"IMG_0480": {
+"date_hint": "2025-02-26",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0483": {
+"date_hint": "2025-03-04",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0489": {
+"date_hint": "2025-03-06",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0491": {
+"date_hint": "2025-03-08",
+"processed": true,
+"n_entries": 9
+},
+"IMG_0495": {
+"date_hint": "2025-03-12",
+"processed": true,
+"n_entries": 13
+},
+"IMG_0496": {
+"date_hint": "2025-03-13",
+"processed": true,
+"n_entries": 11
+},
+"IMG_0502": {
+"date_hint": "2025-03-19",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0508": {
+"date_hint": "2025-03-20",
+"processed": true,
+"n_entries": 14
+},
+"IMG_0511": {
+"date_hint": "2025-03-22",
+"processed": true,
+"n_entries": 12
+},
+"IMG_0520": {
+"date_hint": "2025-03-26",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0537": {
+"date_hint": "2025-03-29",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0540": {
+"date_hint": "2025-04-02",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0542": {
+"date_hint": "2025-04-02",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0543": {
+"date_hint": "2025-04-05",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0558": {
+"date_hint": "2025-04-09",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0562": {
+"date_hint": "2025-04-10",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0566": {
+"date_hint": "2025-04-15",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0568": {
+"date_hint": "2025-04-17",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0569": {
+"date_hint": "2025-04-18",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0570": {
+"date_hint": "2025-04-18",
+"processed": true,
+"n_entries": 6
+},
+"IMG_0582": {
+"date_hint": "2025-04-22",
+"processed": true,
+"n_entries": 10
+},
+"IMG_0586": {
+"date_hint": "2025-04-24",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0603": {
+"date_hint": "2025-04-26",
+"processed": true,
+"n_entries": 7
+},
+"IMG_0714": {
+"date_hint": "2025-04-30",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0775": {
+"date_hint": "2025-05-02",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0849": {
+"date_hint": "2025-05-03",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0876": {
+"date_hint": "2025-05-07",
+"processed": true,
+"n_entries": 5
+},
+"IMG_0878": {
+"date_hint": "2025-05-07",
+"processed": true,
+"n_entries": 4
+},
+"IMG_0882": {
+"date_hint": "2025-05-08",
+"processed": true,
+"n_entries": 5
+},
+"IMG_1007": {
+"date_hint": "2025-05-09",
+"processed": true,
+"n_entries": 5
+},
+"IMG_1081": {
+"date_hint": "2025-05-14",
+"processed": true,
+"n_entries": 5
+},
+"IMG_1090": {
+"date_hint": "2025-05-16",
+"processed": true,
+"n_entries": 5
+},
+"IMG_1092": {
+"date_hint": "2025-05-17",
+"processed": true,
+"n_entries": 5
+}
+}
+}

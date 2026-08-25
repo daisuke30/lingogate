@@ -1,0 +1,14 @@
+You are transcribing a page from a Japanese learner's handwritten Russian study notebook. Output STRICT JSON only (no prose, no markdown fences).
+
+The page has entries separated by orange/yellow marker lines. Two entry kinds:
+- "sentence": a full Russian sentence with an English translation (and sometimes katakana pronunciation above the Russian, and small vocab/etymology notes below).
+- "word": a single Russian word/lexeme studied on its own, with an English gloss (and sometimes Japanese gloss + etymology breakdown like правитель = прав+и+тель).
+
+Rules:
+- Transcribe the Russian (ru) accurately. You MAY silently normalize obvious handwriting slips and restore ё where standard, but DO NOT change the author's wording/meaning.
+- en = the English translation/gloss the author wrote. ja = Japanese gloss if the author wrote one (else omit). kana = katakana pronunciation if clearly written above (best-effort; omit if unsure). note = any etymology breakdown / grammar note / extra vocab the author wrote (English+Japanese ok), else omit.
+- If a line is truly illegible, add an entry {"type":"illegible","note":"why"}. Do not silently drop content.
+
+Output shape EXACTLY:
+{"entries":[{"type":"sentence","ru":"...","en":"...","ja":"...","kana":"...","note":"..."}]}
+Only include ja/kana/note keys when you have a value for them.

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+web/src/content/deck.generated.json
+web/public/icons/
+.DS_Store
+ios/DerivedData/
+pipeline/notes/jpeg/
+pipeline/lingogate.db
+*.xcuserdata

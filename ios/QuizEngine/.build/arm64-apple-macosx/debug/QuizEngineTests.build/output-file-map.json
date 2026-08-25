@@ -1,0 +1,75 @@
+{
+  "": {
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/primary.swiftdeps"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/BandPromotionTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/BandPromotionTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/BandPromotionTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/BandPromotionTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/BandPromotionTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/BandPromotionTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/FSRSTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/FSRSTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/FSRSTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/FSRSTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/FSRSTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/FSRSTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/GateSessionTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/GateSessionTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/GateSessionTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/GateSessionTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/GateSessionTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/GateSessionTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/IntegrationTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/IntegrationTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/IntegrationTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/IntegrationTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/IntegrationTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/IntegrationTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/QuestionBuilderTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/QuestionBuilderTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/QuestionBuilderTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/QuestionBuilderTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/QuestionBuilderTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/QuestionBuilderTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/RNGTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RNGTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RNGTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RNGTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RNGTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RNGTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/RatingFlowTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RatingFlowTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RatingFlowTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RatingFlowTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RatingFlowTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RatingFlowTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/RobustnessTests.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RobustnessTests.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RobustnessTests.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RobustnessTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RobustnessTests.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/RobustnessTests.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/Tests/QuizEngineTests/TestSupport.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/TestSupport.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/TestSupport.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/TestSupport~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/TestSupport.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/TestSupport.dia"
+  },
+  "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/resource_bundle_accessor.d",
+    "object": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/Daisuke/inoma/workspace/apps/lingogate/ios/QuizEngine/.build/arm64-apple-macosx/debug/QuizEngineTests.build/resource_bundle_accessor.dia"
+  }
+}

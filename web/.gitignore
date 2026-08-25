@@ -1,0 +1,7 @@
+node_modules/
+dist/
+# Generated at build time from pipeline JSONL (predev/prebuild). Not source.
+src/content/deck.generated.json
+public/icons/
+*.local
+.DS_Store

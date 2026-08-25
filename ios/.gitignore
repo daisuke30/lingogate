@@ -1,0 +1,13 @@
+# Xcode / build artifacts
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# 生成物（project.yml が真実。xcodeproj は xcodegen で再生成できる）
+# ただし勝田はxcodegen無しでも開けるよう .xcodeproj はコミットしておく方針も可。
+# ここでは再生成前提で ignore しない（LingoGate.xcodeproj は残す）。
+
+.DS_Store
