@@ -123,6 +123,8 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
         difficulty: s.difficulty ?? 1,
         source: s.source ?? "generated",
         kind: s.kind ?? "sentence",
+        // LINGO-011: the lemma this sentence is built to teach (quiz target).
+        targetLemma: s.target_lemma ?? null,
         wordIds,
         minRank,
       });

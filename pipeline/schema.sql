@@ -54,7 +54,11 @@ CREATE TABLE IF NOT EXISTS Sentence (
     -- import.py:ensure_migrations for DBs created before this column existed.
     kind        TEXT NOT NULL DEFAULT 'sentence', -- 'sentence' | 'word' (vocab flashcard)
     kana        TEXT,                       -- katakana pronunciation, best-effort, may be NULL
-    note        TEXT                        -- etymology / grammar note the author wrote
+    note        TEXT,                       -- etymology / grammar note the author wrote
+    -- LINGO-011 (target-word-driven sentences). The single band-vocab lemma this
+    -- sentence is built to teach; the quiz picks it via target_lemma. NULL for
+    -- pre-LINGO-011 rows. Also added via idempotent ALTER in ensure_migrations.
+    target_lemma TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_sentence_band ON Sentence(deck_id, band);

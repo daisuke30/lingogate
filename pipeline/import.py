@@ -74,6 +74,9 @@ def ensure_migrations(conn):
         conn.execute("ALTER TABLE Sentence ADD COLUMN kana TEXT")
     if "note" not in have:
         conn.execute("ALTER TABLE Sentence ADD COLUMN note TEXT")
+    # LINGO-011: the single band-vocab lemma a sentence is built to teach.
+    if "target_lemma" not in have:
+        conn.execute("ALTER TABLE Sentence ADD COLUMN target_lemma TEXT")
 
 
 def upsert_deck(conn):
@@ -138,17 +141,19 @@ def import_sentences(conn, deck_id, data_dir):
             seen_ids.add(sid)
             conn.execute(
                 """INSERT INTO Sentence
-                     (id, deck_id, ru, en, ja, band, difficulty, source, kind, kana, note)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?)
+                     (id, deck_id, ru, en, ja, band, difficulty, source, kind,
+                      kana, note, target_lemma)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
                    ON CONFLICT(id) DO UPDATE SET
                      deck_id=excluded.deck_id, ru=excluded.ru, en=excluded.en,
                      ja=excluded.ja, band=excluded.band,
                      difficulty=excluded.difficulty, source=excluded.source,
-                     kind=excluded.kind, kana=excluded.kana, note=excluded.note""",
+                     kind=excluded.kind, kana=excluded.kana, note=excluded.note,
+                     target_lemma=excluded.target_lemma""",
                 (sid, deck_id, s["ru"], s["en"], s.get("ja"),
                  s.get("band", band), s.get("difficulty", 1),
                  s.get("source", "generated"), s.get("kind", "sentence"),
-                 s.get("kana"), s.get("note")),
+                 s.get("kana"), s.get("note"), s.get("target_lemma")),
             )
             # rebuild links for this sentence
             conn.execute("DELETE FROM sentence_words WHERE sentence_id=?", (sid,))

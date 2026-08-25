@@ -1,0 +1,1000 @@
+{"id":"T0001","ru":"Я и ты здесь.","en":"You and I are here.","ja":"私と君はここにいる。","lemmas":["я","и","ты","здесь"],"target_lemma":"и","difficulty":1,"kind":"sentence"}
+{"id":"T0002","ru":"Я сейчас в городе.","en":"I'm in the city right now.","ja":"今、街にいる。","lemmas":["я","сейчас","в","город"],"target_lemma":"в","difficulty":1,"kind":"sentence"}
+{"id":"T0003","ru":"Я тебя не знаю.","en":"I don't know you.","ja":"君のことを知らない。","lemmas":["я","ты","не","знать"],"target_lemma":"не","difficulty":1,"kind":"sentence"}
+{"id":"T0004","ru":"Телефон на столе.","en":"The phone is on the table.","ja":"電話が机の上にある。","lemmas":["телефон","на","стол"],"target_lemma":"на","difficulty":1,"kind":"sentence"}
+{"id":"T0005","ru":"Я твой друг.","en":"I'm your friend.","ja":"私は君の友達だ。","lemmas":["я","твой","друг"],"target_lemma":"я","difficulty":1,"kind":"sentence"}
+{"id":"T0006","ru":"Я был там вчера.","en":"I was there yesterday.","ja":"昨日そこにいた。","lemmas":["я","быть","там","вчера"],"target_lemma":"быть","difficulty":2,"kind":"sentence","note":"был = быть の過去・男性形（現在形は普通省略）"}
+{"id":"T0007","ru":"Что ты делаешь?","en":"What are you doing?","ja":"何してるの？","lemmas":["что","ты","делать"],"target_lemma":"что","difficulty":1,"kind":"sentence"}
+{"id":"T0008","ru":"Он мой друг.","en":"He's my friend.","ja":"彼は私の友達だ。","lemmas":["он","мой","друг"],"target_lemma":"он","difficulty":1,"kind":"sentence"}
+{"id":"T0009","ru":"Я сейчас с тобой.","en":"I'm with you now.","ja":"今、君と一緒にいる。","lemmas":["я","сейчас","с","ты"],"target_lemma":"с","difficulty":1,"kind":"sentence","note":"с + 造格 → с тобой"}
+{"id":"T0010","ru":"Я тут, а ты там.","en":"I'm here, but you're there.","ja":"僕はここ、君はあそこ。","lemmas":["я","тут","а","ты","там"],"target_lemma":"а","difficulty":1,"kind":"sentence"}
+{"id":"T0011","ru":"Как твои дела?","en":"How are you doing?","ja":"調子どう？","lemmas":["как","твой","дело"],"target_lemma":"как","difficulty":1,"kind":"sentence"}
+{"id":"T0012","ru":"Это мой дом.","en":"This is my house.","ja":"これが私の家だ。","lemmas":["это","мой","дом"],"target_lemma":"это","difficulty":1,"kind":"sentence"}
+{"id":"T0013","ru":"Ты это знаешь?","en":"Do you know this?","ja":"君これ知ってる？","lemmas":["ты","это","знать"],"target_lemma":"ты","difficulty":1,"kind":"sentence"}
+{"id":"T0014","ru":"Я иду к тебе.","en":"I'm coming to you.","ja":"今そっちへ行く。","lemmas":["я","идти","к","ты"],"target_lemma":"к","difficulty":1,"kind":"sentence","note":"к + 与格 → к тебе"}
+{"id":"T0015","ru":"Я хочу, но не могу.","en":"I want to, but I can't.","ja":"やりたいけど、できない。","lemmas":["я","хотеть","но","не","мочь"],"target_lemma":"но","difficulty":1,"kind":"sentence"}
+{"id":"T0016","ru":"Они мои друзья.","en":"They're my friends.","ja":"彼らは私の友達だ。","lemmas":["они","мой","друг"],"target_lemma":"они","difficulty":1,"kind":"sentence"}
+{"id":"T0017","ru":"Мы здесь вместе.","en":"We're here together.","ja":"僕らはここに一緒にいる。","lemmas":["мы","здесь","вместе"],"target_lemma":"мы","difficulty":1,"kind":"sentence"}
+{"id":"T0018","ru":"Иди за мной.","en":"Follow me.","ja":"ついてきて。","lemmas":["идти","за","я"],"target_lemma":"за","difficulty":2,"kind":"sentence","note":"за + 造格 → за мной（後について）"}
+{"id":"T0019","ru":"Вы меня понимаете?","en":"Do you understand me?","ja":"（丁寧に）私の言うこと分かりますか？","lemmas":["вы","я","понимать"],"target_lemma":"вы","difficulty":1,"kind":"sentence","note":"вы = 丁寧・複数の「あなた」"}
+{"id":"T0020","ru":"Мы идём по улице.","en":"We're walking along the street.","ja":"僕らは通りを歩いている。","lemmas":["мы","идти","по","улица"],"target_lemma":"по","difficulty":1,"kind":"sentence"}
+{"id":"T0021","ru":"Все уже дома.","en":"Everyone is already home.","ja":"みんなもう家にいる。","lemmas":["все","уже","дом"],"target_lemma":"все","difficulty":1,"kind":"sentence"}
+{"id":"T0022","ru":"Это так просто.","en":"It's so simple.","ja":"それ、すごく簡単。","lemmas":["это","так","просто"],"target_lemma":"так","difficulty":1,"kind":"sentence"}
+{"id":"T0023","ru":"Что же делать?","en":"So what should we do?","ja":"じゃあどうする？","lemmas":["что","же","делать"],"target_lemma":"же","difficulty":2,"kind":"sentence","note":"же = 強調の小詞（訳さない）"}
+{"id":"T0024","ru":"Это подарок от друга.","en":"It's a gift from a friend.","ja":"友達からのプレゼント。","lemmas":["это","подарок","от","друг"],"target_lemma":"от","difficulty":1,"kind":"sentence","note":"от + 生格 → от друга"}
+{"id":"T0025","ru":"У меня есть кофе.","en":"I have coffee.","ja":"コーヒーあるよ。","lemmas":["у","я","кофе"],"target_lemma":"у","difficulty":1,"kind":"sentence","note":"у меня есть … = 「私は…を持っている」の定型"}
+{"id":"T0026","ru":"Я иду из дома.","en":"I'm walking out of the house.","ja":"家から出るところ。","lemmas":["я","идти","из","дом"],"target_lemma":"из","difficulty":1,"kind":"sentence","note":"из + 生格 → из дома"}
+{"id":"T0027","ru":"Я думаю о работе.","en":"I'm thinking about work.","ja":"仕事のこと考えてる。","lemmas":["я","думать","о","работа"],"target_lemma":"о","difficulty":1,"kind":"sentence","note":"о + 前置格 → о работе"}
+{"id":"T0028","ru":"Я бы хотел кофе.","en":"I would like a coffee.","ja":"コーヒーをもらえますか。","lemmas":["я","бы","хотеть","кофе"],"target_lemma":"бы","difficulty":2,"kind":"sentence","note":"бы + 過去形 = 丁寧・仮定。хотел は男性形"}
+{"id":"T0029","ru":"Ну, до завтра!","en":"Well, see you tomorrow!","ja":"じゃ、また明日！","lemmas":["ну","до","завтра"],"target_lemma":"до","difficulty":1,"kind":"sentence","note":"до + 生格の別れの挨拶"}
+{"id":"T0030","ru":"Во сколько ты придёшь?","en":"What time will you come?","ja":"何時に来る？","lemmas":["во","сколько","ты","прийти"],"target_lemma":"во","difficulty":2,"kind":"sentence","note":"во = в の異形（во сколько のように子音連続の前で）"}
+{"id":"T0031","ru":"Это для тебя.","en":"This is for you.","ja":"これ君にだよ。","lemmas":["это","для","ты"],"target_lemma":"для","difficulty":1,"kind":"sentence","note":"для + 生格 → для тебя"}
+{"id":"T0032","ru":"Если хочешь, идём.","en":"If you want, let's go.","ja":"行きたいなら行こう。","lemmas":["если","хотеть","идти"],"target_lemma":"если","difficulty":1,"kind":"sentence"}
+{"id":"T0033","ru":"Когда ты придёшь?","en":"When will you come?","ja":"いつ来る？","lemmas":["когда","ты","прийти"],"target_lemma":"когда","difficulty":1,"kind":"sentence"}
+{"id":"T0034","ru":"Я здесь, чтобы помочь.","en":"I'm here to help.","ja":"手伝いに来たよ。","lemmas":["я","здесь","чтобы","помочь"],"target_lemma":"чтобы","difficulty":2,"kind":"sentence"}
+{"id":"T0035","ru":"Чай или кофе?","en":"Tea or coffee?","ja":"紅茶それともコーヒー？","lemmas":["чай","или","кофе"],"target_lemma":"или","difficulty":1,"kind":"sentence"}
+{"id":"T0036","ru":"Знаешь ли ты это?","en":"Do you know this?","ja":"これ、知ってる？","lemmas":["знать","ли","ты","это"],"target_lemma":"ли","difficulty":2,"kind":"sentence","note":"ли = 是非疑問の小詞（やや硬い）"}
+{"id":"T0037","ru":"Мой дом там.","en":"My house is over there.","ja":"僕の家はあそこ。","lemmas":["мой","дом","там"],"target_lemma":"там","difficulty":1,"kind":"sentence"}
+{"id":"T0038","ru":"Я уже тут.","en":"I'm already here.","ja":"もう着いてるよ。","lemmas":["я","уже","тут"],"target_lemma":"тут","difficulty":1,"kind":"sentence"}
+{"id":"T0039","ru":"Кофе здесь дорогой.","en":"The coffee here is expensive.","ja":"ここのコーヒーは高い。","lemmas":["кофе","здесь","дорогой"],"target_lemma":"здесь","difficulty":1,"kind":"sentence"}
+{"id":"T0040","ru":"Где ты сейчас?","en":"Where are you now?","ja":"今どこ？","lemmas":["где","ты","сейчас"],"target_lemma":"где","difficulty":1,"kind":"sentence"}
+{"id":"T0041","ru":"Кто это там?","en":"Who's that over there?","ja":"あそこにいるの誰？","lemmas":["кто","это","там"],"target_lemma":"кто","difficulty":1,"kind":"sentence"}
+{"id":"T0042","ru":"Я работал весь день.","en":"I worked all day.","ja":"一日中働いた。","lemmas":["я","работать","весь","день"],"target_lemma":"весь","difficulty":2,"kind":"sentence","note":"работал は男性・過去形"}
+{"id":"T0043","ru":"Я люблю свой город.","en":"I love my city.","ja":"僕はこの街が好きだ。","lemmas":["я","любить","свой","город"],"target_lemma":"свой","difficulty":2,"kind":"sentence","note":"свой = 主語自身の所有（「自分の」）"}
+{"id":"T0044","ru":"Это наш дом.","en":"This is our house.","ja":"これが僕らの家。","lemmas":["это","наш","дом"],"target_lemma":"наш","difficulty":1,"kind":"sentence"}
+{"id":"T0045","ru":"Как ваше имя?","en":"What is your name?","ja":"（丁寧に）お名前は？","lemmas":["как","ваш","имя"],"target_lemma":"ваш","difficulty":1,"kind":"sentence","note":"ваш = 丁寧・複数の所有"}
+{"id":"T0046","ru":"Это мой телефон.","en":"This is my phone.","ja":"これ僕の電話。","lemmas":["это","мой","телефон"],"target_lemma":"мой","difficulty":1,"kind":"sentence"}
+{"id":"T0047","ru":"Где твой дом?","en":"Where is your house?","ja":"君の家どこ？","lemmas":["где","твой","дом"],"target_lemma":"твой","difficulty":1,"kind":"sentence"}
+{"id":"T0048","ru":"Это его машина.","en":"This is his car.","ja":"これ彼の車。","lemmas":["это","его","машина"],"target_lemma":"его","difficulty":1,"kind":"sentence","note":"его = 不変化の所有（彼の）"}
+{"id":"T0049","ru":"Я знаю её имя.","en":"I know her name.","ja":"彼女の名前を知ってる。","lemmas":["я","знать","её","имя"],"target_lemma":"её","difficulty":1,"kind":"sentence","note":"её = 不変化の所有（彼女の）"}
+{"id":"T0050","ru":"Это их дом.","en":"This is their house.","ja":"これ彼らの家。","lemmas":["это","их","дом"],"target_lemma":"их","difficulty":1,"kind":"sentence","note":"их = 不変化の所有（彼らの）"}
+{"id":"T0051","ru":"Я плохо себя чувствую.","en":"I don't feel well.","ja":"体調が悪い。","lemmas":["я","плохо","себя"],"target_lemma":"себя","difficulty":2,"kind":"sentence","note":"себя = 再帰代名詞。чувствовать себя で「体調が…」"}
+{"id":"T0052","ru":"Ты мой хороший друг.","en":"You're my good friend.","ja":"君はいい友達だ。","lemmas":["ты","мой","хороший","друг"],"target_lemma":"друг","difficulty":1,"kind":"sentence"}
+{"id":"T0053","ru":"Ты хороший человек.","en":"You're a good person.","ja":"君はいい人だ。","lemmas":["ты","хороший","человек"],"target_lemma":"человек","difficulty":1,"kind":"sentence"}
+{"id":"T0054","ru":"Этот дом большой.","en":"This house is big.","ja":"この家は大きい。","lemmas":["этот","дом","большой"],"target_lemma":"этот","difficulty":1,"kind":"sentence"}
+{"id":"T0055","ru":"Тот дом старый.","en":"That house is old.","ja":"あの家は古い。","lemmas":["тот","дом","старый"],"target_lemma":"тот","difficulty":1,"kind":"sentence"}
+{"id":"T0056","ru":"Я всё понимаю.","en":"I understand everything.","ja":"全部分かってる。","lemmas":["я","всё","понимать"],"target_lemma":"всё","difficulty":1,"kind":"sentence"}
+{"id":"T0057","ru":"Нет, я не хочу.","en":"No, I don't want to.","ja":"ううん、やりたくない。","lemmas":["нет","я","не","хотеть"],"target_lemma":"нет","difficulty":1,"kind":"sentence"}
+{"id":"T0058","ru":"Да, я знаю.","en":"Yes, I know.","ja":"うん、知ってる。","lemmas":["да","я","знать"],"target_lemma":"да","difficulty":1,"kind":"sentence"}
+{"id":"T0059","ru":"Я не могу спать.","en":"I can't sleep.","ja":"眠れない。","lemmas":["я","не","мочь","спать"],"target_lemma":"мочь","difficulty":1,"kind":"sentence"}
+{"id":"T0060","ru":"Что ты хочешь сказать?","en":"What do you want to say?","ja":"何が言いたいの？","lemmas":["что","ты","хотеть","сказать"],"target_lemma":"сказать","difficulty":1,"kind":"sentence"}
+{"id":"T0061","ru":"Я говорю очень медленно.","en":"I speak very slowly.","ja":"僕はすごくゆっくり話す。","lemmas":["я","говорить","очень","медленно"],"target_lemma":"говорить","difficulty":1,"kind":"sentence"}
+{"id":"T0062","ru":"Я хочу это знать.","en":"I want to know this.","ja":"これを知りたい。","lemmas":["я","хотеть","это","знать"],"target_lemma":"знать","difficulty":1,"kind":"sentence"}
+{"id":"T0063","ru":"Он хочет спать.","en":"He wants to sleep.","ja":"彼は眠りたがっている。","lemmas":["он","хотеть","спать"],"target_lemma":"хотеть","difficulty":2,"kind":"sentence","note":"хотеть は混合活用：я хочу / он хочет（онで3人称単数形を示す）"}
+{"id":"T0064","ru":"Куда ты сейчас идёшь?","en":"Where are you going now?","ja":"今どこ行くの？","lemmas":["куда","ты","сейчас","идти"],"target_lemma":"идти","difficulty":1,"kind":"sentence"}
+{"id":"T0065","ru":"Что мне делать?","en":"What should I do?","ja":"どうしよう。","lemmas":["что","я","делать"],"target_lemma":"делать","difficulty":1,"kind":"sentence","note":"мне = я の与格"}
+{"id":"T0066","ru":"Я тебя вижу.","en":"I see you.","ja":"君が見えるよ。","lemmas":["я","ты","видеть"],"target_lemma":"видеть","difficulty":1,"kind":"sentence","note":"видеть → я вижу（жに変化）"}
+{"id":"T0067","ru":"Я часто думаю о доме.","en":"I often think about home.","ja":"よく家のことを考える。","lemmas":["я","часто","думать","о","дом"],"target_lemma":"думать","difficulty":1,"kind":"sentence"}
+{"id":"T0068","ru":"Я хочу только чай.","en":"I only want tea.","ja":"紅茶だけほしい。","lemmas":["я","хотеть","только","чай"],"target_lemma":"только","difficulty":1,"kind":"sentence"}
+{"id":"T0069","ru":"Дай мне ещё кофе.","en":"Give me more coffee.","ja":"コーヒーもう一杯ちょうだい。","lemmas":["дать","я","ещё","кофе"],"target_lemma":"ещё","difficulty":1,"kind":"sentence","note":"дай = дать の命令形、мне = я の与格"}
+{"id":"T0070","ru":"Я уже дома.","en":"I'm already home.","ja":"もう家だよ。","lemmas":["я","уже","дом"],"target_lemma":"уже","difficulty":1,"kind":"sentence"}
+{"id":"T0071","ru":"Я тебя очень люблю.","en":"I love you very much.","ja":"君のことすごく好きだ。","lemmas":["я","ты","очень","любить"],"target_lemma":"очень","difficulty":1,"kind":"sentence"}
+{"id":"T0072","ru":"Я сейчас работаю.","en":"I'm working now.","ja":"今仕事中。","lemmas":["я","сейчас","работать"],"target_lemma":"сейчас","difficulty":1,"kind":"sentence"}
+{"id":"T0073","ru":"Теперь я понимаю.","en":"Now I understand.","ja":"やっと分かった。","lemmas":["теперь","я","понимать"],"target_lemma":"теперь","difficulty":1,"kind":"sentence"}
+{"id":"T0074","ru":"Давай поговорим потом.","en":"Let's talk later.","ja":"あとで話そう。","lemmas":["давать","поговорить","потом"],"target_lemma":"потом","difficulty":1,"kind":"sentence","note":"давай = 勧誘「…しよう」"}
+{"id":"T0075","ru":"Это просто и легко.","en":"It's simple and easy.","ja":"これは単純で簡単だ。","lemmas":["это","просто","и","легко"],"target_lemma":"просто","difficulty":1,"kind":"sentence"}
+{"id":"T0076","ru":"Я тоже хочу.","en":"I want to, too.","ja":"僕もやりたい。","lemmas":["я","тоже","хотеть"],"target_lemma":"тоже","difficulty":1,"kind":"sentence"}
+{"id":"T0077","ru":"Здесь можно сидеть?","en":"Can I sit here?","ja":"ここ座っていい？","lemmas":["здесь","можно","сидеть"],"target_lemma":"можно","difficulty":1,"kind":"sentence"}
+{"id":"T0078","ru":"Мне надо домой.","en":"I have to go home.","ja":"もう帰らなきゃ。","lemmas":["я","надо","домой"],"target_lemma":"надо","difficulty":1,"kind":"sentence","note":"мне надо = 「私は…する必要がある」；домой"}
+{"id":"T0079","ru":"Мне нужно работать.","en":"I need to work.","ja":"仕事しなきゃ。","lemmas":["я","нужно","работать"],"target_lemma":"нужно","difficulty":1,"kind":"sentence"}
+{"id":"T0080","ru":"Так делать нельзя.","en":"You can't do it like that.","ja":"そういうのはダメ。","lemmas":["так","делать","нельзя"],"target_lemma":"нельзя","difficulty":1,"kind":"sentence"}
+{"id":"T0081","ru":"Ты хорошо говоришь.","en":"You speak well.","ja":"君は上手に話すね。","lemmas":["ты","хорошо","говорить"],"target_lemma":"хорошо","difficulty":1,"kind":"sentence"}
+{"id":"T0082","ru":"Я плохо сплю.","en":"I sleep badly.","ja":"よく眠れない。","lemmas":["я","плохо","спать"],"target_lemma":"плохо","difficulty":1,"kind":"sentence","note":"спать → я сплю"}
+{"id":"T0083","ru":"Сейчас мне лучше.","en":"I feel better now.","ja":"今はましになった。","lemmas":["сейчас","я","лучше"],"target_lemma":"лучше","difficulty":1,"kind":"sentence","note":"мне лучше = 「体調がよくなった」"}
+{"id":"T0084","ru":"Я больше не хочу.","en":"I don't want any more.","ja":"もういらない。","lemmas":["я","больше","не","хотеть"],"target_lemma":"больше","difficulty":1,"kind":"sentence","note":"больше не = 「もう…しない」"}
+{"id":"T0085","ru":"Ты много работаешь.","en":"You work a lot.","ja":"君は働きすぎだよ。","lemmas":["ты","много","работать"],"target_lemma":"много","difficulty":1,"kind":"sentence"}
+{"id":"T0086","ru":"Я мало сплю.","en":"I sleep little.","ja":"睡眠が足りてない。","lemmas":["я","мало","спать"],"target_lemma":"мало","difficulty":1,"kind":"sentence"}
+{"id":"T0087","ru":"Скажи ещё раз.","en":"Say it once more.","ja":"もう一回言って。","lemmas":["сказать","ещё","раз"],"target_lemma":"раз","difficulty":1,"kind":"sentence","note":"скажи = сказать の命令形"}
+{"id":"T0088","ru":"Мне два кофе.","en":"Two coffees for me.","ja":"コーヒー二つください。","lemmas":["я","два","кофе"],"target_lemma":"два","difficulty":1,"kind":"sentence"}
+{"id":"T0089","ru":"Дай мне один.","en":"Give me one.","ja":"一つちょうだい。","lemmas":["дать","я","один"],"target_lemma":"один","difficulty":1,"kind":"sentence"}
+{"id":"T0090","ru":"Это мой первый день.","en":"It's my first day.","ja":"今日が初日だ。","lemmas":["это","мой","первый","день"],"target_lemma":"первый","difficulty":1,"kind":"sentence"}
+{"id":"T0091","ru":"Хорошего тебе дня!","en":"Have a good day!","ja":"いい一日をね！","lemmas":["хороший","ты","день"],"target_lemma":"день","difficulty":2,"kind":"sentence","note":"хорошего … дня = 生格の定型；тебе 与格"}
+{"id":"T0092","ru":"Я здесь уже год.","en":"I've been here a year already.","ja":"ここに住んでもう一年。","lemmas":["я","здесь","уже","год"],"target_lemma":"год","difficulty":1,"kind":"sentence"}
+{"id":"T0093","ru":"У меня нет времени сейчас.","en":"I don't have time right now.","ja":"今は時間がない。","lemmas":["у","я","нет","время","сейчас"],"target_lemma":"время","difficulty":2,"kind":"sentence","note":"нет + 生格 → нет времени"}
+{"id":"T0094","ru":"Ну, как твои дела?","en":"So, how are you?","ja":"で、調子どう？","lemmas":["ну","как","твой","дело"],"target_lemma":"дело","difficulty":1,"kind":"sentence","note":"дела = дело の複数（挨拶の定型）"}
+{"id":"T0095","ru":"Я люблю свою жизнь.","en":"I love my life.","ja":"僕は自分の人生が好きだ。","lemmas":["я","любить","свой","жизнь"],"target_lemma":"жизнь","difficulty":1,"kind":"sentence"}
+{"id":"T0096","ru":"У меня болит рука.","en":"My hand hurts.","ja":"手が痛い。","lemmas":["у","я","болеть","рука"],"target_lemma":"рука","difficulty":2,"kind":"sentence","note":"у меня болит … = 「…が痛い」"}
+{"id":"T0097","ru":"У меня очень болит голова.","en":"My head really hurts.","ja":"頭がすごく痛い。","lemmas":["у","я","очень","болеть","голова"],"target_lemma":"голова","difficulty":2,"kind":"sentence"}
+{"id":"T0098","ru":"У тебя красивые глаза.","en":"You have beautiful eyes.","ja":"君は目がきれいだね。","lemmas":["у","ты","красивый","глаз"],"target_lemma":"глаз","difficulty":2,"kind":"sentence","note":"глаза = глаз の複数"}
+{"id":"T0099","ru":"Это большой дом.","en":"This is a big house.","ja":"これは大きい家だ。","lemmas":["это","большой","дом"],"target_lemma":"дом","difficulty":1,"kind":"sentence"}
+{"id":"T0100","ru":"Здесь есть свободное место?","en":"Is there a free seat here?","ja":"ここ空いてますか？","lemmas":["здесь","свободный","место"],"target_lemma":"место","difficulty":2,"kind":"sentence","note":"свободное は место（中性）に一致"}
+{"id":"T0101","ru":"Я хочу видеть весь мир.","en":"I want to see the whole world.","ja":"世界中を見てみたい。","lemmas":["я","хотеть","видеть","весь","мир"],"target_lemma":"мир","difficulty":1,"kind":"sentence"}
+{"id":"T0102","ru":"Я иду на работу.","en":"I'm going to work.","ja":"仕事に向かってる。","lemmas":["я","идти","на","работа"],"target_lemma":"работа","difficulty":1,"kind":"sentence"}
+{"id":"T0103","ru":"Я не знаю это слово.","en":"I don't know this word.","ja":"この単語わからない。","lemmas":["я","не","знать","это","слово"],"target_lemma":"слово","difficulty":1,"kind":"sentence"}
+{"id":"T0104","ru":"У меня новый телефон.","en":"I have a new phone.","ja":"新しい電話買ったんだ。","lemmas":["у","я","новый","телефон"],"target_lemma":"новый","difficulty":1,"kind":"sentence"}
+{"id":"T0105","ru":"Это очень старый дом.","en":"This is a very old house.","ja":"これはとても古い家だ。","lemmas":["это","очень","старый","дом"],"target_lemma":"старый","difficulty":1,"kind":"sentence"}
+{"id":"T0106","ru":"Это большой город.","en":"This is a big city.","ja":"これは大きな街だ。","lemmas":["это","большой","город"],"target_lemma":"большой","difficulty":1,"kind":"sentence"}
+{"id":"T0107","ru":"У меня маленькая комната.","en":"I have a small room.","ja":"僕の部屋は小さい。","lemmas":["у","я","маленький","комната"],"target_lemma":"маленький","difficulty":1,"kind":"sentence","note":"маленькая は комната（女性）に一致"}
+{"id":"T0108","ru":"Это хороший ресторан.","en":"This is a good restaurant.","ja":"ここはいいレストランだ。","lemmas":["это","хороший","ресторан"],"target_lemma":"хороший","difficulty":1,"kind":"sentence"}
+{"id":"T0109","ru":"Сегодня плохой день.","en":"Today is a bad day.","ja":"今日はついてない日だ。","lemmas":["сегодня","плохой","день"],"target_lemma":"плохой","difficulty":1,"kind":"sentence"}
+{"id":"T0110","ru":"Я должен идти.","en":"I have to go.","ja":"行かなきゃ。","lemmas":["я","должен","идти"],"target_lemma":"должен","difficulty":1,"kind":"sentence","note":"должен は男性短語尾（女性 должна）"}
+{"id":"T0111","ru":"Я делаю это сам.","en":"I do it myself.","ja":"自分でやるよ。","lemmas":["я","делать","это","сам"],"target_lemma":"сам","difficulty":1,"kind":"sentence","note":"сам = 「自分自身で」（男性）"}
+{"id":"T0112","ru":"Это самый большой дом.","en":"This is the biggest house.","ja":"これが一番大きい家。","lemmas":["это","самый","большой","дом"],"target_lemma":"самый","difficulty":1,"kind":"sentence","note":"самый + 形容詞 = 最上級"}
+{"id":"T0113","ru":"Я смотрю фильм.","en":"I'm watching a movie.","ja":"映画を見てる。","lemmas":["я","смотреть","фильм"],"target_lemma":"смотреть","difficulty":1,"kind":"sentence"}
+{"id":"T0114","ru":"Можно это посмотреть?","en":"Can I take a look at this?","ja":"これ見てもいい？","lemmas":["можно","это","посмотреть"],"target_lemma":"посмотреть","difficulty":1,"kind":"sentence"}
+{"id":"T0115","ru":"Давай пойдём домой.","en":"Let's go home.","ja":"もう帰ろう。","lemmas":["давать","пойти","домой"],"target_lemma":"пойти","difficulty":1,"kind":"sentence","note":"давай + 未来 = 勧誘「…しよう」"}
+{"id":"T0116","ru":"Я приду завтра.","en":"I'll come tomorrow.","ja":"明日行くね。","lemmas":["я","прийти","завтра"],"target_lemma":"прийти","difficulty":1,"kind":"sentence","note":"приду = прийти の未来（完了体）"}
+{"id":"T0117","ru":"Ты часто приходишь?","en":"Do you come here often?","ja":"よくここ来るの？","lemmas":["ты","часто","приходить"],"target_lemma":"приходить","difficulty":1,"kind":"sentence"}
+{"id":"T0118","ru":"Мне нужно уйти.","en":"I need to leave.","ja":"もう出なきゃ。","lemmas":["я","нужно","уйти"],"target_lemma":"уйти","difficulty":1,"kind":"sentence"}
+{"id":"T0119","ru":"Дай мне воды.","en":"Give me some water.","ja":"水ちょうだい。","lemmas":["дать","я","вода"],"target_lemma":"дать","difficulty":1,"kind":"sentence","note":"воды = 部分生格（いくらかの水）"}
+{"id":"T0120","ru":"Я не даю денег.","en":"I don't give money.","ja":"お金は渡さない。","lemmas":["я","не","давать","деньги"],"target_lemma":"давать","difficulty":1,"kind":"sentence","note":"даю = давать の現在。否定＋生格 денег"}
+{"id":"T0121","ru":"Можно взять это?","en":"Can I take this?","ja":"これ取ってもいい？","lemmas":["можно","взять","это"],"target_lemma":"взять","difficulty":1,"kind":"sentence"}
+{"id":"T0122","ru":"Я беру кофе с собой.","en":"I'll take the coffee to go.","ja":"コーヒー持ち帰りで。","lemmas":["я","брать","кофе","с","себя"],"target_lemma":"брать","difficulty":2,"kind":"sentence","note":"беру = брать の現在；с собой = 「持ち帰り」"}
+{"id":"T0123","ru":"Я жду тебя здесь.","en":"I'm waiting for you here.","ja":"ここで待ってるね。","lemmas":["я","ждать","ты","здесь"],"target_lemma":"ждать","difficulty":1,"kind":"sentence"}
+{"id":"T0124","ru":"Я живу в городе.","en":"I live in the city.","ja":"街に住んでる。","lemmas":["я","жить","в","город"],"target_lemma":"жить","difficulty":1,"kind":"sentence","note":"живу = жить の現在"}
+{"id":"T0125","ru":"Я стою на улице.","en":"I'm standing on the street.","ja":"通りに立ってる。","lemmas":["я","стоять","на","улица"],"target_lemma":"стоять","difficulty":1,"kind":"sentence","note":"стою = стоять の現在"}
+{"id":"T0126","ru":"Я сижу дома.","en":"I'm sitting at home.","ja":"家でじっとしてる。","lemmas":["я","сидеть","дом"],"target_lemma":"сидеть","difficulty":1,"kind":"sentence","note":"сижу = сидеть の現在；дома = 家で"}
+{"id":"T0127","ru":"Телефон лежит на столе.","en":"The phone is lying on the table.","ja":"電話は机の上にある。","lemmas":["телефон","лежать","на","стол"],"target_lemma":"лежать","difficulty":1,"kind":"sentence","note":"лежит = 物が横たわっている状態"}
+{"id":"T0128","ru":"Я не могу найти ключ.","en":"I can't find the key.","ja":"鍵が見つからない。","lemmas":["я","не","мочь","найти","ключ"],"target_lemma":"найти","difficulty":1,"kind":"sentence"}
+{"id":"T0129","ru":"Я ищу работу.","en":"I'm looking for a job.","ja":"仕事を探してる。","lemmas":["я","искать","работа"],"target_lemma":"искать","difficulty":1,"kind":"sentence","note":"ищу = искать の現在"}
+{"id":"T0130","ru":"Я тебя хорошо понимаю.","en":"I understand you well.","ja":"君のことよく分かるよ。","lemmas":["я","ты","хорошо","понимать"],"target_lemma":"понимать","difficulty":1,"kind":"sentence"}
+{"id":"T0131","ru":"Я не могу это понять.","en":"I can't understand this.","ja":"これが理解できない。","lemmas":["я","не","мочь","это","понять"],"target_lemma":"понять","difficulty":1,"kind":"sentence"}
+{"id":"T0132","ru":"Можно тебя спросить?","en":"Can I ask you something?","ja":"ちょっと聞いていい？","lemmas":["можно","ты","спросить"],"target_lemma":"спросить","difficulty":1,"kind":"sentence","note":"тебя = ты の対格"}
+{"id":"T0133","ru":"Не спрашивай меня.","en":"Don't ask me.","ja":"僕に聞かないで。","lemmas":["не","спрашивать","я"],"target_lemma":"спрашивать","difficulty":1,"kind":"sentence","note":"спрашивай = 命令形；меня = я の対格"}
+{"id":"T0134","ru":"Ты можешь ответить?","en":"Can you answer?","ja":"答えられる？","lemmas":["ты","мочь","ответить"],"target_lemma":"ответить","difficulty":1,"kind":"sentence"}
+{"id":"T0135","ru":"Я не хочу отвечать.","en":"I don't want to answer.","ja":"答えたくない。","lemmas":["я","не","хотеть","отвечать"],"target_lemma":"отвечать","difficulty":1,"kind":"sentence"}
+{"id":"T0136","ru":"Я люблю читать книги.","en":"I love reading books.","ja":"本を読むのが好きだ。","lemmas":["я","любить","читать","книга"],"target_lemma":"любить","difficulty":1,"kind":"sentence","note":"книги = книга の複数対格"}
+{"id":"T0137","ru":"Мне нравится твой город.","en":"I like your city.","ja":"君の街、いいね。","lemmas":["я","нравиться","твой","город"],"target_lemma":"нравиться","difficulty":2,"kind":"sentence","note":"мне нравится … = 「…が気に入る」（主語は好かれる側）"}
+{"id":"T0138","ru":"Кажется, идёт дождь.","en":"It seems it's raining.","ja":"雨が降ってるみたい。","lemmas":["казаться","идти","дождь"],"target_lemma":"казаться","difficulty":2,"kind":"sentence","note":"кажется = 「…のようだ」；идёт дождь = 雨が降る"}
+{"id":"T0139","ru":"Я остаюсь дома.","en":"I'm staying home.","ja":"家にいる。","lemmas":["я","оставаться","дом"],"target_lemma":"оставаться","difficulty":1,"kind":"sentence","note":"остаюсь = оставаться の現在；дома"}
+{"id":"T0140","ru":"Я хочу стать врачом.","en":"I want to become a doctor.","ja":"医者になりたい。","lemmas":["я","хотеть","стать","врач"],"target_lemma":"стать","difficulty":2,"kind":"sentence","note":"стать + 造格 → врачом"}
+{"id":"T0141","ru":"Ты становишься лучше.","en":"You're getting better.","ja":"君は上達してるよ。","lemmas":["ты","становиться","лучше"],"target_lemma":"становиться","difficulty":2,"kind":"sentence"}
+{"id":"T0142","ru":"Я хочу получить работу.","en":"I want to get the job.","ja":"その仕事を得たい。","lemmas":["я","хотеть","получить","работа"],"target_lemma":"получить","difficulty":1,"kind":"sentence"}
+{"id":"T0143","ru":"Я получаю мало денег.","en":"I get little money.","ja":"給料が少ない。","lemmas":["я","получать","мало","деньги"],"target_lemma":"получать","difficulty":1,"kind":"sentence"}
+{"id":"T0144","ru":"Где ты работаешь?","en":"Where do you work?","ja":"どこで働いてるの？","lemmas":["где","ты","работать"],"target_lemma":"работать","difficulty":1,"kind":"sentence"}
+{"id":"T0145","ru":"Это моя жена.","en":"This is my wife.","ja":"これが妻です。","lemmas":["это","мой","жена"],"target_lemma":"жена","difficulty":1,"kind":"sentence"}
+{"id":"T0146","ru":"Это её муж.","en":"This is her husband.","ja":"こちらが彼女の夫。","lemmas":["это","её","муж"],"target_lemma":"муж","difficulty":1,"kind":"sentence"}
+{"id":"T0147","ru":"Я люблю свою мать.","en":"I love my mother.","ja":"母を愛してる。","lemmas":["я","любить","свой","мать"],"target_lemma":"мать","difficulty":2,"kind":"sentence","note":"мать は変則変化（свою мать）"}
+{"id":"T0148","ru":"Мой отец — врач.","en":"My father is a doctor.","ja":"父は医者だ。","lemmas":["мой","отец","врач"],"target_lemma":"отец","difficulty":1,"kind":"sentence"}
+{"id":"T0149","ru":"Моя мама дома.","en":"My mom is home.","ja":"母は家にいる。","lemmas":["мой","мама","дом"],"target_lemma":"мама","difficulty":1,"kind":"sentence","note":"дома = 家に"}
+{"id":"T0150","ru":"Мой папа много работает.","en":"My dad works a lot.","ja":"父はよく働く。","lemmas":["мой","папа","много","работать"],"target_lemma":"папа","difficulty":1,"kind":"sentence","note":"папа は男性名詞だが女性型で活用"}
+{"id":"T0151","ru":"Это их сын.","en":"This is their son.","ja":"これは彼らの息子。","lemmas":["это","их","сын"],"target_lemma":"сын","difficulty":1,"kind":"sentence"}
+{"id":"T0152","ru":"Это их дочь.","en":"This is their daughter.","ja":"これは彼らの娘。","lemmas":["это","их","дочь"],"target_lemma":"дочь","difficulty":1,"kind":"sentence","note":"дочь は変則変化（女性）"}
+{"id":"T0153","ru":"Это ещё ребёнок.","en":"He's still a child.","ja":"まだ子供だよ。","lemmas":["это","ещё","ребёнок"],"target_lemma":"ребёнок","difficulty":1,"kind":"sentence"}
+{"id":"T0154","ru":"Эта девочка — моя сестра.","en":"This girl is my sister.","ja":"この女の子は妹だ。","lemmas":["этот","девочка","мой","сестра"],"target_lemma":"девочка","difficulty":1,"kind":"sentence","note":"эта = этот の女性形"}
+{"id":"T0155","ru":"Этот мальчик — мой сын.","en":"This boy is my son.","ja":"この男の子は息子だ。","lemmas":["этот","мальчик","мой","сын"],"target_lemma":"мальчик","difficulty":1,"kind":"sentence"}
+{"id":"T0156","ru":"Эта женщина — врач.","en":"This woman is a doctor.","ja":"この女性は医者だ。","lemmas":["этот","женщина","врач"],"target_lemma":"женщина","difficulty":1,"kind":"sentence","note":"эта = этот の女性形"}
+{"id":"T0157","ru":"Этот мужчина — мой отец.","en":"This man is my father.","ja":"この男性は父だ。","lemmas":["этот","мужчина","мой","отец"],"target_lemma":"мужчина","difficulty":1,"kind":"sentence","note":"мужчина は男性名詞だが女性型で活用"}
+{"id":"T0158","ru":"Он хороший парень.","en":"He's a good guy.","ja":"彼はいいやつだ。","lemmas":["он","хороший","парень"],"target_lemma":"парень","difficulty":1,"kind":"sentence"}
+{"id":"T0159","ru":"Это моя девушка.","en":"This is my girlfriend.","ja":"彼女です。","lemmas":["это","мой","девушка"],"target_lemma":"девушка","difficulty":1,"kind":"sentence"}
+{"id":"T0160","ru":"Господин ждёт вас.","en":"The gentleman is waiting for you.","ja":"（丁寧に）お客様がお待ちです。","lemmas":["господин","ждать","вы"],"target_lemma":"господин","difficulty":2,"kind":"sentence","note":"господин = 硬めの敬称；вас = вы の対格"}
+{"id":"T0161","ru":"Бог всё видит.","en":"God sees everything.","ja":"神は全てを見ている。","lemmas":["бог","всё","видеть"],"target_lemma":"бог","difficulty":1,"kind":"sentence"}
+{"id":"T0162","ru":"Как твоё имя?","en":"What's your name?","ja":"名前は？","lemmas":["как","твой","имя"],"target_lemma":"имя","difficulty":1,"kind":"sentence","note":"твоё は имя（中性）に一致"}
+{"id":"T0163","ru":"У меня нет денег.","en":"I have no money.","ja":"お金がない。","lemmas":["у","я","нет","деньги"],"target_lemma":"деньги","difficulty":2,"kind":"sentence","note":"деньги は複数のみ。нет + 生格 → денег"}
+{"id":"T0164","ru":"Это твоя машина?","en":"Is this your car?","ja":"これ君の車？","lemmas":["это","твой","машина"],"target_lemma":"машина","difficulty":1,"kind":"sentence"}
+{"id":"T0165","ru":"Я люблю этот город.","en":"I love this city.","ja":"この街が好きだ。","lemmas":["я","любить","этот","город"],"target_lemma":"город","difficulty":1,"kind":"sentence"}
+{"id":"T0166","ru":"Это красивая страна.","en":"This is a beautiful country.","ja":"美しい国だ。","lemmas":["это","красивый","страна"],"target_lemma":"страна","difficulty":1,"kind":"sentence"}
+{"id":"T0167","ru":"На улице идёт дождь.","en":"It's raining outside.","ja":"外は雨だ。","lemmas":["на","улица","идти","дождь"],"target_lemma":"улица","difficulty":1,"kind":"sentence","note":"на улице = 屋外で"}
+{"id":"T0168","ru":"Это моя комната.","en":"This is my room.","ja":"ここが僕の部屋。","lemmas":["это","мой","комната"],"target_lemma":"комната","difficulty":1,"kind":"sentence"}
+{"id":"T0169","ru":"Открой мне дверь.","en":"Open the door for me.","ja":"ドア開けてくれる？","lemmas":["открыть","я","дверь"],"target_lemma":"дверь","difficulty":1,"kind":"sentence","note":"открой = открыть の命令形；мне 与格"}
+{"id":"T0170","ru":"Окно уже открыто.","en":"The window is already open.","ja":"窓はもう開いてる。","lemmas":["окно","уже","открытый"],"target_lemma":"окно","difficulty":2,"kind":"sentence","note":"открыто = 中性短語尾"}
+{"id":"T0171","ru":"Кофе уже на столе.","en":"The coffee is already on the table.","ja":"コーヒーはもう机の上。","lemmas":["кофе","уже","на","стол"],"target_lemma":"стол","difficulty":1,"kind":"sentence"}
+{"id":"T0172","ru":"Это твой стул.","en":"This is your chair.","ja":"これ君の椅子。","lemmas":["это","твой","стул"],"target_lemma":"стул","difficulty":1,"kind":"sentence"}
+{"id":"T0173","ru":"Я лежу на кровати.","en":"I'm lying on the bed.","ja":"ベッドに寝転んでる。","lemmas":["я","лежать","на","кровать"],"target_lemma":"кровать","difficulty":1,"kind":"sentence","note":"на кровати = 前置格"}
+{"id":"T0174","ru":"Где мой телефон?","en":"Where's my phone?","ja":"僕の電話どこ？","lemmas":["где","мой","телефон"],"target_lemma":"телефон","difficulty":1,"kind":"sentence"}
+{"id":"T0175","ru":"Можно мне воды?","en":"Can I have some water?","ja":"お水もらえる？","lemmas":["можно","я","вода"],"target_lemma":"вода","difficulty":1,"kind":"sentence","note":"мне 与格；воды 部分生格"}
+{"id":"T0176","ru":"Здесь хорошая еда.","en":"The food here is good.","ja":"ここの料理はうまい。","lemmas":["здесь","хороший","еда"],"target_lemma":"еда","difficulty":1,"kind":"sentence"}
+{"id":"T0177","ru":"Я пью кофе каждый день.","en":"I drink coffee every day.","ja":"毎日コーヒーを飲む。","lemmas":["я","пить","кофе","каждый","день"],"target_lemma":"кофе","difficulty":1,"kind":"sentence","note":"пью = пить の現在"}
+{"id":"T0178","ru":"Ты будешь чай?","en":"Will you have tea?","ja":"紅茶いる？","lemmas":["ты","быть","чай"],"target_lemma":"чай","difficulty":1,"kind":"sentence","note":"будешь = быть の未来（口語で「いる？」）"}
+{"id":"T0179","ru":"У нас нет хлеба.","en":"We're out of bread.","ja":"パンが切れてる。","lemmas":["у","мы","нет","хлеб"],"target_lemma":"хлеб","difficulty":2,"kind":"sentence","note":"у нас нет + 生格 → хлеба"}
+{"id":"T0180","ru":"Каждое утро я пью кофе.","en":"Every morning I drink coffee.","ja":"毎朝コーヒーを飲む。","lemmas":["каждый","утро","я","пить","кофе"],"target_lemma":"утро","difficulty":1,"kind":"sentence","note":"каждое は утро（中性）に一致"}
+{"id":"T0181","ru":"Вечером я иду домой.","en":"In the evening I go home.","ja":"夕方に家へ帰る。","lemmas":["вечер","я","идти","домой"],"target_lemma":"вечер","difficulty":2,"kind":"sentence","note":"вечером = 造格の副詞用法（夕方に）"}
+{"id":"T0182","ru":"Спокойной ночи, мама!","en":"Good night, Mom!","ja":"おやすみ、母さん！","lemmas":["спокойный","ночь","мама"],"target_lemma":"ночь","difficulty":2,"kind":"sentence","note":"生格の定型挨拶（… ночи）"}
+{"id":"T0183","ru":"Я здесь уже неделю.","en":"I've been here a week already.","ja":"ここに来てもう一週間。","lemmas":["я","здесь","уже","неделя"],"target_lemma":"неделя","difficulty":2,"kind":"sentence","note":"неделю = 対格（期間）"}
+{"id":"T0184","ru":"Я живу здесь месяц.","en":"I've been living here a month.","ja":"ここに一ヶ月住んでる。","lemmas":["я","жить","здесь","месяц"],"target_lemma":"месяц","difficulty":1,"kind":"sentence"}
+{"id":"T0185","ru":"Я жду тебя час.","en":"I've been waiting for you an hour.","ja":"もう一時間待ってる。","lemmas":["я","ждать","ты","час"],"target_lemma":"час","difficulty":1,"kind":"sentence"}
+{"id":"T0186","ru":"Дай мне минуту.","en":"Give me a minute.","ja":"ちょっと待って。","lemmas":["дать","я","минута"],"target_lemma":"минута","difficulty":1,"kind":"sentence","note":"минуту = 対格"}
+{"id":"T0187","ru":"Дай мне одну секунду.","en":"Give me one second.","ja":"ちょっとだけ待って。","lemmas":["дать","я","один","секунда"],"target_lemma":"секунда","difficulty":1,"kind":"sentence","note":"одну секунду = 対格の定型；дай 命令形"}
+{"id":"T0188","ru":"Что ты делаешь сегодня?","en":"What are you doing today?","ja":"今日何する？","lemmas":["что","ты","делать","сегодня"],"target_lemma":"сегодня","difficulty":1,"kind":"sentence"}
+{"id":"T0189","ru":"Завтра я не работаю.","en":"Tomorrow I'm not working.","ja":"明日は仕事休み。","lemmas":["завтра","я","не","работать"],"target_lemma":"завтра","difficulty":1,"kind":"sentence"}
+{"id":"T0190","ru":"Вчера я был дома.","en":"Yesterday I was home.","ja":"昨日は家にいた。","lemmas":["вчера","я","быть","дом"],"target_lemma":"вчера","difficulty":2,"kind":"sentence","note":"был = 過去男性；дома = 家に"}
+{"id":"T0191","ru":"Ты снова здесь!","en":"You're here again!","ja":"また来たのか！","lemmas":["ты","снова","здесь"],"target_lemma":"снова","difficulty":1,"kind":"sentence"}
+{"id":"T0192","ru":"Опять идёт дождь.","en":"It's raining again.","ja":"また雨だ。","lemmas":["опять","идти","дождь"],"target_lemma":"опять","difficulty":1,"kind":"sentence"}
+{"id":"T0193","ru":"Я всегда пью кофе утром.","en":"I always drink coffee in the morning.","ja":"朝はいつもコーヒー。","lemmas":["я","всегда","пить","кофе","утро"],"target_lemma":"всегда","difficulty":2,"kind":"sentence","note":"утром = 造格副詞（朝に）"}
+{"id":"T0194","ru":"Я никогда не забываю.","en":"I never forget.","ja":"僕は絶対忘れない。","lemmas":["я","никогда","не","забывать"],"target_lemma":"никогда","difficulty":1,"kind":"sentence","note":"никогда не = 二重否定が基本"}
+{"id":"T0195","ru":"Иногда я работаю ночью.","en":"Sometimes I work at night.","ja":"時々夜に働く。","lemmas":["иногда","я","работать","ночь"],"target_lemma":"иногда","difficulty":2,"kind":"sentence","note":"ночью = 造格副詞（夜に）"}
+{"id":"T0196","ru":"Я часто пью кофе.","en":"I often drink coffee.","ja":"よくコーヒーを飲む。","lemmas":["я","часто","пить","кофе"],"target_lemma":"часто","difficulty":1,"kind":"sentence"}
+{"id":"T0197","ru":"Я редко смотрю фильмы.","en":"I rarely watch movies.","ja":"映画はめったに見ない。","lemmas":["я","редко","смотреть","фильм"],"target_lemma":"редко","difficulty":1,"kind":"sentence","note":"фильмы 複数対格"}
+{"id":"T0198","ru":"Я сразу понял.","en":"I understood immediately.","ja":"すぐ分かった。","lemmas":["я","сразу","понять"],"target_lemma":"сразу","difficulty":1,"kind":"sentence","note":"понял = 過去男性"}
+{"id":"T0199","ru":"Я скоро приду.","en":"I'll come soon.","ja":"すぐ行くよ。","lemmas":["я","скоро","прийти"],"target_lemma":"скоро","difficulty":1,"kind":"sentence"}
+{"id":"T0200","ru":"Мой дом далеко.","en":"My house is far.","ja":"うちは遠いんだ。","lemmas":["мой","дом","далеко"],"target_lemma":"далеко","difficulty":1,"kind":"sentence"}
+{"id":"T0201","ru":"Магазин совсем близко.","en":"The shop is very close.","ja":"店はすぐ近くだ。","lemmas":["магазин","совсем","близко"],"target_lemma":"близко","difficulty":1,"kind":"sentence"}
+{"id":"T0202","ru":"Я долго тебя ждал.","en":"I waited for you a long time.","ja":"長いこと待ったよ。","lemmas":["я","долго","ты","ждать"],"target_lemma":"долго","difficulty":2,"kind":"sentence","note":"ждал = 過去男性"}
+{"id":"T0203","ru":"Я был здесь час назад.","en":"I was here an hour ago.","ja":"一時間前ここにいた。","lemmas":["я","быть","здесь","час","назад"],"target_lemma":"назад","difficulty":2,"kind":"sentence","note":"назад = 「…前に」（час назад）"}
+{"id":"T0204","ru":"Иди вперёд, я жду.","en":"Go ahead, I'll wait.","ja":"先に行って、待ってるから。","lemmas":["идти","вперёд","я","ждать"],"target_lemma":"вперёд","difficulty":1,"kind":"sentence"}
+{"id":"T0205","ru":"Я хочу домой.","en":"I want to go home.","ja":"家に帰りたい。","lemmas":["я","хотеть","домой"],"target_lemma":"домой","difficulty":1,"kind":"sentence","note":"домой = 家へ（方向）"}
+{"id":"T0206","ru":"Мы работаем вместе.","en":"We work together.","ja":"僕らは一緒に働いてる。","lemmas":["мы","работать","вместе"],"target_lemma":"вместе","difficulty":1,"kind":"sentence"}
+{"id":"T0207","ru":"Может, он дома.","en":"Maybe he's home.","ja":"たぶん家にいるよ。","lemmas":["может","он","дом"],"target_lemma":"может","difficulty":1,"kind":"sentence","note":"может = 「たぶん」（может быть の略）；дома"}
+{"id":"T0208","ru":"Да, я конечно приду.","en":"Yes, of course I'll come.","ja":"うん、もちろん行くよ。","lemmas":["да","я","конечно","прийти"],"target_lemma":"конечно","difficulty":1,"kind":"sentence","note":"приду 未来"}
+{"id":"T0209","ru":"Я вообще не понимаю.","en":"I don't understand at all.","ja":"まったく分からない。","lemmas":["я","вообще","не","понимать"],"target_lemma":"вообще","difficulty":1,"kind":"sentence","note":"вообще не = 全然…ない"}
+{"id":"T0210","ru":"Я почти готов.","en":"I'm almost ready.","ja":"もうすぐ準備できる。","lemmas":["я","почти","готовый"],"target_lemma":"почти","difficulty":1,"kind":"sentence","note":"готов = 男性短語尾"}
+{"id":"T0211","ru":"Я совсем не сплю.","en":"I hardly sleep at all.","ja":"全然眠れてない。","lemmas":["я","совсем","не","спать"],"target_lemma":"совсем","difficulty":1,"kind":"sentence","note":"совсем не = 全然…ない"}
+{"id":"T0212","ru":"Ты слишком много работаешь.","en":"You work too much.","ja":"働きすぎだよ。","lemmas":["ты","слишком","много","работать"],"target_lemma":"слишком","difficulty":1,"kind":"sentence"}
+{"id":"T0213","ru":"Вдруг я всё понял.","en":"Suddenly I understood everything.","ja":"突然、全部分かった。","lemmas":["вдруг","я","всё","понять"],"target_lemma":"вдруг","difficulty":2,"kind":"sentence","note":"понял = 過去男性"}
+{"id":"T0214","ru":"Тогда я не знал.","en":"Back then I didn't know.","ja":"あの頃は知らなかった。","lemmas":["тогда","я","не","знать"],"target_lemma":"тогда","difficulty":2,"kind":"sentence","note":"знал = 過去男性"}
+{"id":"T0215","ru":"Почему ты здесь?","en":"Why are you here?","ja":"なんでここにいるの？","lemmas":["почему","ты","здесь"],"target_lemma":"почему","difficulty":1,"kind":"sentence"}
+{"id":"T0216","ru":"Зачем тебе это?","en":"What do you need this for?","ja":"それ何のため？","lemmas":["зачем","ты","это"],"target_lemma":"зачем","difficulty":1,"kind":"sentence","note":"тебе = ты の与格"}
+{"id":"T0217","ru":"Куда мы едем?","en":"Where are we going?","ja":"どこ行くの？","lemmas":["куда","мы","ехать"],"target_lemma":"куда","difficulty":1,"kind":"sentence","note":"едем = ехать（乗り物で行く）の現在"}
+{"id":"T0218","ru":"Откуда ты всё знаешь?","en":"How do you know all this?","ja":"なんで全部知ってるの？","lemmas":["откуда","ты","всё","знать"],"target_lemma":"откуда","difficulty":1,"kind":"sentence","note":"откуда = 「どこから／どうして」"}
+{"id":"T0219","ru":"Сколько это стоит?","en":"How much does this cost?","ja":"これいくら？","lemmas":["сколько","это","стоить"],"target_lemma":"сколько","difficulty":1,"kind":"sentence"}
+{"id":"T0220","ru":"Какой сегодня хороший день!","en":"What a nice day today!","ja":"今日はいい天気だな！","lemmas":["какой","сегодня","хороший","день"],"target_lemma":"какой","difficulty":1,"kind":"sentence","note":"какой + 形容詞 = 感嘆"}
+{"id":"T0221","ru":"Который сейчас час?","en":"What time is it?","ja":"今何時？","lemmas":["который","сейчас","час"],"target_lemma":"который","difficulty":2,"kind":"sentence","note":"который час = 何時（定型）"}
+{"id":"T0222","ru":"Каждый день я учу русский.","en":"Every day I study Russian.","ja":"毎日ロシア語を勉強してる。","lemmas":["каждый","день","я","учить","русский"],"target_lemma":"каждый","difficulty":2,"kind":"sentence","note":"учу = учить の現在"}
+{"id":"T0223","ru":"Приходи в любое время.","en":"Come anytime.","ja":"いつでも来てね。","lemmas":["приходить","в","любой","время"],"target_lemma":"любой","difficulty":1,"kind":"sentence","note":"приходи = 命令形；любое は время に一致"}
+{"id":"T0224","ru":"Дай мне другой.","en":"Give me a different one.","ja":"別のちょうだい。","lemmas":["дать","я","другой"],"target_lemma":"другой","difficulty":1,"kind":"sentence"}
+{"id":"T0225","ru":"Почему ты такой злой?","en":"Why are you so angry?","ja":"なんでそんなに怒ってるの？","lemmas":["почему","ты","такой","злой"],"target_lemma":"такой","difficulty":1,"kind":"sentence","note":"такой + 形容詞 = 「そんなに…」"}
+{"id":"T0226","ru":"Это какой-то новый план.","en":"It's some kind of new plan.","ja":"何か新しい計画らしい。","lemmas":["это","какой-то","новый","план"],"target_lemma":"какой-то","difficulty":2,"kind":"sentence"}
+{"id":"T0227","ru":"Тебя кто-то ждёт.","en":"Someone is waiting for you.","ja":"誰かが君を待ってる。","lemmas":["ты","кто-то","ждать"],"target_lemma":"кто-то","difficulty":1,"kind":"sentence","note":"тебя = ты の対格"}
+{"id":"T0228","ru":"Я хочу что-то сказать.","en":"I want to say something.","ja":"ちょっと言いたいことがある。","lemmas":["я","хотеть","что-то","сказать"],"target_lemma":"что-то","difficulty":1,"kind":"sentence"}
+{"id":"T0229","ru":"Мой ключ где-то здесь.","en":"My key is somewhere here.","ja":"鍵、この辺にあるはず。","lemmas":["мой","ключ","где-то","здесь"],"target_lemma":"где-то","difficulty":1,"kind":"sentence"}
+{"id":"T0230","ru":"Когда-то я здесь жил.","en":"I once lived here.","ja":"昔ここに住んでた。","lemmas":["когда-то","я","здесь","жить"],"target_lemma":"когда-то","difficulty":2,"kind":"sentence","note":"жил = 過去男性"}
+{"id":"T0231","ru":"Меня никто не понимает.","en":"Nobody understands me.","ja":"誰も僕を分かってくれない。","lemmas":["я","никто","не","понимать"],"target_lemma":"никто","difficulty":2,"kind":"sentence","note":"никто … не = 二重否定；меня"}
+{"id":"T0232","ru":"Меня ничто не держит.","en":"Nothing is keeping me here.","ja":"僕を縛るものは何もない。","lemmas":["я","ничто","не","держать"],"target_lemma":"ничто","difficulty":2,"kind":"sentence","note":"ничто = 主格の「何も…ない」（держит）"}
+{"id":"T0233","ru":"Я ничего не знаю.","en":"I don't know anything.","ja":"何も知らない。","lemmas":["я","ничего","не","знать"],"target_lemma":"ничего","difficulty":1,"kind":"sentence"}
+{"id":"T0234","ru":"Я никуда не иду.","en":"I'm not going anywhere.","ja":"どこにも行かない。","lemmas":["я","никуда","не","идти"],"target_lemma":"никуда","difficulty":1,"kind":"sentence"}
+{"id":"T0235","ru":"У меня нет никаких денег.","en":"I have no money at all.","ja":"お金なんて全然ない。","lemmas":["у","я","нет","никакой","деньги"],"target_lemma":"никакой","difficulty":2,"kind":"sentence","note":"никаких = 生格複数"}
+{"id":"T0236","ru":"Вот твой кофе.","en":"Here's your coffee.","ja":"はい、コーヒー。","lemmas":["вот","твой","кофе"],"target_lemma":"вот","difficulty":1,"kind":"sentence"}
+{"id":"T0237","ru":"Вон мой дом.","en":"There's my house over there.","ja":"あそこが僕の家。","lemmas":["вон","мой","дом"],"target_lemma":"вон","difficulty":1,"kind":"sentence","note":"вон = あそこ（指差し）"}
+{"id":"T0238","ru":"Ну, что делать?","en":"Well, what can you do?","ja":"まあ、どうしようもないね。","lemmas":["ну","что","делать"],"target_lemma":"ну","difficulty":1,"kind":"sentence","note":"ну = 間投詞"}
+{"id":"T0239","ru":"Ты ведь знаешь это.","en":"You know this, after all.","ja":"知ってるでしょ。","lemmas":["ты","ведь","знать","это"],"target_lemma":"ведь","difficulty":2,"kind":"sentence","note":"ведь = 「…でしょう」の念押し"}
+{"id":"T0240","ru":"Ну уж нет!","en":"Oh no, definitely not!","ja":"それは絶対ないわ！","lemmas":["ну","уж","нет"],"target_lemma":"уж","difficulty":2,"kind":"sentence","note":"уж = 強調の小詞"}
+{"id":"T0241","ru":"Пусть он идёт домой.","en":"Let him go home.","ja":"彼は帰らせておこう。","lemmas":["пусть","он","идти","домой"],"target_lemma":"пусть","difficulty":2,"kind":"sentence","note":"пусть + 3人称 = 「…させておけ」"}
+{"id":"T0242","ru":"Даже я не знаю.","en":"Even I don't know.","ja":"僕でさえ知らない。","lemmas":["даже","я","не","знать"],"target_lemma":"даже","difficulty":1,"kind":"sentence"}
+{"id":"T0243","ru":"Разве ты не знаешь?","en":"Don't you know, really?","ja":"え、知らないの？","lemmas":["разве","ты","не","знать"],"target_lemma":"разве","difficulty":2,"kind":"sentence","note":"разве = 意外・確認の疑問"}
+{"id":"T0244","ru":"Именно это я хочу.","en":"This is exactly what I want.","ja":"まさにそれが欲しい。","lemmas":["именно","это","я","хотеть"],"target_lemma":"именно","difficulty":1,"kind":"sentence"}
+{"id":"T0245","ru":"Я хочу лишь спать.","en":"I only want to sleep.","ja":"ただ眠りたいだけ。","lemmas":["я","хотеть","лишь","спать"],"target_lemma":"лишь","difficulty":2,"kind":"sentence","note":"лишь = только のやや文語的"}
+{"id":"T0246","ru":"Ты всё-таки пришёл!","en":"You came after all!","ja":"やっぱり来たんだ！","lemmas":["ты","всё-таки","прийти"],"target_lemma":"всё-таки","difficulty":2,"kind":"sentence","note":"пришёл = 過去男性"}
+{"id":"T0247","ru":"Он вроде хороший человек.","en":"He seems like a good person.","ja":"彼はいい人っぽい。","lemmas":["он","вроде","хороший","человек"],"target_lemma":"вроде","difficulty":2,"kind":"sentence","note":"вроде = 「…らしい」"}
+{"id":"T0248","ru":"Я не могу без тебя.","en":"I can't live without you.","ja":"君なしじゃ無理だ。","lemmas":["я","не","мочь","без","ты"],"target_lemma":"без","difficulty":1,"kind":"sentence","note":"без + 生格 → без тебя"}
+{"id":"T0249","ru":"Я приду через час.","en":"I'll come in an hour.","ja":"一時間後に行く。","lemmas":["я","прийти","через","час"],"target_lemma":"через","difficulty":1,"kind":"sentence","note":"через + 対格 = 「…後に」"}
+{"id":"T0250","ru":"После работы я иду домой.","en":"After work I go home.","ja":"仕事のあと家に帰る。","lemmas":["после","работа","я","идти","домой"],"target_lemma":"после","difficulty":1,"kind":"sentence","note":"после + 生格 → после работы"}
+{"id":"T0251","ru":"Перед сном я читаю.","en":"Before bed I read.","ja":"寝る前に読書する。","lemmas":["перед","сон","я","читать"],"target_lemma":"перед","difficulty":2,"kind":"sentence","note":"перед + 造格 → перед сном"}
+{"id":"T0252","ru":"Это между нами.","en":"This is between us.","ja":"ここだけの話ね。","lemmas":["это","между","мы"],"target_lemma":"между","difficulty":2,"kind":"sentence","note":"между + 造格 → между нами"}
+{"id":"T0253","ru":"Собака под столом.","en":"The dog is under the table.","ja":"犬が机の下にいる。","lemmas":["собака","под","стол"],"target_lemma":"под","difficulty":1,"kind":"sentence","note":"под + 造格 → под столом"}
+{"id":"T0254","ru":"Солнце над городом.","en":"The sun is above the city.","ja":"太陽が街の上にある。","lemmas":["солнце","над","город"],"target_lemma":"над","difficulty":1,"kind":"sentence","note":"над + 造格 → над городом"}
+{"id":"T0255","ru":"Я живу около метро.","en":"I live near the metro.","ja":"地下鉄の近くに住んでる。","lemmas":["я","жить","около","метро"],"target_lemma":"около","difficulty":1,"kind":"sentence","note":"около + 生格 → около метро"}
+{"id":"T0256","ru":"Ты против меня?","en":"Are you against me?","ja":"僕の敵なの？","lemmas":["ты","против","я"],"target_lemma":"против","difficulty":1,"kind":"sentence","note":"против + 生格 → против меня"}
+{"id":"T0257","ru":"Я делаю это ради тебя.","en":"I'm doing this for you.","ja":"君のためにやってるんだ。","lemmas":["я","делать","это","ради","ты"],"target_lemma":"ради","difficulty":2,"kind":"sentence","note":"ради + 生格 → ради тебя"}
+{"id":"T0258","ru":"Здесь никого нет, кроме меня.","en":"There's no one here except me.","ja":"ここには僕以外誰もいない。","lemmas":["здесь","никто","нет","кроме","я"],"target_lemma":"кроме","difficulty":2,"kind":"sentence","note":"кроме + 生格；никого 生格"}
+{"id":"T0259","ru":"Иди вместо меня.","en":"Go instead of me.","ja":"僕の代わりに行って。","lemmas":["идти","вместо","я"],"target_lemma":"вместо","difficulty":1,"kind":"sentence","note":"вместо + 生格 → вместо меня"}
+{"id":"T0260","ru":"Я здесь среди друзей.","en":"I'm here among friends.","ja":"友達に囲まれてる。","lemmas":["я","здесь","среди","друг"],"target_lemma":"среди","difficulty":2,"kind":"sentence","note":"среди + 生格複数 → среди друзей"}
+{"id":"T0261","ru":"Не говори при детях.","en":"Don't talk in front of the kids.","ja":"子供の前で言わないで。","lemmas":["не","говорить","при","ребёнок"],"target_lemma":"при","difficulty":2,"kind":"sentence","note":"при + 前置格；детях = ребёнок の複数"}
+{"id":"T0262","ru":"Расскажи про свой день.","en":"Tell me about your day.","ja":"今日どうだった？","lemmas":["рассказать","про","свой","день"],"target_lemma":"про","difficulty":1,"kind":"sentence","note":"про + 対格（口語の「…について」）"}
+{"id":"T0263","ru":"Что насчёт кофе?","en":"What about coffee?","ja":"コーヒーはどう？","lemmas":["что","насчёт","кофе"],"target_lemma":"насчёт","difficulty":2,"kind":"sentence","note":"насчёт + 生格"}
+{"id":"T0264","ru":"Я здесь благодаря тебе.","en":"I'm here thanks to you.","ja":"君のおかげでここにいる。","lemmas":["я","здесь","благодаря","ты"],"target_lemma":"благодаря","difficulty":2,"kind":"sentence","note":"благодаря + 与格 → благодаря тебе"}
+{"id":"T0265","ru":"Ну всё, пока!","en":"Alright, bye!","ja":"じゃあね、またね！","lemmas":["ну","всё","пока"],"target_lemma":"пока","difficulty":1,"kind":"sentence","note":"пока = 口語の「じゃあね」；ну всё = 「じゃあこれで」"}
+{"id":"T0266","ru":"Я не пришёл, потому что был занят.","en":"I didn't come because I was busy.","ja":"忙しくて行けなかった。","lemmas":["я","не","прийти","потому","быть","занятый"],"target_lemma":"потому","difficulty":2,"kind":"sentence","note":"потому что = 「…だから」；занят 短語尾、был 過去"}
+{"id":"T0267","ru":"Я занят, поэтому не могу.","en":"I'm busy, so I can't.","ja":"忙しいから無理。","lemmas":["я","занятый","поэтому","не","мочь"],"target_lemma":"поэтому","difficulty":2,"kind":"sentence","note":"занят = 男性短語尾"}
+{"id":"T0268","ru":"Я иду, хотя не хочу.","en":"I'm going, though I don't want to.","ja":"行きたくないけど行く。","lemmas":["я","идти","хотя","не","хотеть"],"target_lemma":"хотя","difficulty":2,"kind":"sentence"}
+{"id":"T0269","ru":"Если бы я знал!","en":"If only I'd known!","ja":"知ってたらなあ！","lemmas":["если бы","я","знать"],"target_lemma":"если бы","difficulty":3,"kind":"sentence","note":"если бы + 過去 = 反実仮想；знал"}
+{"id":"T0270","ru":"Ты говоришь, будто всё знаешь.","en":"You talk as if you know everything.","ja":"何でも知ってるみたいに言うね。","lemmas":["ты","говорить","будто","всё","знать"],"target_lemma":"будто","difficulty":2,"kind":"sentence","note":"будто = まるで…かのように"}
+{"id":"T0271","ru":"Здесь тихо, словно ночью.","en":"It's quiet here, as if at night.","ja":"夜みたいに静かだ。","lemmas":["здесь","тихо","словно","ночь"],"target_lemma":"словно","difficulty":2,"kind":"sentence","note":"словно = まるで；ночью = 造格副詞"}
+{"id":"T0272","ru":"Пока что всё хорошо.","en":"So far so good.","ja":"今のところ順調。","lemmas":["пока что","всё","хорошо"],"target_lemma":"пока что","difficulty":2,"kind":"sentence"}
+{"id":"T0273","ru":"Это правда или нет?","en":"Is it true or not?","ja":"それ本当なの？","lemmas":["это","правда","или","нет"],"target_lemma":"правда","difficulty":1,"kind":"sentence"}
+{"id":"T0274","ru":"Всё это ложь.","en":"It's all a lie.","ja":"全部嘘だ。","lemmas":["всё","это","ложь"],"target_lemma":"ложь","difficulty":1,"kind":"sentence","note":"ложь = 女性名詞"}
+{"id":"T0275","ru":"У меня есть вопрос.","en":"I have a question.","ja":"質問がある。","lemmas":["у","я","вопрос"],"target_lemma":"вопрос","difficulty":1,"kind":"sentence"}
+{"id":"T0276","ru":"Я знаю ответ.","en":"I know the answer.","ja":"答えは分かる。","lemmas":["я","знать","ответ"],"target_lemma":"ответ","difficulty":1,"kind":"sentence"}
+{"id":"T0277","ru":"Это не моя проблема.","en":"That's not my problem.","ja":"それ僕の問題じゃない。","lemmas":["это","не","мой","проблема"],"target_lemma":"проблема","difficulty":1,"kind":"sentence"}
+{"id":"T0278","ru":"Расскажи мне историю.","en":"Tell me a story.","ja":"話を聞かせて。","lemmas":["рассказать","я","история"],"target_lemma":"история","difficulty":1,"kind":"sentence","note":"историю = 対格"}
+{"id":"T0279","ru":"У меня нет сил.","en":"I have no energy.","ja":"もう力が出ない。","lemmas":["у","я","нет","сила"],"target_lemma":"сила","difficulty":2,"kind":"sentence","note":"сил = 生格複数（力が出ない）"}
+{"id":"T0280","ru":"Я на твоей стороне.","en":"I'm on your side.","ja":"僕は君の味方だ。","lemmas":["я","на","твой","сторона"],"target_lemma":"сторона","difficulty":2,"kind":"sentence","note":"на стороне = 前置格"}
+{"id":"T0281","ru":"Это ещё не конец.","en":"This isn't the end yet.","ja":"まだ終わりじゃない。","lemmas":["это","ещё","не","конец"],"target_lemma":"конец","difficulty":1,"kind":"sentence"}
+{"id":"T0282","ru":"Это только начало.","en":"This is only the beginning.","ja":"これはほんの始まりだ。","lemmas":["это","только","начало"],"target_lemma":"начало","difficulty":1,"kind":"sentence"}
+{"id":"T0283","ru":"Ты часть моей жизни.","en":"You're part of my life.","ja":"君は僕の人生の一部だ。","lemmas":["ты","часть","мой","жизнь"],"target_lemma":"часть","difficulty":2,"kind":"sentence","note":"часть 女性；моей жизни = 生格"}
+{"id":"T0284","ru":"В этом случае я согласен.","en":"In this case I agree.","ja":"その場合は賛成だ。","lemmas":["в","этот","случай","я","согласиться"],"target_lemma":"случай","difficulty":2,"kind":"sentence","note":"в этом случае；согласен 男性短語尾"}
+{"id":"T0285","ru":"Каким образом ты знаешь?","en":"How do you know that?","ja":"どうやって知ったの？","lemmas":["какой","образ","ты","знать"],"target_lemma":"образ","difficulty":2,"kind":"sentence","note":"каким образом = 造格の定型（どうやって）"}
+{"id":"T0286","ru":"Счастливого тебе пути!","en":"Have a good trip!","ja":"よい旅を！","lemmas":["счастливый","ты","путь"],"target_lemma":"путь","difficulty":2,"kind":"sentence","note":"生格の定型；путь は男性変則名詞；тебе 与格"}
+{"id":"T0287","ru":"Я помню его лицо.","en":"I remember his face.","ja":"彼の顔を覚えてる。","lemmas":["я","помнить","его","лицо"],"target_lemma":"лицо","difficulty":1,"kind":"sentence"}
+{"id":"T0288","ru":"У меня болит нога.","en":"My leg hurts.","ja":"脚が痛い。","lemmas":["у","я","болеть","нога"],"target_lemma":"нога","difficulty":2,"kind":"sentence"}
+{"id":"T0289","ru":"У меня болит палец.","en":"My finger hurts.","ja":"指が痛い。","lemmas":["у","я","болеть","палец"],"target_lemma":"палец","difficulty":2,"kind":"sentence"}
+{"id":"T0290","ru":"Ты в моём сердце.","en":"You're in my heart.","ja":"君は僕の心の中にいる。","lemmas":["ты","в","мой","сердце"],"target_lemma":"сердце","difficulty":2,"kind":"sentence","note":"в сердце = 前置格"}
+{"id":"T0291","ru":"Я люблю тебя всей душой.","en":"I love you with all my soul.","ja":"心から君を愛してる。","lemmas":["я","любить","ты","весь","душа"],"target_lemma":"душа","difficulty":2,"kind":"sentence","note":"всей душой = 造格の定型"}
+{"id":"T0292","ru":"У тебя красивый голос.","en":"You have a beautiful voice.","ja":"いい声してるね。","lemmas":["у","ты","красивый","голос"],"target_lemma":"голос","difficulty":1,"kind":"sentence"}
+{"id":"T0293","ru":"У тебя острый ум.","en":"You have a sharp mind.","ja":"君は頭が切れるね。","lemmas":["у","ты","острый","ум"],"target_lemma":"ум","difficulty":1,"kind":"sentence"}
+{"id":"T0294","ru":"У меня идёт кровь.","en":"I'm bleeding.","ja":"血が出てる。","lemmas":["у","я","идти","кровь"],"target_lemma":"кровь","difficulty":2,"kind":"sentence","note":"кровь идёт = 出血する；кровь 女性"}
+{"id":"T0295","ru":"Снег лежит на земле.","en":"Snow lies on the ground.","ja":"雪が地面に積もってる。","lemmas":["снег","лежать","на","земля"],"target_lemma":"земля","difficulty":1,"kind":"sentence","note":"на земле = 前置格"}
+{"id":"T0296","ru":"Мне нужен свежий воздух.","en":"I need fresh air.","ja":"新鮮な空気が吸いたい。","lemmas":["я","нужный","свежий","воздух"],"target_lemma":"воздух","difficulty":2,"kind":"sentence","note":"мне нужен + 男性名詞"}
+{"id":"T0297","ru":"В доме огонь!","en":"There's a fire in the house!","ja":"家が火事だ！","lemmas":["в","дом","огонь"],"target_lemma":"огонь","difficulty":1,"kind":"sentence"}
+{"id":"T0298","ru":"Включи здесь свет.","en":"Turn on the light here.","ja":"ここの電気つけて。","lemmas":["включить","здесь","свет"],"target_lemma":"свет","difficulty":1,"kind":"sentence","note":"включи = 命令形"}
+{"id":"T0299","ru":"Я слышу странный звук.","en":"I hear a strange sound.","ja":"変な音が聞こえる。","lemmas":["я","слышать","странный","звук"],"target_lemma":"звук","difficulty":1,"kind":"sentence"}
+{"id":"T0300","ru":"Я люблю свою семью.","en":"I love my family.","ja":"家族を大切にしてる。","lemmas":["я","любить","свой","семья"],"target_lemma":"семья","difficulty":1,"kind":"sentence","note":"свою семью = 対格"}
+{"id":"T0301","ru":"Здесь много народа.","en":"There are a lot of people here.","ja":"ここ人が多いね。","lemmas":["здесь","много","народ"],"target_lemma":"народ","difficulty":2,"kind":"sentence","note":"народа = 生格（人が多い）"}
+{"id":"T0302","ru":"Деньги — это власть.","en":"Money is power.","ja":"金は力だ。","lemmas":["деньги","это","власть"],"target_lemma":"власть","difficulty":1,"kind":"sentence"}
+{"id":"T0303","ru":"Это против закона.","en":"That's against the law.","ja":"それは法律違反だ。","lemmas":["это","против","закон"],"target_lemma":"закон","difficulty":2,"kind":"sentence","note":"против + 生格 → закона"}
+{"id":"T0304","ru":"Я не хочу войны.","en":"I don't want war.","ja":"戦争は嫌だ。","lemmas":["я","не","хотеть","война"],"target_lemma":"война","difficulty":2,"kind":"sentence","note":"否定 + 生格 → войны"}
+{"id":"T0305","ru":"Я звоню в полицию.","en":"I'm calling the police.","ja":"警察を呼ぶよ。","lemmas":["я","звонить","в","полиция"],"target_lemma":"полиция","difficulty":1,"kind":"sentence","note":"звоню = звонить の現在；в полицию"}
+{"id":"T0306","ru":"Это решит суд.","en":"The court will decide this.","ja":"それは裁判が決める。","lemmas":["это","решить","суд"],"target_lemma":"суд","difficulty":2,"kind":"sentence","note":"решит = решить の未来"}
+{"id":"T0307","ru":"Он сидит в тюрьме.","en":"He's in prison.","ja":"彼は服役中だ。","lemmas":["он","сидеть","в","тюрьма"],"target_lemma":"тюрьма","difficulty":2,"kind":"sentence","note":"сидит в тюрьме = 服役している"}
+{"id":"T0308","ru":"Дети идут в школу.","en":"The kids are going to school.","ja":"子供たちが学校へ行く。","lemmas":["ребёнок","идти","в","школа"],"target_lemma":"школа","difficulty":2,"kind":"sentence","note":"дети = ребёнок の複数；в школу"}
+{"id":"T0309","ru":"Мы в одном классе.","en":"We're in the same class.","ja":"僕ら同じクラスだ。","lemmas":["мы","в","один","класс"],"target_lemma":"класс","difficulty":2,"kind":"sentence","note":"в одном классе = 前置格"}
+{"id":"T0310","ru":"Я учусь в университете.","en":"I study at the university.","ja":"大学に通ってる。","lemmas":["я","учиться","в","университет"],"target_lemma":"университет","difficulty":1,"kind":"sentence","note":"учусь = учиться の現在；в университете"}
+{"id":"T0311","ru":"Это интересная книга.","en":"This is an interesting book.","ja":"これ面白い本だ。","lemmas":["это","интересный","книга"],"target_lemma":"книга","difficulty":1,"kind":"sentence"}
+{"id":"T0312","ru":"Это письмо для тебя.","en":"This letter is for you.","ja":"この手紙は君宛てだ。","lemmas":["это","письмо","для","ты"],"target_lemma":"письмо","difficulty":1,"kind":"sentence","note":"для + 生格 → для тебя"}
+{"id":"T0313","ru":"Я читаю газету утром.","en":"I read the newspaper in the morning.","ja":"朝は新聞を読む。","lemmas":["я","читать","газета","утро"],"target_lemma":"газета","difficulty":1,"kind":"sentence","note":"газету 対格；утром 副詞"}
+{"id":"T0314","ru":"Это хороший фильм.","en":"This is a good movie.","ja":"これはいい映画だ。","lemmas":["это","хороший","фильм"],"target_lemma":"фильм","difficulty":1,"kind":"sentence"}
+{"id":"T0315","ru":"Я люблю музыку.","en":"I love music.","ja":"音楽が好きだ。","lemmas":["я","любить","музыка"],"target_lemma":"музыка","difficulty":1,"kind":"sentence","note":"музыку = 対格"}
+{"id":"T0316","ru":"Пой эту песню.","en":"Sing this song.","ja":"この歌を歌って。","lemmas":["петь","этот","песня"],"target_lemma":"песня","difficulty":2,"kind":"sentence","note":"пой = петь の命令形；эту песню 対格"}
+{"id":"T0317","ru":"Это интересная игра.","en":"This is an interesting game.","ja":"面白いゲームだ。","lemmas":["это","интересный","игра"],"target_lemma":"игра","difficulty":1,"kind":"sentence"}
+{"id":"T0318","ru":"Мы одна команда.","en":"We're one team.","ja":"僕らは一つのチームだ。","lemmas":["мы","один","команда"],"target_lemma":"команда","difficulty":1,"kind":"sentence","note":"одна = 女性形"}
+{"id":"T0319","ru":"Я иду в магазин.","en":"I'm going to the store.","ja":"店に行ってくる。","lemmas":["я","идти","в","магазин"],"target_lemma":"магазин","difficulty":1,"kind":"sentence"}
+{"id":"T0320","ru":"Пойдём в ресторан.","en":"Let's go to a restaurant.","ja":"レストラン行こう。","lemmas":["пойти","в","ресторан"],"target_lemma":"ресторан","difficulty":1,"kind":"sentence"}
+{"id":"T0321","ru":"Я работаю в офисе.","en":"I work in an office.","ja":"オフィスで働いてる。","lemmas":["я","работать","в","офис"],"target_lemma":"офис","difficulty":1,"kind":"sentence"}
+{"id":"T0322","ru":"Мне нужно в банк.","en":"I need to go to the bank.","ja":"銀行に行かなきゃ。","lemmas":["я","нужно","в","банк"],"target_lemma":"банк","difficulty":1,"kind":"sentence"}
+{"id":"T0323","ru":"Он сейчас в больнице.","en":"He's in the hospital now.","ja":"彼は今入院してる。","lemmas":["он","сейчас","в","больница"],"target_lemma":"больница","difficulty":1,"kind":"sentence","note":"в больнице = 前置格"}
+{"id":"T0324","ru":"Где здесь станция?","en":"Where's the station here?","ja":"駅はどこ？","lemmas":["где","здесь","станция"],"target_lemma":"станция","difficulty":1,"kind":"sentence"}
+{"id":"T0325","ru":"Поезд уже здесь.","en":"The train is already here.","ja":"電車もう来てる。","lemmas":["поезд","уже","здесь"],"target_lemma":"поезд","difficulty":1,"kind":"sentence"}
+{"id":"T0326","ru":"Мой самолёт утром.","en":"My flight is in the morning.","ja":"飛行機は朝だ。","lemmas":["мой","самолёт","утро"],"target_lemma":"самолёт","difficulty":1,"kind":"sentence","note":"утром = 造格副詞"}
+{"id":"T0327","ru":"Это большой корабль.","en":"This is a big ship.","ja":"大きい船だ。","lemmas":["это","большой","корабль"],"target_lemma":"корабль","difficulty":1,"kind":"sentence","note":"корабль = 男性名詞"}
+{"id":"T0328","ru":"Я знаю эту дорогу.","en":"I know this road.","ja":"この道は知ってる。","lemmas":["я","знать","этот","дорога"],"target_lemma":"дорога","difficulty":1,"kind":"sentence","note":"эту дорогу = 対格"}
+{"id":"T0329","ru":"Я хочу на море.","en":"I want to go to the sea.","ja":"海に行きたい。","lemmas":["я","хотеть","на","море"],"target_lemma":"море","difficulty":1,"kind":"sentence","note":"на море = 海へ"}
+{"id":"T0330","ru":"Здесь красивая река.","en":"There's a beautiful river here.","ja":"ここ、川がきれいだ。","lemmas":["здесь","красивый","река"],"target_lemma":"река","difficulty":1,"kind":"sentence"}
+{"id":"T0331","ru":"Мы идём в лес.","en":"We're going into the forest.","ja":"森に入るよ。","lemmas":["мы","идти","в","лес"],"target_lemma":"лес","difficulty":1,"kind":"sentence"}
+{"id":"T0332","ru":"Там высокая гора.","en":"There's a tall mountain there.","ja":"あそこに高い山がある。","lemmas":["там","высокий","гора"],"target_lemma":"гора","difficulty":1,"kind":"sentence"}
+{"id":"T0333","ru":"Я люблю солнце.","en":"I love the sun.","ja":"太陽が好きだ。","lemmas":["я","любить","солнце"],"target_lemma":"солнце","difficulty":1,"kind":"sentence"}
+{"id":"T0334","ru":"Луна сегодня большая.","en":"The moon is big tonight.","ja":"今夜は月が大きい。","lemmas":["луна","сегодня","большой"],"target_lemma":"луна","difficulty":1,"kind":"sentence"}
+{"id":"T0335","ru":"Я вижу звезду.","en":"I see a star.","ja":"星が見える。","lemmas":["я","видеть","звезда"],"target_lemma":"звезда","difficulty":1,"kind":"sentence","note":"звезду = 対格"}
+{"id":"T0336","ru":"Небо сегодня чистое.","en":"The sky is clear today.","ja":"今日は空が澄んでる。","lemmas":["небо","сегодня","чистый"],"target_lemma":"небо","difficulty":1,"kind":"sentence","note":"чистое = 中性形"}
+{"id":"T0337","ru":"На улице идёт снег.","en":"It's snowing outside.","ja":"外は雪だ。","lemmas":["на","улица","идти","снег"],"target_lemma":"снег","difficulty":1,"kind":"sentence","note":"снег идёт = 雪が降る"}
+{"id":"T0338","ru":"Идёт сильный дождь.","en":"It's raining hard.","ja":"雨が強い。","lemmas":["идти","сильный","дождь"],"target_lemma":"дождь","difficulty":1,"kind":"sentence"}
+{"id":"T0339","ru":"На улице сильный ветер.","en":"It's very windy outside.","ja":"外は風が強い。","lemmas":["на","улица","сильный","ветер"],"target_lemma":"ветер","difficulty":1,"kind":"sentence"}
+{"id":"T0340","ru":"Мой дом с правой стороны.","en":"My house is on the right side.","ja":"うちは右側だ。","lemmas":["мой","дом","с","правый","сторона"],"target_lemma":"правый","difficulty":2,"kind":"sentence","note":"с правой стороны = 生格の定型"}
+{"id":"T0341","ru":"Магазин с левой стороны.","en":"The shop is on the left.","ja":"店は左側だ。","lemmas":["магазин","с","левый","сторона"],"target_lemma":"левый","difficulty":2,"kind":"sentence","note":"с левой стороны"}
+{"id":"T0342","ru":"Это главный вопрос.","en":"This is the main question.","ja":"これが一番大事な問題だ。","lemmas":["это","главный","вопрос"],"target_lemma":"главный","difficulty":1,"kind":"sentence"}
+{"id":"T0343","ru":"Это мой последний день.","en":"It's my last day.","ja":"今日が最後の日だ。","lemmas":["это","мой","последний","день"],"target_lemma":"последний","difficulty":1,"kind":"sentence"}
+{"id":"T0344","ru":"Мне на следующей станции.","en":"I get off at the next station.","ja":"次の駅で降りる。","lemmas":["я","на","следующий","станция"],"target_lemma":"следующий","difficulty":2,"kind":"sentence","note":"на следующей станции = 前置格"}
+{"id":"T0345","ru":"Это ранний поезд.","en":"This is an early train.","ja":"これは早い電車だ。","lemmas":["это","ранний","поезд"],"target_lemma":"ранний","difficulty":1,"kind":"sentence"}
+{"id":"T0346","ru":"Уже поздний час.","en":"It's already a late hour.","ja":"もう遅い時間だ。","lemmas":["уже","поздний","час"],"target_lemma":"поздний","difficulty":1,"kind":"sentence"}
+{"id":"T0347","ru":"Это очень важный день.","en":"This is a very important day.","ja":"すごく大事な日だ。","lemmas":["это","очень","важный","день"],"target_lemma":"важный","difficulty":1,"kind":"sentence"}
+{"id":"T0348","ru":"Это нужный документ.","en":"This is a needed document.","ja":"これは必要な書類だ。","lemmas":["это","нужный","документ"],"target_lemma":"нужный","difficulty":1,"kind":"sentence"}
+{"id":"T0349","ru":"Это возможный ответ.","en":"This is a possible answer.","ja":"これはあり得る答えだ。","lemmas":["это","возможный","ответ"],"target_lemma":"возможный","difficulty":1,"kind":"sentence"}
+{"id":"T0350","ru":"Это невозможный план.","en":"This is an impossible plan.","ja":"これは無理な計画だ。","lemmas":["это","невозможный","план"],"target_lemma":"невозможный","difficulty":1,"kind":"sentence"}
+{"id":"T0351","ru":"Ты мой настоящий друг.","en":"You're a true friend.","ja":"君は本当の友達だ。","lemmas":["ты","мой","настоящий","друг"],"target_lemma":"настоящий","difficulty":1,"kind":"sentence"}
+{"id":"T0352","ru":"Ты сильный человек.","en":"You're a strong person.","ja":"君は強い人だ。","lemmas":["ты","сильный","человек"],"target_lemma":"сильный","difficulty":1,"kind":"sentence"}
+{"id":"T0353","ru":"У меня слабое сердце.","en":"I have a weak heart.","ja":"僕は心臓が弱い。","lemmas":["у","я","слабый","сердце"],"target_lemma":"слабый","difficulty":1,"kind":"sentence","note":"слабое = 中性形"}
+{"id":"T0354","ru":"Какой красивый город!","en":"What a beautiful city!","ja":"なんてきれいな街！","lemmas":["какой","красивый","город"],"target_lemma":"красивый","difficulty":1,"kind":"sentence"}
+{"id":"T0355","ru":"Это страшный фильм.","en":"This is a scary movie.","ja":"これ怖い映画だ。","lemmas":["это","страшный","фильм"],"target_lemma":"страшный","difficulty":1,"kind":"sentence"}
+{"id":"T0356","ru":"Ты очень смешной.","en":"You're very funny.","ja":"君ほんと面白いね。","lemmas":["ты","очень","смешной"],"target_lemma":"смешной","difficulty":1,"kind":"sentence"}
+{"id":"T0357","ru":"Это трудный вопрос.","en":"This is a difficult question.","ja":"難しい質問だ。","lemmas":["это","трудный","вопрос"],"target_lemma":"трудный","difficulty":1,"kind":"sentence"}
+{"id":"T0358","ru":"Это лёгкий вопрос.","en":"This is an easy question.","ja":"簡単な質問だ。","lemmas":["это","лёгкий","вопрос"],"target_lemma":"лёгкий","difficulty":1,"kind":"sentence"}
+{"id":"T0359","ru":"У тебя быстрая машина.","en":"You have a fast car.","ja":"君の車、速いね。","lemmas":["у","ты","быстрый","машина"],"target_lemma":"быстрый","difficulty":1,"kind":"sentence","note":"быстрая = 女性形"}
+{"id":"T0360","ru":"Это медленный поезд.","en":"This is a slow train.","ja":"これは遅い電車だ。","lemmas":["это","медленный","поезд"],"target_lemma":"медленный","difficulty":1,"kind":"sentence"}
+{"id":"T0361","ru":"Это очень дорогой ресторан.","en":"This is a very expensive restaurant.","ja":"すごく高いレストランだ。","lemmas":["это","очень","дорогой","ресторан"],"target_lemma":"дорогой","difficulty":1,"kind":"sentence"}
+{"id":"T0362","ru":"Это дешёвый телефон.","en":"This is a cheap phone.","ja":"これは安い電話だ。","lemmas":["это","дешёвый","телефон"],"target_lemma":"дешёвый","difficulty":1,"kind":"sentence"}
+{"id":"T0363","ru":"У меня чёрная машина.","en":"I have a black car.","ja":"僕の車は黒だ。","lemmas":["у","я","чёрный","машина"],"target_lemma":"чёрный","difficulty":1,"kind":"sentence","note":"чёрная = 女性形"}
+{"id":"T0364","ru":"Это белый дом.","en":"This is a white house.","ja":"これは白い家だ。","lemmas":["это","белый","дом"],"target_lemma":"белый","difficulty":1,"kind":"sentence"}
+{"id":"T0365","ru":"Это красное вино.","en":"This is red wine.","ja":"これは赤ワインだ。","lemmas":["это","красный","вино"],"target_lemma":"красный","difficulty":1,"kind":"sentence","note":"красное = 中性形"}
+{"id":"T0366","ru":"У меня синяя машина.","en":"I have a blue car.","ja":"僕の車は青だ。","lemmas":["у","я","синий","машина"],"target_lemma":"синий","difficulty":1,"kind":"sentence","note":"синяя = 女性形"}
+{"id":"T0367","ru":"Свет зелёный, идём.","en":"The light's green, let's go.","ja":"青になった、行こう。","lemmas":["свет","зелёный","идти"],"target_lemma":"зелёный","difficulty":1,"kind":"sentence"}
+{"id":"T0368","ru":"Это жёлтый дом.","en":"This is a yellow house.","ja":"これは黄色い家だ。","lemmas":["это","жёлтый","дом"],"target_lemma":"жёлтый","difficulty":1,"kind":"sentence"}
+{"id":"T0369","ru":"Твой кофе готов.","en":"Your coffee's ready.","ja":"コーヒーできたよ。","lemmas":["твой","кофе","готовый"],"target_lemma":"готовый","difficulty":1,"kind":"sentence","note":"готов = 男性短語尾"}
+{"id":"T0370","ru":"Он ещё живой.","en":"He's still alive.","ja":"彼はまだ生きてる。","lemmas":["он","ещё","живой"],"target_lemma":"живой","difficulty":1,"kind":"sentence"}
+{"id":"T0371","ru":"Мой телефон мёртвый.","en":"My phone is dead.","ja":"電話の電池が切れた。","lemmas":["мой","телефон","мёртвый"],"target_lemma":"мёртвый","difficulty":1,"kind":"sentence"}
+{"id":"T0372","ru":"Магазин полный людей.","en":"The store is full of people.","ja":"店は人でいっぱいだ。","lemmas":["магазин","полный","человек"],"target_lemma":"полный","difficulty":2,"kind":"sentence","note":"полный + 生格複数 → людей"}
+{"id":"T0373","ru":"Дом сейчас пустой.","en":"The house is empty now.","ja":"今、家は空っぽだ。","lemmas":["дом","сейчас","пустой"],"target_lemma":"пустой","difficulty":1,"kind":"sentence"}
+{"id":"T0374","ru":"Я плохо говорю по-русски.","en":"I speak Russian badly.","ja":"ロシア語まだ下手なんだ。","lemmas":["я","плохо","говорить","русский"],"target_lemma":"русский","difficulty":1,"kind":"sentence","note":"по-русски = русский の副詞形"}
+{"id":"T0375","ru":"Ты говоришь по-английски?","en":"Do you speak English?","ja":"英語話せる？","lemmas":["ты","говорить","английский"],"target_lemma":"английский","difficulty":1,"kind":"sentence","note":"по-английски = 副詞形"}
+{"id":"T0376","ru":"Это верный ответ.","en":"This is the correct answer.","ja":"これが正しい答えだ。","lemmas":["это","верный","ответ"],"target_lemma":"верный","difficulty":1,"kind":"sentence"}
+{"id":"T0377","ru":"Это нормальный день.","en":"It's a normal day.","ja":"普通の一日だ。","lemmas":["это","нормальный","день"],"target_lemma":"нормальный","difficulty":1,"kind":"sentence"}
+{"id":"T0378","ru":"Ты сегодня странный.","en":"You're strange today.","ja":"今日の君、変だよ。","lemmas":["ты","сегодня","странный"],"target_lemma":"странный","difficulty":1,"kind":"sentence"}
+{"id":"T0379","ru":"Это интересный вопрос.","en":"This is an interesting question.","ja":"面白い質問だね。","lemmas":["это","интересный","вопрос"],"target_lemma":"интересный","difficulty":1,"kind":"sentence"}
+{"id":"T0380","ru":"Я очень счастливый человек.","en":"I'm a very happy person.","ja":"僕はとても幸せな人間だ。","lemmas":["я","очень","счастливый","человек"],"target_lemma":"счастливый","difficulty":1,"kind":"sentence"}
+{"id":"T0381","ru":"Почему ты такой грустный?","en":"Why are you so sad?","ja":"なんでそんなに落ち込んでるの？","lemmas":["почему","ты","такой","грустный"],"target_lemma":"грустный","difficulty":1,"kind":"sentence"}
+{"id":"T0382","ru":"Он сегодня очень злой.","en":"He's very angry today.","ja":"彼、今日すごく機嫌悪い。","lemmas":["он","сегодня","очень","злой"],"target_lemma":"злой","difficulty":1,"kind":"sentence"}
+{"id":"T0383","ru":"Ты такой милый.","en":"You're so sweet.","ja":"君って優しいね。","lemmas":["ты","такой","милый"],"target_lemma":"милый","difficulty":1,"kind":"sentence"}
+{"id":"T0384","ru":"Ты очень умный.","en":"You're very smart.","ja":"君は頭がいい。","lemmas":["ты","очень","умный"],"target_lemma":"умный","difficulty":1,"kind":"sentence"}
+{"id":"T0385","ru":"Это глупый вопрос.","en":"This is a stupid question.","ja":"バカな質問だな。","lemmas":["это","глупый","вопрос"],"target_lemma":"глупый","difficulty":1,"kind":"sentence"}
+{"id":"T0386","ru":"Он опять пьяный.","en":"He's drunk again.","ja":"彼、また酔ってる。","lemmas":["он","опять","пьяный"],"target_lemma":"пьяный","difficulty":1,"kind":"sentence"}
+{"id":"T0387","ru":"Ребёнок сегодня больной.","en":"The child is sick today.","ja":"子供が今日は具合悪い。","lemmas":["ребёнок","сегодня","больной"],"target_lemma":"больной","difficulty":1,"kind":"sentence"}
+{"id":"T0388","ru":"Я сильный и здоровый.","en":"I'm strong and healthy.","ja":"僕は元気で健康だ。","lemmas":["я","сильный","и","здоровый"],"target_lemma":"здоровый","difficulty":1,"kind":"sentence"}
+{"id":"T0389","ru":"Я сейчас очень занят.","en":"I'm very busy now.","ja":"今すごく忙しい。","lemmas":["я","сейчас","очень","занятый"],"target_lemma":"занятый","difficulty":2,"kind":"sentence","note":"занят = 男性短語尾"}
+{"id":"T0390","ru":"Ты сейчас свободен?","en":"Are you free now?","ja":"今、時間ある？","lemmas":["ты","сейчас","свободный"],"target_lemma":"свободный","difficulty":2,"kind":"sentence","note":"свободен = 男性短語尾"}
+{"id":"T0391","ru":"Магазин ещё открыт?","en":"Is the shop still open?","ja":"店まだ開いてる？","lemmas":["магазин","ещё","открытый"],"target_lemma":"открытый","difficulty":2,"kind":"sentence","note":"открыт = 男性短語尾"}
+{"id":"T0392","ru":"Магазин уже закрыт.","en":"The shop is already closed.","ja":"店はもう閉まってる。","lemmas":["магазин","уже","закрытый"],"target_lemma":"закрытый","difficulty":2,"kind":"sentence","note":"закрыт = 男性短語尾"}
+{"id":"T0393","ru":"Это серьёзный вопрос.","en":"This is a serious question.","ja":"これは真剣な話だ。","lemmas":["это","серьёзный","вопрос"],"target_lemma":"серьёзный","difficulty":1,"kind":"sentence"}
+{"id":"T0394","ru":"Это мой личный вопрос.","en":"This is a personal matter.","ja":"これは個人的なことだ。","lemmas":["это","мой","личный","вопрос"],"target_lemma":"личный","difficulty":1,"kind":"sentence"}
+{"id":"T0395","ru":"У нас общий друг.","en":"We have a mutual friend.","ja":"共通の友達がいる。","lemmas":["у","мы","общий","друг"],"target_lemma":"общий","difficulty":1,"kind":"sentence"}
+{"id":"T0396","ru":"Я спал целый день.","en":"I slept the whole day.","ja":"一日中寝てた。","lemmas":["я","спать","целый","день"],"target_lemma":"целый","difficulty":2,"kind":"sentence","note":"спал = 過去男性"}
+{"id":"T0397","ru":"Я вернусь через час.","en":"I'll be back in an hour.","ja":"一時間で戻る。","lemmas":["я","вернуться","через","час"],"target_lemma":"вернуться","difficulty":1,"kind":"sentence","note":"вернусь = 未来完了体；через + 対格"}
+{"id":"T0398","ru":"Я не хочу возвращаться.","en":"I don't want to go back.","ja":"戻りたくない。","lemmas":["я","не","хотеть","возвращаться"],"target_lemma":"возвращаться","difficulty":1,"kind":"sentence"}
+{"id":"T0399","ru":"Можешь мне помочь?","en":"Can you help me?","ja":"手伝ってくれる？","lemmas":["мочь","я","помочь"],"target_lemma":"помочь","difficulty":1,"kind":"sentence","note":"мне = я の与格"}
+{"id":"T0400","ru":"Я всегда тебе помогаю.","en":"I always help you.","ja":"いつも手伝ってるでしょ。","lemmas":["я","всегда","ты","помогать"],"target_lemma":"помогать","difficulty":1,"kind":"sentence","note":"тебе = 与格；помогаю"}
+{"id":"T0401","ru":"Держи мою руку.","en":"Hold my hand.","ja":"手をつかんで。","lemmas":["держать","мой","рука"],"target_lemma":"держать","difficulty":1,"kind":"sentence","note":"держи = 命令形；руку 対格"}
+{"id":"T0402","ru":"Ты меня слышишь?","en":"Can you hear me?","ja":"聞こえてる？","lemmas":["ты","я","слышать"],"target_lemma":"слышать","difficulty":1,"kind":"sentence","note":"меня = я の対格"}
+{"id":"T0403","ru":"Я слушаю музыку.","en":"I'm listening to music.","ja":"音楽を聴いてる。","lemmas":["я","слушать","музыка"],"target_lemma":"слушать","difficulty":1,"kind":"sentence","note":"музыку 対格"}
+{"id":"T0404","ru":"Ты меня помнишь?","en":"Do you remember me?","ja":"僕のこと覚えてる？","lemmas":["ты","я","помнить"],"target_lemma":"помнить","difficulty":1,"kind":"sentence","note":"меня 対格"}
+{"id":"T0405","ru":"Я забыл твоё имя.","en":"I forgot your name.","ja":"名前を忘れちゃった。","lemmas":["я","забыть","твой","имя"],"target_lemma":"забыть","difficulty":2,"kind":"sentence","note":"забыл 過去男性；твоё"}
+{"id":"T0406","ru":"Я всегда всё забываю.","en":"I always forget everything.","ja":"いつも全部忘れる。","lemmas":["я","всегда","всё","забывать"],"target_lemma":"забывать","difficulty":1,"kind":"sentence"}
+{"id":"T0407","ru":"Я читаю каждый день.","en":"I read every day.","ja":"毎日読書してる。","lemmas":["я","читать","каждый","день"],"target_lemma":"читать","difficulty":1,"kind":"sentence"}
+{"id":"T0408","ru":"Я пишу тебе письмо.","en":"I'm writing you a letter.","ja":"君に手紙を書いてる。","lemmas":["я","писать","ты","письмо"],"target_lemma":"писать","difficulty":1,"kind":"sentence","note":"тебе = 与格"}
+{"id":"T0409","ru":"Дети играют на улице.","en":"The kids are playing outside.","ja":"子供たちが外で遊んでる。","lemmas":["ребёнок","играть","на","улица"],"target_lemma":"играть","difficulty":2,"kind":"sentence","note":"дети играют；на улице 前置格"}
+{"id":"T0410","ru":"Я хочу есть.","en":"I'm hungry.","ja":"お腹すいた。","lemmas":["я","хотеть","есть"],"target_lemma":"есть","difficulty":1,"kind":"sentence","note":"хочу есть = 空腹の定型"}
+{"id":"T0411","ru":"Ты будешь пить кофе?","en":"Will you drink coffee?","ja":"コーヒー飲む？","lemmas":["ты","быть","пить","кофе"],"target_lemma":"пить","difficulty":1,"kind":"sentence","note":"будешь пить = 未来"}
+{"id":"T0412","ru":"Я хочу спать.","en":"I want to sleep.","ja":"眠い。","lemmas":["я","хотеть","спать"],"target_lemma":"спать","difficulty":1,"kind":"sentence"}
+{"id":"T0413","ru":"Я проснулся утром.","en":"I woke up in the morning.","ja":"朝に目が覚めた。","lemmas":["я","проснуться","утро"],"target_lemma":"проснуться","difficulty":2,"kind":"sentence","note":"проснулся 過去；утром 副詞"}
+{"id":"T0414","ru":"Ты хочешь меня убить?","en":"Do you want to kill me?","ja":"僕を殺す気か？","lemmas":["ты","хотеть","я","убить"],"target_lemma":"убить","difficulty":1,"kind":"sentence","note":"меня 対格"}
+{"id":"T0415","ru":"Я не могу убивать.","en":"I can't kill.","ja":"人は殺せない。","lemmas":["я","не","мочь","убивать"],"target_lemma":"убивать","difficulty":1,"kind":"sentence"}
+{"id":"T0416","ru":"Я не хочу умереть.","en":"I don't want to die.","ja":"死にたくない。","lemmas":["я","не","хотеть","умереть"],"target_lemma":"умереть","difficulty":1,"kind":"sentence"}
+{"id":"T0417","ru":"Люди умирают на войне.","en":"People die in war.","ja":"戦争で人が死ぬ。","lemmas":["человек","умирать","на","война"],"target_lemma":"умирать","difficulty":2,"kind":"sentence","note":"люди = человек の複数；на войне"}
+{"id":"T0418","ru":"Я родился здесь.","en":"I was born here.","ja":"僕はここで生まれた。","lemmas":["я","родиться","здесь"],"target_lemma":"родиться","difficulty":2,"kind":"sentence","note":"родился 過去男性"}
+{"id":"T0419","ru":"Я плачу за кофе.","en":"I'm paying for the coffee.","ja":"コーヒー代は僕が出す。","lemmas":["я","платить","за","кофе"],"target_lemma":"платить","difficulty":2,"kind":"sentence","note":"плачу = платить の現在；за + 対格"}
+{"id":"T0420","ru":"Я хочу купить телефон.","en":"I want to buy a phone.","ja":"電話を買いたい。","lemmas":["я","хотеть","купить","телефон"],"target_lemma":"купить","difficulty":1,"kind":"sentence"}
+{"id":"T0421","ru":"Я покупаю хлеб здесь.","en":"I buy bread here.","ja":"パンはここで買う。","lemmas":["я","покупать","хлеб","здесь"],"target_lemma":"покупать","difficulty":1,"kind":"sentence"}
+{"id":"T0422","ru":"Я хочу продать машину.","en":"I want to sell my car.","ja":"車を売りたい。","lemmas":["я","хотеть","продать","машина"],"target_lemma":"продать","difficulty":1,"kind":"sentence"}
+{"id":"T0423","ru":"Здесь продают кофе.","en":"They sell coffee here.","ja":"ここでコーヒー売ってる。","lemmas":["здесь","продавать","кофе"],"target_lemma":"продавать","difficulty":2,"kind":"sentence","note":"продают = 不定人称（誰かが売っている）"}
+{"id":"T0424","ru":"Можно открыть окно?","en":"Can I open the window?","ja":"窓開けていい？","lemmas":["можно","открыть","окно"],"target_lemma":"открыть","difficulty":1,"kind":"sentence"}
+{"id":"T0425","ru":"Не открывай дверь.","en":"Don't open the door.","ja":"ドア開けないで。","lemmas":["не","открывать","дверь"],"target_lemma":"открывать","difficulty":1,"kind":"sentence","note":"открывай = 命令形"}
+{"id":"T0426","ru":"Можно закрыть дверь?","en":"Can I close the door?","ja":"ドア閉めていい？","lemmas":["можно","закрыть","дверь"],"target_lemma":"закрыть","difficulty":1,"kind":"sentence"}
+{"id":"T0427","ru":"Не закрывай окно.","en":"Don't close the window.","ja":"窓閉めないで。","lemmas":["не","закрывать","окно"],"target_lemma":"закрывать","difficulty":1,"kind":"sentence","note":"закрывай = 命令形"}
+{"id":"T0428","ru":"Я хочу начать сейчас.","en":"I want to start now.","ja":"今すぐ始めたい。","lemmas":["я","хотеть","начать","сейчас"],"target_lemma":"начать","difficulty":1,"kind":"sentence"}
+{"id":"T0429","ru":"Я начинаю новую работу.","en":"I'm starting a new job.","ja":"新しい仕事を始める。","lemmas":["я","начинать","новый","работа"],"target_lemma":"начинать","difficulty":1,"kind":"sentence","note":"новую работу 対格"}
+{"id":"T0430","ru":"Я хочу закончить работу.","en":"I want to finish the work.","ja":"仕事を終わらせたい。","lemmas":["я","хотеть","закончить","работа"],"target_lemma":"закончить","difficulty":1,"kind":"sentence"}
+{"id":"T0431","ru":"Я скоро кончу работу.","en":"I'll finish work soon.","ja":"もうすぐ仕事終わる。","lemmas":["я","скоро","кончить","работа"],"target_lemma":"кончить","difficulty":2,"kind":"sentence","note":"кончу = кончить の未来（口語）"}
+{"id":"T0432","ru":"Продолжай, я слушаю.","en":"Go on, I'm listening.","ja":"続けて、聞いてるよ。","lemmas":["продолжать","я","слушать"],"target_lemma":"продолжать","difficulty":1,"kind":"sentence","note":"продолжай = 命令形"}
+{"id":"T0433","ru":"Останови машину здесь.","en":"Stop the car here.","ja":"ここで車停めて。","lemmas":["остановить","машина","здесь"],"target_lemma":"остановить","difficulty":1,"kind":"sentence","note":"останови = 命令形（タクシーで）"}
+{"id":"T0434","ru":"Мы остановились здесь.","en":"We stopped here.","ja":"ここで止まった。","lemmas":["мы","остановиться","здесь"],"target_lemma":"остановиться","difficulty":2,"kind":"sentence","note":"остановились 過去複数"}
+{"id":"T0435","ru":"Поставь кофе на стол.","en":"Put the coffee on the table.","ja":"コーヒー机に置いて。","lemmas":["поставить","кофе","на","стол"],"target_lemma":"поставить","difficulty":1,"kind":"sentence","note":"поставь = 命令形"}
+{"id":"T0436","ru":"Куда ставить машину?","en":"Where do I park the car?","ja":"車どこに停める？","lemmas":["куда","ставить","машина"],"target_lemma":"ставить","difficulty":1,"kind":"sentence"}
+{"id":"T0437","ru":"Положи телефон на стол.","en":"Put the phone on the table.","ja":"電話を机に置いて。","lemmas":["положить","телефон","на","стол"],"target_lemma":"положить","difficulty":1,"kind":"sentence","note":"положи = 命令形"}
+{"id":"T0438","ru":"Куда класть ключи?","en":"Where do I put the keys?","ja":"鍵どこに置く？","lemmas":["куда","класть","ключ"],"target_lemma":"класть","difficulty":2,"kind":"sentence","note":"ключи 複数対格"}
+{"id":"T0439","ru":"Я несу твою сумку.","en":"I'm carrying your bag.","ja":"君のカバン持つよ。","lemmas":["я","нести","твой","сумка"],"target_lemma":"нести","difficulty":2,"kind":"sentence","note":"несу = 一方向の運搬"}
+{"id":"T0440","ru":"Принеси мне воды.","en":"Bring me some water.","ja":"水持ってきて。","lemmas":["принести","я","вода"],"target_lemma":"принести","difficulty":1,"kind":"sentence","note":"принеси 命令形；мне；воды 部分生格"}
+{"id":"T0441","ru":"Я ношу очки.","en":"I wear glasses.","ja":"眼鏡かけてる。","lemmas":["я","носить","очки"],"target_lemma":"носить","difficulty":2,"kind":"sentence","note":"ношу = 習慣的「身につける」；очки 複数"}
+{"id":"T0442","ru":"Куда ведёт эта дорога?","en":"Where does this road lead?","ja":"この道どこに続くの？","lemmas":["куда","вести","этот","дорога"],"target_lemma":"вести","difficulty":2,"kind":"sentence","note":"ведёт；эта дорога"}
+{"id":"T0443","ru":"Я везу тебя домой.","en":"I'm driving you home.","ja":"家まで送るよ。","lemmas":["я","везти","ты","домой"],"target_lemma":"везти","difficulty":2,"kind":"sentence","note":"везу = 乗り物で運ぶ；тебя"}
+{"id":"T0444","ru":"Я еду на работу.","en":"I'm going to work.","ja":"仕事に向かってる（乗り物で）。","lemmas":["я","ехать","на","работа"],"target_lemma":"ехать","difficulty":1,"kind":"sentence","note":"еду = 乗り物で行く；на работу"}
+{"id":"T0445","ru":"Я езжу на метро.","en":"I travel by metro.","ja":"地下鉄で通ってる。","lemmas":["я","ездить","на","метро"],"target_lemma":"ездить","difficulty":2,"kind":"sentence","note":"езжу = 習慣的な移動；на метро"}
+{"id":"T0446","ru":"Завтра я лечу домой.","en":"Tomorrow I'm flying home.","ja":"明日、飛行機で帰る。","lemmas":["завтра","я","лететь","домой"],"target_lemma":"лететь","difficulty":2,"kind":"sentence","note":"лечу = лететь の現在"}
+{"id":"T0447","ru":"Куда ты бежишь?","en":"Where are you running?","ja":"どこ走ってくの？","lemmas":["куда","ты","бежать"],"target_lemma":"бежать","difficulty":2,"kind":"sentence","note":"бежишь = 一方向"}
+{"id":"T0448","ru":"Я хожу в университет.","en":"I go to the university.","ja":"大学に通ってる。","lemmas":["я","ходить","в","университет"],"target_lemma":"ходить","difficulty":2,"kind":"sentence","note":"хожу = 習慣的に通う"}
+{"id":"T0449","ru":"Снег падает на землю.","en":"Snow is falling to the ground.","ja":"雪が地面に降ってくる。","lemmas":["снег","падать","на","земля"],"target_lemma":"падать","difficulty":1,"kind":"sentence","note":"на землю 対格"}
+{"id":"T0450","ru":"Ты можешь упасть.","en":"You could fall.","ja":"転ぶかもよ。","lemmas":["ты","мочь","упасть"],"target_lemma":"упасть","difficulty":1,"kind":"sentence"}
+{"id":"T0451","ru":"Подними правую руку.","en":"Raise your right hand.","ja":"右手を挙げて。","lemmas":["поднять","правый","рука"],"target_lemma":"поднять","difficulty":1,"kind":"sentence","note":"подними 命令形；правую руку 対格"}
+{"id":"T0452","ru":"Не поднимай это.","en":"Don't lift that.","ja":"それ持ち上げないで。","lemmas":["не","поднимать","это"],"target_lemma":"поднимать","difficulty":1,"kind":"sentence","note":"поднимай 命令形"}
+{"id":"T0453","ru":"Покажи мне дорогу.","en":"Show me the way.","ja":"道を教えて。","lemmas":["показать","я","дорога"],"target_lemma":"показать","difficulty":1,"kind":"sentence","note":"покажи 命令形；мне"}
+{"id":"T0454","ru":"Я показываю тебе город.","en":"I'm showing you the city.","ja":"街を案内してるよ。","lemmas":["я","показывать","ты","город"],"target_lemma":"показывать","difficulty":1,"kind":"sentence","note":"тебе = 与格"}
+{"id":"T0455","ru":"У меня не получится.","en":"It won't work out for me.","ja":"僕には無理そう。","lemmas":["у","я","не","получиться"],"target_lemma":"получиться","difficulty":2,"kind":"sentence","note":"получится；у меня"}
+{"id":"T0456","ru":"Что у тебя случилось?","en":"What happened to you?","ja":"何かあったの？","lemmas":["что","у","ты","случиться"],"target_lemma":"случиться","difficulty":1,"kind":"sentence","note":"случилось 過去中性；у тебя"}
+{"id":"T0457","ru":"Что здесь происходит?","en":"What's going on here?","ja":"ここで何が起きてる？","lemmas":["что","здесь","происходить"],"target_lemma":"происходить","difficulty":1,"kind":"sentence"}
+{"id":"T0458","ru":"Что это значит?","en":"What does this mean?","ja":"これどういう意味？","lemmas":["что","это","значить"],"target_lemma":"значить","difficulty":1,"kind":"sentence"}
+{"id":"T0459","ru":"Я считаю деньги.","en":"I'm counting money.","ja":"お金を数えてる。","lemmas":["я","считать","деньги"],"target_lemma":"считать","difficulty":1,"kind":"sentence"}
+{"id":"T0460","ru":"Я уже всё решил.","en":"I've already decided everything.","ja":"もう全部決めた。","lemmas":["я","уже","всё","решить"],"target_lemma":"решить","difficulty":2,"kind":"sentence","note":"решил 過去男性"}
+{"id":"T0461","ru":"Ты решаешь сам.","en":"You decide for yourself.","ja":"自分で決めなよ。","lemmas":["ты","решать","сам"],"target_lemma":"решать","difficulty":1,"kind":"sentence"}
+{"id":"T0462","ru":"Я тебе верю.","en":"I believe you.","ja":"君を信じるよ。","lemmas":["я","ты","верить"],"target_lemma":"верить","difficulty":1,"kind":"sentence","note":"тебе = 与格"}
+{"id":"T0463","ru":"Я надеюсь на тебя.","en":"I'm counting on you.","ja":"君に期待してる。","lemmas":["я","надеяться","на","ты"],"target_lemma":"надеяться","difficulty":2,"kind":"sentence","note":"надеюсь на + 対格"}
+{"id":"T0464","ru":"Не бойся, я здесь.","en":"Don't be afraid, I'm here.","ja":"大丈夫、僕がいる。","lemmas":["не","бояться","я","здесь"],"target_lemma":"бояться","difficulty":1,"kind":"sentence","note":"бойся = 命令形"}
+{"id":"T0465","ru":"Я нуждаюсь в помощи.","en":"I need help.","ja":"助けが必要だ。","lemmas":["я","нуждаться","в","помощь"],"target_lemma":"нуждаться","difficulty":2,"kind":"sentence","note":"нуждаться в + 前置格"}
+{"id":"T0466","ru":"Я пытаюсь понять.","en":"I'm trying to understand.","ja":"理解しようとしてる。","lemmas":["я","пытаться","понять"],"target_lemma":"пытаться","difficulty":1,"kind":"sentence"}
+{"id":"T0467","ru":"Хочешь сам попробовать?","en":"Do you want to try it yourself?","ja":"自分で試してみる？","lemmas":["хотеть","сам","попробовать"],"target_lemma":"попробовать","difficulty":1,"kind":"sentence","note":"сам = 自分で"}
+{"id":"T0468","ru":"Позволь мне помочь.","en":"Let me help.","ja":"手伝わせて。","lemmas":["позволить","я","помочь"],"target_lemma":"позволить","difficulty":1,"kind":"sentence","note":"позволь 命令形；мне"}
+{"id":"T0469","ru":"Разрешите мне пройти.","en":"Please let me pass.","ja":"通してください。","lemmas":["разрешить","я","пройти"],"target_lemma":"разрешить","difficulty":2,"kind":"sentence","note":"разрешите = 丁寧な命令形（地下鉄で）；мне 与格"}
+{"id":"T0470","ru":"Врач запретил мне кофе.","en":"The doctor forbade me coffee.","ja":"医者にコーヒーを止められた。","lemmas":["врач","запретить","я","кофе"],"target_lemma":"запретить","difficulty":2,"kind":"sentence","note":"запретил 過去；мне"}
+{"id":"T0471","ru":"Я прошу помочь.","en":"I'm asking for help.","ja":"手伝ってほしいんだ。","lemmas":["я","просить","помочь"],"target_lemma":"просить","difficulty":1,"kind":"sentence","note":"прошу = просить の現在"}
+{"id":"T0472","ru":"Позови мне врача!","en":"Call a doctor for me!","ja":"医者を呼んで！","lemmas":["позвать","я","врач"],"target_lemma":"позвать","difficulty":1,"kind":"sentence","note":"позови 命令形；мне 与格；врача 対格"}
+{"id":"T0473","ru":"Не звони мне ночью.","en":"Don't call me at night.","ja":"夜に電話しないで。","lemmas":["не","звонить","я","ночь"],"target_lemma":"звонить","difficulty":2,"kind":"sentence","note":"мне；ночью 造格副詞"}
+{"id":"T0474","ru":"Я тебе позвоню завтра.","en":"I'll call you tomorrow.","ja":"明日電話するね。","lemmas":["я","ты","позвонить","завтра"],"target_lemma":"позвонить","difficulty":1,"kind":"sentence","note":"тебе；позвоню 未来"}
+{"id":"T0475","ru":"Не кричи на меня.","en":"Don't shout at me.","ja":"怒鳴らないで。","lemmas":["не","кричать","на","я"],"target_lemma":"кричать","difficulty":1,"kind":"sentence","note":"кричи 命令形；на меня"}
+{"id":"T0476","ru":"Не плачь, всё хорошо.","en":"Don't cry, everything's fine.","ja":"泣かないで、大丈夫だよ。","lemmas":["не","плакать","всё","хорошо"],"target_lemma":"плакать","difficulty":1,"kind":"sentence","note":"плачь 命令形"}
+{"id":"T0477","ru":"Почему ты смеёшься?","en":"Why are you laughing?","ja":"なんで笑ってるの？","lemmas":["почему","ты","смеяться"],"target_lemma":"смеяться","difficulty":1,"kind":"sentence","note":"смеёшься"}
+{"id":"T0478","ru":"Ты всегда улыбаешься.","en":"You always smile.","ja":"君はいつも笑顔だね。","lemmas":["ты","всегда","улыбаться"],"target_lemma":"улыбаться","difficulty":1,"kind":"sentence"}
+{"id":"T0479","ru":"Я встречу тебя на станции.","en":"I'll meet you at the station.","ja":"駅で迎えるよ。","lemmas":["я","встретить","ты","станция"],"target_lemma":"встретить","difficulty":2,"kind":"sentence","note":"встречу 未来；на станции"}
+{"id":"T0480","ru":"Я встречаю друга в аэропорту.","en":"I'm meeting a friend at the airport.","ja":"空港で友達を迎える。","lemmas":["я","встречать","друг","аэропорт"],"target_lemma":"встречать","difficulty":2,"kind":"sentence","note":"друга 対格；в аэропорту"}
+{"id":"T0481","ru":"Нам нужно поговорить.","en":"We need to talk.","ja":"話がある。","lemmas":["мы","нужно","поговорить"],"target_lemma":"поговорить","difficulty":1,"kind":"sentence","note":"нам = мы の与格"}
+{"id":"T0482","ru":"Можешь объяснить это?","en":"Can you explain this?","ja":"これ説明してくれる？","lemmas":["мочь","объяснить","это"],"target_lemma":"объяснить","difficulty":1,"kind":"sentence"}
+{"id":"T0483","ru":"Я объясняю тебе правило.","en":"I'm explaining the rule to you.","ja":"ルールを説明してるんだ。","lemmas":["я","объяснять","ты","правило"],"target_lemma":"объяснять","difficulty":1,"kind":"sentence","note":"тебе = 与格"}
+{"id":"T0484","ru":"Расскажи, как дела.","en":"Tell me how you're doing.","ja":"最近どう？聞かせて。","lemmas":["рассказать","как","дело"],"target_lemma":"рассказать","difficulty":1,"kind":"sentence","note":"расскажи 命令形"}
+{"id":"T0485","ru":"Ты хорошо рассказываешь истории.","en":"You tell stories well.","ja":"話がうまいね。","lemmas":["ты","хорошо","рассказывать","история"],"target_lemma":"рассказывать","difficulty":1,"kind":"sentence","note":"истории 複数対格"}
+{"id":"T0486","ru":"Проверь свой телефон.","en":"Check your phone.","ja":"スマホ見てみて。","lemmas":["проверить","свой","телефон"],"target_lemma":"проверить","difficulty":1,"kind":"sentence","note":"проверь 命令形"}
+{"id":"T0487","ru":"Учитель проверяет работы.","en":"The teacher checks the papers.","ja":"先生が課題を見てる。","lemmas":["учитель","проверять","работа"],"target_lemma":"проверять","difficulty":1,"kind":"sentence","note":"работы 複数対格"}
+{"id":"T0488","ru":"Помоги мне выбрать.","en":"Help me choose.","ja":"選ぶの手伝って。","lemmas":["помочь","я","выбрать"],"target_lemma":"выбрать","difficulty":1,"kind":"sentence","note":"помоги 命令形；мне"}
+{"id":"T0489","ru":"Я долго выбираю.","en":"I take a long time choosing.","ja":"選ぶのに時間かかる。","lemmas":["я","долго","выбирать"],"target_lemma":"выбирать","difficulty":1,"kind":"sentence"}
+{"id":"T0490","ru":"Я хочу послать письмо.","en":"I want to send a letter.","ja":"手紙を出したい。","lemmas":["я","хотеть","послать","письмо"],"target_lemma":"послать","difficulty":1,"kind":"sentence"}
+{"id":"T0491","ru":"Я посылаю тебе фото.","en":"I'm sending you a photo.","ja":"写真送るね。","lemmas":["я","посылать","ты","фото"],"target_lemma":"посылать","difficulty":1,"kind":"sentence","note":"тебе = 与格"}
+{"id":"T0492","ru":"Я отправлю сообщение сейчас.","en":"I'll send the message now.","ja":"今メッセージ送る。","lemmas":["я","отправить","сообщение","сейчас"],"target_lemma":"отправить","difficulty":1,"kind":"sentence","note":"отправлю 未来"}
+{"id":"T0493","ru":"Я полюбил этот город.","en":"I've come to love this city.","ja":"この街が好きになった。","lemmas":["я","полюбить","этот","город"],"target_lemma":"полюбить","difficulty":2,"kind":"sentence","note":"полюбил 過去男性（好きになる）"}
+{"id":"T0494","ru":"Он хочет жениться.","en":"He wants to get married.","ja":"彼は結婚したがってる。","lemmas":["он","хотеть","жениться"],"target_lemma":"жениться","difficulty":2,"kind":"sentence","note":"жениться = 男性が結婚する（онが自然）"}
+{"id":"T0495","ru":"Я хочу выйти здесь.","en":"I want to get off here.","ja":"ここで降りたい。","lemmas":["я","хотеть","выйти","здесь"],"target_lemma":"выйти","difficulty":1,"kind":"sentence","note":"выйти = 降りる（乗り物）"}
+{"id":"T0496","ru":"Вы выходите на следующей?","en":"Are you getting off at the next stop?","ja":"次で降りますか？","lemmas":["вы","выходить","следующий"],"target_lemma":"выходить","difficulty":2,"kind":"sentence","note":"地下鉄の定番。на следующей 前置格"}
+{"id":"T0497","ru":"Можно мне войти?","en":"May I come in?","ja":"入ってもいい？","lemmas":["можно","я","войти"],"target_lemma":"войти","difficulty":1,"kind":"sentence","note":"мне 与格"}
+{"id":"T0498","ru":"Люди входят в метро.","en":"People enter the metro.","ja":"人々が地下鉄に入っていく。","lemmas":["человек","входить","в","метро"],"target_lemma":"входить","difficulty":2,"kind":"sentence","note":"люди входят"}
+{"id":"T0499","ru":"Как пройти в центр?","en":"How do I get to the center?","ja":"中心街はどう行けば？","lemmas":["как","пройти","в","центр"],"target_lemma":"пройти","difficulty":2,"kind":"sentence","note":"道を尋ねる定型"}
+{"id":"T0500","ru":"Проходите все вперёд.","en":"Everyone move forward.","ja":"みなさん前へお詰めを。","lemmas":["проходить","все","вперёд"],"target_lemma":"проходить","difficulty":2,"kind":"sentence","note":"проходите = 丁寧な命令形（バス・地下鉄で）"}
+{"id":"T0501","ru":"Я ухожу домой.","en":"I'm leaving for home.","ja":"もう帰るね。","lemmas":["я","уходить","домой"],"target_lemma":"уходить","difficulty":1,"kind":"sentence","note":"ухожу = уходить の現在"}
+{"id":"T0502","ru":"Я приехал вчера.","en":"I arrived yesterday.","ja":"昨日着いたよ。","lemmas":["я","приехать","вчера"],"target_lemma":"приехать","difficulty":2,"kind":"sentence","note":"приехал 過去男性（乗り物で到着）"}
+{"id":"T0503","ru":"Он уехал в другой город.","en":"He left for another city.","ja":"彼は別の街へ発った。","lemmas":["он","уехать","в","другой","город"],"target_lemma":"уехать","difficulty":2,"kind":"sentence","note":"уехал 過去男性"}
+{"id":"T0504","ru":"Сколько стоит кофе?","en":"How much is the coffee?","ja":"コーヒーいくら？","lemmas":["сколько","стоить","кофе"],"target_lemma":"стоить","difficulty":1,"kind":"sentence"}
+{"id":"T0505","ru":"Я часто теряю ключи.","en":"I often lose my keys.","ja":"よく鍵をなくす。","lemmas":["я","часто","терять","ключ"],"target_lemma":"терять","difficulty":1,"kind":"sentence","note":"ключи 複数対格"}
+{"id":"T0506","ru":"Я потерял телефон.","en":"I lost my phone.","ja":"電話なくした。","lemmas":["я","потерять","телефон"],"target_lemma":"потерять","difficulty":2,"kind":"sentence","note":"потерял 過去男性"}
+{"id":"T0507","ru":"Мой телефон нашёлся.","en":"My phone turned up.","ja":"電話見つかった。","lemmas":["мой","телефон","найтись"],"target_lemma":"найтись","difficulty":2,"kind":"sentence","note":"нашёлся 過去男性（見つかる）"}
+{"id":"T0508","ru":"Я мечтаю о доме.","en":"I dream of a home.","ja":"自分の家が夢なんだ。","lemmas":["я","мечтать","о","дом"],"target_lemma":"мечтать","difficulty":1,"kind":"sentence","note":"мечтать о + 前置格 → о доме"}
+{"id":"T0509","ru":"Мой начальник сегодня злой.","en":"My boss is angry today.","ja":"上司、今日は不機嫌だ。","lemmas":["мой","начальник","сегодня","злой"],"target_lemma":"начальник","difficulty":1,"kind":"sentence"}
+{"id":"T0510","ru":"Это мой новый коллега.","en":"This is my new colleague.","ja":"新しい同僚です。","lemmas":["это","мой","новый","коллега"],"target_lemma":"коллега","difficulty":1,"kind":"sentence","note":"коллега は男女同形"}
+{"id":"T0511","ru":"Мне нужен хороший врач.","en":"I need a good doctor.","ja":"いい医者が要る。","lemmas":["я","нужный","хороший","врач"],"target_lemma":"врач","difficulty":2,"kind":"sentence","note":"мне нужен + 男性名詞"}
+{"id":"T0512","ru":"Мой учитель — хороший человек.","en":"My teacher is a good person.","ja":"先生はいい人だ。","lemmas":["мой","учитель","хороший","человек"],"target_lemma":"учитель","difficulty":1,"kind":"sentence"}
+{"id":"T0513","ru":"Я здесь новый студент.","en":"I'm a new student here.","ja":"ここの新入生です。","lemmas":["я","здесь","новый","студент"],"target_lemma":"студент","difficulty":1,"kind":"sentence"}
+{"id":"T0514","ru":"Он хороший ученик.","en":"He's a good pupil.","ja":"彼はよくできる生徒だ。","lemmas":["он","хороший","ученик"],"target_lemma":"ученик","difficulty":1,"kind":"sentence"}
+{"id":"T0515","ru":"Мой брат — солдат.","en":"My brother is a soldier.","ja":"兄は軍人だ。","lemmas":["мой","брат","солдат"],"target_lemma":"солдат","difficulty":1,"kind":"sentence"}
+{"id":"T0516","ru":"Мой отец — офицер.","en":"My father is an officer.","ja":"父は将校だ。","lemmas":["мой","отец","офицер"],"target_lemma":"офицер","difficulty":1,"kind":"sentence"}
+{"id":"T0517","ru":"Кто ваш президент?","en":"Who's your president?","ja":"おたくの大統領は誰？","lemmas":["кто","ваш","президент"],"target_lemma":"президент","difficulty":1,"kind":"sentence"}
+{"id":"T0518","ru":"Он важный министр.","en":"He's an important minister.","ja":"彼は重要な大臣だ。","lemmas":["он","важный","министр"],"target_lemma":"министр","difficulty":1,"kind":"sentence"}
+{"id":"T0519","ru":"Наш директор сегодня здесь.","en":"Our director is here today.","ja":"今日は部長が来てる。","lemmas":["наш","директор","сегодня","здесь"],"target_lemma":"директор","difficulty":1,"kind":"sentence"}
+{"id":"T0520","ru":"Позвони моему секретарю.","en":"Call my secretary.","ja":"秘書に電話して。","lemmas":["позвонить","мой","секретарь"],"target_lemma":"секретарь","difficulty":2,"kind":"sentence","note":"позвони 命令形；секретарю 与格；моему"}
+{"id":"T0521","ru":"Мне нужен хороший адвокат.","en":"I need a good lawyer.","ja":"いい弁護士が要る。","lemmas":["я","нужный","хороший","адвокат"],"target_lemma":"адвокат","difficulty":2,"kind":"sentence","note":"мне нужен + 男性名詞"}
+{"id":"T0522","ru":"Судья уже здесь.","en":"The judge is already here.","ja":"裁判官はもう来てる。","lemmas":["судья","уже","здесь"],"target_lemma":"судья","difficulty":1,"kind":"sentence","note":"судья は男性名詞だが女性型で活用"}
+{"id":"T0523","ru":"Полиция ищет преступника.","en":"The police are looking for the criminal.","ja":"警察が犯人を追ってる。","lemmas":["полиция","искать","преступник"],"target_lemma":"преступник","difficulty":2,"kind":"sentence","note":"преступника 対格"}
+{"id":"T0524","ru":"Кто здесь убийца?","en":"Who's the killer here?","ja":"犯人は誰だ？","lemmas":["кто","здесь","убийца"],"target_lemma":"убийца","difficulty":1,"kind":"sentence","note":"убийца は男女同形（女性型活用）"}
+{"id":"T0525","ru":"У нас сегодня гости.","en":"We have guests today.","ja":"今日はお客さんが来る。","lemmas":["у","мы","сегодня","гость"],"target_lemma":"гость","difficulty":2,"kind":"sentence","note":"гости 複数"}
+{"id":"T0526","ru":"Кто здесь хозяин?","en":"Who's the owner here?","ja":"ここの主は誰？","lemmas":["кто","здесь","хозяин"],"target_lemma":"хозяин","difficulty":1,"kind":"sentence"}
+{"id":"T0527","ru":"Мой сосед — хороший человек.","en":"My neighbor is a good person.","ja":"隣人はいい人だ。","lemmas":["мой","сосед","хороший","человек"],"target_lemma":"сосед","difficulty":1,"kind":"sentence"}
+{"id":"T0528","ru":"Он мой старый враг.","en":"He's my old enemy.","ja":"彼は昔からの敵だ。","lemmas":["он","мой","старый","враг"],"target_lemma":"враг","difficulty":1,"kind":"sentence"}
+{"id":"T0529","ru":"Ты мой герой.","en":"You're my hero.","ja":"君は僕のヒーローだ。","lemmas":["ты","мой","герой"],"target_lemma":"герой","difficulty":1,"kind":"sentence"}
+{"id":"T0530","ru":"Он хочет быть королём.","en":"He wants to be king.","ja":"彼は王になりたがってる。","lemmas":["он","хотеть","быть","король"],"target_lemma":"король","difficulty":2,"kind":"sentence","note":"королём 造格"}
+{"id":"T0531","ru":"Ты моя королева.","en":"You're my queen.","ja":"君は僕の女王だ。","lemmas":["ты","мой","королева"],"target_lemma":"королева","difficulty":1,"kind":"sentence","note":"моя = 女性形"}
+{"id":"T0532","ru":"Доктор уже здесь.","en":"The doctor is already here.","ja":"先生はもう来てる。","lemmas":["доктор","уже","здесь"],"target_lemma":"доктор","difficulty":1,"kind":"sentence"}
+{"id":"T0533","ru":"Врач ждёт пациента.","en":"The doctor is waiting for the patient.","ja":"医者が患者を待ってる。","lemmas":["врач","ждать","пациент"],"target_lemma":"пациент","difficulty":2,"kind":"sentence","note":"пациента 対格"}
+{"id":"T0534","ru":"Это моя старая подруга.","en":"This is my old friend.","ja":"昔からの友達（女性）だ。","lemmas":["это","мой","старый","подруга"],"target_lemma":"подруга","difficulty":1,"kind":"sentence","note":"старая подруга = 古い女友達"}
+{"id":"T0535","ru":"Ты моя первая любовь.","en":"You're my first love.","ja":"君は初恋の人だ。","lemmas":["ты","мой","первый","любовь"],"target_lemma":"любовь","difficulty":2,"kind":"sentence","note":"любовь は女性変則名詞"}
+{"id":"T0536","ru":"Я не боюсь смерти.","en":"I'm not afraid of death.","ja":"死は怖くない。","lemmas":["я","не","бояться","смерть"],"target_lemma":"смерть","difficulty":2,"kind":"sentence","note":"бояться + 生格 → смерти"}
+{"id":"T0537","ru":"Это мой главный страх.","en":"This is my biggest fear.","ja":"これが一番の恐怖だ。","lemmas":["это","мой","главный","страх"],"target_lemma":"страх","difficulty":1,"kind":"sentence"}
+{"id":"T0538","ru":"У меня сильная боль.","en":"I'm in a lot of pain.","ja":"痛みがひどい。","lemmas":["у","я","сильный","боль"],"target_lemma":"боль","difficulty":2,"kind":"sentence","note":"боль 女性；сильная"}
+{"id":"T0539","ru":"Ты моя радость.","en":"You're my joy.","ja":"君は僕の喜びだ。","lemmas":["ты","мой","радость"],"target_lemma":"радость","difficulty":1,"kind":"sentence"}
+{"id":"T0540","ru":"Ты моё счастье.","en":"You're my happiness.","ja":"君が僕の幸せだ。","lemmas":["ты","мой","счастье"],"target_lemma":"счастье","difficulty":1,"kind":"sentence","note":"моё = 中性形"}
+{"id":"T0541","ru":"Мне нужно твоё внимание.","en":"I need your attention.","ja":"ちょっと聞いてほしい。","lemmas":["я","нужный","твой","внимание"],"target_lemma":"внимание","difficulty":2,"kind":"sentence","note":"нужно + 中性名詞；твоё"}
+{"id":"T0542","ru":"Мне нужна твоя помощь.","en":"I need your help.","ja":"君の助けが要る。","lemmas":["я","нужный","твой","помощь"],"target_lemma":"помощь","difficulty":2,"kind":"sentence","note":"нужна = 女性形；твоя"}
+{"id":"T0543","ru":"Дай мне ещё шанс.","en":"Give me another chance.","ja":"もう一度チャンスを。","lemmas":["дать","я","ещё","шанс"],"target_lemma":"шанс","difficulty":1,"kind":"sentence"}
+{"id":"T0544","ru":"Какой у тебя план?","en":"What's your plan?","ja":"どんな計画？","lemmas":["какой","у","ты","план"],"target_lemma":"план","difficulty":1,"kind":"sentence"}
+{"id":"T0545","ru":"Какая у тебя цель?","en":"What's your goal?","ja":"目標は何？","lemmas":["какой","у","ты","цель"],"target_lemma":"цель","difficulty":2,"kind":"sentence","note":"цель 女性；какая"}
+{"id":"T0546","ru":"В чём причина?","en":"What's the reason?","ja":"理由は何？","lemmas":["в","что","причина"],"target_lemma":"причина","difficulty":2,"kind":"sentence","note":"в чём = что の前置格"}
+{"id":"T0547","ru":"Это очень важное правило.","en":"This is a very important rule.","ja":"これはすごく大事な決まりだ。","lemmas":["это","очень","важный","правило"],"target_lemma":"правило","difficulty":1,"kind":"sentence","note":"важное = 中性形"}
+{"id":"T0548","ru":"У меня одно условие.","en":"I have one condition.","ja":"一つだけ条件がある。","lemmas":["у","я","один","условие"],"target_lemma":"условие","difficulty":1,"kind":"sentence","note":"одно = 中性形"}
+{"id":"T0549","ru":"Это плохой результат.","en":"This is a bad result.","ja":"これは悪い結果だ。","lemmas":["это","плохой","результат"],"target_lemma":"результат","difficulty":1,"kind":"sentence"}
+{"id":"T0550","ru":"Это моё решение.","en":"This is my decision.","ja":"これは僕の決断だ。","lemmas":["это","мой","решение"],"target_lemma":"решение","difficulty":1,"kind":"sentence","note":"моё = 中性形"}
+{"id":"T0551","ru":"У тебя есть выбор.","en":"You have a choice.","ja":"選択肢はあるよ。","lemmas":["у","ты","выбор"],"target_lemma":"выбор","difficulty":1,"kind":"sentence"}
+{"id":"T0552","ru":"Это моя ошибка.","en":"This is my mistake.","ja":"これは僕のミスだ。","lemmas":["это","мой","ошибка"],"target_lemma":"ошибка","difficulty":1,"kind":"sentence"}
+{"id":"T0553","ru":"Это наш секрет.","en":"This is our secret.","ja":"これは二人の秘密だ。","lemmas":["это","наш","секрет"],"target_lemma":"секрет","difficulty":1,"kind":"sentence"}
+{"id":"T0554","ru":"В чём смысл жизни?","en":"What's the meaning of life?","ja":"人生の意味って何？","lemmas":["в","что","смысл","жизнь"],"target_lemma":"смысл","difficulty":2,"kind":"sentence","note":"в чём；жизни 生格"}
+{"id":"T0555","ru":"У меня есть право.","en":"I have the right.","ja":"それは僕の権利だ。","lemmas":["у","я","право"],"target_lemma":"право","difficulty":1,"kind":"sentence"}
+{"id":"T0556","ru":"Я живу в центре.","en":"I live downtown.","ja":"中心街に住んでる。","lemmas":["я","жить","в","центр"],"target_lemma":"центр","difficulty":1,"kind":"sentence","note":"в центре 前置格"}
+{"id":"T0557","ru":"Какой твой номер?","en":"What's your number?","ja":"番号教えて。","lemmas":["какой","твой","номер"],"target_lemma":"номер","difficulty":1,"kind":"sentence"}
+{"id":"T0558","ru":"Принесите мне счёт.","en":"Bring me the bill.","ja":"お会計お願いします。","lemmas":["принести","я","счёт"],"target_lemma":"счёт","difficulty":2,"kind":"sentence","note":"принесите 丁寧命令；мне（レストランで）"}
+{"id":"T0559","ru":"У меня всё в порядке.","en":"Everything's fine with me.","ja":"僕は問題ないよ。","lemmas":["у","я","всё","в","порядок"],"target_lemma":"порядок","difficulty":2,"kind":"sentence","note":"в порядке = 順調（前置格）"}
+{"id":"T0560","ru":"Здесь красивый вид.","en":"There's a beautiful view here.","ja":"ここ景色がいいね。","lemmas":["здесь","красивый","вид"],"target_lemma":"вид","difficulty":1,"kind":"sentence"}
+{"id":"T0561","ru":"Какая странная форма!","en":"What a strange shape!","ja":"変な形だな！","lemmas":["какой","странный","форма"],"target_lemma":"форма","difficulty":1,"kind":"sentence","note":"какая странная = 女性形の感嘆"}
+{"id":"T0562","ru":"Это новый уровень.","en":"This is a new level.","ja":"これは新しいレベルだ。","lemmas":["это","новый","уровень"],"target_lemma":"уровень","difficulty":1,"kind":"sentence"}
+{"id":"T0563","ru":"Это другой тип.","en":"This is a different type.","ja":"これは別のタイプだ。","lemmas":["это","другой","тип"],"target_lemma":"тип","difficulty":1,"kind":"sentence"}
+{"id":"T0564","ru":"Мы в одной группе.","en":"We're in the same group.","ja":"僕ら同じグループだ。","lemmas":["мы","в","один","группа"],"target_lemma":"группа","difficulty":2,"kind":"sentence","note":"в одной группе 前置格"}
+{"id":"T0565","ru":"Дай мне пару минут.","en":"Give me a couple of minutes.","ja":"数分ちょうだい。","lemmas":["дать","я","пара","минута"],"target_lemma":"пара","difficulty":2,"kind":"sentence","note":"пару минут = 対格（二、三分）"}
+{"id":"T0566","ru":"Я работаю в большой компании.","en":"I work at a big company.","ja":"大きい会社で働いてる。","lemmas":["я","работать","в","большой","компания"],"target_lemma":"компания","difficulty":1,"kind":"sentence","note":"в компании 前置格"}
+{"id":"T0567","ru":"Это новая система.","en":"This is a new system.","ja":"これは新しいシステムだ。","lemmas":["это","новый","система"],"target_lemma":"система","difficulty":1,"kind":"sentence"}
+{"id":"T0568","ru":"Мне нужна информация.","en":"I need information.","ja":"情報が欲しい。","lemmas":["я","нужный","информация"],"target_lemma":"информация","difficulty":2,"kind":"sentence","note":"нужна = 女性形"}
+{"id":"T0569","ru":"У меня хорошая новость.","en":"I have good news.","ja":"いい知らせがある。","lemmas":["у","я","хороший","новость"],"target_lemma":"новость","difficulty":1,"kind":"sentence","note":"новость 女性"}
+{"id":"T0570","ru":"Я получил твоё сообщение.","en":"I got your message.","ja":"メッセージ届いたよ。","lemmas":["я","получить","твой","сообщение"],"target_lemma":"сообщение","difficulty":2,"kind":"sentence","note":"получил 過去；твоё 中性"}
+{"id":"T0571","ru":"Вот мой список.","en":"Here's my list.","ja":"これが僕のリストだ。","lemmas":["вот","мой","список"],"target_lemma":"список","difficulty":1,"kind":"sentence"}
+{"id":"T0572","ru":"Покажите ваши документы.","en":"Show me your documents.","ja":"書類を見せてください。","lemmas":["показать","ваш","документ"],"target_lemma":"документ","difficulty":2,"kind":"sentence","note":"покажите 丁寧命令；документы 複数"}
+{"id":"T0573","ru":"Мне нужна бумага.","en":"I need paper.","ja":"紙が要る。","lemmas":["я","нужный","бумага"],"target_lemma":"бумага","difficulty":2,"kind":"sentence","note":"нужна = 女性形"}
+{"id":"T0574","ru":"У тебя есть карта?","en":"Do you have a map?","ja":"地図持ってる？","lemmas":["у","ты","карта"],"target_lemma":"карта","difficulty":1,"kind":"sentence"}
+{"id":"T0575","ru":"Где мои ключи?","en":"Where are my keys?","ja":"鍵どこだ？","lemmas":["где","мой","ключ"],"target_lemma":"ключ","difficulty":1,"kind":"sentence","note":"ключи 複数；мои"}
+{"id":"T0576","ru":"У него есть оружие.","en":"He has a weapon.","ja":"彼は武器を持ってる。","lemmas":["у","он","оружие"],"target_lemma":"оружие","difficulty":1,"kind":"sentence"}
+{"id":"T0577","ru":"У него был пистолет.","en":"He had a gun.","ja":"彼は拳銃を持っていた。","lemmas":["у","он","быть","пистолет"],"target_lemma":"пистолет","difficulty":2,"kind":"sentence","note":"был 過去男性"}
+{"id":"T0578","ru":"Дай мне нож.","en":"Give me a knife.","ja":"ナイフちょうだい。","lemmas":["дать","я","нож"],"target_lemma":"нож","difficulty":1,"kind":"sentence"}
+{"id":"T0579","ru":"Это подарок для тебя.","en":"This is a gift for you.","ja":"これ君へのプレゼント。","lemmas":["это","подарок","для","ты"],"target_lemma":"подарок","difficulty":1,"kind":"sentence"}
+{"id":"T0580","ru":"Это красивый цветок.","en":"This is a beautiful flower.","ja":"きれいな花だ。","lemmas":["это","красивый","цветок"],"target_lemma":"цветок","difficulty":1,"kind":"sentence"}
+{"id":"T0581","ru":"Я люблю животных.","en":"I love animals.","ja":"動物が好きだ。","lemmas":["я","любить","животное"],"target_lemma":"животное","difficulty":2,"kind":"sentence","note":"животных 複数対格（生格同形）"}
+{"id":"T0582","ru":"У меня дома есть собака.","en":"I have a dog at home.","ja":"家で犬を飼ってる。","lemmas":["у","я","дом","собака"],"target_lemma":"собака","difficulty":1,"kind":"sentence","note":"дома = 家で"}
+{"id":"T0583","ru":"Моя кошка спит.","en":"My cat is sleeping.","ja":"うちの猫、寝てる。","lemmas":["мой","кошка","спать"],"target_lemma":"кошка","difficulty":1,"kind":"sentence","note":"спит = спать の3人称"}
+{"id":"T0584","ru":"Это красивая лошадь.","en":"This is a beautiful horse.","ja":"きれいな馬だ。","lemmas":["это","красивый","лошадь"],"target_lemma":"лошадь","difficulty":1,"kind":"sentence","note":"лошадь 女性"}
+{"id":"T0585","ru":"Я люблю есть рыбу.","en":"I love to eat fish.","ja":"魚を食べるのが好きだ。","lemmas":["я","любить","есть","рыба"],"target_lemma":"рыба","difficulty":1,"kind":"sentence","note":"рыбу 対格"}
+{"id":"T0586","ru":"Это красивая птица.","en":"This is a beautiful bird.","ja":"きれいな鳥だ。","lemmas":["это","красивый","птица"],"target_lemma":"птица","difficulty":1,"kind":"sentence"}
+{"id":"T0587","ru":"Это старое дерево.","en":"This is an old tree.","ja":"古い木だ。","lemmas":["это","старый","дерево"],"target_lemma":"дерево","difficulty":1,"kind":"sentence","note":"старое = 中性形"}
+{"id":"T0588","ru":"Трава уже зелёная.","en":"The grass is already green.","ja":"草がもう緑だ。","lemmas":["трава","уже","зелёный"],"target_lemma":"трава","difficulty":1,"kind":"sentence","note":"зелёная = 女性形"}
+{"id":"T0589","ru":"Это большой камень.","en":"This is a big stone.","ja":"大きい石だ。","lemmas":["это","большой","камень"],"target_lemma":"камень","difficulty":1,"kind":"sentence","note":"камень 男性"}
+{"id":"T0590","ru":"Здесь белый песок.","en":"The sand here is white.","ja":"ここの砂は白い。","lemmas":["здесь","белый","песок"],"target_lemma":"песок","difficulty":1,"kind":"sentence"}
+{"id":"T0591","ru":"Это красивый остров.","en":"This is a beautiful island.","ja":"きれいな島だ。","lemmas":["это","красивый","остров"],"target_lemma":"остров","difficulty":1,"kind":"sentence"}
+{"id":"T0592","ru":"Мы сидим на берегу.","en":"We're sitting on the shore.","ja":"岸辺に座ってる。","lemmas":["мы","сидеть","на","берег"],"target_lemma":"берег","difficulty":2,"kind":"sentence","note":"на берегу 前置格"}
+{"id":"T0593","ru":"Дети играют в поле.","en":"The kids are playing in the field.","ja":"子供が野原で遊んでる。","lemmas":["ребёнок","играть","в","поле"],"target_lemma":"поле","difficulty":2,"kind":"sentence","note":"в поле 前置格"}
+{"id":"T0594","ru":"У нас красивый сад.","en":"We have a beautiful garden.","ja":"うちの庭はきれいだ。","lemmas":["у","мы","красивый","сад"],"target_lemma":"сад","difficulty":1,"kind":"sentence"}
+{"id":"T0595","ru":"Дети во дворе.","en":"The kids are in the yard.","ja":"子供たちは庭にいる。","lemmas":["ребёнок","в","двор"],"target_lemma":"двор","difficulty":2,"kind":"sentence","note":"во дворе 前置格；дети"}
+{"id":"T0596","ru":"Это очень старое здание.","en":"This is a very old building.","ja":"すごく古い建物だ。","lemmas":["это","очень","старый","здание"],"target_lemma":"здание","difficulty":1,"kind":"sentence","note":"старое = 中性形"}
+{"id":"T0597","ru":"Я живу на первом этаже.","en":"I live on the first floor.","ja":"一階に住んでる。","lemmas":["я","жить","на","первый","этаж"],"target_lemma":"этаж","difficulty":2,"kind":"sentence","note":"на первом этаже 前置格"}
+{"id":"T0598","ru":"Кошка на крыше.","en":"The cat is on the roof.","ja":"猫が屋根の上にいる。","lemmas":["кошка","на","крыша"],"target_lemma":"крыша","difficulty":1,"kind":"sentence","note":"на крыше 前置格"}
+{"id":"T0599","ru":"Картина на стене.","en":"The painting is on the wall.","ja":"絵が壁に掛かってる。","lemmas":["картина","на","стена"],"target_lemma":"стена","difficulty":1,"kind":"sentence","note":"на стене 前置格"}
+{"id":"T0600","ru":"Телефон упал на пол.","en":"The phone fell on the floor.","ja":"電話が床に落ちた。","lemmas":["телефон","упасть","на","пол"],"target_lemma":"пол","difficulty":2,"kind":"sentence","note":"упал 過去；на пол 対格（方向）"}
+{"id":"T0601","ru":"Свет на потолке.","en":"The light is on the ceiling.","ja":"照明は天井にある。","lemmas":["свет","на","потолок"],"target_lemma":"потолок","difficulty":1,"kind":"sentence","note":"на потолке 前置格"}
+{"id":"T0602","ru":"Где здесь лестница?","en":"Where are the stairs?","ja":"階段どこ？","lemmas":["где","здесь","лестница"],"target_lemma":"лестница","difficulty":1,"kind":"sentence"}
+{"id":"T0603","ru":"Мама на кухне.","en":"Mom's in the kitchen.","ja":"母は台所にいる。","lemmas":["мама","на","кухня"],"target_lemma":"кухня","difficulty":1,"kind":"sentence","note":"на кухне 前置格"}
+{"id":"T0604","ru":"Где здесь ванная?","en":"Where's the bathroom?","ja":"お風呂どこ？","lemmas":["где","здесь","ванная"],"target_lemma":"ванная","difficulty":1,"kind":"sentence","note":"ванная = 形容詞由来の名詞"}
+{"id":"T0605","ru":"Где здесь туалет?","en":"Where's the toilet?","ja":"トイレどこ？","lemmas":["где","здесь","туалет"],"target_lemma":"туалет","difficulty":1,"kind":"sentence"}
+{"id":"T0606","ru":"Это твоя сумка?","en":"Is this your bag?","ja":"これ君のカバン？","lemmas":["это","твой","сумка"],"target_lemma":"сумка","difficulty":1,"kind":"sentence"}
+{"id":"T0607","ru":"У меня новая одежда.","en":"I have new clothes.","ja":"新しい服を買った。","lemmas":["у","я","новый","одежда"],"target_lemma":"одежда","difficulty":1,"kind":"sentence"}
+{"id":"T0608","ru":"У тебя красивая рубашка.","en":"You have a nice shirt.","ja":"いいシャツだね。","lemmas":["у","ты","красивый","рубашка"],"target_lemma":"рубашка","difficulty":1,"kind":"sentence","note":"красивая = 女性形"}
+{"id":"T0609","ru":"Это красивое платье.","en":"This is a beautiful dress.","ja":"きれいなドレスだ。","lemmas":["это","красивый","платье"],"target_lemma":"платье","difficulty":1,"kind":"sentence","note":"красивое = 中性形"}
+{"id":"T0610","ru":"Где моё пальто?","en":"Where's my coat?","ja":"コートどこ？","lemmas":["где","мой","пальто"],"target_lemma":"пальто","difficulty":1,"kind":"sentence","note":"пальто 不変化中性；моё"}
+{"id":"T0611","ru":"Здесь снимают обувь.","en":"You take off your shoes here.","ja":"ここでは靴を脱ぐ。","lemmas":["здесь","снимать","обувь"],"target_lemma":"обувь","difficulty":2,"kind":"sentence","note":"снимают = 不定人称；обувь 女性集合名詞"}
+{"id":"T0612","ru":"Мне нравится твоя шляпа.","en":"I like your hat.","ja":"その帽子いいね。","lemmas":["я","нравиться","твой","шляпа"],"target_lemma":"шляпа","difficulty":1,"kind":"sentence"}
+{"id":"T0613","ru":"Где мои очки?","en":"Where are my glasses?","ja":"眼鏡どこ？","lemmas":["где","мой","очки"],"target_lemma":"очки","difficulty":1,"kind":"sentence","note":"очки 複数のみ；мои"}
+{"id":"T0614","ru":"Мои часы не работают.","en":"My watch isn't working.","ja":"時計が動かない。","lemmas":["мой","часы","не","работать"],"target_lemma":"часы","difficulty":1,"kind":"sentence","note":"часы 複数のみ；мои"}
+{"id":"T0615","ru":"Это красивое кольцо.","en":"This is a beautiful ring.","ja":"きれいな指輪だ。","lemmas":["это","красивый","кольцо"],"target_lemma":"кольцо","difficulty":1,"kind":"sentence","note":"красивое = 中性形"}
+{"id":"T0616","ru":"У тебя красивые волосы.","en":"You have beautiful hair.","ja":"髪きれいだね。","lemmas":["у","ты","красивый","волос"],"target_lemma":"волос","difficulty":1,"kind":"sentence","note":"волосы = 複数（髪は普通複数で言う）"}
+{"id":"T0617","ru":"Не открывай рот.","en":"Don't open your mouth.","ja":"口を開けないで。","lemmas":["не","открывать","рот"],"target_lemma":"рот","difficulty":1,"kind":"sentence"}
+{"id":"T0618","ru":"У тебя красный нос.","en":"Your nose is red.","ja":"鼻が赤いよ。","lemmas":["у","ты","красный","нос"],"target_lemma":"нос","difficulty":1,"kind":"sentence"}
+{"id":"T0619","ru":"У меня болит ухо.","en":"My ear hurts.","ja":"耳が痛い。","lemmas":["у","я","болеть","ухо"],"target_lemma":"ухо","difficulty":2,"kind":"sentence"}
+{"id":"T0620","ru":"У меня очень болит зуб.","en":"My tooth really hurts.","ja":"歯がすごく痛い。","lemmas":["у","я","очень","болеть","зуб"],"target_lemma":"зуб","difficulty":2,"kind":"sentence"}
+{"id":"T0621","ru":"У меня болит шея.","en":"My neck hurts.","ja":"首が痛い。","lemmas":["у","я","болеть","шея"],"target_lemma":"шея","difficulty":2,"kind":"sentence"}
+{"id":"T0622","ru":"У меня болит плечо.","en":"My shoulder hurts.","ja":"肩が痛い。","lemmas":["у","я","болеть","плечо"],"target_lemma":"плечо","difficulty":2,"kind":"sentence"}
+{"id":"T0623","ru":"У меня болит спина.","en":"My back hurts.","ja":"背中が痛い。","lemmas":["у","я","болеть","спина"],"target_lemma":"спина","difficulty":2,"kind":"sentence"}
+{"id":"T0624","ru":"У меня болит грудь.","en":"My chest hurts.","ja":"胸が痛い。","lemmas":["у","я","болеть","грудь"],"target_lemma":"грудь","difficulty":2,"kind":"sentence","note":"грудь 女性"}
+{"id":"T0625","ru":"У меня опять болит живот.","en":"My stomach hurts again.","ja":"またお腹が痛い。","lemmas":["у","я","опять","болеть","живот"],"target_lemma":"живот","difficulty":2,"kind":"sentence"}
+{"id":"T0626","ru":"У тебя мягкая кожа.","en":"You have soft skin.","ja":"肌が柔らかいね。","lemmas":["у","ты","мягкий","кожа"],"target_lemma":"кожа","difficulty":1,"kind":"sentence","note":"мягкая = 女性形"}
+{"id":"T0627","ru":"Это работа для мозга.","en":"This is work for the brain.","ja":"これは頭を使う仕事だ。","lemmas":["это","работа","для","мозг"],"target_lemma":"мозг","difficulty":1,"kind":"sentence","note":"для мозга 生格"}
+{"id":"T0628","ru":"Русский — трудный язык.","en":"Russian is a difficult language.","ja":"ロシア語は難しい言語だ。","lemmas":["русский","трудный","язык"],"target_lemma":"язык","difficulty":1,"kind":"sentence"}
+{"id":"T0629","ru":"У меня плохая память.","en":"I have a bad memory.","ja":"物覚えが悪いんだ。","lemmas":["у","я","плохой","память"],"target_lemma":"память","difficulty":1,"kind":"sentence","note":"память 女性；плохая"}
+{"id":"T0630","ru":"Это был просто сон.","en":"It was just a dream.","ja":"ただの夢だった。","lemmas":["это","быть","просто","сон"],"target_lemma":"сон","difficulty":2,"kind":"sentence","note":"был 過去男性"}
+{"id":"T0631","ru":"Это моя мечта.","en":"This is my dream.","ja":"これが僕の夢だ。","lemmas":["это","мой","мечта"],"target_lemma":"мечта","difficulty":1,"kind":"sentence"}
+{"id":"T0632","ru":"У кофе горький вкус.","en":"The coffee has a bitter taste.","ja":"このコーヒー苦い。","lemmas":["кофе","горький","вкус"],"target_lemma":"вкус","difficulty":2,"kind":"sentence","note":"у кофе = 生格（所有）"}
+{"id":"T0633","ru":"Мне нравится этот цвет.","en":"I like this color.","ja":"この色いいね。","lemmas":["я","нравиться","этот","цвет"],"target_lemma":"цвет","difficulty":1,"kind":"sentence"}
+{"id":"T0634","ru":"Какой у тебя размер?","en":"What's your size?","ja":"サイズは何？","lemmas":["какой","у","ты","размер"],"target_lemma":"размер","difficulty":1,"kind":"sentence"}
+{"id":"T0635","ru":"У меня нормальный вес.","en":"I have a normal weight.","ja":"体重は普通だ。","lemmas":["у","я","нормальный","вес"],"target_lemma":"вес","difficulty":1,"kind":"sentence"}
+{"id":"T0636","ru":"Какая здесь цена?","en":"What's the price here?","ja":"ここの値段は？","lemmas":["какой","здесь","цена"],"target_lemma":"цена","difficulty":1,"kind":"sentence","note":"какая = 女性形"}
+{"id":"T0637","ru":"Я иду на рынок.","en":"I'm going to the market.","ja":"市場に行く。","lemmas":["я","идти","на","рынок"],"target_lemma":"рынок","difficulty":1,"kind":"sentence","note":"на рынок 対格"}
+{"id":"T0638","ru":"Здесь хороший товар.","en":"The goods here are good.","ja":"ここの品はいい。","lemmas":["здесь","хороший","товар"],"target_lemma":"товар","difficulty":1,"kind":"sentence"}
+{"id":"T0639","ru":"Это хорошая услуга.","en":"This is a good service.","ja":"いいサービスだ。","lemmas":["это","хороший","услуга"],"target_lemma":"услуга","difficulty":1,"kind":"sentence"}
+{"id":"T0640","ru":"Ваш заказ готов.","en":"Your order is ready.","ja":"ご注文の品ができました。","lemmas":["ваш","заказ","готовый"],"target_lemma":"заказ","difficulty":1,"kind":"sentence","note":"готов = 男性短語尾"}
+{"id":"T0641","ru":"У меня есть билет.","en":"I have a ticket.","ja":"チケットあるよ。","lemmas":["у","я","билет"],"target_lemma":"билет","difficulty":1,"kind":"sentence"}
+{"id":"T0642","ru":"Где мой багаж?","en":"Where's my luggage?","ja":"荷物どこ？","lemmas":["где","мой","багаж"],"target_lemma":"багаж","difficulty":1,"kind":"sentence"}
+{"id":"T0643","ru":"Вот мой паспорт.","en":"Here's my passport.","ja":"これがパスポートです。","lemmas":["вот","мой","паспорт"],"target_lemma":"паспорт","difficulty":1,"kind":"sentence"}
+{"id":"T0644","ru":"Мы уже на границе.","en":"We're already at the border.","ja":"もう国境だ。","lemmas":["мы","уже","на","граница"],"target_lemma":"граница","difficulty":1,"kind":"sentence","note":"на границе 前置格"}
+{"id":"T0645","ru":"Какой твой адрес?","en":"What's your address?","ja":"住所どこ？","lemmas":["какой","твой","адрес"],"target_lemma":"адрес","difficulty":1,"kind":"sentence"}
+{"id":"T0646","ru":"Это мой новый сайт.","en":"This is my new website.","ja":"これが新しいサイトだ。","lemmas":["это","мой","новый","сайт"],"target_lemma":"сайт","difficulty":1,"kind":"sentence"}
+{"id":"T0647","ru":"Здесь есть быстрый интернет?","en":"Is there fast internet here?","ja":"ここWi-Fi速い？","lemmas":["здесь","быстрый","интернет"],"target_lemma":"интернет","difficulty":1,"kind":"sentence"}
+{"id":"T0648","ru":"Мой компьютер не работает.","en":"My computer isn't working.","ja":"パソコンが動かない。","lemmas":["мой","компьютер","не","работать"],"target_lemma":"компьютер","difficulty":1,"kind":"sentence"}
+{"id":"T0649","ru":"У меня большой экран.","en":"I have a big screen.","ja":"画面が大きいんだ。","lemmas":["у","я","большой","экран"],"target_lemma":"экран","difficulty":1,"kind":"sentence"}
+{"id":"T0650","ru":"Где эта кнопка?","en":"Where's this button?","ja":"このボタンどこ？","lemmas":["где","этот","кнопка"],"target_lemma":"кнопка","difficulty":1,"kind":"sentence","note":"эта = 女性形"}
+{"id":"T0651","ru":"Я не могу открыть файл.","en":"I can't open the file.","ja":"ファイルが開けない。","lemmas":["я","не","мочь","открыть","файл"],"target_lemma":"файл","difficulty":1,"kind":"sentence"}
+{"id":"T0652","ru":"Это твоё фото?","en":"Is this your photo?","ja":"これ君の写真？","lemmas":["это","твой","фото"],"target_lemma":"фото","difficulty":1,"kind":"sentence","note":"фото 不変化中性；твоё"}
+{"id":"T0653","ru":"У тебя хорошая камера.","en":"You have a good camera.","ja":"いいカメラだね。","lemmas":["у","ты","хороший","камера"],"target_lemma":"камера","difficulty":1,"kind":"sentence"}
+{"id":"T0654","ru":"Выключи здесь телевизор.","en":"Turn off the TV here.","ja":"テレビ消して。","lemmas":["выключить","здесь","телевизор"],"target_lemma":"телевизор","difficulty":1,"kind":"sentence","note":"выключи = 命令形"}
+{"id":"T0655","ru":"Я слушаю радио утром.","en":"I listen to the radio in the morning.","ja":"朝はラジオを聴く。","lemmas":["я","слушать","радио","утро"],"target_lemma":"радио","difficulty":1,"kind":"sentence","note":"радио 不変化；утром 副詞"}
+{"id":"T0656","ru":"Здесь нет электричества.","en":"There's no electricity here.","ja":"ここ電気が通ってない。","lemmas":["здесь","нет","электричество"],"target_lemma":"электричество","difficulty":2,"kind":"sentence","note":"нет + 生格 → электричества"}
+{"id":"T0657","ru":"У меня нет энергии.","en":"I have no energy.","ja":"元気が出ない。","lemmas":["у","я","нет","энергия"],"target_lemma":"энергия","difficulty":2,"kind":"sentence","note":"нет + 生格 → энергии"}
+{"id":"T0658","ru":"В доме пахнет газом.","en":"There's a smell of gas in the house.","ja":"家がガス臭い。","lemmas":["в","дом","пахнуть","газ"],"target_lemma":"газ","difficulty":2,"kind":"sentence","note":"пахнет + 造格 → газом"}
+{"id":"T0659","ru":"В стране много нефти.","en":"The country has a lot of oil.","ja":"この国は石油が豊富だ。","lemmas":["в","страна","много","нефть"],"target_lemma":"нефть","difficulty":2,"kind":"sentence","note":"много + 生格 → нефти；нефть 女性"}
+{"id":"T0660","ru":"У нас нет молока.","en":"We're out of milk.","ja":"牛乳が切れてる。","lemmas":["у","мы","нет","молоко"],"target_lemma":"молоко","difficulty":2,"kind":"sentence","note":"нет + 生格 → молока"}
+{"id":"T0661","ru":"Я не ем мясо.","en":"I don't eat meat.","ja":"肉は食べない。","lemmas":["я","не","есть","мясо"],"target_lemma":"мясо","difficulty":1,"kind":"sentence","note":"ем = есть の1人称"}
+{"id":"T0662","ru":"Это горячий суп.","en":"This is hot soup.","ja":"熱いスープだ。","lemmas":["это","горячий","суп"],"target_lemma":"суп","difficulty":1,"kind":"sentence"}
+{"id":"T0663","ru":"Я хочу зелёный салат.","en":"I want a green salad.","ja":"グリーンサラダがほしい。","lemmas":["я","хотеть","зелёный","салат"],"target_lemma":"салат","difficulty":1,"kind":"sentence"}
+{"id":"T0664","ru":"Я люблю сыр.","en":"I love cheese.","ja":"チーズが好きだ。","lemmas":["я","любить","сыр"],"target_lemma":"сыр","difficulty":1,"kind":"sentence"}
+{"id":"T0665","ru":"Дай мне одно яйцо.","en":"Give me one egg.","ja":"卵一個ちょうだい。","lemmas":["дать","я","один","яйцо"],"target_lemma":"яйцо","difficulty":1,"kind":"sentence","note":"одно = 中性形"}
+{"id":"T0666","ru":"Кофе без сахара.","en":"Coffee without sugar.","ja":"砂糖なしのコーヒー。","lemmas":["кофе","без","сахар"],"target_lemma":"сахар","difficulty":1,"kind":"sentence","note":"без + 生格 → без сахара"}
+{"id":"T0667","ru":"Передай мне соль.","en":"Pass me the salt.","ja":"塩取って。","lemmas":["передать","я","соль"],"target_lemma":"соль","difficulty":2,"kind":"sentence","note":"передай 命令形；мне；соль 女性"}
+{"id":"T0668","ru":"Здесь много перца.","en":"There's a lot of pepper here.","ja":"胡椒が効きすぎ。","lemmas":["здесь","много","перец"],"target_lemma":"перец","difficulty":2,"kind":"sentence","note":"много + 生格 → перца"}
+{"id":"T0669","ru":"Я люблю фрукты.","en":"I love fruit.","ja":"果物が好きだ。","lemmas":["я","любить","фрукт"],"target_lemma":"фрукт","difficulty":1,"kind":"sentence","note":"фрукты 複数"}
+{"id":"T0670","ru":"Дай мне одно яблоко.","en":"Give me one apple.","ja":"リンゴ一個ちょうだい。","lemmas":["дать","я","один","яблоко"],"target_lemma":"яблоко","difficulty":1,"kind":"sentence","note":"одно = 中性形"}
+{"id":"T0671","ru":"Я люблю картофель.","en":"I love potatoes.","ja":"じゃがいもが好きだ。","lemmas":["я","любить","картофель"],"target_lemma":"картофель","difficulty":1,"kind":"sentence","note":"картофель 男性集合名詞"}
+{"id":"T0672","ru":"Я часто ем рис.","en":"I often eat rice.","ja":"よくお米を食べる。","lemmas":["я","часто","есть","рис"],"target_lemma":"рис","difficulty":1,"kind":"sentence","note":"ем = есть の1人称"}
+{"id":"T0673","ru":"Хочешь белое вино?","en":"Do you want white wine?","ja":"白ワインいる？","lemmas":["хотеть","белый","вино"],"target_lemma":"вино","difficulty":1,"kind":"sentence","note":"белое = 中性形"}
+{"id":"T0674","ru":"Хочешь холодное пиво?","en":"Do you want a cold beer?","ja":"冷えたビールいる？","lemmas":["хотеть","холодный","пиво"],"target_lemma":"пиво","difficulty":1,"kind":"sentence","note":"холодное = 中性形"}
+{"id":"T0675","ru":"У тебя есть сигарета?","en":"Do you have a cigarette?","ja":"タバコ持ってる？","lemmas":["у","ты","сигарета"],"target_lemma":"сигарета","difficulty":1,"kind":"sentence"}
+{"id":"T0676","ru":"Это сильное лекарство.","en":"This is strong medicine.","ja":"これは強い薬だ。","lemmas":["это","сильный","лекарство"],"target_lemma":"лекарство","difficulty":1,"kind":"sentence","note":"сильное = 中性形"}
+{"id":"T0677","ru":"Это опасная болезнь.","en":"This is a dangerous illness.","ja":"危ない病気だ。","lemmas":["это","опасный","болезнь"],"target_lemma":"болезнь","difficulty":1,"kind":"sentence","note":"болезнь 女性；опасная"}
+{"id":"T0678","ru":"У меня высокая температура.","en":"I have a high temperature.","ja":"熱が高い。","lemmas":["у","я","высокий","температура"],"target_lemma":"температура","difficulty":1,"kind":"sentence","note":"высокая = 女性形"}
+{"id":"T0679","ru":"Мне нужна операция.","en":"I need an operation.","ja":"手術が必要だ。","lemmas":["я","нужный","операция"],"target_lemma":"операция","difficulty":2,"kind":"sentence","note":"нужна = 女性形"}
+{"id":"T0680","ru":"Ты в опасности.","en":"You're in danger.","ja":"君は危ない。","lemmas":["ты","в","опасность"],"target_lemma":"опасность","difficulty":2,"kind":"sentence","note":"в опасности 前置格"}
+{"id":"T0681","ru":"Это огромный дом.","en":"This is a huge house.","ja":"でかい家だ。","lemmas":["это","огромный","дом"],"target_lemma":"огромный","difficulty":1,"kind":"sentence"}
+{"id":"T0682","ru":"У меня крошечная комната.","en":"I have a tiny room.","ja":"僕の部屋は極小だ。","lemmas":["у","я","крошечный","комната"],"target_lemma":"крошечный","difficulty":1,"kind":"sentence","note":"крошечная = 女性形"}
+{"id":"T0683","ru":"Это короткий путь.","en":"This is a short way.","ja":"これは近道だ。","lemmas":["это","короткий","путь"],"target_lemma":"короткий","difficulty":1,"kind":"sentence"}
+{"id":"T0684","ru":"Это очень длинный день.","en":"This is a very long day.","ja":"今日は長い一日だ。","lemmas":["это","очень","длинный","день"],"target_lemma":"длинный","difficulty":1,"kind":"sentence"}
+{"id":"T0685","ru":"Это широкая улица.","en":"This is a wide street.","ja":"広い通りだ。","lemmas":["это","широкий","улица"],"target_lemma":"широкий","difficulty":1,"kind":"sentence","note":"широкая = 女性形"}
+{"id":"T0686","ru":"Это узкая дорога.","en":"This is a narrow road.","ja":"狭い道だ。","lemmas":["это","узкий","дорога"],"target_lemma":"узкий","difficulty":1,"kind":"sentence","note":"узкая = 女性形"}
+{"id":"T0687","ru":"Ты очень высокий.","en":"You're very tall.","ja":"背が高いね。","lemmas":["ты","очень","высокий"],"target_lemma":"высокий","difficulty":1,"kind":"sentence"}
+{"id":"T0688","ru":"Здесь низкий потолок.","en":"The ceiling here is low.","ja":"ここ天井が低い。","lemmas":["здесь","низкий","потолок"],"target_lemma":"низкий","difficulty":1,"kind":"sentence"}
+{"id":"T0689","ru":"Это глубокая река.","en":"This is a deep river.","ja":"深い川だ。","lemmas":["это","глубокий","река"],"target_lemma":"глубокий","difficulty":1,"kind":"sentence","note":"глубокая = 女性形"}
+{"id":"T0690","ru":"Это тихая улица.","en":"This is a quiet street.","ja":"静かな通りだ。","lemmas":["это","тихий","улица"],"target_lemma":"тихий","difficulty":1,"kind":"sentence","note":"тихая = 女性形"}
+{"id":"T0691","ru":"У тебя громкий голос.","en":"You have a loud voice.","ja":"声が大きいね。","lemmas":["у","ты","громкий","голос"],"target_lemma":"громкий","difficulty":1,"kind":"sentence"}
+{"id":"T0692","ru":"Сегодня тёплый день.","en":"Today is a warm day.","ja":"今日は暖かい。","lemmas":["сегодня","тёплый","день"],"target_lemma":"тёплый","difficulty":1,"kind":"sentence"}
+{"id":"T0693","ru":"Это холодный кофе.","en":"This is cold coffee.","ja":"これ冷めたコーヒーだ。","lemmas":["это","холодный","кофе"],"target_lemma":"холодный","difficulty":1,"kind":"sentence"}
+{"id":"T0694","ru":"Это очень горячий кофе.","en":"This coffee is very hot.","ja":"このコーヒー熱々だ。","lemmas":["это","очень","горячий","кофе"],"target_lemma":"горячий","difficulty":1,"kind":"sentence"}
+{"id":"T0695","ru":"Здесь сухой воздух.","en":"The air here is dry.","ja":"ここ空気が乾いてる。","lemmas":["здесь","сухой","воздух"],"target_lemma":"сухой","difficulty":1,"kind":"sentence"}
+{"id":"T0696","ru":"У меня мокрая одежда.","en":"My clothes are wet.","ja":"服が濡れた。","lemmas":["у","я","мокрый","одежда"],"target_lemma":"мокрый","difficulty":1,"kind":"sentence","note":"мокрая = 女性形"}
+{"id":"T0697","ru":"Это чистая комната.","en":"This is a clean room.","ja":"きれいな部屋だ。","lemmas":["это","чистый","комната"],"target_lemma":"чистый","difficulty":1,"kind":"sentence","note":"чистая = 女性形"}
+{"id":"T0698","ru":"У меня грязные руки.","en":"My hands are dirty.","ja":"手が汚れてる。","lemmas":["у","я","грязный","рука"],"target_lemma":"грязный","difficulty":1,"kind":"sentence","note":"грязные；руки 複数"}
+{"id":"T0699","ru":"Это очень мягкий хлеб.","en":"This bread is very soft.","ja":"このパン、ふわふわだ。","lemmas":["это","очень","мягкий","хлеб"],"target_lemma":"мягкий","difficulty":1,"kind":"sentence"}
+{"id":"T0700","ru":"Этот хлеб твёрдый.","en":"This bread is hard.","ja":"このパン固い。","lemmas":["этот","хлеб","твёрдый"],"target_lemma":"твёрдый","difficulty":1,"kind":"sentence"}
+{"id":"T0701","ru":"Это очень острый нож.","en":"This is a very sharp knife.","ja":"すごくよく切れるナイフだ。","lemmas":["это","очень","острый","нож"],"target_lemma":"острый","difficulty":1,"kind":"sentence"}
+{"id":"T0702","ru":"Этот нож тупой.","en":"This knife is dull.","ja":"このナイフ切れない。","lemmas":["этот","нож","тупой"],"target_lemma":"тупой","difficulty":1,"kind":"sentence"}
+{"id":"T0703","ru":"Этот чай очень сладкий.","en":"This tea is very sweet.","ja":"この紅茶、甘すぎる。","lemmas":["этот","чай","очень","сладкий"],"target_lemma":"сладкий","difficulty":1,"kind":"sentence"}
+{"id":"T0704","ru":"Твой суп слишком солёный.","en":"Your soup is too salty.","ja":"君のスープ塩辛すぎ。","lemmas":["твой","суп","слишком","солёный"],"target_lemma":"солёный","difficulty":1,"kind":"sentence"}
+{"id":"T0705","ru":"Этот кофе очень горький.","en":"This coffee is very bitter.","ja":"このコーヒー苦いね。","lemmas":["этот","кофе","очень","горький"],"target_lemma":"горький","difficulty":1,"kind":"sentence"}
+{"id":"T0706","ru":"Это свежий хлеб.","en":"This is fresh bread.","ja":"焼きたてのパンだ。","lemmas":["это","свежий","хлеб"],"target_lemma":"свежий","difficulty":1,"kind":"sentence"}
+{"id":"T0707","ru":"Это опасный человек.","en":"This is a dangerous person.","ja":"あいつは危ない人だ。","lemmas":["это","опасный","человек"],"target_lemma":"опасный","difficulty":1,"kind":"sentence"}
+{"id":"T0708","ru":"Ты очень спокойный человек.","en":"You're a very calm person.","ja":"君は落ち着いた人だね。","lemmas":["ты","очень","спокойный","человек"],"target_lemma":"спокойный","difficulty":1,"kind":"sentence"}
+{"id":"T0709","ru":"Это мой бывший начальник.","en":"This is my former boss.","ja":"元上司だ。","lemmas":["это","мой","бывший","начальник"],"target_lemma":"бывший","difficulty":1,"kind":"sentence"}
+{"id":"T0710","ru":"Это моя будущая жена.","en":"This is my future wife.","ja":"将来の妻だ。","lemmas":["это","мой","будущий","жена"],"target_lemma":"будущий","difficulty":1,"kind":"sentence","note":"будущая = 女性形"}
+{"id":"T0711","ru":"Это местный магазин.","en":"This is a local shop.","ja":"地元の店だ。","lemmas":["это","местный","магазин"],"target_lemma":"местный","difficulty":1,"kind":"sentence"}
+{"id":"T0712","ru":"Это иностранный язык.","en":"This is a foreign language.","ja":"これは外国語だ。","lemmas":["это","иностранный","язык"],"target_lemma":"иностранный","difficulty":1,"kind":"sentence"}
+{"id":"T0713","ru":"Это национальный праздник.","en":"This is a national holiday.","ja":"これは祝日だ。","lemmas":["это","национальный","праздник"],"target_lemma":"национальный","difficulty":1,"kind":"sentence"}
+{"id":"T0714","ru":"Это государственный банк.","en":"This is a state bank.","ja":"これは国営銀行だ。","lemmas":["это","государственный","банк"],"target_lemma":"государственный","difficulty":2,"kind":"sentence"}
+{"id":"T0715","ru":"Это общественное место.","en":"This is a public place.","ja":"ここは公共の場だ。","lemmas":["это","общественный","место"],"target_lemma":"общественный","difficulty":2,"kind":"sentence","note":"общественное = 中性形"}
+{"id":"T0716","ru":"Это частный дом.","en":"This is a private house.","ja":"これは一戸建てだ。","lemmas":["это","частный","дом"],"target_lemma":"частный","difficulty":1,"kind":"sentence"}
+{"id":"T0717","ru":"Он военный человек.","en":"He's a military man.","ja":"彼は軍人だ。","lemmas":["он","военный","человек"],"target_lemma":"военный","difficulty":1,"kind":"sentence"}
+{"id":"T0718","ru":"Это политический вопрос.","en":"This is a political question.","ja":"これは政治的な問題だ。","lemmas":["это","политический","вопрос"],"target_lemma":"политический","difficulty":1,"kind":"sentence"}
+{"id":"T0719","ru":"Это экономическая проблема.","en":"This is an economic problem.","ja":"これは経済問題だ。","lemmas":["это","экономический","проблема"],"target_lemma":"экономический","difficulty":2,"kind":"sentence","note":"экономическая = 女性形"}
+{"id":"T0720","ru":"Это социальная проблема.","en":"This is a social problem.","ja":"これは社会問題だ。","lemmas":["это","социальный","проблема"],"target_lemma":"социальный","difficulty":2,"kind":"sentence","note":"социальная = 女性形"}
+{"id":"T0721","ru":"Это культурный центр.","en":"This is a cultural center.","ja":"ここは文化センターだ。","lemmas":["это","культурный","центр"],"target_lemma":"культурный","difficulty":1,"kind":"sentence"}
+{"id":"T0722","ru":"Мне нужна медицинская помощь.","en":"I need medical help.","ja":"医療の助けが要る。","lemmas":["я","нужный","медицинский","помощь"],"target_lemma":"медицинский","difficulty":2,"kind":"sentence","note":"медицинская；нужна 女性形"}
+{"id":"T0723","ru":"Это юридический вопрос.","en":"This is a legal question.","ja":"これは法律の問題だ。","lemmas":["это","юридический","вопрос"],"target_lemma":"юридический","difficulty":2,"kind":"sentence"}
+{"id":"T0724","ru":"У меня финансовые проблемы.","en":"I have financial problems.","ja":"金銭的に苦しい。","lemmas":["у","я","финансовый","проблема"],"target_lemma":"финансовый","difficulty":2,"kind":"sentence","note":"финансовые；проблемы 複数"}
+{"id":"T0725","ru":"Это техническая проблема.","en":"This is a technical problem.","ja":"これは技術的な問題だ。","lemmas":["это","технический","проблема"],"target_lemma":"технический","difficulty":2,"kind":"sentence","note":"техническая = 女性形"}
+{"id":"T0726","ru":"Это научный факт.","en":"This is a scientific fact.","ja":"これは科学的事実だ。","lemmas":["это","научный","факт"],"target_lemma":"научный","difficulty":1,"kind":"sentence"}
+{"id":"T0727","ru":"Это современный город.","en":"This is a modern city.","ja":"これは現代的な街だ。","lemmas":["это","современный","город"],"target_lemma":"современный","difficulty":1,"kind":"sentence"}
+{"id":"T0728","ru":"Это древний город.","en":"This is an ancient city.","ja":"これは古い街だ。","lemmas":["это","древний","город"],"target_lemma":"древний","difficulty":1,"kind":"sentence"}
+{"id":"T0729","ru":"Это северный город.","en":"This is a northern city.","ja":"これは北の街だ。","lemmas":["это","северный","город"],"target_lemma":"северный","difficulty":1,"kind":"sentence"}
+{"id":"T0730","ru":"Это южный остров.","en":"This is a southern island.","ja":"これは南の島だ。","lemmas":["это","южный","остров"],"target_lemma":"южный","difficulty":1,"kind":"sentence"}
+{"id":"T0731","ru":"Это западный мир.","en":"This is the Western world.","ja":"これが西側世界だ。","lemmas":["это","западный","мир"],"target_lemma":"западный","difficulty":1,"kind":"sentence"}
+{"id":"T0732","ru":"Это восточный город.","en":"This is an eastern city.","ja":"これは東方の街だ。","lemmas":["это","восточный","город"],"target_lemma":"восточный","difficulty":1,"kind":"sentence"}
+{"id":"T0733","ru":"Это мой родной город.","en":"This is my hometown.","ja":"ここが僕の故郷だ。","lemmas":["это","мой","родной","город"],"target_lemma":"родной","difficulty":1,"kind":"sentence"}
+{"id":"T0734","ru":"Это чужой телефон.","en":"This is someone else's phone.","ja":"これ他人の電話だ。","lemmas":["это","чужой","телефон"],"target_lemma":"чужой","difficulty":1,"kind":"sentence"}
+{"id":"T0735","ru":"Ты честный человек.","en":"You're an honest person.","ja":"君は正直な人だ。","lemmas":["ты","честный","человек"],"target_lemma":"честный","difficulty":1,"kind":"sentence"}
+{"id":"T0736","ru":"Она моя сестра.","en":"She's my sister.","ja":"彼女は僕の妹だ。","lemmas":["она","мой","сестра"],"target_lemma":"она","difficulty":1,"kind":"sentence"}
+{"id":"T0737","ru":"Я не виноват.","en":"It's not my fault.","ja":"僕のせいじゃない。","lemmas":["я","не","виноватый"],"target_lemma":"виноватый","difficulty":2,"kind":"sentence","note":"виноват = 男性短語尾"}
+{"id":"T0738","ru":"Мама готовит суп.","en":"Mom is cooking soup.","ja":"母がスープを作ってる。","lemmas":["мама","готовить","суп"],"target_lemma":"готовить","difficulty":1,"kind":"sentence","note":"готовит = 3人称"}
+{"id":"T0739","ru":"Я хочу приготовить кофе.","en":"I want to make coffee.","ja":"コーヒーを淹れたい。","lemmas":["я","хотеть","приготовить","кофе"],"target_lemma":"приготовить","difficulty":1,"kind":"sentence"}
+{"id":"T0740","ru":"Я мою руки.","en":"I'm washing my hands.","ja":"手を洗ってる。","lemmas":["я","мыть","рука"],"target_lemma":"мыть","difficulty":2,"kind":"sentence","note":"мою = мыть の現在；руки 複数"}
+{"id":"T0741","ru":"Я чищу зубы утром.","en":"I brush my teeth in the morning.","ja":"朝に歯を磨く。","lemmas":["я","чистить","зуб","утро"],"target_lemma":"чистить","difficulty":2,"kind":"sentence","note":"чищу；зубы 複数；утром"}
+{"id":"T0742","ru":"Они строят новый дом.","en":"They're building a new house.","ja":"彼らは新しい家を建ててる。","lemmas":["они","строить","новый","дом"],"target_lemma":"строить","difficulty":2,"kind":"sentence","note":"они строят"}
+{"id":"T0743","ru":"Я сломал телефон.","en":"I broke my phone.","ja":"電話を壊した。","lemmas":["я","сломать","телефон"],"target_lemma":"сломать","difficulty":2,"kind":"sentence","note":"сломал 過去男性"}
+{"id":"T0744","ru":"Не ломай это!","en":"Don't break that!","ja":"それ壊さないで！","lemmas":["не","ломать","это"],"target_lemma":"ломать","difficulty":1,"kind":"sentence","note":"ломай = 命令形"}
+{"id":"T0745","ru":"Я ремонтирую машину.","en":"I'm fixing the car.","ja":"車を修理してる。","lemmas":["я","ремонтировать","машина"],"target_lemma":"ремонтировать","difficulty":1,"kind":"sentence"}
+{"id":"T0746","ru":"Я люблю рисовать.","en":"I love to draw.","ja":"絵を描くのが好きだ。","lemmas":["я","любить","рисовать"],"target_lemma":"рисовать","difficulty":1,"kind":"sentence"}
+{"id":"T0747","ru":"Ты хорошо поёшь.","en":"You sing well.","ja":"歌うまいね。","lemmas":["ты","хорошо","петь"],"target_lemma":"петь","difficulty":2,"kind":"sentence","note":"поёшь = петь の2人称"}
+{"id":"T0748","ru":"Ты любишь танцевать?","en":"Do you like to dance?","ja":"踊るの好き？","lemmas":["ты","любить","танцевать"],"target_lemma":"танцевать","difficulty":1,"kind":"sentence"}
+{"id":"T0749","ru":"Я учу новые слова.","en":"I'm learning new words.","ja":"新しい単語を覚えてる。","lemmas":["я","учить","новый","слово"],"target_lemma":"учить","difficulty":1,"kind":"sentence","note":"учу；слова 複数"}
+{"id":"T0750","ru":"Я учусь говорить по-русски.","en":"I'm learning to speak Russian.","ja":"ロシア語を話す練習をしてる。","lemmas":["я","учиться","говорить","русский"],"target_lemma":"учиться","difficulty":2,"kind":"sentence","note":"учусь；по-русски"}
+{"id":"T0751","ru":"Он обучает детей.","en":"He teaches children.","ja":"彼は子供を教えてる。","lemmas":["он","обучать","ребёнок"],"target_lemma":"обучать","difficulty":2,"kind":"sentence","note":"детей 対格複数"}
+{"id":"T0752","ru":"Я изучаю русский язык.","en":"I'm studying the Russian language.","ja":"ロシア語を勉強してる。","lemmas":["я","изучать","русский","язык"],"target_lemma":"изучать","difficulty":1,"kind":"sentence"}
+{"id":"T0753","ru":"Можешь повторить это?","en":"Can you repeat that?","ja":"もう一回言ってくれる？","lemmas":["мочь","повторить","это"],"target_lemma":"повторить","difficulty":1,"kind":"sentence"}
+{"id":"T0754","ru":"Я повторяю новые слова.","en":"I'm reviewing new words.","ja":"新しい単語を復習してる。","lemmas":["я","повторять","новый","слово"],"target_lemma":"повторять","difficulty":1,"kind":"sentence","note":"слова 複数"}
+{"id":"T0755","ru":"Я не хочу менять план.","en":"I don't want to change the plan.","ja":"計画は変えたくない。","lemmas":["я","не","хотеть","менять","план"],"target_lemma":"менять","difficulty":1,"kind":"sentence"}
+{"id":"T0756","ru":"Ты не можешь это изменить.","en":"You can't change this.","ja":"それは変えられない。","lemmas":["ты","не","мочь","это","изменить"],"target_lemma":"изменить","difficulty":1,"kind":"sentence"}
+{"id":"T0757","ru":"В мире всё меняется.","en":"Everything in the world changes.","ja":"世界は変わり続ける。","lemmas":["в","мир","всё","меняться"],"target_lemma":"меняться","difficulty":2,"kind":"sentence","note":"в мире 前置格；меняется"}
+{"id":"T0758","ru":"Дети очень быстро растут.","en":"Kids grow up very fast.","ja":"子供はほんとすぐ大きくなる。","lemmas":["ребёнок","очень","быстро","расти"],"target_lemma":"расти","difficulty":2,"kind":"sentence","note":"дети растут"}
+{"id":"T0759","ru":"Я здесь вырос.","en":"I grew up here.","ja":"僕はここで育った。","lemmas":["я","здесь","вырасти"],"target_lemma":"вырасти","difficulty":2,"kind":"sentence","note":"вырос 過去男性"}
+{"id":"T0760","ru":"Она родила сына.","en":"She gave birth to a son.","ja":"彼女は息子を産んだ。","lemmas":["она","родить","сын"],"target_lemma":"родить","difficulty":2,"kind":"sentence","note":"родила = 過去女性（出産のため она）；сына 対格"}
+{"id":"T0761","ru":"Я хочу создать сайт.","en":"I want to create a website.","ja":"サイトを作りたい。","lemmas":["я","хотеть","создать","сайт"],"target_lemma":"создать","difficulty":1,"kind":"sentence"}
+{"id":"T0762","ru":"Я создаю что-то новое.","en":"I'm creating something new.","ja":"何か新しいものを作ってる。","lemmas":["я","создавать","что-то","новый"],"target_lemma":"создавать","difficulty":2,"kind":"sentence","note":"создаю；новое 中性"}
+{"id":"T0763","ru":"Отдай мне телефон.","en":"Give me back the phone.","ja":"電話返して。","lemmas":["отдать","я","телефон"],"target_lemma":"отдать","difficulty":1,"kind":"sentence","note":"отдай 命令形；мне"}
+{"id":"T0764","ru":"Передай это отцу.","en":"Give this to my father.","ja":"これ父に渡して。","lemmas":["передать","это","отец"],"target_lemma":"передать","difficulty":2,"kind":"sentence","note":"передай 命令形；отцу 与格"}
+{"id":"T0765","ru":"Радио передаёт новости.","en":"The radio broadcasts the news.","ja":"ラジオがニュースを流してる。","lemmas":["радио","передавать","новость"],"target_lemma":"передавать","difficulty":2,"kind":"sentence","note":"передаёт；новости 複数"}
+{"id":"T0766","ru":"Ты должен принять решение.","en":"You have to make a decision.","ja":"決断しないと。","lemmas":["ты","должен","принять","решение"],"target_lemma":"принять","difficulty":2,"kind":"sentence","note":"принять решение = 決断する"}
+{"id":"T0767","ru":"Я принимаю лекарство утром.","en":"I take medicine in the morning.","ja":"朝に薬を飲む。","lemmas":["я","принимать","лекарство","утро"],"target_lemma":"принимать","difficulty":2,"kind":"sentence","note":"утром 副詞"}
+{"id":"T0768","ru":"Я не могу отказаться.","en":"I can't refuse.","ja":"断れない。","lemmas":["я","не","мочь","отказаться"],"target_lemma":"отказаться","difficulty":1,"kind":"sentence"}
+{"id":"T0769","ru":"Почему ты отказываешься?","en":"Why do you refuse?","ja":"なんで断るの？","lemmas":["почему","ты","отказываться"],"target_lemma":"отказываться","difficulty":1,"kind":"sentence"}
+{"id":"T0770","ru":"Я готов согласиться.","en":"I'm ready to agree.","ja":"同意する気はあるよ。","lemmas":["я","готовый","согласиться"],"target_lemma":"согласиться","difficulty":2,"kind":"sentence","note":"готов 男性短語尾"}
+{"id":"T0771","ru":"Я не хочу соглашаться.","en":"I don't want to agree.","ja":"同意したくない。","lemmas":["я","не","хотеть","соглашаться"],"target_lemma":"соглашаться","difficulty":1,"kind":"sentence"}
+{"id":"T0772","ru":"Ты можешь это доказать?","en":"Can you prove it?","ja":"それ証明できる？","lemmas":["ты","мочь","это","доказать"],"target_lemma":"доказать","difficulty":1,"kind":"sentence"}
+{"id":"T0773","ru":"Я не хочу ничего доказывать.","en":"I don't want to prove anything.","ja":"何も証明したくない。","lemmas":["я","не","хотеть","ничего","доказывать"],"target_lemma":"доказывать","difficulty":2,"kind":"sentence"}
+{"id":"T0774","ru":"Я обещаю тебе помочь.","en":"I promise to help you.","ja":"手伝うって約束する。","lemmas":["я","обещать","ты","помочь"],"target_lemma":"обещать","difficulty":1,"kind":"sentence","note":"тебе = 与格"}
+{"id":"T0775","ru":"Ты хочешь меня обмануть?","en":"Are you trying to deceive me?","ja":"僕をだます気か？","lemmas":["ты","хотеть","я","обмануть"],"target_lemma":"обмануть","difficulty":1,"kind":"sentence","note":"меня 対格"}
+{"id":"T0776","ru":"Не обманывай меня.","en":"Don't deceive me.","ja":"だまさないで。","lemmas":["не","обманывать","я"],"target_lemma":"обманывать","difficulty":1,"kind":"sentence","note":"обманывай 命令形；меня"}
+{"id":"T0777","ru":"Ты можешь меня простить?","en":"Can you forgive me?","ja":"許してくれる？","lemmas":["ты","мочь","я","простить"],"target_lemma":"простить","difficulty":1,"kind":"sentence","note":"меня 対格"}
+{"id":"T0778","ru":"Я не хочу прощать.","en":"I don't want to forgive.","ja":"許したくない。","lemmas":["я","не","хотеть","прощать"],"target_lemma":"прощать","difficulty":1,"kind":"sentence"}
+{"id":"T0779","ru":"Я не могу вспомнить имя.","en":"I can't recall the name.","ja":"名前が思い出せない。","lemmas":["я","не","мочь","вспомнить","имя"],"target_lemma":"вспомнить","difficulty":1,"kind":"sentence"}
+{"id":"T0780","ru":"Я часто вспоминаю дом.","en":"I often think back on home.","ja":"よく故郷を思い出す。","lemmas":["я","часто","вспоминать","дом"],"target_lemma":"вспоминать","difficulty":1,"kind":"sentence"}
+{"id":"T0781","ru":"Я не заметил тебя.","en":"I didn't notice you.","ja":"君に気づかなかった。","lemmas":["я","не","заметить","ты"],"target_lemma":"заметить","difficulty":2,"kind":"sentence","note":"заметил 過去；тебя"}
+{"id":"T0782","ru":"Я не замечаю время.","en":"I don't notice the time.","ja":"時間を忘れちゃう。","lemmas":["я","не","замечать","время"],"target_lemma":"замечать","difficulty":1,"kind":"sentence"}
+{"id":"T0783","ru":"Я хочу узнать правду.","en":"I want to find out the truth.","ja":"真実が知りたい。","lemmas":["я","хотеть","узнать","правда"],"target_lemma":"узнать","difficulty":1,"kind":"sentence","note":"правду 対格"}
+{"id":"T0784","ru":"Я тебя не узнаю.","en":"I don't recognize you.","ja":"誰だか分からないよ。","lemmas":["я","ты","не","узнавать"],"target_lemma":"узнавать","difficulty":2,"kind":"sentence","note":"узнаю = узнавать の現在"}
+{"id":"T0785","ru":"Можно предложить план?","en":"Can I suggest a plan?","ja":"提案してもいい？","lemmas":["можно","предложить","план"],"target_lemma":"предложить","difficulty":1,"kind":"sentence"}
+{"id":"T0786","ru":"Что ты предлагаешь?","en":"What are you suggesting?","ja":"何を提案してるの？","lemmas":["что","ты","предлагать"],"target_lemma":"предлагать","difficulty":1,"kind":"sentence"}
+{"id":"T0787","ru":"Я требую ответа.","en":"I demand an answer.","ja":"答えを要求する。","lemmas":["я","требовать","ответ"],"target_lemma":"требовать","difficulty":2,"kind":"sentence","note":"требовать + 生格 → ответа"}
+{"id":"T0788","ru":"Я так полагаю.","en":"That's what I suppose.","ja":"僕はそう思う。","lemmas":["я","так","полагать"],"target_lemma":"полагать","difficulty":2,"kind":"sentence","note":"やや硬い言い方"}
+{"id":"T0789","ru":"Ты можешь это представить?","en":"Can you imagine that?","ja":"想像できる？","lemmas":["ты","мочь","это","представить"],"target_lemma":"представить","difficulty":1,"kind":"sentence"}
+{"id":"T0790","ru":"Я представляю нашу компанию.","en":"I represent our company.","ja":"うちの会社の代表です。","lemmas":["я","представлять","наш","компания"],"target_lemma":"представлять","difficulty":2,"kind":"sentence","note":"нашу компанию 対格"}
+{"id":"T0791","ru":"Такой человек существует?","en":"Does such a person exist?","ja":"そんな人いるの？","lemmas":["такой","человек","существовать"],"target_lemma":"существовать","difficulty":2,"kind":"sentence","note":"существует"}
+{"id":"T0792","ru":"Он вдруг исчез.","en":"He suddenly disappeared.","ja":"彼は急に消えた。","lemmas":["он","вдруг","исчезнуть"],"target_lemma":"исчезнуть","difficulty":2,"kind":"sentence","note":"исчез 過去男性"}
+{"id":"T0793","ru":"Деньги быстро исчезают.","en":"Money disappears fast.","ja":"お金はすぐ消える。","lemmas":["деньги","быстро","исчезать"],"target_lemma":"исчезать","difficulty":1,"kind":"sentence"}
+{"id":"T0794","ru":"Он вдруг появился.","en":"He suddenly appeared.","ja":"彼は突然現れた。","lemmas":["он","вдруг","появиться"],"target_lemma":"появиться","difficulty":2,"kind":"sentence","note":"появился 過去男性"}
+{"id":"T0795","ru":"Ты редко появляешься.","en":"You rarely show up.","ja":"最近顔見せないね。","lemmas":["ты","редко","появляться"],"target_lemma":"появляться","difficulty":1,"kind":"sentence"}
+{"id":"T0796","ru":"Подойди ко мне.","en":"Come over to me.","ja":"こっちおいで。","lemmas":["подойти","к","я"],"target_lemma":"подойти","difficulty":2,"kind":"sentence","note":"подойди 命令形；ко мне"}
+{"id":"T0797","ru":"Это мне не подходит.","en":"This doesn't suit me.","ja":"これは合わない。","lemmas":["это","я","не","подходить"],"target_lemma":"подходить","difficulty":2,"kind":"sentence","note":"мне；подходит"}
+{"id":"T0798","ru":"Я хочу зайти в магазин.","en":"I want to drop by the shop.","ja":"店にちょっと寄りたい。","lemmas":["я","хотеть","зайти","в","магазин"],"target_lemma":"зайти","difficulty":1,"kind":"sentence"}
+{"id":"T0799","ru":"Можно включить свет?","en":"Can I turn on the light?","ja":"電気つけていい？","lemmas":["можно","включить","свет"],"target_lemma":"включить","difficulty":1,"kind":"sentence"}
+{"id":"T0800","ru":"Я включаю музыку утром.","en":"I turn on music in the morning.","ja":"朝に音楽をかける。","lemmas":["я","включать","музыка","утро"],"target_lemma":"включать","difficulty":2,"kind":"sentence","note":"музыку；утром"}
+{"id":"T0801","ru":"Можно выключить музыку?","en":"Can I turn off the music?","ja":"音楽消していい？","lemmas":["можно","выключить","музыка"],"target_lemma":"выключить","difficulty":1,"kind":"sentence","note":"музыку 対格"}
+{"id":"T0802","ru":"Я выключаю телефон ночью.","en":"I turn off my phone at night.","ja":"夜は電話を切る。","lemmas":["я","выключать","телефон","ночь"],"target_lemma":"выключать","difficulty":2,"kind":"sentence","note":"ночью 造格副詞"}
+{"id":"T0803","ru":"Запиши мой номер.","en":"Write down my number.","ja":"番号メモして。","lemmas":["записать","мой","номер"],"target_lemma":"записать","difficulty":1,"kind":"sentence","note":"запиши 命令形"}
+{"id":"T0804","ru":"Я записываю новые слова.","en":"I write down new words.","ja":"新しい単語を書き留めてる。","lemmas":["я","записывать","новый","слово"],"target_lemma":"записывать","difficulty":1,"kind":"sentence","note":"слова 複数"}
+{"id":"T0805","ru":"Можно снять пальто?","en":"May I take off my coat?","ja":"コート脱いでいい？","lemmas":["можно","снять","пальто"],"target_lemma":"снять","difficulty":1,"kind":"sentence","note":"снять = 脱ぐ・外す"}
+{"id":"T0806","ru":"Здесь нельзя снимать.","en":"You can't film here.","ja":"ここ撮影禁止だよ。","lemmas":["здесь","нельзя","снимать"],"target_lemma":"снимать","difficulty":2,"kind":"sentence","note":"снимать = 撮影する"}
+{"id":"T0807","ru":"Надень тёплую одежду.","en":"Put on warm clothes.","ja":"暖かい服を着て。","lemmas":["надеть","тёплый","одежда"],"target_lemma":"надеть","difficulty":1,"kind":"sentence","note":"надень 命令形；тёплую 対格"}
+{"id":"T0808","ru":"Я надеваю пальто.","en":"I'm putting on my coat.","ja":"コートを着てる。","lemmas":["я","надевать","пальто"],"target_lemma":"надевать","difficulty":1,"kind":"sentence"}
+{"id":"T0809","ru":"Можно сесть здесь?","en":"May I sit here?","ja":"ここ座っていい？","lemmas":["можно","сесть","здесь"],"target_lemma":"сесть","difficulty":1,"kind":"sentence"}
+{"id":"T0810","ru":"Я должен встать сейчас.","en":"I have to get up now.","ja":"もう起きなきゃ。","lemmas":["я","должен","встать","сейчас"],"target_lemma":"встать","difficulty":1,"kind":"sentence"}
+{"id":"T0811","ru":"Мне трудно вставать утром.","en":"It's hard for me to get up in the morning.","ja":"朝起きるのがつらい。","lemmas":["я","трудно","вставать","утро"],"target_lemma":"вставать","difficulty":2,"kind":"sentence","note":"мне трудно；утром 副詞"}
+{"id":"T0812","ru":"Я хочу лечь спать.","en":"I want to lie down and sleep.","ja":"もう寝たい。","lemmas":["я","хотеть","лечь","спать"],"target_lemma":"лечь","difficulty":1,"kind":"sentence"}
+{"id":"T0813","ru":"Я ложусь спать в час.","en":"I go to bed at one.","ja":"一時に寝る。","lemmas":["я","ложиться","спать","час"],"target_lemma":"ложиться","difficulty":2,"kind":"sentence","note":"ложусь；в час = 一時に"}
+{"id":"T0814","ru":"Брось мне ключи.","en":"Throw me the keys.","ja":"鍵投げて。","lemmas":["бросить","я","ключ"],"target_lemma":"бросить","difficulty":1,"kind":"sentence","note":"брось 命令形；мне；ключи 複数"}
+{"id":"T0815","ru":"Не бросай это на пол.","en":"Don't throw that on the floor.","ja":"それ床に投げないで。","lemmas":["не","бросать","это","на","пол"],"target_lemma":"бросать","difficulty":1,"kind":"sentence","note":"на пол 対格（方向）"}
+{"id":"T0816","ru":"Я ловлю такси.","en":"I'm catching a taxi.","ja":"タクシー拾ってる。","lemmas":["я","ловить","такси"],"target_lemma":"ловить","difficulty":2,"kind":"sentence","note":"ловлю；такси 不変化"}
+{"id":"T0817","ru":"Помоги мне поймать такси.","en":"Help me catch a taxi.","ja":"タクシー拾うの手伝って。","lemmas":["помочь","я","поймать","такси"],"target_lemma":"поймать","difficulty":1,"kind":"sentence","note":"помоги；мне"}
+{"id":"T0818","ru":"Не стреляй в меня!","en":"Don't shoot at me!","ja":"撃たないで！","lemmas":["не","стрелять","в","я"],"target_lemma":"стрелять","difficulty":1,"kind":"sentence","note":"стреляй 命令形；в меня"}
+{"id":"T0819","ru":"Он выстрелил в воздух.","en":"He fired into the air.","ja":"彼は空に向けて撃った。","lemmas":["он","выстрелить","в","воздух"],"target_lemma":"выстрелить","difficulty":2,"kind":"sentence","note":"выстрелил 過去男性"}
+{"id":"T0820","ru":"Я защищаю свою семью.","en":"I protect my family.","ja":"家族を守る。","lemmas":["я","защищать","свой","семья"],"target_lemma":"защищать","difficulty":2,"kind":"sentence","note":"свою семью 対格"}
+{"id":"T0821","ru":"Я хочу защитить тебя.","en":"I want to protect you.","ja":"君を守りたい。","lemmas":["я","хотеть","защитить","ты"],"target_lemma":"защитить","difficulty":1,"kind":"sentence","note":"тебя 対格"}
+{"id":"T0822","ru":"Собака может напасть.","en":"The dog might attack.","ja":"犬が襲うかも。","lemmas":["собака","мочь","напасть"],"target_lemma":"напасть","difficulty":1,"kind":"sentence"}
+{"id":"T0823","ru":"Собаки иногда нападают.","en":"Dogs sometimes attack.","ja":"犬は時々襲ってくる。","lemmas":["собака","иногда","нападать"],"target_lemma":"нападать","difficulty":2,"kind":"sentence","note":"собаки нападают 複数"}
+{"id":"T0824","ru":"Я борюсь за свою мечту.","en":"I'm fighting for my dream.","ja":"夢のために戦ってる。","lemmas":["я","бороться","за","свой","мечта"],"target_lemma":"бороться","difficulty":2,"kind":"sentence","note":"борюсь；за + 対格"}
+{"id":"T0825","ru":"Мы должны победить.","en":"We have to win.","ja":"勝たなきゃ。","lemmas":["мы","должен","победить"],"target_lemma":"победить","difficulty":2,"kind":"sentence","note":"должны 複数短語尾"}
+{"id":"T0826","ru":"Мы не хотим проиграть.","en":"We don't want to lose.","ja":"負けたくない。","lemmas":["мы","не","хотеть","проиграть"],"target_lemma":"проиграть","difficulty":1,"kind":"sentence"}
+{"id":"T0827","ru":"Ты хочешь меня спасти?","en":"Do you want to save me?","ja":"僕を助けてくれるの？","lemmas":["ты","хотеть","я","спасти"],"target_lemma":"спасти","difficulty":1,"kind":"sentence","note":"меня 対格"}
+{"id":"T0828","ru":"Врачи спасают жизни.","en":"Doctors save lives.","ja":"医者は命を救う。","lemmas":["врач","спасать","жизнь"],"target_lemma":"спасать","difficulty":2,"kind":"sentence","note":"врачи；жизни 複数対格"}
+{"id":"T0829","ru":"Этот врач лечит детей.","en":"This doctor treats children.","ja":"この医者は子供を診る。","lemmas":["этот","врач","лечить","ребёнок"],"target_lemma":"лечить","difficulty":2,"kind":"sentence","note":"лечит；детей 対格複数"}
+{"id":"T0830","ru":"Я редко болею.","en":"I rarely get sick.","ja":"あまり病気しない。","lemmas":["я","редко","болеть"],"target_lemma":"болеть","difficulty":1,"kind":"sentence","note":"болею = 病気になる"}
+{"id":"T0831","ru":"Мне трудно дышать.","en":"It's hard for me to breathe.","ja":"息が苦しい。","lemmas":["я","трудно","дышать"],"target_lemma":"дышать","difficulty":2,"kind":"sentence","note":"мне трудно"}
+{"id":"T0832","ru":"Здесь хорошо пахнет.","en":"It smells good here.","ja":"ここいい匂い。","lemmas":["здесь","хорошо","пахнуть"],"target_lemma":"пахнуть","difficulty":2,"kind":"sentence","note":"пахнет = 匂いがする"}
+{"id":"T0833","ru":"Не трогай мой телефон.","en":"Don't touch my phone.","ja":"僕の電話に触らないで。","lemmas":["не","трогать","мой","телефон"],"target_lemma":"трогать","difficulty":1,"kind":"sentence","note":"трогай 命令形"}
+{"id":"T0834","ru":"Он коснулся моей руки.","en":"He touched my hand.","ja":"彼が僕の手に触れた。","lemmas":["он","коснуться","мой","рука"],"target_lemma":"коснуться","difficulty":2,"kind":"sentence","note":"коснулся + 生格 → моей руки"}
+{"id":"T0835","ru":"Можно тебя обнять?","en":"Can I hug you?","ja":"ハグしていい？","lemmas":["можно","ты","обнять"],"target_lemma":"обнять","difficulty":1,"kind":"sentence","note":"тебя 対格"}
+{"id":"T0836","ru":"Он целует её руку.","en":"He kisses her hand.","ja":"彼は彼女の手にキスする。","lemmas":["он","целовать","её","рука"],"target_lemma":"целовать","difficulty":2,"kind":"sentence","note":"целует；её руку 対格"}
+{"id":"T0837","ru":"Можно тебя поцеловать?","en":"Can I kiss you?","ja":"キスしていい？","lemmas":["можно","ты","поцеловать"],"target_lemma":"поцеловать","difficulty":1,"kind":"sentence","note":"тебя 対格"}
+{"id":"T0838","ru":"Они хотят развестись.","en":"They want to get divorced.","ja":"あの二人は離婚したがってる。","lemmas":["они","хотеть","развестись"],"target_lemma":"развестись","difficulty":2,"kind":"sentence","note":"они（両者の行為なので複数）"}
+{"id":"T0839","ru":"Мои родители дома.","en":"My parents are home.","ja":"両親は家にいる。","lemmas":["мой","родители","дом"],"target_lemma":"родители","difficulty":1,"kind":"sentence","note":"родители 複数のみ；дома"}
+{"id":"T0840","ru":"У меня есть брат.","en":"I have a brother.","ja":"兄弟がいる。","lemmas":["у","я","брат"],"target_lemma":"брат","difficulty":1,"kind":"sentence"}
+{"id":"T0841","ru":"У меня есть сестра.","en":"I have a sister.","ja":"姉妹がいる。","lemmas":["у","я","сестра"],"target_lemma":"сестра","difficulty":1,"kind":"sentence"}
+{"id":"T0842","ru":"Мой дед был солдатом.","en":"My grandfather was a soldier.","ja":"祖父は軍人だった。","lemmas":["мой","дед","быть","солдат"],"target_lemma":"дед","difficulty":2,"kind":"sentence","note":"был；солдатом 造格"}
+{"id":"T0843","ru":"Моя бабушка живёт здесь.","en":"My grandmother lives here.","ja":"祖母はここに住んでる。","lemmas":["мой","бабушка","жить","здесь"],"target_lemma":"бабушка","difficulty":1,"kind":"sentence","note":"живёт 3人称"}
+{"id":"T0844","ru":"Это мой дядя.","en":"This is my uncle.","ja":"これは叔父だ。","lemmas":["это","мой","дядя"],"target_lemma":"дядя","difficulty":1,"kind":"sentence","note":"дядя は男性名詞（女性型活用）"}
+{"id":"T0845","ru":"Это моя тётя.","en":"This is my aunt.","ja":"これは叔母だ。","lemmas":["это","мой","тётя"],"target_lemma":"тётя","difficulty":1,"kind":"sentence"}
+{"id":"T0846","ru":"Это мой племянник.","en":"This is my nephew.","ja":"これは甥だ。","lemmas":["это","мой","племянник"],"target_lemma":"племянник","difficulty":1,"kind":"sentence"}
+{"id":"T0847","ru":"Это моя племянница.","en":"This is my niece.","ja":"これは姪だ。","lemmas":["это","мой","племянница"],"target_lemma":"племянница","difficulty":1,"kind":"sentence"}
+{"id":"T0848","ru":"Младенец громко плачет.","en":"The baby is crying loudly.","ja":"赤ちゃんが大声で泣いてる。","lemmas":["младенец","громко","плакать"],"target_lemma":"младенец","difficulty":1,"kind":"sentence","note":"плачет 3人称"}
+{"id":"T0849","ru":"Какой у тебя возраст?","en":"What's your age?","ja":"年いくつ？","lemmas":["какой","у","ты","возраст"],"target_lemma":"возраст","difficulty":1,"kind":"sentence"}
+{"id":"T0850","ru":"Когда твой день рождения?","en":"When's your birthday?","ja":"誕生日いつ？","lemmas":["когда","твой","день","рождение"],"target_lemma":"рождение","difficulty":2,"kind":"sentence","note":"день рождения = 生格の定型（誕生日）"}
+{"id":"T0851","ru":"Это была красивая свадьба.","en":"It was a beautiful wedding.","ja":"きれいな結婚式だった。","lemmas":["это","быть","красивый","свадьба"],"target_lemma":"свадьба","difficulty":2,"kind":"sentence","note":"была；красивая 女性形"}
+{"id":"T0852","ru":"Это был трудный развод.","en":"It was a difficult divorce.","ja":"つらい離婚だった。","lemmas":["это","быть","трудный","развод"],"target_lemma":"развод","difficulty":2,"kind":"sentence","note":"был 過去男性"}
+{"id":"T0853","ru":"Сегодня большой праздник.","en":"Today is a big holiday.","ja":"今日は大きな祝日だ。","lemmas":["сегодня","большой","праздник"],"target_lemma":"праздник","difficulty":1,"kind":"sentence"}
+{"id":"T0854","ru":"У нас сегодня вечеринка.","en":"We have a party today.","ja":"今日うちでパーティーだ。","lemmas":["у","мы","сегодня","вечеринка"],"target_lemma":"вечеринка","difficulty":1,"kind":"sentence"}
+{"id":"T0855","ru":"У меня важная встреча.","en":"I have an important meeting.","ja":"大事な打ち合わせがある。","lemmas":["у","я","важный","встреча"],"target_lemma":"встреча","difficulty":1,"kind":"sentence","note":"важная 女性形"}
+{"id":"T0856","ru":"Это был серьёзный разговор.","en":"It was a serious conversation.","ja":"真剣な話だった。","lemmas":["это","быть","серьёзный","разговор"],"target_lemma":"разговор","difficulty":2,"kind":"sentence","note":"был 過去男性"}
+{"id":"T0857","ru":"Это важный звонок.","en":"This is an important call.","ja":"大事な電話だ。","lemmas":["это","важный","звонок"],"target_lemma":"звонок","difficulty":1,"kind":"sentence"}
+{"id":"T0858","ru":"Я слышал громкий крик.","en":"I heard a loud shout.","ja":"大きな叫び声が聞こえた。","lemmas":["я","слышать","громкий","крик"],"target_lemma":"крик","difficulty":2,"kind":"sentence","note":"слышал 過去男性"}
+{"id":"T0859","ru":"Я слышу твой смех.","en":"I hear your laughter.","ja":"君の笑い声が聞こえる。","lemmas":["я","слышать","твой","смех"],"target_lemma":"смех","difficulty":1,"kind":"sentence"}
+{"id":"T0860","ru":"У меня слёзы на глазах.","en":"There are tears in my eyes.","ja":"涙が出てきた。","lemmas":["у","я","слеза","на","глаз"],"target_lemma":"слеза","difficulty":2,"kind":"sentence","note":"слёзы 複数；на глазах 前置格"}
+{"id":"T0861","ru":"У тебя красивая улыбка.","en":"You have a beautiful smile.","ja":"いい笑顔だね。","lemmas":["у","ты","красивый","улыбка"],"target_lemma":"улыбка","difficulty":1,"kind":"sentence","note":"красивая 女性形"}
+{"id":"T0862","ru":"Это был первый поцелуй.","en":"It was the first kiss.","ja":"あれが初めてのキスだった。","lemmas":["это","быть","первый","поцелуй"],"target_lemma":"поцелуй","difficulty":2,"kind":"sentence","note":"был 過去男性"}
+{"id":"T0863","ru":"Мне нужно твоё объятие.","en":"I need your hug.","ja":"君に抱きしめてほしい。","lemmas":["я","нужный","твой","объятие"],"target_lemma":"объятие","difficulty":2,"kind":"sentence","note":"нужно + 中性；твоё"}
+{"id":"T0864","ru":"Это было трудное путешествие.","en":"It was a hard journey.","ja":"きつい旅だった。","lemmas":["это","быть","трудный","путешествие"],"target_lemma":"путешествие","difficulty":2,"kind":"sentence","note":"было；трудное 中性"}
+{"id":"T0865","ru":"Это была хорошая поездка.","en":"It was a good trip.","ja":"いい旅行だった。","lemmas":["это","быть","хороший","поездка"],"target_lemma":"поездка","difficulty":2,"kind":"sentence","note":"была；хорошая 女性形"}
+{"id":"T0866","ru":"Я хочу в отпуск.","en":"I want a vacation.","ja":"休暇が欲しい。","lemmas":["я","хотеть","в","отпуск"],"target_lemma":"отпуск","difficulty":1,"kind":"sentence","note":"в отпуск 対格"}
+{"id":"T0867","ru":"Где здесь гостиница?","en":"Where's a hotel here?","ja":"この辺にホテルある？","lemmas":["где","здесь","гостиница"],"target_lemma":"гостиница","difficulty":1,"kind":"sentence"}
+{"id":"T0868","ru":"Я еду в аэропорт.","en":"I'm going to the airport.","ja":"空港に向かってる。","lemmas":["я","ехать","в","аэропорт"],"target_lemma":"аэропорт","difficulty":1,"kind":"sentence","note":"еду 乗り物で"}
+{"id":"T0869","ru":"Корабль уже в порту.","en":"The ship is already in port.","ja":"船はもう港にいる。","lemmas":["корабль","уже","в","порт"],"target_lemma":"порт","difficulty":2,"kind":"sentence","note":"в порту 前置格"}
+{"id":"T0870","ru":"Где здесь метро?","en":"Where's the metro here?","ja":"地下鉄どこ？","lemmas":["где","здесь","метро"],"target_lemma":"метро","difficulty":1,"kind":"sentence"}
+{"id":"T0871","ru":"Я жду автобус.","en":"I'm waiting for the bus.","ja":"バス待ってる。","lemmas":["я","ждать","автобус"],"target_lemma":"автобус","difficulty":1,"kind":"sentence"}
+{"id":"T0872","ru":"Я жду такси.","en":"I'm waiting for a taxi.","ja":"タクシー待ってる。","lemmas":["я","ждать","такси"],"target_lemma":"такси","difficulty":1,"kind":"sentence","note":"такси 不変化"}
+{"id":"T0873","ru":"Где моя остановка?","en":"Where's my stop?","ja":"僕の降りる駅どこ？","lemmas":["где","мой","остановка"],"target_lemma":"остановка","difficulty":1,"kind":"sentence"}
+{"id":"T0874","ru":"Здесь нет бензина.","en":"There's no gas here.","ja":"ここガソリンないよ。","lemmas":["здесь","нет","бензин"],"target_lemma":"бензин","difficulty":2,"kind":"sentence","note":"нет + 生格 → бензина"}
+{"id":"T0875","ru":"Какая здесь скорость?","en":"What's the speed limit here?","ja":"ここ制限速度いくつ？","lemmas":["какой","здесь","скорость"],"target_lemma":"скорость","difficulty":1,"kind":"sentence","note":"какая；скорость 女性"}
+{"id":"T0876","ru":"На дороге была авария.","en":"There was an accident on the road.","ja":"道路で事故があった。","lemmas":["на","дорога","быть","авария"],"target_lemma":"авария","difficulty":2,"kind":"sentence","note":"была；на дороге 前置格"}
+{"id":"T0877","ru":"После поворота — мой дом.","en":"After the turn is my house.","ja":"あの角の先が僕の家。","lemmas":["после","поворот","мой","дом"],"target_lemma":"поворот","difficulty":2,"kind":"sentence","note":"после + 生格 → поворота"}
+{"id":"T0878","ru":"Мы едем через мост.","en":"We're driving across the bridge.","ja":"橋を渡ってる。","lemmas":["мы","ехать","через","мост"],"target_lemma":"мост","difficulty":1,"kind":"sentence","note":"едем；через + 対格"}
+{"id":"T0879","ru":"Я жду на площади.","en":"I'm waiting on the square.","ja":"広場で待ってる。","lemmas":["я","ждать","на","площадь"],"target_lemma":"площадь","difficulty":2,"kind":"sentence","note":"на площади 前置格；площадь 女性"}
+{"id":"T0880","ru":"Дети играют в парке.","en":"The kids are playing in the park.","ja":"子供が公園で遊んでる。","lemmas":["ребёнок","играть","в","парк"],"target_lemma":"парк","difficulty":2,"kind":"sentence","note":"в парке 前置格"}
+{"id":"T0881","ru":"Я иду в музей.","en":"I'm going to the museum.","ja":"博物館に行く。","lemmas":["я","идти","в","музей"],"target_lemma":"музей","difficulty":1,"kind":"sentence"}
+{"id":"T0882","ru":"Мы идём в театр.","en":"We're going to the theater.","ja":"劇場に行く。","lemmas":["мы","идти","в","театр"],"target_lemma":"театр","difficulty":1,"kind":"sentence"}
+{"id":"T0883","ru":"Это старая церковь.","en":"This is an old church.","ja":"古い教会だ。","lemmas":["это","старый","церковь"],"target_lemma":"церковь","difficulty":1,"kind":"sentence","note":"церковь 女性；старая"}
+{"id":"T0884","ru":"Это большая республика.","en":"This is a big republic.","ja":"大きな共和国だ。","lemmas":["это","большой","республика"],"target_lemma":"республика","difficulty":1,"kind":"sentence","note":"большая 女性形"}
+{"id":"T0885","ru":"Я живу в этой области.","en":"I live in this region.","ja":"この地方に住んでる。","lemmas":["я","жить","в","этот","область"],"target_lemma":"область","difficulty":2,"kind":"sentence","note":"в этой области 前置格；область 女性"}
+{"id":"T0886","ru":"Это тихий район.","en":"This is a quiet district.","ja":"静かな地区だ。","lemmas":["это","тихий","район"],"target_lemma":"район","difficulty":1,"kind":"sentence"}
+{"id":"T0887","ru":"Мои родители живут в деревне.","en":"My parents live in a village.","ja":"両親は田舎に住んでる。","lemmas":["мой","родители","жить","в","деревня"],"target_lemma":"деревня","difficulty":2,"kind":"sentence","note":"живут；в деревне 前置格"}
+{"id":"T0888","ru":"Это маленький посёлок.","en":"This is a small settlement.","ja":"小さな集落だ。","lemmas":["это","маленький","посёлок"],"target_lemma":"посёлок","difficulty":1,"kind":"sentence"}
+{"id":"T0889","ru":"Это наша столица.","en":"This is our capital.","ja":"ここが首都だ。","lemmas":["это","наш","столица"],"target_lemma":"столица","difficulty":1,"kind":"sentence"}
+{"id":"T0890","ru":"Мой дом на севере.","en":"My home is in the north.","ja":"僕の家は北にある。","lemmas":["мой","дом","на","север"],"target_lemma":"север","difficulty":1,"kind":"sentence","note":"на севере 前置格"}
+{"id":"T0891","ru":"Я хочу на юг.","en":"I want to go south.","ja":"南に行きたい。","lemmas":["я","хотеть","на","юг"],"target_lemma":"юг","difficulty":1,"kind":"sentence","note":"на юг 対格（方向）"}
+{"id":"T0892","ru":"Мой город на западе.","en":"My city is in the west.","ja":"僕の街は西にある。","lemmas":["мой","город","на","запад"],"target_lemma":"запад","difficulty":1,"kind":"sentence","note":"на западе 前置格"}
+{"id":"T0893","ru":"Наш дом на востоке.","en":"Our house is in the east.","ja":"うちは東にある。","lemmas":["наш","дом","на","восток"],"target_lemma":"восток","difficulty":1,"kind":"sentence","note":"на востоке 前置格"}
+{"id":"T0894","ru":"Сегодня плохая погода.","en":"The weather is bad today.","ja":"今日は天気が悪い。","lemmas":["сегодня","плохой","погода"],"target_lemma":"погода","difficulty":1,"kind":"sentence","note":"плохая 女性形"}
+{"id":"T0895","ru":"Я люблю природу.","en":"I love nature.","ja":"自然が好きだ。","lemmas":["я","любить","природа"],"target_lemma":"природа","difficulty":1,"kind":"sentence","note":"природу 対格"}
+{"id":"T0896","ru":"Это большой океан.","en":"This is a big ocean.","ja":"大きな海だ。","lemmas":["это","большой","океан"],"target_lemma":"океан","difficulty":1,"kind":"sentence"}
+{"id":"T0897","ru":"Здесь красивое озеро.","en":"There's a beautiful lake here.","ja":"きれいな湖だ。","lemmas":["здесь","красивый","озеро"],"target_lemma":"озеро","difficulty":1,"kind":"sentence","note":"красивое 中性形"}
+{"id":"T0898","ru":"Это наша планета.","en":"This is our planet.","ja":"これが僕らの惑星だ。","lemmas":["это","наш","планета"],"target_lemma":"планета","difficulty":1,"kind":"sentence"}
+{"id":"T0899","ru":"Я мечтаю о космосе.","en":"I dream about space.","ja":"宇宙に憧れてる。","lemmas":["я","мечтать","о","космос"],"target_lemma":"космос","difficulty":2,"kind":"sentence","note":"мечтать о + 前置格 → о космосе"}
+{"id":"T0900","ru":"У нас есть огород.","en":"We have a vegetable garden.","ja":"うちには畑がある。","lemmas":["у","мы","огород"],"target_lemma":"огород","difficulty":1,"kind":"sentence"}
+{"id":"T0901","ru":"Мой отец работает на фабрике.","en":"My father works at a factory.","ja":"父は工場で働いてる。","lemmas":["мой","отец","работать","на","фабрика"],"target_lemma":"фабрика","difficulty":2,"kind":"sentence","note":"на фабрике 前置格"}
+{"id":"T0902","ru":"Это большой завод.","en":"This is a big plant.","ja":"大きな工場だ。","lemmas":["это","большой","завод"],"target_lemma":"завод","difficulty":1,"kind":"sentence"}
+{"id":"T0903","ru":"У них есть ферма.","en":"They have a farm.","ja":"彼らは農場を持ってる。","lemmas":["у","они","ферма"],"target_lemma":"ферма","difficulty":1,"kind":"sentence","note":"у них = 彼らは持っている"}
+{"id":"T0904","ru":"Мой брат в армии.","en":"My brother is in the army.","ja":"兄は軍隊にいる。","lemmas":["мой","брат","в","армия"],"target_lemma":"армия","difficulty":1,"kind":"sentence","note":"в армии 前置格"}
+{"id":"T0905","ru":"Это наш флот.","en":"This is our fleet.","ja":"これが我が艦隊だ。","lemmas":["это","наш","флот"],"target_lemma":"флот","difficulty":1,"kind":"sentence"}
+{"id":"T0906","ru":"Это была большая битва.","en":"It was a big battle.","ja":"大きな戦いだった。","lemmas":["это","быть","большой","битва"],"target_lemma":"битва","difficulty":2,"kind":"sentence","note":"была；большая 女性形"}
+{"id":"T0907","ru":"Это наша победа.","en":"This is our victory.","ja":"これは僕らの勝利だ。","lemmas":["это","наш","победа"],"target_lemma":"победа","difficulty":1,"kind":"sentence"}
+{"id":"T0908","ru":"Это было большое поражение.","en":"It was a big defeat.","ja":"大きな敗北だった。","lemmas":["это","быть","большой","поражение"],"target_lemma":"поражение","difficulty":2,"kind":"sentence","note":"было；большое 中性形"}
+{"id":"T0909","ru":"Это важный договор.","en":"This is an important agreement.","ja":"これは重要な契約だ。","lemmas":["это","важный","договор"],"target_lemma":"договор","difficulty":1,"kind":"sentence"}
+{"id":"T0910","ru":"У меня новый контракт.","en":"I have a new contract.","ja":"新しい契約を取った。","lemmas":["у","я","новый","контракт"],"target_lemma":"контракт","difficulty":1,"kind":"sentence"}
+{"id":"T0911","ru":"Это мой новый проект.","en":"This is my new project.","ja":"これが新しいプロジェクトだ。","lemmas":["это","мой","новый","проект"],"target_lemma":"проект","difficulty":1,"kind":"sentence"}
+{"id":"T0912","ru":"Это хорошая программа.","en":"This is a good program.","ja":"いいプログラムだ。","lemmas":["это","хороший","программа"],"target_lemma":"программа","difficulty":1,"kind":"sentence","note":"хорошая 女性形"}
+{"id":"T0913","ru":"Это трудный курс.","en":"This is a difficult course.","ja":"これは難しい講座だ。","lemmas":["это","трудный","курс"],"target_lemma":"курс","difficulty":1,"kind":"sentence"}
+{"id":"T0914","ru":"Сегодня трудный урок.","en":"Today's lesson is hard.","ja":"今日の授業は難しい。","lemmas":["сегодня","трудный","урок"],"target_lemma":"урок","difficulty":1,"kind":"sentence"}
+{"id":"T0915","ru":"У меня завтра экзамен.","en":"I have an exam tomorrow.","ja":"明日試験だ。","lemmas":["у","я","завтра","экзамен"],"target_lemma":"экзамен","difficulty":1,"kind":"sentence"}
+{"id":"T0916","ru":"У меня хорошая оценка.","en":"I got a good grade.","ja":"いい成績だった。","lemmas":["у","я","хороший","оценка"],"target_lemma":"оценка","difficulty":1,"kind":"sentence","note":"хорошая 女性形"}
+{"id":"T0917","ru":"Это важное знание.","en":"This is important knowledge.","ja":"これは大事な知識だ。","lemmas":["это","важный","знание"],"target_lemma":"знание","difficulty":1,"kind":"sentence","note":"важное 中性形"}
+{"id":"T0918","ru":"Я люблю науку.","en":"I love science.","ja":"科学が好きだ。","lemmas":["я","любить","наука"],"target_lemma":"наука","difficulty":1,"kind":"sentence","note":"науку 対格"}
+{"id":"T0919","ru":"Это настоящее искусство.","en":"This is real art.","ja":"これぞ本物の芸術だ。","lemmas":["это","настоящий","искусство"],"target_lemma":"искусство","difficulty":1,"kind":"sentence","note":"настоящее 中性形"}
+{"id":"T0920","ru":"Это красивая картина.","en":"This is a beautiful painting.","ja":"きれいな絵だ。","lemmas":["это","красивый","картина"],"target_lemma":"картина","difficulty":1,"kind":"sentence","note":"красивая 女性形"}
+{"id":"T0921","ru":"Это твой рисунок?","en":"Is this your drawing?","ja":"これ君が描いたの？","lemmas":["это","твой","рисунок"],"target_lemma":"рисунок","difficulty":1,"kind":"sentence"}
+{"id":"T0922","ru":"Это красивый стих.","en":"This is a beautiful poem.","ja":"きれいな詩だ。","lemmas":["это","красивый","стих"],"target_lemma":"стих","difficulty":1,"kind":"sentence"}
+{"id":"T0923","ru":"Я читаю новый роман.","en":"I'm reading a new novel.","ja":"新しい小説を読んでる。","lemmas":["я","читать","новый","роман"],"target_lemma":"роман","difficulty":1,"kind":"sentence"}
+{"id":"T0924","ru":"Это интересный журнал.","en":"This is an interesting magazine.","ja":"面白い雑誌だ。","lemmas":["это","интересный","журнал"],"target_lemma":"журнал","difficulty":1,"kind":"sentence"}
+{"id":"T0925","ru":"Открой первую страницу.","en":"Open the first page.","ja":"最初のページを開いて。","lemmas":["открыть","первый","страница"],"target_lemma":"страница","difficulty":2,"kind":"sentence","note":"открой；первую страницу 対格"}
+{"id":"T0926","ru":"Это первая буква.","en":"This is the first letter.","ja":"これが最初の文字だ。","lemmas":["это","первый","буква"],"target_lemma":"буква","difficulty":1,"kind":"sentence"}
+{"id":"T0927","ru":"Повтори эту фразу.","en":"Repeat this phrase.","ja":"このフレーズ繰り返して。","lemmas":["повторить","этот","фраза"],"target_lemma":"фраза","difficulty":2,"kind":"sentence","note":"повтори；эту фразу 対格"}
+{"id":"T0928","ru":"Это трудное предложение.","en":"This is a difficult sentence.","ja":"これは難しい文だ。","lemmas":["это","трудный","предложение"],"target_lemma":"предложение","difficulty":1,"kind":"sentence","note":"трудное 中性形"}
+{"id":"T0929","ru":"Это хороший перевод.","en":"This is a good translation.","ja":"いい訳だ。","lemmas":["это","хороший","перевод"],"target_lemma":"перевод","difficulty":1,"kind":"sentence"}
+{"id":"T0930","ru":"Это была хорошая речь.","en":"It was a good speech.","ja":"いいスピーチだった。","lemmas":["это","быть","хороший","речь"],"target_lemma":"речь","difficulty":2,"kind":"sentence","note":"была；речь 女性；хорошая"}
+{"id":"T0931","ru":"Читай этот текст.","en":"Read this text.","ja":"この文章読んで。","lemmas":["читать","этот","текст"],"target_lemma":"текст","difficulty":1,"kind":"sentence","note":"читай 命令形"}
+{"id":"T0932","ru":"Это интересный факт.","en":"This is an interesting fact.","ja":"面白い事実だ。","lemmas":["это","интересный","факт"],"target_lemma":"факт","difficulty":1,"kind":"sentence"}
+{"id":"T0933","ru":"Это моё мнение.","en":"This is my opinion.","ja":"これが僕の意見だ。","lemmas":["это","мой","мнение"],"target_lemma":"мнение","difficulty":1,"kind":"sentence","note":"моё 中性形"}
+{"id":"T0934","ru":"У меня есть идея.","en":"I have an idea.","ja":"いい考えがある。","lemmas":["у","я","идея"],"target_lemma":"идея","difficulty":1,"kind":"sentence"}
+{"id":"T0935","ru":"Это хорошая мысль.","en":"That's a good thought.","ja":"いい考えだね。","lemmas":["это","хороший","мысль"],"target_lemma":"мысль","difficulty":1,"kind":"sentence","note":"мысль 女性；хорошая"}
+{"id":"T0936","ru":"Это странное чувство.","en":"It's a strange feeling.","ja":"変な感じだ。","lemmas":["это","странный","чувство"],"target_lemma":"чувство","difficulty":1,"kind":"sentence","note":"странное 中性形"}
+{"id":"T0937","ru":"Это моё желание.","en":"This is my wish.","ja":"これが僕の願いだ。","lemmas":["это","мой","желание"],"target_lemma":"желание","difficulty":1,"kind":"sentence","note":"моё 中性形"}
+{"id":"T0938","ru":"У меня есть надежда.","en":"I have hope.","ja":"まだ希望はある。","lemmas":["у","я","надежда"],"target_lemma":"надежда","difficulty":1,"kind":"sentence"}
+{"id":"T0939","ru":"У меня большой интерес.","en":"I have great interest.","ja":"すごく興味がある。","lemmas":["у","я","большой","интерес"],"target_lemma":"интерес","difficulty":1,"kind":"sentence"}
+{"id":"T0940","ru":"У меня к тебе уважение.","en":"I have respect for you.","ja":"君を尊敬してる。","lemmas":["у","я","к","ты","уважение"],"target_lemma":"уважение","difficulty":2,"kind":"sentence","note":"к тебе = 与格"}
+{"id":"T0941","ru":"Между нами есть доверие.","en":"There's trust between us.","ja":"僕らには信頼がある。","lemmas":["между","мы","доверие"],"target_lemma":"доверие","difficulty":2,"kind":"sentence","note":"между нами 造格"}
+{"id":"T0942","ru":"У меня есть сомнение.","en":"I have a doubt.","ja":"ちょっと疑ってる。","lemmas":["у","я","сомнение"],"target_lemma":"сомнение","difficulty":1,"kind":"sentence"}
+{"id":"T0943","ru":"Это не моя вина.","en":"It's not my fault.","ja":"僕のせいじゃない。","lemmas":["это","не","мой","вина"],"target_lemma":"вина","difficulty":1,"kind":"sentence"}
+{"id":"T0944","ru":"У меня нет стыда.","en":"I have no shame.","ja":"恥じることなんかない。","lemmas":["у","я","нет","стыд"],"target_lemma":"стыд","difficulty":2,"kind":"sentence","note":"нет + 生格 → стыда"}
+{"id":"T0945","ru":"Ты моя гордость.","en":"You're my pride.","ja":"君は僕の誇りだ。","lemmas":["ты","мой","гордость"],"target_lemma":"гордость","difficulty":1,"kind":"sentence","note":"гордость 女性"}
+{"id":"T0946","ru":"Это чистая ненависть.","en":"This is pure hatred.","ja":"これはただの憎しみだ。","lemmas":["это","чистый","ненависть"],"target_lemma":"ненависть","difficulty":1,"kind":"sentence","note":"чистая；ненависть 女性"}
+{"id":"T0947","ru":"Я вижу твой гнев.","en":"I see your anger.","ja":"君の怒りが分かる。","lemmas":["я","видеть","твой","гнев"],"target_lemma":"гнев","difficulty":1,"kind":"sentence"}
+{"id":"T0948","ru":"У меня хорошее настроение.","en":"I'm in a good mood.","ja":"今日は機嫌がいい。","lemmas":["у","я","хороший","настроение"],"target_lemma":"настроение","difficulty":1,"kind":"sentence","note":"хорошее 中性形"}
+{"id":"T0949","ru":"Он в плохом состоянии.","en":"He's in a bad state.","ja":"彼は容態が悪い。","lemmas":["он","в","плохой","состояние"],"target_lemma":"состояние","difficulty":2,"kind":"sentence","note":"в плохом состоянии 前置格"}
+{"id":"T0950","ru":"У меня есть опыт.","en":"I have experience.","ja":"経験はあるよ。","lemmas":["у","я","опыт"],"target_lemma":"опыт","difficulty":1,"kind":"sentence"}
+{"id":"T0951","ru":"Дай мне пример.","en":"Give me an example.","ja":"例を出して。","lemmas":["дать","я","пример"],"target_lemma":"пример","difficulty":1,"kind":"sentence"}
+{"id":"T0952","ru":"Есть другой способ.","en":"There's another way.","ja":"別のやり方がある。","lemmas":["быть","другой","способ"],"target_lemma":"способ","difficulty":1,"kind":"sentence","note":"есть = 存在の「ある」"}
+{"id":"T0953","ru":"Это первый шаг.","en":"This is the first step.","ja":"これが第一歩だ。","lemmas":["это","первый","шаг"],"target_lemma":"шаг","difficulty":1,"kind":"sentence"}
+{"id":"T0954","ru":"На дороге большое движение.","en":"There's a lot of traffic on the road.","ja":"道が渋滞してる。","lemmas":["на","дорога","большой","движение"],"target_lemma":"движение","difficulty":2,"kind":"sentence","note":"движение = 交通量；на дороге"}
+{"id":"T0955","ru":"Это твоя позиция?","en":"Is this your position?","ja":"それが君の立場？","lemmas":["это","твой","позиция"],"target_lemma":"позиция","difficulty":1,"kind":"sentence"}
+{"id":"T0956","ru":"Здесь много пространства.","en":"There's a lot of space here.","ja":"ここは広いね。","lemmas":["здесь","много","пространство"],"target_lemma":"пространство","difficulty":2,"kind":"sentence","note":"много + 生格 → пространства"}
+{"id":"T0957","ru":"Это красная линия.","en":"This is a red line.","ja":"これは赤い線だ。","lemmas":["это","красный","линия"],"target_lemma":"линия","difficulty":1,"kind":"sentence","note":"красная 女性形"}
+{"id":"T0958","ru":"Здесь нужна точка.","en":"A period is needed here.","ja":"ここは句点が要る。","lemmas":["здесь","нужный","точка"],"target_lemma":"точка","difficulty":2,"kind":"sentence","note":"нужна 女性形；точка = 句点"}
+{"id":"T0959","ru":"Рисуй круг здесь.","en":"Draw a circle here.","ja":"ここに丸を描いて。","lemmas":["рисовать","круг","здесь"],"target_lemma":"круг","difficulty":1,"kind":"sentence","note":"рисуй 命令形"}
+{"id":"T0960","ru":"Магазин на углу.","en":"The shop is on the corner.","ja":"店は角にある。","lemmas":["магазин","на","угол"],"target_lemma":"угол","difficulty":2,"kind":"sentence","note":"на углу 前置格"}
+{"id":"T0961","ru":"Не стой на краю.","en":"Don't stand on the edge.","ja":"端に立たないで。","lemmas":["не","стоять","на","край"],"target_lemma":"край","difficulty":2,"kind":"sentence","note":"стой 命令形；на краю 前置格"}
+{"id":"T0962","ru":"Стол в середине комнаты.","en":"The table is in the middle of the room.","ja":"机は部屋の真ん中にある。","lemmas":["стол","в","середина","комната"],"target_lemma":"середина","difficulty":2,"kind":"sentence","note":"в середине；комнаты 生格"}
+{"id":"T0963","ru":"Где оно сейчас?","en":"Where is it now?","ja":"それ今どこ？","lemmas":["где","оно","сейчас"],"target_lemma":"оно","difficulty":1,"kind":"sentence","note":"оно = 中性名詞を受ける「それ」"}
+{"id":"T0964","ru":"Мой дом в самом верху.","en":"My house is at the very top.","ja":"僕の家は一番上だ。","lemmas":["мой","дом","в","самый","верх"],"target_lemma":"верх","difficulty":2,"kind":"sentence","note":"в самом верху 前置格"}
+{"id":"T0965","ru":"Иди в самый зад.","en":"Go all the way to the back.","ja":"一番後ろまで行って。","lemmas":["идти","в","самый","зад"],"target_lemma":"зад","difficulty":2,"kind":"sentence","note":"зад = 後部（口語）"}
+{"id":"T0966","ru":"Кто внутри дома?","en":"Who's inside the house?","ja":"家の中に誰かいる？","lemmas":["кто","внутри","дом"],"target_lemma":"внутри","difficulty":2,"kind":"sentence","note":"внутри + 生格 → внутри дома"}
+{"id":"T0967","ru":"Я жду снаружи.","en":"I'm waiting outside.","ja":"外で待ってる。","lemmas":["я","ждать","снаружи"],"target_lemma":"снаружи","difficulty":1,"kind":"sentence"}
+{"id":"T0968","ru":"Мой дом совсем рядом.","en":"My house is right nearby.","ja":"うちはすぐそこ。","lemmas":["мой","дом","совсем","рядом"],"target_lemma":"рядом","difficulty":1,"kind":"sentence"}
+{"id":"T0969","ru":"Он сидит напротив меня.","en":"He's sitting across from me.","ja":"彼は僕の向かいに座ってる。","lemmas":["он","сидеть","напротив","я"],"target_lemma":"напротив","difficulty":2,"kind":"sentence","note":"напротив + 生格 → напротив меня"}
+{"id":"T0970","ru":"Магазин справа от тебя.","en":"The shop is on your right.","ja":"店は君の右側だ。","lemmas":["магазин","справа","от","ты"],"target_lemma":"справа","difficulty":2,"kind":"sentence","note":"справа от + 生格"}
+{"id":"T0971","ru":"Мой дом слева.","en":"My house is on the left.","ja":"僕の家は左側だ。","lemmas":["мой","дом","слева"],"target_lemma":"слева","difficulty":1,"kind":"sentence"}
+{"id":"T0972","ru":"Свет идёт сверху.","en":"The light comes from above.","ja":"光が上から差してる。","lemmas":["свет","идти","сверху"],"target_lemma":"сверху","difficulty":1,"kind":"sentence"}
+{"id":"T0973","ru":"Кто-то кричит снизу.","en":"Someone is shouting from below.","ja":"下から誰かが叫んでる。","lemmas":["кто-то","кричать","снизу"],"target_lemma":"снизу","difficulty":2,"kind":"sentence","note":"кричит 3人称"}
+{"id":"T0974","ru":"Мой сосед живёт внизу.","en":"My neighbor lives downstairs.","ja":"隣人は下の階に住んでる。","lemmas":["мой","сосед","жить","внизу"],"target_lemma":"внизу","difficulty":1,"kind":"sentence","note":"живёт 3人称"}
+{"id":"T0975","ru":"Моя комната наверху.","en":"My room is upstairs.","ja":"僕の部屋は上の階だ。","lemmas":["мой","комната","наверху"],"target_lemma":"наверху","difficulty":1,"kind":"sentence"}
+{"id":"T0976","ru":"Твой дом впереди.","en":"Your house is ahead.","ja":"君の家はこの先だ。","lemmas":["твой","дом","впереди"],"target_lemma":"впереди","difficulty":1,"kind":"sentence"}
+{"id":"T0977","ru":"Вся опасность уже позади.","en":"All the danger is behind us now.","ja":"危険はもう過ぎた。","lemmas":["весь","опасность","уже","позади"],"target_lemma":"позади","difficulty":2,"kind":"sentence","note":"вся 女性形"}
+{"id":"T0978","ru":"Я смотрю вокруг.","en":"I'm looking around.","ja":"あたりを見回してる。","lemmas":["я","смотреть","вокруг"],"target_lemma":"вокруг","difficulty":1,"kind":"sentence"}
+{"id":"T0979","ru":"Он прошёл мимо меня.","en":"He walked past me.","ja":"彼が僕の横を通り過ぎた。","lemmas":["он","пройти","мимо","я"],"target_lemma":"мимо","difficulty":2,"kind":"sentence","note":"прошёл；мимо + 生格 → мимо меня"}
+{"id":"T0980","ru":"Он, наверное, дома.","en":"He's probably home.","ja":"彼、たぶん家だよ。","lemmas":["он","наверное","дом"],"target_lemma":"наверное","difficulty":1,"kind":"sentence","note":"дома = 家に"}
+{"id":"T0981","ru":"Это вероятно правда.","en":"That's probably true.","ja":"それ、たぶん本当だ。","lemmas":["это","вероятно","правда"],"target_lemma":"вероятно","difficulty":1,"kind":"sentence"}
+{"id":"T0982","ru":"Возможно, завтра будет дождь.","en":"Maybe it'll rain tomorrow.","ja":"明日は雨かも。","lemmas":["возможно","завтра","быть","дождь"],"target_lemma":"возможно","difficulty":2,"kind":"sentence","note":"будет = быть の未来"}
+{"id":"T0983","ru":"Я точно не знаю.","en":"I don't know exactly.","ja":"正確には分からない。","lemmas":["я","точно","не","знать"],"target_lemma":"точно","difficulty":1,"kind":"sentence"}
+{"id":"T0984","ru":"Я люблю кофе, особенно утром.","en":"I love coffee, especially in the morning.","ja":"コーヒー好き、特に朝。","lemmas":["я","любить","кофе","особенно","утро"],"target_lemma":"особенно","difficulty":2,"kind":"sentence","note":"утром 副詞"}
+{"id":"T0985","ru":"Я обычно пью кофе утром.","en":"I usually drink coffee in the morning.","ja":"朝はたいていコーヒー。","lemmas":["я","обычно","пить","кофе","утро"],"target_lemma":"обычно","difficulty":2,"kind":"sentence","note":"утром 副詞"}
+{"id":"T0986","ru":"Я случайно сломал телефон.","en":"I accidentally broke my phone.","ja":"うっかり電話を壊した。","lemmas":["я","случайно","сломать","телефон"],"target_lemma":"случайно","difficulty":2,"kind":"sentence","note":"сломал 過去男性"}
+{"id":"T0987","ru":"Я делаю это специально.","en":"I do it on purpose.","ja":"わざとやってるんだ。","lemmas":["я","делать","это","специально"],"target_lemma":"специально","difficulty":1,"kind":"sentence"}
+{"id":"T0988","ru":"Слушай меня внимательно.","en":"Listen to me carefully.","ja":"よく聞いて。","lemmas":["слушать","я","внимательно"],"target_lemma":"внимательно","difficulty":1,"kind":"sentence","note":"слушай 命令形；меня"}
+{"id":"T0989","ru":"Ты очень быстро говоришь.","en":"You speak very fast.","ja":"話すの速すぎ。","lemmas":["ты","очень","быстро","говорить"],"target_lemma":"быстро","difficulty":1,"kind":"sentence"}
+{"id":"T0990","ru":"Ты идёшь очень медленно.","en":"You're walking very slowly.","ja":"歩くの遅いね。","lemmas":["ты","идти","очень","медленно"],"target_lemma":"медленно","difficulty":1,"kind":"sentence"}
+{"id":"T0991","ru":"Говори тихо, все спят.","en":"Speak quietly, everyone's asleep.","ja":"静かに、みんな寝てる。","lemmas":["говорить","тихо","все","спать"],"target_lemma":"тихо","difficulty":2,"kind":"sentence","note":"говори 命令形；спят"}
+{"id":"T0992","ru":"Не говори так громко.","en":"Don't talk so loudly.","ja":"そんな大声出さないで。","lemmas":["не","говорить","так","громко"],"target_lemma":"громко","difficulty":1,"kind":"sentence"}
+{"id":"T0993","ru":"Это очень легко.","en":"This is very easy.","ja":"これ超簡単。","lemmas":["это","очень","легко"],"target_lemma":"легко","difficulty":1,"kind":"sentence"}
+{"id":"T0994","ru":"Мне трудно это понять.","en":"It's hard for me to understand this.","ja":"これ理解するの難しい。","lemmas":["я","трудно","это","понять"],"target_lemma":"трудно","difficulty":2,"kind":"sentence","note":"мне трудно"}
+{"id":"T0995","ru":"Здесь очень весело.","en":"It's a lot of fun here.","ja":"ここすごく楽しい。","lemmas":["здесь","очень","весело"],"target_lemma":"весело","difficulty":1,"kind":"sentence"}
+{"id":"T0996","ru":"Мне сегодня грустно.","en":"I feel sad today.","ja":"今日はなんか寂しい。","lemmas":["я","сегодня","грустно"],"target_lemma":"грустно","difficulty":2,"kind":"sentence","note":"мне грустно = 「私は悲しい」"}
+{"id":"T0997","ru":"Я говорю серьёзно.","en":"I'm speaking seriously.","ja":"真面目に言ってる。","lemmas":["я","говорить","серьёзно"],"target_lemma":"серьёзно","difficulty":1,"kind":"sentence"}
+{"id":"T0998","ru":"Ты говоришь правильно.","en":"You're saying it correctly.","ja":"その言い方で合ってるよ。","lemmas":["ты","говорить","правильно"],"target_lemma":"правильно","difficulty":1,"kind":"sentence"}
+{"id":"T0999","ru":"Я сказал это неправильно.","en":"I said that wrong.","ja":"言い方まちがえた。","lemmas":["я","сказать","это","неправильно"],"target_lemma":"неправильно","difficulty":2,"kind":"sentence","note":"сказал 過去男性"}
+{"id":"T1000","ru":"Теперь всё ясно.","en":"Now everything's clear.","ja":"これで全部すっきりした。","lemmas":["теперь","всё","ясно"],"target_lemma":"ясно","difficulty":1,"kind":"sentence"}
