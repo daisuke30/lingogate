@@ -59,4 +59,20 @@ describe("content build", () => {
     const gappy = deck.sentences.filter((s: any) => s.tokenCount - s.wordIds.length >= 5);
     expect(gappy.length).toBeGreaterThan(0);
   });
+
+  // 2026-08-26: Katsuta's explicit direction — clearly-too-long sentences are
+  // dropped from the app deck entirely (not merely de-prioritised), because a
+  // stale ReviewState from before the scoring fix can still pull one back in
+  // via the review queue regardless of new-card scoring.
+  it("drops kind='sentence' rows over 8 RU words entirely; word cards are exempt", () => {
+    const overlong = deck.sentences.filter((s: any) => s.kind === "sentence" && s.tokenCount > 8);
+    expect(overlong).toEqual([]);
+    // The exclusion log is real (this isn't a no-op filter on this dataset).
+    expect(deck._meta.excludedLong.total).toBeGreaterThan(0);
+    const sum =
+      deck._meta.excludedLong.byOrigin.generated +
+      deck._meta.excludedLong.byOrigin.lessons +
+      deck._meta.excludedLong.byOrigin.notes;
+    expect(sum).toBe(deck._meta.excludedLong.total);
+  });
 });
