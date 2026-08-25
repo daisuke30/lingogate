@@ -7,9 +7,10 @@
 // values are plain JSON-serialisable objects.
 
 import type { ReviewState } from "../engine/fsrs";
+import type { WordKnowledge } from "../engine/calibration";
 
 const DB_NAME = "lingogate";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 export interface GateSessionRow {
   id?: number;
@@ -38,6 +39,10 @@ function openDB(): Promise<IDBDatabase> {
       }
       if (!db.objectStoreNames.contains("meta")) {
         db.createObjectStore("meta", { keyPath: "key" });
+      }
+      // v2 (LINGO-010): per-lemma known/unknown calibration map.
+      if (!db.objectStoreNames.contains("wordKnowledge")) {
+        db.createObjectStore("wordKnowledge", { keyPath: "lemma" });
       }
     };
     req.onsuccess = () => resolve(req.result);
@@ -92,6 +97,26 @@ export function getAllGateSessions(): Promise<GateSessionRow[]> {
   return tx<GateSessionRow[]>("gateSessions", "readonly", (s) => s.getAll());
 }
 
+// MARK: wordKnowledge (LINGO-010 calibration map)
+
+export function getAllWordKnowledge(): Promise<WordKnowledge[]> {
+  return tx<WordKnowledge[]>("wordKnowledge", "readonly", (s) => s.getAll());
+}
+
+export function putWordKnowledge(rows: WordKnowledge[]): Promise<void> {
+  if (rows.length === 0) return Promise.resolve();
+  return openDB().then(
+    (db) =>
+      new Promise<void>((resolve, reject) => {
+        const t = db.transaction("wordKnowledge", "readwrite");
+        const store = t.objectStore("wordKnowledge");
+        for (const r of rows) store.put(r);
+        t.oncomplete = () => resolve();
+        t.onerror = () => reject(t.error);
+      }),
+  );
+}
+
 // MARK: meta (settings + suppression)
 
 export function getMeta<T>(key: string, fallback: T): Promise<T> {
@@ -110,10 +135,14 @@ export function resetAll(): Promise<void> {
   return openDB().then(
     (db) =>
       new Promise<void>((resolve, reject) => {
-        const t = db.transaction(["reviewStates", "gateSessions", "meta"], "readwrite");
+        const t = db.transaction(
+          ["reviewStates", "gateSessions", "meta", "wordKnowledge"],
+          "readwrite",
+        );
         t.objectStore("reviewStates").clear();
         t.objectStore("gateSessions").clear();
         t.objectStore("meta").clear();
+        t.objectStore("wordKnowledge").clear();
         t.oncomplete = () => resolve();
         t.onerror = () => reject(t.error);
       }),

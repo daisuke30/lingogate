@@ -20,6 +20,7 @@ function deck(n: number): Deck {
     difficulty: 1,
     source: "generated",
     kind: "sentence",
+    targetLemma: null,
     wordIds: [],
     minRank: k + 1,
   }));

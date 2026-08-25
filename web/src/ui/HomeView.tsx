@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { homeStats } from "../state/service";
 import type { HomeStats } from "../state/service";
+import { calibrationProgress } from "../state/calibration";
+import type { CalibrationProgress } from "../state/calibration";
 import type { Route } from "./App";
 
 export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
   const [stats, setStats] = useState<HomeStats | null>(null);
+  const [calib, setCalib] = useState<CalibrationProgress | null>(null);
 
   useEffect(() => {
     homeStats().then(setStats);
+    calibrationProgress().then(setCalib);
   }, []);
 
   return (
@@ -45,6 +49,34 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
           <div className="lbl">既知率</div>
         </div>
       </div>
+
+      {calib && !calib.done && (
+        <>
+          <div className="section-title">既知語の仕分け（キャリブレーション）</div>
+          <button
+            className="card calib-cta"
+            onClick={() => navigate({ name: "calibration" })}
+          >
+            <div className="meter" style={{ marginTop: 0 }}>
+              <div className="head">
+                <span>{calib.judged > 0 ? "続きから仕分ける" : "1000語を仕分ける"}</span>
+                <span>
+                  {calib.judged}/{calib.total}
+                </span>
+              </div>
+              <div className="track">
+                <div
+                  className="fill"
+                  style={{ width: `${calib.total > 0 ? (100 * calib.judged) / calib.total : 0}%` }}
+                />
+              </div>
+            </div>
+            <p className="muted" style={{ margin: "12px 0 0" }}>
+              知っている語を右、知らない語を左へ。カードの並びはあなたの既知語マップで最適化されます。
+            </p>
+          </button>
+        </>
+      )}
 
       <div className="section-title">band1 の進み具合</div>
       <div className="card">

@@ -6,6 +6,13 @@
 
 import type { ReviewState } from "./fsrs";
 import { CardState } from "./fsrs";
+import {
+  CALIBRATION_FALLBACK_THRESHOLD,
+  MAX_UNKNOWN_FOR_NEW,
+  judgedCount,
+  scoreSentence,
+} from "./calibration";
+import type { KnowledgeMap } from "./calibration";
 
 export interface Sentence {
   id: string;
@@ -18,6 +25,8 @@ export interface Sentence {
   difficulty: number;
   source: string;
   kind: "sentence" | "word";
+  /** The lemma this sentence is built to teach (LINGO-011); null for legacy rows. */
+  targetLemma: string | null;
   /** Word ids this sentence covers (matched lemmas only). */
   wordIds: number[];
   /** Min frequency rank among covered words; null if none. New-card ordering key. */
@@ -51,11 +60,17 @@ export class ContentStore {
   readonly deck: Deck;
   private byId: Map<string, Sentence>;
   private states: Map<string, ReviewState>;
+  private knowledge: KnowledgeMap;
+  private wordById: Map<number, DeckWord>;
+  private judged: number;
 
-  constructor(deck: Deck, states: ReviewState[] = []) {
+  constructor(deck: Deck, states: ReviewState[] = [], knowledge?: KnowledgeMap) {
     this.deck = deck;
     this.byId = new Map(deck.sentences.map((s) => [s.id, s]));
     this.states = new Map(states.map((s) => [s.sentenceId, s]));
+    this.knowledge = knowledge ?? new Map();
+    this.wordById = new Map(deck.words.map((w) => [w.id, w]));
+    this.judged = judgedCount(this.knowledge);
   }
 
   sentence(id: string): Sentence | undefined {
@@ -80,18 +95,32 @@ export class ContentStore {
     return out.slice(0, limit);
   }
 
-  /** New (never-studied) sentences for a band, ordered so the sentence teaching
-   * the most frequent not-yet-covered word comes first (min covered rank asc). */
+  /** New (never-studied) sentences for a band. Once the learner has judged enough
+   * words (>= CALIBRATION_FALLBACK_THRESHOLD) the order is driven by the known-map:
+   * only sentences with few unknown words are eligible, ordered by (unknown score,
+   * target/lowest-unknown rank). Before that it falls back to plain frequency order
+   * (the sentence teaching the most frequent not-yet-covered word first). */
   newSentences(band: number, excluding: Set<string>, limit: number): Sentence[] {
-    const out = this.deck.sentences.filter(
+    const candidates = this.deck.sentences.filter(
       (s) => s.band === band && !this.states.has(s.id) && !excluding.has(s.id),
     );
-    out.sort((a, b) => {
-      const ar = a.minRank ?? Number.MAX_SAFE_INTEGER;
-      const br = b.minRank ?? Number.MAX_SAFE_INTEGER;
-      return ar - br || cmp(a.id, b.id);
-    });
-    return out.slice(0, limit);
+
+    if (this.judged < CALIBRATION_FALLBACK_THRESHOLD) {
+      candidates.sort((a, b) => {
+        const ar = a.minRank ?? Number.MAX_SAFE_INTEGER;
+        const br = b.minRank ?? Number.MAX_SAFE_INTEGER;
+        return ar - br || cmp(a.id, b.id);
+      });
+      return candidates.slice(0, limit);
+    }
+
+    const scored = candidates
+      .map((s) => ({ s, ...scoreSentence(s, this.knowledge, this.wordById) }))
+      .filter((x) => x.unknownScore <= MAX_UNKNOWN_FOR_NEW);
+    scored.sort(
+      (a, b) => a.unknownScore - b.unknownScore || a.sortRank - b.sortRank || cmp(a.s.id, b.s.id),
+    );
+    return scored.slice(0, limit).map((x) => x.s);
   }
 
   /** Not-yet-due review cards, earliest due first — only to top up a short deck. */

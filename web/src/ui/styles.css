@@ -330,12 +330,54 @@ button {
   pointer-events: none;
 }
 
+/* ---- Calibration ---- */
+.card.calib-cta {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-top: 0;
+  transition: transform 0.08s ease;
+}
+.card.calib-cta:active {
+  transform: scale(0.99);
+}
+.flashcard.calib {
+  min-height: 300px;
+}
+.face .speaker {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+}
+.calib-gloss {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+}
+.calib-gloss .g-ru {
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.calib-gloss .ja {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--ink-dim);
+}
+
 /* ---- Legend ---- */
 .legend {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-top: 18px;
+}
+.legend.two {
+  grid-template-columns: repeat(2, 1fr);
 }
 .legend .chip {
   padding: 11px 8px;

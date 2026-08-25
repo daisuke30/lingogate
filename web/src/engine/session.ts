@@ -14,6 +14,7 @@
 import { FSRS, Rating, newReviewState } from "./fsrs";
 import type { ReviewState } from "./fsrs";
 import type { ContentStore, Sentence } from "./content";
+import type { CardOutcome } from "./calibration";
 import { SeededRNG } from "./rng";
 
 export interface PlannedCard {
@@ -120,6 +121,9 @@ interface RatingUndoRecord {
 
 export class GateSessionRunner {
   private queue: RuntimeCard[];
+  /** Every card, in a list that persists regardless of queue mutations — grading
+   * mutates the same object references, so this reflects final per-card outcome. */
+  private allCards: RuntimeCard[];
   readonly totalCards: number;
   private fsrs: FSRS;
 
@@ -137,8 +141,17 @@ export class GateSessionRunner {
       graded: false,
       everWrong: false,
     }));
+    this.allCards = this.queue.slice();
     this.totalCards = plan.cards.length;
     this.fsrs = fsrs;
+  }
+
+  /** Per-card outcomes for knowledge feedback: every graded card with whether it
+   * was ever rated Again this session (used to update the word-knowledge map). */
+  knowledgeOutcomes(): CardOutcome[] {
+    return this.allCards
+      .filter((c) => c.graded)
+      .map((c) => ({ sentence: c.sentence, again: c.everWrong }));
   }
 
   /** The sentence currently facing the learner, or null when done. */

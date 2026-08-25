@@ -23,6 +23,7 @@ function sentence(i: number, band = 1, minRank = i): Sentence {
     difficulty: 1,
     source: "generated",
     kind: "sentence",
+    targetLemma: null,
     wordIds: [i],
     minRank,
   };

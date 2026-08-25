@@ -39,4 +39,12 @@ describe("content build", () => {
       expect(["sentence", "word"]).toContain(s.kind);
     }
   });
+
+  it("carries LINGO-011 target lemmas that resolve to deck words", () => {
+    const targeted = deck.sentences.filter((s: any) => s.targetLemma);
+    expect(targeted.length).toBeGreaterThan(0);
+    const lemmas = new Set(deck.words.map((w: any) => w.lemma));
+    // Every target lemma is a real deck word (so calibration/scoring can link it).
+    for (const s of targeted.slice(0, 50)) expect(lemmas.has(s.targetLemma)).toBe(true);
+  });
 });

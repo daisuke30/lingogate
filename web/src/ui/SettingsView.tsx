@@ -1,20 +1,49 @@
 import { useEffect, useState } from "react";
-import { UNLOCK_CHOICES, getUnlockMinutes, setUnlockMinutes, getQuizMode } from "../state/settings";
+import {
+  UNLOCK_CHOICES,
+  TTS_RATE_CHOICES,
+  getUnlockMinutes,
+  setUnlockMinutes,
+  getQuizMode,
+  getTtsEnabled,
+  setTtsEnabled,
+  getTtsRate,
+  setTtsRate,
+} from "../state/settings";
 import type { QuizMode } from "../state/settings";
+import { ruVoiceAvailable, subscribeVoices } from "../state/tts";
 import { resetAll } from "../db/idb";
 
 export function SettingsView({ onBack }: { onBack: () => void }) {
   const [minutes, setMinutes] = useState(10);
   const [quizMode, setQuizModeState] = useState<QuizMode>("flashcard");
+  const [ttsOn, setTtsOn] = useState(true);
+  const [ttsRate, setTtsRateState] = useState(1.0);
+  const [hasVoice, setHasVoice] = useState(false);
 
   useEffect(() => {
     getUnlockMinutes().then(setMinutes);
     getQuizMode().then(setQuizModeState);
+    getTtsEnabled().then(setTtsOn);
+    getTtsRate().then(setTtsRateState);
+    const unsub = subscribeVoices(() => setHasVoice(ruVoiceAvailable()));
+    return unsub;
   }, []);
 
   function pick(m: number) {
     setMinutes(m);
     void setUnlockMinutes(m);
+  }
+
+  function toggleTts() {
+    const next = !ttsOn;
+    setTtsOn(next);
+    void setTtsEnabled(next);
+  }
+
+  function pickRate(r: number) {
+    setTtsRateState(r);
+    void setTtsRate(r);
   }
 
   async function reset() {
@@ -46,6 +75,44 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
           </div>
         </div>
       </div>
+
+      <div className="section-title">音声読み上げ</div>
+      {hasVoice ? (
+        <div className="list">
+          <div className="row">
+            <div>
+              <div className="label">ロシア語を読み上げる</div>
+              <div className="sub">カードを裏返した時に自動再生＋🔊で再再生</div>
+            </div>
+            <div className="seg">
+              <button className={ttsOn ? "on" : ""} onClick={() => ttsOn || toggleTts()}>
+                オン
+              </button>
+              <button className={!ttsOn ? "on" : ""} onClick={() => ttsOn && toggleTts()}>
+                オフ
+              </button>
+            </div>
+          </div>
+          <div className="row">
+            <div>
+              <div className="label">読み上げ速度</div>
+              <div className="sub">新しい語はゆっくりが聞き取りやすい</div>
+            </div>
+            <div className="seg">
+              {TTS_RATE_CHOICES.map((r) => (
+                <button key={r} className={ttsRate === r ? "on" : ""} onClick={() => pickRate(r)}>
+                  {r === 1.0 ? "標準" : "0.8x"}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <p className="muted">
+          この端末にはロシア語の音声が見つかりません（iOSは設定＞アクセシビリティ＞読み上げコンテンツで
+          ロシア語「Milena」を追加すると使えます）。
+        </p>
+      )}
 
       <div className="section-title">出題UI</div>
       <div className="list">

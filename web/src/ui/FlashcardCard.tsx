@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
+import { ruVoiceAvailable, speakRu, subscribeVoices } from "../state/tts";
 
 type Dir = "again" | "hard" | "good" | null;
+
+export interface TtsProps {
+  enabled: boolean;
+  rate: number;
+}
 
 const FLICK_LOCK_MS = 1500; // post-flip freeze (anti-gate-skip, LINGO-007)
 const THRESHOLD = 90; // px before a drag counts as a flick
@@ -16,13 +22,16 @@ const THRESHOLD = 90; // px before a drag counts as a flick
 export function FlashcardCard({
   sentence,
   onRate,
+  tts,
 }: {
   sentence: Sentence;
   onRate: (r: Rating) => void;
+  tts?: TtsProps;
 }) {
   const [flipped, setFlipped] = useState(false);
   const [canEval, setCanEval] = useState(false);
   const [drag, setDrag] = useState({ x: 0, y: 0, active: false });
+  const [hasVoice, setHasVoice] = useState(false);
   const start = useRef<{ x: number; y: number } | null>(null);
 
   // Arm evaluation 1.5s after the flip (per card — component remounts by key).
@@ -32,6 +41,17 @@ export function FlashcardCard({
     const t = setTimeout(() => setCanEval(true), FLICK_LOCK_MS);
     return () => clearTimeout(t);
   }, [flipped]);
+
+  useEffect(() => subscribeVoices(() => setHasVoice(ruVoiceAvailable())), []);
+
+  // Speak the RU back on flip — the flip tap is the user gesture iOS requires.
+  function speak() {
+    if (tts?.enabled) speakRu(sentence.ru, tts.rate);
+  }
+  function flip() {
+    setFlipped(true);
+    speak();
+  }
 
   const dir = directionOf(drag.x, drag.y, 28); // visual hint threshold
   const canFlick = flipped && canEval;
@@ -56,7 +76,7 @@ export function FlashcardCard({
     const moved = Math.hypot(dx, dy);
 
     if (!flipped) {
-      if (moved < 12) setFlipped(true); // a tap flips
+      if (moved < 12) flip(); // a tap flips (+ auto read-aloud)
       return;
     }
     const d = directionOf(dx, dy, THRESHOLD); // commit threshold
@@ -101,6 +121,19 @@ export function FlashcardCard({
           </div>
           <div className="face back">
             <span className="kicker">Русский</span>
+            {hasVoice && tts?.enabled && (
+              <button
+                className="iconbtn speaker"
+                aria-label="読み上げ"
+                onPointerDown={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  speak();
+                }}
+              >
+                🔊
+              </button>
+            )}
             <div className="ru">{sentence.ru}</div>
             {sentence.kana && <div className="kana">{sentence.kana}</div>}
             {sentence.ja && <div className="ja">{sentence.ja}</div>}

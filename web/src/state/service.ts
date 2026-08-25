@@ -8,21 +8,32 @@ import { ContentStore } from "../engine/content";
 import { FSRS } from "../engine/fsrs";
 import { buildGateSession, GateSessionRunner } from "../engine/session";
 import { SeededRNG } from "../engine/rng";
+import { knowledgeUpdatesFromOutcomes } from "../engine/calibration";
 import {
   getAllReviewStates,
   putReviewStates,
   addGateSession,
   getAllGateSessions,
+  getAllWordKnowledge,
+  putWordKnowledge,
 } from "../db/idb";
 
 export const DECK = deckJson as unknown as Deck;
 export const PRIMARY_BAND = DECK.bands[0] ?? 1;
 
 const fsrs = new FSRS();
+const WORD_BY_ID = new Map(DECK.words.map((w) => [w.id, w]));
+
+async function loadKnowledge(): Promise<Map<string, "known" | "unknown" | "unset">> {
+  const rows = await getAllWordKnowledge();
+  const map = new Map<string, "known" | "unknown" | "unset">();
+  for (const r of rows) map.set(r.lemma, r.status);
+  return map;
+}
 
 export async function loadStore(): Promise<ContentStore> {
-  const states = await getAllReviewStates();
-  return new ContentStore(DECK, states);
+  const [states, knowledge] = await Promise.all([getAllReviewStates(), loadKnowledge()]);
+  return new ContentStore(DECK, states, knowledge);
 }
 
 export interface StartedSession {
@@ -48,6 +59,18 @@ export async function commitSession(
   const { runner, startedAt } = session;
   const endedAt = Date.now();
   await putReviewStates(runner.drainPendingUpserts());
+
+  // Feed review results back into the word-knowledge map: Again -> unknown,
+  // clean Good pass on a target sentence -> known (source 'review').
+  const knowledge = await loadKnowledge();
+  const knowledgeUpdates = knowledgeUpdatesFromOutcomes(
+    runner.knowledgeOutcomes(),
+    WORD_BY_ID,
+    knowledge,
+    endedAt,
+  );
+  await putWordKnowledge(knowledgeUpdates);
+
   await addGateSession({
     appKey: opts.appKey,
     startedAt,

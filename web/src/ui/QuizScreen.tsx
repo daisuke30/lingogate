@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Rating } from "../engine/fsrs";
 import { commitSession, startSession } from "../state/service";
 import type { StartedSession } from "../state/service";
-import { getUnlockMinutes, setSuppressUntil } from "../state/settings";
+import { getUnlockMinutes, getTtsSettings, setSuppressUntil } from "../state/settings";
+import type { TtsSettings } from "../state/settings";
 import { suppressUntil, returnDisplayName, returnTarget } from "../engine/gate";
 import { FlashcardCard } from "./FlashcardCard";
 
@@ -28,15 +29,21 @@ export function QuizScreen({
   const rerender = useCallback(() => force((n) => n + 1), []);
   const committedRef = useRef(false);
   const [unlockMin, setUnlockMin] = useState(10);
+  const [tts, setTts] = useState<TtsSettings>({ enabled: true, rate: 1.0 });
 
   // Start a session on mount.
   useEffect(() => {
     let alive = true;
     (async () => {
-      const [session, mins] = await Promise.all([startSession(seed), getUnlockMinutes()]);
+      const [session, mins, ttsSettings] = await Promise.all([
+        startSession(seed),
+        getUnlockMinutes(),
+        getTtsSettings(),
+      ]);
       if (!alive) return;
       sessionRef.current = session;
       setUnlockMin(mins);
+      setTts(ttsSettings);
       setPhase(session.runner.isComplete ? "complete" : "question");
     })();
     return () => {
@@ -118,7 +125,7 @@ export function QuizScreen({
           </span>
         </div>
 
-        <FlashcardCard key={cardId} sentence={sentence} onRate={rate} />
+        <FlashcardCard key={cardId} sentence={sentence} onRate={rate} tts={tts} />
 
         <div className="quiz-foot">
           <button className="linkbtn" onClick={undo} disabled={!runner.canUndo}>

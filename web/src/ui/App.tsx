@@ -4,13 +4,15 @@ import { QuizScreen } from "./QuizScreen";
 import { SettingsView } from "./SettingsView";
 import { AutomationGuideView } from "./AutomationGuideView";
 import { GateEntry } from "./GateEntry";
+import { CalibrationScreen } from "./CalibrationScreen";
 
 export type Route =
   | { name: "home" }
   | { name: "quiz"; returnApp: string | null; seed?: number }
   | { name: "gate"; returnApp: string | null }
   | { name: "settings" }
-  | { name: "guide" };
+  | { name: "guide" }
+  | { name: "calibration" };
 
 function routeFromLocation(): Route {
   const path = window.location.pathname;
@@ -58,5 +60,7 @@ export function App() {
       return <SettingsView onBack={goHome} />;
     case "guide":
       return <AutomationGuideView onBack={goHome} />;
+    case "calibration":
+      return <CalibrationScreen onExit={goHome} />;
   }
 }
