@@ -50,14 +50,12 @@ export async function startSession(seed?: number): Promise<StartedSession> {
   return { runner, startedAt: now };
 }
 
-/** Persist a finished (or abandoned) gate session: commit buffered FSRS grades
- * and record the GateSession row. Returns nothing. */
-export async function commitSession(
-  session: StartedSession,
-  opts: { appKey: string | null; unlocked: boolean },
-): Promise<void> {
-  const { runner, startedAt } = session;
-  const endedAt = Date.now();
+/** Write buffered FSRS grades + word-knowledge feedback for whatever has been
+ * graded so far (a full session or a partial/abandoned one — `drainPendingUpserts`
+ * and `knowledgeOutcomes` both only ever reflect graded cards, so this is safe
+ * to call on an in-progress runner). Idempotent: draining an empty buffer is a
+ * no-op (see db/idb.ts putReviewStates/putWordKnowledge). */
+async function persistGrades(runner: GateSessionRunner): Promise<void> {
   await putReviewStates(runner.drainPendingUpserts());
 
   // Feed review results back into the word-knowledge map: Again -> unknown,
@@ -67,9 +65,20 @@ export async function commitSession(
     runner.knowledgeOutcomes(),
     WORD_BY_ID,
     knowledge,
-    endedAt,
+    Date.now(),
   );
   await putWordKnowledge(knowledgeUpdates);
+}
+
+/** Persist a finished gate session: commit buffered FSRS grades + knowledge
+ * feedback, and record the GateSession row (today's stats). */
+export async function commitSession(
+  session: StartedSession,
+  opts: { appKey: string | null; unlocked: boolean },
+): Promise<void> {
+  const { runner, startedAt } = session;
+  const endedAt = Date.now();
+  await persistGrades(runner);
 
   await addGateSession({
     appKey: opts.appKey,
@@ -80,6 +89,16 @@ export async function commitSession(
     durationMs: endedAt - startedAt,
     unlocked: opts.unlocked,
   });
+}
+
+/** Persist an early exit mid-batch (continuous home-practice mode): whatever
+ * cards were graded before the learner tapped "終了" are committed exactly
+ * like a normal completion, but no GateSession row is written — the batch was
+ * never actually completed, so it shouldn't count toward today's gate/unlock
+ * stats. Ungraded (still-queued) cards are simply dropped along with the
+ * runner; nothing references them once this resolves. */
+export async function commitPartialSession(session: StartedSession): Promise<void> {
+  await persistGrades(session.runner);
 }
 
 export interface HomeStats {

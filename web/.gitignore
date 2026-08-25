@@ -2,6 +2,8 @@ node_modules/
 dist/
 # Generated at build time from pipeline JSONL (predev/prebuild). Not source.
 src/content/deck.generated.json
+# Generated at build time (predev/prebuild) — git sha + timestamp stamp. Not source.
+src/content/version.generated.json
 public/icons/
 *.local
 .DS_Store

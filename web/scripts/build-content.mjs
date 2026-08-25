@@ -59,14 +59,18 @@ function tokenizeRuCount(text) {
   return matches ? matches.length : 0;
 }
 
-// LINGO-010 follow-up (2026-08-26, explicit direction from Katsuta): drop
-// clearly-too-long sentences from the app entirely rather than merely
-// de-prioritising them — a stale ReviewState from before the scoring fix can
-// still pull one back into the review queue regardless of new-card scoring.
-// "Long" = kind 'sentence' (not a bare word card) with more than this many RU
-// content words. Raw JSONL / SQLite are left untouched for future reuse; only
-// the web deck drops them.
-const MAX_SENTENCE_TOKENS = 8;
+// LINGO-010 follow-up (2026-08-26, explicit direction from Katsuta): a stale
+// ReviewState from before the scoring/length fixes can still pull an old
+// sentence back into the review queue regardless of new-card scoring or
+// length filtering — the review queue doesn't consult either. So instead of
+// scoring/filtering lesson-and-note sentences, drop them from the app deck
+// entirely: only kind='sentence' rows sourced from the LINGO-011 core deck
+// (identified by having a target_lemma — every T#### row has one, no other
+// source sets it) survive, plus every kind='word' card. "頻出1000単語を元に
+// 作成したフレーズだけにフォーカス" (Katsuta, 2026-08-26). Raw JSONL / SQLite
+// are left untouched for future reuse (band2/3 rollout etc.); only the web
+// deck is restricted.
+const MAX_SENTENCE_TOKENS = 8; // safety net only now — core rows are always ≤8 by construction.
 
 // Categorises a source file for the build-log breakdown (notes / lessons /
 // generated) — cosmetic only, doesn't affect which sentences are kept.
@@ -116,7 +120,11 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
   const sentences = [];
   const seenIds = new Set();
   const unmatched = new Map();
-  const excludedLong = { total: 0, byOrigin: { generated: 0, lessons: 0, notes: 0 } };
+  const excluded = {
+    total: 0,
+    byReason: { nonCore: 0, overLength: 0 },
+    byOrigin: { generated: 0, lessons: 0, notes: 0 },
+  };
 
   for (const path of sentencePaths(dataDir)) {
     const band = bandFromFilename(path);
@@ -145,14 +153,26 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
 
       const kind = s.kind ?? "sentence";
       const tokenCount = tokenizeRuCount(s.ru);
+      const isCore = s.target_lemma != null && String(s.target_lemma).trim() !== "";
 
-      // Drop clearly-too-long sentences from the app deck entirely (kept in
-      // the raw JSONL / SQLite for future reuse). A bare 'word' card is exempt
-      // — length there is the RU word itself, not a sentence to trim.
-      if (kind === "sentence" && tokenCount > MAX_SENTENCE_TOKENS) {
-        excludedLong.total += 1;
-        excludedLong.byOrigin[origin] = (excludedLong.byOrigin[origin] ?? 0) + 1;
-        continue;
+      if (kind === "sentence") {
+        // Only LINGO-011 core sentences (target_lemma set) survive — every
+        // other sentence source (old band1 handwritten, imported notes,
+        // imported lessons) is dropped regardless of length.
+        if (!isCore) {
+          excluded.total += 1;
+          excluded.byReason.nonCore += 1;
+          excluded.byOrigin[origin] = (excluded.byOrigin[origin] ?? 0) + 1;
+          continue;
+        }
+        // Safety net: a core row should never exceed this by construction,
+        // but don't ship one to the app if it somehow does.
+        if (tokenCount > MAX_SENTENCE_TOKENS) {
+          excluded.total += 1;
+          excluded.byReason.overLength += 1;
+          excluded.byOrigin[origin] = (excluded.byOrigin[origin] ?? 0) + 1;
+          continue;
+        }
       }
 
       sentences.push({
@@ -190,7 +210,7 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
       sentenceCount: sentences.length,
       unmatchedLemmas: unmatched.size,
       sources: sentencePaths(dataDir).map((p) => basename(p)),
-      excludedLong,
+      excluded,
     },
   };
 }
@@ -205,11 +225,12 @@ function main() {
       `from [${m.sources.join(", ")}]` +
       (m.unmatchedLemmas ? ` (${m.unmatchedLemmas} unmatched lemmas)` : ""),
   );
-  if (m.excludedLong.total > 0) {
-    const b = m.excludedLong.byOrigin;
+  if (m.excluded.total > 0) {
+    const b = m.excluded.byOrigin;
+    const r = m.excluded.byReason;
     console.log(
-      `  excluded ${m.excludedLong.total} sentence(s) > ${MAX_SENTENCE_TOKENS} RU words ` +
-        `(generated=${b.generated ?? 0}, lessons=${b.lessons ?? 0}, notes=${b.notes ?? 0})`,
+      `  excluded ${m.excluded.total} sentence(s): non-core=${r.nonCore}, over-length=${r.overLength} ` +
+        `(by origin: generated=${b.generated ?? 0}, lessons=${b.lessons ?? 0}, notes=${b.notes ?? 0})`,
     );
   }
 }

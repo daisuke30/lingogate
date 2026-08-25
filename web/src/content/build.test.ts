@@ -3,22 +3,22 @@ import { describe, it, expect } from "vitest";
 import { buildDeck } from "../../scripts/build-content.mjs";
 
 // Exercises the real pipeline data so the "band1 (+ imported if present)" glob
-// and lemma linking stay correct as LINGO-009 adds sentences_imported*.jsonl.
+// and lemma linking stay correct as LINGO-009/010/011 change the data.
 describe("content build", () => {
   const deck = buildDeck();
 
-  it("imports the band1 deck (>= 291 sentences, 1000 words)", () => {
+  it("imports 1000 band1 words and the core+word deck (>= 1000 sentences)", () => {
     expect(deck.words.length).toBeGreaterThanOrEqual(1000);
-    expect(deck.sentences.length).toBeGreaterThanOrEqual(291);
+    expect(deck.sentences.length).toBeGreaterThanOrEqual(1000);
     expect(deck.bands).toContain(1);
   });
 
   it("links lemmas to word ids and computes a min covered rank", () => {
-    const s1 = deck.sentences.find((s: any) => s.id === "s001");
+    const s1 = deck.sentences.find((s: any) => s.id === "T0001");
     expect(s1).toBeTruthy();
     expect(s1.wordIds.length).toBeGreaterThan(0);
     expect(typeof s1.minRank).toBe("number");
-    // "и"/"в"/"не" are rank 1-3; s001 covers "не" so minRank should be small.
+    // T0001 targets "и" (rank 1), so its min covered rank should be small.
     expect(s1.minRank).toBeLessThanOrEqual(10);
   });
 
@@ -54,25 +54,48 @@ describe("content build", () => {
       // tokenCount is the real RU word count; linked lemmas can only be a subset.
       expect(s.tokenCount).toBeGreaterThanOrEqual(s.wordIds.length);
     }
-    // The reported bug: low-lemma-link-rate lesson/note sentences exist and now
-    // carry a nonzero unlinked gap (previously invisible to the scorer).
-    const gappy = deck.sentences.filter((s: any) => s.tokenCount - s.wordIds.length >= 5);
-    expect(gappy.length).toBeGreaterThan(0);
   });
 
-  // 2026-08-26: Katsuta's explicit direction — clearly-too-long sentences are
-  // dropped from the app deck entirely (not merely de-prioritised), because a
-  // stale ReviewState from before the scoring fix can still pull one back in
-  // via the review queue regardless of new-card scoring.
   it("drops kind='sentence' rows over 8 RU words entirely; word cards are exempt", () => {
     const overlong = deck.sentences.filter((s: any) => s.kind === "sentence" && s.tokenCount > 8);
     expect(overlong).toEqual([]);
-    // The exclusion log is real (this isn't a no-op filter on this dataset).
-    expect(deck._meta.excludedLong.total).toBeGreaterThan(0);
-    const sum =
-      deck._meta.excludedLong.byOrigin.generated +
-      deck._meta.excludedLong.byOrigin.lessons +
-      deck._meta.excludedLong.byOrigin.notes;
-    expect(sum).toBe(deck._meta.excludedLong.total);
+  });
+
+  // 2026-08-26: Katsuta's explicit direction — "頻出1000単語を元に作成したフレーズだけに
+  // フォーカス". Only LINGO-011 core sentences (target_lemma set, id T####) and bare
+  // word cards ship to the app; every other kind='sentence' source (the original
+  // band1 handwritten set, imported notes, imported lessons) is dropped even when
+  // short enough to have survived the length-only filter.
+  describe("core-only content restriction (LINGO-010 follow-up)", () => {
+    it("keeps only T#### (core) sentences and word cards; drops every other sentence source", () => {
+      for (const s of deck.sentences) {
+        if (s.kind === "sentence") {
+          expect(s.id.startsWith("T")).toBe(true);
+          expect(s.targetLemma).not.toBeNull();
+        }
+      }
+      // The pre-restriction dataset has non-core sentence sources (old band1
+      // handwritten set "s...", imported notes "n...", imported lessons "L...");
+      // confirm none leaked through as kind='sentence'.
+      const leaked = deck.sentences.filter(
+        (s: any) => s.kind === "sentence" && !s.id.startsWith("T"),
+      );
+      expect(leaked).toEqual([]);
+    });
+
+    it("keeps exactly the 1000 core sentences plus any word cards", () => {
+      const core = deck.sentences.filter((s: any) => s.kind === "sentence");
+      const words = deck.sentences.filter((s: any) => s.kind === "word");
+      expect(core.length).toBe(1000);
+      expect(deck.sentences.length).toBe(core.length + words.length);
+    });
+
+    it("logs a real, categorised exclusion count", () => {
+      const m = deck._meta.excluded;
+      expect(m.total).toBeGreaterThan(0);
+      expect(m.byReason.nonCore).toBeGreaterThan(0);
+      const originSum = m.byOrigin.generated + m.byOrigin.lessons + m.byOrigin.notes;
+      expect(originSum).toBe(m.total);
+    });
   });
 });

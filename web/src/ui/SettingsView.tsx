@@ -13,6 +13,15 @@ import {
 import type { QuizMode } from "../state/settings";
 import { ruVoiceAvailable, subscribeVoices } from "../state/tts";
 import { resetAll } from "../db/idb";
+// LINGO-010 follow-up: build-time stamp (git sha + timestamp) so Katsuta can
+// tell which deploy his device is actually running — see scripts/gen-version.mjs.
+import versionInfo from "../content/version.generated.json";
+
+function formatBuiltAt(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toISOString().slice(0, 16).replace("T", " ") + " UTC";
+}
 
 export function SettingsView({ onBack }: { onBack: () => void }) {
   const [minutes, setMinutes] = useState(10);
@@ -158,6 +167,11 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
       <p className="muted" style={{ marginTop: 20 }}>
         シールド（対象アプリの強制遮断）はiOSネイティブ専用機能のためWeb版にはありません。Web版は
         オートメーション方式（弱い強制力）で、クイズ×FSRSの反復UX検証に集中します。
+      </p>
+
+      <p className="muted" style={{ marginTop: 20, textAlign: "center", opacity: 0.6 }}>
+        ビルド: {versionInfo.version}
+        {versionInfo.builtAt ? `（${formatBuiltAt(versionInfo.builtAt)}）` : ""}
       </p>
     </div>
   );

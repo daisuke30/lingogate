@@ -7,10 +7,12 @@
   "scripts": {
     "gen:content": "node scripts/build-content.mjs",
     "gen:icons": "node scripts/gen-icons.mjs",
-    "prebuild": "npm run gen:content && npm run gen:icons",
-    "predev": "npm run gen:content && npm run gen:icons",
+    "gen:version": "node scripts/gen-version.mjs",
+    "prebuild": "npm run gen:content && npm run gen:icons && npm run gen:version",
+    "predev": "npm run gen:content && npm run gen:icons && npm run gen:version",
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "node scripts/patch-sw-version.mjs",
     "preview": "vite preview --port 4173",
     "test": "vitest run"
   },

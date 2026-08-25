@@ -1,17 +1,35 @@
 import { useEffect, useState } from "react";
-import { homeStats } from "../state/service";
+import { DECK, PRIMARY_BAND, homeStats } from "../state/service";
 import type { HomeStats } from "../state/service";
 import { calibrationProgress } from "../state/calibration";
 import type { CalibrationProgress } from "../state/calibration";
 import type { Route } from "./App";
+
+// Fallback shown if calibrationProgress() rejects (e.g. a transient IndexedDB
+// hiccup) — bug report 2026-08-26: the card silently never showed on one
+// device because an unhandled rejection here just left `calib` at null
+// forever. Better to show the entry point with a "0 judged" state than hide
+// the feature outright; tapping through will surface the real error if the DB
+// is genuinely broken, instead of the feature just vanishing with no trace.
+function fallbackCalibProgress(): CalibrationProgress {
+  const total = DECK.words.filter((w) => w.band === PRIMARY_BAND).length;
+  return { total, judged: 0, known: 0, unknown: 0, done: total === 0 };
+}
 
 export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
   const [stats, setStats] = useState<HomeStats | null>(null);
   const [calib, setCalib] = useState<CalibrationProgress | null>(null);
 
   useEffect(() => {
-    homeStats().then(setStats);
-    calibrationProgress().then(setCalib);
+    homeStats()
+      .then(setStats)
+      .catch((err) => console.error("homeStats failed", err));
+    calibrationProgress()
+      .then(setCalib)
+      .catch((err) => {
+        console.error("calibrationProgress failed", err);
+        setCalib(fallbackCalibProgress());
+      });
   }, []);
 
   return (
@@ -115,8 +133,11 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
       <div className="spacer" />
 
       <div className="stack">
-        <button className="btn primary block" onClick={() => navigate({ name: "quiz", returnApp: null })}>
-          ロシア語 10問を解く
+        <button
+          className="btn primary block"
+          onClick={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
+        >
+          ロシア語を解く
         </button>
         <button className="btn ghost block" onClick={() => navigate({ name: "guide" })}>
           オートメーションを設定する

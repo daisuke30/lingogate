@@ -25,6 +25,16 @@ export interface GateSessionRow {
 
 let dbPromise: Promise<IDBDatabase> | null = null;
 
+// LINGO-010 follow-up (2026-08-26): a PWA tab can stay alive in the background
+// across a deploy (iOS "add to home screen" apps especially). If an old
+// connection from a *previous* JS bundle is still open when a *new* bundle
+// (with a bumped DB_VERSION) tries to open the DB, IndexedDB fires 'blocked'
+// on the new open() and never resolves it — until the old connection closes.
+// Symptom reported by Katsuta: a feature gated behind a promise that reads
+// from a store added in a version bump (the wordKnowledge store, v1->v2)
+// silently never showed up. Fix: every connection we open registers
+// onversionchange and closes itself as soon as *another* open() elsewhere
+// requests a newer version, so upgrades never hang.
 function openDB(): Promise<IDBDatabase> {
   if (dbPromise) return dbPromise;
   dbPromise = new Promise((resolve, reject) => {
@@ -45,7 +55,19 @@ function openDB(): Promise<IDBDatabase> {
         db.createObjectStore("wordKnowledge", { keyPath: "lemma" });
       }
     };
-    req.onsuccess = () => resolve(req.result);
+    req.onblocked = () => {
+      console.warn(
+        "lingogate: IndexedDB upgrade blocked by another open connection (stale tab?)",
+      );
+    };
+    req.onsuccess = () => {
+      const db = req.result;
+      db.onversionchange = () => {
+        db.close();
+        dbPromise = null; // next call reopens (and lets a pending upgrade elsewhere proceed)
+      };
+      resolve(db);
+    };
     req.onerror = () => reject(req.error);
   });
   return dbPromise;

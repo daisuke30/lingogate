@@ -6,8 +6,14 @@
 // first fetch). After one online visit the app runs fully offline. Navigations
 // fall back to the cached app shell ("/") so deep links like /gate?return=tiktok
 // work offline too.
-
-const CACHE = "lingogate-v1";
+//
+// CACHE is per-build (LINGO-010 follow-up, 2026-08-26): scripts/patch-sw-version.mjs
+// replaces __BUILD_VERSION__ in dist/sw.js with the actual build stamp after
+// `vite build`. A static cache name meant sw.js could look byte-identical
+// across deploys, so the browser had no signal to install the new worker or
+// evict the old cache — this makes every deploy produce a different sw.js
+// (triggering the update check) and a fresh cache (old ones are swept below).
+const CACHE = "lingogate-__BUILD_VERSION__";
 const PRECACHE = ["/", "/index.html", "/manifest.webmanifest", "/icons/icon-192.png", "/icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {

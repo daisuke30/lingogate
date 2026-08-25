@@ -8,7 +8,10 @@ import { CalibrationScreen } from "./CalibrationScreen";
 
 export type Route =
   | { name: "home" }
-  | { name: "quiz"; returnApp: string | null; seed?: number }
+  // continuous: Home's "10問を解く" loops batch-after-batch until the learner
+  // taps "終了" (LINGO-010 follow-up). /gate never sets this — gate stays a
+  // single fixed 10-card toll.
+  | { name: "quiz"; returnApp: string | null; seed?: number; continuous?: boolean }
   | { name: "gate"; returnApp: string | null }
   | { name: "settings" }
   | { name: "guide" }
@@ -53,7 +56,14 @@ export function App() {
     case "home":
       return <HomeView navigate={navigate} />;
     case "quiz":
-      return <QuizScreen returnApp={route.returnApp} seed={route.seed} onExit={goHome} />;
+      return (
+        <QuizScreen
+          returnApp={route.returnApp}
+          seed={route.seed}
+          continuous={route.continuous}
+          onExit={goHome}
+        />
+      );
     case "gate":
       return <GateEntry returnApp={route.returnApp} onExit={goHome} />;
     case "settings":
