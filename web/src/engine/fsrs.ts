@@ -34,6 +34,15 @@ export enum CardState {
 
 const DAY_MS = 86_400_000;
 
+/** Anki-style short relearning step (LINGO-010 follow-up, 2026-08-26): an
+ * Again grade resurfaces the card again within minutes, not days — FSRS's own
+ * stability-derived interval for a fresh/low-stability Again is still on the
+ * order of hours-to-days, which reads as "stuck" in a fast-repetition UI.
+ * Stability/difficulty still track the FSRS memory model exactly as before;
+ * only `due` is overridden on Again so the *next* non-Again grade continues
+ * to schedule from real memory state. */
+export const AGAIN_STEP_MS = 5 * 60_000;
+
 export interface FSRSParameters {
   /** 17 weights w[0]…w[16]. */
   w: number[];
@@ -187,9 +196,13 @@ export class FSRS {
 
     const s = Math.max(next.stability!, this.params.minimumStability);
     next.stability = s;
-    const ivlDays = this.interval(s);
     next.lastReview = now;
-    next.due = now + ivlDays * DAY_MS;
+    if (rating === Rating.Again) {
+      next.due = now + AGAIN_STEP_MS;
+    } else {
+      const ivlDays = this.interval(s);
+      next.due = now + ivlDays * DAY_MS;
+    }
     return next;
   }
 }

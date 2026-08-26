@@ -3,7 +3,7 @@ import { ContentStore } from "./content";
 import type { Deck, Sentence } from "./content";
 import { buildGateSession, GateSessionRunner } from "./session";
 import { SeededRNG } from "./rng";
-import { FSRS, Rating, CardState, newReviewState } from "./fsrs";
+import { FSRS, Rating, CardState, newReviewState, AGAIN_STEP_MS } from "./fsrs";
 import type { ReviewState } from "./fsrs";
 
 const fsrs = new FSRS();
@@ -224,5 +224,105 @@ describe("continuous mode: cross-batch continuity (LINGO-010 follow-up)", () => 
     const batch2Ids = plan2.cards.map((c) => c.sentence.id);
     expect(batch2Ids.length).toBe(10);
     for (const id of batch2Ids) expect(batch1Ids.has(id)).toBe(false);
+  });
+});
+
+// LINGO-010 follow-up (2026-08-26, Katsuta bug report): continuous practice
+// mode was still requeuing Again cards within the batch (the gate's toll
+// rule), so "10 correct in a row" was effectively required before the next
+// *new* card ever appeared — the opposite of what a fast-repetition practice
+// mode should feel like. Fix: GateSessionRunner({requeueAgain: false}) — every
+// card, Again included, resolves after exactly one grade; the Again'd card
+// comes back later via FSRS's own ~5min due (AGAIN_STEP_MS), not immediately.
+describe("GateSessionRunner: continuous mode (requeueAgain:false) — Again resolves, doesn't hold the batch hostage", () => {
+  function continuousRunnerOf(n: number) {
+    const store = new ContentStore(makeDeck(n), []);
+    const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
+    return new GateSessionRunner(plan, fsrs, { requeueAgain: false });
+  }
+
+  it("an Again resolves the card immediately — no requeue, no second look this batch", () => {
+    const r = continuousRunnerOf(3);
+    const first = r.currentCardID;
+    const res = r.submitRating(Rating.Again, NOW);
+    expect(res.requeued).toBe(false);
+    expect(r.currentCardID).not.toBe(first); // moved straight on to the next card
+    expect(r.resolvedCount).toBe(1);
+  });
+
+  it("a 10-card batch completes after exactly 10 gradings, Again included — never stuck waiting for 10 corrects", () => {
+    const r = continuousRunnerOf(10);
+    const seen = new Set<string>();
+    for (let i = 0; i < 10; i++) {
+      const id = r.currentCardID!;
+      expect(seen.has(id)).toBe(false); // no card is ever shown twice in this batch
+      seen.add(id);
+      const rating = i % 3 === 0 ? Rating.Again : Rating.Good; // mix in several Again grades
+      const res = r.submitRating(rating, NOW);
+      expect(res.sessionComplete).toBe(i === 9);
+    }
+    expect(r.isComplete).toBe(true);
+    expect(seen.size).toBe(10);
+  });
+
+  it("ratingSummary tallies each card's first (and only) grading", () => {
+    const r = continuousRunnerOf(4);
+    r.submitRating(Rating.Again, NOW);
+    r.submitRating(Rating.Hard, NOW);
+    r.submitRating(Rating.Good, NOW);
+    r.submitRating(Rating.Good, NOW);
+    expect(r.ratingSummary).toEqual({ again: 1, hard: 1, good: 2, total: 4 });
+  });
+
+  it("an Again'd card's persisted due is ~5 minutes out, not requeued in this batch", () => {
+    const r = continuousRunnerOf(1);
+    r.submitRating(Rating.Again, NOW);
+    const [state] = r.drainPendingUpserts();
+    expect(state.due! - NOW).toBe(AGAIN_STEP_MS);
+  });
+
+  it("a later batch's dueReviews surfaces the Again'd card ahead of brand-new ones once its ~5min due has passed", () => {
+    const deck = makeDeck(20);
+    const store1 = new ContentStore(deck, []);
+    const plan1 = buildGateSession(store1, { band: 1, now: NOW, size: 5, rng: new SeededRNG(3) });
+    const runner1 = new GateSessionRunner(plan1, fsrs, { requeueAgain: false });
+    const againId = runner1.currentCardID!;
+    runner1.submitRating(Rating.Again, NOW);
+    for (let i = 0; i < 4; i++) runner1.submitRating(Rating.Good, NOW);
+    const committed1 = runner1.drainPendingUpserts();
+
+    // A future "続ける" batch, built after the ~5min learning step has passed.
+    const later = NOW + AGAIN_STEP_MS + 1000;
+    const store2 = new ContentStore(deck, committed1);
+    const plan2 = buildGateSession(store2, { band: 1, now: later, size: 5, rng: new SeededRNG(4) });
+    expect(plan2.cards[0].sentence.id).toBe(againId);
+    expect(plan2.cards[0].isReview).toBe(true);
+  });
+});
+
+describe("GateSessionRunner: gate mode (default) keeps the requeue-until-clear toll", () => {
+  function gateRunnerOf(n: number) {
+    const store = new ContentStore(makeDeck(n), []);
+    const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
+    return new GateSessionRunner(plan, fsrs); // no opts -> requeueAgain defaults to true
+  }
+
+  it("does not complete until every Again'd card gets a second, non-Again look", () => {
+    const r = gateRunnerOf(3);
+    r.submitRating(Rating.Again, NOW);
+    r.submitRating(Rating.Good, NOW);
+    r.submitRating(Rating.Good, NOW);
+    expect(r.isComplete).toBe(false); // the Again card is still owed a look
+    const final = r.submitRating(Rating.Good, NOW);
+    expect(final.sessionComplete).toBe(true);
+  });
+
+  it("{requeueAgain: true} explicitly behaves the same as the default (unchanged /gate behaviour)", () => {
+    const store = new ContentStore(makeDeck(3), []);
+    const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
+    const r = new GateSessionRunner(plan, fsrs, { requeueAgain: true });
+    const res = r.submitRating(Rating.Again, NOW);
+    expect(res.requeued).toBe(true);
+    expect(r.isComplete).toBe(false);
   });
 });

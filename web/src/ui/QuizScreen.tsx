@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Rating } from "../engine/fsrs";
+import type { RatingSummary } from "../engine/session";
 import { commitPartialSession, commitSession, startSession } from "../state/service";
 import type { StartedSession } from "../state/service";
 import { getUnlockMinutes, getTtsSettings, setSuppressUntil } from "../state/settings";
@@ -53,7 +54,7 @@ export function QuizScreen({
     setPhase("loading");
     committedRef.current = false;
     const [session, mins, ttsSettings] = await Promise.all([
-      startSession(seed),
+      startSession({ seed, continuous }),
       getUnlockMinutes(),
       getTtsSettings(),
     ]);
@@ -135,7 +136,7 @@ export function QuizScreen({
   if (phase === "complete") {
     return (
       <CompleteScreen
-        runner={{ correct: runner.firstTryCorrect, total: runner.totalCards }}
+        summary={runner.ratingSummary}
         returnApp={returnApp}
         unlockMin={unlockMin}
         onExit={onExit}
@@ -146,7 +147,7 @@ export function QuizScreen({
   if (phase === "batchComplete") {
     return (
       <BatchCompleteScreen
-        runner={{ correct: runner.firstTryCorrect, total: runner.totalCards }}
+        summary={runner.ratingSummary}
         batchNumber={batchNumber}
         onContinue={nextBatch}
         onExit={onExit}
@@ -186,18 +187,44 @@ export function QuizScreen({
   );
 }
 
+/** "10枚中 覚えていた n / 曖昧 m / 覚えていない k" — a per-card first-grading
+ * tally (LINGO-010 follow-up, 2026-08-26; replaces a "正答率" % that read as a
+ * test score when this is a spaced-repetition practice tool, not a quiz). */
+function RatingBreakdown({ summary }: { summary: RatingSummary }) {
+  return (
+    <>
+      <p className="muted" style={{ margin: "2px 0 0" }}>
+        {summary.total}枚中
+      </p>
+      <div className="done-stats">
+        <div>
+          <div className="val">{summary.good}</div>
+          <div className="lbl">覚えていた</div>
+        </div>
+        <div>
+          <div className="val">{summary.hard}</div>
+          <div className="lbl">曖昧</div>
+        </div>
+        <div>
+          <div className="val">{summary.again}</div>
+          <div className="lbl">覚えていない</div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 function CompleteScreen({
-  runner,
+  summary,
   returnApp,
   unlockMin,
   onExit,
 }: {
-  runner: { correct: number; total: number };
+  summary: RatingSummary;
   returnApp: string | null;
   unlockMin: number;
   onExit: () => void;
 }) {
-  const knownPct = runner.total > 0 ? Math.round((100 * runner.correct) / runner.total) : 0;
   const target = returnApp ? returnTarget(returnApp) : undefined;
 
   function goBack() {
@@ -214,16 +241,7 @@ function CompleteScreen({
         <div className="big-emoji">🎉</div>
         <h1>10問クリア</h1>
         <p>{returnApp ? `${unlockMin}分間ひらけます` : "今日のロシア語、進みました"}</p>
-        <div className="done-stats">
-          <div>
-            <div className="val">{knownPct}%</div>
-            <div className="lbl">既知率</div>
-          </div>
-          <div>
-            <div className="val">{runner.total}</div>
-            <div className="lbl">枚</div>
-          </div>
-        </div>
+        <RatingBreakdown summary={summary} />
         {returnApp ? (
           <div className="stack" style={{ width: "100%" }}>
             <button className="btn primary block" onClick={goBack}>
@@ -247,33 +265,23 @@ function CompleteScreen({
  * next 10-card batch in place; "終了" leaves (the just-finished batch is
  * already fully committed via finish(), so this is a plain exit). */
 function BatchCompleteScreen({
-  runner,
+  summary,
   batchNumber,
   onContinue,
   onExit,
 }: {
-  runner: { correct: number; total: number };
+  summary: RatingSummary;
   batchNumber: number;
   onContinue: () => void;
   onExit: () => void;
 }) {
-  const knownPct = runner.total > 0 ? Math.round((100 * runner.correct) / runner.total) : 0;
   return (
     <div className="app">
       <div className="center-screen">
         <div className="big-emoji">✅</div>
         <h1>{batchNumber}セット目クリア</h1>
         <p>続けるか、ここで終えるか選べます</p>
-        <div className="done-stats">
-          <div>
-            <div className="val">{knownPct}%</div>
-            <div className="lbl">既知率</div>
-          </div>
-          <div>
-            <div className="val">{runner.total}</div>
-            <div className="lbl">枚</div>
-          </div>
-        </div>
+        <RatingBreakdown summary={summary} />
         <div className="stack" style={{ width: "100%" }}>
           <button className="btn primary block" onClick={onContinue}>
             続ける（次の10問）

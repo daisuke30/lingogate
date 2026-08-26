@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { FSRS, DEFAULT_PARAMS, Rating, CardState, newReviewState, ALL_RATINGS } from "./fsrs";
+import { FSRS, DEFAULT_PARAMS, Rating, CardState, newReviewState, ALL_RATINGS, AGAIN_STEP_MS } from "./fsrs";
 
 // Mirror of ios/QuizEngine/Tests/QuizEngineTests/FSRSTests.swift. The same
 // known FSRS-4.5 anchors must hold in the TS port (S=3.0412 after first Good,
@@ -112,5 +112,47 @@ describe("FSRS review() wiring & state machine", () => {
       card = fsrs.review(card, Rating.Again, t0 + i * DAY);
       expect(card.stability!).toBeGreaterThanOrEqual(DEFAULT_PARAMS.minimumStability);
     }
+  });
+});
+
+// LINGO-010 follow-up (2026-08-26, Katsuta feedback): FSRS's own stability-derived
+// interval for a fresh/low-stability Again lands hours-to-days out, which reads as
+// "stuck" in a fast-repetition practice UI. An Again grade should resurface the
+// card again within minutes (Anki-style short relearning step) — stability and
+// difficulty still track the real FSRS memory model; only `due` is overridden.
+describe("FSRS Again -> short relearning step (due), not a multi-day interval", () => {
+  it("a brand-new card's first Again is due ~5 minutes out, not the stability-derived interval", () => {
+    const out = fsrs.review(newReviewState("s001"), Rating.Again, t0);
+    expect(out.due! - t0).toBe(AGAIN_STEP_MS);
+    // Sanity: the stability-derived interval would have been much larger (hours+),
+    // confirming this isn't accidentally the same number.
+    const wouldHaveBeen = fsrs.interval(out.stability!) * DAY;
+    expect(wouldHaveBeen).toBeGreaterThan(AGAIN_STEP_MS);
+  });
+
+  it("a lapse (Again after Review) is also due ~5 minutes out, despite a multi-day stability", () => {
+    let card = fsrs.review(newReviewState("s001"), Rating.Good, t0);
+    card = fsrs.review(card, Rating.Good, card.due!); // now several days of stability
+    const lapsed = fsrs.review(card, Rating.Again, card.due!);
+    expect(lapsed.due! - card.due!).toBe(AGAIN_STEP_MS);
+    // The underlying memory-model stability is still multi-day (not reset to the
+    // short step) — only the surfaced `due` changed.
+    expect(lapsed.stability!).toBeGreaterThan(1);
+  });
+
+  it("repeated Again grades keep due short each time (no exponential blow-up)", () => {
+    let card = newReviewState("s001");
+    let now = t0;
+    for (let i = 0; i < 3; i++) {
+      card = fsrs.review(card, Rating.Again, now);
+      expect(card.due! - now).toBe(AGAIN_STEP_MS);
+      now = card.due!;
+    }
+  });
+
+  it("a non-Again grade still uses the normal stability-derived interval", () => {
+    const out = fsrs.review(newReviewState("s001"), Rating.Good, t0);
+    expect(out.due! - t0).not.toBe(AGAIN_STEP_MS);
+    near(out.due! - t0, 3.0412 * DAY, DAY * 1e-4);
   });
 });

@@ -4,12 +4,26 @@
 // task LINGO-008). So there is no QuestionBuilder / distractor logic; a card is
 // just its Sentence + ReviewState.
 //
-// Grading rule (identical to Swift): a card is graded through FSRS exactly once,
-// on first resolution. `.again` re-queues it to the end for another look;
-// anything else finalises it. A re-shown (already-graded) card is never
-// re-graded — only Again-or-not decides whether it goes around again. Grades are
-// buffered in memory and committed once at session end (makes undo a pure
-// in-memory revert, no compensating write).
+// Grading rule: a card is graded through FSRS exactly once, on first
+// resolution — never re-graded on a re-show, only Again-or-not decides
+// whether it goes around again. Grades are buffered in memory and committed
+// once at session end (makes undo a pure in-memory revert, no compensating
+// write).
+//
+// Two requeue modes (LINGO-010 follow-up, 2026-08-26 — Katsuta feedback: "10
+// correct required before the next card" made continuous practice feel stuck):
+//   - Gate (`requeueAgain: true`, default): identical to the original Swift
+//     behaviour and to /gate's "toll" design — an Again re-queues the card to
+//     the end of *this* batch, so the batch only completes once every card has
+//     a non-Again grade. This is the point of the gate: it's a forcing
+//     function, not a quiz.
+//   - Continuous practice (`requeueAgain: false`): every card — Again
+//     included — resolves and advances after exactly one grade. The batch
+//     completes once `size` cards have been graded, full stop. An Again'd
+//     card comes back via FSRS's own due-date scheduling instead (see
+//     fsrs.ts's AGAIN_STEP_MS): it lands ~5 minutes out, so it naturally
+//     surfaces again at the front of the *next* batch's dueReviews queue —
+//     Anki-style short relearning steps, not an in-session hostage situation.
 
 import { FSRS, Rating, newReviewState } from "./fsrs";
 import type { ReviewState } from "./fsrs";
@@ -116,7 +130,27 @@ interface RatingUndoRecord {
   priorReviewState: ReviewState;
   priorFirstTryCorrect: number;
   priorTotalAnswers: number;
+  priorRatingCounts: RatingCounts;
   pendingAppended: boolean;
+}
+
+/** Count of cards by their *first* grading rating — the basis for the
+ * "覚えていた/曖昧/覚えていない" summary breakdown (LINGO-010 follow-up). A
+ * card that's Again'd then later re-shown and passed (gate mode) still counts
+ * once under Again here — this reflects what actually happened on first look,
+ * not just the eventual outcome. */
+export type RatingCounts = Record<Rating, number>;
+
+function zeroRatingCounts(): RatingCounts {
+  return { [Rating.Again]: 0, [Rating.Hard]: 0, [Rating.Good]: 0, [Rating.Easy]: 0 };
+}
+
+export interface RatingSummary {
+  again: number;
+  hard: number;
+  /** Good + Easy folded together — the flashcard UI only ever sends Again/Hard/Good. */
+  good: number;
+  total: number;
 }
 
 export class GateSessionRunner {
@@ -126,14 +160,18 @@ export class GateSessionRunner {
   private allCards: RuntimeCard[];
   readonly totalCards: number;
   private fsrs: FSRS;
+  /** true (default) = gate's requeue-until-clear toll; false = continuous
+   * practice, where every card resolves after exactly one grade. */
+  private requeueAgain: boolean;
 
   firstTryCorrect = 0;
   totalAnswers = 0;
+  private ratingCounts: RatingCounts = zeroRatingCounts();
 
   private pendingRatingUpserts: ReviewState[] = [];
   private lastRatingUndo: RatingUndoRecord | null = null;
 
-  constructor(plan: GateSessionPlan, fsrs: FSRS) {
+  constructor(plan: GateSessionPlan, fsrs: FSRS, opts: { requeueAgain?: boolean } = {}) {
     this.queue = plan.cards.map((c) => ({
       sentenceId: c.sentence.id,
       sentence: c.sentence,
@@ -144,6 +182,17 @@ export class GateSessionRunner {
     this.allCards = this.queue.slice();
     this.totalCards = plan.cards.length;
     this.fsrs = fsrs;
+    this.requeueAgain = opts.requeueAgain ?? true;
+  }
+
+  /** "10枚中 覚えていた n / 曖昧 m / 覚えていない k" — first-grading tally. */
+  get ratingSummary(): RatingSummary {
+    return {
+      again: this.ratingCounts[Rating.Again],
+      hard: this.ratingCounts[Rating.Hard],
+      good: this.ratingCounts[Rating.Good] + this.ratingCounts[Rating.Easy],
+      total: this.totalCards,
+    };
   }
 
   /** Per-card outcomes for knowledge feedback: every graded card with whether it
@@ -193,10 +242,12 @@ export class GateSessionRunner {
     const priorReviewState = card.reviewState;
     const priorFirstTryCorrect = this.firstTryCorrect;
     const priorTotalAnswers = this.totalAnswers;
+    const priorRatingCounts = { ...this.ratingCounts };
     let pendingAppended = false;
 
     this.totalAnswers += 1;
     const isAgain = rating === Rating.Again;
+    let requeued = false;
 
     if (!card.graded) {
       const graded = this.fsrs.review(card.reviewState, rating, now);
@@ -204,16 +255,31 @@ export class GateSessionRunner {
       this.pendingRatingUpserts.push(graded);
       pendingAppended = true;
       card.graded = true;
+      this.ratingCounts[rating] += 1; // first-grading tally, regardless of mode
       if (isAgain) {
         card.everWrong = true;
-        this.requeue(card);
+        if (this.requeueAgain) {
+          this.requeue(card);
+          requeued = true;
+        } else {
+          // Continuous mode: resolve now — FSRS's own ~5min due (AGAIN_STEP_MS)
+          // is what brings this card back, at the front of a *future* batch's
+          // dueReviews, not immediately in this one.
+          this.queue.shift();
+        }
       } else {
         this.firstTryCorrect += 1;
         this.queue.shift();
       }
     } else {
-      if (isAgain) this.requeue(card);
-      else this.queue.shift();
+      // Only reachable when requeueAgain is true — continuous mode never
+      // re-shows a card, so it never re-grades or re-queues one either.
+      if (isAgain) {
+        this.requeue(card);
+        requeued = true;
+      } else {
+        this.queue.shift();
+      }
     }
 
     this.lastRatingUndo = {
@@ -224,10 +290,11 @@ export class GateSessionRunner {
       priorReviewState,
       priorFirstTryCorrect,
       priorTotalAnswers,
+      priorRatingCounts,
       pendingAppended,
     };
 
-    return { rating, requeued: isAgain, sessionComplete: this.queue.length === 0 };
+    return { rating, requeued, sessionComplete: this.queue.length === 0 };
   }
 
   private requeue(card: RuntimeCard): void {
@@ -245,6 +312,7 @@ export class GateSessionRunner {
     u.card.reviewState = u.priorReviewState;
     this.firstTryCorrect = u.priorFirstTryCorrect;
     this.totalAnswers = u.priorTotalAnswers;
+    this.ratingCounts = u.priorRatingCounts;
     if (u.pendingAppended && this.pendingRatingUpserts.length > 0) {
       this.pendingRatingUpserts.pop();
     }

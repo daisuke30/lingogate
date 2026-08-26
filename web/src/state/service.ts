@@ -41,12 +41,19 @@ export interface StartedSession {
   startedAt: number;
 }
 
-export async function startSession(seed?: number): Promise<StartedSession> {
+/** `continuous: true` (Home's "ロシア語を解く") builds a runner that resolves
+ * every card — Again included — after exactly one grade (see session.ts's
+ * GateSessionRunner doc comment). Omitted/false (=/gate, and the default)
+ * keeps the toll behaviour: a batch only completes once every card has a
+ * non-Again grade. */
+export async function startSession(
+  opts: { seed?: number; continuous?: boolean } = {},
+): Promise<StartedSession> {
   const store = await loadStore();
   const now = Date.now();
-  const rng = new SeededRNG(seed ?? now);
+  const rng = new SeededRNG(opts.seed ?? now);
   const plan = buildGateSession(store, { band: PRIMARY_BAND, now, rng });
-  const runner = new GateSessionRunner(plan, fsrs);
+  const runner = new GateSessionRunner(plan, fsrs, { requeueAgain: !opts.continuous });
   return { runner, startedAt: now };
 }
 
