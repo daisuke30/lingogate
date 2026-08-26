@@ -5,7 +5,6 @@ import type { StartedSession } from "../state/service";
 import { getUnlockMinutes, getTtsSettings, setSuppressUntil } from "../state/settings";
 import type { TtsSettings } from "../state/settings";
 import { suppressUntil, returnDisplayName, returnTarget } from "../engine/gate";
-import { setQuizActive } from "../state/appUpdate";
 import { FlashcardCard } from "./FlashcardCard";
 
 type Phase = "loading" | "question" | "complete" | "batchComplete";
@@ -43,17 +42,12 @@ export function QuizScreen({
   const [tts, setTts] = useState<TtsSettings>({ enabled: true, rate: 1.0 });
   const [batchNumber, setBatchNumber] = useState(1);
 
-  // Tell the SW-update flow a session is on screen so a background update
-  // never yanks a card out from under an in-progress flip/flick — the reload
-  // it would otherwise trigger is deferred until this unmounts (LINGO-010
-  // follow-up, 2026-08-26; see state/appUpdate.ts).
-  useEffect(() => {
-    setQuizActive(true);
-    return () => {
+  useEffect(
+    () => () => {
       mountedRef.current = false;
-      setQuizActive(false);
-    };
-  }, []);
+    },
+    [],
+  );
 
   const loadBatch = useCallback(async () => {
     setPhase("loading");

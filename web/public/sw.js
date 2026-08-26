@@ -16,10 +16,18 @@
 const CACHE = "lingogate-__BUILD_VERSION__";
 const PRECACHE = ["/", "/index.html", "/manifest.webmanifest", "/icons/icon-192.png", "/icons/icon-512.png"];
 
+// 2026-08-26 REDESIGN (black-screen incident, see state/appUpdate.ts for the
+// full trace): install() used to call self.skipWaiting() unconditionally, so
+// a newly-installed worker activated and claimed open pages on its own
+// schedule regardless of what the page-side JS wanted — that's half of what
+// turned a single real update into a reload loop. Now activation over an
+// *existing* controller only ever happens via the explicit SKIP_WAITING
+// message below, sent from exactly one boot-time check (once per tab
+// session) or the manual "最新版に更新" button. A page's very first-ever SW
+// install is unaffected: with no existing controller, the browser activates
+// automatically regardless of skipWaiting.
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)).then(() => self.skipWaiting()),
-  );
+  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)));
 });
 
 self.addEventListener("activate", (event) => {
@@ -31,14 +39,10 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Explicit skip-waiting handoff (2026-08-26 follow-up): install() below already
-// calls self.skipWaiting() unconditionally, which is enough by itself once a
-// new worker actually gets *installed*. This message handler is the other half
-// of the page-side flow in state/appUpdate.ts — belt-and-suspenders so a future
-// change that makes skipWaiting conditional (e.g. "ask before updating") still
-// has a working activation path, and so the explicit "最新版に更新" Settings
-// button can force immediate activation of an already-installed-but-waiting
-// worker without relying on the automatic path at all.
+// The *only* path that activates a new worker over an existing controller —
+// install() above no longer skips waiting on its own. Sent from
+// state/appUpdate.ts: either the once-per-tab-session boot check, or the
+// manual "最新版に更新" Settings button.
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();

@@ -16,7 +16,7 @@ import { resetAll } from "../db/idb";
 // LINGO-010 follow-up: build-time stamp (git sha + timestamp) so Katsuta can
 // tell which deploy his device is actually running — see scripts/gen-version.mjs.
 import versionInfo from "../content/version.generated.json";
-import { checkForUpdate } from "../state/appUpdate";
+import { checkForUpdate, hasPendingUpdate } from "../state/appUpdate";
 
 function formatBuiltAt(iso: string): string {
   const d = new Date(iso);
@@ -32,12 +32,14 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
   const [hasVoice, setHasVoice] = useState(false);
   const [updateStatus, setUpdateStatus] = useState<string | null>(null);
   const [checkingUpdate, setCheckingUpdate] = useState(false);
+  const [pendingUpdate, setPendingUpdate] = useState(false);
 
   useEffect(() => {
     getUnlockMinutes().then(setMinutes);
     getQuizMode().then(setQuizModeState);
     getTtsEnabled().then(setTtsOn);
     getTtsRate().then(setTtsRateState);
+    hasPendingUpdate().then(setPendingUpdate);
     const unsub = subscribeVoices(() => setHasVoice(ruVoiceAvailable()));
     return unsub;
   }, []);
@@ -70,7 +72,7 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
     try {
       const result = await checkForUpdate();
       if (result === "updating") {
-        setUpdateStatus("新しい版が見つかりました。まもなく自動で再読み込みします…");
+        setUpdateStatus("新しい版を適用します。まもなく再読み込みします…");
       } else if (result === "up-to-date") {
         setUpdateStatus(`最新版です（ビルド: ${versionInfo.version}）`);
       } else {
@@ -195,7 +197,7 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
           <div>
             <div className="label">最新版を確認</div>
             <div className="sub">
-              新しいビルドがあれば取得して自動的に再読み込みします（クイズ中は終了後まで待機）
+              新しいビルドがあれば今すぐ取得して再読み込みします。何もしなければ次回このアプリを開いた時に自動で適用されます。
             </div>
           </div>
           <button className="btn" onClick={updateNow} disabled={checkingUpdate}>
@@ -203,10 +205,16 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
           </button>
         </div>
       </div>
-      {updateStatus && (
+      {updateStatus ? (
         <p className="muted" style={{ marginTop: 10 }}>
           {updateStatus}
         </p>
+      ) : (
+        pendingUpdate && (
+          <p className="muted" style={{ marginTop: 10 }}>
+            新しいバージョンがあります（次回起動時に適用）
+          </p>
+        )
       )}
 
       <p className="muted" style={{ marginTop: 20, textAlign: "center", opacity: 0.6 }}>
