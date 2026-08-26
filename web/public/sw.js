@@ -31,6 +31,20 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+// Explicit skip-waiting handoff (2026-08-26 follow-up): install() below already
+// calls self.skipWaiting() unconditionally, which is enough by itself once a
+// new worker actually gets *installed*. This message handler is the other half
+// of the page-side flow in state/appUpdate.ts — belt-and-suspenders so a future
+// change that makes skipWaiting conditional (e.g. "ask before updating") still
+// has a working activation path, and so the explicit "最新版に更新" Settings
+// button can force immediate activation of an already-installed-but-waiting
+// worker without relying on the automatic path at all.
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;

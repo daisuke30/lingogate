@@ -16,6 +16,7 @@ import { resetAll } from "../db/idb";
 // LINGO-010 follow-up: build-time stamp (git sha + timestamp) so Katsuta can
 // tell which deploy his device is actually running — see scripts/gen-version.mjs.
 import versionInfo from "../content/version.generated.json";
+import { checkForUpdate } from "../state/appUpdate";
 
 function formatBuiltAt(iso: string): string {
   const d = new Date(iso);
@@ -29,6 +30,8 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
   const [ttsOn, setTtsOn] = useState(true);
   const [ttsRate, setTtsRateState] = useState(1.0);
   const [hasVoice, setHasVoice] = useState(false);
+  const [updateStatus, setUpdateStatus] = useState<string | null>(null);
+  const [checkingUpdate, setCheckingUpdate] = useState(false);
 
   useEffect(() => {
     getUnlockMinutes().then(setMinutes);
@@ -59,6 +62,23 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
     if (!confirm("学習状態（FSRS・履歴・設定）をすべて消去します。よろしいですか？")) return;
     await resetAll();
     location.reload();
+  }
+
+  async function updateNow() {
+    setCheckingUpdate(true);
+    setUpdateStatus(null);
+    try {
+      const result = await checkForUpdate();
+      if (result === "updating") {
+        setUpdateStatus("新しい版が見つかりました。まもなく自動で再読み込みします…");
+      } else if (result === "up-to-date") {
+        setUpdateStatus(`最新版です（ビルド: ${versionInfo.version}）`);
+      } else {
+        setUpdateStatus("この環境では自動更新に対応していません（開発モード等）。");
+      }
+    } finally {
+      setCheckingUpdate(false);
+    }
   }
 
   return (
@@ -168,6 +188,26 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
         シールド（対象アプリの強制遮断）はiOSネイティブ専用機能のためWeb版にはありません。Web版は
         オートメーション方式（弱い強制力）で、クイズ×FSRSの反復UX検証に集中します。
       </p>
+
+      <div className="section-title">アプリの更新</div>
+      <div className="list">
+        <div className="row">
+          <div>
+            <div className="label">最新版を確認</div>
+            <div className="sub">
+              新しいビルドがあれば取得して自動的に再読み込みします（クイズ中は終了後まで待機）
+            </div>
+          </div>
+          <button className="btn" onClick={updateNow} disabled={checkingUpdate}>
+            {checkingUpdate ? "確認中…" : "最新版に更新"}
+          </button>
+        </div>
+      </div>
+      {updateStatus && (
+        <p className="muted" style={{ marginTop: 10 }}>
+          {updateStatus}
+        </p>
+      )}
 
       <p className="muted" style={{ marginTop: 20, textAlign: "center", opacity: 0.6 }}>
         ビルド: {versionInfo.version}
