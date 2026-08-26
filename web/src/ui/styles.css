@@ -315,6 +315,59 @@ button {
   color: var(--ink-faint);
 }
 
+/* ---- Word breakdown (LINGO-012) ----
+   Bounded + internally scrollable so a sentence with several content words
+   never grows the flashcard itself — the list scrolls in place instead. */
+.word-breakdown {
+  width: 100%;
+  max-height: 116px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+.wb-row {
+  padding: 6px 0;
+}
+.wb-row + .wb-row {
+  border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.wb-row.target {
+  background: color-mix(in srgb, var(--indigo) 14%, transparent);
+  margin: 0 -10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.wb-row.target + .wb-row {
+  border-top: none;
+}
+.wb-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.wb-lemma {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+}
+.wb-pos {
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+.wb-aspect {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--indigo-bright);
+}
+.wb-gloss {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+
 .overlay-label {
   position: absolute;
   top: 50%;

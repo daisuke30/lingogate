@@ -1,6 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
+import { buildWordBreakdown } from "../engine/wordBreakdown";
+import type { WordBreakdownEntry } from "../engine/wordBreakdown";
+import { WORD_BY_ID } from "../state/service";
 import { ruVoiceAvailable, speakRu, subscribeVoices } from "../state/tts";
 
 type Dir = "again" | "hard" | "good" | null;
@@ -33,6 +36,8 @@ export function FlashcardCard({
   const [drag, setDrag] = useState({ x: 0, y: 0, active: false });
   const [hasVoice, setHasVoice] = useState(false);
   const start = useRef<{ x: number; y: number } | null>(null);
+  // LINGO-012: word-by-word breakdown (原形・品詞・体と対・英日訳) for the back face.
+  const breakdown = useMemo(() => buildWordBreakdown(sentence, WORD_BY_ID), [sentence]);
 
   // Arm evaluation 1.5s after the flip (per card — component remounts by key).
   useEffect(() => {
@@ -138,6 +143,7 @@ export function FlashcardCard({
             {sentence.kana && <div className="kana">{sentence.kana}</div>}
             {sentence.ja && <div className="ja">{sentence.ja}</div>}
             {sentence.note && <div className="note">{sentence.note}</div>}
+            {breakdown.length > 0 && <WordBreakdownList entries={breakdown} />}
             {showOverlay && (
               <div className="overlay-label" style={{ color: overlayColor, opacity: 1 }}>
                 {overlayText}
@@ -160,6 +166,38 @@ export function FlashcardCard({
         </div>
       </div>
     </>
+  );
+}
+
+/** Card-back "単語分解" list (LINGO-012). Its own bounded, internally
+ * scrollable region — see .word-breakdown in styles.css — so a sentence with
+ * several content words never grows the card itself; the list scrolls in
+ * place instead. Stops pointerdown propagation (same trick as the speaker
+ * button above) so a touch-scroll here can never be misread as a rate-flick
+ * by the card's own drag handling. */
+function WordBreakdownList({ entries }: { entries: WordBreakdownEntry[] }) {
+  return (
+    <div className="word-breakdown" onPointerDown={(e) => e.stopPropagation()}>
+      {entries.map((w) => (
+        <div key={w.lemma} className={"wb-row" + (w.isTarget ? " target" : "")}>
+          <div className="wb-head">
+            <span className="wb-lemma">{w.lemma}</span>
+            <span className="wb-pos">{w.posLabel}</span>
+          </div>
+          {w.aspect && (
+            <div className="wb-aspect">
+              {w.aspect === "impf" ? "不完了体" : "完了体"}
+              {w.aspectPair && <> ⇔ 対: {w.aspectPair}</>}
+            </div>
+          )}
+          {(w.enGloss || w.jaGloss) && (
+            <div className="wb-gloss">
+              {[w.enGloss, w.jaGloss].filter(Boolean).join(" / ")}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
 

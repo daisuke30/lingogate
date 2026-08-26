@@ -22,7 +22,9 @@ export const DECK = deckJson as unknown as Deck;
 export const PRIMARY_BAND = DECK.bands[0] ?? 1;
 
 const fsrs = new FSRS();
-const WORD_BY_ID = new Map(DECK.words.map((w) => [w.id, w]));
+/** lemma-id -> DeckWord, built once from the static bundle. Exported for the
+ * card-back word breakdown (LINGO-012, engine/wordBreakdown.ts). */
+export const WORD_BY_ID = new Map(DECK.words.map((w) => [w.id, w]));
 
 async function loadKnowledge(): Promise<Map<string, "known" | "unknown" | "unset">> {
   const rows = await getAllWordKnowledge();

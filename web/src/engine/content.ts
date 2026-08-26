@@ -43,6 +43,15 @@ export interface DeckWord {
   rank: number | null;
   band: number;
   pos: string;
+  /** English / Japanese gloss (LINGO-012); undefined/null for synthetic test
+   * decks that don't set them. */
+  enGloss?: string | null;
+  jaGloss?: string | null;
+  /** Verb aspect (LINGO-012): "pf" (perfective) | "impf" (imperfective) |
+   * null for non-verbs and verbs with no true telic partner. */
+  aspect?: "pf" | "impf" | null;
+  /** The paired verb's lemma (opposite aspect), if one exists. */
+  aspectPair?: string | null;
 }
 
 export interface Deck {
