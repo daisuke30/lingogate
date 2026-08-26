@@ -33,6 +33,12 @@ CREATE TABLE IF NOT EXISTS Word (
     pos       TEXT NOT NULL,                -- part of speech (see README for tagset)
     en_gloss  TEXT,
     ja_gloss  TEXT,
+    -- LINGO-012 (card-back word breakdown). Verb aspect; NULL for non-verbs and
+    -- for verbs without a true telic partner (быть, мочь, ...). aspect_pair is
+    -- free text (the paired lemma need not itself be a Word row). Also added
+    -- via idempotent ALTER in import.py:ensure_migrations.
+    aspect      TEXT,                       -- 'pf' | 'impf' | NULL
+    aspect_pair TEXT,                       -- paired verb's lemma, or NULL
     UNIQUE (deck_id, lemma)
 );
 

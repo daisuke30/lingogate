@@ -77,6 +77,14 @@ def ensure_migrations(conn):
     # LINGO-011: the single band-vocab lemma a sentence is built to teach.
     if "target_lemma" not in have:
         conn.execute("ALTER TABLE Sentence ADD COLUMN target_lemma TEXT")
+    # LINGO-012: verb aspect + its aspectual partner, for the card-back
+    # word-breakdown feature. NULL for non-verbs and for verbs with no true
+    # telic partner.
+    have_word = {row[1] for row in conn.execute("PRAGMA table_info(Word)")}
+    if "aspect" not in have_word:
+        conn.execute("ALTER TABLE Word ADD COLUMN aspect TEXT")
+    if "aspect_pair" not in have_word:
+        conn.execute("ALTER TABLE Word ADD COLUMN aspect_pair TEXT")
 
 
 def upsert_deck(conn):
@@ -92,9 +100,24 @@ def upsert_deck(conn):
     return conn.execute("SELECT id FROM Deck WHERE code=?", (DECK_CODE,)).fetchone()[0]
 
 
+def word_paths(data_dir):
+    """data/words_band<N>.jsonl only — excludes sidecar files like
+    words_band1_aspects.jsonl (see word_aspect_paths), which would otherwise
+    also match a loose words_band*.jsonl glob and corrupt Word rows (pos
+    would be blanked out by the sidecar's narrower schema)."""
+    paths = glob.glob(os.path.join(data_dir, "words_band*.jsonl"))
+    return sorted(p for p in paths if re.match(r"^words_band\d+\.jsonl$", os.path.basename(p)))
+
+
+def word_aspect_paths(data_dir):
+    """data/words_band<N>_aspects.jsonl — LINGO-012 verb aspect sidecar files."""
+    paths = glob.glob(os.path.join(data_dir, "words_band*_aspects.jsonl"))
+    return sorted(p for p in paths if re.match(r"^words_band\d+_aspects\.jsonl$", os.path.basename(p)))
+
+
 def import_words(conn, deck_id, data_dir):
-    """Import every data/words_band*.jsonl. Returns count imported."""
-    paths = sorted(glob.glob(os.path.join(data_dir, "words_band*.jsonl")))
+    """Import every data/words_band<N>.jsonl. Returns count imported."""
+    paths = word_paths(data_dir)
     if not paths:
         print("WARNING: no words_band*.jsonl found", file=sys.stderr)
     n = 0
@@ -113,6 +136,29 @@ def import_words(conn, deck_id, data_dir):
             )
             n += 1
     return n
+
+
+def import_word_aspects(conn, deck_id, data_dir):
+    """Apply data/words_band<N>_aspects.jsonl (LINGO-012) on top of Word rows
+    already inserted by import_words. UPDATE-only: a lemma not present in Word
+    (e.g. typo, or word pruned) is reported back as unmatched, not inserted.
+    Idempotent — same file re-applied yields identical column values.
+    """
+    paths = word_aspect_paths(data_dir)
+    n = 0
+    unmatched = []
+    for path in paths:
+        for lineno, a in load_jsonl(path):
+            lemma = a["lemma"].strip()
+            cur = conn.execute(
+                "UPDATE Word SET aspect=?, aspect_pair=? WHERE deck_id=? AND lemma=?",
+                (a.get("aspect"), a.get("aspect_pair"), deck_id, lemma),
+            )
+            if cur.rowcount == 0:
+                unmatched.append(lemma)
+            else:
+                n += 1
+    return n, unmatched
 
 
 def import_sentences(conn, deck_id, data_dir):
@@ -189,7 +235,7 @@ def prune_stale(conn, deck_id, data_dir):
     """Remove Word/Sentence rows for this deck that are no longer in any JSONL,
     keeping the DB a faithful rebuild of the source files."""
     live_lemmas = set()
-    for path in glob.glob(os.path.join(data_dir, "words_band*.jsonl")):
+    for path in word_paths(data_dir):
         for _, w in load_jsonl(path):
             live_lemmas.add(w["lemma"].strip())
     live_sids = set()
@@ -262,6 +308,7 @@ def main():
         ensure_schema(conn)
         deck_id = upsert_deck(conn)
         nw = import_words(conn, deck_id, args.data)
+        na, unmatched_aspects = import_word_aspects(conn, deck_id, args.data)
         ns, unmatched = import_sentences(conn, deck_id, args.data)
         prune_stale(conn, deck_id, args.data)
         conn.commit()
@@ -269,6 +316,12 @@ def main():
         pass
 
     print(f"Imported {nw} words, {ns} sentences into {args.db}")
+    if na:
+        print(f"Applied aspect/aspect_pair to {na} word(s)")
+    if unmatched_aspects:
+        print(f"\nWARNING: {len(unmatched_aspects)} aspect-file lemma(s) not found "
+              f"in Word table: {unmatched_aspects[:10]}"
+              + (" ..." if len(unmatched_aspects) > 10 else ""))
     if unmatched:
         print(f"\nWARNING: {len(unmatched)} sentence lemma(s) not found in Word table "
               f"(fix the words list or the sentence's `lemmas`):")

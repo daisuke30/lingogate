@@ -81,8 +81,26 @@ function originCategory(path) {
   return "generated";
 }
 
+// Mirror import.py:word_paths — data/words_band<N>.jsonl only. Excludes
+// sidecar files like words_band1_aspects.jsonl (see wordAspectPaths), which
+// would otherwise also match a loose words_band*.jsonl glob and get parsed
+// as if it were a full word list (blanking out pos/rank/band via the ??
+// fallbacks below).
 function wordPaths(dataDir) {
-  return globSync(join(dataDir, "words_band*.jsonl")).sort();
+  return globSync(join(dataDir, "words_band*.jsonl"))
+    .filter((p) => /^words_band\d+\.jsonl$/.test(basename(p)))
+    .sort();
+}
+
+// LINGO-012: data/words_band<N>_aspects.jsonl — verb aspect + aspect_pair
+// sidecar, applied on top of the base word list (mirrors import.py's
+// import_word_aspects UPDATE-only semantics: a lemma with no matching Word
+// is silently ignored here since buildDeck has no separate "unmatched" report
+// for this file — import.py is the source of truth for that warning).
+function wordAspectPaths(dataDir) {
+  return globSync(join(dataDir, "words_band*_aspects.jsonl"))
+    .filter((p) => /^words_band\d+_aspects\.jsonl$/.test(basename(p)))
+    .sort();
 }
 
 // Mirror import.py:sentence_paths — frequency bands + imported handwritten notes.
@@ -106,13 +124,39 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
       if (id === undefined) {
         id = nextWordId++;
         lemmaToId.set(lemma, id);
-        words.push({ id, lemma, rank: w.rank ?? null, band: w.band ?? band, pos: w.pos ?? "" });
+        words.push({
+          id,
+          lemma,
+          rank: w.rank ?? null,
+          band: w.band ?? band,
+          pos: w.pos ?? "",
+          enGloss: w.en_gloss ?? null,
+          jaGloss: w.ja_gloss ?? null,
+          // LINGO-012: filled in below from the words_band*_aspects.jsonl
+          // sidecar; null for non-verbs and verbs with no true telic partner.
+          aspect: null,
+          aspectPair: null,
+        });
       } else {
         const existing = words.find((x) => x.id === id);
         existing.rank = w.rank ?? null;
         existing.band = w.band ?? band;
         existing.pos = w.pos ?? "";
+        existing.enGloss = w.en_gloss ?? null;
+        existing.jaGloss = w.ja_gloss ?? null;
       }
+    }
+  }
+
+  // LINGO-012: apply verb aspect + aspect_pair on top of the base word list.
+  for (const path of wordAspectPaths(dataDir)) {
+    for (const [, a] of loadJsonl(path)) {
+      const lemma = String(a.lemma).trim();
+      const id = lemmaToId.get(lemma);
+      if (id === undefined) continue; // unmatched — import.py surfaces this warning
+      const existing = words.find((x) => x.id === id);
+      existing.aspect = a.aspect ?? null;
+      existing.aspectPair = a.aspect_pair ?? null;
     }
   }
 
