@@ -9,14 +9,21 @@ import {
   setTtsEnabled,
   getTtsRate,
   setTtsRate,
+  getActiveCourse,
+  setActiveCourse,
+  getFrontLang,
+  setFrontLang,
 } from "../state/settings";
 import type { QuizMode } from "../state/settings";
-import { ruVoiceAvailable, subscribeVoices } from "../state/tts";
+import { voiceAvailable, subscribeVoices } from "../state/tts";
+import { COURSES, resolveCourse } from "../content/courses";
+import type { Lang } from "../content/courses";
 import { resetAll } from "../db/idb";
 // LINGO-010 follow-up: build-time stamp (git sha + timestamp) so Katsuta can
 // tell which deploy his device is actually running — see scripts/gen-version.mjs.
 import versionInfo from "../content/version.generated.json";
 import { checkForUpdate, hasPendingUpdate } from "../state/appUpdate";
+import { NATIVE_LANG_NAME, UI_LANGS, langName, useI18n } from "../i18n/i18n";
 
 function formatBuiltAt(iso: string): string {
   const d = new Date(iso);
@@ -25,14 +32,21 @@ function formatBuiltAt(iso: string): string {
 }
 
 export function SettingsView({ onBack }: { onBack: () => void }) {
+  const { lang: uiLang, setLang, t } = useI18n();
   const [minutes, setMinutes] = useState(10);
-  const [quizMode, setQuizModeState] = useState<QuizMode>("flashcard");
+  const [, setQuizModeState] = useState<QuizMode>("flashcard");
   const [ttsOn, setTtsOn] = useState(true);
   const [ttsRate, setTtsRateState] = useState(1.0);
   const [hasVoice, setHasVoice] = useState(false);
   const [updateStatus, setUpdateStatus] = useState<string | null>(null);
   const [checkingUpdate, setCheckingUpdate] = useState(false);
   const [pendingUpdate, setPendingUpdate] = useState(false);
+  // LINGO-014 language axes.
+  const [courseId, setCourseId] = useState("ru");
+  const [frontLang, setFrontLangState] = useState<Lang>("en");
+
+  const course = resolveCourse(courseId);
+  const targetLang = course.targetLang;
 
   useEffect(() => {
     getUnlockMinutes().then(setMinutes);
@@ -40,7 +54,14 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
     getTtsEnabled().then(setTtsOn);
     getTtsRate().then(setTtsRateState);
     hasPendingUpdate().then(setPendingUpdate);
-    const unsub = subscribeVoices(() => setHasVoice(ruVoiceAvailable()));
+    getActiveCourse().then((c) => {
+      setCourseId(c);
+      getFrontLang(c).then(setFrontLangState);
+      setHasVoice(voiceAvailable(resolveCourse(c).targetLang));
+    });
+    const unsub = subscribeVoices(() =>
+      getActiveCourse().then((c) => setHasVoice(voiceAvailable(resolveCourse(c).targetLang))),
+    );
     return unsub;
   }, []);
 
@@ -60,8 +81,21 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
     void setTtsRate(r);
   }
 
+  async function pickCourse(id: string) {
+    if (id === courseId) return;
+    await setActiveCourse(id);
+    // Switching courses swaps the loaded content pack + progress namespace; a
+    // reload re-initialises everything cleanly from the persisted active course.
+    location.reload();
+  }
+
+  function pickFrontLang(l: Lang) {
+    setFrontLangState(l);
+    void setFrontLang(courseId, l);
+  }
+
   async function reset() {
-    if (!confirm("学習状態（FSRS・履歴・設定）をすべて消去します。よろしいですか？")) return;
+    if (!confirm(t("settings.data.resetConfirm"))) return;
     await resetAll();
     location.reload();
   }
@@ -72,136 +106,209 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
     try {
       const result = await checkForUpdate();
       if (result === "updating") {
-        setUpdateStatus("新しい版を適用します。まもなく再読み込みします…");
+        setUpdateStatus(t("settings.update.updating"));
       } else if (result === "up-to-date") {
-        setUpdateStatus(`最新版です（ビルド: ${versionInfo.version}）`);
+        setUpdateStatus(t("settings.update.upToDate", { v: versionInfo.version }));
       } else {
-        setUpdateStatus("この環境では自動更新に対応していません（開発モード等）。");
+        setUpdateStatus(t("settings.update.unsupported"));
       }
     } finally {
       setCheckingUpdate(false);
     }
   }
 
+  const targetLangName = langName(uiLang, targetLang);
+
   return (
     <div className="app">
       <button className="backlink" onClick={onBack}>
-        ‹ ホーム
+        {t("common.backHome")}
       </button>
-      <h1 style={{ fontSize: 22, margin: "8px 0 4px" }}>設定</h1>
+      <h1 style={{ fontSize: 22, margin: "8px 0 4px" }}>{t("settings.title")}</h1>
 
-      <div className="section-title">解除時間</div>
+      {/* -- App language (UI) -- */}
+      <div className="section-title">{t("settings.section.appLang")}</div>
       <div className="card">
         <div className="row" style={{ padding: 0, background: "transparent" }}>
           <div>
-            <div className="label">クリア後にひらける時間</div>
-            <div className="sub">この時間内に再度ゲートを開くとクイズをスキップ</div>
+            <div className="label">{t("settings.section.appLang")}</div>
+            <div className="sub">{t("settings.appLang.sub")}</div>
           </div>
           <div className="seg">
-            {UNLOCK_CHOICES.map((m) => (
-              <button key={m} className={minutes === m ? "on" : ""} onClick={() => pick(m)}>
-                {m}分
+            {UI_LANGS.map((l) => (
+              <button key={l} className={uiLang === l ? "on" : ""} onClick={() => setLang(l)}>
+                {NATIVE_LANG_NAME[l]}
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="section-title">音声読み上げ</div>
+      {/* -- Course (back-of-card language) -- */}
+      <div className="section-title">{t("settings.section.course")}</div>
+      <div className="list">
+        {COURSES.map((c) => {
+          const available = c.status === "available";
+          const name = langName(uiLang, c.targetLang);
+          return (
+            <div className="row" key={c.courseId}>
+              <div>
+                <div className="label">
+                  {name}
+                  {!available && <span className="badge">{t("badge.comingSoon")}</span>}
+                </div>
+                <div className="sub">{NATIVE_LANG_NAME[c.targetLang]}</div>
+              </div>
+              <div className="seg">
+                {available ? (
+                  <button
+                    className={courseId === c.courseId ? "on" : ""}
+                    onClick={() => void pickCourse(c.courseId)}
+                  >
+                    {courseId === c.courseId ? t("badge.inUse") : t("common.on")}
+                  </button>
+                ) : (
+                  <button disabled>{t("badge.comingSoon")}</button>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <p className="muted" style={{ marginTop: 8 }}>
+        {t("settings.course.sub")}
+      </p>
+
+      {/* -- Front (prompt) language -- */}
+      <div className="section-title">{t("settings.section.frontLang")}</div>
+      <div className="card">
+        <div className="row" style={{ padding: 0, background: "transparent" }}>
+          <div>
+            <div className="label">{t("settings.section.frontLang")}</div>
+            <div className="sub">{t("settings.frontLang.sub")}</div>
+          </div>
+          <div className="seg">
+            {course.availableFrontLangs.map((l) => (
+              <button
+                key={l}
+                className={frontLang === l ? "on" : ""}
+                onClick={() => pickFrontLang(l)}
+              >
+                {NATIVE_LANG_NAME[l]}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="section-title">{t("settings.section.unlock")}</div>
+      <div className="card">
+        <div className="row" style={{ padding: 0, background: "transparent" }}>
+          <div>
+            <div className="label">{t("settings.unlock.label")}</div>
+            <div className="sub">{t("settings.unlock.sub")}</div>
+          </div>
+          <div className="seg">
+            {UNLOCK_CHOICES.map((m) => (
+              <button key={m} className={minutes === m ? "on" : ""} onClick={() => pick(m)}>
+                {t("settings.unlock.minutes", { m })}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="section-title">{t("settings.section.tts")}</div>
       {hasVoice ? (
         <div className="list">
           <div className="row">
             <div>
-              <div className="label">ロシア語を読み上げる</div>
-              <div className="sub">カードを裏返した時に自動再生＋🔊で再再生</div>
+              <div className="label">{t("settings.tts.label", { lang: targetLangName })}</div>
+              <div className="sub">{t("settings.tts.sub")}</div>
             </div>
             <div className="seg">
               <button className={ttsOn ? "on" : ""} onClick={() => ttsOn || toggleTts()}>
-                オン
+                {t("common.on")}
               </button>
               <button className={!ttsOn ? "on" : ""} onClick={() => ttsOn && toggleTts()}>
-                オフ
+                {t("common.off")}
               </button>
             </div>
           </div>
           <div className="row">
             <div>
-              <div className="label">読み上げ速度</div>
-              <div className="sub">新しい語はゆっくりが聞き取りやすい</div>
+              <div className="label">{t("settings.tts.rateLabel")}</div>
+              <div className="sub">{t("settings.tts.rateSub")}</div>
             </div>
             <div className="seg">
               {TTS_RATE_CHOICES.map((r) => (
                 <button key={r} className={ttsRate === r ? "on" : ""} onClick={() => pickRate(r)}>
-                  {r === 1.0 ? "標準" : "0.8x"}
+                  {r === 1.0 ? t("settings.tts.rateNormal") : "0.8x"}
                 </button>
               ))}
             </div>
           </div>
         </div>
       ) : (
-        <p className="muted">
-          この端末にはロシア語の音声が見つかりません（iOSは設定＞アクセシビリティ＞読み上げコンテンツで
-          ロシア語「Milena」を追加すると使えます）。
-        </p>
+        <p className="muted">{t("settings.tts.noVoice", { lang: targetLangName })}</p>
       )}
 
-      <div className="section-title">出題UI</div>
+      <div className="section-title">{t("settings.section.quizUI")}</div>
       <div className="list">
         <div className="row">
           <div>
             <div className="label">
-              フラッシュカード<span className="badge">既定</span>
+              {t("settings.quiz.flashcard")}
+              <span className="badge">{t("badge.default")}</span>
             </div>
-            <div className="sub">EN→タップで裏返しRU→フリックで自己評価。FSRSに直結。</div>
+            <div className="sub">{t("settings.quiz.flashcardSub")}</div>
           </div>
           <div className="seg">
-            <button className={quizMode === "flashcard" ? "on" : ""} disabled>
-              使用中
+            <button className="on" disabled>
+              {t("badge.inUse")}
             </button>
           </div>
         </div>
         <div className="row">
           <div>
             <div className="label">
-              厳格モード（4択）<span className="badge">準備中</span>
+              {t("settings.quiz.strict")}
+              <span className="badge">{t("badge.comingSoon")}</span>
             </div>
-            <div className="sub">Web版はまず反復テストが目的のため未実装（iOS版に温存）。</div>
+            <div className="sub">{t("settings.quiz.strictSub")}</div>
           </div>
           <div className="seg">
-            <button disabled>準備中</button>
+            <button disabled>{t("badge.comingSoon")}</button>
           </div>
         </div>
       </div>
 
-      <div className="section-title">データ</div>
+      <div className="section-title">{t("settings.section.data")}</div>
       <div className="list">
         <div className="row">
           <div>
-            <div className="label">学習状態をリセット</div>
-            <div className="sub">FSRSスケジュール・ゲート履歴・設定を消去（dogfoodやり直し用）</div>
+            <div className="label">{t("settings.data.resetLabel")}</div>
+            <div className="sub">{t("settings.data.resetSub")}</div>
           </div>
           <button className="btn" onClick={reset} style={{ color: "var(--again)" }}>
-            消去
+            {t("settings.data.resetBtn")}
           </button>
         </div>
       </div>
 
       <p className="muted" style={{ marginTop: 20 }}>
-        シールド（対象アプリの強制遮断）はiOSネイティブ専用機能のためWeb版にはありません。Web版は
-        オートメーション方式（弱い強制力）で、クイズ×FSRSの反復UX検証に集中します。
+        {t("settings.shieldNote")}
       </p>
 
-      <div className="section-title">アプリの更新</div>
+      <div className="section-title">{t("settings.section.update")}</div>
       <div className="list">
         <div className="row">
           <div>
-            <div className="label">最新版を確認</div>
-            <div className="sub">
-              新しいビルドがあれば今すぐ取得して再読み込みします。何もしなければ次回このアプリを開いた時に自動で適用されます。
-            </div>
+            <div className="label">{t("settings.update.label")}</div>
+            <div className="sub">{t("settings.update.sub")}</div>
           </div>
           <button className="btn" onClick={updateNow} disabled={checkingUpdate}>
-            {checkingUpdate ? "確認中…" : "最新版に更新"}
+            {checkingUpdate ? t("settings.update.checking") : t("settings.update.btn")}
           </button>
         </div>
       </div>
@@ -212,13 +319,13 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
       ) : (
         pendingUpdate && (
           <p className="muted" style={{ marginTop: 10 }}>
-            新しいバージョンがあります（次回起動時に適用）
+            {t("settings.update.pending")}
           </p>
         )
       )}
 
       <p className="muted" style={{ marginTop: 20, textAlign: "center", opacity: 0.6 }}>
-        ビルド: {versionInfo.version}
+        {t("settings.build", { v: versionInfo.version })}
         {versionInfo.builtAt ? `（${formatBuiltAt(versionInfo.builtAt)}）` : ""}
       </p>
     </div>

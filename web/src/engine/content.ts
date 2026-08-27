@@ -45,10 +45,12 @@ export interface DeckWord {
   rank: number | null;
   band: number;
   pos: string;
-  /** English / Japanese gloss (LINGO-012); undefined/null for synthetic test
-   * decks that don't set them. */
+  /** English / Japanese / Russian gloss (LINGO-012 + LINGO-014); undefined/null
+   * for synthetic test decks or glosses a course doesn't ship. ruGloss is only
+   * populated for courses whose availableFrontLangs include "ru". */
   enGloss?: string | null;
   jaGloss?: string | null;
+  ruGloss?: string | null;
   /** Verb aspect (LINGO-012): "pf" (perfective) | "impf" (imperfective) |
    * null for non-verbs and verbs with no true telic partner. */
   aspect?: "pf" | "impf" | null;
@@ -61,6 +63,11 @@ export interface Deck {
   name: string;
   targetLang: string;
   sourceLang: string;
+  /** LINGO-014 course config (optional; absent on synthetic test decks). */
+  courseId?: string;
+  availableFrontLangs?: string[];
+  defaultFrontLang?: string;
+  grammarMeta?: string;
   bands: number[];
   words: DeckWord[];
   sentences: Sentence[];

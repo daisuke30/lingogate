@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { DECK, PRIMARY_BAND, homeStats } from "../state/service";
+import { DECK, PRIMARY_BAND, activeCourse, homeStats } from "../state/service";
 import type { HomeStats } from "../state/service";
 import { calibrationProgress } from "../state/calibration";
 import type { CalibrationProgress } from "../state/calibration";
+import { resolveCourse } from "../content/courses";
+import { langName, useI18n } from "../i18n/i18n";
+import type { Lang } from "../i18n/i18n";
 import type { Route } from "./App";
 
 // Fallback shown if calibrationProgress() rejects (e.g. a transient IndexedDB
@@ -17,12 +20,17 @@ function fallbackCalibProgress(): CalibrationProgress {
 }
 
 export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
+  const { lang, t } = useI18n();
   const [stats, setStats] = useState<HomeStats | null>(null);
   const [calib, setCalib] = useState<CalibrationProgress | null>(null);
+  const [targetLang, setTargetLang] = useState<Lang>("ru");
 
   useEffect(() => {
     homeStats()
-      .then(setStats)
+      .then((s) => {
+        setStats(s);
+        setTargetLang(resolveCourse(activeCourse()).targetLang);
+      })
       .catch((err) => console.error("homeStats failed", err));
     calibrationProgress()
       .then(setCalib)
@@ -32,6 +40,11 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
       });
   }, []);
 
+  const masteryLevel = (threshold: number | null): string =>
+    threshold == null
+      ? t("mastery.level.beginner")
+      : t("mastery.level.words", { n: threshold.toLocaleString() });
+
   return (
     <div className="app">
       <div className="topbar">
@@ -40,13 +53,13 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
           LingoGate
         </div>
         <div className="actions">
-          <button className="iconbtn" onClick={() => navigate({ name: "guide" })} aria-label="ガイド">
+          <button className="iconbtn" onClick={() => navigate({ name: "guide" })} aria-label={t("home.guide")}>
             ？
           </button>
           <button
             className="iconbtn"
             onClick={() => navigate({ name: "settings" })}
-            aria-label="設定"
+            aria-label={t("home.settings")}
           >
             ⚙
           </button>
@@ -56,36 +69,36 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
       <div className="stats">
         <div className="stat">
           <div className="val">{stats?.todayGates ?? "–"}</div>
-          <div className="lbl">今日のゲート</div>
+          <div className="lbl">{t("home.stat.gates")}</div>
         </div>
         <div className="stat">
           <div className="val">{stats?.todayUnlocks ?? "–"}</div>
-          <div className="lbl">解除</div>
+          <div className="lbl">{t("home.stat.unlocks")}</div>
         </div>
         <div className="stat">
           <div className="val">{stats && stats.knownRatePct != null ? `${stats.knownRatePct}%` : "–"}</div>
-          <div className="lbl">既知率</div>
+          <div className="lbl">{t("home.stat.knownRate")}</div>
         </div>
       </div>
 
-      <div className="section-title">会話頻出3000語マスター</div>
+      <div className="section-title">{t("home.mastery.title")}</div>
       <div className="card mastery-card">
         <div className="mastery-head">
           <div>
             <div className="mastery-num">
               {stats ? stats.mastery.masteredCount.toLocaleString() : "–"}
-              <span className="mastery-unit">語 マスター</span>
+              <span className="mastery-unit">{t("home.mastery.unit")}</span>
             </div>
             <div className="mastery-sub">
-              推定会話カバー率{" "}
+              {t("home.mastery.coverage")}{" "}
               <strong>{stats ? `${stats.mastery.coveragePct}%` : "–"}</strong>
             </div>
           </div>
-          <div className="mastery-level">{stats ? stats.mastery.level : "–"}</div>
+          <div className="mastery-level">{stats ? masteryLevel(stats.mastery.levelThreshold) : "–"}</div>
         </div>
         <div className="meter">
           <div className="head">
-            <span>3000語 進捗</span>
+            <span>{t("home.mastery.progress")}</span>
             <span>
               {stats ? stats.mastery.masteredCount.toLocaleString() : "–"}/
               {(stats?.mastery.targetWords ?? 3000).toLocaleString()}
@@ -108,14 +121,14 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
 
       {calib && !calib.done && (
         <>
-          <div className="section-title">既知語の仕分け（キャリブレーション）</div>
+          <div className="section-title">{t("home.calib.title")}</div>
           <button
             className="card calib-cta"
             onClick={() => navigate({ name: "calibration" })}
           >
             <div className="meter" style={{ marginTop: 0 }}>
               <div className="head">
-                <span>{calib.judged > 0 ? "続きから仕分ける" : "1000語を仕分ける"}</span>
+                <span>{calib.judged > 0 ? t("home.calib.continue") : t("home.calib.start")}</span>
                 <span>
                   {calib.judged}/{calib.total}
                 </span>
@@ -128,17 +141,17 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
               </div>
             </div>
             <p className="muted" style={{ margin: "12px 0 0" }}>
-              知っている語を右、知らない語を左へ。カードの並びはあなたの既知語マップで最適化されます。
+              {t("home.calib.desc")}
             </p>
           </button>
         </>
       )}
 
-      <div className="section-title">band1 の進み具合</div>
+      <div className="section-title">{t("home.band.title")}</div>
       <div className="card">
         <div className="meter">
           <div className="head">
-            <span>語彙カバー</span>
+            <span>{t("home.band.coverage")}</span>
             <span>
               {stats ? `${stats.coverage.covered}/${stats.coverage.total}` : "–"}（
               {stats ? stats.coverage.pct : 0}%）
@@ -150,11 +163,11 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         </div>
         <div className="meter">
           <div className="head">
-            <span>定着率</span>
+            <span>{t("home.band.retention")}</span>
             <span>
               {stats && stats.retentionPct != null
-                ? `${stats.retentionPct}%（${stats.reviewCards}枚）`
-                : "まだデータなし"}
+                ? t("home.band.retentionValue", { pct: stats.retentionPct, cards: stats.reviewCards })
+                : t("home.band.noData")}
             </span>
           </div>
           <div className="track">
@@ -163,7 +176,7 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         </div>
         {stats && stats.dueNow > 0 && (
           <p className="muted" style={{ marginTop: 12, marginBottom: 0 }}>
-            復習の期限が来たカード: {stats.dueNow} 枚
+            {t("home.band.dueNow", { n: stats.dueNow })}
           </p>
         )}
       </div>
@@ -175,10 +188,10 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
           className="btn primary block"
           onClick={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
         >
-          ロシア語を解く
+          {t("home.solve", { lang: langName(lang, targetLang) })}
         </button>
         <button className="btn ghost block" onClick={() => navigate({ name: "guide" })}>
-          オートメーションを設定する
+          {t("home.setupAutomation")}
         </button>
       </div>
     </div>

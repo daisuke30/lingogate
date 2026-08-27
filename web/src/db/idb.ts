@@ -8,12 +8,17 @@
 
 import type { ReviewState } from "../engine/fsrs";
 import type { WordKnowledge } from "../engine/calibration";
+// LINGO-014 course dimension (additive-only key scoping — see courseScope.ts).
+import { DEFAULT_COURSE, belongsToCourse, scopeKey, unscopeKey } from "./courseScope";
 
 const DB_NAME = "lingogate";
 const DB_VERSION = 2;
 
 export interface GateSessionRow {
   id?: number;
+  /** LINGO-014: which course this gate belonged to. Absent on pre-LINGO-014
+   * rows → treated as the default RU course on read. */
+  courseId?: string;
   appKey: string | null;
   startedAt: number;
   endedAt: number | null;
@@ -89,50 +94,79 @@ function tx<T>(
   );
 }
 
-// MARK: reviewStates
+// MARK: reviewStates (course-scoped by sentenceId key, LINGO-014)
 
-export function getAllReviewStates(): Promise<ReviewState[]> {
-  return tx<ReviewState[]>("reviewStates", "readonly", (s) => s.getAll());
+export function getAllReviewStates(courseId: string = DEFAULT_COURSE): Promise<ReviewState[]> {
+  return tx<ReviewState[]>("reviewStates", "readonly", (s) => s.getAll()).then((rows) =>
+    rows
+      .filter((st) => belongsToCourse(courseId, st.sentenceId))
+      // Hand the engine the bare sentenceId it expects (deck ids are un-prefixed).
+      .map((st) => ({ ...st, sentenceId: unscopeKey(courseId, st.sentenceId) })),
+  );
 }
 
-export function putReviewStates(states: ReviewState[]): Promise<void> {
+export function putReviewStates(
+  states: ReviewState[],
+  courseId: string = DEFAULT_COURSE,
+): Promise<void> {
   if (states.length === 0) return Promise.resolve();
   return openDB().then(
     (db) =>
       new Promise<void>((resolve, reject) => {
         const t = db.transaction("reviewStates", "readwrite");
         const store = t.objectStore("reviewStates");
-        for (const st of states) store.put(st);
+        // Never mutate the caller's objects; write a course-scoped copy.
+        for (const st of states) {
+          store.put({ ...st, sentenceId: scopeKey(courseId, st.sentenceId) });
+        }
         t.oncomplete = () => resolve();
         t.onerror = () => reject(t.error);
       }),
   );
 }
 
-// MARK: gateSessions
+// MARK: gateSessions (course tagged via a field; autoIncrement key unchanged)
 
-export function addGateSession(row: GateSessionRow): Promise<number> {
-  return tx<IDBValidKey>("gateSessions", "readwrite", (s) => s.add(row)).then((k) => Number(k));
+export function addGateSession(
+  row: GateSessionRow,
+  courseId: string = DEFAULT_COURSE,
+): Promise<number> {
+  return tx<IDBValidKey>("gateSessions", "readwrite", (s) => s.add({ ...row, courseId })).then((k) =>
+    Number(k),
+  );
 }
 
-export function getAllGateSessions(): Promise<GateSessionRow[]> {
-  return tx<GateSessionRow[]>("gateSessions", "readonly", (s) => s.getAll());
+/** Gate sessions for `courseId`. Pre-LINGO-014 rows have no courseId → counted
+ * as the default RU course. Pass no argument to get every row (unfiltered). */
+export function getAllGateSessions(courseId?: string): Promise<GateSessionRow[]> {
+  return tx<GateSessionRow[]>("gateSessions", "readonly", (s) => s.getAll()).then((rows) =>
+    courseId == null
+      ? rows
+      : rows.filter((r) => (r.courseId ?? DEFAULT_COURSE) === courseId),
+  );
 }
 
-// MARK: wordKnowledge (LINGO-010 calibration map)
+// MARK: wordKnowledge (course-scoped by lemma key, LINGO-010 + LINGO-014)
 
-export function getAllWordKnowledge(): Promise<WordKnowledge[]> {
-  return tx<WordKnowledge[]>("wordKnowledge", "readonly", (s) => s.getAll());
+export function getAllWordKnowledge(courseId: string = DEFAULT_COURSE): Promise<WordKnowledge[]> {
+  return tx<WordKnowledge[]>("wordKnowledge", "readonly", (s) => s.getAll()).then((rows) =>
+    rows
+      .filter((r) => belongsToCourse(courseId, r.lemma))
+      .map((r) => ({ ...r, lemma: unscopeKey(courseId, r.lemma) })),
+  );
 }
 
-export function putWordKnowledge(rows: WordKnowledge[]): Promise<void> {
+export function putWordKnowledge(
+  rows: WordKnowledge[],
+  courseId: string = DEFAULT_COURSE,
+): Promise<void> {
   if (rows.length === 0) return Promise.resolve();
   return openDB().then(
     (db) =>
       new Promise<void>((resolve, reject) => {
         const t = db.transaction("wordKnowledge", "readwrite");
         const store = t.objectStore("wordKnowledge");
-        for (const r of rows) store.put(r);
+        for (const r of rows) store.put({ ...r, lemma: scopeKey(courseId, r.lemma) });
         t.oncomplete = () => resolve();
         t.onerror = () => reject(t.error);
       }),

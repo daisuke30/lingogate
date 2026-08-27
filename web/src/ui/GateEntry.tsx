@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getSuppressUntil } from "../state/settings";
 import { isSuppressed, returnDisplayName, returnTarget } from "../engine/gate";
+import { useT } from "../i18n/i18n";
 import { QuizScreen } from "./QuizScreen";
 
 type Decision = "checking" | "quiz" | "skip";
@@ -12,6 +13,7 @@ type Decision = "checking" | "quiz" | "skip";
  * the 10-card gate.
  */
 export function GateEntry({ returnApp, onExit }: { returnApp: string | null; onExit: () => void }) {
+  const t = useT();
   const [decision, setDecision] = useState<Decision>("checking");
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export function GateEntry({ returnApp, onExit }: { returnApp: string | null; onE
     return (
       <div className="app">
         <div className="center-screen">
-          <p className="muted">確認中…</p>
+          <p className="muted">{t("common.checking")}</p>
         </div>
       </div>
     );
@@ -45,14 +47,14 @@ export function GateEntry({ returnApp, onExit }: { returnApp: string | null; onE
       <div className="app">
         <div className="center-screen">
           <div className="big-emoji">✅</div>
-          <h1>解除済み</h1>
-          <p>まだ解除ウィンドウ内です。そのまま戻れます。</p>
+          <h1>{t("gate.unlockedTitle")}</h1>
+          <p>{t("gate.unlockedMsg")}</p>
           <div className="stack" style={{ width: "100%", marginTop: 22 }}>
             <button className="btn primary block" onClick={goBack}>
-              {returnDisplayName(returnApp)}に戻る
+              {t("quiz.complete.returnTo", { app: returnDisplayName(returnApp) })}
             </button>
             <button className="btn ghost block" onClick={onExit}>
-              ホームへ
+              {t("quiz.complete.home")}
             </button>
           </div>
         </div>

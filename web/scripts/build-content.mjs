@@ -10,7 +10,7 @@
 //   data/sentences_imported*.jsonl   (optional; band 1 by default)
 //
 // Exported `buildDeck(dataDir)` is unit-tested; the CLI at the bottom writes
-// src/content/deck.generated.json.
+// the RU course pack src/content/deck.ru.json (LINGO-014).
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { globSync } from "node:fs";
@@ -19,13 +19,28 @@ import { dirname, join, basename } from "node:path";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_DATA = join(HERE, "..", "..", "pipeline", "data");
-const OUT = join(HERE, "..", "src", "content", "deck.generated.json");
+// LINGO-014: content is now shipped as per-course packs (deck.<courseId>.json)
+// so a new course is one added file + one registry line in src/content/courses.ts,
+// and only the active course's pack is loaded at runtime. This is the RU course
+// pack; its bytes are identical to the old deck.generated.json plus the course
+// config block below.
+const OUT = join(HERE, "..", "src", "content", "deck.ru.json");
 
 const DECK = {
   code: "RU-from-EN",
   name: "Russian from English (frequency bands)",
+  // LINGO-014 course config: the 3 language axes (design §1). courseId ==
+  // targetLang (the 裏面 / language being learned). availableFrontLangs = which
+  // prompt/gloss languages this pack ships (the 表面 the learner can pick from;
+  // must never include targetLang). grammarMeta names the course-specific
+  // grammar slot carried on words (RU = verb aspect; EN would be irregular-verb
+  // forms). UI language (i18n) is independent of the pack — see src/i18n.
+  courseId: "ru",
   targetLang: "ru",
   sourceLang: "en",
+  availableFrontLangs: ["en", "ja"],
+  defaultFrontLang: "en",
+  grammarMeta: "aspect",
 };
 
 function loadJsonl(path) {
@@ -265,7 +280,7 @@ function main() {
   writeFileSync(OUT, JSON.stringify(deck));
   const m = deck._meta;
   console.log(
-    `deck.generated.json: ${m.wordCount} words, ${m.sentenceCount} sentences ` +
+    `deck.ru.json: ${m.wordCount} words, ${m.sentenceCount} sentences ` +
       `from [${m.sources.join(", ")}]` +
       (m.unmatchedLemmas ? ` (${m.unmatchedLemmas} unmatched lemmas)` : ""),
   );

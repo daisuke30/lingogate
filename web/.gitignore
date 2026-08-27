@@ -1,7 +1,9 @@
 node_modules/
 dist/
 # Generated at build time from pipeline JSONL (predev/prebuild). Not source.
+# deck.generated.json = legacy name (pre-LINGO-014); deck.<courseId>.json = per-course packs.
 src/content/deck.generated.json
+src/content/deck.*.json
 # Generated at build time (predev/prebuild) — git sha + timestamp stamp. Not source.
 src/content/version.generated.json
 public/icons/

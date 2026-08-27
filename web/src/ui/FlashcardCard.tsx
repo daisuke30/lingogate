@@ -4,13 +4,22 @@ import type { Sentence } from "../engine/content";
 import { buildWordBreakdown, formatAspectLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
 import { WORD_BY_ID } from "../state/service";
-import { ruVoiceAvailable, speakRu, subscribeVoices } from "../state/tts";
+import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
+import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
+import type { Lang } from "../i18n/i18n";
 
 type Dir = "again" | "hard" | "good" | null;
 
 export interface TtsProps {
   enabled: boolean;
   rate: number;
+}
+
+/** The card front text in the chosen prompt language (design §1: 表面の言語). */
+function frontText(sentence: Sentence, frontLang: Lang): string {
+  if (frontLang === "ja") return sentence.ja ?? sentence.en;
+  if (frontLang === "ru") return sentence.ru;
+  return sentence.en;
 }
 
 const FLICK_LOCK_MS = 1500; // post-flip freeze (anti-gate-skip, LINGO-007)
@@ -26,17 +35,24 @@ export function FlashcardCard({
   sentence,
   onRate,
   tts,
+  targetLang = "ru",
+  frontLang = "en",
 }: {
   sentence: Sentence;
   onRate: (r: Rating) => void;
   tts?: TtsProps;
+  /** Card-back (course) language — drives TTS voice + back kicker. */
+  targetLang?: string;
+  /** Card-front (prompt) language — drives which sentence field is shown + gloss order. */
+  frontLang?: Lang;
 }) {
+  const t = useT();
   const [flipped, setFlipped] = useState(false);
   const [canEval, setCanEval] = useState(false);
   const [drag, setDrag] = useState({ x: 0, y: 0, active: false });
   const [hasVoice, setHasVoice] = useState(false);
   const start = useRef<{ x: number; y: number } | null>(null);
-  // LINGO-012: word-by-word breakdown (原形・品詞・体と対・英日訳) for the back face.
+  // LINGO-012: word-by-word breakdown (原形・品詞・体と対・訳) for the back face.
   const breakdown = useMemo(() => buildWordBreakdown(sentence, WORD_BY_ID), [sentence]);
 
   // Arm evaluation 1.5s after the flip (per card — component remounts by key).
@@ -47,15 +63,15 @@ export function FlashcardCard({
     return () => clearTimeout(t);
   }, [flipped]);
 
-  useEffect(() => subscribeVoices(() => setHasVoice(ruVoiceAvailable())), []);
+  useEffect(() => subscribeVoices(() => setHasVoice(voiceAvailable(targetLang))), [targetLang]);
 
-  // Speak the RU back on flip — the flip tap is the user gesture iOS requires.
-  function speak() {
-    if (tts?.enabled) speakRu(sentence.ru, tts.rate);
+  // Speak the target-language back on flip — the flip tap is the user gesture iOS requires.
+  function speakBack() {
+    if (tts?.enabled) speak(sentence.ru, targetLang, tts.rate);
   }
   function flip() {
     setFlipped(true);
-    speak();
+    speakBack();
   }
 
   const dir = directionOf(drag.x, drag.y, 28); // visual hint threshold
@@ -100,10 +116,11 @@ export function FlashcardCard({
 
   const overlayColor =
     dir === "good" ? "var(--good)" : dir === "again" ? "var(--again)" : "var(--hard)";
-  const overlayText = dir === "good" ? "覚えた" : dir === "again" ? "忘れた" : "曖昧";
+  const overlayText =
+    dir === "good" ? t("card.flick.good") : dir === "again" ? t("card.flick.again") : t("card.flick.hard");
   const showOverlay = drag.active && !!dir;
 
-  const front = sentence.en;
+  const front = frontText(sentence, frontLang);
 
   return (
     <>
@@ -120,20 +137,20 @@ export function FlashcardCard({
           }}
         >
           <div className="face front">
-            <span className="kicker">{sentence.kind === "word" ? "English" : "English"}</span>
+            <span className="kicker">{NATIVE_LANG_NAME[frontLang]}</span>
             <div className="prompt">{front}</div>
-            {!flipped && <div className="hint">タップして答えを見る</div>}
+            {!flipped && <div className="hint">{t("card.tapToFlip")}</div>}
           </div>
           <div className="face back">
-            <span className="kicker">Русский</span>
+            <span className="kicker">{NATIVE_LANG_NAME[(targetLang as Lang) ?? "ru"]}</span>
             {hasVoice && tts?.enabled && (
               <button
                 className="iconbtn speaker"
-                aria-label="読み上げ"
+                aria-label={t("card.speak")}
                 onPointerDown={(e) => e.stopPropagation()}
                 onClick={(e) => {
                   e.stopPropagation();
-                  speak();
+                  speakBack();
                 }}
               >
                 🔊
@@ -141,9 +158,12 @@ export function FlashcardCard({
             )}
             <div className="ru">{sentence.ru}</div>
             {sentence.kana && <div className="kana">{sentence.kana}</div>}
-            {sentence.ja && <div className="ja">{sentence.ja}</div>}
+            {/* The back also shows the front-language translation line (for ja/ru
+                prompts this is the learner's own language). Skip it when it would
+                duplicate the front text itself. */}
+            {frontLang !== "ja" && sentence.ja && <div className="ja">{sentence.ja}</div>}
             {sentence.note && <div className="note">{sentence.note}</div>}
-            {breakdown.length > 0 && <WordBreakdownList entries={breakdown} />}
+            {breakdown.length > 0 && <WordBreakdownList entries={breakdown} frontLang={frontLang} />}
             {showOverlay && (
               <div className="overlay-label" style={{ color: overlayColor, opacity: 1 }}>
                 {overlayText}
@@ -156,13 +176,13 @@ export function FlashcardCard({
 
       <div className={"legend" + (canFlick ? "" : " locked")}>
         <div className={"chip again" + (dir === "again" ? " hot" : "")}>
-          忘れた<span className="dir">← 左</span>
+          {t("card.flick.again")}<span className="dir">{t("card.dir.left")}</span>
         </div>
         <div className={"chip hard" + (dir === "hard" ? " hot" : "")}>
-          曖昧<span className="dir">↓ 下</span>
+          {t("card.flick.hard")}<span className="dir">{t("card.dir.down")}</span>
         </div>
         <div className={"chip good" + (dir === "good" ? " hot" : "")}>
-          覚えた<span className="dir">→ 右</span>
+          {t("card.flick.good")}<span className="dir">{t("card.dir.right")}</span>
         </div>
       </div>
     </>
@@ -175,24 +195,47 @@ export function FlashcardCard({
  * place instead. Stops pointerdown propagation (same trick as the speaker
  * button above) so a touch-scroll here can never be misread as a rate-flick
  * by the card's own drag handling. */
-function WordBreakdownList({ entries }: { entries: WordBreakdownEntry[] }) {
+/** Order the available glosses so the front-language one comes first (design:
+ * the back's gloss follows the front/prompt language), then fall back to the
+ * others (English last-resort). */
+function orderedGloss(w: WordBreakdownEntry, frontLang: Lang): string {
+  const order: (string | null | undefined)[] =
+    frontLang === "ja"
+      ? [w.jaGloss, w.enGloss, w.ruGloss]
+      : frontLang === "ru"
+        ? [w.ruGloss, w.enGloss, w.jaGloss]
+        : [w.enGloss, w.jaGloss, w.ruGloss];
+  return order.filter(Boolean).join(" / ");
+}
+
+function WordBreakdownList({
+  entries,
+  frontLang,
+}: {
+  entries: WordBreakdownEntry[];
+  frontLang: Lang;
+}) {
+  const t = useT();
+  // Structural labels (part of speech, verb aspect) follow the UI language, not
+  // the front language: for the existing RU user (UI=ja, front=en) they stay
+  // Japanese, so nothing regresses; other UI languages get their own.
+  const aspectLabels = { pf: t("aspect.pf"), impf: t("aspect.impf"), pair: t("aspect.pairOf") };
   return (
     <div className="word-breakdown" onPointerDown={(e) => e.stopPropagation()}>
       {entries.map((w) => {
-        const aspectLine = formatAspectLine(w);
+        const aspectLine = formatAspectLine(w, aspectLabels);
+        const gloss = orderedGloss(w, frontLang);
+        const posKey = "pos." + w.pos;
+        const posText = t(posKey);
         return (
-        <div key={w.lemma} className={"wb-row" + (w.isTarget ? " target" : "")}>
-          <div className="wb-head">
-            <span className="wb-lemma">{w.lemma}</span>
-            <span className="wb-pos">{w.posLabel}</span>
-          </div>
-          {aspectLine && <div className="wb-aspect">{aspectLine}</div>}
-          {(w.enGloss || w.jaGloss) && (
-            <div className="wb-gloss">
-              {[w.enGloss, w.jaGloss].filter(Boolean).join(" / ")}
+          <div key={w.lemma} className={"wb-row" + (w.isTarget ? " target" : "")}>
+            <div className="wb-head">
+              <span className="wb-lemma">{w.lemma}</span>
+              <span className="wb-pos">{posText === posKey ? w.posLabel : posText}</span>
             </div>
-          )}
-        </div>
+            {aspectLine && <div className="wb-aspect">{aspectLine}</div>}
+            {gloss && <div className="wb-gloss">{gloss}</div>}
+          </div>
         );
       })}
     </div>

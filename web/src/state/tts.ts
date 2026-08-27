@@ -1,10 +1,12 @@
-// Russian read-aloud via the Web Speech API (no external dependency). Voice
-// availability is device-dependent: iOS ships "Milena" (ru-RU); many desktops
-// have a generic ru-RU voice; some devices have none — in that case the UI hides
-// the speaker affordance entirely (ruVoiceAvailable() === false).
+// Read-aloud via the Web Speech API (no external dependency). LINGO-014: voice
+// resolution is generalised over the course's target language (ru → ru-RU, en →
+// en-US, …) instead of being hard-wired to Russian. Voice availability is
+// device-dependent: iOS ships "Milena" (ru-RU); many desktops have a generic
+// per-language voice; some devices have none — in that case the UI hides the
+// speaker affordance entirely (voiceAvailable(lang) === false).
 //
 // iOS gotcha: speechSynthesis.speak() only actually produces sound when the call
-// originates from a user gesture. Callers therefore invoke speakRu() from the
+// originates from a user gesture. Callers therefore invoke speak() from the
 // card-flip tap (a real pointer event), never from an effect on mount.
 
 let cached: SpeechSynthesisVoice[] = [];
@@ -20,29 +22,40 @@ function voices(): SpeechSynthesisVoice[] {
   return cached;
 }
 
-/** Best Russian voice: Milena (iOS) first, then an exact ru-RU, then any ru*. */
-export function pickRuVoice(): SpeechSynthesisVoice | null {
+/** Preferred default region + voice name hint per target language. */
+const LANG_DEFAULTS: Record<string, { locale: string; prefer?: RegExp }> = {
+  ru: { locale: "ru-RU", prefer: /milena/i },
+  en: { locale: "en-US" },
+  ja: { locale: "ja-JP", prefer: /kyoko|o-ren/i },
+};
+
+/** Best voice for `lang`: a preferred named voice (e.g. Milena for ru) first,
+ * then an exact locale (ru-RU) match, then any voice whose lang starts with the
+ * 2-letter code. */
+export function pickVoice(lang: string): SpeechSynthesisVoice | null {
   const v = voices();
+  const code = lang.toLowerCase();
+  const def = LANG_DEFAULTS[code];
   return (
-    v.find((x) => /milena/i.test(x.name)) ??
-    v.find((x) => x.lang?.toLowerCase() === "ru-ru") ??
-    v.find((x) => x.lang?.toLowerCase().startsWith("ru")) ??
+    (def?.prefer ? v.find((x) => def.prefer!.test(x.name)) : undefined) ??
+    (def ? v.find((x) => x.lang?.toLowerCase() === def.locale.toLowerCase()) : undefined) ??
+    v.find((x) => x.lang?.toLowerCase().startsWith(code)) ??
     null
   );
 }
 
-export function ruVoiceAvailable(): boolean {
-  return pickRuVoice() != null;
+export function voiceAvailable(lang: string): boolean {
+  return pickVoice(lang) != null;
 }
 
-/** Speak `text` in Russian at `rate` (1.0 normal). No-op if unsupported / no voice. */
-export function speakRu(text: string, rate = 1.0): void {
+/** Speak `text` in `lang` at `rate` (1.0 normal). No-op if unsupported / no voice. */
+export function speak(text: string, lang: string, rate = 1.0): void {
   if (!ttsSupported()) return;
-  const voice = pickRuVoice();
+  const voice = pickVoice(lang);
   if (!voice) return;
   const u = new SpeechSynthesisUtterance(text);
   u.voice = voice;
-  u.lang = voice.lang || "ru-RU";
+  u.lang = voice.lang || LANG_DEFAULTS[lang.toLowerCase()]?.locale || lang;
   u.rate = rate;
   window.speechSynthesis.cancel(); // drop any in-flight utterance first
   window.speechSynthesis.speak(u);

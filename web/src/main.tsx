@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./ui/App";
+import { I18nProvider } from "./i18n/i18n";
 import { registerServiceWorkerAutoUpdate } from "./state/appUpdate";
 import "./ui/styles.css";
 
@@ -13,7 +14,9 @@ function boot(): void {
   if (!rootEl) throw new Error("lingogate: #root element missing");
   createRoot(rootEl).render(
     <React.StrictMode>
-      <App />
+      <I18nProvider>
+        <App />
+      </I18nProvider>
     </React.StrictMode>,
   );
 }

@@ -67,6 +67,15 @@ export function masteryLevelLabel(masteredCount: number): string {
   return "完全初心者";
 }
 
+/** Language-neutral form of the level for the UI to localise (LINGO-014): the
+ * highest reached threshold, or null for the "absolute beginner" band. */
+export function masteryLevelThreshold(masteredCount: number): number | null {
+  for (const t of LEVEL_THRESHOLDS) {
+    if (masteredCount >= t) return t;
+  }
+  return null;
+}
+
 /** The set of deck lemmas the learner has mastered:
  *  (a) judged `known` (calibration/assumed, incl. review-promoted), plus
  *  (b) the target lemma of any sentence whose review state has stability ≥ the
@@ -106,8 +115,11 @@ export interface MasteryStats {
   targetWords: number;
   /** Estimated conversation coverage %, 1 decimal. */
   coveragePct: number;
-  /** Level label (完全初心者 … 3000マスター). */
+  /** Level label (完全初心者 … 3000マスター). Kept for back-compat; UI should
+   * prefer `levelThreshold` + i18n. */
   level: string;
+  /** Language-neutral level: highest reached threshold, or null for beginner. */
+  levelThreshold: number | null;
 }
 
 /** Compute the full home-screen mastery card figures from raw store data. */
@@ -131,5 +143,6 @@ export function masteryStats(
     targetWords: MASTERY_TARGET_WORDS,
     coveragePct: estimatedCoveragePct(masteredCount),
     level: masteryLevelLabel(masteredCount),
+    levelThreshold: masteryLevelThreshold(masteredCount),
   };
 }

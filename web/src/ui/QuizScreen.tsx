@@ -1,12 +1,23 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Rating } from "../engine/fsrs";
 import type { RatingSummary } from "../engine/session";
-import { commitPartialSession, commitSession, startSession } from "../state/service";
+import {
+  activeCourse,
+  activeFrontLanguage,
+  commitPartialSession,
+  commitSession,
+  startSession,
+} from "../state/service";
 import type { StartedSession } from "../state/service";
 import { getUnlockMinutes, getTtsSettings, setSuppressUntil } from "../state/settings";
 import type { TtsSettings } from "../state/settings";
+import { resolveCourse } from "../content/courses";
 import { suppressUntil, returnDisplayName, returnTarget } from "../engine/gate";
+import { langName, useI18n, useT } from "../i18n/i18n";
+import type { Lang } from "../i18n/i18n";
 import { FlashcardCard } from "./FlashcardCard";
+
+const BATCH_SIZE = 10;
 
 type Phase = "loading" | "question" | "complete" | "batchComplete";
 
@@ -32,6 +43,7 @@ export function QuizScreen({
   continuous?: boolean;
   onExit: () => void;
 }) {
+  const t = useT();
   const [phase, setPhase] = useState<Phase>("loading");
   const sessionRef = useRef<StartedSession | null>(null);
   const [, force] = useState(0);
@@ -42,6 +54,10 @@ export function QuizScreen({
   const [unlockMin, setUnlockMin] = useState(10);
   const [tts, setTts] = useState<TtsSettings>({ enabled: true, rate: 1.0 });
   const [batchNumber, setBatchNumber] = useState(1);
+  const [langs, setLangs] = useState<{ target: string; front: Lang }>({
+    target: "ru",
+    front: "en",
+  });
 
   useEffect(
     () => () => {
@@ -62,6 +78,8 @@ export function QuizScreen({
     sessionRef.current = session;
     setUnlockMin(mins);
     setTts(ttsSettings);
+    // startSession() -> loadStore() has already ensured the active course.
+    setLangs({ target: resolveCourse(activeCourse()).targetLang, front: activeFrontLanguage() });
     setPhase(session.runner.isComplete ? "complete" : "question");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -125,7 +143,7 @@ export function QuizScreen({
     return (
       <div className="app">
         <div className="center-screen">
-          <p className="muted">読み込み中…</p>
+          <p className="muted">{t("common.loading")}</p>
         </div>
       </div>
     );
@@ -139,6 +157,7 @@ export function QuizScreen({
         summary={runner.ratingSummary}
         returnApp={returnApp}
         unlockMin={unlockMin}
+        targetLang={langs.target}
         onExit={onExit}
       />
     );
@@ -164,7 +183,7 @@ export function QuizScreen({
     <div className="app">
       <div className="quiz">
         <div className="quiz-head">
-          <button className="iconbtn" onClick={() => void exitNow()} aria-label="終了">
+          <button className="iconbtn" onClick={() => void exitNow()} aria-label={t("quiz.exit")}>
             ✕
           </button>
           <div className="qbar">
@@ -175,11 +194,18 @@ export function QuizScreen({
           </span>
         </div>
 
-        <FlashcardCard key={cardId} sentence={sentence} onRate={rate} tts={tts} />
+        <FlashcardCard
+          key={cardId}
+          sentence={sentence}
+          onRate={rate}
+          tts={tts}
+          targetLang={langs.target}
+          frontLang={langs.front}
+        />
 
         <div className="quiz-foot">
           <button className="linkbtn" onClick={undo} disabled={!runner.canUndo}>
-            ↩ 直前を取り消す
+            {t("quiz.undo")}
           </button>
         </div>
       </div>
@@ -191,23 +217,24 @@ export function QuizScreen({
  * tally (LINGO-010 follow-up, 2026-08-26; replaces a "正答率" % that read as a
  * test score when this is a spaced-repetition practice tool, not a quiz). */
 function RatingBreakdown({ summary }: { summary: RatingSummary }) {
+  const t = useT();
   return (
     <>
       <p className="muted" style={{ margin: "2px 0 0" }}>
-        {summary.total}枚中
+        {t("quiz.breakdown.of", { n: summary.total })}
       </p>
       <div className="done-stats">
         <div>
           <div className="val">{summary.good}</div>
-          <div className="lbl">覚えていた</div>
+          <div className="lbl">{t("quiz.breakdown.good")}</div>
         </div>
         <div>
           <div className="val">{summary.hard}</div>
-          <div className="lbl">曖昧</div>
+          <div className="lbl">{t("quiz.breakdown.hard")}</div>
         </div>
         <div>
           <div className="val">{summary.again}</div>
-          <div className="lbl">覚えていない</div>
+          <div className="lbl">{t("quiz.breakdown.again")}</div>
         </div>
       </div>
     </>
@@ -218,13 +245,16 @@ function CompleteScreen({
   summary,
   returnApp,
   unlockMin,
+  targetLang,
   onExit,
 }: {
   summary: RatingSummary;
   returnApp: string | null;
   unlockMin: number;
+  targetLang: string;
   onExit: () => void;
 }) {
+  const { lang, t } = useI18n();
   const target = returnApp ? returnTarget(returnApp) : undefined;
 
   function goBack() {
@@ -239,21 +269,25 @@ function CompleteScreen({
     <div className="app">
       <div className="center-screen">
         <div className="big-emoji">🎉</div>
-        <h1>10問クリア</h1>
-        <p>{returnApp ? `${unlockMin}分間ひらけます` : "今日のロシア語、進みました"}</p>
+        <h1>{t("quiz.complete.title", { n: BATCH_SIZE })}</h1>
+        <p>
+          {returnApp
+            ? t("quiz.complete.unlockMsg", { min: unlockMin })
+            : t("quiz.complete.practiceMsg", { lang: langName(lang, targetLang as Lang) })}
+        </p>
         <RatingBreakdown summary={summary} />
         {returnApp ? (
           <div className="stack" style={{ width: "100%" }}>
             <button className="btn primary block" onClick={goBack}>
-              {returnDisplayName(returnApp)}に戻る
+              {t("quiz.complete.returnTo", { app: returnDisplayName(returnApp) })}
             </button>
             <button className="btn ghost block" onClick={onExit}>
-              ホームへ
+              {t("quiz.complete.home")}
             </button>
           </div>
         ) : (
           <button className="btn primary block" onClick={onExit}>
-            ホームへ戻る
+            {t("quiz.complete.homeReturn")}
           </button>
         )}
       </div>
@@ -275,19 +309,20 @@ function BatchCompleteScreen({
   onContinue: () => void;
   onExit: () => void;
 }) {
+  const t = useT();
   return (
     <div className="app">
       <div className="center-screen">
         <div className="big-emoji">✅</div>
-        <h1>{batchNumber}セット目クリア</h1>
-        <p>続けるか、ここで終えるか選べます</p>
+        <h1>{t("quiz.batch.title", { n: batchNumber })}</h1>
+        <p>{t("quiz.batch.sub")}</p>
         <RatingBreakdown summary={summary} />
         <div className="stack" style={{ width: "100%" }}>
           <button className="btn primary block" onClick={onContinue}>
-            続ける（次の10問）
+            {t("quiz.batch.continue")}
           </button>
           <button className="btn ghost block" onClick={onExit}>
-            終了してホームへ
+            {t("quiz.batch.exit")}
           </button>
         </div>
       </div>

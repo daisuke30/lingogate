@@ -40,9 +40,17 @@ export function posLabel(pos: string): string {
   return POS_LABELS[pos] ?? pos;
 }
 
-const ASPECT_LABEL: Record<"pf" | "impf", string> = {
+export interface AspectLabels {
+  pf: string;
+  impf: string;
+  /** Word for "counterpart / pair" (e.g. 対 / pair / пара). */
+  pair: string;
+}
+
+const DEFAULT_ASPECT_LABELS: AspectLabels = {
   pf: "完了体",
   impf: "不完了体",
+  pair: "対",
 };
 
 /**
@@ -58,12 +66,13 @@ const ASPECT_LABEL: Record<"pf" | "impf", string> = {
  */
 export function formatAspectLine(
   entry: Pick<WordBreakdownEntry, "lemma" | "aspect" | "aspectPair">,
+  labels: AspectLabels = DEFAULT_ASPECT_LABELS,
 ): string | null {
   if (!entry.aspect) return null;
-  const own = `${entry.lemma}（${ASPECT_LABEL[entry.aspect]}）`;
+  const own = `${entry.lemma}（${labels[entry.aspect]}）`;
   if (!entry.aspectPair) return own;
   const oppAspect = entry.aspect === "impf" ? "pf" : "impf";
-  return `${own} ⇔ 対: ${entry.aspectPair}（${ASPECT_LABEL[oppAspect]}）`;
+  return `${own} ⇔ ${labels.pair}: ${entry.aspectPair}（${labels[oppAspect]}）`;
 }
 
 export interface WordBreakdownEntry {
@@ -74,6 +83,7 @@ export interface WordBreakdownEntry {
   aspectPair: string | null;
   enGloss: string | null;
   jaGloss: string | null;
+  ruGloss: string | null;
   /** This is the sentence's target_lemma (LINGO-011) — the new element the
    * card exists to teach. Always included and always sorted first. */
   isTarget: boolean;
@@ -101,6 +111,7 @@ export function buildWordBreakdown(
       aspectPair: w.aspectPair ?? null,
       enGloss: w.enGloss ?? null,
       jaGloss: w.jaGloss ?? null,
+      ruGloss: w.ruGloss ?? null,
       isTarget,
     });
   }

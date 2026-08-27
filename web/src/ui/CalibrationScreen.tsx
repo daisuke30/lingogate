@@ -6,8 +6,11 @@ import {
 } from "../state/calibration";
 import type { CalibrationBatch } from "../state/calibration";
 import type { DeckWord, Sentence } from "../engine/content";
+import { activeCourse } from "../state/service";
+import { resolveCourse } from "../content/courses";
 import { getTtsSettings } from "../state/settings";
-import { ruVoiceAvailable, speakRu, subscribeVoices } from "../state/tts";
+import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
+import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
 
 type Phase = "loading" | "run" | "done";
 
@@ -19,6 +22,7 @@ type Phase = "loading" | "run" | "done";
  * FSRS state for known words and are persisted per swipe.
  */
 export function CalibrationScreen({ onExit }: { onExit: () => void }) {
+  const t = useT();
   const [phase, setPhase] = useState<Phase>("loading");
   const [batch, setBatch] = useState<CalibrationBatch | null>(null);
   const [idx, setIdx] = useState(0);
@@ -26,31 +30,41 @@ export function CalibrationScreen({ onExit }: { onExit: () => void }) {
   const [unknown, setUnknown] = useState(0);
   const ttsRef = useRef({ enabled: true, rate: 1.0 });
   const [hasVoice, setHasVoice] = useState(false);
+  const [targetLang, setTargetLang] = useState("ru");
   const glossRef = useRef<Map<string, Sentence>>(new Map());
   // Serialise persistence so overlapping read-modify-write seeds don't race.
   const chain = useRef<Promise<void>>(Promise.resolve());
 
   useEffect(() => {
     let alive = true;
-    glossRef.current = targetSentenceByLemma();
     (async () => {
+      // nextCalibrationBatch() ensures the active course first, so activeCourse()
+      // and the gloss map below reflect the right course.
       const [b, tts] = await Promise.all([nextCalibrationBatch(), getTtsSettings()]);
       if (!alive) return;
+      glossRef.current = targetSentenceByLemma();
+      const lang = resolveCourse(activeCourse()).targetLang;
+      setTargetLang(lang);
+      setHasVoice(voiceAvailable(lang));
       ttsRef.current = tts;
       setBatch(b);
       setPhase(b.words.length === 0 ? "done" : "run");
     })();
-    const unsub = subscribeVoices(() => alive && setHasVoice(ruVoiceAvailable()));
+    const unsub = subscribeVoices(() => alive && setHasVoice(voiceAvailable(targetLang)));
     return () => {
       alive = false;
       unsub();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const speak = useCallback((word: DeckWord) => {
-    if (!ttsRef.current.enabled) return;
-    speakRu(word.lemma, ttsRef.current.rate);
-  }, []);
+  const speakWord = useCallback(
+    (word: DeckWord) => {
+      if (!ttsRef.current.enabled) return;
+      speak(word.lemma, targetLang, ttsRef.current.rate);
+    },
+    [targetLang],
+  );
 
   const loadNextBatch = useCallback(() => {
     setPhase("loading");
@@ -81,7 +95,7 @@ export function CalibrationScreen({ onExit }: { onExit: () => void }) {
     return (
       <div className="app">
         <div className="center-screen">
-          <p className="muted">読み込み中…</p>
+          <p className="muted">{t("common.loading")}</p>
         </div>
       </div>
     );
@@ -97,21 +111,17 @@ export function CalibrationScreen({ onExit }: { onExit: () => void }) {
       <div className="app">
         <div className="center-screen">
           <div className="big-emoji">{finished ? "🏁" : "✅"}</div>
-          <h1>{finished ? "仕分け完了" : `${judgedNow}語 仕分けた`}</h1>
-          <p>
-            知っている {known} ・ 知らない {unknown}
-          </p>
-          <p className="muted">
-            全体の進捗 {totalJudged}/{total}
-          </p>
+          <h1>{finished ? t("calib.done.finished") : t("calib.done.judged", { n: judgedNow })}</h1>
+          <p>{t("calib.done.knownUnknown", { k: known, u: unknown })}</p>
+          <p className="muted">{t("calib.done.progress", { j: totalJudged, t: total })}</p>
           <div className="stack" style={{ width: "100%" }}>
             {!finished && (
               <button className="btn primary block" onClick={loadNextBatch}>
-                次の50語へ
+                {t("calib.done.next50")}
               </button>
             )}
             <button className={"btn block" + (finished ? " primary" : " ghost")} onClick={onExit}>
-              ホームへ
+              {t("calib.done.home")}
             </button>
           </div>
         </div>
@@ -129,7 +139,7 @@ export function CalibrationScreen({ onExit }: { onExit: () => void }) {
     <div className="app">
       <div className="quiz">
         <div className="quiz-head">
-          <button className="iconbtn" onClick={onExit} aria-label="やめる">
+          <button className="iconbtn" onClick={onExit} aria-label={t("calib.exit")}>
             ✕
           </button>
           <div className="qbar">
@@ -145,16 +155,17 @@ export function CalibrationScreen({ onExit }: { onExit: () => void }) {
           word={word}
           gloss={gloss}
           hasVoice={hasVoice}
-          onSpeak={() => speak(word)}
+          targetLang={targetLang}
+          onSpeak={() => speakWord(word)}
           onJudge={(k) => judge(word, k)}
         />
 
         <div className="legend two">
           <div className="chip again">
-            知らない<span className="dir">← 左</span>
+            {t("calib.legend.unknown")}<span className="dir">{t("card.dir.left")}</span>
           </div>
           <div className="chip good">
-            知っている<span className="dir">→ 右</span>
+            {t("calib.legend.known")}<span className="dir">{t("card.dir.right")}</span>
           </div>
         </div>
       </div>
@@ -168,15 +179,18 @@ function CalibrationCard({
   word,
   gloss,
   hasVoice,
+  targetLang,
   onSpeak,
   onJudge,
 }: {
   word: DeckWord;
   gloss: Sentence | null;
   hasVoice: boolean;
+  targetLang: string;
   onSpeak: () => void;
   onJudge: (known: boolean) => void;
 }) {
+  const t = useT();
   const [revealed, setRevealed] = useState(false);
   const [drag, setDrag] = useState({ x: 0, active: false });
   const start = useRef<{ x: number; y: number } | null>(null);
@@ -225,11 +239,11 @@ function CalibrationCard({
         }}
       >
         <div className="face front" style={{ position: "relative" }}>
-          <span className="kicker">Русский</span>
+          <span className="kicker">{NATIVE_LANG_NAME[(targetLang as "ru" | "en" | "ja") ?? "ru"]}</span>
           {hasVoice && (
             <button
               className="iconbtn speaker"
-              aria-label="読み上げ"
+              aria-label={t("card.speak")}
               onPointerDown={(e) => e.stopPropagation()}
               onClick={(e) => {
                 e.stopPropagation();
@@ -247,14 +261,14 @@ function CalibrationCard({
               {!gloss.ja && <div className="ja">{gloss.en}</div>}
             </div>
           ) : (
-            gloss && <div className="hint">タップで意味（任意）</div>
+            gloss && <div className="hint">{t("calib.tapMeaning")}</div>
           )}
           {hint && (
             <div
               className="overlay-label"
               style={{ color: hint === "good" ? "var(--good)" : "var(--again)", opacity: 1 }}
             >
-              {hint === "good" ? "知ってる" : "知らない"}
+              {hint === "good" ? t("calib.overlay.known") : t("calib.overlay.unknown")}
             </div>
           )}
         </div>

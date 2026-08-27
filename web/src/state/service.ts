@@ -2,14 +2,17 @@
 // builds/commits gate sessions, and computes home-screen stats. The React layer
 // talks only to this module (and settings.ts), never to the engine/db directly.
 
-import deckJson from "../content/deck.generated.json";
 import type { Deck } from "../engine/content";
+import type { DeckWord } from "../engine/content";
 import { ContentStore } from "../engine/content";
 import type { MasteryStats } from "../engine/mastery";
 import { FSRS } from "../engine/fsrs";
 import { buildGateSession, GateSessionRunner } from "../engine/session";
 import { SeededRNG } from "../engine/rng";
 import { knowledgeUpdatesFromOutcomes } from "../engine/calibration";
+import { BOOTSTRAP_DECK, DEFAULT_COURSE_ID, resolveCourse } from "../content/courses";
+import type { Lang } from "../content/courses";
+import { getActiveCourse, getFrontLang } from "./settings";
 import {
   getAllReviewStates,
   putReviewStates,
@@ -19,23 +22,76 @@ import {
   putWordKnowledge,
 } from "../db/idb";
 
-export const DECK = deckJson as unknown as Deck;
-export const PRIMARY_BAND = DECK.bands[0] ?? 1;
+// LINGO-014: the deck is now the *active course's* pack, loaded lazily. These
+// are live bindings (mutable) so a course switch can swap them in place; they
+// start on the bootstrap RU pack so synchronous consumers (WORD_BY_ID in the
+// flashcard, DECK in HomeView's fallback) always have real data on first paint.
+export let DECK: Deck = BOOTSTRAP_DECK;
+export let PRIMARY_BAND: number = DECK.bands[0] ?? 1;
+/** lemma-id -> DeckWord for the active course. Exported for the card-back word
+ * breakdown (LINGO-012, engine/wordBreakdown.ts). Live binding — reassigned on
+ * course switch, so importers see the current course's words. */
+export let WORD_BY_ID: Map<number, DeckWord> = new Map(DECK.words.map((w) => [w.id, w]));
+
+let activeCourseId: string = DEFAULT_COURSE_ID;
+let activeFrontLang: Lang = resolveCourse(DEFAULT_COURSE_ID).defaultFrontLang;
+let loadedCourseId: string | null = DEFAULT_COURSE_ID; // which course DECK currently holds
+let ensuring: Promise<void> | null = null;
 
 const fsrs = new FSRS();
-/** lemma-id -> DeckWord, built once from the static bundle. Exported for the
- * card-back word breakdown (LINGO-012, engine/wordBreakdown.ts). */
-export const WORD_BY_ID = new Map(DECK.words.map((w) => [w.id, w]));
+
+/** Ensure DECK/WORD_BY_ID/etc. reflect the persisted active course. Cheap and
+ * idempotent once loaded; every async entry point below awaits it first so the
+ * React layer never has to think about course loading. */
+export async function ensureCourse(): Promise<void> {
+  if (ensuring) return ensuring;
+  ensuring = (async () => {
+    const courseId = await getActiveCourse();
+    const course = resolveCourse(courseId);
+    activeCourseId = course.courseId;
+    activeFrontLang = await getFrontLang(course.courseId);
+    if (loadedCourseId !== course.courseId) {
+      // Only load a pack we don't already have. The default RU pack is the
+      // bootstrap deck (already loaded); other courses come from load().
+      if (course.courseId !== DEFAULT_COURSE_ID && course.load) {
+        const deck = await course.load();
+        DECK = deck;
+        PRIMARY_BAND = DECK.bands[0] ?? 1;
+        WORD_BY_ID = new Map(DECK.words.map((w) => [w.id, w]));
+      } else {
+        DECK = BOOTSTRAP_DECK;
+        PRIMARY_BAND = DECK.bands[0] ?? 1;
+        WORD_BY_ID = new Map(DECK.words.map((w) => [w.id, w]));
+      }
+      loadedCourseId = course.courseId;
+    }
+  })().finally(() => {
+    ensuring = null;
+  });
+  return ensuring;
+}
+
+export function activeCourse(): string {
+  return activeCourseId;
+}
+
+export function activeFrontLanguage(): Lang {
+  return activeFrontLang;
+}
 
 async function loadKnowledge(): Promise<Map<string, "known" | "unknown" | "unset">> {
-  const rows = await getAllWordKnowledge();
+  const rows = await getAllWordKnowledge(activeCourseId);
   const map = new Map<string, "known" | "unknown" | "unset">();
   for (const r of rows) map.set(r.lemma, r.status);
   return map;
 }
 
 export async function loadStore(): Promise<ContentStore> {
-  const [states, knowledge] = await Promise.all([getAllReviewStates(), loadKnowledge()]);
+  await ensureCourse();
+  const [states, knowledge] = await Promise.all([
+    getAllReviewStates(activeCourseId),
+    loadKnowledge(),
+  ]);
   return new ContentStore(DECK, states, knowledge);
 }
 
@@ -66,7 +122,7 @@ export async function startSession(
  * to call on an in-progress runner). Idempotent: draining an empty buffer is a
  * no-op (see db/idb.ts putReviewStates/putWordKnowledge). */
 async function persistGrades(runner: GateSessionRunner): Promise<void> {
-  await putReviewStates(runner.drainPendingUpserts());
+  await putReviewStates(runner.drainPendingUpserts(), activeCourseId);
 
   // Feed review results back into the word-knowledge map: Again -> unknown,
   // clean Good pass on a target sentence -> known (source 'review').
@@ -77,7 +133,7 @@ async function persistGrades(runner: GateSessionRunner): Promise<void> {
     knowledge,
     Date.now(),
   );
-  await putWordKnowledge(knowledgeUpdates);
+  await putWordKnowledge(knowledgeUpdates, activeCourseId);
 }
 
 /** Persist a finished gate session: commit buffered FSRS grades + knowledge
@@ -90,15 +146,18 @@ export async function commitSession(
   const endedAt = Date.now();
   await persistGrades(runner);
 
-  await addGateSession({
-    appKey: opts.appKey,
-    startedAt,
-    endedAt,
-    questions: runner.totalCards,
-    correct: runner.firstTryCorrect,
-    durationMs: endedAt - startedAt,
-    unlocked: opts.unlocked,
-  });
+  await addGateSession(
+    {
+      appKey: opts.appKey,
+      startedAt,
+      endedAt,
+      questions: runner.totalCards,
+      correct: runner.firstTryCorrect,
+      durationMs: endedAt - startedAt,
+      unlocked: opts.unlocked,
+    },
+    activeCourseId,
+  );
 }
 
 /** Persist an early exit mid-batch (continuous home-practice mode): whatever
@@ -134,8 +193,8 @@ function isToday(ts: number, now: number): boolean {
 
 export async function homeStats(): Promise<HomeStats> {
   const now = Date.now();
-  const store = await loadStore();
-  const sessions = await getAllGateSessions();
+  const store = await loadStore(); // also ensures the active course is loaded
+  const sessions = await getAllGateSessions(activeCourseId);
   const today = sessions.filter((s) => isToday(s.startedAt, now));
   const todayGates = today.length;
   const todayUnlocks = today.filter((s) => s.unlocked).length;

@@ -1,7 +1,7 @@
 // Calibration service: wires the pure knowledge logic (engine/calibration.ts) to
 // IndexedDB and the bundled deck. The React layer talks only to this module.
 
-import { DECK, PRIMARY_BAND } from "./service";
+import { DECK, PRIMARY_BAND, activeCourse, ensureCourse } from "./service";
 import { FSRS } from "../engine/fsrs";
 import type { DeckWord, Sentence } from "../engine/content";
 import { judgedCount, seedKnownReviewStatesForLemmas } from "../engine/calibration";
@@ -26,7 +26,8 @@ function bandWordsByRank(): DeckWord[] {
 }
 
 export async function loadKnowledgeMap(): Promise<KnowledgeMap> {
-  const rows = await getAllWordKnowledge();
+  await ensureCourse();
+  const rows = await getAllWordKnowledge(activeCourse());
   const map: KnowledgeMap = new Map();
   for (const r of rows) map.set(r.lemma, r.status);
   return map;
@@ -41,7 +42,8 @@ export interface CalibrationProgress {
 }
 
 export async function calibrationProgress(): Promise<CalibrationProgress> {
-  const rows = await getAllWordKnowledge();
+  await ensureCourse();
+  const rows = await getAllWordKnowledge(activeCourse());
   const total = bandWordsByRank().length;
   let known = 0;
   let unknown = 0;
@@ -88,6 +90,8 @@ export function targetSentenceByLemma(): Map<string, Sentence> {
 /** Record one calibration judgement. When known, seed "already mastered" FSRS
  * states for the sentences that teach that lemma (skipping any already studied). */
 export async function submitCalibration(lemma: string, known: boolean): Promise<void> {
+  await ensureCourse();
+  const courseId = activeCourse();
   const now = Date.now();
   const row: WordKnowledge = {
     lemma,
@@ -95,12 +99,12 @@ export async function submitCalibration(lemma: string, known: boolean): Promise<
     updatedAt: now,
     source: "calibration",
   };
-  await putWordKnowledge([row]);
+  await putWordKnowledge([row], courseId);
 
   if (known) {
-    const existing = await getAllReviewStates();
+    const existing = await getAllReviewStates(courseId);
     const have = new Set(existing.map((s) => s.sentenceId));
     const seeds = seedKnownReviewStatesForLemmas(DECK.sentences, [lemma], now, have, fsrs);
-    if (seeds.length) await putReviewStates(seeds);
+    if (seeds.length) await putReviewStates(seeds, courseId);
   }
 }
