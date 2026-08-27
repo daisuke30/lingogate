@@ -23,6 +23,7 @@ const K = {
   appLang: "i18n.appLang", // UI language
   activeCourse: "course.active", // = card-back language (the course)
   frontLangPrefix: "course.frontLang.", // + courseId; the card-front (prompt/hint) language
+  placementDonePrefix: "course.placementDone.", // + courseId (LINGO-016)
 };
 
 // MARK: i18n (app UI language) — LINGO-014
@@ -62,6 +63,17 @@ export async function getFrontLang(courseId: string): Promise<Lang> {
 
 export function setFrontLang(courseId: string, lang: Lang): Promise<void> {
   return setMeta(K.frontLangPrefix + courseId, lang);
+}
+
+// MARK: placement (LINGO-016 adaptive test) completion flag — per course, so
+// finishing a level check on one course never hides the CTA on another.
+
+export function getPlacementDone(courseId: string): Promise<boolean> {
+  return getMeta<boolean>(K.placementDonePrefix + courseId, false);
+}
+
+export function setPlacementDone(courseId: string, done: boolean): Promise<void> {
+  return setMeta(K.placementDonePrefix + courseId, done);
 }
 
 export async function getUnlockMinutes(): Promise<number> {

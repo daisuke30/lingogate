@@ -4,7 +4,7 @@ import { QuizScreen } from "./QuizScreen";
 import { SettingsView } from "./SettingsView";
 import { AutomationGuideView } from "./AutomationGuideView";
 import { GateEntry } from "./GateEntry";
-import { CalibrationScreen } from "./CalibrationScreen";
+import { PlacementScreen } from "./PlacementScreen";
 
 export type Route =
   | { name: "home" }
@@ -15,7 +15,9 @@ export type Route =
   | { name: "gate"; returnApp: string | null }
   | { name: "settings" }
   | { name: "guide" }
-  | { name: "calibration" };
+  // LINGO-016: adaptive placement test (replaces the old fixed "calibration"
+  // linear-triage flow — CalibrationScreen.tsx is retired, kept in git history).
+  | { name: "placement" };
 
 function routeFromLocation(): Route {
   const path = window.location.pathname;
@@ -70,7 +72,7 @@ export function App() {
       return <SettingsView onBack={goHome} />;
     case "guide":
       return <AutomationGuideView onBack={goHome} />;
-    case "calibration":
-      return <CalibrationScreen onExit={goHome} />;
+    case "placement":
+      return <PlacementScreen onExit={goHome} />;
   }
 }

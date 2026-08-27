@@ -12,7 +12,9 @@ import type { DeckWord, Sentence } from "./content";
 const DAY_MS = 86_400_000;
 
 export type KnowledgeStatus = "known" | "unknown" | "unset";
-export type KnowledgeSource = "calibration" | "review";
+/** "placement" = LINGO-016 adaptive test (both directly-swiped words and the
+ * band-extrapolated assumed known/unknown ones). */
+export type KnowledgeSource = "calibration" | "review" | "placement";
 
 /** Persisted per-lemma judgement. `status` "unset" means never judged (rows are
  * normally only written for known/unknown, so absence == unset too). */
@@ -61,14 +63,18 @@ function seedDifficulty(fsrs: FSRS): number {
 }
 
 /** Build a "already mastered" FSRS review state for one sentence: Review state,
- * long stability, due far out. Deterministic given `now`. */
+ * long stability, due far out. Deterministic given `now`. `stabilityDays`
+ * defaults to the fixed 60-day seed (regular calibration/review flow);
+ * LINGO-016's placement write-out passes a per-lemma 30–120d dispersed value
+ * for its assumed-known words instead (see engine/placement.ts). */
 export function seedKnownReviewState(
   sentenceId: string,
   now: number,
   fsrs: FSRS,
   direction = "en2ru",
+  stabilityDays: number = KNOWN_SEED_STABILITY_DAYS,
 ): ReviewState {
-  const stability = KNOWN_SEED_STABILITY_DAYS;
+  const stability = stabilityDays;
   const ivlDays = fsrs.interval(stability); // == stability at requestRetention 0.9
   return {
     sentenceId,
@@ -84,20 +90,25 @@ export function seedKnownReviewState(
 }
 
 /** Seed review states for every target sentence teaching one of `lemmas`,
- * skipping sentences that already have a state (`existingIds`). */
+ * skipping sentences that already have a state (`existingIds`). A lemma not
+ * present in `stabilityDaysByLemma` (or when the map is omitted entirely)
+ * falls back to the fixed 60-day seed — unchanged default behaviour for the
+ * pre-LINGO-016 calibration/review callers. */
 export function seedKnownReviewStatesForLemmas(
   sentences: Sentence[],
   lemmas: Iterable<string>,
   now: number,
   existingIds: Set<string>,
   fsrs: FSRS,
+  stabilityDaysByLemma?: Map<string, number>,
 ): ReviewState[] {
   const wanted = new Set(lemmas);
   const out: ReviewState[] = [];
   for (const s of sentences) {
     if (!s.targetLemma || !wanted.has(s.targetLemma)) continue;
     if (existingIds.has(s.id)) continue;
-    out.push(seedKnownReviewState(s.id, now, fsrs));
+    const stabilityDays = stabilityDaysByLemma?.get(s.targetLemma) ?? KNOWN_SEED_STABILITY_DAYS;
+    out.push(seedKnownReviewState(s.id, now, fsrs, "en2ru", stabilityDays));
   }
   return out;
 }

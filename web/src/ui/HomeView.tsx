@@ -3,6 +3,8 @@ import { DECK, PRIMARY_BAND, activeCourse, homeStats } from "../state/service";
 import type { HomeStats } from "../state/service";
 import { calibrationProgress } from "../state/calibration";
 import type { CalibrationProgress } from "../state/calibration";
+import { CALIBRATION_FALLBACK_THRESHOLD } from "../engine/calibration";
+import { isPlacementDone } from "../state/placement";
 import { resolveCourse } from "../content/courses";
 import { langName, useI18n } from "../i18n/i18n";
 import type { Lang } from "../i18n/i18n";
@@ -24,6 +26,12 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
   const [stats, setStats] = useState<HomeStats | null>(null);
   const [calib, setCalib] = useState<CalibrationProgress | null>(null);
   const [targetLang, setTargetLang] = useState<Lang>("ru");
+  // LINGO-016: the placement test is a single short pass, not "judge every
+  // word" — show the CTA only while the learner hasn't run it AND hasn't
+  // already substantially self-calibrated via the old linear flow (e.g.
+  // Katsuta's existing RU judgements), so nobody gets re-nagged for a test
+  // their existing data already makes redundant.
+  const [showLevelCheck, setShowLevelCheck] = useState(false);
 
   useEffect(() => {
     homeStats()
@@ -32,11 +40,16 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         setTargetLang(resolveCourse(activeCourse()).targetLang);
       })
       .catch((err) => console.error("homeStats failed", err));
-    calibrationProgress()
-      .then(setCalib)
+    Promise.all([calibrationProgress(), isPlacementDone()])
+      .then(([c, done]) => {
+        setCalib(c);
+        setShowLevelCheck(!done && c.judged < CALIBRATION_FALLBACK_THRESHOLD);
+      })
       .catch((err) => {
-        console.error("calibrationProgress failed", err);
-        setCalib(fallbackCalibProgress());
+        console.error("calibrationProgress/isPlacementDone failed", err);
+        const c = fallbackCalibProgress();
+        setCalib(c);
+        setShowLevelCheck(true);
       });
   }, []);
 
@@ -119,25 +132,14 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         </div>
       </div>
 
-      {calib && !calib.done && (
+      {showLevelCheck && (
         <>
           <div className="section-title">{t("home.calib.title")}</div>
-          <button
-            className="card calib-cta"
-            onClick={() => navigate({ name: "calibration" })}
-          >
-            <div className="meter" style={{ marginTop: 0 }}>
-              <div className="head">
-                <span>{calib.judged > 0 ? t("home.calib.continue") : t("home.calib.start")}</span>
-                <span>
-                  {calib.judged}/{calib.total}
-                </span>
-              </div>
-              <div className="track">
-                <div
-                  className="fill"
-                  style={{ width: `${calib.total > 0 ? (100 * calib.judged) / calib.total : 0}%` }}
-                />
+          <button className="card calib-cta" onClick={() => navigate({ name: "placement" })}>
+            <div className="row" style={{ padding: 0, background: "transparent" }}>
+              <div>
+                <div className="label">{t("home.placement.cta")}</div>
+                <div className="sub">{t("home.placement.judgedCount", { n: calib?.judged ?? 0 })}</div>
               </div>
             </div>
             <p className="muted" style={{ margin: "12px 0 0" }}>

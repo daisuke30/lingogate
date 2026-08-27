@@ -63,16 +63,27 @@ const M: Record<string, Entry> = {
   },
   "home.mastery.progress": { ja: "3000語 進捗", en: "Progress to 3000", ru: "Прогресс до 3000" },
   "home.calib.title": {
-    ja: "既知語の仕分け（キャリブレーション）",
-    en: "Sort your known words (calibration)",
-    ru: "Разбор знакомых слов (калибровка)",
+    ja: "レベルチェック",
+    en: "Level check",
+    ru: "Проверка уровня",
   },
-  "home.calib.continue": { ja: "続きから仕分ける", en: "Continue sorting", ru: "Продолжить разбор" },
-  "home.calib.start": { ja: "1000語を仕分ける", en: "Sort 1000 words", ru: "Разобрать 1000 слов" },
   "home.calib.desc": {
-    ja: "知っている語を右、知らない語を左へ。カードの並びはあなたの既知語マップで最適化されます。",
-    en: "Swipe right for words you know, left for ones you don't. Your card order is optimised from the resulting map.",
-    ru: "Знакомые слова — вправо, незнакомые — влево. Порядок карточек подстраивается под вашу карту знаний.",
+    ja: "数問に答えるだけで、あなたの語彙レベルを推定します。知っている語を右、知らない語を左へ。",
+    en: "Answer a few questions and we'll estimate your vocabulary level. Swipe right for words you know, left for ones you don't.",
+    ru: "Ответьте на несколько вопросов — мы оценим ваш словарный запас. Знакомые слова — вправо, незнакомые — влево.",
+  },
+  // LINGO-016: adaptive placement test replaces the old fixed 1000-word triage
+  // (home.calib.continue/start retired — the new test is a single short pass,
+  // not a resumable batch job).
+  "home.placement.cta": {
+    ja: "レベルチェック（約1〜3分）",
+    en: "Level check (~1–3 min)",
+    ru: "Проверка уровня (~1–3 мин)",
+  },
+  "home.placement.judgedCount": {
+    ja: "判定済み{n}語",
+    en: "{n} words assessed",
+    ru: "Оценено слов: {n}",
   },
   "home.band.title": { ja: "band1 の進み具合", en: "band1 progress", ru: "Прогресс band1" },
   "home.band.coverage": { ja: "語彙カバー", en: "Vocabulary covered", ru: "Охват слов" },
@@ -307,6 +318,57 @@ const M: Record<string, Entry> = {
   "calib.tapMeaning": { ja: "タップで意味（任意）", en: "Tap for meaning (optional)", ru: "Нажмите для значения (необяз.)" },
   "calib.overlay.known": { ja: "知ってる", en: "Know it", ru: "Знаю" },
   "calib.overlay.unknown": { ja: "知らない", en: "Don't know", ru: "Не знаю" },
+
+  // -- adaptive placement test (LINGO-016) -----------------------------------
+  // Reuses calib.legend.*/calib.tapMeaning/calib.overlay.*/calib.exit — same
+  // right=know/left=don't-know swipe card, so no separate labels needed there.
+  "placement.blockLabel": { ja: "ブロック {n}", en: "Block {n}", ru: "Блок {n}" },
+  "placement.finalizing": {
+    ja: "結果を保存中…",
+    en: "Saving your results…",
+    ru: "Сохраняем результат…",
+  },
+  "placement.block.estimateTitle": {
+    ja: "現在の推定",
+    en: "Current estimate",
+    ru: "Текущая оценка",
+  },
+  "placement.block.estimateLine": {
+    ja: "約{n}語マスター相当（±{err}）",
+    en: "~{n} words mastered (±{err})",
+    ru: "≈{n} слов освоено (±{err})",
+  },
+  "placement.block.continue": {
+    ja: "続ける（精度が上がります）",
+    en: "Continue (more precise)",
+    ru: "Продолжить (точнее)",
+  },
+  "placement.block.finish": { ja: "ここで始める", en: "Start here", ru: "Начать здесь" },
+  "placement.beginner.title": {
+    ja: "完全初心者として開始します",
+    en: "Starting as an absolute beginner",
+    ru: "Начинаем с полного нуля",
+  },
+  "placement.beginner.desc": {
+    ja: "基礎から着実に学びます。",
+    en: "You'll build up from the basics.",
+    ru: "Начнём с самых основ.",
+  },
+  "placement.result.title": {
+    ja: "レベルチェック完了",
+    en: "Level check complete",
+    ru: "Проверка уровня завершена",
+  },
+  "placement.result.summary": {
+    ja: "約{n}語マスター相当（{level}）",
+    en: "~{n} words mastered ({level})",
+    ru: "≈{n} слов освоено ({level})",
+  },
+  "placement.result.startLearning": {
+    ja: "学習を始める",
+    en: "Start learning",
+    ru: "Начать обучение",
+  },
 
   // -- automation guide -----------------------------------------------------
   "guide.title": { ja: "オートメーション設定", en: "Automation setup", ru: "Настройка автоматизации" },
