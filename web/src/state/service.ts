@@ -5,6 +5,7 @@
 import deckJson from "../content/deck.generated.json";
 import type { Deck } from "../engine/content";
 import { ContentStore } from "../engine/content";
+import type { MasteryStats } from "../engine/mastery";
 import { FSRS } from "../engine/fsrs";
 import { buildGateSession, GateSessionRunner } from "../engine/session";
 import { SeededRNG } from "../engine/rng";
@@ -118,6 +119,7 @@ export interface HomeStats {
   retentionPct: number | null;
   reviewCards: number;
   dueNow: number;
+  mastery: MasteryStats; // "会話頻出3000語マスター" (LINGO-013)
 }
 
 function isToday(ts: number, now: number): boolean {
@@ -153,6 +155,8 @@ export async function homeStats(): Promise<HomeStats> {
 
   const dueNow = store.dueReviews(PRIMARY_BAND, now, 9999).length;
 
+  const mastery = store.masteryStats();
+
   return {
     todayGates,
     todayUnlocks,
@@ -161,5 +165,6 @@ export async function homeStats(): Promise<HomeStats> {
     retentionPct,
     reviewCards: ret.reviewCards,
     dueNow,
+    mastery,
   };
 }

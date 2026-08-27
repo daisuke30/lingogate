@@ -171,6 +171,46 @@ button {
   margin-top: 3px;
 }
 
+/* ---- Mastery card (会話頻出3000語) ---- */
+.mastery-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.mastery-num {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.05;
+}
+.mastery-unit {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-dim);
+  margin-left: 6px;
+  letter-spacing: 0;
+}
+.mastery-sub {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin-top: 6px;
+}
+.mastery-sub strong {
+  color: var(--ink);
+  font-weight: 800;
+}
+.mastery-level {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--indigo-bright);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 5px 11px;
+  white-space: nowrap;
+}
+
 /* ---- Progress bars ---- */
 .meter {
   margin-top: 12px;

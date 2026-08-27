@@ -83,6 +83,36 @@ describe("ContentStore tolerates orphan ReviewStates (sentence removed from deck
     expect(ret).toEqual({ reps: 2, lapses: 1, reviewCards: 1 });
   });
 
+  it("masteryStats: counts known-judged deck words + stable targets, dedup, deck-scoped", () => {
+    const s = sentence("T1");
+    s.targetLemma = "мир";
+    const deck: Deck = {
+      code: "T",
+      name: "t",
+      targetLang: "ru",
+      sourceLang: "en",
+      bands: [1],
+      words: [
+        { id: 1, lemma: "дом", rank: 1, band: 1, pos: "noun" },
+        { id: 2, lemma: "мир", rank: 2, band: 1, pos: "noun" },
+        { id: 3, lemma: "рука", rank: 3, band: 1, pos: "noun" },
+      ],
+      sentences: [s],
+    };
+    const stable = orphanState("T1", NOW + 30 * DAY);
+    stable.stability = 30; // ≥ 21d threshold → "мир" mastered via learning
+    const knowledge = new Map<string, "known" | "unknown" | "unset">([
+      ["дом", "known"],
+      ["мир", "known"], // also judged known — must dedup with the stable target
+      ["собака", "known"], // not a deck word — must be ignored
+    ]);
+    const store = new ContentStore(deck, [stable], knowledge);
+    const m = store.masteryStats();
+    expect(m.masteredCount).toBe(2); // дом + мир (once)
+    expect(m.targetWords).toBe(3000);
+    expect(m.level).toBe("完全初心者");
+  });
+
   it("buildGateSession never surfaces an orphaned sentenceId and does not crash", () => {
     const deck = makeDeck([sentence("s001"), sentence("s002"), sentence("s003")]);
     const orphan = orphanState("ghost-long-sentence", NOW - DAY); // most overdue of all

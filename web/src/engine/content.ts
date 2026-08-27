@@ -13,6 +13,8 @@ import {
   scoreSentence,
 } from "./calibration";
 import type { KnowledgeMap } from "./calibration";
+import { masteryStats as computeMasteryStats, MASTERY_STABILITY_DAYS } from "./mastery";
+import type { MasteryStats } from "./mastery";
 
 export interface Sentence {
   id: string;
@@ -177,6 +179,22 @@ export class ContentStore {
     coverableIds.forEach((id) => bandIds.has(id) && coverable++);
     studiedIds.forEach((id) => bandIds.has(id) && studied++);
     return { total, coverable, studied };
+  }
+
+  /** "会話頻出3000語マスター" figures (LINGO-013): distinct mastered lemmas
+   * (judged-known ∪ target words whose review stability ≥ threshold) across the
+   * whole deck (all bands = the 3000-word universe), plus the interpolated
+   * conversation-coverage % and level label. Delegates to the pure engine in
+   * mastery.ts. */
+  masteryStats(stabilityThresholdDays: number = MASTERY_STABILITY_DAYS): MasteryStats {
+    const deckLemmas = new Set(this.deck.words.map((w) => w.lemma));
+    return computeMasteryStats(
+      this.deck.sentences,
+      this.knowledge,
+      this.states.values(),
+      deckLemmas,
+      stabilityThresholdDays,
+    );
   }
 
   /** Retention proxy over band cards in the Review state: reps / (reps+lapses). */

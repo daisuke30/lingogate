@@ -13,6 +13,27 @@ describe("content build", () => {
     expect(deck.bands).toContain(1);
   });
 
+  it("LINGO-013: loads band2/3 vocab (3000-word frame) without adding non-band1 sentences", () => {
+    const byBand: Record<number, number> = {};
+    for (const w of deck.words) byBand[w.band] = (byBand[w.band] ?? 0) + 1;
+    expect(byBand[1]).toBe(1000);
+    expect(byBand[2]).toBe(1000);
+    expect(byBand[3]).toBe(1000);
+    expect(deck.words.length).toBe(3000);
+    // band2/3 are words-only for now — every shipped sentence is still band1.
+    expect(deck.sentences.every((s: any) => s.band === 1)).toBe(true);
+    // band2/3 words carry POS + glosses and don't collide with band1 lemmas.
+    const b1 = new Set(deck.words.filter((w: any) => w.band === 1).map((w: any) => w.lemma));
+    for (const w of deck.words.filter((w: any) => w.band !== 1)) {
+      expect(w.pos).toBeTruthy();
+      expect(b1.has(w.lemma)).toBe(false);
+    }
+    // Ranks are contiguous across the 3000-word frame.
+    const ranks = deck.words.map((w: any) => w.rank).sort((a: number, b: number) => a - b);
+    expect(ranks[0]).toBe(1);
+    expect(ranks[ranks.length - 1]).toBe(3000);
+  });
+
   it("links lemmas to word ids and computes a min covered rank", () => {
     const s1 = deck.sentences.find((s: any) => s.id === "T0001");
     expect(s1).toBeTruthy();

@@ -68,6 +68,44 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         </div>
       </div>
 
+      <div className="section-title">会話頻出3000語マスター</div>
+      <div className="card mastery-card">
+        <div className="mastery-head">
+          <div>
+            <div className="mastery-num">
+              {stats ? stats.mastery.masteredCount.toLocaleString() : "–"}
+              <span className="mastery-unit">語 マスター</span>
+            </div>
+            <div className="mastery-sub">
+              推定会話カバー率{" "}
+              <strong>{stats ? `${stats.mastery.coveragePct}%` : "–"}</strong>
+            </div>
+          </div>
+          <div className="mastery-level">{stats ? stats.mastery.level : "–"}</div>
+        </div>
+        <div className="meter">
+          <div className="head">
+            <span>3000語 進捗</span>
+            <span>
+              {stats ? stats.mastery.masteredCount.toLocaleString() : "–"}/
+              {(stats?.mastery.targetWords ?? 3000).toLocaleString()}
+            </span>
+          </div>
+          <div className="track">
+            <div
+              className="fill"
+              style={{
+                width: `${
+                  stats
+                    ? Math.min(100, (100 * stats.mastery.masteredCount) / stats.mastery.targetWords)
+                    : 0
+                }%`,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
       {calib && !calib.done && (
         <>
           <div className="section-title">既知語の仕分け（キャリブレーション）</div>
