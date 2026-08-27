@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { COURSES, DEFAULT_COURSE_ID, courseById, resolveCourse } from "./courses";
+import { COURSES, DEFAULT_COURSE_ID, courseById, frontLangFromUILang, resolveCourse } from "./courses";
 
 // LINGO-014 language-axis invariants (design §1 + §3's "有効18パターン").
 describe("course catalog", () => {
@@ -39,5 +39,25 @@ describe("course catalog", () => {
     expect(resolveCourse("nope").courseId).toBe(DEFAULT_COURSE_ID);
     expect(resolveCourse(null).courseId).toBe(DEFAULT_COURSE_ID);
     expect(resolveCourse(undefined).courseId).toBe("ru");
+  });
+});
+
+// LINGO-017: onboarding's "表面言語はUI言語から自動初期値" behaviour.
+describe("frontLangFromUILang", () => {
+  it("uses the UI language when the course actually offers it as a front option", () => {
+    const ru = courseById("ru")!; // availableFrontLangs: en, ja
+    expect(frontLangFromUILang(ru, "ja")).toBe("ja");
+    expect(frontLangFromUILang(ru, "en")).toBe("en");
+  });
+
+  it("falls back to the course's own default when the UI language isn't offered", () => {
+    const ru = courseById("ru")!; // never offers "ru" (== its own target lang)
+    expect(frontLangFromUILang(ru, "ru")).toBe(ru.defaultFrontLang);
+  });
+
+  it("every course's own target language always falls back (never a valid front option)", () => {
+    for (const c of COURSES) {
+      expect(frontLangFromUILang(c, c.targetLang)).toBe(c.defaultFrontLang);
+    }
   });
 });

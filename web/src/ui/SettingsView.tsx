@@ -31,7 +31,13 @@ function formatBuiltAt(iso: string): string {
   return d.toISOString().slice(0, 16).replace("T", " ") + " UTC";
 }
 
-export function SettingsView({ onBack }: { onBack: () => void }) {
+export function SettingsView({
+  onBack,
+  onShowOnboarding,
+}: {
+  onBack: () => void;
+  onShowOnboarding: () => void;
+}) {
   const { lang: uiLang, setLang, t } = useI18n();
   const [minutes, setMinutes] = useState(10);
   const [, setQuizModeState] = useState<QuizMode>("flashcard");
@@ -142,6 +148,14 @@ export function SettingsView({ onBack }: { onBack: () => void }) {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* -- LINGO-017: replay the first-run intro on demand -- */}
+      <div className="list" style={{ marginTop: 8 }}>
+        <button className="row" style={{ width: "100%" }} onClick={onShowOnboarding}>
+          <div className="label">{t("settings.viewOnboarding")}</div>
+          <span className="linkbtn">›</span>
+        </button>
       </div>
 
       {/* -- Course (back-of-card language) -- */}

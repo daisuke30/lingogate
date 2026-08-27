@@ -5,6 +5,8 @@ import { SettingsView } from "./SettingsView";
 import { AutomationGuideView } from "./AutomationGuideView";
 import { GateEntry } from "./GateEntry";
 import { PlacementScreen } from "./PlacementScreen";
+import { OnboardingFlow } from "./OnboardingFlow";
+import { shouldShowOnboarding } from "../state/onboarding";
 
 export type Route =
   | { name: "home" }
@@ -17,7 +19,11 @@ export type Route =
   | { name: "guide" }
   // LINGO-016: adaptive placement test (replaces the old fixed "calibration"
   // linear-triage flow — CalibrationScreen.tsx is retired, kept in git history).
-  | { name: "placement" };
+  | { name: "placement" }
+  // LINGO-017: "firstRun" = the automatic first-launch funnel (finishing leads
+  // to course-select -> placement); "settings" = a replay via Settings' "アプ
+  // リの説明を見る" (finishing/skipping just returns to Settings).
+  | { name: "onboarding"; origin: "firstRun" | "settings" };
 
 function routeFromLocation(): Route {
   const path = window.location.pathname;
@@ -37,6 +43,24 @@ export function App() {
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
+
+  // First-run onboarding (LINGO-017): only ever offered from the plain "/"
+  // home route — never from /gate (an automation-triggered interrupt must
+  // never be hijacked by a 5-screen intro). shouldShowOnboarding() is false
+  // for both an existing user (any course already has progress) and anyone
+  // who has already finished/skipped it once, so this is a no-op after the
+  // very first check.
+  useEffect(() => {
+    if (route.name !== "home") return;
+    let alive = true;
+    shouldShowOnboarding().then((show) => {
+      if (alive && show) navigate({ name: "onboarding", origin: "firstRun" });
+    });
+    return () => {
+      alive = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [route.name]);
 
   function navigate(next: Route) {
     // Only the URL-addressable routes update the address bar; in-app views are
@@ -69,10 +93,26 @@ export function App() {
     case "gate":
       return <GateEntry returnApp={route.returnApp} onExit={goHome} />;
     case "settings":
-      return <SettingsView onBack={goHome} />;
+      return (
+        <SettingsView
+          onBack={goHome}
+          onShowOnboarding={() => navigate({ name: "onboarding", origin: "settings" })}
+        />
+      );
     case "guide":
       return <AutomationGuideView onBack={goHome} />;
     case "placement":
       return <PlacementScreen onExit={goHome} />;
+    case "onboarding":
+      return (
+        <OnboardingFlow
+          origin={route.origin}
+          onFinish={(dest) => {
+            if (dest === "placement") navigate({ name: "placement" });
+            else if (dest === "settings") navigate({ name: "settings" });
+            else navigate({ name: "home" });
+          }}
+        />
+      );
   }
 }

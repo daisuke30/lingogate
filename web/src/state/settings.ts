@@ -24,6 +24,7 @@ const K = {
   activeCourse: "course.active", // = card-back language (the course)
   frontLangPrefix: "course.frontLang.", // + courseId; the card-front (prompt/hint) language
   placementDonePrefix: "course.placementDone.", // + courseId (LINGO-016)
+  onboardingSeen: "onboarding.seen", // global, not course-scoped (LINGO-017)
 };
 
 // MARK: i18n (app UI language) — LINGO-014
@@ -74,6 +75,18 @@ export function getPlacementDone(courseId: string): Promise<boolean> {
 
 export function setPlacementDone(courseId: string, done: boolean): Promise<void> {
   return setMeta(K.placementDonePrefix + courseId, done);
+}
+
+// MARK: onboarding (LINGO-017) — global "has the learner seen/skipped the
+// 5-screen intro" flag. Not course-scoped: it's app-level orientation, not
+// per-course progress.
+
+export function getOnboardingSeen(): Promise<boolean> {
+  return getMeta<boolean>(K.onboardingSeen, false);
+}
+
+export function setOnboardingSeen(seen: boolean): Promise<void> {
+  return setMeta(K.onboardingSeen, seen);
 }
 
 export async function getUnlockMinutes(): Promise<number> {

@@ -83,3 +83,12 @@ export function courseById(courseId: string): CourseMeta | undefined {
 export function resolveCourse(courseId: string | null | undefined): CourseMeta {
   return courseById(courseId ?? DEFAULT_COURSE_ID) ?? courseById(DEFAULT_COURSE_ID)!;
 }
+
+/** Auto-initial front (prompt) language for a course from the current UI
+ * language (LINGO-017 onboarding funnel: "表面言語はUI言語から自動初期値").
+ * Falls back to the course's own default when the UI language isn't one of
+ * its offered prompt languages (always true for a course's own target
+ * language, since availableFrontLangs never includes it). */
+export function frontLangFromUILang(course: CourseMeta, uiLang: Lang): Lang {
+  return course.availableFrontLangs.includes(uiLang) ? uiLang : course.defaultFrontLang;
+}

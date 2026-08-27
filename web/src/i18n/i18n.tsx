@@ -415,6 +415,89 @@ const M: Record<string, Entry> = {
     en: "Note: returning depends on the target app's URL scheme (go back manually if it won't open). Adding this to your home screen for standalone launch makes the interruption feel more natural.",
     ru: "Примечание: возврат зависит от URL-схемы приложения (если не открывается, вернитесь вручную). Добавьте на экран «Домой» для отдельного запуска — прерывание ощущается естественнее.",
   },
+
+  // -- onboarding (LINGO-017, design §3.5 — copy confirmed, used verbatim) --
+  "onboard.next": { ja: "次へ", en: "Next", ru: "Далее" },
+  "onboard.back": { ja: "戻る", en: "Back", ru: "Назад" },
+  "onboard.skip": { ja: "スキップ", en: "Skip", ru: "Пропустить" },
+
+  "onboard.screen1.title": {
+    ja: "単語帳の後ろ半分は、まだ要らない",
+    en: "You don't need the back half of the dictionary yet",
+    ru: "Вторая половина словаря пока не нужна",
+  },
+  "onboard.screen1.body": {
+    ja: "日常会話の85%は、最もよく使われる1,000語でできています。2,000語で90%、3,000語で約95%——ここまで来ると会話がストレスなく理解できる水準です（言語研究の実測値）。このアプリは、その順番どおりにだけ覚えます。",
+    en: "85% of everyday conversation is built from just the 1,000 most common words. 2,000 words gets you to 90%, and 3,000 to about 95% — the point where conversation stops feeling stressful to follow (based on real language research). This app teaches words in exactly that order.",
+    ru: "85% повседневной речи состоит всего из 1000 самых частых слов. 2000 слов дают 90%, а 3000 — около 95%: с этого уровня понимать речь становится комфортно (по данным лингвистических исследований). Это приложение учит слова именно в таком порядке.",
+  },
+
+  "onboard.screen2.title": {
+    ja: "あなたが既に知っている単語は、飛ばす",
+    en: "Words you already know get skipped",
+    ru: "Слова, которые вы уже знаете, пропускаются",
+  },
+  "onboard.screen2.body": {
+    ja: "最初に短いテストであなたの語彙の境界線を見つけます。知っている単語には時間を使いません。あなた専用の『まだ知らない重要語』リストだけが残ります。",
+    en: "A short test first finds the edge of your vocabulary. No time is spent on words you already know — what's left is your own list of important words you don't know yet.",
+    ru: "Сначала короткий тест находит границу вашего словарного запаса. Время не тратится на слова, которые вы уже знаете — остаётся только ваш личный список важных незнакомых слов.",
+  },
+
+  "onboard.screen3.title": {
+    ja: "忘れる直前に、もう一度会う",
+    en: "You'll see it again right before you forget",
+    ru: "Повторение — прямо перед тем, как забудете",
+  },
+  "onboard.screen3.body": {
+    ja: "人は覚えた直後から忘れ始めます。このアプリは一枚ごとに『あなたがいつ忘れそうか』を計算し、忘れる直前に再出題します（FSRSという記憶モデル）。復習のタイミングはすべて自動です。",
+    en: "We start forgetting the moment we learn something. This app calculates when you're about to forget each card and brings it back just in time (a memory model called FSRS). All review timing is automatic.",
+    ru: "Забывание начинается сразу после запоминания. Приложение рассчитывает, когда вы вот-вот забудете каждую карточку, и показывает её снова точно вовремя (модель памяти FSRS). Расписание повторений — полностью автоматическое.",
+  },
+
+  "onboard.screen4.title": {
+    ja: "新しい単語は、1文に1つだけ",
+    en: "Only one new word per sentence",
+    ru: "Только одно новое слово в предложении",
+  },
+  "onboard.screen4.body": {
+    ja: "知らない単語だらけの文は覚えられません。ここでは『ほぼ全部読めるのに、1語だけ新しい』文だけが出ます（未知語は最大でも2語まで）。文脈が新しい単語を記憶に固定します。",
+    en: "A sentence full of unknown words can't stick. Here you'll only see sentences that are almost entirely readable, with just one new word (at most two unknowns). Context is what locks a new word into memory.",
+    ru: "Предложение, полное незнакомых слов, не запомнится. Здесь вы увидите только предложения, которые почти полностью понятны, с одним новым словом (максимум два незнакомых). Контекст закрепляет новое слово в памяти.",
+  },
+
+  "onboard.screen5.title": {
+    ja: "スマホの誘惑を、学習に変える",
+    en: "Turn phone temptation into learning",
+    ru: "Превратите тягу к телефону в учёбу",
+  },
+  "onboard.screen5.body": {
+    ja: "SNSなどを開こうとしたタイミングでこのアプリが割り込み、数問答えるだけで元のアプリに戻れます（設定はあとからでも変更できます）。",
+    en: "When you open apps like social media, this app can step in first — answer a few questions and you're back to what you were doing (you can set this up anytime later).",
+    ru: "Когда вы открываете соцсети и подобные приложения, это приложение может ненадолго вмешаться — ответьте на несколько вопросов и вернётесь к своим делам (это можно настроить в любой момент позже).",
+  },
+  "onboard.screen5.cta": {
+    ja: "レベルチェックを始める",
+    en: "Start the level check",
+    ru: "Начать проверку уровня",
+  },
+
+  "onboard.course.title": {
+    ja: "何を学びますか？",
+    en: "What do you want to learn?",
+    ru: "Что вы хотите изучать?",
+  },
+  "onboard.course.frontNote": {
+    ja: "ヒントの言語はあなたのアプリ言語（{lang}）に自動で設定されます。設定からいつでも変更できます。",
+    en: "Hints will start in your app language ({lang}). You can change this anytime in Settings.",
+    ru: "Подсказки будут на языке приложения ({lang}). Это можно изменить в любой момент в настройках.",
+  },
+  "onboard.course.skip": { ja: "あとで選ぶ", en: "Choose later", ru: "Выбрать позже" },
+
+  "settings.viewOnboarding": {
+    ja: "アプリの説明を見る",
+    en: "View the app intro",
+    ru: "Посмотреть введение",
+  },
 };
 
 /** Exposed for the completeness test only (every key must carry ja/en/ru). */
