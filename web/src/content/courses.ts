@@ -48,14 +48,15 @@ export const COURSES: CourseMeta[] = [
     load: () => Promise.resolve(ruDeck as unknown as Deck),
   },
   {
-    // Phase B ships deck.en.json (NGSL) and flips this to:
-    //   status:"available", load: () => import("./deck.en.json").then(m => m.default as Deck)
+    // LINGO-015 (Phase B): NGSL-based English course, band1 core deck (1000
+    // words + 1000 target sentences). deck.en.json is a dynamic chunk — never
+    // fetched unless this course is actually selected.
     courseId: "en",
     targetLang: "en",
     availableFrontLangs: ["ja", "ru"],
     defaultFrontLang: "ja",
-    status: "coming-soon",
-    load: null,
+    status: "available",
+    load: () => import("./deck.en.json").then((m) => m.default as unknown as Deck),
   },
   {
     courseId: "ja",

@@ -3,14 +3,26 @@
 // import, lemma->word linking, band-from-filename) but emits JSON instead of a
 // SQLite DB, since the web build has no runtime SQLite.
 //
+// LINGO-015 (Phase B): generalized from a single RU-only builder into a
+// per-course builder. A "course" pack is produced by `buildDeck(dataDir,
+// deckConfig)`; RU_DECK/EN_DECK below are the two shipped configs. The word
+// and sentence JSONL schemas were ALREADY course-agnostic — both RU
+// (pipeline/data) and EN (pipeline/courses/en) JSONL use the same three
+// language-slot field names (ru/en/ja on Sentence; en_gloss/ja_gloss/ru_gloss
+// on Word) regardless of which language is the course's target — so no field
+// remapping is needed, just a different dataDir/output file/config per course.
+// The one genuinely course-specific piece is the token-count safety net
+// (LINGO-010), which must count words in the COURSE'S target-language field,
+// not always `.ru` — see targetLang-aware tokenizeCount below.
+//
 // Sources (globbed, like import.py:sentence_paths — the imported deck is picked
 // up automatically when LINGO-009 produces it):
-//   data/words_band*.jsonl
-//   data/sentences_band*.jsonl
-//   data/sentences_imported*.jsonl   (optional; band 1 by default)
+//   <dataDir>/words_band*.jsonl
+//   <dataDir>/sentences_band*.jsonl
+//   <dataDir>/sentences_imported*.jsonl   (optional; RU course only today)
 //
-// Exported `buildDeck(dataDir)` is unit-tested; the CLI at the bottom writes
-// the RU course pack src/content/deck.ru.json (LINGO-014).
+// Exported `buildDeck(dataDir, deckConfig)` is unit-tested; the CLI at the
+// bottom writes both course packs (deck.ru.json, deck.en.json).
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { globSync } from "node:fs";
@@ -18,23 +30,21 @@ import { fileURLToPath } from "node:url";
 import { dirname, join, basename } from "node:path";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const DEFAULT_DATA = join(HERE, "..", "..", "pipeline", "data");
-// LINGO-014: content is now shipped as per-course packs (deck.<courseId>.json)
-// so a new course is one added file + one registry line in src/content/courses.ts,
-// and only the active course's pack is loaded at runtime. This is the RU course
-// pack; its bytes are identical to the old deck.generated.json plus the course
-// config block below.
-const OUT = join(HERE, "..", "src", "content", "deck.ru.json");
+const PIPELINE = join(HERE, "..", "..", "pipeline");
+const CONTENT_DIR = join(HERE, "..", "src", "content");
 
-const DECK = {
+// LINGO-014 course config: the 3 language axes (design §1). courseId ==
+// targetLang (the 裏面 / language being learned). availableFrontLangs = which
+// prompt/gloss languages this pack ships (the 表面 the learner can pick from;
+// must never include targetLang). grammarMeta names the course-specific
+// grammar slot carried on words/sentences (RU = verb aspect, on Word;
+// EN = irregular-verb principal parts, inline in Sentence.note — see
+// LINGO-015). UI language (i18n) is independent of the pack — see src/i18n.
+export const RU_DECK = {
+  dataDir: join(PIPELINE, "data"),
+  outFile: join(CONTENT_DIR, "deck.ru.json"),
   code: "RU-from-EN",
   name: "Russian from English (frequency bands)",
-  // LINGO-014 course config: the 3 language axes (design §1). courseId ==
-  // targetLang (the 裏面 / language being learned). availableFrontLangs = which
-  // prompt/gloss languages this pack ships (the 表面 the learner can pick from;
-  // must never include targetLang). grammarMeta names the course-specific
-  // grammar slot carried on words (RU = verb aspect; EN would be irregular-verb
-  // forms). UI language (i18n) is independent of the pack — see src/i18n.
   courseId: "ru",
   targetLang: "ru",
   sourceLang: "en",
@@ -42,6 +52,24 @@ const DECK = {
   defaultFrontLang: "en",
   grammarMeta: "aspect",
 };
+
+// LINGO-015 (Phase B): NGSL-based English course. Data lives under
+// pipeline/courses/en/ (kept separate from pipeline/data/ so the RU course's
+// files/schema are never touched — design §2's "現行データ無干渉" invariant).
+export const EN_DECK = {
+  dataDir: join(PIPELINE, "courses", "en"),
+  outFile: join(CONTENT_DIR, "deck.en.json"),
+  code: "EN-from-JA-RU",
+  name: "English (NGSL frequency bands)",
+  courseId: "en",
+  targetLang: "en",
+  sourceLang: "ja",
+  availableFrontLangs: ["ja", "ru"],
+  defaultFrontLang: "ja",
+  grammarMeta: "irregular",
+};
+
+const DECKS = [RU_DECK, EN_DECK];
 
 function loadJsonl(path) {
   const rows = [];
@@ -63,13 +91,15 @@ function bandFromFilename(path) {
   return m ? parseInt(m[1], 10) : 1;
 }
 
-// Content-word token count of a RU string, punctuation excluded. Hyphenated
-// words (по-русски) and numbers count as a single token. This is intentionally
-// crude (no morphology) — it only needs to be a reasonable proxy for "how many
-// real words are in this sentence" so build-time unlinked-word detection
-// (LINGO-010 calibration bug fix) can tell a short core sentence from a long
-// lesson/note sentence with a low lemma-link rate.
-function tokenizeRuCount(text) {
+// Content-word token count of a string in the given language field,
+// punctuation excluded. Hyphenated words (по-русски / well-known) and numbers
+// count as a single token. This is intentionally crude (no morphology) — it
+// only needs to be a reasonable proxy for "how many real words are in this
+// sentence" so build-time unlinked-word detection (LINGO-010 calibration bug
+// fix) can tell a short core sentence from a long lesson/note sentence with a
+// low lemma-link rate. Course-agnostic: works on ru/en/ja text alike since it
+// only looks at Unicode letter/number runs.
+function tokenizeCount(text) {
   const matches = String(text ?? "").match(/[\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)*/gu);
   return matches ? matches.length : 0;
 }
@@ -79,10 +109,10 @@ function tokenizeRuCount(text) {
 // sentence back into the review queue regardless of new-card scoring or
 // length filtering — the review queue doesn't consult either. So instead of
 // scoring/filtering lesson-and-note sentences, drop them from the app deck
-// entirely: only kind='sentence' rows sourced from the LINGO-011 core deck
-// (identified by having a target_lemma — every T#### row has one, no other
-// source sets it) survive, plus every kind='word' card. "頻出1000単語を元に
-// 作成したフレーズだけにフォーカス" (Katsuta, 2026-08-26). Raw JSONL / SQLite
+// entirely: only kind='sentence' rows sourced from the LINGO-011/015 core
+// deck (identified by having a target_lemma — every core row has one, no
+// other source sets it) survive, plus every kind='word' card. "頻出1000単語を
+// 元に作成したフレーズだけにフォーカス" (Katsuta, 2026-08-26). Raw JSONL / SQLite
 // are left untouched for future reuse (band2/3 rollout etc.); only the web
 // deck is restricted.
 const MAX_SENTENCE_TOKENS = 8; // safety net only now — core rows are always ≤8 by construction.
@@ -96,7 +126,7 @@ function originCategory(path) {
   return "generated";
 }
 
-// Mirror import.py:word_paths — data/words_band<N>.jsonl only. Excludes
+// Mirror import.py:word_paths — <dataDir>/words_band<N>.jsonl only. Excludes
 // sidecar files like words_band1_aspects.jsonl (see wordAspectPaths), which
 // would otherwise also match a loose words_band*.jsonl glob and get parsed
 // as if it were a full word list (blanking out pos/rank/band via the ??
@@ -107,25 +137,28 @@ function wordPaths(dataDir) {
     .sort();
 }
 
-// LINGO-012: data/words_band<N>_aspects.jsonl — verb aspect + aspect_pair
+// LINGO-012: <dataDir>/words_band<N>_aspects.jsonl — verb aspect + aspect_pair
 // sidecar, applied on top of the base word list (mirrors import.py's
-// import_word_aspects UPDATE-only semantics: a lemma with no matching Word
-// is silently ignored here since buildDeck has no separate "unmatched" report
-// for this file — import.py is the source of truth for that warning).
+// import_word_aspects UPDATE-only semantics: a lemma with no matching Word is
+// silently ignored here since buildDeck has no separate "unmatched" report
+// for this file — import.py is the source of truth for that warning). RU
+// only today; the glob naturally finds nothing under the EN course's dataDir.
 function wordAspectPaths(dataDir) {
   return globSync(join(dataDir, "words_band*_aspects.jsonl"))
     .filter((p) => /^words_band\d+_aspects\.jsonl$/.test(basename(p)))
     .sort();
 }
 
-// Mirror import.py:sentence_paths — frequency bands + imported handwritten notes.
+// Mirror import.py:sentence_paths — frequency bands + imported handwritten
+// notes. The imported-notes glob is RU-only in practice today; it simply
+// matches nothing under the EN course's dataDir.
 function sentencePaths(dataDir) {
   const paths = globSync(join(dataDir, "sentences_band*.jsonl"));
   paths.push(...globSync(join(dataDir, "sentences_imported*.jsonl")));
   return paths.sort();
 }
 
-export function buildDeck(dataDir = DEFAULT_DATA) {
+export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
   const words = [];
   const lemmaToId = new Map();
   let nextWordId = 1;
@@ -147,8 +180,10 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
           pos: w.pos ?? "",
           enGloss: w.en_gloss ?? null,
           jaGloss: w.ja_gloss ?? null,
+          ruGloss: w.ru_gloss ?? null,
           // LINGO-012: filled in below from the words_band*_aspects.jsonl
-          // sidecar; null for non-verbs and verbs with no true telic partner.
+          // sidecar; null for non-verbs and verbs with no true telic partner,
+          // and for courses (EN) that don't carry a grammar sidecar at all.
           aspect: null,
           aspectPair: null,
         });
@@ -159,6 +194,7 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
         existing.pos = w.pos ?? "";
         existing.enGloss = w.en_gloss ?? null;
         existing.jaGloss = w.ja_gloss ?? null;
+        existing.ruGloss = w.ru_gloss ?? null;
       }
     }
   }
@@ -211,12 +247,14 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
       }
 
       const kind = s.kind ?? "sentence";
-      const tokenCount = tokenizeRuCount(s.ru);
+      // LINGO-015: count words in THIS course's target-language field
+      // (s.ru for RU, s.en for EN), not always s.ru.
+      const tokenCount = tokenizeCount(s[deckConfig.targetLang]);
       const isCore = s.target_lemma != null && String(s.target_lemma).trim() !== "";
 
       if (kind === "sentence") {
-        // Only LINGO-011 core sentences (target_lemma set) survive — every
-        // other sentence source (old band1 handwritten, imported notes,
+        // Only core sentences (target_lemma set) survive — every other
+        // sentence source (old RU band1 handwritten, imported notes,
         // imported lessons) is dropped regardless of length.
         if (!isCore) {
           excluded.total += 1;
@@ -240,18 +278,21 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
         en: s.en,
         ja: s.ja ?? null,
         kana: s.kana ?? null,
+        // Etymology/grammar note (RU) or irregular-verb principal parts in
+        // "go-went-gone" form (EN, LINGO-015) — same free-text field, course
+        // decides what it means.
         note: s.note ?? null,
         band: s.band ?? band,
         difficulty: s.difficulty ?? 1,
         source: s.source ?? "generated",
         kind,
-        // LINGO-011: the lemma this sentence is built to teach (quiz target).
+        // The lemma this sentence is built to teach (quiz target).
         targetLemma: s.target_lemma ?? null,
         wordIds,
         minRank,
-        // LINGO-010 fix: real RU content-word count, vs. wordIds.length (only
-        // successfully-linked lemmas) — the gap is "unlinked" words the
-        // calibration scorer can no longer ignore.
+        // LINGO-010 fix: real target-language content-word count, vs.
+        // wordIds.length (only successfully-linked lemmas) — the gap is
+        // "unlinked" words the calibration scorer can no longer ignore.
         tokenCount,
       });
     }
@@ -260,7 +301,14 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
   const bands = [...new Set(sentences.map((s) => s.band))].sort((a, b) => a - b);
 
   return {
-    ...DECK,
+    code: deckConfig.code,
+    name: deckConfig.name,
+    courseId: deckConfig.courseId,
+    targetLang: deckConfig.targetLang,
+    sourceLang: deckConfig.sourceLang,
+    availableFrontLangs: deckConfig.availableFrontLangs,
+    defaultFrontLang: deckConfig.defaultFrontLang,
+    grammarMeta: deckConfig.grammarMeta,
     bands,
     words,
     sentences,
@@ -274,13 +322,18 @@ export function buildDeck(dataDir = DEFAULT_DATA) {
   };
 }
 
-function main() {
-  const deck = buildDeck();
-  mkdirSync(dirname(OUT), { recursive: true });
-  writeFileSync(OUT, JSON.stringify(deck));
+function buildOne(deckConfig) {
+  const outName = basename(deckConfig.outFile);
+  if (!existsSync(deckConfig.dataDir)) {
+    console.warn(`  skip ${outName}: data dir not found (${deckConfig.dataDir})`);
+    return;
+  }
+  const deck = buildDeck(deckConfig.dataDir, deckConfig);
+  mkdirSync(dirname(deckConfig.outFile), { recursive: true });
+  writeFileSync(deckConfig.outFile, JSON.stringify(deck));
   const m = deck._meta;
   console.log(
-    `deck.ru.json: ${m.wordCount} words, ${m.sentenceCount} sentences ` +
+    `${outName}: ${m.wordCount} words, ${m.sentenceCount} sentences ` +
       `from [${m.sources.join(", ")}]` +
       (m.unmatchedLemmas ? ` (${m.unmatchedLemmas} unmatched lemmas)` : ""),
   );
@@ -294,13 +347,19 @@ function main() {
   }
 }
 
+function main() {
+  for (const deckConfig of DECKS) buildOne(deckConfig);
+}
+
 // CLI entry (skip when imported by a test).
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   main();
 }
 
-// Guard: fail loudly if the data dir is missing at CLI time.
-if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1] && !existsSync(DEFAULT_DATA)) {
-  console.error(`data dir not found: ${DEFAULT_DATA}`);
+// Guard: fail loudly if the RU data dir (the always-required default course)
+// is missing at CLI time. EN (and any future course) degrades gracefully via
+// buildOne's existsSync check above instead, since it's additive.
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1] && !existsSync(RU_DECK.dataDir)) {
+  console.error(`data dir not found: ${RU_DECK.dataDir}`);
   process.exit(1);
 }

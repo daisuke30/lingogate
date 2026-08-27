@@ -24,15 +24,15 @@ describe("course catalog", () => {
     expect(coursefront * UI_LANGS).toBe(18);
   });
 
-  it("ships RU as the only selectable course; EN/JA are coming-soon with no pack", () => {
-    const ru = courseById("ru")!;
-    expect(ru.status).toBe("available");
-    expect(ru.load).not.toBeNull();
-    for (const id of ["en", "ja"]) {
+  it("ships RU and EN as selectable courses (LINGO-015); JA is still coming-soon", () => {
+    for (const id of ["ru", "en"]) {
       const c = courseById(id)!;
-      expect(c.status).toBe("coming-soon");
-      expect(c.load).toBeNull(); // no pack referenced -> Vite build can't break
+      expect(c.status).toBe("available");
+      expect(c.load).not.toBeNull();
     }
+    const ja = courseById("ja")!;
+    expect(ja.status).toBe("coming-soon");
+    expect(ja.load).toBeNull(); // no pack referenced -> Vite build can't break
   });
 
   it("resolveCourse falls back to the default RU course for unknown/removed ids", () => {

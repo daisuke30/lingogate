@@ -11,6 +11,29 @@ import { resolveCourse } from "../content/courses";
 import { getTtsSettings } from "../state/settings";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
+import type { Lang } from "../i18n/i18n";
+
+// LINGO-015: was hardcoded to gloss.ru (the RU course's target field) with a
+// ja-then-en fallback for the hint line — fine while RU was the only course,
+// wrong for any other course's target text. Mirrors FlashcardCard's
+// sentenceLangText: which of ru/en/ja to show is course-agnostic.
+function sentenceLangText(s: Sentence, lang: Lang): string {
+  if (lang === "ja") return s.ja ?? s.en;
+  if (lang === "ru") return s.ru;
+  return s.en;
+}
+
+/** The example sentence's translation-hint line: first available field that
+ * isn't the target language itself, preferring ja then en then ru (matches
+ * the RU course's original ja-then-en preference). */
+function calibHintText(s: Sentence, targetLang: Lang): string | null {
+  for (const lang of ["ja", "en", "ru"] as const) {
+    if (lang === targetLang) continue;
+    const v = lang === "ja" ? s.ja : lang === "en" ? s.en : s.ru;
+    if (v) return v;
+  }
+  return null;
+}
 
 type Phase = "loading" | "run" | "done";
 
@@ -221,6 +244,9 @@ function CalibrationCard({
   const hint = drag.active && Math.abs(drag.x) >= THRESHOLD ? (drag.x > 0 ? "good" : "again") : null;
   const tx = drag.active ? drag.x : 0;
   const tilt = drag.active ? drag.x / 22 : 0;
+  const targetLangTyped: Lang = (targetLang as Lang) ?? "ru";
+  const glossTargetText = gloss ? sentenceLangText(gloss, targetLangTyped) : null;
+  const glossHintText = gloss ? calibHintText(gloss, targetLangTyped) : null;
 
   return (
     <div className="card-stage">
@@ -256,9 +282,8 @@ function CalibrationCard({
           <div className="ru">{word.lemma}</div>
           {revealed && gloss ? (
             <div className="calib-gloss">
-              <div className="g-ru">{gloss.ru}</div>
-              {gloss.ja && <div className="ja">{gloss.ja}</div>}
-              {!gloss.ja && <div className="ja">{gloss.en}</div>}
+              <div className="g-ru">{glossTargetText}</div>
+              {glossHintText && <div className="ja">{glossHintText}</div>}
             </div>
           ) : (
             gloss && <div className="hint">{t("calib.tapMeaning")}</div>

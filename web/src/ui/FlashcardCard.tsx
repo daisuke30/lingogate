@@ -15,10 +15,17 @@ export interface TtsProps {
   rate: number;
 }
 
-/** The card front text in the chosen prompt language (design §1: 表面の言語). */
-function frontText(sentence: Sentence, frontLang: Lang): string {
-  if (frontLang === "ja") return sentence.ja ?? sentence.en;
-  if (frontLang === "ru") return sentence.ru;
+/** A sentence's text in a given language field (design §1: 表面/裏面の言語are
+ * both just "which of ru/en/ja to show" — this is course-agnostic and used for
+ * BOTH the front (prompt) and the back (target/course language) text, e.g.
+ * RU course: front=sentenceLangText(s,"en"|"ja"), back=sentenceLangText(s,"ru").
+ * EN course: front=sentenceLangText(s,"ja"|"ru"), back=sentenceLangText(s,"en").
+ * LINGO-015: previously the back face and TTS hardcoded `sentence.ru` — fine
+ * while RU was the only course, but wrong for any other course's target text.
+ */
+function sentenceLangText(sentence: Sentence, lang: Lang): string {
+  if (lang === "ja") return sentence.ja ?? sentence.en;
+  if (lang === "ru") return sentence.ru;
   return sentence.en;
 }
 
@@ -65,9 +72,12 @@ export function FlashcardCard({
 
   useEffect(() => subscribeVoices(() => setHasVoice(voiceAvailable(targetLang))), [targetLang]);
 
+  const targetLangTyped: Lang = (targetLang as Lang) ?? "ru";
+  const back = sentenceLangText(sentence, targetLangTyped);
+
   // Speak the target-language back on flip — the flip tap is the user gesture iOS requires.
   function speakBack() {
-    if (tts?.enabled) speak(sentence.ru, targetLang, tts.rate);
+    if (tts?.enabled) speak(back, targetLang, tts.rate);
   }
   function flip() {
     setFlipped(true);
@@ -120,7 +130,7 @@ export function FlashcardCard({
     dir === "good" ? t("card.flick.good") : dir === "again" ? t("card.flick.again") : t("card.flick.hard");
   const showOverlay = drag.active && !!dir;
 
-  const front = frontText(sentence, frontLang);
+  const front = sentenceLangText(sentence, frontLang);
 
   return (
     <>
@@ -156,12 +166,19 @@ export function FlashcardCard({
                 🔊
               </button>
             )}
-            <div className="ru">{sentence.ru}</div>
+            {/* LINGO-015: was hardcoded to sentence.ru — the RU course's target
+                field. Generalized to whichever field the active course's
+                target language actually is (`back`), so a non-RU course (EN)
+                shows/speaks its own target text instead of the RU field. */}
+            <div className="ru">{back}</div>
             {sentence.kana && <div className="kana">{sentence.kana}</div>}
-            {/* The back also shows the front-language translation line (for ja/ru
-                prompts this is the learner's own language). Skip it when it would
-                duplicate the front text itself. */}
-            {frontLang !== "ja" && sentence.ja && <div className="ja">{sentence.ja}</div>}
+            {/* The back also shows the ja-field translation as a bonus reference
+                line (Katsuta reads Japanese natively) — skipped when it would
+                duplicate either the front prompt or the back target text
+                itself (frontLang/targetLang already ja). */}
+            {frontLang !== "ja" && targetLangTyped !== "ja" && sentence.ja && (
+              <div className="ja">{sentence.ja}</div>
+            )}
             {sentence.note && <div className="note">{sentence.note}</div>}
             {breakdown.length > 0 && <WordBreakdownList entries={breakdown} frontLang={frontLang} />}
             {showOverlay && (
