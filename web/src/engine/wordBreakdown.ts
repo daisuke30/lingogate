@@ -40,6 +40,32 @@ export function posLabel(pos: string): string {
   return POS_LABELS[pos] ?? pos;
 }
 
+const ASPECT_LABEL: Record<"pf" | "impf", string> = {
+  pf: "完了体",
+  impf: "不完了体",
+};
+
+/**
+ * Human-readable aspect line for a verb entry, with BOTH the head word and its
+ * pair explicitly labelled so it is never ambiguous which verb each aspect
+ * names (Katsuta feedback 2026-08-27: the old "不完了体 ⇔ 対: сделать" left the
+ * bare label floating — a reader could not tell whether it described the head
+ * word or its pair). The pair's aspect is derived as the opposite of the head's
+ * (an aspect pair is by definition one pf + one impf), so we never need to
+ * store it. e.g. "делать（不完了体） ⇔ 対: сделать（完了体）". A verb with no
+ * pair shows just its own labelled form ("быть（不完了体）"). Returns null for
+ * non-verbs / aspectless entries.
+ */
+export function formatAspectLine(
+  entry: Pick<WordBreakdownEntry, "lemma" | "aspect" | "aspectPair">,
+): string | null {
+  if (!entry.aspect) return null;
+  const own = `${entry.lemma}（${ASPECT_LABEL[entry.aspect]}）`;
+  if (!entry.aspectPair) return own;
+  const oppAspect = entry.aspect === "impf" ? "pf" : "impf";
+  return `${own} ⇔ 対: ${entry.aspectPair}（${ASPECT_LABEL[oppAspect]}）`;
+}
+
 export interface WordBreakdownEntry {
   lemma: string;
   pos: string;

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildWordBreakdown, posLabel } from "./wordBreakdown";
+import { buildWordBreakdown, formatAspectLine, posLabel } from "./wordBreakdown";
 import type { DeckWord } from "./content";
 
 function word(over: Partial<DeckWord> & { id: number; lemma: string; pos: string }): DeckWord {
@@ -78,5 +78,26 @@ describe("buildWordBreakdown (LINGO-012 card-back word list)", () => {
   it("posLabel falls back to the raw pos code for unmapped values", () => {
     expect(posLabel("verb")).toBe("動詞");
     expect(posLabel("xyz")).toBe("xyz");
+  });
+});
+
+describe("formatAspectLine (Katsuta 2026-08-27: label both head and pair)", () => {
+  it("labels both the head verb and its pair, deriving the pair's aspect as the opposite", () => {
+    expect(
+      formatAspectLine({ lemma: "делать", aspect: "impf", aspectPair: "сделать" }),
+    ).toBe("делать（不完了体） ⇔ 対: сделать（完了体）");
+    expect(
+      formatAspectLine({ lemma: "сказать", aspect: "pf", aspectPair: "говорить" }),
+    ).toBe("сказать（完了体） ⇔ 対: говорить（不完了体）");
+  });
+
+  it("shows only the head verb's own labelled aspect when there is no pair", () => {
+    expect(formatAspectLine({ lemma: "быть", aspect: "impf", aspectPair: null })).toBe(
+      "быть（不完了体）",
+    );
+  });
+
+  it("returns null for entries with no aspect (non-verbs)", () => {
+    expect(formatAspectLine({ lemma: "дом", aspect: null, aspectPair: null })).toBeNull();
   });
 });

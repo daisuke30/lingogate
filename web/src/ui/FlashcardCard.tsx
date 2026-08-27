@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
-import { buildWordBreakdown } from "../engine/wordBreakdown";
+import { buildWordBreakdown, formatAspectLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
 import { WORD_BY_ID } from "../state/service";
 import { ruVoiceAvailable, speakRu, subscribeVoices } from "../state/tts";
@@ -178,25 +178,23 @@ export function FlashcardCard({
 function WordBreakdownList({ entries }: { entries: WordBreakdownEntry[] }) {
   return (
     <div className="word-breakdown" onPointerDown={(e) => e.stopPropagation()}>
-      {entries.map((w) => (
+      {entries.map((w) => {
+        const aspectLine = formatAspectLine(w);
+        return (
         <div key={w.lemma} className={"wb-row" + (w.isTarget ? " target" : "")}>
           <div className="wb-head">
             <span className="wb-lemma">{w.lemma}</span>
             <span className="wb-pos">{w.posLabel}</span>
           </div>
-          {w.aspect && (
-            <div className="wb-aspect">
-              {w.aspect === "impf" ? "不完了体" : "完了体"}
-              {w.aspectPair && <> ⇔ 対: {w.aspectPair}</>}
-            </div>
-          )}
+          {aspectLine && <div className="wb-aspect">{aspectLine}</div>}
           {(w.enGloss || w.jaGloss) && (
             <div className="wb-gloss">
               {[w.enGloss, w.jaGloss].filter(Boolean).join(" / ")}
             </div>
           )}
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
