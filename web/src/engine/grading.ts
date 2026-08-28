@@ -1,10 +1,10 @@
-// Pure grading logic shared by FlashcardCard's flick gesture AND its
-// tap-to-grade buttons (LINGO-019), and by the analogous "can I submit a
-// judgement right now" question elsewhere. Split out so the gating rule and
-// the direction->Rating mapping are unit-testable without a DOM — this repo
-// has no React component-render test setup (no @testing-library/react; every
-// existing UI test targets a pure engine/state function instead), so this is
-// the same pattern applied to the new tap-grading behaviour.
+// Pure interaction logic for FlashcardCard (LINGO-019): the rating gate +
+// direction->Rating mapping shared by the flick gesture and the tap-to-grade
+// buttons, plus the repeatable flip-toggle state machine (tap flips either
+// direction, any number of times, but the 1.5s reveal-lock timer arms only
+// once). Split out because this repo has no component-render test setup (no
+// @testing-library/react — every existing UI test targets a pure engine/state
+// function instead), so this is how these behaviours get tested at all.
 
 import { Rating } from "./fsrs";
 
@@ -26,4 +26,43 @@ export function ratingForDirection(dir: FlickDirection): Rating {
  */
 export function canGradeNow(flipped: boolean, lockElapsed: boolean): boolean {
   return flipped && lockElapsed;
+}
+
+// -- Repeatable flip toggle (LINGO-019 follow-up: tap flips either direction,
+// any number of times) --------------------------------------------------
+
+export interface FlipLockState {
+  flipped: boolean;
+  /** Has the once-only reveal-lock timer ever been started for this card? */
+  lockArmed: boolean;
+}
+
+export interface FlipToggleResult {
+  next: FlipLockState;
+  /** True exactly once per card: the very first transition to the back.
+   * FlashcardCard starts its 1.5s anti-gate-skip timer only when this is
+   * true — flipping back to the front and back again must NOT re-lock
+   * (canEval, once unlocked, stays unlocked for the rest of the card). */
+  shouldArmLock: boolean;
+  /** True on every transition to the back (including re-flips) — each tap is
+   * its own valid user gesture, so the read-aloud repeats on request. */
+  shouldSpeak: boolean;
+}
+
+export const INITIAL_FLIP_STATE: FlipLockState = { flipped: false, lockArmed: false };
+
+/** Pure state transition for one tap-to-toggle. See FlipToggleResult's field
+ * docs for exactly what each flag means and why. */
+export function applyFlipToggle(state: FlipLockState): FlipToggleResult {
+  const flipped = !state.flipped;
+  if (!flipped) {
+    // Flipping back to the front arms/speaks nothing; lockArmed is a one-way
+    // latch and is never reset by going back to the front.
+    return { next: { flipped, lockArmed: state.lockArmed }, shouldArmLock: false, shouldSpeak: false };
+  }
+  return {
+    next: { flipped, lockArmed: true },
+    shouldArmLock: !state.lockArmed,
+    shouldSpeak: true,
+  };
 }

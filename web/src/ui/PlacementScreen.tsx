@@ -328,7 +328,10 @@ function PlacementCard({
     if (Math.abs(dx) >= THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
       onJudge(dx > 0); // right = known
     } else if (Math.hypot(dx, dy) < 12 && hasReveal) {
-      setRevealed(true); // a tap reveals meaning + example
+      // LINGO-019: tap toggles the reveal (repeatable) — no canEvaluate-style
+      // lock here since judging was never gated on having revealed anything
+      // ("recognising it at a glance IS the known signal").
+      setRevealed((r) => !r);
     }
   }
 

@@ -3,7 +3,8 @@ import type { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
 import { buildWordBreakdown, formatAspectLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
-import { canGradeNow, ratingForDirection } from "../engine/grading";
+import { INITIAL_FLIP_STATE, applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
+import type { FlipLockState } from "../engine/grading";
 import { WORD_BY_ID } from "../state/service";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
@@ -55,34 +56,50 @@ export function FlashcardCard({
   frontLang?: Lang;
 }) {
   const t = useT();
-  const [flipped, setFlipped] = useState(false);
+  // LINGO-019: flipped + "has the reveal-lock timer ever armed" live together
+  // as one FlipLockState, advanced only via the pure applyFlipToggle() (see
+  // engine/grading.ts) — tap flips either direction, any number of times, but
+  // the timer arms at most once per card (toggling back to the front must
+  // NOT re-lock canEval once it's unlocked).
+  const [flipState, setFlipState] = useState<FlipLockState>(INITIAL_FLIP_STATE);
+  const flipped = flipState.flipped;
   const [canEval, setCanEval] = useState(false);
   const [drag, setDrag] = useState({ x: 0, y: 0, active: false });
   const [hasVoice, setHasVoice] = useState(false);
   const start = useRef<{ x: number; y: number } | null>(null);
+  // Timer id only — its lifecycle is unmount-only (see the cleanup effect
+  // below), deliberately NOT tied to `flipped` churn from re-flipping.
+  const lockTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   // LINGO-012: word-by-word breakdown (原形・品詞・体と対・訳) for the back face.
   const breakdown = useMemo(() => buildWordBreakdown(sentence, WORD_BY_ID), [sentence]);
 
-  // Arm evaluation 1.5s after the flip (per card — component remounts by key).
+  // Unmount-only cleanup for the one-shot unlock timer — see lockTimerRef.
   useEffect(() => {
-    if (!flipped) return;
-    setCanEval(false);
-    const t = setTimeout(() => setCanEval(true), FLICK_LOCK_MS);
-    return () => clearTimeout(t);
-  }, [flipped]);
+    return () => {
+      if (lockTimerRef.current) clearTimeout(lockTimerRef.current);
+    };
+  }, []);
 
   useEffect(() => subscribeVoices(() => setHasVoice(voiceAvailable(targetLang))), [targetLang]);
 
   const targetLangTyped: Lang = (targetLang as Lang) ?? "ru";
   const back = sentenceLangText(sentence, targetLangTyped);
 
-  // Speak the target-language back on flip — the flip tap is the user gesture iOS requires.
+  // Speak the target-language back on flip — the flip tap is the user gesture
+  // iOS requires. Fires on every flip-to-back (including a re-flip after
+  // toggling to the front), not just the first — each tap is its own valid
+  // gesture, and repeating the read-aloud on request is a welcome side effect
+  // of the toggle, not a regression.
   function speakBack() {
     if (tts?.enabled) speak(back, targetLang, tts.rate);
   }
-  function flip() {
-    setFlipped(true);
-    speakBack();
+
+  // LINGO-019: tap flips the card either direction, any number of times.
+  function toggleFlip() {
+    const { next, shouldArmLock, shouldSpeak } = applyFlipToggle(flipState);
+    setFlipState(next);
+    if (shouldArmLock) lockTimerRef.current = setTimeout(() => setCanEval(true), FLICK_LOCK_MS);
+    if (shouldSpeak) speakBack();
   }
 
   const dir = directionOf(drag.x, drag.y, 28); // visual hint threshold
@@ -117,13 +134,16 @@ export function FlashcardCard({
     const dx = e.clientX - s.x;
     const dy = e.clientY - s.y;
     const moved = Math.hypot(dx, dy);
+    setDrag({ x: 0, y: 0, active: false });
 
-    if (!flipped) {
-      if (moved < 12) flip(); // a tap flips (+ auto read-aloud)
+    // LINGO-019: a plain tap toggles the flip either direction, any number of
+    // times (a drag on the front face still does nothing — front never rates).
+    if (moved < 12) {
+      toggleFlip();
       return;
     }
+    if (!flipped) return;
     const d = directionOf(dx, dy, THRESHOLD); // commit threshold
-    setDrag({ x: 0, y: 0, active: false });
     if (d) rate(d);
   }
 
