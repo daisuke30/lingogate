@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Rating } from "../engine/fsrs";
+import type { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
 import { buildWordBreakdown, formatAspectLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
+import { canGradeNow, ratingForDirection } from "../engine/grading";
 import { WORD_BY_ID } from "../state/service";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
@@ -85,7 +86,18 @@ export function FlashcardCard({
   }
 
   const dir = directionOf(drag.x, drag.y, 28); // visual hint threshold
-  const canFlick = flipped && canEval;
+  const canFlick = canGradeNow(flipped, canEval);
+
+  // LINGO-019: the single rating entry point — both the flick release below
+  // and each tap-to-grade legend button call this, so there is exactly one
+  // code path from "learner decided" to onRate() (undo, Again requeueing,
+  // FSRS all live downstream of onRate and never know which input method fired).
+  // Gate + direction->Rating mapping both delegate to engine/grading.ts so
+  // they're covered by grading.test.ts (no DOM/component test setup here).
+  function rate(d: Exclude<Dir, null>) {
+    if (!canFlick) return;
+    onRate(ratingForDirection(d));
+  }
 
   function onPointerDown(e: React.PointerEvent) {
     (e.target as Element).setPointerCapture?.(e.pointerId);
@@ -112,9 +124,7 @@ export function FlashcardCard({
     }
     const d = directionOf(dx, dy, THRESHOLD); // commit threshold
     setDrag({ x: 0, y: 0, active: false });
-    if (canFlick && d) {
-      onRate(d === "again" ? Rating.Again : d === "hard" ? Rating.Hard : Rating.Good);
-    }
+    if (d) rate(d);
   }
 
   // Compose flip rotation + live drag translate/rotate.
@@ -191,16 +201,37 @@ export function FlashcardCard({
         </div>
       </div>
 
+      {/* LINGO-019: these chips ARE the legend (label + flick-direction hint)
+          AND the tap-to-grade buttons — Katsuta asked for tap grading, and
+          since the legend already showed the exact same 3 labels/colours,
+          duplicating a second button row underneath would just repeat it.
+          Disabled (native `disabled` + the existing `.locked` dimming) until
+          canFlick, exactly like the flick gesture's own gate. */}
       <div className={"legend" + (canFlick ? "" : " locked")}>
-        <div className={"chip again" + (dir === "again" ? " hot" : "")}>
+        <button
+          type="button"
+          className={"chip again" + (dir === "again" ? " hot" : "")}
+          disabled={!canFlick}
+          onClick={() => rate("again")}
+        >
           {t("card.flick.again")}<span className="dir">{t("card.dir.left")}</span>
-        </div>
-        <div className={"chip hard" + (dir === "hard" ? " hot" : "")}>
+        </button>
+        <button
+          type="button"
+          className={"chip hard" + (dir === "hard" ? " hot" : "")}
+          disabled={!canFlick}
+          onClick={() => rate("hard")}
+        >
           {t("card.flick.hard")}<span className="dir">{t("card.dir.down")}</span>
-        </div>
-        <div className={"chip good" + (dir === "good" ? " hot" : "")}>
+        </button>
+        <button
+          type="button"
+          className={"chip good" + (dir === "good" ? " hot" : "")}
+          disabled={!canFlick}
+          onClick={() => rate("good")}
+        >
           {t("card.flick.good")}<span className="dir">{t("card.dir.right")}</span>
-        </div>
+        </button>
       </div>
     </>
   );

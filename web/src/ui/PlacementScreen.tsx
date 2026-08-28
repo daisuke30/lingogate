@@ -261,15 +261,20 @@ export function PlacementScreen({ onExit }: { onExit: () => void }) {
           onJudge={(known) => judge(word, known)}
         />
 
+        {/* LINGO-019: same tap-to-grade treatment as FlashcardCard's legend —
+            these chips double as the legend and the buttons, calling the
+            exact same judge() the swipe gesture uses. No canEvaluate-style
+            gate here: unlike the quiz's anti-gate-skip lock (LINGO-007),
+            placement isn't guarding a gate, so there's nothing to debounce. */}
         <div className="legend two">
-          <div className="chip again">
+          <button type="button" className="chip again" onClick={() => judge(word, false)}>
             {t("calib.legend.unknown")}
             <span className="dir">{t("card.dir.left")}</span>
-          </div>
-          <div className="chip good">
+          </button>
+          <button type="button" className="chip good" onClick={() => judge(word, true)}>
             {t("calib.legend.known")}
             <span className="dir">{t("card.dir.right")}</span>
-          </div>
+          </button>
         </div>
       </div>
     </div>

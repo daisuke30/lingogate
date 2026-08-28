@@ -472,7 +472,11 @@ button {
 .legend.two {
   grid-template-columns: repeat(2, 1fr);
 }
+/* LINGO-019: chips are <button>s (tap-to-grade) as well as the flick legend —
+ * width:100% guards against a <button>'s intrinsic sizing overriding the
+ * grid's default item-stretch behaviour. */
 .legend .chip {
+  width: 100%;
   padding: 11px 8px;
   border-radius: var(--radius-sm);
   text-align: center;
@@ -489,6 +493,22 @@ button {
   color: var(--ink-faint);
   font-weight: 600;
   margin-top: 2px;
+}
+/* Baseline (non-dragging) colour accent, so each button is identifiable by
+ * colour at rest — not just while mid-flick (LINGO-019: "色はフリック中の
+ * オーバーレイ色と同じ"). The stronger filled .hot state below still layers
+ * on top during an active flick drag. */
+.legend .chip.again {
+  color: var(--again);
+  border-color: color-mix(in srgb, var(--again) 40%, var(--line));
+}
+.legend .chip.hard {
+  color: var(--hard);
+  border-color: color-mix(in srgb, var(--hard) 40%, var(--line));
+}
+.legend .chip.good {
+  color: var(--good);
+  border-color: color-mix(in srgb, var(--good) 40%, var(--line));
 }
 .legend .chip.again.hot {
   color: #fff;
@@ -507,6 +527,12 @@ button {
 }
 .legend.locked {
   opacity: 0.45;
+}
+.legend .chip:disabled {
+  cursor: default;
+}
+.legend .chip:not(:disabled):active {
+  transform: scale(0.96);
 }
 .quiz-foot {
   margin-top: 16px;
