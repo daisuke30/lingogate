@@ -45,6 +45,90 @@ export const MAX_BLOCKS = MAX_QUESTIONS / BLOCK_SIZE;
 export const BEGINNER_MAX_KNOWN_IN_BLOCK1 = 1;
 
 const DEFAULT_MAX_RANK = 3000;
+
+// --- Super-function-word exclusion (LINGO-018, Katsuta feedback 2026-08-28) --
+//
+// "a", "the", "be" showed up as placement-test items during his first EN
+// look — swiping on them wastes a question, since virtually every learner
+// "knows" them regardless of actual level (near-zero diagnostic signal).
+// Excluded from the placement CANDIDATE POOL only (never from regular
+// sentence-based study, and never from the fitting/sampling *math* below,
+// which is unchanged — see placementCandidates()):
+//
+//  - prepositions / conjunctions / pronouns / particles, always, within the
+//    top SUPER_FUNCTION_WORD_MAX_RANK ranks. Safe as a blanket POS rule:
+//    these categories are near-universally maximally-frequent function words
+//    with no real "do I know this" signal at the very top of any frequency
+//    list, in every course (RU's "и"/"в"/"я" behave identically to EN's
+//    "and"/"of"/"it").
+//  - a small explicit lemma denylist for articles and copula/auxiliary/modal
+//    verbs, deliberately NOT a blanket POS rule: our POS taxonomy has no
+//    "aux" tag (English "be"/"will"/"can" are tagged pos="verb", same as
+//    genuinely diagnostic content verbs like "know"/"get"/"think" — a
+//    blanket verb exclusion would wrongly drop those). Determiners have the
+//    same problem from the other direction: EN "the"/"a" are empty articles,
+//    but RU's rank-42..50 determiners ("мой"/"свой"/"наш"...) are meaningful
+//    possessives a learner may genuinely not know, so pos="det" is NOT
+//    blanket-excluded either. RU's "быть" (copula, rank 6) gets the same
+//    treatment as EN's "be" — same grammatical role, same "同じ基準をRUにも
+//    適用" instruction.
+export const SUPER_FUNCTION_WORD_MAX_RANK = 50;
+
+const ALWAYS_EXCLUDED_POS = new Set(["prep", "conj", "pron", "part"]);
+
+const ARTICLE_AND_COPULA_LEMMAS = new Set([
+  // EN articles
+  "a",
+  "the",
+  // EN copula / auxiliary / modal verbs (pos="verb" in our taxonomy)
+  "be",
+  "do",
+  "have",
+  "will",
+  "would",
+  "can",
+  "could",
+  "should",
+  "must",
+  "shall",
+  "might",
+  // RU copula — same functional role as EN "be".
+  "быть",
+]);
+
+export interface CandidateWord {
+  lemma: string;
+  pos: string;
+  rank: number | null;
+}
+
+/** True for a word that carries ~zero diagnostic value as an isolated
+ * placement-test item — see the module doc comment above for the exact rule
+ * and its reasoning. */
+export function isSuperFunctionWord(word: CandidateWord): boolean {
+  const rank = word.rank ?? Number.MAX_SAFE_INTEGER;
+  if (rank > SUPER_FUNCTION_WORD_MAX_RANK) return false;
+  if (ALWAYS_EXCLUDED_POS.has(word.pos)) return true;
+  return ARTICLE_AND_COPULA_LEMMAS.has(word.lemma.toLowerCase());
+}
+
+/**
+ * The placement test's candidate pool: every ranked word minus super-function
+ * words. This is the ONLY place they're filtered — fitPlacement's fitting
+ * math and the block-ranks math below are completely unchanged; they simply
+ * never see these lemmas because they're absent from the RankedWord[] pool
+ * passed in (by callers such as state/placement.ts, which builds this from
+ * the full course word list). The *full*, unfiltered word list is still used
+ * separately for finalizePlacement's known/unknown write-out, so "the"/"be"/
+ * "a" still end up correctly auto-classified (typically assumed-known) even
+ * though they were never directly asked.
+ */
+export function placementCandidates(words: CandidateWord[]): RankedWord[] {
+  return words
+    .filter((w): w is CandidateWord & { rank: number } => w.rank != null && !isSuperFunctionWord(w))
+    .map((w) => ({ lemma: w.lemma, rank: w.rank }))
+    .sort((a, b) => a.rank - b.rank);
+}
 const EPS = 1e-6;
 const Z_95 = 1.96;
 
@@ -194,11 +278,25 @@ export function estimatedMasteredCount(fit: PlacementFit): number {
   return Math.round(fit.theta);
 }
 
-/** Block 1's fixed screening set: 10 words at log-equal rank intervals from 1
- * to maxRank (§3.1 step 1). Deterministic — no RNG. */
-export function block1TargetRanks(maxRank: number = DEFAULT_MAX_RANK, n: number = BLOCK_SIZE): number[] {
-  const minX = Math.log(1);
-  const maxX = Math.log(Math.max(2, maxRank));
+/** Block 1's starting rank (LINGO-018): the super-function-word exclusion
+ * already keeps rank <1..50> items out of the candidate pool, so starting
+ * block 1's log-spaced sampling at rank 1 would waste several of its 10
+ * points on a region where most words are filtered out anyway (they'd just
+ * collapse onto the handful of surviving low-rank content words). Starting
+ * at 50 spreads block 1 across ranks that are actually eligible to be asked. */
+export const BLOCK1_MIN_RANK = SUPER_FUNCTION_WORD_MAX_RANK;
+
+/** Block 1's fixed screening set: 10 words at log-equal rank intervals from
+ * BLOCK1_MIN_RANK to maxRank (§3.1 step 1, range adjusted per LINGO-018).
+ * Deterministic — no RNG. */
+export function block1TargetRanks(
+  maxRank: number = DEFAULT_MAX_RANK,
+  n: number = BLOCK_SIZE,
+  minRank: number = BLOCK1_MIN_RANK,
+): number[] {
+  const lo = clamp(minRank, 1, maxRank);
+  const minX = Math.log(lo);
+  const maxX = Math.log(Math.max(lo + 1, maxRank));
   const ranks = new Set<number>();
   for (const x of linspace(minX, maxX, n)) {
     ranks.add(clamp(Math.round(Math.exp(x)), 1, maxRank));

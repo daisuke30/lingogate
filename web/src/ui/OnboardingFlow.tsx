@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { advanceOnboarding } from "../engine/onboarding";
-import { COURSES } from "../content/courses";
+import { COURSES, frontLangFromUILang } from "../content/courses";
 import { completeOnboardingWithCourse, markOnboardingSeen } from "../state/onboarding";
-import { NATIVE_LANG_NAME, langName, useI18n } from "../i18n/i18n";
+import { NATIVE_LANG_NAME, UI_LANGS, langName, useI18n } from "../i18n/i18n";
+import type { Lang } from "../i18n/i18n";
+
+/** Compact codes for the screen-1 corner language switch — NATIVE_LANG_NAME's
+ * full words ("日本語"/"Русский") are too wide for a small top-corner control. */
+const LANG_SHORT: Record<Lang, string> = { ja: "JA", en: "EN", ru: "RU" };
 
 /**
  * First-run onboarding (LINGO-017): 5 static screens explaining the app's
@@ -25,9 +30,14 @@ export function OnboardingFlow({
   origin: "firstRun" | "settings";
   onFinish: (dest: "home" | "placement" | "settings") => void;
 }) {
-  const { lang, t } = useI18n();
+  const { lang, setLang, t } = useI18n();
   const [phase, setPhase] = useState<"intro" | "course">("intro");
   const [screenIndex, setScreenIndex] = useState(0);
+  // LINGO-018: course-select is now two steps in one screen — pick a course,
+  // then confirm/override its front (hint) language — instead of jumping
+  // straight to placement on course tap.
+  const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
+  const [frontLang, setFrontLangChoice] = useState<Lang | null>(null);
 
   async function leaveToHome() {
     await markOnboardingSeen(true);
@@ -53,12 +63,23 @@ export function OnboardingFlow({
     setScreenIndex(result);
   }
 
-  async function pickCourse(courseId: string) {
-    await completeOnboardingWithCourse(courseId, lang);
+  function selectCourse(courseId: string) {
+    const course = COURSES.find((c) => c.courseId === courseId);
+    if (!course || course.status !== "available") return;
+    setSelectedCourseId(courseId);
+    // Auto-initial suggestion from the current UI language; the learner can
+    // still override it below before confirming.
+    setFrontLangChoice(frontLangFromUILang(course, lang));
+  }
+
+  async function confirmCourse() {
+    if (!selectedCourseId || !frontLang) return;
+    await completeOnboardingWithCourse(selectedCourseId, frontLang);
     onFinish("placement");
   }
 
   if (phase === "course") {
+    const selectedCourse = COURSES.find((c) => c.courseId === selectedCourseId) ?? null;
     return (
       <div className="app">
         <div className="onboard">
@@ -70,11 +91,11 @@ export function OnboardingFlow({
           <div className="onboard-body">
             <div className="big-emoji">🌐</div>
             <h1>{t("onboard.course.title")}</h1>
-            <p>{t("onboard.course.frontNote", { lang: NATIVE_LANG_NAME[lang] })}</p>
           </div>
           <div className="list" style={{ marginTop: 8 }}>
             {COURSES.map((c) => {
               const available = c.status === "available";
+              const isSelected = selectedCourseId === c.courseId;
               return (
                 <div className="row" key={c.courseId}>
                   <div>
@@ -85,8 +106,11 @@ export function OnboardingFlow({
                     <div className="sub">{NATIVE_LANG_NAME[c.targetLang]}</div>
                   </div>
                   {available ? (
-                    <button className="btn primary" onClick={() => void pickCourse(c.courseId)}>
-                      {t("onboard.next")}
+                    <button
+                      className={isSelected ? "btn primary" : "btn ghost"}
+                      onClick={() => selectCourse(c.courseId)}
+                    >
+                      {isSelected ? t("badge.inUse") : t("common.on")}
                     </button>
                   ) : (
                     <button className="btn" disabled>
@@ -97,6 +121,34 @@ export function OnboardingFlow({
               );
             })}
           </div>
+
+          {selectedCourse && frontLang && (
+            <>
+              <div className="section-title">{t("settings.section.frontLang")}</div>
+              <div className="card">
+                <div className="row" style={{ padding: 0, background: "transparent" }}>
+                  <div>
+                    <div className="label">{t("settings.section.frontLang")}</div>
+                    <div className="sub">{t("onboard.course.frontNote", { lang: NATIVE_LANG_NAME[lang] })}</div>
+                  </div>
+                  <div className="seg">
+                    {selectedCourse.availableFrontLangs.map((l) => (
+                      <button
+                        key={l}
+                        className={frontLang === l ? "on" : ""}
+                        onClick={() => setFrontLangChoice(l)}
+                      >
+                        {NATIVE_LANG_NAME[l]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <button className="btn primary block" style={{ marginTop: 14 }} onClick={() => void confirmCourse()}>
+                {t("onboard.next")}
+              </button>
+            </>
+          )}
         </div>
       </div>
     );
@@ -108,6 +160,19 @@ export function OnboardingFlow({
     <div className="app">
       <div className="onboard">
         <div className="onboard-top">
+          {/* LINGO-018: UI language switch, screen 1 only — every later screen
+              (and the course-select step) inherits it automatically since
+              `lang` is app-wide context state; switching re-renders the
+              current screen's copy immediately. */}
+          {screenIndex === 0 && (
+            <div className="seg" style={{ marginRight: 8 }}>
+              {UI_LANGS.map((l) => (
+                <button key={l} className={lang === l ? "on" : ""} onClick={() => setLang(l)}>
+                  {LANG_SHORT[l]}
+                </button>
+              ))}
+            </div>
+          )}
           <button className="linkbtn" onClick={() => handleIntroAction("skip")}>
             {t("onboard.skip")}
           </button>

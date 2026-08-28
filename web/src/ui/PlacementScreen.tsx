@@ -12,7 +12,7 @@ import type { PlacementFit, PlacementResponse, RankedWord } from "../engine/plac
 import { finalizeAndPersistPlacement, loadPlacementContext, targetSentenceByLemma } from "../state/placement";
 import type { PlacementContext } from "../state/placement";
 import { masteryLevelThreshold } from "../engine/mastery";
-import type { Sentence } from "../engine/content";
+import type { DeckWord, Sentence } from "../engine/content";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
 import type { Lang } from "../i18n/i18n";
@@ -29,15 +29,22 @@ function sentenceLangText(s: Sentence, lang: Lang): string {
   return s.en;
 }
 
-/** The example sentence's translation-hint line: first available field that
- * isn't the target language itself. */
-function hintText(s: Sentence, targetLang: Lang): string | null {
-  for (const lang of ["ja", "en", "ru"] as const) {
-    if (lang === targetLang) continue;
-    const v = lang === "ja" ? s.ja : lang === "en" ? s.en : s.ru;
-    if (v) return v;
-  }
-  return null;
+/** LINGO-018: the word's own dictionary gloss ("意味"), ordered by front
+ * language with an English fallback — same front-language-first convention
+ * FlashcardCard's word-breakdown gloss uses. This is the reveal's PRIMARY
+ * line; the target-language example sentence is a separate, clearly-labelled
+ * secondary line (see PlacementCard) — previously the example sentence was
+ * shown alone with no meaning at all, reading as if the sentence itself were
+ * the word's definition. */
+function wordMeaning(word: DeckWord | undefined, frontLang: Lang): string | null {
+  if (!word) return null;
+  const order =
+    frontLang === "ja"
+      ? [word.jaGloss, word.enGloss, word.ruGloss]
+      : frontLang === "ru"
+        ? [word.ruGloss, word.enGloss, word.jaGloss]
+        : [word.enGloss, word.jaGloss, word.ruGloss];
+  return order.find((g): g is string => !!g) ?? null;
 }
 
 function levelLabel(t: (k: string, p?: Record<string, string | number>) => string, masteredCount: number): string {
@@ -228,6 +235,7 @@ export function PlacementScreen({ onExit }: { onExit: () => void }) {
   // phase === "block"
   const word = blockWords[idxInBlock];
   const gloss = glossRef.current.get(word.lemma) ?? null;
+  const deckWord = ctx.wordByLemma.get(word.lemma);
 
   return (
     <div className="app">
@@ -245,6 +253,7 @@ export function PlacementScreen({ onExit }: { onExit: () => void }) {
         <PlacementCard
           key={word.lemma}
           word={word}
+          meaning={wordMeaning(deckWord, ctx.frontLang)}
           gloss={gloss}
           hasVoice={hasVoice}
           targetLang={ctx.targetLang}
@@ -271,6 +280,7 @@ const THRESHOLD = 90;
 
 function PlacementCard({
   word,
+  meaning,
   gloss,
   hasVoice,
   targetLang,
@@ -278,6 +288,10 @@ function PlacementCard({
   onJudge,
 }: {
   word: RankedWord;
+  /** The word's own dictionary gloss ("意味"), front-language-ordered — see
+   * wordMeaning() above. Independent of `gloss` (the example sentence) so a
+   * band2/3 word with no example sentence can still reveal its meaning. */
+  meaning: string | null;
   gloss: Sentence | null;
   hasVoice: boolean;
   targetLang: Lang;
@@ -288,6 +302,7 @@ function PlacementCard({
   const [revealed, setRevealed] = useState(false);
   const [drag, setDrag] = useState({ x: 0, active: false });
   const start = useRef<{ x: number; y: number } | null>(null);
+  const hasReveal = !!meaning || !!gloss;
 
   function onPointerDown(e: React.PointerEvent) {
     (e.target as Element).setPointerCapture?.(e.pointerId);
@@ -307,16 +322,19 @@ function PlacementCard({
     const dy = e.clientY - s.y;
     if (Math.abs(dx) >= THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
       onJudge(dx > 0); // right = known
-    } else if (Math.hypot(dx, dy) < 12 && gloss) {
-      setRevealed(true); // a tap reveals the meaning hint
+    } else if (Math.hypot(dx, dy) < 12 && hasReveal) {
+      setRevealed(true); // a tap reveals meaning + example
     }
   }
 
   const hint = drag.active && Math.abs(drag.x) >= THRESHOLD ? (drag.x > 0 ? "good" : "again") : null;
   const tx = drag.active ? drag.x : 0;
   const tilt = drag.active ? drag.x / 22 : 0;
-  const glossTargetText = gloss ? sentenceLangText(gloss, targetLang) : null;
-  const glossHintText = gloss ? hintText(gloss, targetLang) : null;
+  // LINGO-018: the example sentence is ONLY ever the target-language text,
+  // clearly labelled "例:" — no bare parenthetical, no unlabelled second
+  // sentence guessing at translation (the old reveal showed the target
+  // sentence as if it were the word's meaning, with no meaning line at all).
+  const exampleText = gloss ? sentenceLangText(gloss, targetLang) : null;
 
   return (
     <div className="card-stage">
@@ -349,14 +367,20 @@ function PlacementCard({
               🔊
             </button>
           )}
+          {/* LINGO-018: front face is the word alone — nothing else ever
+              renders here, so an example sentence can never visually mix in. */}
           <div className="ru">{word.lemma}</div>
-          {revealed && gloss ? (
+          {revealed && hasReveal ? (
             <div className="calib-gloss">
-              <div className="g-ru">{glossTargetText}</div>
-              {glossHintText && <div className="ja">{glossHintText}</div>}
+              {meaning && <div className="g-ru">{meaning}</div>}
+              {exampleText && (
+                <div className="ja">
+                  {t("placement.card.example")} {exampleText}
+                </div>
+              )}
             </div>
           ) : (
-            gloss && <div className="hint">{t("calib.tapMeaning")}</div>
+            hasReveal && <div className="hint">{t("calib.tapMeaning")}</div>
           )}
           {hint && (
             <div

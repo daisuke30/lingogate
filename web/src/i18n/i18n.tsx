@@ -323,6 +323,11 @@ const M: Record<string, Entry> = {
   // Reuses calib.legend.*/calib.tapMeaning/calib.overlay.*/calib.exit — same
   // right=know/left=don't-know swipe card, so no separate labels needed there.
   "placement.blockLabel": { ja: "ブロック {n}", en: "Block {n}", ru: "Блок {n}" },
+  // LINGO-018 (Katsuta feedback 2026-08-28): reveal shows "意味" (this word's
+  // own gloss) then a clearly-labelled "例:" (example) line, instead of the
+  // old unlabelled example-sentence-only reveal that read like the sentence
+  // itself was the word's meaning.
+  "placement.card.example": { ja: "例:", en: "Example:", ru: "Пример:" },
   "placement.finalizing": {
     ja: "結果を保存中…",
     en: "Saving your results…",

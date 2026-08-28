@@ -1,10 +1,12 @@
 import { describe, it, expect } from "vitest";
 import {
   BEGINNER_MAX_KNOWN_IN_BLOCK1,
+  BLOCK1_MIN_RANK,
   BLOCK_SIZE,
   MAX_QUESTIONS,
   SEED_STABILITY_MAX_DAYS,
   SEED_STABILITY_MIN_DAYS,
+  SUPER_FUNCTION_WORD_MAX_RANK,
   adaptiveTargetRanks,
   block1TargetRanks,
   dispersedSeedStabilityDays,
@@ -12,9 +14,11 @@ import {
   finalizePlacement,
   fitPlacement,
   isBeginnerAfterBlock1,
+  isSuperFunctionWord,
+  placementCandidates,
   selectWordsForRanks,
 } from "./placement";
-import type { PlacementResponse, RankedWord } from "./placement";
+import type { CandidateWord, PlacementResponse, RankedWord } from "./placement";
 
 const MAX_RANK = 3000;
 
@@ -103,11 +107,15 @@ describe("estimatedMasteredCount", () => {
 // --- block ranks ---------------------------------------------------------------
 
 describe("block1TargetRanks", () => {
-  it("returns BLOCK_SIZE ascending, log-spaced ranks spanning ~1 to maxRank", () => {
+  it("returns BLOCK_SIZE ascending, log-spaced ranks spanning ~BLOCK1_MIN_RANK to maxRank (LINGO-018)", () => {
     const ranks = block1TargetRanks(MAX_RANK);
     expect(ranks.length).toBe(BLOCK_SIZE);
     expect(ranks).toEqual([...ranks].sort((a, b) => a - b));
-    expect(ranks[0]).toBeLessThanOrEqual(2);
+    // Starts at ~50 (BLOCK1_MIN_RANK), not ~1 — LINGO-018: avoids wasting
+    // block1 points in the super-function-word-filtered low-rank region.
+    expect(BLOCK1_MIN_RANK).toBe(50);
+    expect(ranks[0]).toBeGreaterThanOrEqual(BLOCK1_MIN_RANK - 2);
+    expect(ranks[0]).toBeLessThanOrEqual(BLOCK1_MIN_RANK + 5);
     expect(ranks[ranks.length - 1]).toBeGreaterThanOrEqual(MAX_RANK - 5);
     // log-spaced: gaps should grow, not stay constant (first gap << last gap).
     const firstGap = ranks[1] - ranks[0];
@@ -117,6 +125,84 @@ describe("block1TargetRanks", () => {
 
   it("is deterministic", () => {
     expect(block1TargetRanks(MAX_RANK)).toEqual(block1TargetRanks(MAX_RANK));
+  });
+
+  it("accepts a custom minRank (e.g. a course with no super-function-word issue)", () => {
+    const ranks = block1TargetRanks(MAX_RANK, BLOCK_SIZE, 1);
+    expect(ranks[0]).toBeLessThanOrEqual(2);
+  });
+});
+
+// --- super-function-word exclusion (LINGO-018) ------------------------------
+
+function cw(lemma: string, pos: string, rank: number | null): CandidateWord {
+  return { lemma, pos, rank };
+}
+
+describe("isSuperFunctionWord", () => {
+  it("excludes Katsuta's reported EN offenders: a, the, be", () => {
+    expect(isSuperFunctionWord(cw("the", "det", 1))).toBe(true);
+    expect(isSuperFunctionWord(cw("be", "verb", 2))).toBe(true);
+    expect(isSuperFunctionWord(cw("a", "det", 6))).toBe(true);
+  });
+
+  it("excludes prepositions/conjunctions/pronouns/particles within the top rank window", () => {
+    expect(isSuperFunctionWord(cw("and", "conj", 3))).toBe(true);
+    expect(isSuperFunctionWord(cw("of", "prep", 4))).toBe(true);
+    expect(isSuperFunctionWord(cw("it", "pron", 9))).toBe(true);
+    expect(isSuperFunctionWord(cw("to", "part", 5))).toBe(true);
+    // RU: и/в/я behave identically to EN's and/of/it.
+    expect(isSuperFunctionWord(cw("и", "conj", 1))).toBe(true);
+    expect(isSuperFunctionWord(cw("в", "prep", 2))).toBe(true);
+    expect(isSuperFunctionWord(cw("я", "pron", 5))).toBe(true);
+    // RU copula "быть" gets the same treatment as EN "be" (same basis applied to RU).
+    expect(isSuperFunctionWord(cw("быть", "verb", 6))).toBe(true);
+  });
+
+  it("does NOT exclude a diagnostic content verb just because it's pos=verb (no blanket verb rule)", () => {
+    expect(isSuperFunctionWord(cw("know", "verb", 41))).toBe(false);
+    expect(isSuperFunctionWord(cw("get", "verb", 43))).toBe(false);
+    expect(isSuperFunctionWord(cw("think", "verb", 47))).toBe(false);
+    expect(isSuperFunctionWord(cw("go", "verb", 31))).toBe(false);
+  });
+
+  it("does NOT exclude a meaningful determiner just because it's pos=det (no blanket det rule)", () => {
+    // EN demonstratives/quantifiers carry real signal, unlike bare articles.
+    expect(isSuperFunctionWord(cw("that", "det", 15))).toBe(false);
+    expect(isSuperFunctionWord(cw("this", "det", 19))).toBe(false);
+    // RU possessive determiners at rank 42-50 are genuine vocabulary, not empty articles.
+    expect(isSuperFunctionWord(cw("мой", "det", 46))).toBe(false);
+    expect(isSuperFunctionWord(cw("свой", "det", 43))).toBe(false);
+  });
+
+  it("never excludes anything past SUPER_FUNCTION_WORD_MAX_RANK, regardless of pos", () => {
+    expect(SUPER_FUNCTION_WORD_MAX_RANK).toBe(50);
+    expect(isSuperFunctionWord(cw("and", "conj", 51))).toBe(false);
+    expect(isSuperFunctionWord(cw("the", "det", 999))).toBe(false); // can't happen in practice, but the rule is rank-gated
+  });
+
+  it("treats a null rank as unranked (never excluded)", () => {
+    expect(isSuperFunctionWord(cw("and", "conj", null))).toBe(false);
+  });
+});
+
+describe("placementCandidates (LINGO-018 pool used to pick placement questions)", () => {
+  it("drops super-function words but keeps content words, sorted by rank", () => {
+    const pool = [
+      cw("the", "det", 1),
+      cw("be", "verb", 2),
+      cw("and", "conj", 3),
+      cw("dog", "noun", 900),
+      cw("know", "verb", 41),
+      cw("that", "det", 15),
+    ];
+    const out = placementCandidates(pool);
+    expect(out.map((w) => w.lemma)).toEqual(["that", "know", "dog"]);
+  });
+
+  it("drops words with a null rank (can't be placed on the log-rank axis)", () => {
+    const out = placementCandidates([cw("dog", "noun", 900), cw("orphan", "noun", null)]);
+    expect(out.map((w) => w.lemma)).toEqual(["dog"]);
   });
 });
 

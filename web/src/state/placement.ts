@@ -16,21 +16,33 @@ import { getAllReviewStates, getAllWordKnowledge, putReviewStates, putWordKnowle
 import { seedKnownReviewStatesForLemmas } from "../engine/calibration";
 import type { KnowledgeMap, WordKnowledge } from "../engine/calibration";
 import { FSRS } from "../engine/fsrs";
-import { finalizePlacement } from "../engine/placement";
+import { finalizePlacement, placementCandidates } from "../engine/placement";
 import type { PlacementFit, PlacementResponse, RankedWord } from "../engine/placement";
-import type { Sentence } from "../engine/content";
+import type { DeckWord, Sentence } from "../engine/content";
 
 const fsrs = new FSRS();
 
 export interface PlacementContext {
-  /** Full active-course word list (all bands), ascending rank, one entry per lemma. */
+  /** LINGO-018: the placement CANDIDATE pool only — super-function words
+   * ("a"/"the"/"be"...) are filtered out here so they're never asked as a
+   * question (see engine/placement.ts's placementCandidates doc comment).
+   * Ascending rank, one entry per lemma. */
   words: RankedWord[];
   maxRank: number;
   targetLang: Lang;
   frontLang: Lang;
   tts: TtsSettings;
+  /** Full DeckWord (gloss fields etc.) by lemma, for the placement card's
+   * "意味" (meaning) display (LINGO-018) — not filtered, covers every course
+   * word including the ones excluded from the candidate pool above. */
+  wordByLemma: Map<string, DeckWord>;
 }
 
+/** Full, UNFILTERED active-course word list (all bands), ascending rank, one
+ * entry per lemma. Used for finalizePlacement's known/unknown write-out
+ * (super-function words still need to end up correctly auto-classified, even
+ * though LINGO-018 excludes them from being directly asked — see
+ * finalizeAndPersistPlacement below). */
 function rankedCourseWords(): RankedWord[] {
   return DECK.words
     .filter((w): w is typeof w & { rank: number } => w.rank != null)
@@ -41,10 +53,18 @@ function rankedCourseWords(): RankedWord[] {
 export async function loadPlacementContext(): Promise<PlacementContext> {
   await ensureCourse();
   const course = resolveCourse(activeCourse());
-  const words = rankedCourseWords();
+  const words = placementCandidates(DECK.words);
   const maxRank = words.length ? words[words.length - 1].rank : 3000;
   const tts = await getTtsSettings();
-  return { words, maxRank, targetLang: course.targetLang, frontLang: activeFrontLanguage(), tts };
+  const wordByLemma = new Map(DECK.words.map((w) => [w.lemma, w]));
+  return {
+    words,
+    maxRank,
+    targetLang: course.targetLang,
+    frontLang: activeFrontLanguage(),
+    tts,
+    wordByLemma,
+  };
 }
 
 /** Example sentence teaching a lemma, for the placement card's optional
