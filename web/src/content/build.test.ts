@@ -13,25 +13,39 @@ describe("content build", () => {
     expect(deck.bands).toContain(1);
   });
 
-  it("LINGO-013: loads band2/3 vocab (3000-word frame) without adding non-band1 sentences", () => {
+  it("LINGO-013/LINGO-020: loads the ~3000-word frame (bands 1-3) plus a band4 retired pool", () => {
     const byBand: Record<number, number> = {};
     for (const w of deck.words) byBand[w.band] = (byBand[w.band] ?? 0) + 1;
-    expect(byBand[1]).toBe(1000);
-    expect(byBand[2]).toBe(1000);
-    expect(byBand[3]).toBe(1000);
-    expect(deck.words.length).toBe(3000);
-    // band2/3 are words-only for now — every shipped sentence is still band1.
-    expect(deck.sentences.every((s: any) => s.band === 1)).toBe(true);
-    // band2/3 words carry POS + glosses and don't collide with band1 lemmas.
-    const b1 = new Set(deck.words.filter((w: any) => w.band === 1).map((w: any) => w.lemma));
-    for (const w of deck.words.filter((w: any) => w.band !== 1)) {
-      expect(w.pos).toBeTruthy();
-      expect(b1.has(w.lemma)).toBe(false);
+    // LINGO-020 (OpenSubtitles spoken-frequency rebaseline): bands are no
+    // longer exactly 1000/1000/1000. ~57 new-inflow candidates were dropped
+    // during cleanup (pymorphy mis-lemmatisations, character names) and not
+    // backfilled — see pipeline/rebaseline/assemble_words.py docstring. band4
+    // is new: old band1-3 words retired by the rebaseline, kept (not
+    // deleted) so existing learner ReviewState/wordKnowledge still resolves.
+    expect(byBand[1]).toBe(998);
+    expect(byBand[2]).toBe(995);
+    expect(byBand[3]).toBe(967);
+    expect(byBand[4]).toBe(859);
+    expect(deck.words.length).toBe(998 + 995 + 967 + 859);
+    // Every band1-3 lemma is unique across the whole deck (no band4 collision).
+    const seen = new Set<string>();
+    for (const w of deck.words) {
+      expect(seen.has(w.lemma)).toBe(false);
+      seen.add(w.lemma);
     }
-    // Ranks are contiguous across the 3000-word frame.
-    const ranks = deck.words.map((w: any) => w.rank).sort((a: number, b: number) => a - b);
+    // Every band1-4 word carries POS + glosses.
+    for (const w of deck.words) {
+      expect(w.pos).toBeTruthy();
+    }
+    // Ranks span 1..3000 across bands 1-3 (not necessarily contiguous — see
+    // the ~40-word gap noted above); band4 words carry no rank (null).
+    const rankedWords = deck.words.filter((w: any) => w.band <= 3);
+    const ranks = rankedWords.map((w: any) => w.rank).sort((a: number, b: number) => a - b);
     expect(ranks[0]).toBe(1);
     expect(ranks[ranks.length - 1]).toBe(3000);
+    for (const w of deck.words.filter((w: any) => w.band === 4)) {
+      expect(w.rank).toBeNull();
+    }
   });
 
   it("links lemmas to word ids and computes a min covered rank", () => {
@@ -104,10 +118,14 @@ describe("content build", () => {
       expect(leaked).toEqual([]);
     });
 
-    it("keeps exactly the 1000 core sentences plus any word cards", () => {
+    it("keeps exactly the core sentences (1071 post-LINGO-020) plus any word cards", () => {
+      // LINGO-020: 1000 original T#### core sentences, retagged across bands
+      // 1-4 by their target_lemma's new band (stage4a), plus 71 new T1001+
+      // sentences for genuinely-new band1 words with no prior core sentence
+      // (stage4b) = 1071. See pipeline/rebaseline/retag_sentences.py.
       const core = deck.sentences.filter((s: any) => s.kind === "sentence");
       const words = deck.sentences.filter((s: any) => s.kind === "word");
-      expect(core.length).toBe(1000);
+      expect(core.length).toBe(1071);
       expect(deck.sentences.length).toBe(core.length + words.length);
     });
 
