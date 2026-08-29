@@ -10,7 +10,6 @@ new_rank	lemma	new_band	in_trki	source
 397	равно	1	False	subtitle
 398	мисс	1	False	subtitle
 420	нормально	1	False	subtitle
-448	наслать	1	False	subtitle
 452	волноваться	1	False	subtitle
 461	миссис	1	False	subtitle
 488	свидание	1	False	subtitle
@@ -94,7 +93,7 @@ new_rank	lemma	new_band	in_trki	source
 1089	сожалеть	2	False	subtitle
 1090	ублюдок	2	False	subtitle
 1091	колледж	2	False	subtitle
-1103	копа	2	False	subtitle
+1103	коп	2	False	subtitle
 1108	опаздывать	2	True	subtitle
 1113	здравствуй	2	False	subtitle
 1127	фбр	2	False	subtitle
@@ -525,7 +524,6 @@ new_rank	lemma	new_band	in_trki	source
 2386	туфля	3	False	subtitle
 2387	бля	3	False	subtitle
 2388	запустить	3	False	subtitle
-2390	коп	3	False	subtitle
 2398	сеньор	3	False	subtitle
 2402	подвести	3	False	subtitle
 2403	жених	3	False	subtitle
