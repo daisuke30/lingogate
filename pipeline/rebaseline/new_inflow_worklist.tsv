@@ -488,7 +488,6 @@ new_rank	lemma	new_band	in_trki	source
 2347	волшебный	3	False	subtitle
 2348	дракон	3	False	subtitle
 2349	осмотреть	3	False	subtitle
-2351	су	3	False	subtitle
 2352	прикрыть	3	False	subtitle
 2353	куда-нибудь	3	False	subtitle
 2360	отследить	3	False	subtitle
@@ -593,7 +592,6 @@ new_rank	lemma	new_band	in_trki	source
 2571	юбка	3	True	subtitle
 2573	страховка	3	False	subtitle
 2575	соврать	3	False	subtitle
-2576	кейся	3	False	subtitle
 2578	правосудие	3	False	subtitle
 2579	целоваться	3	False	subtitle
 2580	алиби	3	False	subtitle
@@ -805,12 +803,9 @@ new_rank	lemma	new_band	in_trki	source
 2969	шина	3	False	subtitle
 2970	деться	3	False	subtitle
 2971	учёба	3	False	subtitle
-2972	вика	3	False	subtitle
 2973	красавчик	3	False	subtitle
 2976	сейф	3	False	subtitle
 2977	поужинать	3	False	subtitle
-2979	роуз	3	False	subtitle
-2980	дать-ка	3	False	subtitle
 2981	жирный	3	False	subtitle
 2985	решётка	3	False	subtitle
 2988	веселие	3	False	subtitle
