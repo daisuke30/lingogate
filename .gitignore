@@ -7,3 +7,6 @@ ios/DerivedData/
 pipeline/notes/jpeg/
 pipeline/lingogate.db
 *.xcuserdata
+
+# LINGO-020 rebaseline: local venv only (raw data + scripts ARE committed)
+pipeline/rebaseline/.venv/
