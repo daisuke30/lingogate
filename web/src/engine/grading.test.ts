@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { Rating } from "./fsrs";
-import { INITIAL_FLIP_STATE, applyFlipToggle, canGradeNow, ratingForDirection } from "./grading";
-import type { FlipLockState } from "./grading";
+import { applyFlipToggle, canGradeNow, ratingForDirection } from "./grading";
 
 // LINGO-019: tap-to-grade buttons share this exact gate + mapping with the
 // flick gesture (FlashcardCard.tsx delegates to both instead of re-deriving
@@ -15,65 +14,39 @@ describe("ratingForDirection", () => {
   });
 });
 
-describe("canGradeNow (the tap-button + flick shared gate)", () => {
-  it("requires BOTH flipped and the post-flip lock elapsed", () => {
-    expect(canGradeNow(false, false)).toBe(false);
-    expect(canGradeNow(false, true)).toBe(false); // not flipped yet -> never gradable
-    expect(canGradeNow(true, false)).toBe(false); // flipped but still within the 1.5s freeze
-    expect(canGradeNow(true, true)).toBe(true);
+// LINGO-019 follow-up (Katsuta 2026-08-30, explicit instruction): grading is
+// now available on EITHER face — the front-face-only restriction is gone.
+// canGradeNow's only input is "has the anti-gate-skip timer elapsed", counted
+// from when the card was shown (component mount), not from any flip.
+describe("canGradeNow (the tap-button + flick shared gate, mount-timer only)", () => {
+  it("is exactly the elapsed-lock flag — flip state is no longer a factor", () => {
+    expect(canGradeNow(false)).toBe(false); // still within the 1.5s freeze
+    expect(canGradeNow(true)).toBe(true); // freeze elapsed -> gradable, front or back
   });
 });
 
-// LINGO-019 follow-up (Katsuta 2026-08-28): tap flips the card either
-// direction, any number of times, but the reveal-lock timer must arm only
-// once — flipping back to the front and back again must NOT re-lock canEval.
-describe("applyFlipToggle (repeatable flip, one-shot lock arming)", () => {
-  it("first flip to the back: arms the lock and speaks", () => {
-    const { next, shouldArmLock, shouldSpeak } = applyFlipToggle(INITIAL_FLIP_STATE);
-    expect(next).toEqual({ flipped: true, lockArmed: true });
-    expect(shouldArmLock).toBe(true);
-    expect(shouldSpeak).toBe(true);
+// LINGO-019 follow-up: tap flips the card either direction, any number of
+// times. The flip toggle itself no longer has any lock-arming side effect
+// (canGradeNow doesn't consult `flipped` at all anymore) — this pure function
+// only decides the next `flipped` value and whether to speak.
+describe("applyFlipToggle (repeatable flip, no lock-arming side effect)", () => {
+  it("flips front -> back and says to speak", () => {
+    const r = applyFlipToggle(false);
+    expect(r).toEqual({ flipped: true, shouldSpeak: true });
   });
 
-  it("flipping back to the front arms/speaks nothing, and does not reset lockArmed", () => {
-    const backState: FlipLockState = { flipped: true, lockArmed: true };
-    const { next, shouldArmLock, shouldSpeak } = applyFlipToggle(backState);
-    expect(next).toEqual({ flipped: false, lockArmed: true }); // lockArmed survives
-    expect(shouldArmLock).toBe(false);
-    expect(shouldSpeak).toBe(false);
+  it("flips back -> front and says not to speak", () => {
+    const r = applyFlipToggle(true);
+    expect(r).toEqual({ flipped: false, shouldSpeak: false });
   });
 
-  it("a second (and third) flip to the back never re-arms the lock, but still speaks each time", () => {
-    let state = INITIAL_FLIP_STATE;
-    let r = applyFlipToggle(state); // -> back, 1st time
-    expect(r.shouldArmLock).toBe(true);
-    state = r.next;
-
-    r = applyFlipToggle(state); // -> front
-    state = r.next;
-
-    r = applyFlipToggle(state); // -> back, 2nd time
-    expect(r.shouldArmLock).toBe(false); // THE regression this test guards against
-    expect(r.shouldSpeak).toBe(true); // read-aloud still repeats
-    expect(r.next).toEqual({ flipped: true, lockArmed: true });
-    state = r.next;
-
-    r = applyFlipToggle(state); // -> front again
-    state = r.next;
-    r = applyFlipToggle(state); // -> back, 3rd time
-    expect(r.shouldArmLock).toBe(false);
-  });
-
-  it("toggling many times in a row always alternates flipped and never unsets lockArmed once true", () => {
-    let state = INITIAL_FLIP_STATE;
+  it("alternates indefinitely across repeated toggles", () => {
+    let flipped = false;
     for (let i = 0; i < 8; i++) {
-      const before = state.flipped;
-      state = applyFlipToggle(state).next;
-      expect(state.flipped).toBe(!before);
-      if (before === false && state.flipped === true) {
-        // any transition to the back leaves (or keeps) the lock armed
-        expect(state.lockArmed).toBe(true);
-      }
+      const r = applyFlipToggle(flipped);
+      expect(r.flipped).toBe(!flipped);
+      expect(r.shouldSpeak).toBe(r.flipped); // speaks iff the new state is "back"
+      flipped = r.flipped;
     }
   });
 });

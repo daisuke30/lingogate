@@ -3,8 +3,7 @@ import type { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
 import { buildWordBreakdown, formatAspectLine, formatGenderLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
-import { INITIAL_FLIP_STATE, applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
-import type { FlipLockState } from "../engine/grading";
+import { applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
 import { WORD_BY_ID } from "../state/service";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
@@ -31,14 +30,16 @@ function sentenceLangText(sentence: Sentence, lang: Lang): string {
   return sentence.en;
 }
 
-const FLICK_LOCK_MS = 1500; // post-flip freeze (anti-gate-skip, LINGO-007)
+const FLICK_LOCK_MS = 1500; // anti-gate-skip freeze, counted from card display (LINGO-007, loosened LINGO-019)
 const THRESHOLD = 90; // px before a drag counts as a flick
 
 /**
  * One flashcard: front = EN prompt (EN gloss for kind='word'), tap flips to the
- * RU back (+ kana / JA). Flick right = Good, left = Again, down = Hard. Rating is
- * blocked until the card is flipped AND ~1.5s has passed since the flip (the two
- * gate-skip guards). `key`ed by card id upstream so state resets per card.
+ * RU back (+ kana / JA). Flick right = Good, left = Again, down = Hard — on
+ * EITHER face (LINGO-019 follow-up, 2026-08-30: grading no longer requires
+ * flipping first). Rating is blocked only until ~1.5s has passed since the
+ * card was shown (the anti-gate-skip guard). `key`ed by card id upstream so
+ * state resets per card.
  */
 export function FlashcardCard({
   sentence,
@@ -56,28 +57,26 @@ export function FlashcardCard({
   frontLang?: Lang;
 }) {
   const t = useT();
-  // LINGO-019: flipped + "has the reveal-lock timer ever armed" live together
-  // as one FlipLockState, advanced only via the pure applyFlipToggle() (see
-  // engine/grading.ts) — tap flips either direction, any number of times, but
-  // the timer arms at most once per card (toggling back to the front must
-  // NOT re-lock canEval once it's unlocked).
-  const [flipState, setFlipState] = useState<FlipLockState>(INITIAL_FLIP_STATE);
-  const flipped = flipState.flipped;
+  // LINGO-019: tap flips the card either direction, any number of times, via
+  // the pure applyFlipToggle() (see engine/grading.ts) — purely a face toggle
+  // now, with no side effect on grading availability (see canEval below).
+  const [flipped, setFlipped] = useState(false);
+  // LINGO-019 follow-up (2026-08-30): the anti-gate-skip freeze now starts
+  // when the CARD is shown (component mount), not when it's flipped — grading
+  // is available on either face once this elapses. A plain mount-only effect
+  // is sufficient (no arm-once-per-flip bookkeeping needed anymore): the
+  // component remounts fresh per card (keyed by card id upstream), so this
+  // timer naturally resets for every new card and only ever runs once.
   const [canEval, setCanEval] = useState(false);
   const [drag, setDrag] = useState({ x: 0, y: 0, active: false });
   const [hasVoice, setHasVoice] = useState(false);
   const start = useRef<{ x: number; y: number } | null>(null);
-  // Timer id only — its lifecycle is unmount-only (see the cleanup effect
-  // below), deliberately NOT tied to `flipped` churn from re-flipping.
-  const lockTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   // LINGO-012: word-by-word breakdown (原形・品詞・体と対・訳) for the back face.
   const breakdown = useMemo(() => buildWordBreakdown(sentence, WORD_BY_ID), [sentence]);
 
-  // Unmount-only cleanup for the one-shot unlock timer — see lockTimerRef.
   useEffect(() => {
-    return () => {
-      if (lockTimerRef.current) clearTimeout(lockTimerRef.current);
-    };
+    const timer = setTimeout(() => setCanEval(true), FLICK_LOCK_MS);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => subscribeVoices(() => setHasVoice(voiceAvailable(targetLang))), [targetLang]);
@@ -96,19 +95,23 @@ export function FlashcardCard({
 
   // LINGO-019: tap flips the card either direction, any number of times.
   function toggleFlip() {
-    const { next, shouldArmLock, shouldSpeak } = applyFlipToggle(flipState);
-    setFlipState(next);
-    if (shouldArmLock) lockTimerRef.current = setTimeout(() => setCanEval(true), FLICK_LOCK_MS);
+    const { flipped: next, shouldSpeak } = applyFlipToggle(flipped);
+    setFlipped(next);
     if (shouldSpeak) speakBack();
   }
 
   const dir = directionOf(drag.x, drag.y, 28); // visual hint threshold
-  const canFlick = canGradeNow(flipped, canEval);
+  // LINGO-019 follow-up: grading no longer requires being flipped — only the
+  // elapsed anti-gate-skip timer gates it, on either face, in both practice
+  // and gate mode alike (Katsuta's explicit call — the gate's friction is
+  // slightly lower now, deliberately).
+  const canFlick = canGradeNow(canEval);
 
   // LINGO-019: the single rating entry point — both the flick release below
   // and each tap-to-grade legend button call this, so there is exactly one
   // code path from "learner decided" to onRate() (undo, Again requeueing,
-  // FSRS all live downstream of onRate and never know which input method fired).
+  // FSRS all live downstream of onRate and never know which input method fired,
+  // or which face was showing).
   // Gate + direction->Rating mapping both delegate to engine/grading.ts so
   // they're covered by grading.test.ts (no DOM/component test setup here).
   function rate(d: Exclude<Dir, null>) {
@@ -119,11 +122,14 @@ export function FlashcardCard({
   function onPointerDown(e: React.PointerEvent) {
     (e.target as Element).setPointerCapture?.(e.pointerId);
     start.current = { x: e.clientX, y: e.clientY };
-    if (flipped) setDrag({ x: 0, y: 0, active: true });
+    // LINGO-019 follow-up: drag tracking now arms on either face — a flick
+    // gesture needs live visual feedback (translate/tilt/overlay) whichever
+    // face is currently showing.
+    setDrag({ x: 0, y: 0, active: true });
   }
 
   function onPointerMove(e: React.PointerEvent) {
-    if (!start.current || !flipped) return;
+    if (!start.current) return;
     setDrag({ x: e.clientX - start.current.x, y: e.clientY - start.current.y, active: true });
   }
 
@@ -137,12 +143,12 @@ export function FlashcardCard({
     setDrag({ x: 0, y: 0, active: false });
 
     // LINGO-019: a plain tap toggles the flip either direction, any number of
-    // times (a drag on the front face still does nothing — front never rates).
+    // times. A flick (moved past THRESHOLD) grades on EITHER face now — the
+    // old `if (!flipped) return` front-face exemption is gone.
     if (moved < 12) {
       toggleFlip();
       return;
     }
-    if (!flipped) return;
     const d = directionOf(dx, dy, THRESHOLD); // commit threshold
     if (d) rate(d);
   }
@@ -179,7 +185,14 @@ export function FlashcardCard({
           <div className="face front">
             <span className="kicker">{NATIVE_LANG_NAME[frontLang]}</span>
             <div className="prompt">{front}</div>
-            {!flipped && <div className="hint">{t("card.tapToFlip")}</div>}
+            {/* LINGO-019 follow-up: grading (flick + tap buttons) now works on
+                the front face too, so it needs the same rate-in-progress
+                overlay (centered, independent of the hint below it) and
+                pre-unlock "…" hint the back face already had. The bottom hint
+                slot shows at most one thing: "…" before canEval, else the
+                original "tap to flip" hint. */}
+            {canEval ? !flipped && <div className="hint">{t("card.tapToFlip")}</div> : <div className="hint">…</div>}
+            {showOverlay && <RateOverlay color={overlayColor} text={overlayText} />}
           </div>
           <div className="face back">
             <span className="kicker">{NATIVE_LANG_NAME[(targetLang as Lang) ?? "ru"]}</span>
@@ -211,11 +224,7 @@ export function FlashcardCard({
             )}
             {sentence.note && <div className="note">{sentence.note}</div>}
             {breakdown.length > 0 && <WordBreakdownList entries={breakdown} frontLang={frontLang} />}
-            {showOverlay && (
-              <div className="overlay-label" style={{ color: overlayColor, opacity: 1 }}>
-                {overlayText}
-              </div>
-            )}
+            {showOverlay && <RateOverlay color={overlayColor} text={overlayText} />}
             {!canEval && <div className="hint">…</div>}
           </div>
         </div>
@@ -315,6 +324,19 @@ function WordBreakdownList({
           </div>
         );
       })}
+    </div>
+  );
+}
+
+/** The centered "忘れた/曖昧/覚えた" label shown mid-flick. Rendered inside
+ * BOTH faces (LINGO-019 follow-up: grading now works on either face) — only
+ * the currently-visible face's copy is actually seen, since the other one is
+ * rotated away with `backface-visibility: hidden`; rendering it twice is
+ * cheap and avoids threading which-face-is-up into this presentational bit. */
+function RateOverlay({ color, text }: { color: string; text: string }) {
+  return (
+    <div className="overlay-label" style={{ color, opacity: 1 }}>
+      {text}
     </div>
   );
 }
