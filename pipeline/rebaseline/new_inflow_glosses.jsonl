@@ -391,3 +391,92 @@
 {"lemma":"зарабатывать","rank":2101,"pos":"verb","en_gloss":"to earn","ja_gloss":"稼ぐ"}
 {"lemma":"шевелиться","rank":2104,"pos":"verb","en_gloss":"to move/stir","ja_gloss":"動く"}
 {"lemma":"убегать","rank":2105,"pos":"verb","en_gloss":"to run away (habitually)","ja_gloss":"逃げる"}
+{"lemma":"испугаться","rank":2107,"pos":"verb","en_gloss":"to get scared","ja_gloss":"怖がる"}
+{"lemma":"повредить","rank":2110,"pos":"verb","en_gloss":"to damage/injure","ja_gloss":"傷つける"}
+{"lemma":"подвал","rank":2111,"pos":"noun","en_gloss":"basement","ja_gloss":"地下室"}
+{"lemma":"убитый","rank":2114,"pos":"adj","en_gloss":"killed/dead","ja_gloss":"殺された"}
+{"lemma":"невинный","rank":2117,"pos":"adj","en_gloss":"innocent","ja_gloss":"無邪気な"}
+{"lemma":"пацан","rank":2126,"pos":"noun","en_gloss":"guy/lad (slang)","ja_gloss":"若造"}
+{"lemma":"сбить","rank":2128,"pos":"verb","en_gloss":"to knock down/hit","ja_gloss":"はねる"}
+{"lemma":"ограбление","rank":2130,"pos":"noun","en_gloss":"robbery","ja_gloss":"強盗"}
+{"lemma":"прыгать","rank":2131,"pos":"verb","en_gloss":"to jump","ja_gloss":"跳ぶ"}
+{"lemma":"переспать","rank":2132,"pos":"verb","en_gloss":"to sleep over/sleep with","ja_gloss":"一夜を共にする"}
+{"lemma":"хан","rank":2133,"pos":"noun","en_gloss":"khan (title)","ja_gloss":"ハン(称号)"}
+{"lemma":"приглашение","rank":2135,"pos":"noun","en_gloss":"invitation","ja_gloss":"招待"}
+{"lemma":"урод","rank":2136,"pos":"noun","en_gloss":"freak/jerk","ja_gloss":"ろくでなし"}
+{"lemma":"субтитр","rank":2139,"pos":"noun","en_gloss":"subtitle","ja_gloss":"字幕"}
+{"lemma":"награда","rank":2140,"pos":"noun","en_gloss":"reward","ja_gloss":"報酬"}
+{"lemma":"одиночка","rank":2142,"pos":"noun","en_gloss":"loner","ja_gloss":"一人者"}
+{"lemma":"разбудить","rank":2146,"pos":"verb","en_gloss":"to wake (someone) up","ja_gloss":"起こす"}
+{"lemma":"квартал","rank":2147,"pos":"noun","en_gloss":"city block/quarter","ja_gloss":"街区"}
+{"lemma":"цру","rank":2148,"pos":"noun","en_gloss":"CIA","ja_gloss":"CIA"}
+{"lemma":"уладить","rank":2149,"pos":"verb","en_gloss":"to settle/sort out","ja_gloss":"解決する"}
+{"lemma":"обвинить","rank":2150,"pos":"verb","en_gloss":"to accuse (once)","ja_gloss":"告発する"}
+{"lemma":"сенатор","rank":2155,"pos":"noun","en_gloss":"senator","ja_gloss":"上院議員"}
+{"lemma":"футбол","rank":2159,"pos":"noun","en_gloss":"soccer","ja_gloss":"サッカー"}
+{"lemma":"приступ","rank":2165,"pos":"noun","en_gloss":"attack (medical/fit)","ja_gloss":"発作"}
+{"lemma":"торт","rank":2166,"pos":"noun","en_gloss":"cake","ja_gloss":"ケーキ"}
+{"lemma":"попрощаться","rank":2169,"pos":"verb","en_gloss":"to say goodbye","ja_gloss":"別れを告げる"}
+{"lemma":"классно","rank":2173,"pos":"adv","en_gloss":"cool/great (colloq.)","ja_gloss":"かっこいい"}
+{"lemma":"кайло","rank":2175,"pos":"noun","en_gloss":"pickaxe","ja_gloss":"つるはし"}
+{"lemma":"отправлять","rank":2177,"pos":"verb","en_gloss":"to send (habitually)","ja_gloss":"送る"}
+{"lemma":"жара","rank":2179,"pos":"noun","en_gloss":"heat (hot weather)","ja_gloss":"暑さ"}
+{"lemma":"как-нибудь","rank":2180,"pos":"adv","en_gloss":"somehow/sometime","ja_gloss":"何とかして"}
+{"lemma":"бред","rank":2183,"pos":"noun","en_gloss":"nonsense/delirium","ja_gloss":"たわごと"}
+{"lemma":"окончить","rank":2190,"pos":"verb","en_gloss":"to finish/graduate","ja_gloss":"卒業する"}
+{"lemma":"вирус","rank":2193,"pos":"noun","en_gloss":"virus","ja_gloss":"ウイルス"}
+{"lemma":"настаивать","rank":2195,"pos":"verb","en_gloss":"to insist","ja_gloss":"主張する"}
+{"lemma":"бассейн","rank":2198,"pos":"noun","en_gloss":"swimming pool","ja_gloss":"プール"}
+{"lemma":"сосредоточиться","rank":2201,"pos":"verb","en_gloss":"to concentrate","ja_gloss":"集中する"}
+{"lemma":"отключить","rank":2203,"pos":"verb","en_gloss":"to switch off/disconnect","ja_gloss":"切断する"}
+{"lemma":"навредить","rank":2204,"pos":"verb","en_gloss":"to harm","ja_gloss":"害を与える"}
+{"lemma":"поверьте","rank":2208,"pos":"intj","en_gloss":"believe me (formal)","ja_gloss":"信じてください"}
+{"lemma":"обещание","rank":2209,"pos":"noun","en_gloss":"promise","ja_gloss":"約束"}
+{"lemma":"живо","rank":2211,"pos":"adv","en_gloss":"quickly/vividly","ja_gloss":"すばやく"}
+{"lemma":"рай","rank":2216,"pos":"noun","en_gloss":"paradise","ja_gloss":"楽園"}
+{"lemma":"предпочесть","rank":2217,"pos":"verb","en_gloss":"to prefer","ja_gloss":"好む"}
+{"lemma":"починить","rank":2218,"pos":"verb","en_gloss":"to repair","ja_gloss":"修理する"}
+{"lemma":"нарушить","rank":2221,"pos":"verb","en_gloss":"to violate/break (a rule)","ja_gloss":"違反する"}
+{"lemma":"драка","rank":2229,"pos":"noun","en_gloss":"fight (brawl)","ja_gloss":"喧嘩"}
+{"lemma":"упоминать","rank":2232,"pos":"verb","en_gloss":"to mention","ja_gloss":"言及する"}
+{"lemma":"грёбаный","rank":2235,"pos":"adj","en_gloss":"f*cking (vulgar intensifier)","ja_gloss":"くそったれの"}
+{"lemma":"красавица","rank":2237,"pos":"noun","en_gloss":"beautiful woman","ja_gloss":"美人"}
+{"lemma":"вчерашний","rank":2243,"pos":"adj","en_gloss":"yesterday's","ja_gloss":"昨日の"}
+{"lemma":"скучно","rank":2245,"pos":"adv","en_gloss":"boring/it's boring","ja_gloss":"退屈だ"}
+{"lemma":"солгать","rank":2247,"pos":"verb","en_gloss":"to tell a lie (once)","ja_gloss":"嘘をつく"}
+{"lemma":"покидать","rank":2250,"pos":"verb","en_gloss":"to leave/abandon","ja_gloss":"去る"}
+{"lemma":"сие","rank":2253,"pos":"det","en_gloss":"this (archaic)","ja_gloss":"この(古語)"}
+{"lemma":"беречь","rank":2254,"pos":"verb","en_gloss":"to protect/take care of","ja_gloss":"大切にする"}
+{"lemma":"репутация","rank":2255,"pos":"noun","en_gloss":"reputation","ja_gloss":"評判"}
+{"lemma":"допрос","rank":2256,"pos":"noun","en_gloss":"interrogation","ja_gloss":"尋問"}
+{"lemma":"ниже","rank":2258,"pos":"adv","en_gloss":"lower/below","ja_gloss":"より低く"}
+{"lemma":"настать","rank":2263,"pos":"verb","en_gloss":"to come/arrive (of time)","ja_gloss":"到来する"}
+{"lemma":"ненадолго","rank":2264,"pos":"adv","en_gloss":"for a short while","ja_gloss":"少しの間"}
+{"lemma":"попасться","rank":2266,"pos":"verb","en_gloss":"to get caught","ja_gloss":"捕まる"}
+{"lemma":"проследить","rank":2274,"pos":"verb","en_gloss":"to track/make sure","ja_gloss":"見届ける"}
+{"lemma":"короче","rank":2275,"pos":"adv","en_gloss":"in short","ja_gloss":"要するに"}
+{"lemma":"давить","rank":2276,"pos":"verb","en_gloss":"to press/pressure","ja_gloss":"圧迫する"}
+{"lemma":"просыпаться","rank":2283,"pos":"verb","en_gloss":"to wake up (habitually)","ja_gloss":"目覚める"}
+{"lemma":"невероятный","rank":2285,"pos":"adj","en_gloss":"incredible","ja_gloss":"信じられない"}
+{"lemma":"кое-какой","rank":2286,"pos":"det","en_gloss":"some (certain)","ja_gloss":"いくらかの"}
+{"lemma":"г-н","rank":2289,"pos":"noun","en_gloss":"Mr. (abbreviation)","ja_gloss":"氏(略)"}
+{"lemma":"охотник","rank":2295,"pos":"noun","en_gloss":"hunter","ja_gloss":"狩人"}
+{"lemma":"приготовиться","rank":2296,"pos":"verb","en_gloss":"to get ready","ja_gloss":"準備する"}
+{"lemma":"официально","rank":2297,"pos":"adv","en_gloss":"officially","ja_gloss":"公式に"}
+{"lemma":"козёл","rank":2298,"pos":"noun","en_gloss":"goat; jerk (slang)","ja_gloss":"ヤギ"}
+{"lemma":"медведь","rank":2299,"pos":"noun","en_gloss":"bear","ja_gloss":"クマ"}
+{"lemma":"заболеть","rank":2303,"pos":"verb","en_gloss":"to fall ill","ja_gloss":"病気になる"}
+{"lemma":"присмотреть","rank":2304,"pos":"verb","en_gloss":"to keep an eye on","ja_gloss":"見守る"}
+{"lemma":"напиток","rank":2305,"pos":"noun","en_gloss":"drink/beverage","ja_gloss":"飲み物"}
+{"lemma":"ну-ка","rank":2306,"pos":"part","en_gloss":"come on/now then","ja_gloss":"さあ"}
+{"lemma":"змея","rank":2309,"pos":"noun","en_gloss":"snake","ja_gloss":"ヘビ"}
+{"lemma":"лифт","rank":2310,"pos":"noun","en_gloss":"elevator","ja_gloss":"エレベーター"}
+{"lemma":"замолчать","rank":2311,"pos":"verb","en_gloss":"to fall silent","ja_gloss":"黙り込む"}
+{"lemma":"вдвоём","rank":2312,"pos":"adv","en_gloss":"the two of us/together","ja_gloss":"二人で"}
+{"lemma":"невиновный","rank":2313,"pos":"adj","en_gloss":"not guilty","ja_gloss":"無罪の"}
+{"lemma":"отнести","rank":2320,"pos":"verb","en_gloss":"to carry (there)","ja_gloss":"運ぶ"}
+{"lemma":"студия","rank":2321,"pos":"noun","en_gloss":"studio","ja_gloss":"スタジオ"}
+{"lemma":"месть","rank":2327,"pos":"noun","en_gloss":"revenge","ja_gloss":"復讐"}
+{"lemma":"присматривать","rank":2334,"pos":"verb","en_gloss":"to look after (habitually)","ja_gloss":"世話をする"}
+{"lemma":"нелегко","rank":2335,"pos":"adv","en_gloss":"not easy","ja_gloss":"容易ではない"}
+{"lemma":"хрень","rank":2336,"pos":"noun","en_gloss":"crap/nonsense (slang)","ja_gloss":"くだらないもの"}
