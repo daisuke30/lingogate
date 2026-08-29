@@ -20,7 +20,6 @@ new_rank	lemma	new_band	in_trki	source
 533	увидеться	1	False	subtitle
 540	ночью	1	False	subtitle
 543	утром	1	False	subtitle
-560	рада	1	False	subtitle
 563	здравствуйте	1	False	subtitle
 564	скорее	1	False	subtitle
 565	ох	1	False	subtitle
@@ -121,7 +120,6 @@ new_rank	lemma	new_band	in_trki	source
 1230	испортить	2	False	subtitle
 1240	плевать	2	False	subtitle
 1242	чертовый	2	False	subtitle
-1252	эми	2	False	subtitle
 1255	величество	2	False	subtitle
 1262	улика	2	False	subtitle
 1275	выбраться	2	False	subtitle
@@ -174,7 +172,6 @@ new_rank	lemma	new_band	in_trki	source
 1486	извиняться	2	False	subtitle
 1491	предупредить	2	False	subtitle
 1493	сукин	2	False	subtitle
-1496	кларк	2	False	subtitle
 1497	конченый	2	False	subtitle
 1499	рисковать	2	False	subtitle
 1500	джентльмен	2	False	subtitle
