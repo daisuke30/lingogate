@@ -1,0 +1,100 @@
+{"lemma":"эй","rank":133,"pos":"intj","en_gloss":"hey","ja_gloss":"おい"}
+{"lemma":"из-за","rank":237,"pos":"prep","en_gloss":"because of","ja_gloss":"のせいで"}
+{"lemma":"что-нибудь","rank":262,"pos":"pron","en_gloss":"something/anything","ja_gloss":"何か"}
+{"lemma":"тем","rank":297,"pos":"conj","en_gloss":"all the more","ja_gloss":"なおさら"}
+{"lemma":"ж","rank":309,"pos":"part","en_gloss":"emphatic particle (=же)","ja_gloss":"強調の助詞"}
+{"lemma":"кое-что","rank":342,"pos":"pron","en_gloss":"something","ja_gloss":"何かしら"}
+{"lemma":"кто-нибудь","rank":376,"pos":"pron","en_gloss":"someone/anyone","ja_gloss":"誰か"}
+{"lemma":"уверить","rank":382,"pos":"verb","en_gloss":"to assure","ja_gloss":"確信させる"}
+{"lemma":"равно","rank":397,"pos":"adv","en_gloss":"equally","ja_gloss":"同様に"}
+{"lemma":"мисс","rank":398,"pos":"noun","en_gloss":"Miss","ja_gloss":"ミス"}
+{"lemma":"нормально","rank":420,"pos":"adv","en_gloss":"fine/normally","ja_gloss":"普通に"}
+{"lemma":"волноваться","rank":452,"pos":"verb","en_gloss":"to worry","ja_gloss":"心配する"}
+{"lemma":"миссис","rank":461,"pos":"noun","en_gloss":"Mrs.","ja_gloss":"ミセス"}
+{"lemma":"свидание","rank":488,"pos":"noun","en_gloss":"date (romantic)","ja_gloss":"デート"}
+{"lemma":"здорово","rank":498,"pos":"adv","en_gloss":"great/cool","ja_gloss":"すごい"}
+{"lemma":"чувак","rank":504,"pos":"noun","en_gloss":"dude","ja_gloss":"野郎"}
+{"lemma":"вечером","rank":518,"pos":"adv","en_gloss":"in the evening","ja_gloss":"夕方に"}
+{"lemma":"вообще-то","rank":520,"pos":"adv","en_gloss":"actually","ja_gloss":"実は"}
+{"lemma":"увидеться","rank":533,"pos":"verb","en_gloss":"to see each other","ja_gloss":"会う(互いに)"}
+{"lemma":"ночью","rank":540,"pos":"adv","en_gloss":"at night","ja_gloss":"夜に"}
+{"lemma":"утром","rank":543,"pos":"adv","en_gloss":"in the morning","ja_gloss":"朝に"}
+{"lemma":"здравствуйте","rank":563,"pos":"intj","en_gloss":"hello (formal)","ja_gloss":"こんにちは(丁寧)"}
+{"lemma":"скорее","rank":564,"pos":"adv","en_gloss":"rather/quicker","ja_gloss":"むしろ"}
+{"lemma":"ох","rank":565,"pos":"intj","en_gloss":"oh (sigh)","ja_gloss":"ああ"}
+{"lemma":"дерьмо","rank":580,"pos":"noun","en_gloss":"crap/shit","ja_gloss":"くそ"}
+{"lemma":"беспокоиться","rank":586,"pos":"verb","en_gloss":"to worry","ja_gloss":"心配する"}
+{"lemma":"алло","rank":633,"pos":"intj","en_gloss":"hello (phone)","ja_gloss":"もしもし"}
+{"lemma":"детектив","rank":657,"pos":"noun","en_gloss":"detective","ja_gloss":"探偵"}
+{"lemma":"немой","rank":661,"pos":"adj","en_gloss":"mute/silent","ja_gloss":"無言の"}
+{"lemma":"заткнуться","rank":693,"pos":"verb","en_gloss":"to shut up","ja_gloss":"黙る"}
+{"lemma":"шутить","rank":699,"pos":"verb","en_gloss":"to joke","ja_gloss":"冗談を言う"}
+{"lemma":"когда-нибудь","rank":701,"pos":"adv","en_gloss":"someday/ever","ja_gloss":"いつか"}
+{"lemma":"погодить","rank":702,"pos":"verb","en_gloss":"to wait a bit","ja_gloss":"少し待つ"}
+{"lemma":"украсть","rank":723,"pos":"verb","en_gloss":"to steal","ja_gloss":"盗む"}
+{"lemma":"ужасно","rank":735,"pos":"adv","en_gloss":"terribly","ja_gloss":"ひどく"}
+{"lemma":"задница","rank":751,"pos":"noun","en_gloss":"butt/ass","ja_gloss":"尻"}
+{"lemma":"как-то","rank":762,"pos":"adv","en_gloss":"somehow","ja_gloss":"何となく"}
+{"lemma":"прощение","rank":765,"pos":"noun","en_gloss":"forgiveness","ja_gloss":"許し"}
+{"lemma":"сбежать","rank":772,"pos":"verb","en_gloss":"to run away","ja_gloss":"逃げる"}
+{"lemma":"босс","rank":776,"pos":"noun","en_gloss":"boss","ja_gloss":"ボス"}
+{"lemma":"круто","rank":806,"pos":"adv","en_gloss":"cool/awesome","ja_gloss":"かっこいい"}
+{"lemma":"скучать","rank":808,"pos":"verb","en_gloss":"to miss/be bored","ja_gloss":"恋しく思う"}
+{"lemma":"врать","rank":811,"pos":"verb","en_gloss":"to lie","ja_gloss":"嘘をつく"}
+{"lemma":"осторожный","rank":814,"pos":"adj","en_gloss":"careful","ja_gloss":"注意深い"}
+{"lemma":"идиот","rank":816,"pos":"noun","en_gloss":"idiot","ja_gloss":"ばか"}
+{"lemma":"минутка","rank":818,"pos":"noun","en_gloss":"a minute (dim.)","ja_gloss":"ちょっとの時間"}
+{"lemma":"шоу","rank":821,"pos":"noun","en_gloss":"show","ja_gloss":"ショー"}
+{"lemma":"дедушка","rank":838,"pos":"noun","en_gloss":"grandfather","ja_gloss":"おじいさん"}
+{"lemma":"мило","rank":854,"pos":"adv","en_gloss":"sweetly/nicely","ja_gloss":"かわいく"}
+{"lemma":"какой-нибудь","rank":855,"pos":"det","en_gloss":"some (kind of)","ja_gloss":"何らかの"}
+{"lemma":"арестовать","rank":858,"pos":"verb","en_gloss":"to arrest","ja_gloss":"逮捕する"}
+{"lemma":"леди","rank":861,"pos":"noun","en_gloss":"lady","ja_gloss":"レディ"}
+{"lemma":"слушайте","rank":876,"pos":"intj","en_gloss":"listen (pl./formal imperative)","ja_gloss":"聞いてください"}
+{"lemma":"позаботиться","rank":879,"pos":"verb","en_gloss":"to take care of","ja_gloss":"世話をする"}
+{"lemma":"детка","rank":888,"pos":"noun","en_gloss":"baby/honey (address)","ja_gloss":"ベイビー"}
+{"lemma":"сойти","rank":889,"pos":"verb","en_gloss":"to get off/descend","ja_gloss":"降りる"}
+{"lemma":"пожаловать","rank":904,"pos":"verb","en_gloss":"to welcome/deign (добро пожаловать)","ja_gloss":"ようこそ"}
+{"lemma":"клясться","rank":908,"pos":"verb","en_gloss":"to swear/vow","ja_gloss":"誓う"}
+{"lemma":"мэм","rank":909,"pos":"noun","en_gloss":"ma'am","ja_gloss":"マム"}
+{"lemma":"переводчик","rank":911,"pos":"noun","en_gloss":"translator/interpreter","ja_gloss":"通訳者"}
+{"lemma":"эм","rank":921,"pos":"intj","en_gloss":"um/er","ja_gloss":"えーと"}
+{"lemma":"б","rank":936,"pos":"part","en_gloss":"conditional particle (colloq. бы)","ja_gloss":"条件の助詞"}
+{"lemma":"мадам","rank":938,"pos":"noun","en_gloss":"madam","ja_gloss":"マダム"}
+{"lemma":"сработать","rank":944,"pos":"verb","en_gloss":"to work/take effect","ja_gloss":"うまくいく"}
+{"lemma":"смешно","rank":963,"pos":"adv","en_gloss":"funny/it's funny","ja_gloss":"おかしい"}
+{"lemma":"таблетка","rank":964,"pos":"noun","en_gloss":"pill","ja_gloss":"錠剤"}
+{"lemma":"завтрак","rank":969,"pos":"noun","en_gloss":"breakfast","ja_gloss":"朝食"}
+{"lemma":"молодец","rank":973,"pos":"noun","en_gloss":"well done (person)","ja_gloss":"えらい"}
+{"lemma":"отвезти","rank":977,"pos":"verb","en_gloss":"to take (by vehicle)","ja_gloss":"車で送る"}
+{"lemma":"расследование","rank":978,"pos":"noun","en_gloss":"investigation","ja_gloss":"捜査"}
+{"lemma":"окей","rank":984,"pos":"part","en_gloss":"okay","ja_gloss":"オーケー"}
+{"lemma":"блин","rank":1003,"pos":"intj","en_gloss":"darn/pancake","ja_gloss":"くそ(軽い悪態)"}
+{"lemma":"заботиться","rank":1005,"pos":"verb","en_gloss":"to take care","ja_gloss":"気にかける"}
+{"lemma":"лгать","rank":1008,"pos":"verb","en_gloss":"to lie","ja_gloss":"嘘をつく"}
+{"lemma":"убираться","rank":1014,"pos":"verb","en_gloss":"to clean up/get out","ja_gloss":"掃除する"}
+{"lemma":"спасть","rank":1016,"pos":"verb","en_gloss":"to subside","ja_gloss":"静まる"}
+{"lemma":"сумасшедший","rank":1018,"pos":"adj","en_gloss":"crazy","ja_gloss":"狂った"}
+{"lemma":"шеф","rank":1028,"pos":"noun","en_gloss":"chief/boss","ja_gloss":"上司"}
+{"lemma":"ввиду","rank":1032,"pos":"prep","en_gloss":"in view of","ja_gloss":"を考慮して"}
+{"lemma":"по-моему","rank":1034,"pos":"adv","en_gloss":"in my opinion","ja_gloss":"私の考えでは"}
+{"lemma":"связаться","rank":1037,"pos":"verb","en_gloss":"to contact","ja_gloss":"連絡する"}
+{"lemma":"ух","rank":1052,"pos":"intj","en_gloss":"wow","ja_gloss":"うわあ"}
+{"lemma":"выжить","rank":1057,"pos":"verb","en_gloss":"to survive","ja_gloss":"生き残る"}
+{"lemma":"уволить","rank":1068,"pos":"verb","en_gloss":"to fire (dismiss)","ja_gloss":"解雇する"}
+{"lemma":"постоять","rank":1074,"pos":"verb","en_gloss":"to stand for a while","ja_gloss":"しばらく立つ"}
+{"lemma":"избавиться","rank":1078,"pos":"verb","en_gloss":"to get rid of","ja_gloss":"取り除く"}
+{"lemma":"рождество","rank":1079,"pos":"noun","en_gloss":"Christmas","ja_gloss":"クリスマス"}
+{"lemma":"блядь","rank":1083,"pos":"intj","en_gloss":"f*ck (vulgar)","ja_gloss":"くそ(下品)"}
+{"lemma":"наконец-то","rank":1084,"pos":"adv","en_gloss":"finally","ja_gloss":"ついに"}
+{"lemma":"неважно","rank":1086,"pos":"adv","en_gloss":"it doesn't matter","ja_gloss":"どうでもいい"}
+{"lemma":"сожалеть","rank":1089,"pos":"verb","en_gloss":"to regret","ja_gloss":"後悔する"}
+{"lemma":"ублюдок","rank":1090,"pos":"noun","en_gloss":"bastard","ja_gloss":"くそ野郎"}
+{"lemma":"колледж","rank":1091,"pos":"noun","en_gloss":"college","ja_gloss":"大学"}
+{"lemma":"коп","rank":1103,"pos":"noun","en_gloss":"cop","ja_gloss":"警官"}
+{"lemma":"опаздывать","rank":1108,"pos":"verb","en_gloss":"to be late","ja_gloss":"遅れる"}
+{"lemma":"здравствуй","rank":1113,"pos":"intj","en_gloss":"hello (informal)","ja_gloss":"こんにちは(略式)"}
+{"lemma":"фбр","rank":1127,"pos":"noun","en_gloss":"FBI","ja_gloss":"FBI"}
+{"lemma":"сынок","rank":1131,"pos":"noun","en_gloss":"sonny/son (address)","ja_gloss":"息子ちゃん"}
+{"lemma":"расслабиться","rank":1135,"pos":"verb","en_gloss":"to relax","ja_gloss":"リラックスする"}
+{"lemma":"ошибаться","rank":1137,"pos":"verb","en_gloss":"to be mistaken","ja_gloss":"間違える"}
