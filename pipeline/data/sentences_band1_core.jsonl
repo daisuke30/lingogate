@@ -670,3 +670,14 @@
 {"id":"T1058","ru":"Клянусь тебе.","en":"I swear to you.","ja":"君に誓うよ。","lemmas":["клясться","ты"],"target_lemma":"клясться","difficulty":1,"kind":"sentence"}
 {"id":"T1059","ru":"Спасибо, мэм.","en":"Thank you, ma'am.","ja":"ありがとう、奥様。","lemmas":["спасибо","мэм"],"target_lemma":"мэм","difficulty":1,"kind":"sentence"}
 {"id":"T1060","ru":"Мне нужен переводчик.","en":"I need a translator.","ja":"通訳が必要だ。","lemmas":["я","нужный","переводчик"],"target_lemma":"переводчик","difficulty":1,"kind":"sentence"}
+{"id":"T1061","ru":"Эм, я не знаю.","en":"Um, I don't know.","ja":"えーと、わからない。","lemmas":["эм","я","не","знать"],"target_lemma":"эм","difficulty":1,"kind":"sentence"}
+{"id":"T1062","ru":"Я б хотел.","en":"I'd like to.","ja":"できればしたいな。","lemmas":["я","б","хотеть"],"target_lemma":"б","difficulty":1,"kind":"sentence"}
+{"id":"T1063","ru":"Прошу, мадам.","en":"After you, madam.","ja":"どうぞ、マダム。","lemmas":["просить","мадам"],"target_lemma":"мадам","difficulty":1,"kind":"sentence"}
+{"id":"T1064","ru":"Это должно сработать.","en":"This should work.","ja":"これはうまくいくはずだ。","lemmas":["это","должен","сработать"],"target_lemma":"сработать","difficulty":1,"kind":"sentence"}
+{"id":"T1065","ru":"Это не смешно.","en":"That's not funny.","ja":"それは面白くない。","lemmas":["это","не","смешно"],"target_lemma":"смешно","difficulty":1,"kind":"sentence"}
+{"id":"T1066","ru":"Выпей таблетку.","en":"Take a pill.","ja":"薬を飲んで。","lemmas":["пить","таблетка"],"target_lemma":"таблетка","difficulty":1,"kind":"sentence"}
+{"id":"T1067","ru":"Это мой завтрак.","en":"This is my breakfast.","ja":"これは私の朝食だ。","lemmas":["это","мой","завтрак"],"target_lemma":"завтрак","difficulty":1,"kind":"sentence"}
+{"id":"T1068","ru":"Ты молодец!","en":"Well done!","ja":"よくやった!","lemmas":["ты","молодец"],"target_lemma":"молодец","difficulty":1,"kind":"sentence"}
+{"id":"T1069","ru":"Можешь отвезти меня домой?","en":"Can you take me home?","ja":"家まで送ってくれる?","lemmas":["мочь","отвезти","я","домой"],"target_lemma":"отвезти","difficulty":2,"kind":"sentence"}
+{"id":"T1070","ru":"Это моё расследование.","en":"This is my investigation.","ja":"これは私の捜査だ。","lemmas":["это","мой","расследование"],"target_lemma":"расследование","difficulty":1,"kind":"sentence"}
+{"id":"T1071","ru":"Окей, я понял.","en":"Okay, I understand.","ja":"わかった、了解。","lemmas":["окей","я","понять"],"target_lemma":"окей","difficulty":1,"kind":"sentence"}
