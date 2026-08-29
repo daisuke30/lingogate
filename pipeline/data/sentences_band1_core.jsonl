@@ -650,3 +650,23 @@
 {"id":"T1038","ru":"Прошу прощения.","en":"I beg your pardon.","ja":"失礼します。","lemmas":["просить","прощение"],"target_lemma":"прощение","difficulty":1,"kind":"sentence"}
 {"id":"T1039","ru":"Он хочет сбежать.","en":"He wants to run away.","ja":"彼は逃げたがっている。","lemmas":["он","хотеть","сбежать"],"target_lemma":"сбежать","difficulty":1,"kind":"sentence"}
 {"id":"T1040","ru":"Он мой босс.","en":"He's my boss.","ja":"彼は私の上司だ。","lemmas":["он","мой","босс"],"target_lemma":"босс","difficulty":1,"kind":"sentence"}
+{"id":"T1041","ru":"Это очень круто!","en":"That's really cool!","ja":"それめっちゃかっこいい!","lemmas":["это","очень","круто"],"target_lemma":"круто","difficulty":1,"kind":"sentence"}
+{"id":"T1042","ru":"Я скучаю по тебе.","en":"I miss you.","ja":"君が恋しい。","lemmas":["я","скучать","ты"],"target_lemma":"скучать","difficulty":1,"kind":"sentence"}
+{"id":"T1043","ru":"Не ври мне.","en":"Don't lie to me.","ja":"嘘をつかないで。","lemmas":["не","врать","я"],"target_lemma":"врать","difficulty":1,"kind":"sentence"}
+{"id":"T1044","ru":"Будь осторожен.","en":"Be careful.","ja":"気をつけて。","lemmas":["быть","осторожный"],"target_lemma":"осторожный","difficulty":1,"kind":"sentence"}
+{"id":"T1045","ru":"Ты идиот!","en":"You're an idiot!","ja":"お前ばかだな!","lemmas":["ты","идиот"],"target_lemma":"идиот","difficulty":1,"kind":"sentence"}
+{"id":"T1046","ru":"Есть минутка?","en":"Got a minute?","ja":"ちょっと時間ある?","lemmas":["быть","минутка"],"target_lemma":"минутка","difficulty":1,"kind":"sentence"}
+{"id":"T1047","ru":"Я смотрю шоу.","en":"I'm watching a show.","ja":"番組を見ている。","lemmas":["я","смотреть","шоу"],"target_lemma":"шоу","difficulty":1,"kind":"sentence"}
+{"id":"T1048","ru":"Мой дедушка дома.","en":"My grandfather is home.","ja":"おじいちゃんは家にいる。","lemmas":["мой","дедушка","дома"],"target_lemma":"дедушка","difficulty":1,"kind":"sentence"}
+{"id":"T1049","ru":"Это очень мило.","en":"That's very sweet.","ja":"それはとても優しいね。","lemmas":["это","очень","мило"],"target_lemma":"мило","difficulty":1,"kind":"sentence"}
+{"id":"T1050","ru":"Купи какой-нибудь хлеб.","en":"Buy some bread.","ja":"何かパンを買って。","lemmas":["купить","какой-нибудь","хлеб"],"target_lemma":"какой-нибудь","difficulty":1,"kind":"sentence"}
+{"id":"T1051","ru":"Я должен тебя арестовать.","en":"I have to arrest you.","ja":"君を逮捕しなければならない。","lemmas":["я","должен","ты","арестовать"],"target_lemma":"арестовать","difficulty":2,"kind":"sentence"}
+{"id":"T1052","ru":"Она добрая леди.","en":"She's a kind lady.","ja":"彼女は優しいレディだ。","lemmas":["она","добрый","леди"],"target_lemma":"леди","difficulty":1,"kind":"sentence"}
+{"id":"T1053","ru":"Слушайте, это важно.","en":"Listen, this is important.","ja":"聞いて、これは大事だ。","lemmas":["слушайте","это","важный"],"target_lemma":"слушайте","difficulty":1,"kind":"sentence"}
+{"id":"T1054","ru":"Я позабочусь о тебе.","en":"I'll take care of you.","ja":"君の面倒を見るよ。","lemmas":["я","позаботиться","ты"],"target_lemma":"позаботиться","difficulty":1,"kind":"sentence"}
+{"id":"T1055","ru":"Привет, детка.","en":"Hey, baby.","ja":"やあ、ベイビー。","lemmas":["привет","детка"],"target_lemma":"детка","difficulty":1,"kind":"sentence"}
+{"id":"T1056","ru":"Мне нужно сойти здесь.","en":"I need to get off here.","ja":"ここで降りなきゃ。","lemmas":["я","нужно","сойти","здесь"],"target_lemma":"сойти","difficulty":1,"kind":"sentence"}
+{"id":"T1057","ru":"Добро пожаловать!","en":"Welcome!","ja":"ようこそ!","lemmas":["добрый","пожаловать"],"target_lemma":"пожаловать","difficulty":1,"kind":"sentence"}
+{"id":"T1058","ru":"Клянусь тебе.","en":"I swear to you.","ja":"君に誓うよ。","lemmas":["клясться","ты"],"target_lemma":"клясться","difficulty":1,"kind":"sentence"}
+{"id":"T1059","ru":"Спасибо, мэм.","en":"Thank you, ma'am.","ja":"ありがとう、奥様。","lemmas":["спасибо","мэм"],"target_lemma":"мэм","difficulty":1,"kind":"sentence"}
+{"id":"T1060","ru":"Мне нужен переводчик.","en":"I need a translator.","ja":"通訳が必要だ。","lemmas":["я","нужный","переводчик"],"target_lemma":"переводчик","difficulty":1,"kind":"sentence"}
