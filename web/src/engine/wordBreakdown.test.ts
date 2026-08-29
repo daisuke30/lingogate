@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildWordBreakdown, formatAspectLine, posLabel } from "./wordBreakdown";
+import { buildWordBreakdown, formatAspectLine, formatGenderLine, posLabel } from "./wordBreakdown";
 import type { DeckWord } from "./content";
 
 function word(over: Partial<DeckWord> & { id: number; lemma: string; pos: string }): DeckWord {
@@ -31,7 +31,7 @@ describe("buildWordBreakdown (LINGO-012 card-back word list)", () => {
       }),
     ],
     [4, word({ id: 4, lemma: "быть", pos: "verb", enGloss: "be", jaGloss: "である", aspect: "impf" })],
-    [5, word({ id: 5, lemma: "дом", pos: "noun", enGloss: "house", jaGloss: "家" })],
+    [5, word({ id: 5, lemma: "дом", pos: "noun", enGloss: "house", jaGloss: "家", gender: "m" })],
   ]);
 
   it("sentence card: drops function words (pron/conj) that aren't the target, keeps content words", () => {
@@ -99,5 +99,35 @@ describe("formatAspectLine (Katsuta 2026-08-27: label both head and pair)", () =
 
   it("returns null for entries with no aspect (non-verbs)", () => {
     expect(formatAspectLine({ lemma: "дом", aspect: null, aspectPair: null })).toBeNull();
+  });
+});
+
+describe("noun gender (LINGO-022 card-back breakdown)", () => {
+  it("buildWordBreakdown carries the noun's gender through to the entry", () => {
+    const wordById = new Map<number, DeckWord>([
+      [5, word({ id: 5, lemma: "дом", pos: "noun", enGloss: "house", gender: "m" })],
+    ]);
+    const out = buildWordBreakdown(
+      { kind: "sentence" as const, targetLemma: "дом", wordIds: [5] },
+      wordById,
+    );
+    expect(out[0].gender).toBe("m");
+  });
+
+  it("formatGenderLine renders lemma（label） for each gender code", () => {
+    expect(formatGenderLine({ lemma: "книга", gender: "f" })).toBe("книга（女性名詞）");
+    expect(formatGenderLine({ lemma: "дом", gender: "m" })).toBe("дом（男性名詞）");
+    expect(formatGenderLine({ lemma: "окно", gender: "n" })).toBe("окно（中性名詞）");
+    expect(formatGenderLine({ lemma: "деньги", gender: "pl" })).toBe("деньги（複数のみ）");
+    expect(formatGenderLine({ lemma: "коллега", gender: "mf" })).toBe("коллега（通性名詞）");
+  });
+
+  it("honours caller-provided (UI-language) labels", () => {
+    const en = { m: "masculine noun", f: "feminine noun", n: "neuter noun", pl: "plural only", mf: "common gender" };
+    expect(formatGenderLine({ lemma: "книга", gender: "f" }, en)).toBe("книга（feminine noun）");
+  });
+
+  it("returns null for entries with no gender (non-nouns)", () => {
+    expect(formatGenderLine({ lemma: "делать", gender: null })).toBeNull();
   });
 });

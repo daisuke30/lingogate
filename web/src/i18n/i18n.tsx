@@ -350,6 +350,13 @@ const M: Record<string, Entry> = {
   "aspect.impf": { ja: "不完了体", en: "imperfective", ru: "несов. вид" },
   "aspect.pairOf": { ja: "対", en: "pair", ru: "пара" },
 
+  // -- noun gender (card-back breakdown; follows UI language) LINGO-022 -----
+  "gender.m": { ja: "男性名詞", en: "masculine noun", ru: "муж. род" },
+  "gender.f": { ja: "女性名詞", en: "feminine noun", ru: "жен. род" },
+  "gender.n": { ja: "中性名詞", en: "neuter noun", ru: "ср. род" },
+  "gender.pl": { ja: "複数のみ", en: "plural only", ru: "только мн. ч." },
+  "gender.mf": { ja: "通性名詞", en: "common gender", ru: "общий род" },
+
   // -- part of speech (card-back breakdown; follows UI language) ------------
   "pos.verb": { ja: "動詞", en: "verb", ru: "глагол" },
   "pos.noun": { ja: "名詞", en: "noun", ru: "сущ." },

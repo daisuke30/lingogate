@@ -402,6 +402,11 @@ button {
   font-size: 12px;
   color: var(--indigo-bright);
 }
+.wb-gender {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--indigo-bright);
+}
 .wb-gloss {
   margin-top: 2px;
   font-size: 12px;

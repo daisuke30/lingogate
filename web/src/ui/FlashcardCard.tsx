@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
-import { buildWordBreakdown, formatAspectLine } from "../engine/wordBreakdown";
+import { buildWordBreakdown, formatAspectLine, formatGenderLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
 import { INITIAL_FLIP_STATE, applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
 import type { FlipLockState } from "../engine/grading";
@@ -288,10 +288,18 @@ function WordBreakdownList({
   // the front language: for the existing RU user (UI=ja, front=en) they stay
   // Japanese, so nothing regresses; other UI languages get their own.
   const aspectLabels = { pf: t("aspect.pf"), impf: t("aspect.impf"), pair: t("aspect.pairOf") };
+  const genderLabels = {
+    m: t("gender.m"),
+    f: t("gender.f"),
+    n: t("gender.n"),
+    pl: t("gender.pl"),
+    mf: t("gender.mf"),
+  };
   return (
     <div className="word-breakdown" onPointerDown={(e) => e.stopPropagation()}>
       {entries.map((w) => {
         const aspectLine = formatAspectLine(w, aspectLabels);
+        const genderLine = formatGenderLine(w, genderLabels);
         const gloss = orderedGloss(w, frontLang);
         const posKey = "pos." + w.pos;
         const posText = t(posKey);
@@ -302,6 +310,7 @@ function WordBreakdownList({
               <span className="wb-pos">{posText === posKey ? w.posLabel : posText}</span>
             </div>
             {aspectLine && <div className="wb-aspect">{aspectLine}</div>}
+            {genderLine && <div className="wb-gender">{genderLine}</div>}
             {gloss && <div className="wb-gloss">{gloss}</div>}
           </div>
         );

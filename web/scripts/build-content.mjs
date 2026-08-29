@@ -181,6 +181,9 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
           enGloss: w.en_gloss ?? null,
           jaGloss: w.ja_gloss ?? null,
           ruGloss: w.ru_gloss ?? null,
+          // LINGO-022: noun grammatical gender ('m'|'f'|'n'|'pl'|'mf'), null
+          // for non-nouns and any course that doesn't carry it.
+          gender: w.gender ?? null,
           // LINGO-012: filled in below from the words_band*_aspects.jsonl
           // sidecar; null for non-verbs and verbs with no true telic partner,
           // and for courses (EN) that don't carry a grammar sidecar at all.
@@ -195,6 +198,7 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
         existing.enGloss = w.en_gloss ?? null;
         existing.jaGloss = w.ja_gloss ?? null;
         existing.ruGloss = w.ru_gloss ?? null;
+        existing.gender = w.gender ?? null;
       }
     }
   }

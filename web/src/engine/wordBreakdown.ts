@@ -75,12 +75,47 @@ export function formatAspectLine(
   return `${own} ⇔ ${labels.pair}: ${entry.aspectPair}（${labels[oppAspect]}）`;
 }
 
+/** Labels for the five noun-gender codes (LINGO-022). UI-language driven,
+ * same as AspectLabels — see i18n keys gender.m / gender.f / gender.n /
+ * gender.pl / gender.mf. */
+export interface GenderLabels {
+  m: string;
+  f: string;
+  n: string;
+  pl: string;
+  mf: string;
+}
+
+const DEFAULT_GENDER_LABELS: GenderLabels = {
+  m: "男性名詞",
+  f: "女性名詞",
+  n: "中性名詞",
+  pl: "複数のみ",
+  mf: "通性名詞",
+};
+
+/**
+ * Human-readable gender line for a noun entry, e.g. "книга（女性名詞）"
+ * (Katsuta 2026-08-29: show the noun's grammatical gender on the card back).
+ * Mirrors formatAspectLine's "lemma（label）" shape so the breakdown reads
+ * uniformly. Returns null for non-nouns / entries with no gender.
+ */
+export function formatGenderLine(
+  entry: Pick<WordBreakdownEntry, "lemma" | "gender">,
+  labels: GenderLabels = DEFAULT_GENDER_LABELS,
+): string | null {
+  if (!entry.gender) return null;
+  return `${entry.lemma}（${labels[entry.gender]}）`;
+}
+
 export interface WordBreakdownEntry {
   lemma: string;
   pos: string;
   posLabel: string;
   aspect: "pf" | "impf" | null;
   aspectPair: string | null;
+  /** Noun grammatical gender (LINGO-022); null for non-nouns. */
+  gender: "m" | "f" | "n" | "pl" | "mf" | null;
   enGloss: string | null;
   jaGloss: string | null;
   ruGloss: string | null;
@@ -109,6 +144,7 @@ export function buildWordBreakdown(
       posLabel: posLabel(w.pos),
       aspect: w.aspect ?? null,
       aspectPair: w.aspectPair ?? null,
+      gender: w.gender ?? null,
       enGloss: w.enGloss ?? null,
       jaGloss: w.jaGloss ?? null,
       ruGloss: w.ruGloss ?? null,

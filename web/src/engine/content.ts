@@ -56,6 +56,9 @@ export interface DeckWord {
   aspect?: "pf" | "impf" | null;
   /** The paired verb's lemma (opposite aspect), if one exists. */
   aspectPair?: string | null;
+  /** Noun grammatical gender (LINGO-022): "m"|"f"|"n" singular genders,
+   * "pl" pluralia tantum, "mf" common gender; null for non-nouns. */
+  gender?: "m" | "f" | "n" | "pl" | "mf" | null;
 }
 
 export interface Deck {

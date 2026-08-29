@@ -85,6 +85,9 @@ def ensure_migrations(conn):
         conn.execute("ALTER TABLE Word ADD COLUMN aspect TEXT")
     if "aspect_pair" not in have_word:
         conn.execute("ALTER TABLE Word ADD COLUMN aspect_pair TEXT")
+    # LINGO-022: noun grammatical gender for the card-back word-breakdown.
+    if "gender" not in have_word:
+        conn.execute("ALTER TABLE Word ADD COLUMN gender TEXT")
 
 
 def upsert_deck(conn):
@@ -126,13 +129,15 @@ def import_words(conn, deck_id, data_dir):
         for lineno, w in load_jsonl(path):
             lemma = w["lemma"].strip()
             conn.execute(
-                """INSERT INTO Word (deck_id, lemma, rank, band, pos, en_gloss, ja_gloss)
-                   VALUES (?,?,?,?,?,?,?)
+                """INSERT INTO Word (deck_id, lemma, rank, band, pos, en_gloss, ja_gloss, gender)
+                   VALUES (?,?,?,?,?,?,?,?)
                    ON CONFLICT(deck_id, lemma) DO UPDATE SET
                      rank=excluded.rank, band=excluded.band, pos=excluded.pos,
-                     en_gloss=excluded.en_gloss, ja_gloss=excluded.ja_gloss""",
+                     en_gloss=excluded.en_gloss, ja_gloss=excluded.ja_gloss,
+                     gender=excluded.gender""",
                 (deck_id, lemma, w.get("rank"), w.get("band", band),
-                 w.get("pos", ""), w.get("en_gloss"), w.get("ja_gloss")),
+                 w.get("pos", ""), w.get("en_gloss"), w.get("ja_gloss"),
+                 w.get("gender")),
             )
             n += 1
     return n

@@ -37,7 +37,7 @@
 {"lemma": "думать", "rank": 37, "pos": "verb", "en_gloss": "think", "ja_gloss": "考える"}
 {"lemma": "к", "rank": 38, "pos": "prep", "en_gloss": "to", "ja_gloss": "へ"}
 {"lemma": "чтобы", "rank": 39, "pos": "conj", "en_gloss": "so that", "ja_gloss": "ために"}
-{"lemma": "человек", "rank": 40, "pos": "noun", "en_gloss": "person", "ja_gloss": "人"}
+{"lemma": "человек", "rank": 40, "pos": "noun", "en_gloss": "person", "ja_gloss": "人", "gender": "m"}
 {"lemma": "есть", "rank": 41, "pos": "verb", "en_gloss": "eat", "ja_gloss": "食べる"}
 {"lemma": "твой", "rank": 42, "pos": "det", "en_gloss": "your", "ja_gloss": "君の"}
 {"lemma": "же", "rank": 43, "pos": "part", "en_gloss": "same/emphatic", "ja_gloss": "同じく"}
@@ -57,9 +57,9 @@
 {"lemma": "здесь", "rank": 57, "pos": "adv", "en_gloss": "here", "ja_gloss": "ここ"}
 {"lemma": "такой", "rank": 58, "pos": "det", "en_gloss": "such", "ja_gloss": "そのような"}
 {"lemma": "по", "rank": 59, "pos": "prep", "en_gloss": "along/by", "ja_gloss": "沿って"}
-{"lemma": "друг", "rank": 60, "pos": "noun", "en_gloss": "friend", "ja_gloss": "友人"}
+{"lemma": "друг", "rank": 60, "pos": "noun", "en_gloss": "friend", "ja_gloss": "友人", "gender": "m"}
 {"lemma": "который", "rank": 61, "pos": "det", "en_gloss": "which", "ja_gloss": "どの"}
-{"lemma": "год", "rank": 62, "pos": "noun", "en_gloss": "year", "ja_gloss": "年"}
+{"lemma": "год", "rank": 62, "pos": "noun", "en_gloss": "year", "ja_gloss": "年", "gender": "m"}
 {"lemma": "то", "rank": 63, "pos": "det", "en_gloss": "that", "ja_gloss": "それ"}
 {"lemma": "только", "rank": 64, "pos": "part", "en_gloss": "only", "ja_gloss": "だけ"}
 {"lemma": "сделать", "rank": 65, "pos": "verb", "en_gloss": "do, make", "ja_gloss": "する"}
@@ -69,25 +69,25 @@
 {"lemma": "делать", "rank": 69, "pos": "verb", "en_gloss": "do", "ja_gloss": "する"}
 {"lemma": "вот", "rank": 70, "pos": "part", "en_gloss": "here is", "ja_gloss": "ほら"}
 {"lemma": "от", "rank": 71, "pos": "prep", "en_gloss": "from", "ja_gloss": "から"}
-{"lemma": "дом", "rank": 72, "pos": "noun", "en_gloss": "house", "ja_gloss": "家"}
+{"lemma": "дом", "rank": 72, "pos": "noun", "en_gloss": "house", "ja_gloss": "家", "gender": "m"}
 {"lemma": "ваш", "rank": 73, "pos": "det", "en_gloss": "your", "ja_gloss": "あなたの"}
 {"lemma": "себя", "rank": 74, "pos": "pron", "en_gloss": "self", "ja_gloss": "自分"}
 {"lemma": "видеть", "rank": 75, "pos": "verb", "en_gloss": "see", "ja_gloss": "見る"}
-{"lemma": "ребёнок", "rank": 76, "pos": "noun", "en_gloss": "child", "ja_gloss": "子供"}
+{"lemma": "ребёнок", "rank": 76, "pos": "noun", "en_gloss": "child", "ja_gloss": "子供", "gender": "m"}
 {"lemma": "почему", "rank": 77, "pos": "adv", "en_gloss": "why", "ja_gloss": "なぜ"}
-{"lemma": "дело", "rank": 78, "pos": "noun", "en_gloss": "matter/business", "ja_gloss": "事柄"}
-{"lemma": "парень", "rank": 79, "pos": "noun", "en_gloss": "guy", "ja_gloss": "若者"}
+{"lemma": "дело", "rank": 78, "pos": "noun", "en_gloss": "matter/business", "ja_gloss": "事柄", "gender": "n"}
+{"lemma": "парень", "rank": 79, "pos": "noun", "en_gloss": "guy", "ja_gloss": "若者", "gender": "m"}
 {"lemma": "очень", "rank": 80, "pos": "adv", "en_gloss": "very", "ja_gloss": "とても"}
 {"lemma": "уже", "rank": 81, "pos": "adv", "en_gloss": "already", "ja_gloss": "すでに"}
-{"lemma": "время", "rank": 82, "pos": "noun", "en_gloss": "time", "ja_gloss": "時間"}
+{"lemma": "время", "rank": 82, "pos": "noun", "en_gloss": "time", "ja_gloss": "時間", "gender": "n"}
 {"lemma": "наш", "rank": 83, "pos": "det", "en_gloss": "our", "ja_gloss": "私たちの"}
-{"lemma": "работа", "rank": 84, "pos": "noun", "en_gloss": "work", "ja_gloss": "仕事"}
+{"lemma": "работа", "rank": 84, "pos": "noun", "en_gloss": "work", "ja_gloss": "仕事", "gender": "f"}
 {"lemma": "спасибо", "rank": 85, "pos": "intj", "en_gloss": "thank you", "ja_gloss": "ありがとう"}
 {"lemma": "или", "rank": 86, "pos": "conj", "en_gloss": "or", "ja_gloss": "または"}
 {"lemma": "большой", "rank": 87, "pos": "adj", "en_gloss": "big", "ja_gloss": "大きい"}
-{"lemma": "отец", "rank": 88, "pos": "noun", "en_gloss": "father", "ja_gloss": "父"}
+{"lemma": "отец", "rank": 88, "pos": "noun", "en_gloss": "father", "ja_gloss": "父", "gender": "m"}
 {"lemma": "давать", "rank": 89, "pos": "verb", "en_gloss": "give", "ja_gloss": "与える"}
-{"lemma": "мама", "rank": 90, "pos": "noun", "en_gloss": "mom", "ja_gloss": "ママ"}
+{"lemma": "мама", "rank": 90, "pos": "noun", "en_gloss": "mom", "ja_gloss": "ママ", "gender": "f"}
 {"lemma": "ладно", "rank": 91, "pos": "part", "en_gloss": "okay", "ja_gloss": "よし"}
 {"lemma": "там", "rank": 92, "pos": "adv", "en_gloss": "there", "ja_gloss": "そこ"}
 {"lemma": "нужно", "rank": 93, "pos": "predic", "en_gloss": "necessary", "ja_gloss": "必要だ"}
@@ -99,36 +99,36 @@
 {"lemma": "больше", "rank": 99, "pos": "adv", "en_gloss": "more", "ja_gloss": "もっと"}
 {"lemma": "до", "rank": 100, "pos": "prep", "en_gloss": "until", "ja_gloss": "まで"}
 {"lemma": "потому", "rank": 101, "pos": "adv", "en_gloss": "therefore", "ja_gloss": "だから"}
-{"lemma": "день", "rank": 102, "pos": "noun", "en_gloss": "day", "ja_gloss": "日"}
+{"lemma": "день", "rank": 102, "pos": "noun", "en_gloss": "day", "ja_gloss": "日", "gender": "m"}
 {"lemma": "со", "rank": 103, "pos": "prep", "en_gloss": "with", "ja_gloss": "と一緒に"}
 {"lemma": "сам", "rank": 104, "pos": "pron", "en_gloss": "self", "ja_gloss": "自身"}
 {"lemma": "теперь", "rank": 105, "pos": "adv", "en_gloss": "now", "ja_gloss": "今"}
 {"lemma": "какой", "rank": 106, "pos": "det", "en_gloss": "what kind", "ja_gloss": "どんな"}
-{"lemma": "раз", "rank": 107, "pos": "noun", "en_gloss": "time/occasion", "ja_gloss": "回"}
+{"lemma": "раз", "rank": 107, "pos": "noun", "en_gloss": "time/occasion", "ja_gloss": "回", "gender": "m"}
 {"lemma": "её", "rank": 108, "pos": "det", "en_gloss": "her", "ja_gloss": "彼女の"}
 {"lemma": "найти", "rank": 109, "pos": "verb", "en_gloss": "find", "ja_gloss": "見つける"}
-{"lemma": "рука", "rank": 110, "pos": "noun", "en_gloss": "hand", "ja_gloss": "手"}
+{"lemma": "рука", "rank": 110, "pos": "noun", "en_gloss": "hand", "ja_gloss": "手", "gender": "f"}
 {"lemma": "пойти", "rank": 111, "pos": "verb", "en_gloss": "go off", "ja_gloss": "行く"}
-{"lemma": "жизнь", "rank": 112, "pos": "noun", "en_gloss": "life", "ja_gloss": "人生"}
+{"lemma": "жизнь", "rank": 112, "pos": "noun", "en_gloss": "life", "ja_gloss": "人生", "gender": "f"}
 {"lemma": "надо", "rank": 113, "pos": "predic", "en_gloss": "must/need", "ja_gloss": "必要だ"}
-{"lemma": "правда", "rank": 114, "pos": "noun", "en_gloss": "truth", "ja_gloss": "真実"}
+{"lemma": "правда", "rank": 114, "pos": "noun", "en_gloss": "truth", "ja_gloss": "真実", "gender": "f"}
 {"lemma": "должен", "rank": 115, "pos": "predic", "en_gloss": "must", "ja_gloss": "ねばならない"}
 {"lemma": "что-то", "rank": 116, "pos": "pron", "en_gloss": "something", "ja_gloss": "何か"}
 {"lemma": "дать", "rank": 117, "pos": "verb", "en_gloss": "give", "ja_gloss": "与える"}
 {"lemma": "потом", "rank": 118, "pos": "adv", "en_gloss": "then/later", "ja_gloss": "後で"}
 {"lemma": "ли", "rank": 119, "pos": "part", "en_gloss": "whether", "ja_gloss": "か"}
-{"lemma": "машина", "rank": 120, "pos": "noun", "en_gloss": "car", "ja_gloss": "車"}
+{"lemma": "машина", "rank": 120, "pos": "noun", "en_gloss": "car", "ja_gloss": "車", "gender": "f"}
 {"lemma": "давай", "rank": 121, "pos": "part", "en_gloss": "let's", "ja_gloss": "さあ"}
 {"lemma": "пока", "rank": 122, "pos": "conj", "en_gloss": "while/bye", "ja_gloss": "間に"}
 {"lemma": "даже", "rank": 123, "pos": "part", "en_gloss": "even", "ja_gloss": "さえ"}
 {"lemma": "привет", "rank": 124, "pos": "intj", "en_gloss": "hello", "ja_gloss": "こんにちは"}
-{"lemma": "женщина", "rank": 125, "pos": "noun", "en_gloss": "woman", "ja_gloss": "女性"}
+{"lemma": "женщина", "rank": 125, "pos": "noun", "en_gloss": "woman", "ja_gloss": "女性", "gender": "f"}
 {"lemma": "другой", "rank": 126, "pos": "det", "en_gloss": "other", "ja_gloss": "別の"}
 {"lemma": "тоже", "rank": 127, "pos": "adv", "en_gloss": "also", "ja_gloss": "も"}
 {"lemma": "понимать", "rank": 128, "pos": "verb", "en_gloss": "understand", "ja_gloss": "理解する"}
-{"lemma": "бог", "rank": 129, "pos": "noun", "en_gloss": "God", "ja_gloss": "神"}
+{"lemma": "бог", "rank": 129, "pos": "noun", "en_gloss": "God", "ja_gloss": "神", "gender": "m"}
 {"lemma": "помочь", "rank": 130, "pos": "verb", "en_gloss": "help", "ja_gloss": "助ける"}
-{"lemma": "папа", "rank": 131, "pos": "noun", "en_gloss": "dad", "ja_gloss": "パパ"}
+{"lemma": "папа", "rank": 131, "pos": "noun", "en_gloss": "dad", "ja_gloss": "パパ", "gender": "m"}
 {"lemma": "никогда", "rank": 132, "pos": "adv", "en_gloss": "never", "ja_gloss": "決してない"}
 {"lemma": "эй", "rank": 133, "pos": "intj", "en_gloss": "hey", "ja_gloss": "おい"}
 {"lemma": "об", "rank": 134, "pos": "prep", "en_gloss": "about", "ja_gloss": "について"}
@@ -140,46 +140,46 @@
 {"lemma": "конечно", "rank": 140, "pos": "part", "en_gloss": "of course", "ja_gloss": "もちろん"}
 {"lemma": "лучше", "rank": 141, "pos": "adv", "en_gloss": "better", "ja_gloss": "より良く"}
 {"lemma": "стать", "rank": 142, "pos": "verb", "en_gloss": "become", "ja_gloss": "なる"}
-{"lemma": "вопрос", "rank": 143, "pos": "noun", "en_gloss": "question", "ja_gloss": "質問"}
-{"lemma": "место", "rank": 144, "pos": "noun", "en_gloss": "place", "ja_gloss": "場所"}
+{"lemma": "вопрос", "rank": 143, "pos": "noun", "en_gloss": "question", "ja_gloss": "質問", "gender": "m"}
+{"lemma": "место", "rank": 144, "pos": "noun", "en_gloss": "place", "ja_gloss": "場所", "gender": "n"}
 {"lemma": "нужный", "rank": 145, "pos": "adj", "en_gloss": "needed", "ja_gloss": "必要な"}
 {"lemma": "взять", "rank": 146, "pos": "verb", "en_gloss": "take", "ja_gloss": "取る"}
 {"lemma": "простить", "rank": 147, "pos": "verb", "en_gloss": "forgive", "ja_gloss": "許す"}
-{"lemma": "ночь", "rank": 148, "pos": "noun", "en_gloss": "night", "ja_gloss": "夜"}
-{"lemma": "семья", "rank": 149, "pos": "noun", "en_gloss": "family", "ja_gloss": "家族"}
-{"lemma": "час", "rank": 150, "pos": "noun", "en_gloss": "hour", "ja_gloss": "時"}
-{"lemma": "мать", "rank": 151, "pos": "noun", "en_gloss": "mother", "ja_gloss": "母"}
+{"lemma": "ночь", "rank": 148, "pos": "noun", "en_gloss": "night", "ja_gloss": "夜", "gender": "f"}
+{"lemma": "семья", "rank": 149, "pos": "noun", "en_gloss": "family", "ja_gloss": "家族", "gender": "f"}
+{"lemma": "час", "rank": 150, "pos": "noun", "en_gloss": "hour", "ja_gloss": "時", "gender": "m"}
+{"lemma": "мать", "rank": 151, "pos": "noun", "en_gloss": "mother", "ja_gloss": "母", "gender": "f"}
 {"lemma": "убить", "rank": 152, "pos": "verb", "en_gloss": "kill", "ja_gloss": "殺す"}
 {"lemma": "иметь", "rank": 153, "pos": "verb", "en_gloss": "have", "ja_gloss": "持つ"}
-{"lemma": "сын", "rank": 154, "pos": "noun", "en_gloss": "son", "ja_gloss": "息子"}
+{"lemma": "сын", "rank": 154, "pos": "noun", "en_gloss": "son", "ja_gloss": "息子", "gender": "m"}
 {"lemma": "пожалуйста", "rank": 155, "pos": "intj", "en_gloss": "please", "ja_gloss": "どうぞ"}
-{"lemma": "минута", "rank": 156, "pos": "noun", "en_gloss": "minuite", "ja_gloss": "分"}
+{"lemma": "минута", "rank": 156, "pos": "noun", "en_gloss": "minuite", "ja_gloss": "分", "gender": "f"}
 {"lemma": "вернуться", "rank": 157, "pos": "verb", "en_gloss": "return", "ja_gloss": "戻る"}
 {"lemma": "работать", "rank": 158, "pos": "verb", "en_gloss": "work", "ja_gloss": "働く"}
-{"lemma": "жена", "rank": 159, "pos": "noun", "en_gloss": "wife", "ja_gloss": "妻"}
+{"lemma": "жена", "rank": 159, "pos": "noun", "en_gloss": "wife", "ja_gloss": "妻", "gender": "f"}
 {"lemma": "два", "rank": 160, "pos": "num", "en_gloss": "two", "ja_gloss": "二"}
-{"lemma": "порядок", "rank": 161, "pos": "noun", "en_gloss": "order", "ja_gloss": "秩序"}
+{"lemma": "порядок", "rank": 161, "pos": "noun", "en_gloss": "order", "ja_gloss": "秩序", "gender": "m"}
 {"lemma": "сюда", "rank": 162, "pos": "adv", "en_gloss": "here (to)", "ja_gloss": "こちらへ"}
 {"lemma": "стоить", "rank": 163, "pos": "verb", "en_gloss": "cost", "ja_gloss": "値段がする"}
-{"lemma": "девушка", "rank": 164, "pos": "noun", "en_gloss": "girl", "ja_gloss": "少女"}
+{"lemma": "девушка", "rank": 164, "pos": "noun", "en_gloss": "girl", "ja_gloss": "少女", "gender": "f"}
 {"lemma": "понять", "rank": 165, "pos": "verb", "en_gloss": "understand", "ja_gloss": "理解する"}
 {"lemma": "чего", "rank": 166, "pos": "pron", "en_gloss": "what", "ja_gloss": "何"}
 {"lemma": "значит", "rank": 167, "pos": "part", "en_gloss": "so, that means", "ja_gloss": "つまり"}
 {"lemma": "смотреть", "rank": 168, "pos": "verb", "en_gloss": "watch/look", "ja_gloss": "見る"}
 {"lemma": "прийти", "rank": 169, "pos": "verb", "en_gloss": "come", "ja_gloss": "来る"}
-{"lemma": "брат", "rank": 170, "pos": "noun", "en_gloss": "brother", "ja_gloss": "兄弟"}
+{"lemma": "брат", "rank": 170, "pos": "noun", "en_gloss": "brother", "ja_gloss": "兄弟", "gender": "m"}
 {"lemma": "никто", "rank": 171, "pos": "pron", "en_gloss": "nobody", "ja_gloss": "誰もない"}
 {"lemma": "всегда", "rank": 172, "pos": "adv", "en_gloss": "always", "ja_gloss": "いつも"}
 {"lemma": "всего", "rank": 173, "pos": "adv", "en_gloss": "in total, only", "ja_gloss": "全部で"}
 {"lemma": "во", "rank": 174, "pos": "prep", "en_gloss": "in", "ja_gloss": "中に"}
 {"lemma": "можно", "rank": 175, "pos": "predic", "en_gloss": "may/can", "ja_gloss": "できる"}
-{"lemma": "неделя", "rank": 176, "pos": "noun", "en_gloss": "week", "ja_gloss": "週"}
-{"lemma": "мистер", "rank": 177, "pos": "noun", "en_gloss": "mister", "ja_gloss": "氏"}
+{"lemma": "неделя", "rank": 176, "pos": "noun", "en_gloss": "week", "ja_gloss": "週", "gender": "f"}
+{"lemma": "мистер", "rank": 177, "pos": "noun", "en_gloss": "mister", "ja_gloss": "氏", "gender": "m"}
 {"lemma": "без", "rank": 178, "pos": "prep", "en_gloss": "without", "ja_gloss": "なしで"}
 {"lemma": "посмотреть", "rank": 179, "pos": "verb", "en_gloss": "take a look", "ja_gloss": "見る"}
 {"lemma": "слышать", "rank": 180, "pos": "verb", "en_gloss": "hear", "ja_gloss": "聞こえる"}
 {"lemma": "кто-то", "rank": 181, "pos": "pron", "en_gloss": "someone", "ja_gloss": "誰か"}
-{"lemma": "голова", "rank": 182, "pos": "noun", "en_gloss": "head", "ja_gloss": "頭"}
+{"lemma": "голова", "rank": 182, "pos": "noun", "en_gloss": "head", "ja_gloss": "頭", "gender": "f"}
 {"lemma": "первый", "rank": 183, "pos": "adj", "en_gloss": "first", "ja_gloss": "第一の"}
 {"lemma": "собираться", "rank": 184, "pos": "verb", "en_gloss": "gather, intend to", "ja_gloss": "集まる"}
 {"lemma": "нравиться", "rank": 185, "pos": "verb", "en_gloss": "like", "ja_gloss": "好む"}
@@ -187,96 +187,96 @@
 {"lemma": "после", "rank": 187, "pos": "prep", "en_gloss": "after", "ja_gloss": "後で"}
 {"lemma": "случиться", "rank": 188, "pos": "verb", "en_gloss": "happen", "ja_gloss": "起こる"}
 {"lemma": "новый", "rank": 189, "pos": "adj", "en_gloss": "new", "ja_gloss": "新しい"}
-{"lemma": "город", "rank": 190, "pos": "noun", "en_gloss": "city", "ja_gloss": "都市"}
-{"lemma": "глаз", "rank": 191, "pos": "noun", "en_gloss": "eye", "ja_gloss": "目"}
+{"lemma": "город", "rank": 190, "pos": "noun", "en_gloss": "city", "ja_gloss": "都市", "gender": "m"}
+{"lemma": "глаз", "rank": 191, "pos": "noun", "en_gloss": "eye", "ja_gloss": "目", "gender": "m"}
 {"lemma": "самый", "rank": 192, "pos": "det", "en_gloss": "most/very", "ja_gloss": "最も"}
 {"lemma": "жить", "rank": 193, "pos": "verb", "en_gloss": "live", "ja_gloss": "生きる"}
 {"lemma": "пытаться", "rank": 194, "pos": "verb", "en_gloss": "try", "ja_gloss": "試みる"}
 {"lemma": "получить", "rank": 195, "pos": "verb", "en_gloss": "get", "ja_gloss": "得る"}
-{"lemma": "дорога", "rank": 196, "pos": "noun", "en_gloss": "road", "ja_gloss": "道路"}
+{"lemma": "дорога", "rank": 196, "pos": "noun", "en_gloss": "road", "ja_gloss": "道路", "gender": "f"}
 {"lemma": "поговорить", "rank": 197, "pos": "verb", "en_gloss": "talk", "ja_gloss": "話す"}
-{"lemma": "сэр", "rank": 198, "pos": "noun", "en_gloss": "sir", "ja_gloss": "卿"}
+{"lemma": "сэр", "rank": 198, "pos": "noun", "en_gloss": "sir", "ja_gloss": "卿", "gender": "m"}
 {"lemma": "каждый", "rank": 199, "pos": "det", "en_gloss": "each", "ja_gloss": "各々の"}
 {"lemma": "ведь", "rank": 200, "pos": "part", "en_gloss": "after all", "ja_gloss": "だって"}
 {"lemma": "просить", "rank": 201, "pos": "verb", "en_gloss": "ask/request", "ja_gloss": "頼む"}
 {"lemma": "завтра", "rank": 202, "pos": "adv", "en_gloss": "tomorrow", "ja_gloss": "明日"}
 {"lemma": "остаться", "rank": 203, "pos": "verb", "en_gloss": "remain", "ja_gloss": "残る"}
-{"lemma": "мужчина", "rank": 204, "pos": "noun", "en_gloss": "man", "ja_gloss": "男性"}
+{"lemma": "мужчина", "rank": 204, "pos": "noun", "en_gloss": "man", "ja_gloss": "男性", "gender": "m"}
 {"lemma": "слушать", "rank": 205, "pos": "verb", "en_gloss": "listen", "ja_gloss": "聞く"}
 {"lemma": "через", "rank": 206, "pos": "prep", "en_gloss": "through", "ja_gloss": "通って"}
-{"lemma": "проблема", "rank": 207, "pos": "noun", "en_gloss": "problem", "ja_gloss": "問題"}
-{"lemma": "школа", "rank": 208, "pos": "noun", "en_gloss": "school", "ja_gloss": "学校"}
+{"lemma": "проблема", "rank": 207, "pos": "noun", "en_gloss": "problem", "ja_gloss": "問題", "gender": "f"}
+{"lemma": "школа", "rank": 208, "pos": "noun", "en_gloss": "school", "ja_gloss": "学校", "gender": "f"}
 {"lemma": "возможно", "rank": 209, "pos": "adv", "en_gloss": "possibly", "ja_gloss": "たぶん"}
 {"lemma": "немного", "rank": 210, "pos": "adv", "en_gloss": "a little", "ja_gloss": "少し"}
 {"lemma": "узнать", "rank": 211, "pos": "verb", "en_gloss": "find out", "ja_gloss": "知る"}
 {"lemma": "казаться", "rank": 212, "pos": "verb", "en_gloss": "seem", "ja_gloss": "見える"}
 {"lemma": "увидеть", "rank": 213, "pos": "verb", "en_gloss": "see", "ja_gloss": "見る"}
 {"lemma": "слишком", "rank": 214, "pos": "adv", "en_gloss": "too much", "ja_gloss": "過度に"}
-{"lemma": "месяц", "rank": 215, "pos": "noun", "en_gloss": "month", "ja_gloss": "月"}
+{"lemma": "месяц", "rank": 215, "pos": "noun", "en_gloss": "month", "ja_gloss": "月", "gender": "m"}
 {"lemma": "последний", "rank": 216, "pos": "adj", "en_gloss": "last", "ja_gloss": "最後の"}
 {"lemma": "заниматься", "rank": 217, "pos": "verb", "en_gloss": "engage in", "ja_gloss": "従事する"}
 {"lemma": "зачем", "rank": 218, "pos": "adv", "en_gloss": "what for", "ja_gloss": "何のため"}
 {"lemma": "уйти", "rank": 219, "pos": "verb", "en_gloss": "leave", "ja_gloss": "去る"}
-{"lemma": "дверь", "rank": 220, "pos": "noun", "en_gloss": "door", "ja_gloss": "ドア"}
-{"lemma": "доктор", "rank": 221, "pos": "noun", "en_gloss": "doctor", "ja_gloss": "医者"}
-{"lemma": "лицо", "rank": 222, "pos": "noun", "en_gloss": "face", "ja_gloss": "顔"}
+{"lemma": "дверь", "rank": 220, "pos": "noun", "en_gloss": "door", "ja_gloss": "ドア", "gender": "f"}
+{"lemma": "доктор", "rank": 221, "pos": "noun", "en_gloss": "doctor", "ja_gloss": "医者", "gender": "m"}
+{"lemma": "лицо", "rank": 222, "pos": "noun", "en_gloss": "face", "ja_gloss": "顔", "gender": "n"}
 {"lemma": "рассказать", "rank": 223, "pos": "verb", "en_gloss": "tell", "ja_gloss": "語る"}
 {"lemma": "готовый", "rank": 224, "pos": "adj", "en_gloss": "ready", "ja_gloss": "準備できた"}
 {"lemma": "пора", "rank": 225, "pos": "predic", "en_gloss": "it's time", "ja_gloss": "時間だ"}
 {"lemma": "ждать", "rank": 226, "pos": "verb", "en_gloss": "wait", "ja_gloss": "待つ"}
-{"lemma": "комната", "rank": 227, "pos": "noun", "en_gloss": "room", "ja_gloss": "部屋"}
+{"lemma": "комната", "rank": 227, "pos": "noun", "en_gloss": "room", "ja_gloss": "部屋", "gender": "f"}
 {"lemma": "кажется", "rank": 228, "pos": "part", "en_gloss": "it seems", "ja_gloss": "のようだ"}
 {"lemma": "оставить", "rank": 229, "pos": "verb", "en_gloss": "leave", "ja_gloss": "残す"}
 {"lemma": "извинить", "rank": 230, "pos": "verb", "en_gloss": "forgive", "ja_gloss": "許す"}
 {"lemma": "точно", "rank": 231, "pos": "adv", "en_gloss": "exactly", "ja_gloss": "正確に"}
-{"lemma": "право", "rank": 232, "pos": "noun", "en_gloss": "right/law", "ja_gloss": "権利"}
+{"lemma": "право", "rank": 232, "pos": "noun", "en_gloss": "right/law", "ja_gloss": "権利", "gender": "n"}
 {"lemma": "под", "rank": 233, "pos": "prep", "en_gloss": "under", "ja_gloss": "下に"}
 {"lemma": "умереть", "rank": 234, "pos": "verb", "en_gloss": "die", "ja_gloss": "死ぬ"}
 {"lemma": "назад", "rank": 235, "pos": "adv", "en_gloss": "back/ago", "ja_gloss": "前に"}
-{"lemma": "мир", "rank": 236, "pos": "noun", "en_gloss": "world/peace", "ja_gloss": "世界"}
+{"lemma": "мир", "rank": 236, "pos": "noun", "en_gloss": "world/peace", "ja_gloss": "世界", "gender": "m"}
 {"lemma": "из-за", "rank": 237, "pos": "prep", "en_gloss": "because of", "ja_gloss": "のせいで"}
 {"lemma": "помнить", "rank": 238, "pos": "verb", "en_gloss": "remember", "ja_gloss": "覚えている"}
-{"lemma": "имя", "rank": 239, "pos": "noun", "en_gloss": "name", "ja_gloss": "名前"}
+{"lemma": "имя", "rank": 239, "pos": "noun", "en_gloss": "name", "ja_gloss": "名前", "gender": "n"}
 {"lemma": "вместе", "rank": 240, "pos": "adv", "en_gloss": "together", "ja_gloss": "一緒に"}
-{"lemma": "сестра", "rank": 241, "pos": "noun", "en_gloss": "sister", "ja_gloss": "姉妹"}
+{"lemma": "сестра", "rank": 241, "pos": "noun", "en_gloss": "sister", "ja_gloss": "姉妹", "gender": "f"}
 {"lemma": "куда", "rank": 242, "pos": "adv", "en_gloss": "where to", "ja_gloss": "どこへ"}
 {"lemma": "маленький", "rank": 243, "pos": "adj", "en_gloss": "small", "ja_gloss": "小さい"}
 {"lemma": "подождать", "rank": 244, "pos": "verb", "en_gloss": "wait", "ja_gloss": "待つ"}
-{"lemma": "слово", "rank": 245, "pos": "noun", "en_gloss": "word", "ja_gloss": "言葉"}
-{"lemma": "муж", "rank": 246, "pos": "noun", "en_gloss": "husband", "ja_gloss": "夫"}
+{"lemma": "слово", "rank": 245, "pos": "noun", "en_gloss": "word", "ja_gloss": "言葉", "gender": "n"}
+{"lemma": "муж", "rank": 246, "pos": "noun", "en_gloss": "husband", "ja_gloss": "夫", "gender": "m"}
 {"lemma": "сколько", "rank": 247, "pos": "adv", "en_gloss": "how much", "ja_gloss": "いくら"}
-{"lemma": "телефон", "rank": 248, "pos": "noun", "en_gloss": "phone", "ja_gloss": "電話"}
+{"lemma": "телефон", "rank": 248, "pos": "noun", "en_gloss": "phone", "ja_gloss": "電話", "gender": "m"}
 {"lemma": "поэтому", "rank": 249, "pos": "adv", "en_gloss": "therefore", "ja_gloss": "だから"}
-{"lemma": "сердце", "rank": 250, "pos": "noun", "en_gloss": "heart", "ja_gloss": "心臓"}
+{"lemma": "сердце", "rank": 250, "pos": "noun", "en_gloss": "heart", "ja_gloss": "心臓", "gender": "n"}
 {"lemma": "подумать", "rank": 251, "pos": "verb", "en_gloss": "think", "ja_gloss": "考える"}
 {"lemma": "чувствовать", "rank": 252, "pos": "verb", "en_gloss": "feel", "ja_gloss": "感じる"}
 {"lemma": "спать", "rank": 253, "pos": "verb", "en_gloss": "sleep", "ja_gloss": "眠る"}
 {"lemma": "плохой", "rank": 254, "pos": "adj", "en_gloss": "bad", "ja_gloss": "悪い"}
 {"lemma": "снова", "rank": 255, "pos": "adv", "en_gloss": "again", "ja_gloss": "再び"}
-{"lemma": "утро", "rank": 256, "pos": "noun", "en_gloss": "morning", "ja_gloss": "朝"}
-{"lemma": "черта", "rank": 257, "pos": "noun", "en_gloss": "trait", "ja_gloss": "特徴"}
+{"lemma": "утро", "rank": 256, "pos": "noun", "en_gloss": "morning", "ja_gloss": "朝", "gender": "n"}
+{"lemma": "черта", "rank": 257, "pos": "noun", "en_gloss": "trait", "ja_gloss": "特徴", "gender": "f"}
 {"lemma": "начать", "rank": 258, "pos": "verb", "en_gloss": "begin", "ja_gloss": "始める"}
-{"lemma": "дочь", "rank": 259, "pos": "noun", "en_gloss": "daughter", "ja_gloss": "娘"}
+{"lemma": "дочь", "rank": 259, "pos": "noun", "en_gloss": "daughter", "ja_gloss": "娘", "gender": "f"}
 {"lemma": "дома", "rank": 260, "pos": "adv", "en_gloss": "at home", "ja_gloss": "家で"}
 {"lemma": "три", "rank": 261, "pos": "num", "en_gloss": "three", "ja_gloss": "3"}
 {"lemma": "что-нибудь", "rank": 262, "pos": "pron", "en_gloss": "something/anything", "ja_gloss": "何か"}
-{"lemma": "вещь", "rank": 263, "pos": "noun", "en_gloss": "thing", "ja_gloss": "物"}
+{"lemma": "вещь", "rank": 263, "pos": "noun", "en_gloss": "thing", "ja_gloss": "物", "gender": "f"}
 {"lemma": "забыть", "rank": 264, "pos": "verb", "en_gloss": "forget", "ja_gloss": "忘れる"}
 {"lemma": "позволить", "rank": 265, "pos": "verb", "en_gloss": "allow", "ja_gloss": "許す"}
 {"lemma": "выйти", "rank": 266, "pos": "verb", "en_gloss": "go out", "ja_gloss": "出る"}
-{"lemma": "вода", "rank": 267, "pos": "noun", "en_gloss": "water", "ja_gloss": "水"}
+{"lemma": "вода", "rank": 267, "pos": "noun", "en_gloss": "water", "ja_gloss": "水", "gender": "f"}
 {"lemma": "отлично", "rank": 268, "pos": "adv", "en_gloss": "excellently", "ja_gloss": "素晴らしく"}
 {"lemma": "похоже", "rank": 269, "pos": "predic", "en_gloss": "seems", "ja_gloss": "らしい"}
 {"lemma": "домой", "rank": 270, "pos": "adv", "en_gloss": "homeward", "ja_gloss": "家へ"}
-{"lemma": "нога", "rank": 271, "pos": "noun", "en_gloss": "leg", "ja_gloss": "脚"}
+{"lemma": "нога", "rank": 271, "pos": "noun", "en_gloss": "leg", "ja_gloss": "脚", "gender": "f"}
 {"lemma": "какой-то", "rank": 272, "pos": "det", "en_gloss": "some kind", "ja_gloss": "何かの"}
-{"lemma": "конец", "rank": 273, "pos": "noun", "en_gloss": "end", "ja_gloss": "終わり"}
+{"lemma": "конец", "rank": 273, "pos": "noun", "en_gloss": "end", "ja_gloss": "終わり", "gender": "m"}
 {"lemma": "надеяться", "rank": 274, "pos": "verb", "en_gloss": "hope", "ja_gloss": "望む"}
 {"lemma": "никакой", "rank": 275, "pos": "det", "en_gloss": "no kind", "ja_gloss": "どんなもない"}
 {"lemma": "прийтись", "rank": 276, "pos": "verb", "en_gloss": "have to", "ja_gloss": "せざるを得ない"}
-{"lemma": "вечер", "rank": 277, "pos": "noun", "en_gloss": "evening", "ja_gloss": "夕方"}
+{"lemma": "вечер", "rank": 277, "pos": "noun", "en_gloss": "evening", "ja_gloss": "夕方", "gender": "m"}
 {"lemma": "выглядеть", "rank": 278, "pos": "verb", "en_gloss": "look, appear", "ja_gloss": "見える"}
-{"lemma": "вид", "rank": 279, "pos": "noun", "en_gloss": "view/kind", "ja_gloss": "種類"}
+{"lemma": "вид", "rank": 279, "pos": "noun", "en_gloss": "view/kind", "ja_gloss": "種類", "gender": "m"}
 {"lemma": "послушать", "rank": 280, "pos": "verb", "en_gloss": "listen", "ja_gloss": "聞く"}
 {"lemma": "именно", "rank": 281, "pos": "part", "en_gloss": "exactly", "ja_gloss": "まさに"}
 {"lemma": "искать", "rank": 282, "pos": "verb", "en_gloss": "search", "ja_gloss": "探す"}
@@ -296,23 +296,23 @@
 {"lemma": "считать", "rank": 296, "pos": "verb", "en_gloss": "count/consider", "ja_gloss": "数える"}
 {"lemma": "тем", "rank": 297, "pos": "conj", "en_gloss": "all the more", "ja_gloss": "なおさら"}
 {"lemma": "звать", "rank": 298, "pos": "verb", "en_gloss": "call, name", "ja_gloss": "呼ぶ"}
-{"lemma": "случай", "rank": 299, "pos": "noun", "en_gloss": "case/chance", "ja_gloss": "場合"}
+{"lemma": "случай", "rank": 299, "pos": "noun", "en_gloss": "case/chance", "ja_gloss": "場合", "gender": "m"}
 {"lemma": "вчера", "rank": 300, "pos": "adv", "en_gloss": "yesterday", "ja_gloss": "昨日"}
-{"lemma": "книга", "rank": 301, "pos": "noun", "en_gloss": "book", "ja_gloss": "本"}
-{"lemma": "пара", "rank": 302, "pos": "noun", "en_gloss": "pair/couple", "ja_gloss": "ペア"}
+{"lemma": "книга", "rank": 301, "pos": "noun", "en_gloss": "book", "ja_gloss": "本", "gender": "f"}
+{"lemma": "пара", "rank": 302, "pos": "noun", "en_gloss": "pair/couple", "ja_gloss": "ペア", "gender": "f"}
 {"lemma": "верить", "rank": 303, "pos": "verb", "en_gloss": "believe", "ja_gloss": "信じる"}
 {"lemma": "пройти", "rank": 304, "pos": "verb", "en_gloss": "pass", "ja_gloss": "通る"}
 {"lemma": "должно", "rank": 305, "pos": "predic", "en_gloss": "should", "ja_gloss": "すべきだ"}
 {"lemma": "совсем", "rank": 306, "pos": "adv", "en_gloss": "completely", "ja_gloss": "完全に"}
-{"lemma": "смерть", "rank": 307, "pos": "noun", "en_gloss": "death", "ja_gloss": "死"}
+{"lemma": "смерть", "rank": 307, "pos": "noun", "en_gloss": "death", "ja_gloss": "死", "gender": "f"}
 {"lemma": "играть", "rank": 308, "pos": "verb", "en_gloss": "play", "ja_gloss": "遊ぶ"}
 {"lemma": "ж", "rank": 309, "pos": "part", "en_gloss": "emphatic particle (=же)", "ja_gloss": "強調の助詞"}
 {"lemma": "уходить", "rank": 310, "pos": "verb", "en_gloss": "leave", "ja_gloss": "去る"}
 {"lemma": "про", "rank": 311, "pos": "prep", "en_gloss": "about", "ja_gloss": "について"}
 {"lemma": "уверенный", "rank": 312, "pos": "adj", "en_gloss": "confident", "ja_gloss": "自信のある"}
-{"lemma": "ребята", "rank": 313, "pos": "noun", "en_gloss": "guys", "ja_gloss": "みんな"}
+{"lemma": "ребята", "rank": 313, "pos": "noun", "en_gloss": "guys", "ja_gloss": "みんな", "gender": "pl"}
 {"lemma": "перед", "rank": 314, "pos": "prep", "en_gloss": "before", "ja_gloss": "前で"}
-{"lemma": "помощь", "rank": 315, "pos": "noun", "en_gloss": "help", "ja_gloss": "助け"}
+{"lemma": "помощь", "rank": 315, "pos": "noun", "en_gloss": "help", "ja_gloss": "助け", "gender": "f"}
 {"lemma": "жаль", "rank": 316, "pos": "predic", "en_gloss": "pity", "ja_gloss": "残念だ"}
 {"lemma": "туда", "rank": 317, "pos": "adv", "en_gloss": "there (to)", "ja_gloss": "そこへ"}
 {"lemma": "действительно", "rank": 318, "pos": "adv", "en_gloss": "really", "ja_gloss": "本当に"}
@@ -320,35 +320,35 @@
 {"lemma": "любой", "rank": 320, "pos": "det", "en_gloss": "any", "ja_gloss": "任意の"}
 {"lemma": "показать", "rank": 321, "pos": "verb", "en_gloss": "show", "ja_gloss": "見せる"}
 {"lemma": "хватить", "rank": 322, "pos": "verb", "en_gloss": "be enough", "ja_gloss": "足りる"}
-{"lemma": "еда", "rank": 323, "pos": "noun", "en_gloss": "food", "ja_gloss": "食べ物"}
+{"lemma": "еда", "rank": 323, "pos": "noun", "en_gloss": "food", "ja_gloss": "食べ物", "gender": "f"}
 {"lemma": "оно", "rank": 324, "pos": "pron", "en_gloss": "it", "ja_gloss": "それ"}
 {"lemma": "следующий", "rank": 325, "pos": "adj", "en_gloss": "next", "ja_gloss": "次の"}
 {"lemma": "использовать", "rank": 326, "pos": "verb", "en_gloss": "use", "ja_gloss": "使う"}
-{"lemma": "секунда", "rank": 327, "pos": "noun", "en_gloss": "second", "ja_gloss": "秒"}
+{"lemma": "секунда", "rank": 327, "pos": "noun", "en_gloss": "second", "ja_gloss": "秒", "gender": "f"}
 {"lemma": "поехать", "rank": 328, "pos": "verb", "en_gloss": "go (by transport)", "ja_gloss": "行く"}
-{"lemma": "полиция", "rank": 329, "pos": "noun", "en_gloss": "police", "ja_gloss": "警察"}
+{"lemma": "полиция", "rank": 329, "pos": "noun", "en_gloss": "police", "ja_gloss": "警察", "gender": "f"}
 {"lemma": "ранний", "rank": 330, "pos": "adj", "en_gloss": "early", "ja_gloss": "早い"}
 {"lemma": "больший", "rank": 331, "pos": "adj", "en_gloss": "bigger", "ja_gloss": "より大きい"}
-{"lemma": "улица", "rank": 332, "pos": "noun", "en_gloss": "street", "ja_gloss": "通り"}
+{"lemma": "улица", "rank": 332, "pos": "noun", "en_gloss": "street", "ja_gloss": "通り", "gender": "f"}
 {"lemma": "милый", "rank": 333, "pos": "adj", "en_gloss": "cute/dear", "ja_gloss": "可愛い"}
 {"lemma": "отсюда", "rank": 334, "pos": "adv", "en_gloss": "from here", "ja_gloss": "ここから"}
-{"lemma": "сторона", "rank": 335, "pos": "noun", "en_gloss": "side", "ja_gloss": "側"}
+{"lemma": "сторона", "rank": 335, "pos": "noun", "en_gloss": "side", "ja_gloss": "側", "gender": "f"}
 {"lemma": "произойти", "rank": 336, "pos": "verb", "en_gloss": "happen", "ja_gloss": "起こる"}
 {"lemma": "настоящий", "rank": 337, "pos": "adj", "en_gloss": "real/present", "ja_gloss": "本当の"}
-{"lemma": "история", "rank": 338, "pos": "noun", "en_gloss": "story/history", "ja_gloss": "歴史"}
+{"lemma": "история", "rank": 338, "pos": "noun", "en_gloss": "story/history", "ja_gloss": "歴史", "gender": "f"}
 {"lemma": "единственный", "rank": 339, "pos": "adj", "en_gloss": "only", "ja_gloss": "唯一の"}
 {"lemma": "верно", "rank": 340, "pos": "adv", "en_gloss": "correctly", "ja_gloss": "正しく"}
 {"lemma": "раньше", "rank": 341, "pos": "adv", "en_gloss": "earlier", "ja_gloss": "以前"}
 {"lemma": "кое-что", "rank": 342, "pos": "pron", "en_gloss": "something", "ja_gloss": "何かしら"}
 {"lemma": "насчёт", "rank": 343, "pos": "prep", "en_gloss": "about", "ja_gloss": "について"}
 {"lemma": "уж", "rank": 344, "pos": "part", "en_gloss": "already/emphatic", "ja_gloss": "もう"}
-{"lemma": "часть", "rank": 345, "pos": "noun", "en_gloss": "part", "ja_gloss": "部分"}
+{"lemma": "часть", "rank": 345, "pos": "noun", "en_gloss": "part", "ja_gloss": "部分", "gender": "f"}
 {"lemma": "против", "rank": 346, "pos": "prep", "en_gloss": "against", "ja_gloss": "反対に"}
 {"lemma": "оба", "rank": 347, "pos": "num", "en_gloss": "both", "ja_gloss": "両方"}
-{"lemma": "любовь", "rank": 348, "pos": "noun", "en_gloss": "love", "ja_gloss": "愛"}
+{"lemma": "любовь", "rank": 348, "pos": "noun", "en_gloss": "love", "ja_gloss": "愛", "gender": "f"}
 {"lemma": "спросить", "rank": 349, "pos": "verb", "en_gloss": "ask", "ja_gloss": "尋ねる"}
-{"lemma": "господь", "rank": 350, "pos": "noun", "en_gloss": "Lord", "ja_gloss": "主"}
-{"lemma": "ответ", "rank": 351, "pos": "noun", "en_gloss": "answer", "ja_gloss": "答え"}
+{"lemma": "господь", "rank": 350, "pos": "noun", "en_gloss": "Lord", "ja_gloss": "主", "gender": "m"}
+{"lemma": "ответ", "rank": 351, "pos": "noun", "en_gloss": "answer", "ja_gloss": "答え", "gender": "m"}
 {"lemma": "серьёзно", "rank": 352, "pos": "adv", "en_gloss": "seriously", "ja_gloss": "真剣に"}
 {"lemma": "более", "rank": 353, "pos": "adv", "en_gloss": "more", "ja_gloss": "もっと"}
 {"lemma": "итак", "rank": 354, "pos": "conj", "en_gloss": "so", "ja_gloss": "さて"}
@@ -356,48 +356,48 @@
 {"lemma": "вообще", "rank": 356, "pos": "adv", "en_gloss": "generally", "ja_gloss": "一般に"}
 {"lemma": "ко", "rank": 357, "pos": "prep", "en_gloss": "to, towards", "ja_gloss": "へ"}
 {"lemma": "звонить", "rank": 358, "pos": "verb", "en_gloss": "call by phone", "ja_gloss": "電話する"}
-{"lemma": "убийство", "rank": 359, "pos": "noun", "en_gloss": "murder", "ja_gloss": "殺人"}
+{"lemma": "убийство", "rank": 359, "pos": "noun", "en_gloss": "murder", "ja_gloss": "殺人", "gender": "n"}
 {"lemma": "нельзя", "rank": 360, "pos": "predic", "en_gloss": "not allowed", "ja_gloss": "だめ"}
-{"lemma": "больница", "rank": 361, "pos": "noun", "en_gloss": "hospital", "ja_gloss": "病院"}
+{"lemma": "больница", "rank": 361, "pos": "noun", "en_gloss": "hospital", "ja_gloss": "病院", "gender": "f"}
 {"lemma": "наверное", "rank": 362, "pos": "adv", "en_gloss": "probably", "ja_gloss": "たぶん"}
 {"lemma": "забрать", "rank": 363, "pos": "verb", "en_gloss": "take", "ja_gloss": "持ち去る"}
 {"lemma": "принять", "rank": 364, "pos": "verb", "en_gloss": "accept", "ja_gloss": "受け入れる"}
-{"lemma": "кровь", "rank": 365, "pos": "noun", "en_gloss": "blood", "ja_gloss": "血"}
+{"lemma": "кровь", "rank": 365, "pos": "noun", "en_gloss": "blood", "ja_gloss": "血", "gender": "f"}
 {"lemma": "вести", "rank": 366, "pos": "verb", "en_gloss": "lead", "ja_gloss": "導く"}
 {"lemma": "ради", "rank": 367, "pos": "prep", "en_gloss": "for sake", "ja_gloss": "ために"}
-{"lemma": "смысл", "rank": 368, "pos": "noun", "en_gloss": "meaning", "ja_gloss": "意味"}
-{"lemma": "игра", "rank": 369, "pos": "noun", "en_gloss": "game", "ja_gloss": "ゲーム"}
+{"lemma": "смысл", "rank": 368, "pos": "noun", "en_gloss": "meaning", "ja_gloss": "意味", "gender": "m"}
+{"lemma": "игра", "rank": 369, "pos": "noun", "en_gloss": "game", "ja_gloss": "ゲーム", "gender": "f"}
 {"lemma": "потерять", "rank": 370, "pos": "verb", "en_gloss": "lose", "ja_gloss": "失う"}
 {"lemma": "принести", "rank": 371, "pos": "verb", "en_gloss": "bring", "ja_gloss": "持って来る"}
 {"lemma": "купить", "rank": 372, "pos": "verb", "en_gloss": "buy", "ja_gloss": "買う"}
-{"lemma": "вино", "rank": 373, "pos": "noun", "en_gloss": "wine", "ja_gloss": "ワイン"}
-{"lemma": "номер", "rank": 374, "pos": "noun", "en_gloss": "number", "ja_gloss": "番号"}
-{"lemma": "сила", "rank": 375, "pos": "noun", "en_gloss": "strength", "ja_gloss": "力"}
+{"lemma": "вино", "rank": 373, "pos": "noun", "en_gloss": "wine", "ja_gloss": "ワイン", "gender": "n"}
+{"lemma": "номер", "rank": 374, "pos": "noun", "en_gloss": "number", "ja_gloss": "番号", "gender": "m"}
+{"lemma": "сила", "rank": 375, "pos": "noun", "en_gloss": "strength", "ja_gloss": "力", "gender": "f"}
 {"lemma": "кто-нибудь", "rank": 376, "pos": "pron", "en_gloss": "someone/anyone", "ja_gloss": "誰か"}
 {"lemma": "бросить", "rank": 377, "pos": "verb", "en_gloss": "throw/quit", "ja_gloss": "投げる"}
 {"lemma": "хотя", "rank": 378, "pos": "conj", "en_gloss": "although", "ja_gloss": "けれども"}
-{"lemma": "тело", "rank": 379, "pos": "noun", "en_gloss": "body", "ja_gloss": "体"}
-{"lemma": "идея", "rank": 380, "pos": "noun", "en_gloss": "idea", "ja_gloss": "考え"}
-{"lemma": "план", "rank": 381, "pos": "noun", "en_gloss": "plan", "ja_gloss": "計画"}
+{"lemma": "тело", "rank": 379, "pos": "noun", "en_gloss": "body", "ja_gloss": "体", "gender": "n"}
+{"lemma": "идея", "rank": 380, "pos": "noun", "en_gloss": "idea", "ja_gloss": "考え", "gender": "f"}
+{"lemma": "план", "rank": 381, "pos": "noun", "en_gloss": "plan", "ja_gloss": "計画", "gender": "m"}
 {"lemma": "уверить", "rank": 382, "pos": "verb", "en_gloss": "to assure", "ja_gloss": "確信させる"}
 {"lemma": "откуда", "rank": 383, "pos": "adv", "en_gloss": "from where", "ja_gloss": "どこから"}
 {"lemma": "приехать", "rank": 384, "pos": "verb", "en_gloss": "arrive by vehicle", "ja_gloss": "到着する"}
 {"lemma": "далекий", "rank": 385, "pos": "adj", "en_gloss": "distant", "ja_gloss": "遠い"}
 {"lemma": "ясно", "rank": 386, "pos": "adv", "en_gloss": "clearly", "ja_gloss": "明確に"}
-{"lemma": "господин", "rank": 387, "pos": "noun", "en_gloss": "mister", "ja_gloss": "氏"}
+{"lemma": "господин", "rank": 387, "pos": "noun", "en_gloss": "mister", "ja_gloss": "氏", "gender": "m"}
 {"lemma": "закончить", "rank": 388, "pos": "verb", "en_gloss": "finish", "ja_gloss": "終える"}
-{"lemma": "момент", "rank": 389, "pos": "noun", "en_gloss": "moment", "ja_gloss": "瞬間"}
-{"lemma": "девочка", "rank": 390, "pos": "noun", "en_gloss": "girl", "ja_gloss": "女の子"}
+{"lemma": "момент", "rank": 389, "pos": "noun", "en_gloss": "moment", "ja_gloss": "瞬間", "gender": "m"}
+{"lemma": "девочка", "rank": 390, "pos": "noun", "en_gloss": "girl", "ja_gloss": "女の子", "gender": "f"}
 {"lemma": "живой", "rank": 391, "pos": "adj", "en_gloss": "alive", "ja_gloss": "生きている"}
-{"lemma": "путь", "rank": 392, "pos": "noun", "en_gloss": "way/path", "ja_gloss": "道"}
+{"lemma": "путь", "rank": 392, "pos": "noun", "en_gloss": "way/path", "ja_gloss": "道", "gender": "m"}
 {"lemma": "над", "rank": 393, "pos": "prep", "en_gloss": "above", "ja_gloss": "上に"}
-{"lemma": "черт", "rank": 394, "pos": "noun", "en_gloss": "devil", "ja_gloss": "悪魔"}
+{"lemma": "черт", "rank": 394, "pos": "noun", "en_gloss": "devil", "ja_gloss": "悪魔", "gender": "m"}
 {"lemma": "мёртвый", "rank": 395, "pos": "adj", "en_gloss": "dead", "ja_gloss": "死んだ"}
-{"lemma": "квартира", "rank": 396, "pos": "noun", "en_gloss": "apartment", "ja_gloss": "アパート"}
+{"lemma": "квартира", "rank": 396, "pos": "noun", "en_gloss": "apartment", "ja_gloss": "アパート", "gender": "f"}
 {"lemma": "равно", "rank": 397, "pos": "adv", "en_gloss": "equally", "ja_gloss": "同様に"}
-{"lemma": "мисс", "rank": 398, "pos": "noun", "en_gloss": "Miss", "ja_gloss": "ミス"}
+{"lemma": "мисс", "rank": 398, "pos": "noun", "en_gloss": "Miss", "ja_gloss": "ミス", "gender": "f"}
 {"lemma": "поздно", "rank": 399, "pos": "adv", "en_gloss": "late", "ja_gloss": "遅く"}
-{"lemma": "ключ", "rank": 400, "pos": "noun", "en_gloss": "key", "ja_gloss": "鍵"}
+{"lemma": "ключ", "rank": 400, "pos": "noun", "en_gloss": "key", "ja_gloss": "鍵", "gender": "m"}
 {"lemma": "счастливый", "rank": 401, "pos": "adj", "en_gloss": "happy", "ja_gloss": "幸せな"}
 {"lemma": "скоро", "rank": 402, "pos": "adv", "en_gloss": "soon", "ja_gloss": "まもなく"}
 {"lemma": "будто", "rank": 403, "pos": "conj", "en_gloss": "as if", "ja_gloss": "まるで"}
@@ -406,42 +406,42 @@
 {"lemma": "оставаться", "rank": 406, "pos": "verb", "en_gloss": "remain", "ja_gloss": "残る"}
 {"lemma": "сидеть", "rank": 407, "pos": "verb", "en_gloss": "sit", "ja_gloss": "座る"}
 {"lemma": "господи", "rank": 408, "pos": "intj", "en_gloss": "good Lord!", "ja_gloss": "ああ神様"}
-{"lemma": "земля", "rank": 409, "pos": "noun", "en_gloss": "earth/land", "ja_gloss": "地面"}
+{"lemma": "земля", "rank": 409, "pos": "noun", "en_gloss": "earth/land", "ja_gloss": "地面", "gender": "f"}
 {"lemma": "между", "rank": 410, "pos": "prep", "en_gloss": "between", "ja_gloss": "間に"}
-{"lemma": "магазин", "rank": 411, "pos": "noun", "en_gloss": "shop", "ja_gloss": "店"}
-{"lemma": "боль", "rank": 412, "pos": "noun", "en_gloss": "pain", "ja_gloss": "痛み"}
-{"lemma": "мальчик", "rank": 413, "pos": "noun", "en_gloss": "boy", "ja_gloss": "男の子"}
+{"lemma": "магазин", "rank": 411, "pos": "noun", "en_gloss": "shop", "ja_gloss": "店", "gender": "m"}
+{"lemma": "боль", "rank": 412, "pos": "noun", "en_gloss": "pain", "ja_gloss": "痛み", "gender": "f"}
+{"lemma": "мальчик", "rank": 413, "pos": "noun", "en_gloss": "boy", "ja_gloss": "男の子", "gender": "m"}
 {"lemma": "спасти", "rank": 414, "pos": "verb", "en_gloss": "save", "ja_gloss": "救う"}
 {"lemma": "почти", "rank": 415, "pos": "adv", "en_gloss": "almost", "ja_gloss": "ほとんど"}
 {"lemma": "ходить", "rank": 416, "pos": "verb", "en_gloss": "walk/go", "ja_gloss": "歩く"}
 {"lemma": "написать", "rank": 417, "pos": "verb", "en_gloss": "write", "ja_gloss": "書く"}
-{"lemma": "причина", "rank": 418, "pos": "noun", "en_gloss": "reason", "ja_gloss": "理由"}
+{"lemma": "причина", "rank": 418, "pos": "noun", "en_gloss": "reason", "ja_gloss": "理由", "gender": "f"}
 {"lemma": "прошлый", "rank": 419, "pos": "adj", "en_gloss": "last, past", "ja_gloss": "過去の"}
 {"lemma": "нормально", "rank": 420, "pos": "adv", "en_gloss": "fine/normally", "ja_gloss": "普通に"}
 {"lemma": "открыть", "rank": 421, "pos": "verb", "en_gloss": "open", "ja_gloss": "開ける"}
-{"lemma": "кофе", "rank": 422, "pos": "noun", "en_gloss": "coffee", "ja_gloss": "コーヒー"}
+{"lemma": "кофе", "rank": 422, "pos": "noun", "en_gloss": "coffee", "ja_gloss": "コーヒー", "gender": "m"}
 {"lemma": "вернуть", "rank": 423, "pos": "verb", "en_gloss": "return", "ja_gloss": "返す"}
-{"lemma": "врач", "rank": 424, "pos": "noun", "en_gloss": "doctor", "ja_gloss": "医者"}
-{"lemma": "отношение", "rank": 425, "pos": "noun", "en_gloss": "relation", "ja_gloss": "関係"}
+{"lemma": "врач", "rank": 424, "pos": "noun", "en_gloss": "doctor", "ja_gloss": "医者", "gender": "m"}
+{"lemma": "отношение", "rank": 425, "pos": "noun", "en_gloss": "relation", "ja_gloss": "関係", "gender": "n"}
 {"lemma": "поверить", "rank": 426, "pos": "verb", "en_gloss": "believe", "ja_gloss": "信じる"}
 {"lemma": "проверить", "rank": 427, "pos": "verb", "en_gloss": "check", "ja_gloss": "確認する"}
 {"lemma": "полный", "rank": 428, "pos": "adj", "en_gloss": "full", "ja_gloss": "いっぱいの"}
 {"lemma": "хоть", "rank": 429, "pos": "part", "en_gloss": "even, although", "ja_gloss": "たとえ〜でも"}
 {"lemma": "быстрый", "rank": 430, "pos": "adj", "en_gloss": "fast", "ja_gloss": "速い"}
-{"lemma": "ужин", "rank": 431, "pos": "noun", "en_gloss": "dinner", "ja_gloss": "夕食"}
-{"lemma": "встреча", "rank": 432, "pos": "noun", "en_gloss": "meeting", "ja_gloss": "会合"}
+{"lemma": "ужин", "rank": 431, "pos": "noun", "en_gloss": "dinner", "ja_gloss": "夕食", "gender": "m"}
+{"lemma": "встреча", "rank": 432, "pos": "noun", "en_gloss": "meeting", "ja_gloss": "会合", "gender": "f"}
 {"lemma": "достаточно", "rank": 433, "pos": "adv", "en_gloss": "enough", "ja_gloss": "十分に"}
 {"lemma": "быстро", "rank": 434, "pos": "adv", "en_gloss": "quickly", "ja_gloss": "速く"}
 {"lemma": "попробовать", "rank": 435, "pos": "verb", "en_gloss": "try", "ja_gloss": "試す"}
 {"lemma": "некоторый", "rank": 436, "pos": "det", "en_gloss": "some", "ja_gloss": "いくつかの"}
 {"lemma": "попасть", "rank": 437, "pos": "verb", "en_gloss": "get into, hit", "ja_gloss": "たどり着く"}
 {"lemma": "провести", "rank": 438, "pos": "verb", "en_gloss": "conduct", "ja_gloss": "行う"}
-{"lemma": "офис", "rank": 439, "pos": "noun", "en_gloss": "office", "ja_gloss": "事務所"}
+{"lemma": "офис", "rank": 439, "pos": "noun", "en_gloss": "office", "ja_gloss": "事務所", "gender": "m"}
 {"lemma": "продолжать", "rank": 440, "pos": "verb", "en_gloss": "continue", "ja_gloss": "続ける"}
 {"lemma": "начинать", "rank": 441, "pos": "verb", "en_gloss": "begin", "ja_gloss": "始める"}
 {"lemma": "приходить", "rank": 442, "pos": "verb", "en_gloss": "come", "ja_gloss": "来る"}
 {"lemma": "свободный", "rank": 443, "pos": "adj", "en_gloss": "free", "ja_gloss": "自由な"}
-{"lemma": "шанс", "rank": 444, "pos": "noun", "en_gloss": "chance", "ja_gloss": "機会"}
+{"lemma": "шанс", "rank": 444, "pos": "noun", "en_gloss": "chance", "ja_gloss": "機会", "gender": "m"}
 {"lemma": "отдать", "rank": 445, "pos": "verb", "en_gloss": "give away", "ja_gloss": "渡す"}
 {"lemma": "пять", "rank": 446, "pos": "num", "en_gloss": "five", "ja_gloss": "5"}
 {"lemma": "пусть", "rank": 447, "pos": "part", "en_gloss": "let", "ja_gloss": "させて"}
@@ -449,28 +449,28 @@
 {"lemma": "попросить", "rank": 450, "pos": "verb", "en_gloss": "ask, request", "ja_gloss": "頼む"}
 {"lemma": "ехать", "rank": 451, "pos": "verb", "en_gloss": "go by vehicle", "ja_gloss": "乗って行く"}
 {"lemma": "волноваться", "rank": 452, "pos": "verb", "en_gloss": "to worry", "ja_gloss": "心配する"}
-{"lemma": "стол", "rank": 453, "pos": "noun", "en_gloss": "table", "ja_gloss": "机"}
-{"lemma": "свет", "rank": 454, "pos": "noun", "en_gloss": "light", "ja_gloss": "光"}
+{"lemma": "стол", "rank": 453, "pos": "noun", "en_gloss": "table", "ja_gloss": "机", "gender": "m"}
+{"lemma": "свет", "rank": 454, "pos": "noun", "en_gloss": "light", "ja_gloss": "光", "gender": "m"}
 {"lemma": "важный", "rank": 455, "pos": "adj", "en_gloss": "important", "ja_gloss": "重要な"}
 {"lemma": "обещать", "rank": 456, "pos": "verb", "en_gloss": "promise", "ja_gloss": "約束する"}
 {"lemma": "рад", "rank": 457, "pos": "predic", "en_gloss": "glad", "ja_gloss": "嬉しい"}
-{"lemma": "команда", "rank": 458, "pos": "noun", "en_gloss": "team", "ja_gloss": "チーム"}
+{"lemma": "команда", "rank": 458, "pos": "noun", "en_gloss": "team", "ja_gloss": "チーム", "gender": "f"}
 {"lemma": "занятый", "rank": 459, "pos": "adj", "en_gloss": "busy", "ja_gloss": "忙しい"}
 {"lemma": "брать", "rank": 460, "pos": "verb", "en_gloss": "take", "ja_gloss": "取る"}
-{"lemma": "миссис", "rank": 461, "pos": "noun", "en_gloss": "Mrs.", "ja_gloss": "ミセス"}
+{"lemma": "миссис", "rank": 461, "pos": "noun", "en_gloss": "Mrs.", "ja_gloss": "ミセス", "gender": "f"}
 {"lemma": "второй", "rank": 462, "pos": "adj", "en_gloss": "second", "ja_gloss": "二番目の"}
 {"lemma": "иногда", "rank": 463, "pos": "adv", "en_gloss": "sometimes", "ja_gloss": "時々"}
-{"lemma": "подруга", "rank": 464, "pos": "noun", "en_gloss": "female friend", "ja_gloss": "女友達"}
+{"lemma": "подруга", "rank": 464, "pos": "noun", "en_gloss": "female friend", "ja_gloss": "女友達", "gender": "f"}
 {"lemma": "следовать", "rank": 465, "pos": "verb", "en_gloss": "follow", "ja_gloss": "従う"}
 {"lemma": "вроде", "rank": 466, "pos": "prep", "en_gloss": "like", "ja_gloss": "のような"}
-{"lemma": "класс", "rank": 467, "pos": "noun", "en_gloss": "class", "ja_gloss": "クラス"}
+{"lemma": "класс", "rank": 467, "pos": "noun", "en_gloss": "class", "ja_gloss": "クラス", "gender": "m"}
 {"lemma": "прислать", "rank": 468, "pos": "verb", "en_gloss": "send", "ja_gloss": "送る"}
 {"lemma": "рядом", "rank": 469, "pos": "adv", "en_gloss": "nearby", "ja_gloss": "近くに"}
-{"lemma": "родитель", "rank": 470, "pos": "noun", "en_gloss": "parent", "ja_gloss": "親"}
+{"lemma": "родитель", "rank": 470, "pos": "noun", "en_gloss": "parent", "ja_gloss": "親", "gender": "m"}
 {"lemma": "встретиться", "rank": 471, "pos": "verb", "en_gloss": "meet", "ja_gloss": "会う"}
 {"lemma": "платить", "rank": 472, "pos": "verb", "en_gloss": "pay", "ja_gloss": "払う"}
-{"lemma": "капитан", "rank": 473, "pos": "noun", "en_gloss": "captain", "ja_gloss": "船長"}
-{"lemma": "новость", "rank": 474, "pos": "noun", "en_gloss": "news", "ja_gloss": "ニュース"}
+{"lemma": "капитан", "rank": 473, "pos": "noun", "en_gloss": "captain", "ja_gloss": "船長", "gender": "m"}
+{"lemma": "новость", "rank": 474, "pos": "noun", "en_gloss": "news", "ja_gloss": "ニュース", "gender": "f"}
 {"lemma": "остальной", "rank": 475, "pos": "det", "en_gloss": "remaining", "ja_gloss": "残りの"}
 {"lemma": "встречаться", "rank": 476, "pos": "verb", "en_gloss": "meet (each other)", "ja_gloss": "会う"}
 {"lemma": "перестать", "rank": 477, "pos": "verb", "en_gloss": "stop", "ja_gloss": "やめる"}
@@ -479,50 +479,50 @@
 {"lemma": "называть", "rank": 480, "pos": "verb", "en_gloss": "call, name", "ja_gloss": "呼ぶ"}
 {"lemma": "отличный", "rank": 481, "pos": "adj", "en_gloss": "excellent", "ja_gloss": "優れた"}
 {"lemma": "ненавидеть", "rank": 482, "pos": "verb", "en_gloss": "hate", "ja_gloss": "憎む"}
-{"lemma": "оружие", "rank": 483, "pos": "noun", "en_gloss": "weapon", "ja_gloss": "武器"}
+{"lemma": "оружие", "rank": 483, "pos": "noun", "en_gloss": "weapon", "ja_gloss": "武器", "gender": "n"}
 {"lemma": "прекрасный", "rank": 484, "pos": "adj", "en_gloss": "wonderful", "ja_gloss": "素晴らしい"}
 {"lemma": "правильно", "rank": 485, "pos": "adv", "en_gloss": "correctly", "ja_gloss": "正しく"}
-{"lemma": "ум", "rank": 486, "pos": "noun", "en_gloss": "mind", "ja_gloss": "知性"}
+{"lemma": "ум", "rank": 486, "pos": "noun", "en_gloss": "mind", "ja_gloss": "知性", "gender": "m"}
 {"lemma": "оказаться", "rank": 487, "pos": "verb", "en_gloss": "turn out to be", "ja_gloss": "であることが分かる"}
-{"lemma": "свидание", "rank": 488, "pos": "noun", "en_gloss": "date (romantic)", "ja_gloss": "デート"}
-{"lemma": "стена", "rank": 489, "pos": "noun", "en_gloss": "wall", "ja_gloss": "壁"}
+{"lemma": "свидание", "rank": 488, "pos": "noun", "en_gloss": "date (romantic)", "ja_gloss": "デート", "gender": "n"}
+{"lemma": "стена", "rank": 489, "pos": "noun", "en_gloss": "wall", "ja_gloss": "壁", "gender": "f"}
 {"lemma": "долго", "rank": 490, "pos": "adv", "en_gloss": "long time", "ja_gloss": "長く"}
 {"lemma": "красивый", "rank": 491, "pos": "adj", "en_gloss": "beautiful", "ja_gloss": "美しい"}
 {"lemma": "важно", "rank": 492, "pos": "predic", "en_gloss": "important", "ja_gloss": "重要だ"}
 {"lemma": "выходить", "rank": 493, "pos": "verb", "en_gloss": "go out", "ja_gloss": "出る"}
-{"lemma": "начало", "rank": 494, "pos": "noun", "en_gloss": "beginning", "ja_gloss": "始まり"}
-{"lemma": "палец", "rank": 495, "pos": "noun", "en_gloss": "finger", "ja_gloss": "指"}
+{"lemma": "начало", "rank": 494, "pos": "noun", "en_gloss": "beginning", "ja_gloss": "始まり", "gender": "n"}
+{"lemma": "палец", "rank": 495, "pos": "noun", "en_gloss": "finger", "ja_gloss": "指", "gender": "m"}
 {"lemma": "кроме", "rank": 496, "pos": "prep", "en_gloss": "except", "ja_gloss": "除いて"}
 {"lemma": "сильный", "rank": 497, "pos": "adj", "en_gloss": "strong", "ja_gloss": "強い"}
 {"lemma": "здорово", "rank": 498, "pos": "adv", "en_gloss": "great/cool", "ja_gloss": "すごい"}
 {"lemma": "вперёд", "rank": 499, "pos": "adv", "en_gloss": "forward", "ja_gloss": "前へ"}
 {"lemma": "захотеть", "rank": 500, "pos": "verb", "en_gloss": "want", "ja_gloss": "望む"}
-{"lemma": "душа", "rank": 501, "pos": "noun", "en_gloss": "soul", "ja_gloss": "魂"}
-{"lemma": "внимание", "rank": 502, "pos": "noun", "en_gloss": "attention", "ja_gloss": "注意"}
+{"lemma": "душа", "rank": 501, "pos": "noun", "en_gloss": "soul", "ja_gloss": "魂", "gender": "f"}
+{"lemma": "внимание", "rank": 502, "pos": "noun", "en_gloss": "attention", "ja_gloss": "注意", "gender": "n"}
 {"lemma": "учиться", "rank": 503, "pos": "verb", "en_gloss": "study", "ja_gloss": "勉強する"}
-{"lemma": "чувак", "rank": 504, "pos": "noun", "en_gloss": "dude", "ja_gloss": "野郎"}
-{"lemma": "компания", "rank": 505, "pos": "noun", "en_gloss": "company", "ja_gloss": "会社"}
-{"lemma": "чувство", "rank": 506, "pos": "noun", "en_gloss": "feeling", "ja_gloss": "感情"}
-{"lemma": "война", "rank": 507, "pos": "noun", "en_gloss": "war", "ja_gloss": "戦争"}
-{"lemma": "счёт", "rank": 508, "pos": "noun", "en_gloss": "bill/account", "ja_gloss": "勘定"}
+{"lemma": "чувак", "rank": 504, "pos": "noun", "en_gloss": "dude", "ja_gloss": "野郎", "gender": "m"}
+{"lemma": "компания", "rank": 505, "pos": "noun", "en_gloss": "company", "ja_gloss": "会社", "gender": "f"}
+{"lemma": "чувство", "rank": 506, "pos": "noun", "en_gloss": "feeling", "ja_gloss": "感情", "gender": "n"}
+{"lemma": "война", "rank": 507, "pos": "noun", "en_gloss": "war", "ja_gloss": "戦争", "gender": "f"}
+{"lemma": "счёт", "rank": 508, "pos": "noun", "en_gloss": "bill/account", "ja_gloss": "勘定", "gender": "m"}
 {"lemma": "давно", "rank": 509, "pos": "adv", "en_gloss": "long ago", "ja_gloss": "昔から"}
-{"lemma": "самолёт", "rank": 510, "pos": "noun", "en_gloss": "airplane", "ja_gloss": "飛行機"}
-{"lemma": "жертва", "rank": 511, "pos": "noun", "en_gloss": "victim", "ja_gloss": "犠牲者"}
-{"lemma": "убийца", "rank": 512, "pos": "noun", "en_gloss": "killer", "ja_gloss": "殺人者"}
+{"lemma": "самолёт", "rank": 510, "pos": "noun", "en_gloss": "airplane", "ja_gloss": "飛行機", "gender": "m"}
+{"lemma": "жертва", "rank": 511, "pos": "noun", "en_gloss": "victim", "ja_gloss": "犠牲者", "gender": "f"}
+{"lemma": "убийца", "rank": 512, "pos": "noun", "en_gloss": "killer", "ja_gloss": "殺人者", "gender": "mf"}
 {"lemma": "находиться", "rank": 513, "pos": "verb", "en_gloss": "be located", "ja_gloss": "ある"}
 {"lemma": "больной", "rank": 514, "pos": "adj", "en_gloss": "sick", "ja_gloss": "病気の"}
 {"lemma": "привести", "rank": 515, "pos": "verb", "en_gloss": "bring, lead to", "ja_gloss": "導く"}
 {"lemma": "также", "rank": 516, "pos": "adv", "en_gloss": "also", "ja_gloss": "また"}
-{"lemma": "джон", "rank": 517, "pos": "noun", "en_gloss": "John", "ja_gloss": "ジョン"}
+{"lemma": "джон", "rank": 517, "pos": "noun", "en_gloss": "John", "ja_gloss": "ジョン", "gender": "m"}
 {"lemma": "вечером", "rank": 518, "pos": "adv", "en_gloss": "in the evening", "ja_gloss": "夕方に"}
 {"lemma": "опять", "rank": 519, "pos": "adv", "en_gloss": "again", "ja_gloss": "また"}
 {"lemma": "вообще-то", "rank": 520, "pos": "adv", "en_gloss": "actually", "ja_gloss": "実は"}
 {"lemma": "понравиться", "rank": 521, "pos": "verb", "en_gloss": "like", "ja_gloss": "気に入る"}
 {"lemma": "разговаривать", "rank": 522, "pos": "verb", "en_gloss": "talk", "ja_gloss": "話す"}
 {"lemma": "выпить", "rank": 523, "pos": "verb", "en_gloss": "drink", "ja_gloss": "飲む"}
-{"lemma": "одежда", "rank": 524, "pos": "noun", "en_gloss": "clothes", "ja_gloss": "服"}
+{"lemma": "одежда", "rank": 524, "pos": "noun", "en_gloss": "clothes", "ja_gloss": "服", "gender": "f"}
 {"lemma": "убивать", "rank": 525, "pos": "verb", "en_gloss": "kill", "ja_gloss": "殺す"}
-{"lemma": "вечеринка", "rank": 526, "pos": "noun", "en_gloss": "party", "ja_gloss": "パーティー"}
+{"lemma": "вечеринка", "rank": 526, "pos": "noun", "en_gloss": "party", "ja_gloss": "パーティー", "gender": "f"}
 {"lemma": "возвращаться", "rank": 527, "pos": "verb", "en_gloss": "return", "ja_gloss": "戻る"}
 {"lemma": "сначала", "rank": 528, "pos": "adv", "en_gloss": "at first", "ja_gloss": "最初に"}
 {"lemma": "спрашивать", "rank": 529, "pos": "verb", "en_gloss": "ask", "ja_gloss": "尋ねる"}
@@ -533,31 +533,31 @@
 {"lemma": "полагать", "rank": 534, "pos": "verb", "en_gloss": "suppose", "ja_gloss": "推測する"}
 {"lemma": "получиться", "rank": 535, "pos": "verb", "en_gloss": "work out", "ja_gloss": "うまくいく"}
 {"lemma": "остановить", "rank": 536, "pos": "verb", "en_gloss": "stop", "ja_gloss": "止める"}
-{"lemma": "тип", "rank": 537, "pos": "noun", "en_gloss": "type", "ja_gloss": "型"}
-{"lemma": "связь", "rank": 538, "pos": "noun", "en_gloss": "connection", "ja_gloss": "つながり"}
+{"lemma": "тип", "rank": 537, "pos": "noun", "en_gloss": "type", "ja_gloss": "型", "gender": "m"}
+{"lemma": "связь", "rank": 538, "pos": "noun", "en_gloss": "connection", "ja_gloss": "つながり", "gender": "f"}
 {"lemma": "услышать", "rank": 539, "pos": "verb", "en_gloss": "hear", "ja_gloss": "聞こえる"}
 {"lemma": "ночью", "rank": 540, "pos": "adv", "en_gloss": "at night", "ja_gloss": "夜に"}
-{"lemma": "фильм", "rank": 541, "pos": "noun", "en_gloss": "film", "ja_gloss": "映画"}
+{"lemma": "фильм", "rank": 541, "pos": "noun", "en_gloss": "film", "ja_gloss": "映画", "gender": "m"}
 {"lemma": "сразу", "rank": 542, "pos": "adv", "en_gloss": "immediately", "ja_gloss": "すぐに"}
 {"lemma": "утром", "rank": 543, "pos": "adv", "en_gloss": "in the morning", "ja_gloss": "朝に"}
 {"lemma": "помогать", "rank": 544, "pos": "verb", "en_gloss": "help", "ja_gloss": "助ける"}
-{"lemma": "страна", "rank": 545, "pos": "noun", "en_gloss": "country", "ja_gloss": "国"}
-{"lemma": "тюрьма", "rank": 546, "pos": "noun", "en_gloss": "prison", "ja_gloss": "刑務所"}
+{"lemma": "страна", "rank": 545, "pos": "noun", "en_gloss": "country", "ja_gloss": "国", "gender": "f"}
+{"lemma": "тюрьма", "rank": 546, "pos": "noun", "en_gloss": "prison", "ja_gloss": "刑務所", "gender": "f"}
 {"lemma": "пить", "rank": 547, "pos": "verb", "en_gloss": "drink", "ja_gloss": "飲む"}
 {"lemma": "похожий", "rank": 548, "pos": "adj", "en_gloss": "similar", "ja_gloss": "似ている"}
 {"lemma": "бежать", "rank": 549, "pos": "verb", "en_gloss": "run", "ja_gloss": "走る"}
-{"lemma": "окно", "rank": 550, "pos": "noun", "en_gloss": "window", "ja_gloss": "窓"}
-{"lemma": "решение", "rank": 551, "pos": "noun", "en_gloss": "decision", "ja_gloss": "決定"}
+{"lemma": "окно", "rank": 550, "pos": "noun", "en_gloss": "window", "ja_gloss": "窓", "gender": "n"}
+{"lemma": "решение", "rank": 551, "pos": "noun", "en_gloss": "decision", "ja_gloss": "決定", "gender": "n"}
 {"lemma": "прекрасно", "rank": 552, "pos": "adv", "en_gloss": "beautifully", "ja_gloss": "素晴らしく"}
-{"lemma": "агент", "rank": 553, "pos": "noun", "en_gloss": "agent", "ja_gloss": "代理人"}
+{"lemma": "агент", "rank": 553, "pos": "noun", "en_gloss": "agent", "ja_gloss": "代理人", "gender": "m"}
 {"lemma": "тысяча", "rank": 554, "pos": "num", "en_gloss": "thousand", "ja_gloss": "千"}
 {"lemma": "представлять", "rank": 555, "pos": "verb", "en_gloss": "represent", "ja_gloss": "表す"}
-{"lemma": "обед", "rank": 556, "pos": "noun", "en_gloss": "lunch", "ja_gloss": "昼食"}
+{"lemma": "обед", "rank": 556, "pos": "noun", "en_gloss": "lunch", "ja_gloss": "昼食", "gender": "m"}
 {"lemma": "ответить", "rank": 557, "pos": "verb", "en_gloss": "answer", "ja_gloss": "答える"}
-{"lemma": "способ", "rank": 558, "pos": "noun", "en_gloss": "method", "ja_gloss": "方法"}
-{"lemma": "суд", "rank": 559, "pos": "noun", "en_gloss": "court", "ja_gloss": "裁判所"}
+{"lemma": "способ", "rank": 558, "pos": "noun", "en_gloss": "method", "ja_gloss": "方法", "gender": "m"}
+{"lemma": "суд", "rank": 559, "pos": "noun", "en_gloss": "court", "ja_gloss": "裁判所", "gender": "m"}
 {"lemma": "читать", "rank": 561, "pos": "verb", "en_gloss": "read", "ja_gloss": "読む"}
-{"lemma": "группа", "rank": 562, "pos": "noun", "en_gloss": "group", "ja_gloss": "グループ"}
+{"lemma": "группа", "rank": 562, "pos": "noun", "en_gloss": "group", "ja_gloss": "グループ", "gender": "f"}
 {"lemma": "здравствуйте", "rank": 563, "pos": "intj", "en_gloss": "hello (formal)", "ja_gloss": "こんにちは(丁寧)"}
 {"lemma": "скорее", "rank": 564, "pos": "adv", "en_gloss": "rather/quicker", "ja_gloss": "むしろ"}
 {"lemma": "ох", "rank": 565, "pos": "intj", "en_gloss": "oh (sigh)", "ja_gloss": "ああ"}
@@ -568,27 +568,27 @@
 {"lemma": "писать", "rank": 570, "pos": "verb", "en_gloss": "write", "ja_gloss": "書く"}
 {"lemma": "чистый", "rank": 571, "pos": "adj", "en_gloss": "clean", "ja_gloss": "清潔な"}
 {"lemma": "столько", "rank": 572, "pos": "adv", "en_gloss": "so much", "ja_gloss": "それほど"}
-{"lemma": "небо", "rank": 573, "pos": "noun", "en_gloss": "sky", "ja_gloss": "空"}
+{"lemma": "небо", "rank": 573, "pos": "noun", "en_gloss": "sky", "ja_gloss": "空", "gender": "n"}
 {"lemma": "целый", "rank": 574, "pos": "adj", "en_gloss": "whole", "ja_gloss": "全体の"}
 {"lemma": "сильно", "rank": 575, "pos": "adv", "en_gloss": "strongly", "ja_gloss": "強く"}
 {"lemma": "появиться", "rank": 576, "pos": "verb", "en_gloss": "appear", "ja_gloss": "現れる"}
-{"lemma": "рот", "rank": 577, "pos": "noun", "en_gloss": "mouth", "ja_gloss": "口"}
-{"lemma": "ошибка", "rank": 578, "pos": "noun", "en_gloss": "mistake", "ja_gloss": "間違い"}
+{"lemma": "рот", "rank": 577, "pos": "noun", "en_gloss": "mouth", "ja_gloss": "口", "gender": "m"}
+{"lemma": "ошибка", "rank": 578, "pos": "noun", "en_gloss": "mistake", "ja_gloss": "間違い", "gender": "f"}
 {"lemma": "остановиться", "rank": 579, "pos": "verb", "en_gloss": "stop", "ja_gloss": "止まる"}
-{"lemma": "дерьмо", "rank": 580, "pos": "noun", "en_gloss": "crap/shit", "ja_gloss": "くそ"}
+{"lemma": "дерьмо", "rank": 580, "pos": "noun", "en_gloss": "crap/shit", "ja_gloss": "くそ", "gender": "n"}
 {"lemma": "поздний", "rank": 581, "pos": "adj", "en_gloss": "late", "ja_gloss": "遅い"}
 {"lemma": "принимать", "rank": 582, "pos": "verb", "en_gloss": "accept/take", "ja_gloss": "受け入れる"}
 {"lemma": "чёрный", "rank": 583, "pos": "adj", "en_gloss": "black", "ja_gloss": "黒い"}
-{"lemma": "президент", "rank": 584, "pos": "noun", "en_gloss": "president", "ja_gloss": "大統領"}
-{"lemma": "честь", "rank": 585, "pos": "noun", "en_gloss": "honor", "ja_gloss": "名誉"}
+{"lemma": "президент", "rank": 584, "pos": "noun", "en_gloss": "president", "ja_gloss": "大統領", "gender": "m"}
+{"lemma": "честь", "rank": 585, "pos": "noun", "en_gloss": "honor", "ja_gloss": "名誉", "gender": "f"}
 {"lemma": "беспокоиться", "rank": 586, "pos": "verb", "en_gloss": "to worry", "ja_gloss": "心配する"}
 {"lemma": "отпустить", "rank": 587, "pos": "verb", "en_gloss": "let go", "ja_gloss": "放す"}
-{"lemma": "секс", "rank": 588, "pos": "noun", "en_gloss": "sex", "ja_gloss": "性行為"}
-{"lemma": "корабль", "rank": 589, "pos": "noun", "en_gloss": "ship", "ja_gloss": "船"}
+{"lemma": "секс", "rank": 588, "pos": "noun", "en_gloss": "sex", "ja_gloss": "性行為", "gender": "m"}
+{"lemma": "корабль", "rank": 589, "pos": "noun", "en_gloss": "ship", "ja_gloss": "船", "gender": "m"}
 {"lemma": "вставать", "rank": 590, "pos": "verb", "en_gloss": "get up", "ja_gloss": "起きる"}
 {"lemma": "двое", "rank": 591, "pos": "num", "en_gloss": "two", "ja_gloss": "二人"}
-{"lemma": "выбор", "rank": 592, "pos": "noun", "en_gloss": "choice", "ja_gloss": "選択"}
-{"lemma": "бабушка", "rank": 593, "pos": "noun", "en_gloss": "grandmother", "ja_gloss": "祖母"}
+{"lemma": "выбор", "rank": 592, "pos": "noun", "en_gloss": "choice", "ja_gloss": "選択", "gender": "m"}
+{"lemma": "бабушка", "rank": 593, "pos": "noun", "en_gloss": "grandmother", "ja_gloss": "祖母", "gender": "f"}
 {"lemma": "ах", "rank": 594, "pos": "intj", "en_gloss": "ah", "ja_gloss": "ああ"}
 {"lemma": "понятно", "rank": 595, "pos": "predic", "en_gloss": "clear", "ja_gloss": "明らかだ"}
 {"lemma": "хотеться", "rank": 596, "pos": "verb", "en_gloss": "want", "ja_gloss": "〜したい"}
@@ -596,32 +596,32 @@
 {"lemma": "бывать", "rank": 598, "pos": "verb", "en_gloss": "happen, be sometimes", "ja_gloss": "たまにある"}
 {"lemma": "назвать", "rank": 599, "pos": "verb", "en_gloss": "name, call", "ja_gloss": "名付ける"}
 {"lemma": "замечательный", "rank": 600, "pos": "adj", "en_gloss": "wonderful", "ja_gloss": "素晴らしい"}
-{"lemma": "безопасность", "rank": 601, "pos": "noun", "en_gloss": "safety", "ja_gloss": "安全"}
+{"lemma": "безопасность", "rank": 601, "pos": "noun", "en_gloss": "safety", "ja_gloss": "安全", "gender": "f"}
 {"lemma": "выбрать", "rank": 602, "pos": "verb", "en_gloss": "choose", "ja_gloss": "選ぶ"}
 {"lemma": "готовить", "rank": 603, "pos": "verb", "en_gloss": "cook/prepare", "ja_gloss": "料理する"}
 {"lemma": "заметить", "rank": 604, "pos": "verb", "en_gloss": "notice", "ja_gloss": "気づく"}
 {"lemma": "четыре", "rank": 605, "pos": "num", "en_gloss": "four", "ja_gloss": "4"}
 {"lemma": "прежде", "rank": 606, "pos": "adv", "en_gloss": "before", "ja_gloss": "以前に"}
-{"lemma": "возможность", "rank": 607, "pos": "noun", "en_gloss": "possibility", "ja_gloss": "可能性"}
+{"lemma": "возможность", "rank": 607, "pos": "noun", "en_gloss": "possibility", "ja_gloss": "可能性", "gender": "f"}
 {"lemma": "обо", "rank": 608, "pos": "prep", "en_gloss": "about", "ja_gloss": "について"}
-{"lemma": "информация", "rank": 609, "pos": "noun", "en_gloss": "information", "ja_gloss": "情報"}
+{"lemma": "информация", "rank": 609, "pos": "noun", "en_gloss": "information", "ja_gloss": "情報", "gender": "f"}
 {"lemma": "интересный", "rank": 610, "pos": "adj", "en_gloss": "interesting", "ja_gloss": "面白い"}
-{"lemma": "камера", "rank": 611, "pos": "noun", "en_gloss": "camera", "ja_gloss": "カメラ"}
+{"lemma": "камера", "rank": 611, "pos": "noun", "en_gloss": "camera", "ja_gloss": "カメラ", "gender": "f"}
 {"lemma": "представить", "rank": 612, "pos": "verb", "en_gloss": "imagine/present", "ja_gloss": "想像する"}
 {"lemma": "объяснить", "rank": 613, "pos": "verb", "en_gloss": "explain", "ja_gloss": "説明する"}
-{"lemma": "мера", "rank": 614, "pos": "noun", "en_gloss": "measure", "ja_gloss": "措置"}
+{"lemma": "мера", "rank": 614, "pos": "noun", "en_gloss": "measure", "ja_gloss": "措置", "gender": "f"}
 {"lemma": "познакомиться", "rank": 615, "pos": "verb", "en_gloss": "meet", "ja_gloss": "知り合う"}
 {"lemma": "передать", "rank": 616, "pos": "verb", "en_gloss": "pass on", "ja_gloss": "伝える"}
 {"lemma": "интересно", "rank": 617, "pos": "predic", "en_gloss": "interesting", "ja_gloss": "面白い"}
 {"lemma": "затем", "rank": 618, "pos": "adv", "en_gloss": "then", "ja_gloss": "それから"}
-{"lemma": "учитель", "rank": 619, "pos": "noun", "en_gloss": "teacher", "ja_gloss": "教師"}
+{"lemma": "учитель", "rank": 619, "pos": "noun", "en_gloss": "teacher", "ja_gloss": "教師", "gender": "m"}
 {"lemma": "рано", "rank": 620, "pos": "adv", "en_gloss": "early", "ja_gloss": "早く"}
-{"lemma": "пол", "rank": 621, "pos": "noun", "en_gloss": "floor/sex", "ja_gloss": "床"}
+{"lemma": "пол", "rank": 621, "pos": "noun", "en_gloss": "floor/sex", "ja_gloss": "床", "gender": "m"}
 {"lemma": "рассказывать", "rank": 622, "pos": "verb", "en_gloss": "tell", "ja_gloss": "語る"}
 {"lemma": "вон", "rank": 623, "pos": "part", "en_gloss": "over there", "ja_gloss": "あそこ"}
-{"lemma": "спина", "rank": 624, "pos": "noun", "en_gloss": "back", "ja_gloss": "背中"}
-{"lemma": "сон", "rank": 625, "pos": "noun", "en_gloss": "sleep/dream", "ja_gloss": "眠り"}
-{"lemma": "гора", "rank": 626, "pos": "noun", "en_gloss": "mountain", "ja_gloss": "山"}
+{"lemma": "спина", "rank": 624, "pos": "noun", "en_gloss": "back", "ja_gloss": "背中", "gender": "f"}
+{"lemma": "сон", "rank": 625, "pos": "noun", "en_gloss": "sleep/dream", "ja_gloss": "眠り", "gender": "m"}
+{"lemma": "гора", "rank": 626, "pos": "noun", "en_gloss": "mountain", "ja_gloss": "山", "gender": "f"}
 {"lemma": "чтоб", "rank": 627, "pos": "conj", "en_gloss": "in order to", "ja_gloss": "するために"}
 {"lemma": "заплатить", "rank": 628, "pos": "verb", "en_gloss": "pay", "ja_gloss": "支払う"}
 {"lemma": "держаться", "rank": 629, "pos": "verb", "en_gloss": "hold on", "ja_gloss": "持ちこたえる"}
@@ -636,88 +636,88 @@
 {"lemma": "обычно", "rank": 638, "pos": "adv", "en_gloss": "usually", "ja_gloss": "普通は"}
 {"lemma": "ужасный", "rank": 639, "pos": "adj", "en_gloss": "terrible", "ja_gloss": "ひどい"}
 {"lemma": "миллион", "rank": 640, "pos": "num", "en_gloss": "million", "ja_gloss": "百万"}
-{"lemma": "поле", "rank": 641, "pos": "noun", "en_gloss": "field", "ja_gloss": "野原"}
+{"lemma": "поле", "rank": 641, "pos": "noun", "en_gloss": "field", "ja_gloss": "野原", "gender": "n"}
 {"lemma": "поймать", "rank": 642, "pos": "verb", "en_gloss": "catch", "ja_gloss": "捕まえる"}
-{"lemma": "мысль", "rank": 643, "pos": "noun", "en_gloss": "thought", "ja_gloss": "思考"}
-{"lemma": "адвокат", "rank": 644, "pos": "noun", "en_gloss": "lawyer", "ja_gloss": "弁護士"}
+{"lemma": "мысль", "rank": 643, "pos": "noun", "en_gloss": "thought", "ja_gloss": "思考", "gender": "f"}
+{"lemma": "адвокат", "rank": 644, "pos": "noun", "en_gloss": "lawyer", "ja_gloss": "弁護士", "gender": "m"}
 {"lemma": "другие", "rank": 645, "pos": "det", "en_gloss": "others", "ja_gloss": "他の"}
 {"lemma": "иначе", "rank": 646, "pos": "adv", "en_gloss": "otherwise", "ja_gloss": "さもなければ"}
 {"lemma": "заняться", "rank": 647, "pos": "verb", "en_gloss": "take up", "ja_gloss": "取り組む"}
-{"lemma": "система", "rank": 648, "pos": "noun", "en_gloss": "system", "ja_gloss": "システム"}
+{"lemma": "система", "rank": 648, "pos": "noun", "en_gloss": "system", "ja_gloss": "システム", "gender": "f"}
 {"lemma": "согласный", "rank": 649, "pos": "adj", "en_gloss": "agreeing", "ja_gloss": "同意した"}
-{"lemma": "песня", "rank": 650, "pos": "noun", "en_gloss": "song", "ja_gloss": "歌"}
+{"lemma": "песня", "rank": 650, "pos": "noun", "en_gloss": "song", "ja_gloss": "歌", "gender": "f"}
 {"lemma": "приятно", "rank": 651, "pos": "predic", "en_gloss": "pleasant", "ja_gloss": "心地よい"}
-{"lemma": "дерево", "rank": 652, "pos": "noun", "en_gloss": "tree", "ja_gloss": "木"}
-{"lemma": "пиво", "rank": 653, "pos": "noun", "en_gloss": "beer", "ja_gloss": "ビール"}
-{"lemma": "сообщение", "rank": 654, "pos": "noun", "en_gloss": "message", "ja_gloss": "メッセージ"}
+{"lemma": "дерево", "rank": 652, "pos": "noun", "en_gloss": "tree", "ja_gloss": "木", "gender": "n"}
+{"lemma": "пиво", "rank": 653, "pos": "noun", "en_gloss": "beer", "ja_gloss": "ビール", "gender": "n"}
+{"lemma": "сообщение", "rank": 654, "pos": "noun", "en_gloss": "message", "ja_gloss": "メッセージ", "gender": "n"}
 {"lemma": "звучать", "rank": 655, "pos": "verb", "en_gloss": "sound", "ja_gloss": "響く"}
-{"lemma": "цель", "rank": 656, "pos": "noun", "en_gloss": "goal", "ja_gloss": "目標"}
-{"lemma": "детектив", "rank": 657, "pos": "noun", "en_gloss": "detective", "ja_gloss": "探偵"}
-{"lemma": "курс", "rank": 658, "pos": "noun", "en_gloss": "course", "ja_gloss": "コース"}
-{"lemma": "мозг", "rank": 659, "pos": "noun", "en_gloss": "brain", "ja_gloss": "脳"}
-{"lemma": "лекарство", "rank": 660, "pos": "noun", "en_gloss": "medicine", "ja_gloss": "薬"}
+{"lemma": "цель", "rank": 656, "pos": "noun", "en_gloss": "goal", "ja_gloss": "目標", "gender": "f"}
+{"lemma": "детектив", "rank": 657, "pos": "noun", "en_gloss": "detective", "ja_gloss": "探偵", "gender": "m"}
+{"lemma": "курс", "rank": 658, "pos": "noun", "en_gloss": "course", "ja_gloss": "コース", "gender": "m"}
+{"lemma": "мозг", "rank": 659, "pos": "noun", "en_gloss": "brain", "ja_gloss": "脳", "gender": "m"}
+{"lemma": "лекарство", "rank": 660, "pos": "noun", "en_gloss": "medicine", "ja_gloss": "薬", "gender": "n"}
 {"lemma": "немой", "rank": 661, "pos": "adj", "en_gloss": "mute/silent", "ja_gloss": "無言の"}
-{"lemma": "король", "rank": 662, "pos": "noun", "en_gloss": "king", "ja_gloss": "王"}
+{"lemma": "король", "rank": 662, "pos": "noun", "en_gloss": "king", "ja_gloss": "王", "gender": "m"}
 {"lemma": "обратно", "rank": 663, "pos": "adv", "en_gloss": "back", "ja_gloss": "戻って"}
 {"lemma": "поставить", "rank": 664, "pos": "verb", "en_gloss": "put/set", "ja_gloss": "置く"}
 {"lemma": "зайти", "rank": 665, "pos": "verb", "en_gloss": "drop in", "ja_gloss": "立ち寄る"}
 {"lemma": "изменить", "rank": 666, "pos": "verb", "en_gloss": "change", "ja_gloss": "変える"}
-{"lemma": "правило", "rank": 667, "pos": "noun", "en_gloss": "rule", "ja_gloss": "規則"}
-{"lemma": "приятель", "rank": 668, "pos": "noun", "en_gloss": "friend, buddy", "ja_gloss": "友達"}
+{"lemma": "правило", "rank": 667, "pos": "noun", "en_gloss": "rule", "ja_gloss": "規則", "gender": "n"}
+{"lemma": "приятель", "rank": 668, "pos": "noun", "en_gloss": "friend, buddy", "ja_gloss": "友達", "gender": "m"}
 {"lemma": "доверять", "rank": 669, "pos": "verb", "en_gloss": "trust", "ja_gloss": "信頼する"}
 {"lemma": "отвечать", "rank": 670, "pos": "verb", "en_gloss": "answer", "ja_gloss": "答える"}
 {"lemma": "насколько", "rank": 671, "pos": "adv", "en_gloss": "how much, as far as", "ja_gloss": "どのくらい"}
 {"lemma": "двигаться", "rank": 672, "pos": "verb", "en_gloss": "move", "ja_gloss": "動く"}
 {"lemma": "лёгкий", "rank": 673, "pos": "adj", "en_gloss": "easy/light", "ja_gloss": "簡単な"}
-{"lemma": "письмо", "rank": 674, "pos": "noun", "en_gloss": "letter", "ja_gloss": "手紙"}
-{"lemma": "цена", "rank": 675, "pos": "noun", "en_gloss": "price", "ja_gloss": "価格"}
+{"lemma": "письмо", "rank": 674, "pos": "noun", "en_gloss": "letter", "ja_gloss": "手紙", "gender": "n"}
+{"lemma": "цена", "rank": 675, "pos": "noun", "en_gloss": "price", "ja_gloss": "価格", "gender": "f"}
 {"lemma": "стрелять", "rank": 676, "pos": "verb", "en_gloss": "shoot", "ja_gloss": "撃つ"}
-{"lemma": "ситуация", "rank": 677, "pos": "noun", "en_gloss": "situation", "ja_gloss": "状況"}
+{"lemma": "ситуация", "rank": 677, "pos": "noun", "en_gloss": "situation", "ja_gloss": "状況", "gender": "f"}
 {"lemma": "становиться", "rank": 678, "pos": "verb", "en_gloss": "become", "ja_gloss": "なる"}
-{"lemma": "собака", "rank": 679, "pos": "noun", "en_gloss": "dog", "ja_gloss": "犬"}
+{"lemma": "собака", "rank": 679, "pos": "noun", "en_gloss": "dog", "ja_gloss": "犬", "gender": "f"}
 {"lemma": "белый", "rank": 680, "pos": "adj", "en_gloss": "white", "ja_gloss": "白い"}
 {"lemma": "стоять", "rank": 681, "pos": "verb", "en_gloss": "stand", "ja_gloss": "立つ"}
-{"lemma": "образ", "rank": 682, "pos": "noun", "en_gloss": "image", "ja_gloss": "姿"}
-{"lemma": "платье", "rank": 683, "pos": "noun", "en_gloss": "dress", "ja_gloss": "ドレス"}
-{"lemma": "урок", "rank": 684, "pos": "noun", "en_gloss": "lesson", "ja_gloss": "授業"}
-{"lemma": "доллар", "rank": 685, "pos": "noun", "en_gloss": "dollar", "ja_gloss": "ドル"}
-{"lemma": "клиент", "rank": 686, "pos": "noun", "en_gloss": "client", "ja_gloss": "顧客"}
-{"lemma": "компьютер", "rank": 687, "pos": "noun", "en_gloss": "computer", "ja_gloss": "コンピュータ"}
+{"lemma": "образ", "rank": 682, "pos": "noun", "en_gloss": "image", "ja_gloss": "姿", "gender": "m"}
+{"lemma": "платье", "rank": 683, "pos": "noun", "en_gloss": "dress", "ja_gloss": "ドレス", "gender": "n"}
+{"lemma": "урок", "rank": 684, "pos": "noun", "en_gloss": "lesson", "ja_gloss": "授業", "gender": "m"}
+{"lemma": "доллар", "rank": 685, "pos": "noun", "en_gloss": "dollar", "ja_gloss": "ドル", "gender": "m"}
+{"lemma": "клиент", "rank": 686, "pos": "noun", "en_gloss": "client", "ja_gloss": "顧客", "gender": "m"}
+{"lemma": "компьютер", "rank": 687, "pos": "noun", "en_gloss": "computer", "ja_gloss": "コンピュータ", "gender": "m"}
 {"lemma": "достать", "rank": 688, "pos": "verb", "en_gloss": "get", "ja_gloss": "手に入れる"}
-{"lemma": "голос", "rank": 689, "pos": "noun", "en_gloss": "voice", "ja_gloss": "声"}
-{"lemma": "разговор", "rank": 690, "pos": "noun", "en_gloss": "conversation", "ja_gloss": "会話"}
+{"lemma": "голос", "rank": 689, "pos": "noun", "en_gloss": "voice", "ja_gloss": "声", "gender": "m"}
+{"lemma": "разговор", "rank": 690, "pos": "noun", "en_gloss": "conversation", "ja_gloss": "会話", "gender": "m"}
 {"lemma": "кстати", "rank": 691, "pos": "adv", "en_gloss": "by the way", "ja_gloss": "ところで"}
-{"lemma": "кровать", "rank": 692, "pos": "noun", "en_gloss": "bed", "ja_gloss": "ベッド"}
+{"lemma": "кровать", "rank": 692, "pos": "noun", "en_gloss": "bed", "ja_gloss": "ベッド", "gender": "f"}
 {"lemma": "заткнуться", "rank": 693, "pos": "verb", "en_gloss": "to shut up", "ja_gloss": "黙る"}
-{"lemma": "перевод", "rank": 694, "pos": "noun", "en_gloss": "translation", "ja_gloss": "翻訳"}
+{"lemma": "перевод", "rank": 694, "pos": "noun", "en_gloss": "translation", "ja_gloss": "翻訳", "gender": "m"}
 {"lemma": "разобраться", "rank": 695, "pos": "verb", "en_gloss": "figure out", "ja_gloss": "理解する"}
-{"lemma": "нос", "rank": 696, "pos": "noun", "en_gloss": "nose", "ja_gloss": "鼻"}
+{"lemma": "нос", "rank": 696, "pos": "noun", "en_gloss": "nose", "ja_gloss": "鼻", "gender": "m"}
 {"lemma": "проводить", "rank": 697, "pos": "verb", "en_gloss": "conduct", "ja_gloss": "行う"}
-{"lemma": "список", "rank": 698, "pos": "noun", "en_gloss": "list", "ja_gloss": "リスト"}
+{"lemma": "список", "rank": 698, "pos": "noun", "en_gloss": "list", "ja_gloss": "リスト", "gender": "m"}
 {"lemma": "шутить", "rank": 699, "pos": "verb", "en_gloss": "to joke", "ja_gloss": "冗談を言う"}
-{"lemma": "солнце", "rank": 700, "pos": "noun", "en_gloss": "sun", "ja_gloss": "太陽"}
+{"lemma": "солнце", "rank": 700, "pos": "noun", "en_gloss": "sun", "ja_gloss": "太陽", "gender": "n"}
 {"lemma": "когда-нибудь", "rank": 701, "pos": "adv", "en_gloss": "someday/ever", "ja_gloss": "いつか"}
 {"lemma": "погодить", "rank": 702, "pos": "verb", "en_gloss": "to wait a bit", "ja_gloss": "少し待つ"}
-{"lemma": "бумага", "rank": 703, "pos": "noun", "en_gloss": "paper", "ja_gloss": "紙"}
-{"lemma": "операция", "rank": 704, "pos": "noun", "en_gloss": "operation", "ja_gloss": "手術"}
-{"lemma": "звонок", "rank": 705, "pos": "noun", "en_gloss": "call", "ja_gloss": "電話"}
-{"lemma": "яйцо", "rank": 706, "pos": "noun", "en_gloss": "egg", "ja_gloss": "卵"}
+{"lemma": "бумага", "rank": 703, "pos": "noun", "en_gloss": "paper", "ja_gloss": "紙", "gender": "f"}
+{"lemma": "операция", "rank": 704, "pos": "noun", "en_gloss": "operation", "ja_gloss": "手術", "gender": "f"}
+{"lemma": "звонок", "rank": 705, "pos": "noun", "en_gloss": "call", "ja_gloss": "電話", "gender": "m"}
+{"lemma": "яйцо", "rank": 706, "pos": "noun", "en_gloss": "egg", "ja_gloss": "卵", "gender": "n"}
 {"lemma": "продавать", "rank": 707, "pos": "verb", "en_gloss": "sell", "ja_gloss": "売る"}
-{"lemma": "будущее", "rank": 708, "pos": "noun", "en_gloss": "future", "ja_gloss": "未来"}
+{"lemma": "будущее", "rank": 708, "pos": "noun", "en_gloss": "future", "ja_gloss": "未来", "gender": "n"}
 {"lemma": "войти", "rank": 709, "pos": "verb", "en_gloss": "enter", "ja_gloss": "入る"}
 {"lemma": "некоторые", "rank": 710, "pos": "det", "en_gloss": "some", "ja_gloss": "いくつかの"}
 {"lemma": "спокойный", "rank": 711, "pos": "adj", "en_gloss": "calm", "ja_gloss": "穏やかな"}
 {"lemma": "положить", "rank": 712, "pos": "verb", "en_gloss": "put down", "ja_gloss": "置く"}
-{"lemma": "поезд", "rank": 713, "pos": "noun", "en_gloss": "train", "ja_gloss": "列車"}
+{"lemma": "поезд", "rank": 713, "pos": "noun", "en_gloss": "train", "ja_gloss": "列車", "gender": "m"}
 {"lemma": "проходить", "rank": 714, "pos": "verb", "en_gloss": "pass", "ja_gloss": "通る"}
 {"lemma": "простой", "rank": 715, "pos": "adj", "en_gloss": "simple", "ja_gloss": "簡単な"}
-{"lemma": "преступление", "rank": 716, "pos": "noun", "en_gloss": "crime", "ja_gloss": "犯罪"}
-{"lemma": "лес", "rank": 717, "pos": "noun", "en_gloss": "forest", "ja_gloss": "森"}
+{"lemma": "преступление", "rank": 716, "pos": "noun", "en_gloss": "crime", "ja_gloss": "犯罪", "gender": "n"}
+{"lemma": "лес", "rank": 717, "pos": "noun", "en_gloss": "forest", "ja_gloss": "森", "gender": "m"}
 {"lemma": "уметь", "rank": 718, "pos": "verb", "en_gloss": "know how to", "ja_gloss": "できる"}
 {"lemma": "сей", "rank": 719, "pos": "det", "en_gloss": "this", "ja_gloss": "この"}
-{"lemma": "рождение", "rank": 720, "pos": "noun", "en_gloss": "birth", "ja_gloss": "誕生"}
-{"lemma": "билет", "rank": 721, "pos": "noun", "en_gloss": "ticket", "ja_gloss": "切符"}
-{"lemma": "нож", "rank": 722, "pos": "noun", "en_gloss": "knife", "ja_gloss": "ナイフ"}
+{"lemma": "рождение", "rank": 720, "pos": "noun", "en_gloss": "birth", "ja_gloss": "誕生", "gender": "n"}
+{"lemma": "билет", "rank": 721, "pos": "noun", "en_gloss": "ticket", "ja_gloss": "切符", "gender": "m"}
+{"lemma": "нож", "rank": 722, "pos": "noun", "en_gloss": "knife", "ja_gloss": "ナイフ", "gender": "m"}
 {"lemma": "украсть", "rank": 723, "pos": "verb", "en_gloss": "to steal", "ja_gloss": "盗む"}
 {"lemma": "главный", "rank": 724, "pos": "adj", "en_gloss": "main", "ja_gloss": "主要な"}
 {"lemma": "подойти", "rank": 725, "pos": "verb", "en_gloss": "approach", "ja_gloss": "近づく"}
@@ -726,54 +726,54 @@
 {"lemma": "личный", "rank": 728, "pos": "adj", "en_gloss": "personal", "ja_gloss": "個人的な"}
 {"lemma": "получать", "rank": 729, "pos": "verb", "en_gloss": "get", "ja_gloss": "得る"}
 {"lemma": "устроить", "rank": 730, "pos": "verb", "en_gloss": "arrange", "ja_gloss": "手配する"}
-{"lemma": "добро", "rank": 731, "pos": "noun", "en_gloss": "good", "ja_gloss": "善"}
+{"lemma": "добро", "rank": 731, "pos": "noun", "en_gloss": "good", "ja_gloss": "善", "gender": "n"}
 {"lemma": "любимый", "rank": 732, "pos": "adj", "en_gloss": "beloved, favorite", "ja_gloss": "大好きな"}
-{"lemma": "полицейский", "rank": 733, "pos": "noun", "en_gloss": "policeman", "ja_gloss": "警察官"}
-{"lemma": "чай", "rank": 734, "pos": "noun", "en_gloss": "tea", "ja_gloss": "お茶"}
+{"lemma": "полицейский", "rank": 733, "pos": "noun", "en_gloss": "policeman", "ja_gloss": "警察官", "gender": "m"}
+{"lemma": "чай", "rank": 734, "pos": "noun", "en_gloss": "tea", "ja_gloss": "お茶", "gender": "m"}
 {"lemma": "ужасно", "rank": 735, "pos": "adv", "en_gloss": "terribly", "ja_gloss": "ひどく"}
 {"lemma": "покупать", "rank": 736, "pos": "verb", "en_gloss": "buy", "ja_gloss": "買う"}
 {"lemma": "подобный", "rank": 737, "pos": "adj", "en_gloss": "similar", "ja_gloss": "似たような"}
-{"lemma": "штука", "rank": 738, "pos": "noun", "en_gloss": "thing", "ja_gloss": "物"}
+{"lemma": "штука", "rank": 738, "pos": "noun", "en_gloss": "thing", "ja_gloss": "物", "gender": "f"}
 {"lemma": "понадобиться", "rank": 739, "pos": "verb", "en_gloss": "be needed", "ja_gloss": "必要になる"}
 {"lemma": "совершенно", "rank": 740, "pos": "adv", "en_gloss": "completely", "ja_gloss": "完全に"}
 {"lemma": "сходить", "rank": 741, "pos": "verb", "en_gloss": "go", "ja_gloss": "行ってくる"}
-{"lemma": "запись", "rank": 742, "pos": "noun", "en_gloss": "recording, record", "ja_gloss": "記録"}
+{"lemma": "запись", "rank": 742, "pos": "noun", "en_gloss": "recording, record", "ja_gloss": "記録", "gender": "f"}
 {"lemma": "небольшой", "rank": 743, "pos": "adj", "en_gloss": "small", "ja_gloss": "小さい"}
 {"lemma": "умирать", "rank": 744, "pos": "verb", "en_gloss": "die", "ja_gloss": "死ぬ"}
-{"lemma": "туалет", "rank": 745, "pos": "noun", "en_gloss": "toilet", "ja_gloss": "トイレ"}
-{"lemma": "мужик", "rank": 746, "pos": "noun", "en_gloss": "guy, peasant", "ja_gloss": "男"}
+{"lemma": "туалет", "rank": 745, "pos": "noun", "en_gloss": "toilet", "ja_gloss": "トイレ", "gender": "m"}
+{"lemma": "мужик", "rank": 746, "pos": "noun", "en_gloss": "guy, peasant", "ja_gloss": "男", "gender": "m"}
 {"lemma": "где-то", "rank": 747, "pos": "adv", "en_gloss": "somewhere", "ja_gloss": "どこか"}
 {"lemma": "взглянуть", "rank": 748, "pos": "verb", "en_gloss": "glance", "ja_gloss": "ちらりと見る"}
 {"lemma": "огромный", "rank": 749, "pos": "adj", "en_gloss": "huge", "ja_gloss": "巨大な"}
 {"lemma": "пропасть", "rank": 750, "pos": "verb", "en_gloss": "disappear", "ja_gloss": "消える"}
-{"lemma": "задница", "rank": 751, "pos": "noun", "en_gloss": "butt/ass", "ja_gloss": "尻"}
+{"lemma": "задница", "rank": 751, "pos": "noun", "en_gloss": "butt/ass", "ja_gloss": "尻", "gender": "f"}
 {"lemma": "выяснить", "rank": 752, "pos": "verb", "en_gloss": "find out", "ja_gloss": "明らかにする"}
 {"lemma": "угодно", "rank": 753, "pos": "predic", "en_gloss": "pleasing", "ja_gloss": "望み通りだ"}
 {"lemma": "поступить", "rank": 754, "pos": "verb", "en_gloss": "act", "ja_gloss": "行動する"}
-{"lemma": "подарок", "rank": 755, "pos": "noun", "en_gloss": "gift", "ja_gloss": "贈り物"}
+{"lemma": "подарок", "rank": 755, "pos": "noun", "en_gloss": "gift", "ja_gloss": "贈り物", "gender": "m"}
 {"lemma": "вызвать", "rank": 756, "pos": "verb", "en_gloss": "cause, call", "ja_gloss": "引き起こす"}
-{"lemma": "закон", "rank": 757, "pos": "noun", "en_gloss": "law", "ja_gloss": "法律"}
-{"lemma": "зуб", "rank": 758, "pos": "noun", "en_gloss": "tooth", "ja_gloss": "歯"}
+{"lemma": "закон", "rank": 757, "pos": "noun", "en_gloss": "law", "ja_gloss": "法律", "gender": "m"}
+{"lemma": "зуб", "rank": 758, "pos": "noun", "en_gloss": "tooth", "ja_gloss": "歯", "gender": "m"}
 {"lemma": "пригласить", "rank": 759, "pos": "verb", "en_gloss": "invite", "ja_gloss": "招待する"}
 {"lemma": "честно", "rank": 760, "pos": "adv", "en_gloss": "honestly", "ja_gloss": "正直に"}
-{"lemma": "ухо", "rank": 761, "pos": "noun", "en_gloss": "ear", "ja_gloss": "耳"}
+{"lemma": "ухо", "rank": 761, "pos": "noun", "en_gloss": "ear", "ja_gloss": "耳", "gender": "n"}
 {"lemma": "как-то", "rank": 762, "pos": "adv", "en_gloss": "somehow", "ja_gloss": "何となく"}
-{"lemma": "член", "rank": 763, "pos": "noun", "en_gloss": "member", "ja_gloss": "会員"}
+{"lemma": "член", "rank": 763, "pos": "noun", "en_gloss": "member", "ja_gloss": "会員", "gender": "m"}
 {"lemma": "выиграть", "rank": 764, "pos": "verb", "en_gloss": "win", "ja_gloss": "勝つ"}
-{"lemma": "прощение", "rank": 765, "pos": "noun", "en_gloss": "forgiveness", "ja_gloss": "許し"}
-{"lemma": "музыка", "rank": 766, "pos": "noun", "en_gloss": "music", "ja_gloss": "音楽"}
-{"lemma": "состояние", "rank": 767, "pos": "noun", "en_gloss": "state", "ja_gloss": "状態"}
+{"lemma": "прощение", "rank": 765, "pos": "noun", "en_gloss": "forgiveness", "ja_gloss": "許し", "gender": "n"}
+{"lemma": "музыка", "rank": 766, "pos": "noun", "en_gloss": "music", "ja_gloss": "音楽", "gender": "f"}
+{"lemma": "состояние", "rank": 767, "pos": "noun", "en_gloss": "state", "ja_gloss": "状態", "gender": "n"}
 {"lemma": "измениться", "rank": 768, "pos": "verb", "en_gloss": "change", "ja_gloss": "変わる"}
 {"lemma": "шесть", "rank": 769, "pos": "num", "en_gloss": "six", "ja_gloss": "6"}
 {"lemma": "грязный", "rank": 770, "pos": "adj", "en_gloss": "dirty", "ja_gloss": "汚い"}
-{"lemma": "совет", "rank": 771, "pos": "noun", "en_gloss": "advice, council", "ja_gloss": "助言"}
+{"lemma": "совет", "rank": 771, "pos": "noun", "en_gloss": "advice, council", "ja_gloss": "助言", "gender": "m"}
 {"lemma": "сбежать", "rank": 772, "pos": "verb", "en_gloss": "to run away", "ja_gloss": "逃げる"}
 {"lemma": "внутри", "rank": 773, "pos": "adv", "en_gloss": "inside", "ja_gloss": "内側で"}
-{"lemma": "свадьба", "rank": 774, "pos": "noun", "en_gloss": "wedding", "ja_gloss": "結婚式"}
+{"lemma": "свадьба", "rank": 774, "pos": "noun", "en_gloss": "wedding", "ja_gloss": "結婚式", "gender": "f"}
 {"lemma": "убрать", "rank": 775, "pos": "verb", "en_gloss": "remove, clean up", "ja_gloss": "片付ける"}
-{"lemma": "босс", "rank": 776, "pos": "noun", "en_gloss": "boss", "ja_gloss": "ボス"}
+{"lemma": "босс", "rank": 776, "pos": "noun", "en_gloss": "boss", "ja_gloss": "ボス", "gender": "m"}
 {"lemma": "носить", "rank": 777, "pos": "verb", "en_gloss": "carry/wear", "ja_gloss": "持つ"}
-{"lemma": "море", "rank": 778, "pos": "noun", "en_gloss": "sea", "ja_gloss": "海"}
+{"lemma": "море", "rank": 778, "pos": "noun", "en_gloss": "sea", "ja_gloss": "海", "gender": "n"}
 {"lemma": "связать", "rank": 779, "pos": "verb", "en_gloss": "connect", "ja_gloss": "結びつける"}
 {"lemma": "начаться", "rank": 780, "pos": "verb", "en_gloss": "begin", "ja_gloss": "始まる"}
 {"lemma": "уничтожить", "rank": 781, "pos": "verb", "en_gloss": "destroy", "ja_gloss": "破壊する"}
@@ -782,23 +782,23 @@
 {"lemma": "далеко", "rank": 784, "pos": "adv", "en_gloss": "far", "ja_gloss": "遠く"}
 {"lemma": "сесть", "rank": 785, "pos": "verb", "en_gloss": "sit down", "ja_gloss": "座る"}
 {"lemma": "вокруг", "rank": 786, "pos": "adv", "en_gloss": "around", "ja_gloss": "周りに"}
-{"lemma": "кухня", "rank": 787, "pos": "noun", "en_gloss": "kitchen", "ja_gloss": "台所"}
+{"lemma": "кухня", "rank": 787, "pos": "noun", "en_gloss": "kitchen", "ja_gloss": "台所", "gender": "f"}
 {"lemma": "придумать", "rank": 788, "pos": "verb", "en_gloss": "invent", "ja_gloss": "考案する"}
-{"lemma": "сосед", "rank": 789, "pos": "noun", "en_gloss": "neighbor", "ja_gloss": "隣人"}
+{"lemma": "сосед", "rank": 789, "pos": "noun", "en_gloss": "neighbor", "ja_gloss": "隣人", "gender": "m"}
 {"lemma": "предложить", "rank": 790, "pos": "verb", "en_gloss": "suggest", "ja_gloss": "提案する"}
-{"lemma": "пистолет", "rank": 791, "pos": "noun", "en_gloss": "pistol", "ja_gloss": "拳銃"}
+{"lemma": "пистолет", "rank": 791, "pos": "noun", "en_gloss": "pistol", "ja_gloss": "拳銃", "gender": "m"}
 {"lemma": "великий", "rank": 792, "pos": "adj", "en_gloss": "great", "ja_gloss": "偉大な"}
-{"lemma": "малыш", "rank": 793, "pos": "noun", "en_gloss": "baby", "ja_gloss": "赤ちゃん"}
+{"lemma": "малыш", "rank": 793, "pos": "noun", "en_gloss": "baby", "ja_gloss": "赤ちゃん", "gender": "m"}
 {"lemma": "заходить", "rank": 794, "pos": "verb", "en_gloss": "enter", "ja_gloss": "立ち寄る"}
 {"lemma": "согласиться", "rank": 795, "pos": "verb", "en_gloss": "agree", "ja_gloss": "同意する"}
-{"lemma": "повод", "rank": 796, "pos": "noun", "en_gloss": "reason, occasion", "ja_gloss": "きっかけ"}
+{"lemma": "повод", "rank": 796, "pos": "noun", "en_gloss": "reason, occasion", "ja_gloss": "きっかけ", "gender": "m"}
 {"lemma": "всякий", "rank": 797, "pos": "det", "en_gloss": "any, every", "ja_gloss": "あらゆる"}
-{"lemma": "удача", "rank": 798, "pos": "noun", "en_gloss": "luck, success", "ja_gloss": "幸運"}
-{"lemma": "огонь", "rank": 799, "pos": "noun", "en_gloss": "fire", "ja_gloss": "火"}
+{"lemma": "удача", "rank": 798, "pos": "noun", "en_gloss": "luck, success", "ja_gloss": "幸運", "gender": "f"}
+{"lemma": "огонь", "rank": 799, "pos": "noun", "en_gloss": "fire", "ja_gloss": "火", "gender": "m"}
 {"lemma": "встретить", "rank": 800, "pos": "verb", "en_gloss": "meet", "ja_gloss": "会う"}
-{"lemma": "речь", "rank": 801, "pos": "noun", "en_gloss": "speech", "ja_gloss": "話"}
-{"lemma": "волос", "rank": 802, "pos": "noun", "en_gloss": "hair", "ja_gloss": "髪"}
-{"lemma": "фотография", "rank": 803, "pos": "noun", "en_gloss": "photograph", "ja_gloss": "写真"}
+{"lemma": "речь", "rank": 801, "pos": "noun", "en_gloss": "speech", "ja_gloss": "話", "gender": "f"}
+{"lemma": "волос", "rank": 802, "pos": "noun", "en_gloss": "hair", "ja_gloss": "髪", "gender": "m"}
+{"lemma": "фотография", "rank": 803, "pos": "noun", "en_gloss": "photograph", "ja_gloss": "写真", "gender": "f"}
 {"lemma": "неужели", "rank": 804, "pos": "part", "en_gloss": "really", "ja_gloss": "まさか"}
 {"lemma": "очевидный", "rank": 805, "pos": "adj", "en_gloss": "obvious", "ja_gloss": "明らかな"}
 {"lemma": "круто", "rank": 806, "pos": "adv", "en_gloss": "cool/awesome", "ja_gloss": "かっこいい"}
@@ -811,35 +811,35 @@
 {"lemma": "горячий", "rank": 813, "pos": "adj", "en_gloss": "hot", "ja_gloss": "熱い"}
 {"lemma": "осторожный", "rank": 814, "pos": "adj", "en_gloss": "careful", "ja_gloss": "注意深い"}
 {"lemma": "болеть", "rank": 815, "pos": "verb", "en_gloss": "be ill", "ja_gloss": "病む"}
-{"lemma": "идиот", "rank": 816, "pos": "noun", "en_gloss": "idiot", "ja_gloss": "ばか"}
+{"lemma": "идиот", "rank": 816, "pos": "noun", "en_gloss": "idiot", "ja_gloss": "ばか", "gender": "m"}
 {"lemma": "повезти", "rank": 817, "pos": "verb", "en_gloss": "be lucky", "ja_gloss": "運がいい"}
-{"lemma": "минутка", "rank": 818, "pos": "noun", "en_gloss": "a minute (dim.)", "ja_gloss": "ちょっとの時間"}
+{"lemma": "минутка", "rank": 818, "pos": "noun", "en_gloss": "a minute (dim.)", "ja_gloss": "ちょっとの時間", "gender": "f"}
 {"lemma": "подходить", "rank": 819, "pos": "verb", "en_gloss": "approach/suit", "ja_gloss": "近づく"}
 {"lemma": "высокий", "rank": 820, "pos": "adj", "en_gloss": "high/tall", "ja_gloss": "高い"}
-{"lemma": "шоу", "rank": 821, "pos": "noun", "en_gloss": "show", "ja_gloss": "ショー"}
+{"lemma": "шоу", "rank": 821, "pos": "noun", "en_gloss": "show", "ja_gloss": "ショー", "gender": "n"}
 {"lemma": "больно", "rank": 822, "pos": "predic", "en_gloss": "painful", "ja_gloss": "痛い"}
 {"lemma": "исчезнуть", "rank": 823, "pos": "verb", "en_gloss": "disappear", "ja_gloss": "消える"}
 {"lemma": "трудно", "rank": 824, "pos": "adv", "en_gloss": "hard", "ja_gloss": "難しく"}
 {"lemma": "создать", "rank": 825, "pos": "verb", "en_gloss": "create", "ja_gloss": "作る"}
 {"lemma": "правый", "rank": 826, "pos": "adj", "en_gloss": "right", "ja_gloss": "右の"}
-{"lemma": "предложение", "rank": 827, "pos": "noun", "en_gloss": "sentence/offer", "ja_gloss": "文"}
+{"lemma": "предложение", "rank": 827, "pos": "noun", "en_gloss": "sentence/offer", "ja_gloss": "文", "gender": "n"}
 {"lemma": "существовать", "rank": 828, "pos": "verb", "en_gloss": "exist", "ja_gloss": "存在する"}
-{"lemma": "болезнь", "rank": 829, "pos": "noun", "en_gloss": "illness", "ja_gloss": "病気"}
+{"lemma": "болезнь", "rank": 829, "pos": "noun", "en_gloss": "illness", "ja_gloss": "病気", "gender": "f"}
 {"lemma": "бывший", "rank": 830, "pos": "adj", "en_gloss": "former", "ja_gloss": "元の"}
-{"lemma": "дядя", "rank": 831, "pos": "noun", "en_gloss": "uncle", "ja_gloss": "叔父"}
+{"lemma": "дядя", "rank": 831, "pos": "noun", "en_gloss": "uncle", "ja_gloss": "叔父", "gender": "m"}
 {"lemma": "постоянно", "rank": 832, "pos": "adv", "en_gloss": "constantly", "ja_gloss": "常に"}
 {"lemma": "лучший", "rank": 833, "pos": "adj", "en_gloss": "best", "ja_gloss": "最良の"}
 {"lemma": "например", "rank": 834, "pos": "adv", "en_gloss": "for example", "ja_gloss": "例えば"}
 {"lemma": "знакомый", "rank": 835, "pos": "adj", "en_gloss": "familiar", "ja_gloss": "見知った"}
 {"lemma": "подозревать", "rank": 836, "pos": "verb", "en_gloss": "suspect", "ja_gloss": "疑う"}
-{"lemma": "народ", "rank": 837, "pos": "noun", "en_gloss": "people", "ja_gloss": "民衆"}
-{"lemma": "дедушка", "rank": 838, "pos": "noun", "en_gloss": "grandfather", "ja_gloss": "おじいさん"}
+{"lemma": "народ", "rank": 837, "pos": "noun", "en_gloss": "people", "ja_gloss": "民衆", "gender": "m"}
+{"lemma": "дедушка", "rank": 838, "pos": "noun", "en_gloss": "grandfather", "ja_gloss": "おじいさん", "gender": "m"}
 {"lemma": "ожидать", "rank": 839, "pos": "verb", "en_gloss": "expect", "ja_gloss": "期待する"}
 {"lemma": "желать", "rank": 840, "pos": "verb", "en_gloss": "wish", "ja_gloss": "望む"}
-{"lemma": "карта", "rank": 841, "pos": "noun", "en_gloss": "map/card", "ja_gloss": "地図"}
-{"lemma": "след", "rank": 842, "pos": "noun", "en_gloss": "trace", "ja_gloss": "跡"}
+{"lemma": "карта", "rank": 841, "pos": "noun", "en_gloss": "map/card", "ja_gloss": "地図", "gender": "f"}
+{"lemma": "след", "rank": 842, "pos": "noun", "en_gloss": "trace", "ja_gloss": "跡", "gender": "m"}
 {"lemma": "обычный", "rank": 843, "pos": "adj", "en_gloss": "usual", "ja_gloss": "普通の"}
-{"lemma": "автобус", "rank": 844, "pos": "noun", "en_gloss": "bus", "ja_gloss": "バス"}
+{"lemma": "автобус", "rank": 844, "pos": "noun", "en_gloss": "bus", "ja_gloss": "バス", "gender": "m"}
 {"lemma": "серьёзный", "rank": 845, "pos": "adj", "en_gloss": "serious", "ja_gloss": "真面目な"}
 {"lemma": "третий", "rank": 846, "pos": "adj", "en_gloss": "third", "ja_gloss": "三番目の"}
 {"lemma": "являться", "rank": 847, "pos": "verb", "en_gloss": "be", "ja_gloss": "である"}
@@ -852,147 +852,147 @@
 {"lemma": "мило", "rank": 854, "pos": "adv", "en_gloss": "sweetly/nicely", "ja_gloss": "かわいく"}
 {"lemma": "какой-нибудь", "rank": 855, "pos": "det", "en_gloss": "some (kind of)", "ja_gloss": "何らかの"}
 {"lemma": "встать", "rank": 856, "pos": "verb", "en_gloss": "stand up", "ja_gloss": "立つ"}
-{"lemma": "центр", "rank": 857, "pos": "noun", "en_gloss": "center", "ja_gloss": "中心"}
+{"lemma": "центр", "rank": 857, "pos": "noun", "en_gloss": "center", "ja_gloss": "中心", "gender": "m"}
 {"lemma": "арестовать", "rank": 858, "pos": "verb", "en_gloss": "to arrest", "ja_gloss": "逮捕する"}
 {"lemma": "полностью", "rank": 859, "pos": "adv", "en_gloss": "completely", "ja_gloss": "完全に"}
 {"lemma": "стараться", "rank": 860, "pos": "verb", "en_gloss": "try", "ja_gloss": "努力する"}
-{"lemma": "леди", "rank": 861, "pos": "noun", "en_gloss": "lady", "ja_gloss": "レディ"}
+{"lemma": "леди", "rank": 861, "pos": "noun", "en_gloss": "lady", "ja_gloss": "レディ", "gender": "f"}
 {"lemma": "хватать", "rank": 862, "pos": "verb", "en_gloss": "be enough", "ja_gloss": "足りる"}
-{"lemma": "результат", "rank": 863, "pos": "noun", "en_gloss": "result", "ja_gloss": "結果"}
+{"lemma": "результат", "rank": 863, "pos": "noun", "en_gloss": "result", "ja_gloss": "結果", "gender": "m"}
 {"lemma": "вспомнить", "rank": 864, "pos": "verb", "en_gloss": "recall", "ja_gloss": "思い出す"}
 {"lemma": "закрыть", "rank": 865, "pos": "verb", "en_gloss": "close", "ja_gloss": "閉める"}
 {"lemma": "старший", "rank": 866, "pos": "adj", "en_gloss": "elder, senior", "ja_gloss": "年上の"}
 {"lemma": "здоровый", "rank": 867, "pos": "adj", "en_gloss": "healthy", "ja_gloss": "健康な"}
 {"lemma": "неплохо", "rank": 868, "pos": "adv", "en_gloss": "not bad", "ja_gloss": "悪くない"}
 {"lemma": "погибнуть", "rank": 869, "pos": "verb", "en_gloss": "perish", "ja_gloss": "死亡する"}
-{"lemma": "клуб", "rank": 870, "pos": "noun", "en_gloss": "club", "ja_gloss": "クラブ"}
+{"lemma": "клуб", "rank": 870, "pos": "noun", "en_gloss": "club", "ja_gloss": "クラブ", "gender": "m"}
 {"lemma": "чуть", "rank": 871, "pos": "adv", "en_gloss": "a little, slightly", "ja_gloss": "少し"}
-{"lemma": "дух", "rank": 872, "pos": "noun", "en_gloss": "spirit", "ja_gloss": "精神"}
+{"lemma": "дух", "rank": 872, "pos": "noun", "en_gloss": "spirit", "ja_gloss": "精神", "gender": "m"}
 {"lemma": "невозможно", "rank": 873, "pos": "predic", "en_gloss": "impossible", "ja_gloss": "不可能だ"}
 {"lemma": "устать", "rank": 874, "pos": "verb", "en_gloss": "get tired", "ja_gloss": "疲れる"}
-{"lemma": "понятие", "rank": 875, "pos": "noun", "en_gloss": "concept", "ja_gloss": "概念"}
+{"lemma": "понятие", "rank": 875, "pos": "noun", "en_gloss": "concept", "ja_gloss": "概念", "gender": "n"}
 {"lemma": "слушайте", "rank": 876, "pos": "intj", "en_gloss": "listen (pl./formal imperative)", "ja_gloss": "聞いてください"}
 {"lemma": "долгий", "rank": 877, "pos": "adj", "en_gloss": "long (time)", "ja_gloss": "長い"}
 {"lemma": "скорый", "rank": 878, "pos": "adj", "en_gloss": "fast, imminent", "ja_gloss": "速い"}
 {"lemma": "позаботиться", "rank": 879, "pos": "verb", "en_gloss": "to take care of", "ja_gloss": "世話をする"}
-{"lemma": "питер", "rank": 880, "pos": "noun", "en_gloss": "St. Petersburg (colloq)", "ja_gloss": "ピーテル"}
+{"lemma": "питер", "rank": 880, "pos": "noun", "en_gloss": "St. Petersburg (colloq)", "ja_gloss": "ピーテル", "gender": "m"}
 {"lemma": "отказаться", "rank": 881, "pos": "verb", "en_gloss": "refuse", "ja_gloss": "断る"}
-{"lemma": "секрет", "rank": 882, "pos": "noun", "en_gloss": "secret", "ja_gloss": "秘密"}
+{"lemma": "секрет", "rank": 882, "pos": "noun", "en_gloss": "secret", "ja_gloss": "秘密", "gender": "m"}
 {"lemma": "пропустить", "rank": 883, "pos": "verb", "en_gloss": "miss, let pass", "ja_gloss": "見逃す"}
-{"lemma": "здоровье", "rank": 884, "pos": "noun", "en_gloss": "health", "ja_gloss": "健康"}
-{"lemma": "выход", "rank": 885, "pos": "noun", "en_gloss": "exit, output", "ja_gloss": "出口"}
+{"lemma": "здоровье", "rank": 884, "pos": "noun", "en_gloss": "health", "ja_gloss": "健康", "gender": "n"}
+{"lemma": "выход", "rank": 885, "pos": "noun", "en_gloss": "exit, output", "ja_gloss": "出口", "gender": "m"}
 {"lemma": "смеяться", "rank": 886, "pos": "verb", "en_gloss": "laugh", "ja_gloss": "笑う"}
-{"lemma": "банк", "rank": 887, "pos": "noun", "en_gloss": "bank", "ja_gloss": "銀行"}
-{"lemma": "детка", "rank": 888, "pos": "noun", "en_gloss": "baby/honey (address)", "ja_gloss": "ベイビー"}
+{"lemma": "банк", "rank": 887, "pos": "noun", "en_gloss": "bank", "ja_gloss": "銀行", "gender": "m"}
+{"lemma": "детка", "rank": 888, "pos": "noun", "en_gloss": "baby/honey (address)", "ja_gloss": "ベイビー", "gender": "f"}
 {"lemma": "сойти", "rank": 889, "pos": "verb", "en_gloss": "to get off/descend", "ja_gloss": "降りる"}
 {"lemma": "легко", "rank": 890, "pos": "adv", "en_gloss": "easily", "ja_gloss": "簡単に"}
-{"lemma": "офицер", "rank": 891, "pos": "noun", "en_gloss": "officer", "ja_gloss": "将校"}
-{"lemma": "свидетель", "rank": 892, "pos": "noun", "en_gloss": "witness", "ja_gloss": "証人"}
+{"lemma": "офицер", "rank": 891, "pos": "noun", "en_gloss": "officer", "ja_gloss": "将校", "gender": "m"}
+{"lemma": "свидетель", "rank": 892, "pos": "noun", "en_gloss": "witness", "ja_gloss": "証人", "gender": "m"}
 {"lemma": "святой", "rank": 893, "pos": "adj", "en_gloss": "holy", "ja_gloss": "神聖な"}
 {"lemma": "добраться", "rank": 894, "pos": "verb", "en_gloss": "reach", "ja_gloss": "たどり着く"}
 {"lemma": "обнаружить", "rank": 895, "pos": "verb", "en_gloss": "discover", "ja_gloss": "発見する"}
 {"lemma": "мало", "rank": 896, "pos": "adv", "en_gloss": "little/few", "ja_gloss": "少なく"}
 {"lemma": "удаться", "rank": 897, "pos": "verb", "en_gloss": "succeed", "ja_gloss": "成功する"}
-{"lemma": "сделка", "rank": 898, "pos": "noun", "en_gloss": "deal", "ja_gloss": "取引"}
+{"lemma": "сделка", "rank": 898, "pos": "noun", "en_gloss": "deal", "ja_gloss": "取引", "gender": "f"}
 {"lemma": "благодарить", "rank": 899, "pos": "verb", "en_gloss": "thank", "ja_gloss": "感謝する"}
 {"lemma": "разный", "rank": 900, "pos": "adj", "en_gloss": "different", "ja_gloss": "いろいろな"}
 {"lemma": "вместо", "rank": 901, "pos": "prep", "en_gloss": "instead of", "ja_gloss": "代わりに"}
-{"lemma": "удар", "rank": 902, "pos": "noun", "en_gloss": "blow, strike", "ja_gloss": "打撃"}
+{"lemma": "удар", "rank": 902, "pos": "noun", "en_gloss": "blow, strike", "ja_gloss": "打撃", "gender": "m"}
 {"lemma": "настолько", "rank": 903, "pos": "adv", "en_gloss": "so (much)", "ja_gloss": "それほど"}
 {"lemma": "пожаловать", "rank": 904, "pos": "verb", "en_gloss": "to welcome/deign (добро пожаловать)", "ja_gloss": "ようこそ"}
 {"lemma": "поднять", "rank": 905, "pos": "verb", "en_gloss": "raise", "ja_gloss": "上げる"}
 {"lemma": "повторять", "rank": 906, "pos": "verb", "en_gloss": "repeat", "ja_gloss": "繰り返す"}
-{"lemma": "здание", "rank": 907, "pos": "noun", "en_gloss": "building", "ja_gloss": "建物"}
+{"lemma": "здание", "rank": 907, "pos": "noun", "en_gloss": "building", "ja_gloss": "建物", "gender": "n"}
 {"lemma": "клясться", "rank": 908, "pos": "verb", "en_gloss": "to swear/vow", "ja_gloss": "誓う"}
-{"lemma": "мэм", "rank": 909, "pos": "noun", "en_gloss": "ma'am", "ja_gloss": "マム"}
+{"lemma": "мэм", "rank": 909, "pos": "noun", "en_gloss": "ma'am", "ja_gloss": "マム", "gender": "f"}
 {"lemma": "глупый", "rank": 910, "pos": "adj", "en_gloss": "stupid", "ja_gloss": "愚かな"}
-{"lemma": "переводчик", "rank": 911, "pos": "noun", "en_gloss": "translator/interpreter", "ja_gloss": "通訳者"}
+{"lemma": "переводчик", "rank": 911, "pos": "noun", "en_gloss": "translator/interpreter", "ja_gloss": "通訳者", "gender": "m"}
 {"lemma": "либо", "rank": 912, "pos": "conj", "en_gloss": "or", "ja_gloss": "あるいは"}
-{"lemma": "пациент", "rank": 913, "pos": "noun", "en_gloss": "patient", "ja_gloss": "患者"}
+{"lemma": "пациент", "rank": 913, "pos": "noun", "en_gloss": "patient", "ja_gloss": "患者", "gender": "m"}
 {"lemma": "особенно", "rank": 914, "pos": "adv", "en_gloss": "especially", "ja_gloss": "特に"}
 {"lemma": "очевидно", "rank": 915, "pos": "adv", "en_gloss": "obviously", "ja_gloss": "明らかに"}
-{"lemma": "рыба", "rank": 916, "pos": "noun", "en_gloss": "fish", "ja_gloss": "魚"}
-{"lemma": "куча", "rank": 917, "pos": "noun", "en_gloss": "heap", "ja_gloss": "山"}
-{"lemma": "шутка", "rank": 918, "pos": "noun", "en_gloss": "joke", "ja_gloss": "冗談"}
+{"lemma": "рыба", "rank": 916, "pos": "noun", "en_gloss": "fish", "ja_gloss": "魚", "gender": "f"}
+{"lemma": "куча", "rank": 917, "pos": "noun", "en_gloss": "heap", "ja_gloss": "山", "gender": "f"}
+{"lemma": "шутка", "rank": 918, "pos": "noun", "en_gloss": "joke", "ja_gloss": "冗談", "gender": "f"}
 {"lemma": "заставлять", "rank": 919, "pos": "verb", "en_gloss": "force", "ja_gloss": "強いる"}
 {"lemma": "доказать", "rank": 920, "pos": "verb", "en_gloss": "prove", "ja_gloss": "証明する"}
 {"lemma": "эм", "rank": 921, "pos": "intj", "en_gloss": "um/er", "ja_gloss": "えーと"}
 {"lemma": "защитить", "rank": 922, "pos": "verb", "en_gloss": "defend", "ja_gloss": "守る"}
-{"lemma": "половина", "rank": 923, "pos": "noun", "en_gloss": "half", "ja_gloss": "半分"}
-{"lemma": "доказательство", "rank": 924, "pos": "noun", "en_gloss": "proof", "ja_gloss": "証拠"}
-{"lemma": "бизнес", "rank": 925, "pos": "noun", "en_gloss": "business", "ja_gloss": "ビジネス"}
-{"lemma": "язык", "rank": 926, "pos": "noun", "en_gloss": "language/tongue", "ja_gloss": "言語"}
+{"lemma": "половина", "rank": 923, "pos": "noun", "en_gloss": "half", "ja_gloss": "半分", "gender": "f"}
+{"lemma": "доказательство", "rank": 924, "pos": "noun", "en_gloss": "proof", "ja_gloss": "証拠", "gender": "n"}
+{"lemma": "бизнес", "rank": 925, "pos": "noun", "en_gloss": "business", "ja_gloss": "ビジネス", "gender": "m"}
+{"lemma": "язык", "rank": 926, "pos": "noun", "en_gloss": "language/tongue", "ja_gloss": "言語", "gender": "m"}
 {"lemma": "обязательно", "rank": 927, "pos": "adv", "en_gloss": "necessarily", "ja_gloss": "必ず"}
-{"lemma": "отель", "rank": 928, "pos": "noun", "en_gloss": "hotel", "ja_gloss": "ホテル"}
-{"lemma": "дама", "rank": 929, "pos": "noun", "en_gloss": "lady", "ja_gloss": "婦人"}
-{"lemma": "форма", "rank": 930, "pos": "noun", "en_gloss": "form", "ja_gloss": "形"}
-{"lemma": "звезда", "rank": 931, "pos": "noun", "en_gloss": "star", "ja_gloss": "星"}
+{"lemma": "отель", "rank": 928, "pos": "noun", "en_gloss": "hotel", "ja_gloss": "ホテル", "gender": "m"}
+{"lemma": "дама", "rank": 929, "pos": "noun", "en_gloss": "lady", "ja_gloss": "婦人", "gender": "f"}
+{"lemma": "форма", "rank": 930, "pos": "noun", "en_gloss": "form", "ja_gloss": "形", "gender": "f"}
+{"lemma": "звезда", "rank": 931, "pos": "noun", "en_gloss": "star", "ja_gloss": "星", "gender": "f"}
 {"lemma": "плакать", "rank": 932, "pos": "verb", "en_gloss": "cry", "ja_gloss": "泣く"}
-{"lemma": "гость", "rank": 933, "pos": "noun", "en_gloss": "guest", "ja_gloss": "客"}
-{"lemma": "шаг", "rank": 934, "pos": "noun", "en_gloss": "step", "ja_gloss": "一歩"}
+{"lemma": "гость", "rank": 933, "pos": "noun", "en_gloss": "guest", "ja_gloss": "客", "gender": "m"}
+{"lemma": "шаг", "rank": 934, "pos": "noun", "en_gloss": "step", "ja_gloss": "一歩", "gender": "m"}
 {"lemma": "занять", "rank": 935, "pos": "verb", "en_gloss": "occupy", "ja_gloss": "占める"}
 {"lemma": "б", "rank": 936, "pos": "part", "en_gloss": "conditional particle (colloq. бы)", "ja_gloss": "条件の助詞"}
 {"lemma": "снимать", "rank": 937, "pos": "verb", "en_gloss": "remove/film", "ja_gloss": "撮る"}
-{"lemma": "мадам", "rank": 938, "pos": "noun", "en_gloss": "madam", "ja_gloss": "マダム"}
-{"lemma": "дождь", "rank": 939, "pos": "noun", "en_gloss": "rain", "ja_gloss": "雨"}
+{"lemma": "мадам", "rank": 938, "pos": "noun", "en_gloss": "madam", "ja_gloss": "マダム", "gender": "f"}
+{"lemma": "дождь", "rank": 939, "pos": "noun", "en_gloss": "rain", "ja_gloss": "雨", "gender": "m"}
 {"lemma": "немедленно", "rank": 940, "pos": "adv", "en_gloss": "immediately", "ja_gloss": "直ちに"}
-{"lemma": "наркотик", "rank": 941, "pos": "noun", "en_gloss": "drug, narcotic", "ja_gloss": "麻薬"}
+{"lemma": "наркотик", "rank": 941, "pos": "noun", "en_gloss": "drug, narcotic", "ja_gloss": "麻薬", "gender": "m"}
 {"lemma": "отправиться", "rank": 942, "pos": "verb", "en_gloss": "set off", "ja_gloss": "出発する"}
 {"lemma": "лежать", "rank": 943, "pos": "verb", "en_gloss": "lie", "ja_gloss": "横たわる"}
 {"lemma": "сработать", "rank": 944, "pos": "verb", "en_gloss": "to work/take effect", "ja_gloss": "うまくいく"}
 {"lemma": "защищать", "rank": 945, "pos": "verb", "en_gloss": "defend", "ja_gloss": "守る"}
-{"lemma": "удовольствие", "rank": 946, "pos": "noun", "en_gloss": "pleasure", "ja_gloss": "喜び"}
+{"lemma": "удовольствие", "rank": 946, "pos": "noun", "en_gloss": "pleasure", "ja_gloss": "喜び", "gender": "n"}
 {"lemma": "способный", "rank": 947, "pos": "adj", "en_gloss": "capable", "ja_gloss": "有能な"}
-{"lemma": "начальник", "rank": 948, "pos": "noun", "en_gloss": "boss", "ja_gloss": "上司"}
-{"lemma": "служба", "rank": 949, "pos": "noun", "en_gloss": "service", "ja_gloss": "勤務"}
+{"lemma": "начальник", "rank": 948, "pos": "noun", "en_gloss": "boss", "ja_gloss": "上司", "gender": "m"}
+{"lemma": "служба", "rank": 949, "pos": "noun", "en_gloss": "service", "ja_gloss": "勤務", "gender": "f"}
 {"lemma": "вытащить", "rank": 950, "pos": "verb", "en_gloss": "pull out", "ja_gloss": "引き出す"}
 {"lemma": "наконец", "rank": 951, "pos": "adv", "en_gloss": "finally", "ja_gloss": "ついに"}
 {"lemma": "победить", "rank": 952, "pos": "verb", "en_gloss": "win", "ja_gloss": "勝つ"}
 {"lemma": "уезжать", "rank": 953, "pos": "verb", "en_gloss": "leave, depart", "ja_gloss": "出発する"}
-{"lemma": "девчонка", "rank": 954, "pos": "noun", "en_gloss": "girl (colloq)", "ja_gloss": "女の子"}
-{"lemma": "защита", "rank": 955, "pos": "noun", "en_gloss": "defense", "ja_gloss": "防御"}
-{"lemma": "река", "rank": 956, "pos": "noun", "en_gloss": "river", "ja_gloss": "川"}
+{"lemma": "девчонка", "rank": 954, "pos": "noun", "en_gloss": "girl (colloq)", "ja_gloss": "女の子", "gender": "f"}
+{"lemma": "защита", "rank": 955, "pos": "noun", "en_gloss": "defense", "ja_gloss": "防御", "gender": "f"}
+{"lemma": "река", "rank": 956, "pos": "noun", "en_gloss": "river", "ja_gloss": "川", "gender": "f"}
 {"lemma": "упасть", "rank": 957, "pos": "verb", "en_gloss": "fall", "ja_gloss": "落ちる"}
-{"lemma": "бар", "rank": 958, "pos": "noun", "en_gloss": "bar", "ja_gloss": "バー"}
-{"lemma": "штат", "rank": 959, "pos": "noun", "en_gloss": "state", "ja_gloss": "州"}
-{"lemma": "цветок", "rank": 960, "pos": "noun", "en_gloss": "flower", "ja_gloss": "花"}
+{"lemma": "бар", "rank": 958, "pos": "noun", "en_gloss": "bar", "ja_gloss": "バー", "gender": "m"}
+{"lemma": "штат", "rank": 959, "pos": "noun", "en_gloss": "state", "ja_gloss": "州", "gender": "m"}
+{"lemma": "цветок", "rank": 960, "pos": "noun", "en_gloss": "flower", "ja_gloss": "花", "gender": "m"}
 {"lemma": "ничто", "rank": 961, "pos": "pron", "en_gloss": "nothing", "ja_gloss": "何もない"}
-{"lemma": "документ", "rank": 962, "pos": "noun", "en_gloss": "document", "ja_gloss": "文書"}
+{"lemma": "документ", "rank": 962, "pos": "noun", "en_gloss": "document", "ja_gloss": "文書", "gender": "m"}
 {"lemma": "смешно", "rank": 963, "pos": "adv", "en_gloss": "funny/it's funny", "ja_gloss": "おかしい"}
-{"lemma": "таблетка", "rank": 964, "pos": "noun", "en_gloss": "pill", "ja_gloss": "錠剤"}
+{"lemma": "таблетка", "rank": 964, "pos": "noun", "en_gloss": "pill", "ja_gloss": "錠剤", "gender": "f"}
 {"lemma": "абсолютно", "rank": 965, "pos": "adv", "en_gloss": "absolutely", "ja_gloss": "絶対に"}
 {"lemma": "предлагать", "rank": 966, "pos": "verb", "en_gloss": "offer", "ja_gloss": "提供する"}
 {"lemma": "действовать", "rank": 967, "pos": "verb", "en_gloss": "act", "ja_gloss": "行動する"}
-{"lemma": "враг", "rank": 968, "pos": "noun", "en_gloss": "enemy", "ja_gloss": "敵"}
-{"lemma": "завтрак", "rank": 969, "pos": "noun", "en_gloss": "breakfast", "ja_gloss": "朝食"}
+{"lemma": "враг", "rank": 968, "pos": "noun", "en_gloss": "enemy", "ja_gloss": "敵", "gender": "m"}
+{"lemma": "завтрак", "rank": 969, "pos": "noun", "en_gloss": "breakfast", "ja_gloss": "朝食", "gender": "m"}
 {"lemma": "собраться", "rank": 970, "pos": "verb", "en_gloss": "gather", "ja_gloss": "集まる"}
 {"lemma": "приезжать", "rank": 971, "pos": "verb", "en_gloss": "arrive", "ja_gloss": "到着する"}
-{"lemma": "слава", "rank": 972, "pos": "noun", "en_gloss": "glory", "ja_gloss": "栄光"}
-{"lemma": "молодец", "rank": 973, "pos": "noun", "en_gloss": "well done (person)", "ja_gloss": "えらい"}
-{"lemma": "желание", "rank": 974, "pos": "noun", "en_gloss": "desire", "ja_gloss": "願望"}
+{"lemma": "слава", "rank": 972, "pos": "noun", "en_gloss": "glory", "ja_gloss": "栄光", "gender": "f"}
+{"lemma": "молодец", "rank": 973, "pos": "noun", "en_gloss": "well done (person)", "ja_gloss": "えらい", "gender": "m"}
+{"lemma": "желание", "rank": 974, "pos": "noun", "en_gloss": "desire", "ja_gloss": "願望", "gender": "n"}
 {"lemma": "переживать", "rank": 975, "pos": "verb", "en_gloss": "worry, experience", "ja_gloss": "心配する"}
 {"lemma": "жениться", "rank": 976, "pos": "verb", "en_gloss": "marry", "ja_gloss": "結婚する"}
 {"lemma": "отвезти", "rank": 977, "pos": "verb", "en_gloss": "to take (by vehicle)", "ja_gloss": "車で送る"}
-{"lemma": "расследование", "rank": 978, "pos": "noun", "en_gloss": "investigation", "ja_gloss": "捜査"}
-{"lemma": "лето", "rank": 979, "pos": "noun", "en_gloss": "summer", "ja_gloss": "夏"}
+{"lemma": "расследование", "rank": 978, "pos": "noun", "en_gloss": "investigation", "ja_gloss": "捜査", "gender": "n"}
+{"lemma": "лето", "rank": 979, "pos": "noun", "en_gloss": "summer", "ja_gloss": "夏", "gender": "n"}
 {"lemma": "известно", "rank": 980, "pos": "predic", "en_gloss": "it is known", "ja_gloss": "知られている"}
-{"lemma": "роль", "rank": 981, "pos": "noun", "en_gloss": "role", "ja_gloss": "役割"}
+{"lemma": "роль", "rank": 981, "pos": "noun", "en_gloss": "role", "ja_gloss": "役割", "gender": "f"}
 {"lemma": "нечего", "rank": 982, "pos": "predic", "en_gloss": "nothing to", "ja_gloss": "することがない"}
-{"lemma": "уровень", "rank": 983, "pos": "noun", "en_gloss": "level", "ja_gloss": "水準"}
+{"lemma": "уровень", "rank": 983, "pos": "noun", "en_gloss": "level", "ja_gloss": "水準", "gender": "m"}
 {"lemma": "окей", "rank": 984, "pos": "part", "en_gloss": "okay", "ja_gloss": "オーケー"}
-{"lemma": "мнение", "rank": 985, "pos": "noun", "en_gloss": "opinion", "ja_gloss": "意見"}
-{"lemma": "власть", "rank": 986, "pos": "noun", "en_gloss": "power", "ja_gloss": "権力"}
-{"lemma": "поиск", "rank": 987, "pos": "noun", "en_gloss": "search", "ja_gloss": "検索"}
-{"lemma": "покой", "rank": 988, "pos": "noun", "en_gloss": "peace", "ja_gloss": "安らぎ"}
-{"lemma": "директор", "rank": 989, "pos": "noun", "en_gloss": "director", "ja_gloss": "取締役"}
-{"lemma": "ветер", "rank": 990, "pos": "noun", "en_gloss": "wind", "ja_gloss": "風"}
+{"lemma": "мнение", "rank": 985, "pos": "noun", "en_gloss": "opinion", "ja_gloss": "意見", "gender": "n"}
+{"lemma": "власть", "rank": 986, "pos": "noun", "en_gloss": "power", "ja_gloss": "権力", "gender": "f"}
+{"lemma": "поиск", "rank": 987, "pos": "noun", "en_gloss": "search", "ja_gloss": "検索", "gender": "m"}
+{"lemma": "покой", "rank": 988, "pos": "noun", "en_gloss": "peace", "ja_gloss": "安らぎ", "gender": "m"}
+{"lemma": "директор", "rank": 989, "pos": "noun", "en_gloss": "director", "ja_gloss": "取締役", "gender": "m"}
+{"lemma": "ветер", "rank": 990, "pos": "noun", "en_gloss": "wind", "ja_gloss": "風", "gender": "m"}
 {"lemma": "съесть", "rank": 991, "pos": "verb", "en_gloss": "eat up", "ja_gloss": "食べる"}
-{"lemma": "станция", "rank": 992, "pos": "noun", "en_gloss": "station", "ja_gloss": "駅"}
+{"lemma": "станция", "rank": 992, "pos": "noun", "en_gloss": "station", "ja_gloss": "駅", "gender": "f"}
 {"lemma": "называться", "rank": 993, "pos": "verb", "en_gloss": "be called", "ja_gloss": "と呼ばれる"}
 {"lemma": "тихо", "rank": 994, "pos": "adv", "en_gloss": "quietly", "ja_gloss": "静かに"}
 {"lemma": "петь", "rank": 995, "pos": "verb", "en_gloss": "sing", "ja_gloss": "歌う"}
-{"lemma": "приказ", "rank": 996, "pos": "noun", "en_gloss": "order", "ja_gloss": "命令"}
-{"lemma": "такси", "rank": 997, "pos": "noun", "en_gloss": "taxi", "ja_gloss": "タクシー"}
+{"lemma": "приказ", "rank": 996, "pos": "noun", "en_gloss": "order", "ja_gloss": "命令", "gender": "m"}
+{"lemma": "такси", "rank": 997, "pos": "noun", "en_gloss": "taxi", "ja_gloss": "タクシー", "gender": "n"}
 {"lemma": "сомневаться", "rank": 998, "pos": "verb", "en_gloss": "doubt", "ja_gloss": "疑う"}
-{"lemma": "факт", "rank": 999, "pos": "noun", "en_gloss": "fact", "ja_gloss": "事実"}
+{"lemma": "факт", "rank": 999, "pos": "noun", "en_gloss": "fact", "ja_gloss": "事実", "gender": "m"}
 {"lemma": "многое", "rank": 1000, "pos": "pron", "en_gloss": "much, many things", "ja_gloss": "多くのこと"}

@@ -39,6 +39,11 @@ CREATE TABLE IF NOT EXISTS Word (
     -- via idempotent ALTER in import.py:ensure_migrations.
     aspect      TEXT,                       -- 'pf' | 'impf' | NULL
     aspect_pair TEXT,                       -- paired verb's lemma, or NULL
+    -- LINGO-022 (card-back word breakdown). Grammatical gender for nouns:
+    -- 'm'|'f'|'n' singular genders, 'pl' pluralia tantum (деньги/ножницы),
+    -- 'mf' common gender (коллега/судья). NULL for non-nouns. Also added via
+    -- idempotent ALTER in import.py:ensure_migrations.
+    gender      TEXT,                       -- 'm'|'f'|'n'|'pl'|'mf' | NULL
     UNIQUE (deck_id, lemma)
 );
 
