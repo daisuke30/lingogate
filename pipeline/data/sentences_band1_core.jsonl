@@ -630,3 +630,23 @@
 {"id":"T1018","ru":"Вообще-то, я не знаю.","en":"Actually, I don't know.","ja":"実は、知らないんだ。","lemmas":["вообще-то","я","не","знать"],"target_lemma":"вообще-то","difficulty":1,"kind":"sentence"}
 {"id":"T1019","ru":"Мы должны увидеться.","en":"We should see each other.","ja":"また会うべきだね。","lemmas":["мы","должен","увидеться"],"target_lemma":"увидеться","difficulty":1,"kind":"sentence"}
 {"id":"T1020","ru":"Он работает ночью.","en":"He works at night.","ja":"彼は夜に働く。","lemmas":["он","работать","ночью"],"target_lemma":"ночью","difficulty":1,"kind":"sentence"}
+{"id":"T1021","ru":"Увидимся утром.","en":"See you in the morning.","ja":"朝に会おう。","lemmas":["увидеться","утром"],"target_lemma":"утром","difficulty":1,"kind":"sentence"}
+{"id":"T1022","ru":"Здравствуйте, как дела?","en":"Hello, how are you?","ja":"こんにちは、調子はどう?","lemmas":["здравствуйте","как","дело"],"target_lemma":"здравствуйте","difficulty":1,"kind":"sentence"}
+{"id":"T1023","ru":"Иди скорее!","en":"Come quickly!","ja":"早く来て!","lemmas":["идти","скорее"],"target_lemma":"скорее","difficulty":1,"kind":"sentence"}
+{"id":"T1024","ru":"Ох, прости меня.","en":"Oh, forgive me.","ja":"ああ、許して。","lemmas":["ох","простить","я"],"target_lemma":"ох","difficulty":1,"kind":"sentence"}
+{"id":"T1025","ru":"Это полное дерьмо.","en":"This is complete crap.","ja":"これは全くのくそだ。","lemmas":["это","полный","дерьмо"],"target_lemma":"дерьмо","difficulty":1,"kind":"sentence"}
+{"id":"T1026","ru":"Не беспокойся обо мне.","en":"Don't worry about me.","ja":"私のことは心配しないで。","lemmas":["не","беспокоиться","я"],"target_lemma":"беспокоиться","difficulty":1,"kind":"sentence"}
+{"id":"T1027","ru":"Алло, кто это?","en":"Hello, who is this?","ja":"もしもし、どなたですか?","lemmas":["алло","кто","это"],"target_lemma":"алло","difficulty":1,"kind":"sentence"}
+{"id":"T1028","ru":"Я детектив.","en":"I'm a detective.","ja":"私は探偵だ。","lemmas":["я","детектив"],"target_lemma":"детектив","difficulty":1,"kind":"sentence"}
+{"id":"T1029","ru":"Ты что, немой?","en":"What, are you mute?","ja":"おい、口がきけないのか?","lemmas":["ты","что","немой"],"target_lemma":"немой","difficulty":1,"kind":"sentence"}
+{"id":"T1030","ru":"Заткнись!","en":"Shut up!","ja":"黙れ!","lemmas":["заткнуться"],"target_lemma":"заткнуться","difficulty":1,"kind":"sentence"}
+{"id":"T1031","ru":"Ты шутишь?","en":"Are you joking?","ja":"冗談でしょ?","lemmas":["ты","шутить"],"target_lemma":"шутить","difficulty":1,"kind":"sentence"}
+{"id":"T1032","ru":"Увидимся когда-нибудь.","en":"We'll see each other sometime.","ja":"いつかまた会おう。","lemmas":["увидеться","когда-нибудь"],"target_lemma":"когда-нибудь","difficulty":1,"kind":"sentence"}
+{"id":"T1033","ru":"Погоди немного.","en":"Wait a bit.","ja":"ちょっと待って。","lemmas":["погодить","немного"],"target_lemma":"погодить","difficulty":1,"kind":"sentence"}
+{"id":"T1034","ru":"Он хочет украсть деньги.","en":"He wants to steal money.","ja":"彼はお金を盗みたがっている。","lemmas":["он","хотеть","украсть","деньги"],"target_lemma":"украсть","difficulty":1,"kind":"sentence"}
+{"id":"T1035","ru":"Мне ужасно жаль.","en":"I'm terribly sorry.","ja":"本当にごめんなさい。","lemmas":["я","ужасно","жаль"],"target_lemma":"ужасно","difficulty":1,"kind":"sentence"}
+{"id":"T1036","ru":"У меня болит задница.","en":"My butt hurts.","ja":"お尻が痛い。","lemmas":["у","я","болеть","задница"],"target_lemma":"задница","difficulty":1,"kind":"sentence"}
+{"id":"T1037","ru":"Всё как-то не так.","en":"Everything feels somehow off.","ja":"何だか変な感じだ。","lemmas":["всё","как-то","не","так"],"target_lemma":"как-то","difficulty":1,"kind":"sentence"}
+{"id":"T1038","ru":"Прошу прощения.","en":"I beg your pardon.","ja":"失礼します。","lemmas":["просить","прощение"],"target_lemma":"прощение","difficulty":1,"kind":"sentence"}
+{"id":"T1039","ru":"Он хочет сбежать.","en":"He wants to run away.","ja":"彼は逃げたがっている。","lemmas":["он","хотеть","сбежать"],"target_lemma":"сбежать","difficulty":1,"kind":"sentence"}
+{"id":"T1040","ru":"Он мой босс.","en":"He's my boss.","ja":"彼は私の上司だ。","lemmas":["он","мой","босс"],"target_lemma":"босс","difficulty":1,"kind":"sentence"}
