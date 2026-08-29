@@ -118,14 +118,16 @@ describe("content build", () => {
       expect(leaked).toEqual([]);
     });
 
-    it("keeps exactly the core sentences (1071 post-LINGO-020) plus any word cards", () => {
+    it("keeps exactly the core sentences (1386 post-LINGO-022) plus any word cards", () => {
       // LINGO-020: 1000 original T#### core sentences, retagged across bands
       // 1-4 by their target_lemma's new band (stage4a), plus 71 new T1001+
       // sentences for genuinely-new band1 words with no prior core sentence
       // (stage4b) = 1071. See pipeline/rebaseline/retag_sentences.py.
+      // LINGO-022: +315 T1072-T1386 core sentences for the promoted-into-band1
+      // words that still lacked a target example = 1386.
       const core = deck.sentences.filter((s: any) => s.kind === "sentence");
       const words = deck.sentences.filter((s: any) => s.kind === "word");
-      expect(core.length).toBe(1071);
+      expect(core.length).toBe(1386);
       expect(deck.sentences.length).toBe(core.length + words.length);
     });
 
