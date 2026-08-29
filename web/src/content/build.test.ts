@@ -102,10 +102,14 @@ describe("content build", () => {
   // band1 handwritten set, imported notes, imported lessons) is dropped even when
   // short enough to have survived the length-only filter.
   describe("core-only content restriction (LINGO-010 follow-up)", () => {
-    it("keeps only T#### (core) sentences and word cards; drops every other sentence source", () => {
+    it("keeps only core sentences (T#### or B####) and word cards; drops every other sentence source", () => {
+      // LINGO-023: band2/3 inflow core sentences use B-prefixed ids
+      // (B2001-B2286, B3001-B3462); the core identity is target_lemma != null,
+      // carried by every T- and B- row and no other sentence source.
+      const isCoreId = (id: string) => /^[TB]/.test(id);
       for (const s of deck.sentences) {
         if (s.kind === "sentence") {
-          expect(s.id.startsWith("T")).toBe(true);
+          expect(isCoreId(s.id)).toBe(true);
           expect(s.targetLemma).not.toBeNull();
         }
       }
@@ -113,21 +117,25 @@ describe("content build", () => {
       // handwritten set "s...", imported notes "n...", imported lessons "L...");
       // confirm none leaked through as kind='sentence'.
       const leaked = deck.sentences.filter(
-        (s: any) => s.kind === "sentence" && !s.id.startsWith("T"),
+        (s: any) => s.kind === "sentence" && !isCoreId(s.id),
       );
       expect(leaked).toEqual([]);
     });
 
-    it("keeps exactly the core sentences (1386 post-LINGO-022) plus any word cards", () => {
+    it("keeps exactly the core sentences (2134 post-LINGO-023) plus any word cards", () => {
       // LINGO-020: 1000 original T#### core sentences, retagged across bands
       // 1-4 by their target_lemma's new band (stage4a), plus 71 new T1001+
       // sentences for genuinely-new band1 words with no prior core sentence
       // (stage4b) = 1071. See pipeline/rebaseline/retag_sentences.py.
       // LINGO-022: +315 T1072-T1386 core sentences for the promoted-into-band1
       // words that still lacked a target example = 1386.
+      // LINGO-023: +748 B-prefixed core sentences for the band2/3 inflow words
+      // that lacked a target example (band2 B2001-B2286 = 286, band3
+      // B3001-B3462 = 462) = 2134. These ship in the deck but stay dormant at
+      // runtime while PRIMARY_BAND is fixed at 1 (band progression = LINGO-024).
       const core = deck.sentences.filter((s: any) => s.kind === "sentence");
       const words = deck.sentences.filter((s: any) => s.kind === "word");
-      expect(core.length).toBe(1386);
+      expect(core.length).toBe(2134);
       expect(deck.sentences.length).toBe(core.length + words.length);
     });
 
