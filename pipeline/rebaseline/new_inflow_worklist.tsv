@@ -516,7 +516,6 @@ new_rank	lemma	new_band	in_trki	source
 2408	повар	3	True	subtitle
 2409	виски	3	False	subtitle
 2411	рейс	3	False	subtitle
-2412	хэнк	3	False	subtitle
 2413	спускаться	3	False	subtitle
 2415	посидеть	3	False	subtitle
 2417	прятать	3	False	subtitle
@@ -533,7 +532,6 @@ new_rank	lemma	new_band	in_trki	source
 2444	да-да	3	False	subtitle
 2445	увести	3	False	subtitle
 2449	мороженое	3	False	subtitle
-2451	пёп	3	False	subtitle
 2452	выкинуть	3	False	subtitle
 2454	алкоголь	3	False	subtitle
 2456	чудовище	3	False	subtitle
@@ -584,7 +582,6 @@ new_rank	lemma	new_band	in_trki	source
 2543	курица	3	False	subtitle
 2546	тащить	3	False	subtitle
 2550	дети	3	True	trki_only
-2551	ть	3	False	subtitle
 2552	глянуть	3	False	subtitle
 2554	люди	3	True	trki_only
 2558	троллейбус	3	True	trki_only
