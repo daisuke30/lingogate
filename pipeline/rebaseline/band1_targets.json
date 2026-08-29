@@ -1,0 +1,2837 @@
+[
+{
+"tid": "T1072",
+"lemma": "то",
+"rank": 63,
+"pos": "det",
+"gender": null,
+"en": "that",
+"ja": "それ"
+},
+{
+"tid": "T1073",
+"lemma": "сделать",
+"rank": 65,
+"pos": "verb",
+"gender": null,
+"en": "do, make",
+"ja": "する"
+},
+{
+"tid": "T1074",
+"lemma": "спасибо",
+"rank": 85,
+"pos": "intj",
+"gender": null,
+"en": "thank you",
+"ja": "ありがとう"
+},
+{
+"tid": "T1075",
+"lemma": "ладно",
+"rank": 91,
+"pos": "part",
+"gender": null,
+"en": "okay",
+"ja": "よし"
+},
+{
+"tid": "T1076",
+"lemma": "чем",
+"rank": 97,
+"pos": "conj",
+"gender": null,
+"en": "than",
+"ja": "より"
+},
+{
+"tid": "T1077",
+"lemma": "со",
+"rank": 103,
+"pos": "prep",
+"gender": null,
+"en": "with",
+"ja": "と一緒に"
+},
+{
+"tid": "T1078",
+"lemma": "давай",
+"rank": 121,
+"pos": "part",
+"gender": null,
+"en": "let's",
+"ja": "さあ"
+},
+{
+"tid": "T1079",
+"lemma": "привет",
+"rank": 124,
+"pos": "intj",
+"gender": null,
+"en": "hello",
+"ja": "こんにちは"
+},
+{
+"tid": "T1080",
+"lemma": "об",
+"rank": 134,
+"pos": "prep",
+"gender": null,
+"en": "about",
+"ja": "について"
+},
+{
+"tid": "T1081",
+"lemma": "смочь",
+"rank": 135,
+"pos": "verb",
+"gender": null,
+"en": "be able to",
+"ja": "できる"
+},
+{
+"tid": "T1082",
+"lemma": "ни",
+"rank": 138,
+"pos": "part",
+"gender": null,
+"en": "not even",
+"ja": "も(〜ない)"
+},
+{
+"tid": "T1083",
+"lemma": "иметь",
+"rank": 153,
+"pos": "verb",
+"gender": null,
+"en": "have",
+"ja": "持つ"
+},
+{
+"tid": "T1084",
+"lemma": "пожалуйста",
+"rank": 155,
+"pos": "intj",
+"gender": null,
+"en": "please",
+"ja": "どうぞ"
+},
+{
+"tid": "T1085",
+"lemma": "сюда",
+"rank": 162,
+"pos": "adv",
+"gender": null,
+"en": "here (to)",
+"ja": "こちらへ"
+},
+{
+"tid": "T1086",
+"lemma": "чего",
+"rank": 166,
+"pos": "pron",
+"gender": null,
+"en": "what",
+"ja": "何"
+},
+{
+"tid": "T1087",
+"lemma": "значит",
+"rank": 167,
+"pos": "part",
+"gender": null,
+"en": "so, that means",
+"ja": "つまり"
+},
+{
+"tid": "T1088",
+"lemma": "всего",
+"rank": 173,
+"pos": "adv",
+"gender": null,
+"en": "in total, only",
+"ja": "全部で"
+},
+{
+"tid": "T1089",
+"lemma": "мистер",
+"rank": 177,
+"pos": "noun",
+"gender": "m",
+"en": "mister",
+"ja": "氏"
+},
+{
+"tid": "T1090",
+"lemma": "собираться",
+"rank": 184,
+"pos": "verb",
+"gender": null,
+"en": "gather, intend to",
+"ja": "集まる"
+},
+{
+"tid": "T1091",
+"lemma": "сэр",
+"rank": 198,
+"pos": "noun",
+"gender": "m",
+"en": "sir",
+"ja": "卿"
+},
+{
+"tid": "T1092",
+"lemma": "остаться",
+"rank": 203,
+"pos": "verb",
+"gender": null,
+"en": "remain",
+"ja": "残る"
+},
+{
+"tid": "T1093",
+"lemma": "немного",
+"rank": 210,
+"pos": "adv",
+"gender": null,
+"en": "a little",
+"ja": "少し"
+},
+{
+"tid": "T1094",
+"lemma": "увидеть",
+"rank": 213,
+"pos": "verb",
+"gender": null,
+"en": "see",
+"ja": "見る"
+},
+{
+"tid": "T1095",
+"lemma": "заниматься",
+"rank": 217,
+"pos": "verb",
+"gender": null,
+"en": "engage in",
+"ja": "従事する"
+},
+{
+"tid": "T1096",
+"lemma": "пора",
+"rank": 225,
+"pos": "predic",
+"gender": null,
+"en": "it's time",
+"ja": "時間だ"
+},
+{
+"tid": "T1097",
+"lemma": "кажется",
+"rank": 228,
+"pos": "part",
+"gender": null,
+"en": "it seems",
+"ja": "のようだ"
+},
+{
+"tid": "T1098",
+"lemma": "оставить",
+"rank": 229,
+"pos": "verb",
+"gender": null,
+"en": "leave",
+"ja": "残す"
+},
+{
+"tid": "T1099",
+"lemma": "извинить",
+"rank": 230,
+"pos": "verb",
+"gender": null,
+"en": "forgive",
+"ja": "許す"
+},
+{
+"tid": "T1100",
+"lemma": "подождать",
+"rank": 244,
+"pos": "verb",
+"gender": null,
+"en": "wait",
+"ja": "待つ"
+},
+{
+"tid": "T1101",
+"lemma": "подумать",
+"rank": 251,
+"pos": "verb",
+"gender": null,
+"en": "think",
+"ja": "考える"
+},
+{
+"tid": "T1102",
+"lemma": "чувствовать",
+"rank": 252,
+"pos": "verb",
+"gender": null,
+"en": "feel",
+"ja": "感じる"
+},
+{
+"tid": "T1103",
+"lemma": "черта",
+"rank": 257,
+"pos": "noun",
+"gender": "f",
+"en": "trait",
+"ja": "特徴"
+},
+{
+"tid": "T1104",
+"lemma": "дома",
+"rank": 260,
+"pos": "adv",
+"gender": null,
+"en": "at home",
+"ja": "家で"
+},
+{
+"tid": "T1105",
+"lemma": "три",
+"rank": 261,
+"pos": "num",
+"gender": null,
+"en": "three",
+"ja": "3"
+},
+{
+"tid": "T1106",
+"lemma": "вещь",
+"rank": 263,
+"pos": "noun",
+"gender": "f",
+"en": "thing",
+"ja": "物"
+},
+{
+"tid": "T1107",
+"lemma": "отлично",
+"rank": 268,
+"pos": "adv",
+"gender": null,
+"en": "excellently",
+"ja": "素晴らしく"
+},
+{
+"tid": "T1108",
+"lemma": "похоже",
+"rank": 269,
+"pos": "predic",
+"gender": null,
+"en": "seems",
+"ja": "らしい"
+},
+{
+"tid": "T1109",
+"lemma": "прийтись",
+"rank": 276,
+"pos": "verb",
+"gender": null,
+"en": "have to",
+"ja": "せざるを得ない"
+},
+{
+"tid": "T1110",
+"lemma": "выглядеть",
+"rank": 278,
+"pos": "verb",
+"gender": null,
+"en": "look, appear",
+"ja": "見える"
+},
+{
+"tid": "T1111",
+"lemma": "послушать",
+"rank": 280,
+"pos": "verb",
+"gender": null,
+"en": "listen",
+"ja": "聞く"
+},
+{
+"tid": "T1112",
+"lemma": "прямо",
+"rank": 283,
+"pos": "adv",
+"gender": null,
+"en": "directly",
+"ja": "まっすぐに"
+},
+{
+"tid": "T1113",
+"lemma": "давайте",
+"rank": 289,
+"pos": "part",
+"gender": null,
+"en": "let's",
+"ja": "さあ"
+},
+{
+"tid": "T1114",
+"lemma": "несколько",
+"rank": 290,
+"pos": "det",
+"gender": null,
+"en": "several",
+"ja": "いくつかの"
+},
+{
+"tid": "T1115",
+"lemma": "ага",
+"rank": 291,
+"pos": "intj",
+"gender": null,
+"en": "uh-huh",
+"ja": "うん"
+},
+{
+"tid": "T1116",
+"lemma": "добрый",
+"rank": 295,
+"pos": "adj",
+"gender": null,
+"en": "kind",
+"ja": "親切な"
+},
+{
+"tid": "T1117",
+"lemma": "звать",
+"rank": 298,
+"pos": "verb",
+"gender": null,
+"en": "call, name",
+"ja": "呼ぶ"
+},
+{
+"tid": "T1118",
+"lemma": "должно",
+"rank": 305,
+"pos": "predic",
+"gender": null,
+"en": "should",
+"ja": "すべきだ"
+},
+{
+"tid": "T1119",
+"lemma": "уверенный",
+"rank": 312,
+"pos": "adj",
+"gender": null,
+"en": "confident",
+"ja": "自信のある"
+},
+{
+"tid": "T1120",
+"lemma": "ребята",
+"rank": 313,
+"pos": "noun",
+"gender": "pl",
+"en": "guys",
+"ja": "みんな"
+},
+{
+"tid": "T1121",
+"lemma": "жаль",
+"rank": 316,
+"pos": "predic",
+"gender": null,
+"en": "pity",
+"ja": "残念だ"
+},
+{
+"tid": "T1122",
+"lemma": "туда",
+"rank": 317,
+"pos": "adv",
+"gender": null,
+"en": "there (to)",
+"ja": "そこへ"
+},
+{
+"tid": "T1123",
+"lemma": "действительно",
+"rank": 318,
+"pos": "adv",
+"gender": null,
+"en": "really",
+"ja": "本当に"
+},
+{
+"tid": "T1124",
+"lemma": "хватить",
+"rank": 322,
+"pos": "verb",
+"gender": null,
+"en": "be enough",
+"ja": "足りる"
+},
+{
+"tid": "T1125",
+"lemma": "использовать",
+"rank": 326,
+"pos": "verb",
+"gender": null,
+"en": "use",
+"ja": "使う"
+},
+{
+"tid": "T1126",
+"lemma": "поехать",
+"rank": 328,
+"pos": "verb",
+"gender": null,
+"en": "go (by transport)",
+"ja": "行く"
+},
+{
+"tid": "T1127",
+"lemma": "больший",
+"rank": 331,
+"pos": "adj",
+"gender": null,
+"en": "bigger",
+"ja": "より大きい"
+},
+{
+"tid": "T1128",
+"lemma": "отсюда",
+"rank": 334,
+"pos": "adv",
+"gender": null,
+"en": "from here",
+"ja": "ここから"
+},
+{
+"tid": "T1129",
+"lemma": "произойти",
+"rank": 336,
+"pos": "verb",
+"gender": null,
+"en": "happen",
+"ja": "起こる"
+},
+{
+"tid": "T1130",
+"lemma": "единственный",
+"rank": 339,
+"pos": "adj",
+"gender": null,
+"en": "only",
+"ja": "唯一の"
+},
+{
+"tid": "T1131",
+"lemma": "верно",
+"rank": 340,
+"pos": "adv",
+"gender": null,
+"en": "correctly",
+"ja": "正しく"
+},
+{
+"tid": "T1132",
+"lemma": "раньше",
+"rank": 341,
+"pos": "adv",
+"gender": null,
+"en": "earlier",
+"ja": "以前"
+},
+{
+"tid": "T1133",
+"lemma": "оба",
+"rank": 347,
+"pos": "num",
+"gender": null,
+"en": "both",
+"ja": "両方"
+},
+{
+"tid": "T1134",
+"lemma": "господь",
+"rank": 350,
+"pos": "noun",
+"gender": "m",
+"en": "Lord",
+"ja": "主"
+},
+{
+"tid": "T1135",
+"lemma": "более",
+"rank": 353,
+"pos": "adv",
+"gender": null,
+"en": "more",
+"ja": "もっと"
+},
+{
+"tid": "T1136",
+"lemma": "итак",
+"rank": 354,
+"pos": "conj",
+"gender": null,
+"en": "so",
+"ja": "さて"
+},
+{
+"tid": "T1137",
+"lemma": "ко",
+"rank": 357,
+"pos": "prep",
+"gender": null,
+"en": "to, towards",
+"ja": "へ"
+},
+{
+"tid": "T1138",
+"lemma": "убийство",
+"rank": 359,
+"pos": "noun",
+"gender": "n",
+"en": "murder",
+"ja": "殺人"
+},
+{
+"tid": "T1139",
+"lemma": "забрать",
+"rank": 363,
+"pos": "verb",
+"gender": null,
+"en": "take",
+"ja": "持ち去る"
+},
+{
+"tid": "T1140",
+"lemma": "тело",
+"rank": 379,
+"pos": "noun",
+"gender": "n",
+"en": "body",
+"ja": "体"
+},
+{
+"tid": "T1141",
+"lemma": "далекий",
+"rank": 385,
+"pos": "adj",
+"gender": null,
+"en": "distant",
+"ja": "遠い"
+},
+{
+"tid": "T1142",
+"lemma": "момент",
+"rank": 389,
+"pos": "noun",
+"gender": "m",
+"en": "moment",
+"ja": "瞬間"
+},
+{
+"tid": "T1143",
+"lemma": "черт",
+"rank": 394,
+"pos": "noun",
+"gender": "m",
+"en": "devil",
+"ja": "悪魔"
+},
+{
+"tid": "T1144",
+"lemma": "квартира",
+"rank": 396,
+"pos": "noun",
+"gender": "f",
+"en": "apartment",
+"ja": "アパート"
+},
+{
+"tid": "T1145",
+"lemma": "поздно",
+"rank": 399,
+"pos": "adv",
+"gender": null,
+"en": "late",
+"ja": "遅く"
+},
+{
+"tid": "T1146",
+"lemma": "неё",
+"rank": 404,
+"pos": "pron",
+"gender": null,
+"en": "her",
+"ja": "彼女を"
+},
+{
+"tid": "T1147",
+"lemma": "господи",
+"rank": 408,
+"pos": "intj",
+"gender": null,
+"en": "good Lord!",
+"ja": "ああ神様"
+},
+{
+"tid": "T1148",
+"lemma": "написать",
+"rank": 417,
+"pos": "verb",
+"gender": null,
+"en": "write",
+"ja": "書く"
+},
+{
+"tid": "T1149",
+"lemma": "прошлый",
+"rank": 419,
+"pos": "adj",
+"gender": null,
+"en": "last, past",
+"ja": "過去の"
+},
+{
+"tid": "T1150",
+"lemma": "вернуть",
+"rank": 423,
+"pos": "verb",
+"gender": null,
+"en": "return",
+"ja": "返す"
+},
+{
+"tid": "T1151",
+"lemma": "отношение",
+"rank": 425,
+"pos": "noun",
+"gender": "n",
+"en": "relation",
+"ja": "関係"
+},
+{
+"tid": "T1152",
+"lemma": "поверить",
+"rank": 426,
+"pos": "verb",
+"gender": null,
+"en": "believe",
+"ja": "信じる"
+},
+{
+"tid": "T1153",
+"lemma": "хоть",
+"rank": 429,
+"pos": "part",
+"gender": null,
+"en": "even, although",
+"ja": "たとえ〜でも"
+},
+{
+"tid": "T1154",
+"lemma": "ужин",
+"rank": 431,
+"pos": "noun",
+"gender": "m",
+"en": "dinner",
+"ja": "夕食"
+},
+{
+"tid": "T1155",
+"lemma": "достаточно",
+"rank": 433,
+"pos": "adv",
+"gender": null,
+"en": "enough",
+"ja": "十分に"
+},
+{
+"tid": "T1156",
+"lemma": "некоторый",
+"rank": 436,
+"pos": "det",
+"gender": null,
+"en": "some",
+"ja": "いくつかの"
+},
+{
+"tid": "T1157",
+"lemma": "попасть",
+"rank": 437,
+"pos": "verb",
+"gender": null,
+"en": "get into, hit",
+"ja": "たどり着く"
+},
+{
+"tid": "T1158",
+"lemma": "провести",
+"rank": 438,
+"pos": "verb",
+"gender": null,
+"en": "conduct",
+"ja": "行う"
+},
+{
+"tid": "T1159",
+"lemma": "пять",
+"rank": 446,
+"pos": "num",
+"gender": null,
+"en": "five",
+"ja": "5"
+},
+{
+"tid": "T1160",
+"lemma": "попросить",
+"rank": 450,
+"pos": "verb",
+"gender": null,
+"en": "ask, request",
+"ja": "頼む"
+},
+{
+"tid": "T1161",
+"lemma": "рад",
+"rank": 457,
+"pos": "predic",
+"gender": null,
+"en": "glad",
+"ja": "嬉しい"
+},
+{
+"tid": "T1162",
+"lemma": "второй",
+"rank": 462,
+"pos": "adj",
+"gender": null,
+"en": "second",
+"ja": "二番目の"
+},
+{
+"tid": "T1163",
+"lemma": "следовать",
+"rank": 465,
+"pos": "verb",
+"gender": null,
+"en": "follow",
+"ja": "従う"
+},
+{
+"tid": "T1164",
+"lemma": "прислать",
+"rank": 468,
+"pos": "verb",
+"gender": null,
+"en": "send",
+"ja": "送る"
+},
+{
+"tid": "T1165",
+"lemma": "родитель",
+"rank": 470,
+"pos": "noun",
+"gender": "m",
+"en": "parent",
+"ja": "親"
+},
+{
+"tid": "T1166",
+"lemma": "встретиться",
+"rank": 471,
+"pos": "verb",
+"gender": null,
+"en": "meet",
+"ja": "会う"
+},
+{
+"tid": "T1167",
+"lemma": "капитан",
+"rank": 473,
+"pos": "noun",
+"gender": "m",
+"en": "captain",
+"ja": "船長"
+},
+{
+"tid": "T1168",
+"lemma": "остальной",
+"rank": 475,
+"pos": "det",
+"gender": null,
+"en": "remaining",
+"ja": "残りの"
+},
+{
+"tid": "T1169",
+"lemma": "встречаться",
+"rank": 476,
+"pos": "verb",
+"gender": null,
+"en": "meet (each other)",
+"ja": "会う"
+},
+{
+"tid": "T1170",
+"lemma": "перестать",
+"rank": 477,
+"pos": "verb",
+"gender": null,
+"en": "stop",
+"ja": "やめる"
+},
+{
+"tid": "T1171",
+"lemma": "заставить",
+"rank": 478,
+"pos": "verb",
+"gender": null,
+"en": "force",
+"ja": "強制する"
+},
+{
+"tid": "T1172",
+"lemma": "прекратить",
+"rank": 479,
+"pos": "verb",
+"gender": null,
+"en": "stop, cease",
+"ja": "やめる"
+},
+{
+"tid": "T1173",
+"lemma": "называть",
+"rank": 480,
+"pos": "verb",
+"gender": null,
+"en": "call, name",
+"ja": "呼ぶ"
+},
+{
+"tid": "T1174",
+"lemma": "отличный",
+"rank": 481,
+"pos": "adj",
+"gender": null,
+"en": "excellent",
+"ja": "優れた"
+},
+{
+"tid": "T1175",
+"lemma": "ненавидеть",
+"rank": 482,
+"pos": "verb",
+"gender": null,
+"en": "hate",
+"ja": "憎む"
+},
+{
+"tid": "T1176",
+"lemma": "прекрасный",
+"rank": 484,
+"pos": "adj",
+"gender": null,
+"en": "wonderful",
+"ja": "素晴らしい"
+},
+{
+"tid": "T1177",
+"lemma": "оказаться",
+"rank": 487,
+"pos": "verb",
+"gender": null,
+"en": "turn out to be",
+"ja": "であることが分かる"
+},
+{
+"tid": "T1178",
+"lemma": "важно",
+"rank": 492,
+"pos": "predic",
+"gender": null,
+"en": "important",
+"ja": "重要だ"
+},
+{
+"tid": "T1179",
+"lemma": "захотеть",
+"rank": 500,
+"pos": "verb",
+"gender": null,
+"en": "want",
+"ja": "望む"
+},
+{
+"tid": "T1180",
+"lemma": "давно",
+"rank": 509,
+"pos": "adv",
+"gender": null,
+"en": "long ago",
+"ja": "昔から"
+},
+{
+"tid": "T1181",
+"lemma": "жертва",
+"rank": 511,
+"pos": "noun",
+"gender": "f",
+"en": "victim",
+"ja": "犠牲者"
+},
+{
+"tid": "T1182",
+"lemma": "находиться",
+"rank": 513,
+"pos": "verb",
+"gender": null,
+"en": "be located",
+"ja": "ある"
+},
+{
+"tid": "T1183",
+"lemma": "привести",
+"rank": 515,
+"pos": "verb",
+"gender": null,
+"en": "bring, lead to",
+"ja": "導く"
+},
+{
+"tid": "T1184",
+"lemma": "также",
+"rank": 516,
+"pos": "adv",
+"gender": null,
+"en": "also",
+"ja": "また"
+},
+{
+"tid": "T1185",
+"lemma": "джон",
+"rank": 517,
+"pos": "noun",
+"gender": "m",
+"en": "John",
+"ja": "ジョン"
+},
+{
+"tid": "T1186",
+"lemma": "понравиться",
+"rank": 521,
+"pos": "verb",
+"gender": null,
+"en": "like",
+"ja": "気に入る"
+},
+{
+"tid": "T1187",
+"lemma": "разговаривать",
+"rank": 522,
+"pos": "verb",
+"gender": null,
+"en": "talk",
+"ja": "話す"
+},
+{
+"tid": "T1188",
+"lemma": "выпить",
+"rank": 523,
+"pos": "verb",
+"gender": null,
+"en": "drink",
+"ja": "飲む"
+},
+{
+"tid": "T1189",
+"lemma": "сначала",
+"rank": 528,
+"pos": "adv",
+"gender": null,
+"en": "at first",
+"ja": "最初に"
+},
+{
+"tid": "T1190",
+"lemma": "близкий",
+"rank": 532,
+"pos": "adj",
+"gender": null,
+"en": "close",
+"ja": "近い"
+},
+{
+"tid": "T1191",
+"lemma": "связь",
+"rank": 538,
+"pos": "noun",
+"gender": "f",
+"en": "connection",
+"ja": "つながり"
+},
+{
+"tid": "T1192",
+"lemma": "услышать",
+"rank": 539,
+"pos": "verb",
+"gender": null,
+"en": "hear",
+"ja": "聞こえる"
+},
+{
+"tid": "T1193",
+"lemma": "похожий",
+"rank": 548,
+"pos": "adj",
+"gender": null,
+"en": "similar",
+"ja": "似ている"
+},
+{
+"tid": "T1194",
+"lemma": "прекрасно",
+"rank": 552,
+"pos": "adv",
+"gender": null,
+"en": "beautifully",
+"ja": "素晴らしく"
+},
+{
+"tid": "T1195",
+"lemma": "агент",
+"rank": 553,
+"pos": "noun",
+"gender": "m",
+"en": "agent",
+"ja": "代理人"
+},
+{
+"tid": "T1196",
+"lemma": "тысяча",
+"rank": 554,
+"pos": "num",
+"gender": null,
+"en": "thousand",
+"ja": "千"
+},
+{
+"tid": "T1197",
+"lemma": "обед",
+"rank": 556,
+"pos": "noun",
+"gender": "m",
+"en": "lunch",
+"ja": "昼食"
+},
+{
+"tid": "T1198",
+"lemma": "собственный",
+"rank": 567,
+"pos": "adj",
+"gender": null,
+"en": "own",
+"ja": "自分の"
+},
+{
+"tid": "T1199",
+"lemma": "молодой",
+"rank": 568,
+"pos": "adj",
+"gender": null,
+"en": "young",
+"ja": "若い"
+},
+{
+"tid": "T1200",
+"lemma": "справиться",
+"rank": 569,
+"pos": "verb",
+"gender": null,
+"en": "cope, manage",
+"ja": "対処する"
+},
+{
+"tid": "T1201",
+"lemma": "столько",
+"rank": 572,
+"pos": "adv",
+"gender": null,
+"en": "so much",
+"ja": "それほど"
+},
+{
+"tid": "T1202",
+"lemma": "сильно",
+"rank": 575,
+"pos": "adv",
+"gender": null,
+"en": "strongly",
+"ja": "強く"
+},
+{
+"tid": "T1203",
+"lemma": "честь",
+"rank": 585,
+"pos": "noun",
+"gender": "f",
+"en": "honor",
+"ja": "名誉"
+},
+{
+"tid": "T1204",
+"lemma": "отпустить",
+"rank": 587,
+"pos": "verb",
+"gender": null,
+"en": "let go",
+"ja": "放す"
+},
+{
+"tid": "T1205",
+"lemma": "секс",
+"rank": 588,
+"pos": "noun",
+"gender": "m",
+"en": "sex",
+"ja": "性行為"
+},
+{
+"tid": "T1206",
+"lemma": "двое",
+"rank": 591,
+"pos": "num",
+"gender": null,
+"en": "two",
+"ja": "二人"
+},
+{
+"tid": "T1207",
+"lemma": "ах",
+"rank": 594,
+"pos": "intj",
+"gender": null,
+"en": "ah",
+"ja": "ああ"
+},
+{
+"tid": "T1208",
+"lemma": "понятно",
+"rank": 595,
+"pos": "predic",
+"gender": null,
+"en": "clear",
+"ja": "明らかだ"
+},
+{
+"tid": "T1209",
+"lemma": "хотеться",
+"rank": 596,
+"pos": "verb",
+"gender": null,
+"en": "want",
+"ja": "〜したい"
+},
+{
+"tid": "T1210",
+"lemma": "довольно",
+"rank": 597,
+"pos": "adv",
+"gender": null,
+"en": "quite",
+"ja": "かなり"
+},
+{
+"tid": "T1211",
+"lemma": "бывать",
+"rank": 598,
+"pos": "verb",
+"gender": null,
+"en": "happen, be sometimes",
+"ja": "たまにある"
+},
+{
+"tid": "T1212",
+"lemma": "назвать",
+"rank": 599,
+"pos": "verb",
+"gender": null,
+"en": "name, call",
+"ja": "名付ける"
+},
+{
+"tid": "T1213",
+"lemma": "замечательный",
+"rank": 600,
+"pos": "adj",
+"gender": null,
+"en": "wonderful",
+"ja": "素晴らしい"
+},
+{
+"tid": "T1214",
+"lemma": "безопасность",
+"rank": 601,
+"pos": "noun",
+"gender": "f",
+"en": "safety",
+"ja": "安全"
+},
+{
+"tid": "T1215",
+"lemma": "четыре",
+"rank": 605,
+"pos": "num",
+"gender": null,
+"en": "four",
+"ja": "4"
+},
+{
+"tid": "T1216",
+"lemma": "прежде",
+"rank": 606,
+"pos": "adv",
+"gender": null,
+"en": "before",
+"ja": "以前に"
+},
+{
+"tid": "T1217",
+"lemma": "возможность",
+"rank": 607,
+"pos": "noun",
+"gender": "f",
+"en": "possibility",
+"ja": "可能性"
+},
+{
+"tid": "T1218",
+"lemma": "обо",
+"rank": 608,
+"pos": "prep",
+"gender": null,
+"en": "about",
+"ja": "について"
+},
+{
+"tid": "T1219",
+"lemma": "мера",
+"rank": 614,
+"pos": "noun",
+"gender": "f",
+"en": "measure",
+"ja": "措置"
+},
+{
+"tid": "T1220",
+"lemma": "познакомиться",
+"rank": 615,
+"pos": "verb",
+"gender": null,
+"en": "meet",
+"ja": "知り合う"
+},
+{
+"tid": "T1221",
+"lemma": "интересно",
+"rank": 617,
+"pos": "predic",
+"gender": null,
+"en": "interesting",
+"ja": "面白い"
+},
+{
+"tid": "T1222",
+"lemma": "затем",
+"rank": 618,
+"pos": "adv",
+"gender": null,
+"en": "then",
+"ja": "それから"
+},
+{
+"tid": "T1223",
+"lemma": "рано",
+"rank": 620,
+"pos": "adv",
+"gender": null,
+"en": "early",
+"ja": "早く"
+},
+{
+"tid": "T1224",
+"lemma": "чтоб",
+"rank": 627,
+"pos": "conj",
+"gender": null,
+"en": "in order to",
+"ja": "するために"
+},
+{
+"tid": "T1225",
+"lemma": "заплатить",
+"rank": 628,
+"pos": "verb",
+"gender": null,
+"en": "pay",
+"ja": "支払う"
+},
+{
+"tid": "T1226",
+"lemma": "держаться",
+"rank": 629,
+"pos": "verb",
+"gender": null,
+"en": "hold on",
+"ja": "持ちこたえる"
+},
+{
+"tid": "T1227",
+"lemma": "странно",
+"rank": 631,
+"pos": "adv",
+"gender": null,
+"en": "strangely",
+"ja": "妙に"
+},
+{
+"tid": "T1228",
+"lemma": "ой",
+"rank": 632,
+"pos": "intj",
+"gender": null,
+"en": "oh",
+"ja": "あっ"
+},
+{
+"tid": "T1229",
+"lemma": "успокоиться",
+"rank": 634,
+"pos": "verb",
+"gender": null,
+"en": "calm down",
+"ja": "落ち着く"
+},
+{
+"tid": "T1230",
+"lemma": "однажды",
+"rank": 636,
+"pos": "adv",
+"gender": null,
+"en": "once",
+"ja": "ある日"
+},
+{
+"tid": "T1231",
+"lemma": "ужасный",
+"rank": 639,
+"pos": "adj",
+"gender": null,
+"en": "terrible",
+"ja": "ひどい"
+},
+{
+"tid": "T1232",
+"lemma": "миллион",
+"rank": 640,
+"pos": "num",
+"gender": null,
+"en": "million",
+"ja": "百万"
+},
+{
+"tid": "T1233",
+"lemma": "другие",
+"rank": 645,
+"pos": "det",
+"gender": null,
+"en": "others",
+"ja": "他の"
+},
+{
+"tid": "T1234",
+"lemma": "иначе",
+"rank": 646,
+"pos": "adv",
+"gender": null,
+"en": "otherwise",
+"ja": "さもなければ"
+},
+{
+"tid": "T1235",
+"lemma": "заняться",
+"rank": 647,
+"pos": "verb",
+"gender": null,
+"en": "take up",
+"ja": "取り組む"
+},
+{
+"tid": "T1236",
+"lemma": "согласный",
+"rank": 649,
+"pos": "adj",
+"gender": null,
+"en": "agreeing",
+"ja": "同意した"
+},
+{
+"tid": "T1237",
+"lemma": "приятно",
+"rank": 651,
+"pos": "predic",
+"gender": null,
+"en": "pleasant",
+"ja": "心地よい"
+},
+{
+"tid": "T1238",
+"lemma": "звучать",
+"rank": 655,
+"pos": "verb",
+"gender": null,
+"en": "sound",
+"ja": "響く"
+},
+{
+"tid": "T1239",
+"lemma": "обратно",
+"rank": 663,
+"pos": "adv",
+"gender": null,
+"en": "back",
+"ja": "戻って"
+},
+{
+"tid": "T1240",
+"lemma": "приятель",
+"rank": 668,
+"pos": "noun",
+"gender": "m",
+"en": "friend, buddy",
+"ja": "友達"
+},
+{
+"tid": "T1241",
+"lemma": "доверять",
+"rank": 669,
+"pos": "verb",
+"gender": null,
+"en": "trust",
+"ja": "信頼する"
+},
+{
+"tid": "T1242",
+"lemma": "насколько",
+"rank": 671,
+"pos": "adv",
+"gender": null,
+"en": "how much, as far as",
+"ja": "どのくらい"
+},
+{
+"tid": "T1243",
+"lemma": "двигаться",
+"rank": 672,
+"pos": "verb",
+"gender": null,
+"en": "move",
+"ja": "動く"
+},
+{
+"tid": "T1244",
+"lemma": "ситуация",
+"rank": 677,
+"pos": "noun",
+"gender": "f",
+"en": "situation",
+"ja": "状況"
+},
+{
+"tid": "T1245",
+"lemma": "доллар",
+"rank": 685,
+"pos": "noun",
+"gender": "m",
+"en": "dollar",
+"ja": "ドル"
+},
+{
+"tid": "T1246",
+"lemma": "клиент",
+"rank": 686,
+"pos": "noun",
+"gender": "m",
+"en": "client",
+"ja": "顧客"
+},
+{
+"tid": "T1247",
+"lemma": "достать",
+"rank": 688,
+"pos": "verb",
+"gender": null,
+"en": "get",
+"ja": "手に入れる"
+},
+{
+"tid": "T1248",
+"lemma": "кстати",
+"rank": 691,
+"pos": "adv",
+"gender": null,
+"en": "by the way",
+"ja": "ところで"
+},
+{
+"tid": "T1249",
+"lemma": "разобраться",
+"rank": 695,
+"pos": "verb",
+"gender": null,
+"en": "figure out",
+"ja": "理解する"
+},
+{
+"tid": "T1250",
+"lemma": "проводить",
+"rank": 697,
+"pos": "verb",
+"gender": null,
+"en": "conduct",
+"ja": "行う"
+},
+{
+"tid": "T1251",
+"lemma": "будущее",
+"rank": 708,
+"pos": "noun",
+"gender": "n",
+"en": "future",
+"ja": "未来"
+},
+{
+"tid": "T1252",
+"lemma": "некоторые",
+"rank": 710,
+"pos": "det",
+"gender": null,
+"en": "some",
+"ja": "いくつかの"
+},
+{
+"tid": "T1253",
+"lemma": "простой",
+"rank": 715,
+"pos": "adj",
+"gender": null,
+"en": "simple",
+"ja": "簡単な"
+},
+{
+"tid": "T1254",
+"lemma": "преступление",
+"rank": 716,
+"pos": "noun",
+"gender": "n",
+"en": "crime",
+"ja": "犯罪"
+},
+{
+"tid": "T1255",
+"lemma": "уметь",
+"rank": 718,
+"pos": "verb",
+"gender": null,
+"en": "know how to",
+"ja": "できる"
+},
+{
+"tid": "T1256",
+"lemma": "сей",
+"rank": 719,
+"pos": "det",
+"gender": null,
+"en": "this",
+"ja": "この"
+},
+{
+"tid": "T1257",
+"lemma": "следить",
+"rank": 726,
+"pos": "verb",
+"gender": null,
+"en": "watch",
+"ja": "見守る"
+},
+{
+"tid": "T1258",
+"lemma": "закончиться",
+"rank": 727,
+"pos": "verb",
+"gender": null,
+"en": "end",
+"ja": "終わる"
+},
+{
+"tid": "T1259",
+"lemma": "устроить",
+"rank": 730,
+"pos": "verb",
+"gender": null,
+"en": "arrange",
+"ja": "手配する"
+},
+{
+"tid": "T1260",
+"lemma": "добро",
+"rank": 731,
+"pos": "noun",
+"gender": "n",
+"en": "good",
+"ja": "善"
+},
+{
+"tid": "T1261",
+"lemma": "любимый",
+"rank": 732,
+"pos": "adj",
+"gender": null,
+"en": "beloved, favorite",
+"ja": "大好きな"
+},
+{
+"tid": "T1262",
+"lemma": "полицейский",
+"rank": 733,
+"pos": "noun",
+"gender": "m",
+"en": "policeman",
+"ja": "警察官"
+},
+{
+"tid": "T1263",
+"lemma": "подобный",
+"rank": 737,
+"pos": "adj",
+"gender": null,
+"en": "similar",
+"ja": "似たような"
+},
+{
+"tid": "T1264",
+"lemma": "штука",
+"rank": 738,
+"pos": "noun",
+"gender": "f",
+"en": "thing",
+"ja": "物"
+},
+{
+"tid": "T1265",
+"lemma": "понадобиться",
+"rank": 739,
+"pos": "verb",
+"gender": null,
+"en": "be needed",
+"ja": "必要になる"
+},
+{
+"tid": "T1266",
+"lemma": "совершенно",
+"rank": 740,
+"pos": "adv",
+"gender": null,
+"en": "completely",
+"ja": "完全に"
+},
+{
+"tid": "T1267",
+"lemma": "сходить",
+"rank": 741,
+"pos": "verb",
+"gender": null,
+"en": "go",
+"ja": "行ってくる"
+},
+{
+"tid": "T1268",
+"lemma": "запись",
+"rank": 742,
+"pos": "noun",
+"gender": "f",
+"en": "recording, record",
+"ja": "記録"
+},
+{
+"tid": "T1269",
+"lemma": "небольшой",
+"rank": 743,
+"pos": "adj",
+"gender": null,
+"en": "small",
+"ja": "小さい"
+},
+{
+"tid": "T1270",
+"lemma": "мужик",
+"rank": 746,
+"pos": "noun",
+"gender": "m",
+"en": "guy, peasant",
+"ja": "男"
+},
+{
+"tid": "T1271",
+"lemma": "взглянуть",
+"rank": 748,
+"pos": "verb",
+"gender": null,
+"en": "glance",
+"ja": "ちらりと見る"
+},
+{
+"tid": "T1272",
+"lemma": "пропасть",
+"rank": 750,
+"pos": "verb",
+"gender": null,
+"en": "disappear",
+"ja": "消える"
+},
+{
+"tid": "T1273",
+"lemma": "выяснить",
+"rank": 752,
+"pos": "verb",
+"gender": null,
+"en": "find out",
+"ja": "明らかにする"
+},
+{
+"tid": "T1274",
+"lemma": "угодно",
+"rank": 753,
+"pos": "predic",
+"gender": null,
+"en": "pleasing",
+"ja": "望み通りだ"
+},
+{
+"tid": "T1275",
+"lemma": "поступить",
+"rank": 754,
+"pos": "verb",
+"gender": null,
+"en": "act",
+"ja": "行動する"
+},
+{
+"tid": "T1276",
+"lemma": "вызвать",
+"rank": 756,
+"pos": "verb",
+"gender": null,
+"en": "cause, call",
+"ja": "引き起こす"
+},
+{
+"tid": "T1277",
+"lemma": "пригласить",
+"rank": 759,
+"pos": "verb",
+"gender": null,
+"en": "invite",
+"ja": "招待する"
+},
+{
+"tid": "T1278",
+"lemma": "честно",
+"rank": 760,
+"pos": "adv",
+"gender": null,
+"en": "honestly",
+"ja": "正直に"
+},
+{
+"tid": "T1279",
+"lemma": "член",
+"rank": 763,
+"pos": "noun",
+"gender": "m",
+"en": "member",
+"ja": "会員"
+},
+{
+"tid": "T1280",
+"lemma": "выиграть",
+"rank": 764,
+"pos": "verb",
+"gender": null,
+"en": "win",
+"ja": "勝つ"
+},
+{
+"tid": "T1281",
+"lemma": "измениться",
+"rank": 768,
+"pos": "verb",
+"gender": null,
+"en": "change",
+"ja": "変わる"
+},
+{
+"tid": "T1282",
+"lemma": "шесть",
+"rank": 769,
+"pos": "num",
+"gender": null,
+"en": "six",
+"ja": "6"
+},
+{
+"tid": "T1283",
+"lemma": "совет",
+"rank": 771,
+"pos": "noun",
+"gender": "m",
+"en": "advice, council",
+"ja": "助言"
+},
+{
+"tid": "T1284",
+"lemma": "убрать",
+"rank": 775,
+"pos": "verb",
+"gender": null,
+"en": "remove, clean up",
+"ja": "片付ける"
+},
+{
+"tid": "T1285",
+"lemma": "связать",
+"rank": 779,
+"pos": "verb",
+"gender": null,
+"en": "connect",
+"ja": "結びつける"
+},
+{
+"tid": "T1286",
+"lemma": "начаться",
+"rank": 780,
+"pos": "verb",
+"gender": null,
+"en": "begin",
+"ja": "始まる"
+},
+{
+"tid": "T1287",
+"lemma": "уничтожить",
+"rank": 781,
+"pos": "verb",
+"gender": null,
+"en": "destroy",
+"ja": "破壊する"
+},
+{
+"tid": "T1288",
+"lemma": "сообщить",
+"rank": 782,
+"pos": "verb",
+"gender": null,
+"en": "inform",
+"ja": "知らせる"
+},
+{
+"tid": "T1289",
+"lemma": "садиться",
+"rank": 783,
+"pos": "verb",
+"gender": null,
+"en": "sit down",
+"ja": "座る"
+},
+{
+"tid": "T1290",
+"lemma": "придумать",
+"rank": 788,
+"pos": "verb",
+"gender": null,
+"en": "invent",
+"ja": "考案する"
+},
+{
+"tid": "T1291",
+"lemma": "великий",
+"rank": 792,
+"pos": "adj",
+"gender": null,
+"en": "great",
+"ja": "偉大な"
+},
+{
+"tid": "T1292",
+"lemma": "малыш",
+"rank": 793,
+"pos": "noun",
+"gender": "m",
+"en": "baby",
+"ja": "赤ちゃん"
+},
+{
+"tid": "T1293",
+"lemma": "заходить",
+"rank": 794,
+"pos": "verb",
+"gender": null,
+"en": "enter",
+"ja": "立ち寄る"
+},
+{
+"tid": "T1294",
+"lemma": "повод",
+"rank": 796,
+"pos": "noun",
+"gender": "m",
+"en": "reason, occasion",
+"ja": "きっかけ"
+},
+{
+"tid": "T1295",
+"lemma": "всякий",
+"rank": 797,
+"pos": "det",
+"gender": null,
+"en": "any, every",
+"ja": "あらゆる"
+},
+{
+"tid": "T1296",
+"lemma": "удача",
+"rank": 798,
+"pos": "noun",
+"gender": "f",
+"en": "luck, success",
+"ja": "幸運"
+},
+{
+"tid": "T1297",
+"lemma": "фотография",
+"rank": 803,
+"pos": "noun",
+"gender": "f",
+"en": "photograph",
+"ja": "写真"
+},
+{
+"tid": "T1298",
+"lemma": "неужели",
+"rank": 804,
+"pos": "part",
+"gender": null,
+"en": "really",
+"ja": "まさか"
+},
+{
+"tid": "T1299",
+"lemma": "очевидный",
+"rank": 805,
+"pos": "adj",
+"gender": null,
+"en": "obvious",
+"ja": "明らかな"
+},
+{
+"tid": "T1300",
+"lemma": "попытаться",
+"rank": 812,
+"pos": "verb",
+"gender": null,
+"en": "try",
+"ja": "試みる"
+},
+{
+"tid": "T1301",
+"lemma": "повезти",
+"rank": 817,
+"pos": "verb",
+"gender": null,
+"en": "be lucky",
+"ja": "運がいい"
+},
+{
+"tid": "T1302",
+"lemma": "больно",
+"rank": 822,
+"pos": "predic",
+"gender": null,
+"en": "painful",
+"ja": "痛い"
+},
+{
+"tid": "T1303",
+"lemma": "постоянно",
+"rank": 832,
+"pos": "adv",
+"gender": null,
+"en": "constantly",
+"ja": "常に"
+},
+{
+"tid": "T1304",
+"lemma": "лучший",
+"rank": 833,
+"pos": "adj",
+"gender": null,
+"en": "best",
+"ja": "最良の"
+},
+{
+"tid": "T1305",
+"lemma": "например",
+"rank": 834,
+"pos": "adv",
+"gender": null,
+"en": "for example",
+"ja": "例えば"
+},
+{
+"tid": "T1306",
+"lemma": "знакомый",
+"rank": 835,
+"pos": "adj",
+"gender": null,
+"en": "familiar",
+"ja": "見知った"
+},
+{
+"tid": "T1307",
+"lemma": "подозревать",
+"rank": 836,
+"pos": "verb",
+"gender": null,
+"en": "suspect",
+"ja": "疑う"
+},
+{
+"tid": "T1308",
+"lemma": "ожидать",
+"rank": 839,
+"pos": "verb",
+"gender": null,
+"en": "expect",
+"ja": "期待する"
+},
+{
+"tid": "T1309",
+"lemma": "желать",
+"rank": 840,
+"pos": "verb",
+"gender": null,
+"en": "wish",
+"ja": "望む"
+},
+{
+"tid": "T1310",
+"lemma": "след",
+"rank": 842,
+"pos": "noun",
+"gender": "m",
+"en": "trace",
+"ja": "跡"
+},
+{
+"tid": "T1311",
+"lemma": "обычный",
+"rank": 843,
+"pos": "adj",
+"gender": null,
+"en": "usual",
+"ja": "普通の"
+},
+{
+"tid": "T1312",
+"lemma": "третий",
+"rank": 846,
+"pos": "adj",
+"gender": null,
+"en": "third",
+"ja": "三番目の"
+},
+{
+"tid": "T1313",
+"lemma": "являться",
+"rank": 847,
+"pos": "verb",
+"gender": null,
+"en": "be",
+"ja": "である"
+},
+{
+"tid": "T1314",
+"lemma": "крайний",
+"rank": 848,
+"pos": "adj",
+"gender": null,
+"en": "extreme",
+"ja": "極端な"
+},
+{
+"tid": "T1315",
+"lemma": "означать",
+"rank": 850,
+"pos": "verb",
+"gender": null,
+"en": "mean",
+"ja": "意味する"
+},
+{
+"tid": "T1316",
+"lemma": "десять",
+"rank": 853,
+"pos": "num",
+"gender": null,
+"en": "ten",
+"ja": "10"
+},
+{
+"tid": "T1317",
+"lemma": "полностью",
+"rank": 859,
+"pos": "adv",
+"gender": null,
+"en": "completely",
+"ja": "完全に"
+},
+{
+"tid": "T1318",
+"lemma": "стараться",
+"rank": 860,
+"pos": "verb",
+"gender": null,
+"en": "try",
+"ja": "努力する"
+},
+{
+"tid": "T1319",
+"lemma": "хватать",
+"rank": 862,
+"pos": "verb",
+"gender": null,
+"en": "be enough",
+"ja": "足りる"
+},
+{
+"tid": "T1320",
+"lemma": "старший",
+"rank": 866,
+"pos": "adj",
+"gender": null,
+"en": "elder, senior",
+"ja": "年上の"
+},
+{
+"tid": "T1321",
+"lemma": "неплохо",
+"rank": 868,
+"pos": "adv",
+"gender": null,
+"en": "not bad",
+"ja": "悪くない"
+},
+{
+"tid": "T1322",
+"lemma": "погибнуть",
+"rank": 869,
+"pos": "verb",
+"gender": null,
+"en": "perish",
+"ja": "死亡する"
+},
+{
+"tid": "T1323",
+"lemma": "клуб",
+"rank": 870,
+"pos": "noun",
+"gender": "m",
+"en": "club",
+"ja": "クラブ"
+},
+{
+"tid": "T1324",
+"lemma": "чуть",
+"rank": 871,
+"pos": "adv",
+"gender": null,
+"en": "a little, slightly",
+"ja": "少し"
+},
+{
+"tid": "T1325",
+"lemma": "дух",
+"rank": 872,
+"pos": "noun",
+"gender": "m",
+"en": "spirit",
+"ja": "精神"
+},
+{
+"tid": "T1326",
+"lemma": "невозможно",
+"rank": 873,
+"pos": "predic",
+"gender": null,
+"en": "impossible",
+"ja": "不可能だ"
+},
+{
+"tid": "T1327",
+"lemma": "устать",
+"rank": 874,
+"pos": "verb",
+"gender": null,
+"en": "get tired",
+"ja": "疲れる"
+},
+{
+"tid": "T1328",
+"lemma": "понятие",
+"rank": 875,
+"pos": "noun",
+"gender": "n",
+"en": "concept",
+"ja": "概念"
+},
+{
+"tid": "T1329",
+"lemma": "долгий",
+"rank": 877,
+"pos": "adj",
+"gender": null,
+"en": "long (time)",
+"ja": "長い"
+},
+{
+"tid": "T1330",
+"lemma": "скорый",
+"rank": 878,
+"pos": "adj",
+"gender": null,
+"en": "fast, imminent",
+"ja": "速い"
+},
+{
+"tid": "T1331",
+"lemma": "питер",
+"rank": 880,
+"pos": "noun",
+"gender": "m",
+"en": "St. Petersburg (colloq)",
+"ja": "ピーテル"
+},
+{
+"tid": "T1332",
+"lemma": "пропустить",
+"rank": 883,
+"pos": "verb",
+"gender": null,
+"en": "miss, let pass",
+"ja": "見逃す"
+},
+{
+"tid": "T1333",
+"lemma": "здоровье",
+"rank": 884,
+"pos": "noun",
+"gender": "n",
+"en": "health",
+"ja": "健康"
+},
+{
+"tid": "T1334",
+"lemma": "выход",
+"rank": 885,
+"pos": "noun",
+"gender": "m",
+"en": "exit, output",
+"ja": "出口"
+},
+{
+"tid": "T1335",
+"lemma": "свидетель",
+"rank": 892,
+"pos": "noun",
+"gender": "m",
+"en": "witness",
+"ja": "証人"
+},
+{
+"tid": "T1336",
+"lemma": "святой",
+"rank": 893,
+"pos": "adj",
+"gender": null,
+"en": "holy",
+"ja": "神聖な"
+},
+{
+"tid": "T1337",
+"lemma": "добраться",
+"rank": 894,
+"pos": "verb",
+"gender": null,
+"en": "reach",
+"ja": "たどり着く"
+},
+{
+"tid": "T1338",
+"lemma": "обнаружить",
+"rank": 895,
+"pos": "verb",
+"gender": null,
+"en": "discover",
+"ja": "発見する"
+},
+{
+"tid": "T1339",
+"lemma": "удаться",
+"rank": 897,
+"pos": "verb",
+"gender": null,
+"en": "succeed",
+"ja": "成功する"
+},
+{
+"tid": "T1340",
+"lemma": "сделка",
+"rank": 898,
+"pos": "noun",
+"gender": "f",
+"en": "deal",
+"ja": "取引"
+},
+{
+"tid": "T1341",
+"lemma": "благодарить",
+"rank": 899,
+"pos": "verb",
+"gender": null,
+"en": "thank",
+"ja": "感謝する"
+},
+{
+"tid": "T1342",
+"lemma": "разный",
+"rank": 900,
+"pos": "adj",
+"gender": null,
+"en": "different",
+"ja": "いろいろな"
+},
+{
+"tid": "T1343",
+"lemma": "удар",
+"rank": 902,
+"pos": "noun",
+"gender": "m",
+"en": "blow, strike",
+"ja": "打撃"
+},
+{
+"tid": "T1344",
+"lemma": "настолько",
+"rank": 903,
+"pos": "adv",
+"gender": null,
+"en": "so (much)",
+"ja": "それほど"
+},
+{
+"tid": "T1345",
+"lemma": "либо",
+"rank": 912,
+"pos": "conj",
+"gender": null,
+"en": "or",
+"ja": "あるいは"
+},
+{
+"tid": "T1346",
+"lemma": "очевидно",
+"rank": 915,
+"pos": "adv",
+"gender": null,
+"en": "obviously",
+"ja": "明らかに"
+},
+{
+"tid": "T1347",
+"lemma": "куча",
+"rank": 917,
+"pos": "noun",
+"gender": "f",
+"en": "heap",
+"ja": "山"
+},
+{
+"tid": "T1348",
+"lemma": "шутка",
+"rank": 918,
+"pos": "noun",
+"gender": "f",
+"en": "joke",
+"ja": "冗談"
+},
+{
+"tid": "T1349",
+"lemma": "заставлять",
+"rank": 919,
+"pos": "verb",
+"gender": null,
+"en": "force",
+"ja": "強いる"
+},
+{
+"tid": "T1350",
+"lemma": "половина",
+"rank": 923,
+"pos": "noun",
+"gender": "f",
+"en": "half",
+"ja": "半分"
+},
+{
+"tid": "T1351",
+"lemma": "доказательство",
+"rank": 924,
+"pos": "noun",
+"gender": "n",
+"en": "proof",
+"ja": "証拠"
+},
+{
+"tid": "T1352",
+"lemma": "бизнес",
+"rank": 925,
+"pos": "noun",
+"gender": "m",
+"en": "business",
+"ja": "ビジネス"
+},
+{
+"tid": "T1353",
+"lemma": "обязательно",
+"rank": 927,
+"pos": "adv",
+"gender": null,
+"en": "necessarily",
+"ja": "必ず"
+},
+{
+"tid": "T1354",
+"lemma": "отель",
+"rank": 928,
+"pos": "noun",
+"gender": "m",
+"en": "hotel",
+"ja": "ホテル"
+},
+{
+"tid": "T1355",
+"lemma": "дама",
+"rank": 929,
+"pos": "noun",
+"gender": "f",
+"en": "lady",
+"ja": "婦人"
+},
+{
+"tid": "T1356",
+"lemma": "занять",
+"rank": 935,
+"pos": "verb",
+"gender": null,
+"en": "occupy",
+"ja": "占める"
+},
+{
+"tid": "T1357",
+"lemma": "немедленно",
+"rank": 940,
+"pos": "adv",
+"gender": null,
+"en": "immediately",
+"ja": "直ちに"
+},
+{
+"tid": "T1358",
+"lemma": "наркотик",
+"rank": 941,
+"pos": "noun",
+"gender": "m",
+"en": "drug, narcotic",
+"ja": "麻薬"
+},
+{
+"tid": "T1359",
+"lemma": "отправиться",
+"rank": 942,
+"pos": "verb",
+"gender": null,
+"en": "set off",
+"ja": "出発する"
+},
+{
+"tid": "T1360",
+"lemma": "удовольствие",
+"rank": 946,
+"pos": "noun",
+"gender": "n",
+"en": "pleasure",
+"ja": "喜び"
+},
+{
+"tid": "T1361",
+"lemma": "способный",
+"rank": 947,
+"pos": "adj",
+"gender": null,
+"en": "capable",
+"ja": "有能な"
+},
+{
+"tid": "T1362",
+"lemma": "служба",
+"rank": 949,
+"pos": "noun",
+"gender": "f",
+"en": "service",
+"ja": "勤務"
+},
+{
+"tid": "T1363",
+"lemma": "вытащить",
+"rank": 950,
+"pos": "verb",
+"gender": null,
+"en": "pull out",
+"ja": "引き出す"
+},
+{
+"tid": "T1364",
+"lemma": "наконец",
+"rank": 951,
+"pos": "adv",
+"gender": null,
+"en": "finally",
+"ja": "ついに"
+},
+{
+"tid": "T1365",
+"lemma": "уезжать",
+"rank": 953,
+"pos": "verb",
+"gender": null,
+"en": "leave, depart",
+"ja": "出発する"
+},
+{
+"tid": "T1366",
+"lemma": "девчонка",
+"rank": 954,
+"pos": "noun",
+"gender": "f",
+"en": "girl (colloq)",
+"ja": "女の子"
+},
+{
+"tid": "T1367",
+"lemma": "защита",
+"rank": 955,
+"pos": "noun",
+"gender": "f",
+"en": "defense",
+"ja": "防御"
+},
+{
+"tid": "T1368",
+"lemma": "бар",
+"rank": 958,
+"pos": "noun",
+"gender": "m",
+"en": "bar",
+"ja": "バー"
+},
+{
+"tid": "T1369",
+"lemma": "штат",
+"rank": 959,
+"pos": "noun",
+"gender": "m",
+"en": "state",
+"ja": "州"
+},
+{
+"tid": "T1370",
+"lemma": "абсолютно",
+"rank": 965,
+"pos": "adv",
+"gender": null,
+"en": "absolutely",
+"ja": "絶対に"
+},
+{
+"tid": "T1371",
+"lemma": "действовать",
+"rank": 967,
+"pos": "verb",
+"gender": null,
+"en": "act",
+"ja": "行動する"
+},
+{
+"tid": "T1372",
+"lemma": "собраться",
+"rank": 970,
+"pos": "verb",
+"gender": null,
+"en": "gather",
+"ja": "集まる"
+},
+{
+"tid": "T1373",
+"lemma": "приезжать",
+"rank": 971,
+"pos": "verb",
+"gender": null,
+"en": "arrive",
+"ja": "到着する"
+},
+{
+"tid": "T1374",
+"lemma": "слава",
+"rank": 972,
+"pos": "noun",
+"gender": "f",
+"en": "glory",
+"ja": "栄光"
+},
+{
+"tid": "T1375",
+"lemma": "переживать",
+"rank": 975,
+"pos": "verb",
+"gender": null,
+"en": "worry, experience",
+"ja": "心配する"
+},
+{
+"tid": "T1376",
+"lemma": "лето",
+"rank": 979,
+"pos": "noun",
+"gender": "n",
+"en": "summer",
+"ja": "夏"
+},
+{
+"tid": "T1377",
+"lemma": "известно",
+"rank": 980,
+"pos": "predic",
+"gender": null,
+"en": "it is known",
+"ja": "知られている"
+},
+{
+"tid": "T1378",
+"lemma": "роль",
+"rank": 981,
+"pos": "noun",
+"gender": "f",
+"en": "role",
+"ja": "役割"
+},
+{
+"tid": "T1379",
+"lemma": "нечего",
+"rank": 982,
+"pos": "predic",
+"gender": null,
+"en": "nothing to",
+"ja": "することがない"
+},
+{
+"tid": "T1380",
+"lemma": "поиск",
+"rank": 987,
+"pos": "noun",
+"gender": "m",
+"en": "search",
+"ja": "検索"
+},
+{
+"tid": "T1381",
+"lemma": "покой",
+"rank": 988,
+"pos": "noun",
+"gender": "m",
+"en": "peace",
+"ja": "安らぎ"
+},
+{
+"tid": "T1382",
+"lemma": "съесть",
+"rank": 991,
+"pos": "verb",
+"gender": null,
+"en": "eat up",
+"ja": "食べる"
+},
+{
+"tid": "T1383",
+"lemma": "называться",
+"rank": 993,
+"pos": "verb",
+"gender": null,
+"en": "be called",
+"ja": "と呼ばれる"
+},
+{
+"tid": "T1384",
+"lemma": "приказ",
+"rank": 996,
+"pos": "noun",
+"gender": "m",
+"en": "order",
+"ja": "命令"
+},
+{
+"tid": "T1385",
+"lemma": "сомневаться",
+"rank": 998,
+"pos": "verb",
+"gender": null,
+"en": "doubt",
+"ja": "疑う"
+},
+{
+"tid": "T1386",
+"lemma": "многое",
+"rank": 1000,
+"pos": "pron",
+"gender": null,
+"en": "much, many things",
+"ja": "多くのこと"
+}
+]
