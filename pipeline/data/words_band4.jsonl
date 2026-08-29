@@ -1,0 +1,859 @@
+{"lemma": "противник", "band": 4, "pos": "noun", "en_gloss": "opponent", "ja_gloss": "敵"}
+{"lemma": "покупатель", "band": 4, "pos": "noun", "en_gloss": "buyer", "ja_gloss": "買い手"}
+{"lemma": "подход", "band": 4, "pos": "noun", "en_gloss": "approach", "ja_gloss": "アプローチ"}
+{"lemma": "причем", "band": 4, "pos": "conj", "en_gloss": "moreover", "ja_gloss": "しかも"}
+{"lemma": "стремиться", "band": 4, "pos": "verb", "en_gloss": "strive", "ja_gloss": "目指す"}
+{"lemma": "ядерный", "band": 4, "pos": "adj", "en_gloss": "nuclear", "ja_gloss": "核の"}
+{"lemma": "фантазия", "band": 4, "pos": "noun", "en_gloss": "fantasy", "ja_gloss": "空想"}
+{"lemma": "производство", "band": 4, "pos": "noun", "en_gloss": "production", "ja_gloss": "生産"}
+{"lemma": "редкий", "band": 4, "pos": "adj", "en_gloss": "rare", "ja_gloss": "珍しい"}
+{"lemma": "середина", "band": 4, "pos": "noun", "en_gloss": "middle", "ja_gloss": "中央"}
+{"lemma": "основать", "band": 4, "pos": "verb", "en_gloss": "found", "ja_gloss": "設立する"}
+{"lemma": "яркий", "band": 4, "pos": "adj", "en_gloss": "bright", "ja_gloss": "明るい"}
+{"lemma": "ясный", "band": 4, "pos": "adj", "en_gloss": "clear", "ja_gloss": "明確な"}
+{"lemma": "христос", "band": 4, "pos": "noun", "en_gloss": "Christ", "ja_gloss": "キリスト"}
+{"lemma": "использование", "band": 4, "pos": "noun", "en_gloss": "use", "ja_gloss": "使用"}
+{"lemma": "вступить", "band": 4, "pos": "verb", "en_gloss": "enter", "ja_gloss": "入る"}
+{"lemma": "лев", "band": 4, "pos": "noun", "en_gloss": "lion", "ja_gloss": "ライオン"}
+{"lemma": "дорого", "band": 4, "pos": "adv", "en_gloss": "expensively", "ja_gloss": "高く"}
+{"lemma": "поверхность", "band": 4, "pos": "noun", "en_gloss": "surface", "ja_gloss": "表面"}
+{"lemma": "судно", "band": 4, "pos": "noun", "en_gloss": "vessel, ship", "ja_gloss": "船"}
+{"lemma": "пассажир", "band": 4, "pos": "noun", "en_gloss": "passenger", "ja_gloss": "乗客"}
+{"lemma": "привычка", "band": 4, "pos": "noun", "en_gloss": "habit", "ja_gloss": "習慣"}
+{"lemma": "тон", "band": 4, "pos": "noun", "en_gloss": "tone", "ja_gloss": "調子"}
+{"lemma": "вершина", "band": 4, "pos": "noun", "en_gloss": "summit", "ja_gloss": "頂上"}
+{"lemma": "персонаж", "band": 4, "pos": "noun", "en_gloss": "character", "ja_gloss": "登場人物"}
+{"lemma": "занимать", "band": 4, "pos": "verb", "en_gloss": "occupy", "ja_gloss": "占める"}
+{"lemma": "краска", "band": 4, "pos": "noun", "en_gloss": "paint", "ja_gloss": "塗料"}
+{"lemma": "равный", "band": 4, "pos": "adj", "en_gloss": "equal", "ja_gloss": "等しい"}
+{"lemma": "редко", "band": 4, "pos": "adv", "en_gloss": "rarely", "ja_gloss": "めったにない"}
+{"lemma": "развитие", "band": 4, "pos": "noun", "en_gloss": "development", "ja_gloss": "発展"}
+{"lemma": "трагедия", "band": 4, "pos": "noun", "en_gloss": "tragedy", "ja_gloss": "悲劇"}
+{"lemma": "электричество", "band": 4, "pos": "noun", "en_gloss": "electricity", "ja_gloss": "電気"}
+{"lemma": "понимание", "band": 4, "pos": "noun", "en_gloss": "understanding", "ja_gloss": "理解"}
+{"lemma": "акт", "band": 4, "pos": "noun", "en_gloss": "act", "ja_gloss": "行為"}
+{"lemma": "культура", "band": 4, "pos": "noun", "en_gloss": "culture", "ja_gloss": "文化"}
+{"lemma": "сорок", "band": 4, "pos": "num", "en_gloss": "forty", "ja_gloss": "四十"}
+{"lemma": "книжка", "band": 4, "pos": "noun", "en_gloss": "book", "ja_gloss": "本"}
+{"lemma": "молитва", "band": 4, "pos": "noun", "en_gloss": "prayer", "ja_gloss": "祈り"}
+{"lemma": "нервный", "band": 4, "pos": "adj", "en_gloss": "nervous", "ja_gloss": "神経質な"}
+{"lemma": "падение", "band": 4, "pos": "noun", "en_gloss": "fall", "ja_gloss": "落下"}
+{"lemma": "помещение", "band": 4, "pos": "noun", "en_gloss": "premises", "ja_gloss": "室内"}
+{"lemma": "перемена", "band": 4, "pos": "noun", "en_gloss": "change", "ja_gloss": "変化"}
+{"lemma": "предстоять", "band": 4, "pos": "verb", "en_gloss": "lie ahead", "ja_gloss": "控えている"}
+{"lemma": "редактор", "band": 4, "pos": "noun", "en_gloss": "editor", "ja_gloss": "編集者"}
+{"lemma": "внести", "band": 4, "pos": "verb", "en_gloss": "contribute", "ja_gloss": "持ち込む"}
+{"lemma": "разведка", "band": 4, "pos": "noun", "en_gloss": "intelligence, reconnaissance", "ja_gloss": "偵察"}
+{"lemma": "разумный", "band": 4, "pos": "adj", "en_gloss": "reasonable", "ja_gloss": "合理的な"}
+{"lemma": "публика", "band": 4, "pos": "noun", "en_gloss": "public, audience", "ja_gloss": "観客"}
+{"lemma": "сохранять", "band": 4, "pos": "verb", "en_gloss": "preserve", "ja_gloss": "保つ"}
+{"lemma": "фактически", "band": 4, "pos": "adv", "en_gloss": "actually", "ja_gloss": "実際に"}
+{"lemma": "суть", "band": 4, "pos": "noun", "en_gloss": "essence", "ja_gloss": "本質"}
+{"lemma": "обладать", "band": 4, "pos": "verb", "en_gloss": "possess", "ja_gloss": "持っている"}
+{"lemma": "слева", "band": 4, "pos": "adv", "en_gloss": "on left", "ja_gloss": "左に"}
+{"lemma": "сутки", "band": 4, "pos": "noun", "en_gloss": "day", "ja_gloss": "一昼夜"}
+{"lemma": "мощный", "band": 4, "pos": "adj", "en_gloss": "powerful", "ja_gloss": "強力な"}
+{"lemma": "доказывать", "band": 4, "pos": "verb", "en_gloss": "prove", "ja_gloss": "証明する"}
+{"lemma": "режим", "band": 4, "pos": "noun", "en_gloss": "regime", "ja_gloss": "体制"}
+{"lemma": "цепь", "band": 4, "pos": "noun", "en_gloss": "chain", "ja_gloss": "鎖"}
+{"lemma": "вещество", "band": 4, "pos": "noun", "en_gloss": "substance", "ja_gloss": "物質"}
+{"lemma": "салат", "band": 4, "pos": "noun", "en_gloss": "salad", "ja_gloss": "サラダ"}
+{"lemma": "телевидение", "band": 4, "pos": "noun", "en_gloss": "television", "ja_gloss": "テレビ"}
+{"lemma": "спор", "band": 4, "pos": "noun", "en_gloss": "dispute", "ja_gloss": "論争"}
+{"lemma": "надпись", "band": 4, "pos": "noun", "en_gloss": "inscription", "ja_gloss": "碑文"}
+{"lemma": "задуматься", "band": 4, "pos": "verb", "en_gloss": "ponder", "ja_gloss": "考え込む"}
+{"lemma": "подразделение", "band": 4, "pos": "noun", "en_gloss": "subdivision, unit", "ja_gloss": "部門"}
+{"lemma": "строй", "band": 4, "pos": "noun", "en_gloss": "formation", "ja_gloss": "隊列"}
+{"lemma": "кризис", "band": 4, "pos": "noun", "en_gloss": "crisis", "ja_gloss": "危機"}
+{"lemma": "министерство", "band": 4, "pos": "noun", "en_gloss": "ministry", "ja_gloss": "省"}
+{"lemma": "юридический", "band": 4, "pos": "adj", "en_gloss": "legal", "ja_gloss": "法律の"}
+{"lemma": "плата", "band": 4, "pos": "noun", "en_gloss": "payment", "ja_gloss": "料金"}
+{"lemma": "холм", "band": 4, "pos": "noun", "en_gloss": "hill", "ja_gloss": "丘"}
+{"lemma": "воздушный", "band": 4, "pos": "adj", "en_gloss": "air", "ja_gloss": "空気の"}
+{"lemma": "преподаватель", "band": 4, "pos": "noun", "en_gloss": "teacher", "ja_gloss": "講師"}
+{"lemma": "произнести", "band": 4, "pos": "verb", "en_gloss": "utter", "ja_gloss": "発音する"}
+{"lemma": "ибо", "band": 4, "pos": "conj", "en_gloss": "for, because", "ja_gloss": "なぜなら"}
+{"lemma": "соответствовать", "band": 4, "pos": "verb", "en_gloss": "correspond", "ja_gloss": "一致する"}
+{"lemma": "инструкция", "band": 4, "pos": "noun", "en_gloss": "instruction manual", "ja_gloss": "説明書"}
+{"lemma": "протяжение", "band": 4, "pos": "noun", "en_gloss": "course", "ja_gloss": "全体"}
+{"lemma": "комиссия", "band": 4, "pos": "noun", "en_gloss": "commission", "ja_gloss": "委員会"}
+{"lemma": "полтора", "band": 4, "pos": "num", "en_gloss": "one and a half", "ja_gloss": "一つ半"}
+{"lemma": "храм", "band": 4, "pos": "noun", "en_gloss": "temple", "ja_gloss": "寺院"}
+{"lemma": "нужда", "band": 4, "pos": "noun", "en_gloss": "need, poverty", "ja_gloss": "必要"}
+{"lemma": "мгновение", "band": 4, "pos": "noun", "en_gloss": "moment", "ja_gloss": "瞬間"}
+{"lemma": "зритель", "band": 4, "pos": "noun", "en_gloss": "viewer", "ja_gloss": "観客"}
+{"lemma": "февраль", "band": 4, "pos": "noun", "en_gloss": "February", "ja_gloss": "2月"}
+{"lemma": "груз", "band": 4, "pos": "noun", "en_gloss": "cargo", "ja_gloss": "貨物"}
+{"lemma": "требование", "band": 4, "pos": "noun", "en_gloss": "demand", "ja_gloss": "要求"}
+{"lemma": "италия", "band": 4, "pos": "noun", "en_gloss": "Italy", "ja_gloss": "イタリア"}
+{"lemma": "поражение", "band": 4, "pos": "noun", "en_gloss": "defeat", "ja_gloss": "敗北"}
+{"lemma": "изображение", "band": 4, "pos": "noun", "en_gloss": "image", "ja_gloss": "画像"}
+{"lemma": "песок", "band": 4, "pos": "noun", "en_gloss": "sand", "ja_gloss": "砂"}
+{"lemma": "заранее", "band": 4, "pos": "adv", "en_gloss": "in advance", "ja_gloss": "前もって"}
+{"lemma": "александр", "band": 4, "pos": "noun", "en_gloss": "Alexander (name)", "ja_gloss": "アレクサンドル(人名)"}
+{"lemma": "рисунок", "band": 4, "pos": "noun", "en_gloss": "drawing", "ja_gloss": "絵"}
+{"lemma": "баба", "band": 4, "pos": "noun", "en_gloss": "woman", "ja_gloss": "女"}
+{"lemma": "пыль", "band": 4, "pos": "noun", "en_gloss": "dust", "ja_gloss": "埃"}
+{"lemma": "участник", "band": 4, "pos": "noun", "en_gloss": "participant", "ja_gloss": "参加者"}
+{"lemma": "француз", "band": 4, "pos": "noun", "en_gloss": "Frenchman", "ja_gloss": "フランス人"}
+{"lemma": "оплата", "band": 4, "pos": "noun", "en_gloss": "payment", "ja_gloss": "支払い"}
+{"lemma": "обстановка", "band": 4, "pos": "noun", "en_gloss": "situation", "ja_gloss": "状況"}
+{"lemma": "воображение", "band": 4, "pos": "noun", "en_gloss": "imagination", "ja_gloss": "想像力"}
+{"lemma": "бензин", "band": 4, "pos": "noun", "en_gloss": "gasoline", "ja_gloss": "ガソリン"}
+{"lemma": "справа", "band": 4, "pos": "adv", "en_gloss": "on right", "ja_gloss": "右に"}
+{"lemma": "точность", "band": 4, "pos": "noun", "en_gloss": "accuracy", "ja_gloss": "正確さ"}
+{"lemma": "выпуск", "band": 4, "pos": "noun", "en_gloss": "release", "ja_gloss": "発行"}
+{"lemma": "навык", "band": 4, "pos": "noun", "en_gloss": "skill", "ja_gloss": "スキル"}
+{"lemma": "тонкий", "band": 4, "pos": "adj", "en_gloss": "thin", "ja_gloss": "薄い"}
+{"lemma": "повышение", "band": 4, "pos": "noun", "en_gloss": "increase", "ja_gloss": "増加"}
+{"lemma": "толстый", "band": 4, "pos": "adj", "en_gloss": "thick", "ja_gloss": "厚い"}
+{"lemma": "конечный", "band": 4, "pos": "adj", "en_gloss": "final", "ja_gloss": "最終の"}
+{"lemma": "произвести", "band": 4, "pos": "verb", "en_gloss": "produce", "ja_gloss": "生み出す"}
+{"lemma": "привлекать", "band": 4, "pos": "verb", "en_gloss": "attract", "ja_gloss": "引き付ける"}
+{"lemma": "последовать", "band": 4, "pos": "verb", "en_gloss": "follow", "ja_gloss": "続く"}
+{"lemma": "подтверждать", "band": 4, "pos": "verb", "en_gloss": "confirm", "ja_gloss": "確認する"}
+{"lemma": "относительно", "band": 4, "pos": "prep", "en_gloss": "regarding", "ja_gloss": "に関して"}
+{"lemma": "успешный", "band": 4, "pos": "adj", "en_gloss": "successful", "ja_gloss": "成功した"}
+{"lemma": "достоинство", "band": 4, "pos": "noun", "en_gloss": "dignity", "ja_gloss": "尊厳"}
+{"lemma": "каков", "band": 4, "pos": "pron", "en_gloss": "what kind", "ja_gloss": "どのような"}
+{"lemma": "электронный", "band": 4, "pos": "adj", "en_gloss": "electronic", "ja_gloss": "電子の"}
+{"lemma": "академия", "band": 4, "pos": "noun", "en_gloss": "academy", "ja_gloss": "学院"}
+{"lemma": "описание", "band": 4, "pos": "noun", "en_gloss": "description", "ja_gloss": "記述"}
+{"lemma": "спутник", "band": 4, "pos": "noun", "en_gloss": "satellite, companion", "ja_gloss": "衛星"}
+{"lemma": "ремонт", "band": 4, "pos": "noun", "en_gloss": "repair", "ja_gloss": "修理"}
+{"lemma": "рассмотреть", "band": 4, "pos": "verb", "en_gloss": "consider", "ja_gloss": "検討する"}
+{"lemma": "громко", "band": 4, "pos": "adv", "en_gloss": "loudly", "ja_gloss": "大声で"}
+{"lemma": "рассматривать", "band": 4, "pos": "verb", "en_gloss": "consider", "ja_gloss": "検討する"}
+{"lemma": "дым", "band": 4, "pos": "noun", "en_gloss": "smoke", "ja_gloss": "煙"}
+{"lemma": "наиболее", "band": 4, "pos": "adv", "en_gloss": "most", "ja_gloss": "最も"}
+{"lemma": "отказ", "band": 4, "pos": "noun", "en_gloss": "refusal", "ja_gloss": "拒否"}
+{"lemma": "заведение", "band": 4, "pos": "noun", "en_gloss": "establishment", "ja_gloss": "施設"}
+{"lemma": "использоваться", "band": 4, "pos": "verb", "en_gloss": "be used", "ja_gloss": "使用される"}
+{"lemma": "японский", "band": 4, "pos": "adj", "en_gloss": "Japanese", "ja_gloss": "日本の"}
+{"lemma": "жалко", "band": 4, "pos": "predic", "en_gloss": "it's a pity", "ja_gloss": "残念だ"}
+{"lemma": "исчезать", "band": 4, "pos": "verb", "en_gloss": "disappear", "ja_gloss": "消える"}
+{"lemma": "недостаток", "band": 4, "pos": "noun", "en_gloss": "shortcoming", "ja_gloss": "欠点"}
+{"lemma": "случайный", "band": 4, "pos": "adj", "en_gloss": "random", "ja_gloss": "偶然の"}
+{"lemma": "руководитель", "band": 4, "pos": "noun", "en_gloss": "leader", "ja_gloss": "指導者"}
+{"lemma": "висеть", "band": 4, "pos": "verb", "en_gloss": "hang", "ja_gloss": "掛かる"}
+{"lemma": "пятьдесят", "band": 4, "pos": "num", "en_gloss": "fifty", "ja_gloss": "五十"}
+{"lemma": "удаваться", "band": 4, "pos": "verb", "en_gloss": "succeed", "ja_gloss": "うまくいく"}
+{"lemma": "любитель", "band": 4, "pos": "noun", "en_gloss": "amateur, enthusiast", "ja_gloss": "愛好家"}
+{"lemma": "торговля", "band": 4, "pos": "noun", "en_gloss": "trade", "ja_gloss": "貿易"}
+{"lemma": "молчание", "band": 4, "pos": "noun", "en_gloss": "silence", "ja_gloss": "沈黙"}
+{"lemma": "широкий", "band": 4, "pos": "adj", "en_gloss": "wide", "ja_gloss": "広い"}
+{"lemma": "рис", "band": 4, "pos": "noun", "en_gloss": "rice", "ja_gloss": "米"}
+{"lemma": "распоряжение", "band": 4, "pos": "noun", "en_gloss": "order", "ja_gloss": "命令"}
+{"lemma": "беременность", "band": 4, "pos": "noun", "en_gloss": "pregnancy", "ja_gloss": "妊娠"}
+{"lemma": "эмоциональный", "band": 4, "pos": "adj", "en_gloss": "emotional", "ja_gloss": "感情的な"}
+{"lemma": "ценность", "band": 4, "pos": "noun", "en_gloss": "value", "ja_gloss": "価値"}
+{"lemma": "уважаемый", "band": 4, "pos": "adj", "en_gloss": "respected", "ja_gloss": "尊敬される"}
+{"lemma": "атмосфера", "band": 4, "pos": "noun", "en_gloss": "atmosphere", "ja_gloss": "雰囲気"}
+{"lemma": "сопротивление", "band": 4, "pos": "noun", "en_gloss": "resistance", "ja_gloss": "抵抗"}
+{"lemma": "автомат", "band": 4, "pos": "noun", "en_gloss": "automatic weapon", "ja_gloss": "自動小銃"}
+{"lemma": "организм", "band": 4, "pos": "noun", "en_gloss": "organism", "ja_gloss": "生物"}
+{"lemma": "выразить", "band": 4, "pos": "verb", "en_gloss": "express", "ja_gloss": "表現する"}
+{"lemma": "аппарат", "band": 4, "pos": "noun", "en_gloss": "apparatus", "ja_gloss": "装置"}
+{"lemma": "появление", "band": 4, "pos": "noun", "en_gloss": "appearance", "ja_gloss": "出現"}
+{"lemma": "младенец", "band": 4, "pos": "noun", "en_gloss": "baby", "ja_gloss": "赤ちゃん"}
+{"lemma": "серый", "band": 4, "pos": "adj", "en_gloss": "gray", "ja_gloss": "灰色の"}
+{"lemma": "луч", "band": 4, "pos": "noun", "en_gloss": "ray", "ja_gloss": "光線"}
+{"lemma": "масса", "band": 4, "pos": "noun", "en_gloss": "mass", "ja_gloss": "大量"}
+{"lemma": "поразить", "band": 4, "pos": "verb", "en_gloss": "amaze, strike", "ja_gloss": "驚かせる"}
+{"lemma": "хозяйка", "band": 4, "pos": "noun", "en_gloss": "hostess, landlady", "ja_gloss": "女主人"}
+{"lemma": "водка", "band": 4, "pos": "noun", "en_gloss": "vodka", "ja_gloss": "ウォッカ"}
+{"lemma": "нежный", "band": 4, "pos": "adj", "en_gloss": "tender", "ja_gloss": "優しい"}
+{"lemma": "племянник", "band": 4, "pos": "noun", "en_gloss": "nephew", "ja_gloss": "甥"}
+{"lemma": "посетить", "band": 4, "pos": "verb", "en_gloss": "visit", "ja_gloss": "訪問する"}
+{"lemma": "оператор", "band": 4, "pos": "noun", "en_gloss": "operator", "ja_gloss": "オペレーター"}
+{"lemma": "трудность", "band": 4, "pos": "noun", "en_gloss": "difficulty", "ja_gloss": "困難"}
+{"lemma": "марка", "band": 4, "pos": "noun", "en_gloss": "brand", "ja_gloss": "銘柄"}
+{"lemma": "побывать", "band": 4, "pos": "verb", "en_gloss": "visit, have been to", "ja_gloss": "行ったことがある"}
+{"lemma": "элемент", "band": 4, "pos": "noun", "en_gloss": "element", "ja_gloss": "要素"}
+{"lemma": "естественный", "band": 4, "pos": "adj", "en_gloss": "natural", "ja_gloss": "自然な"}
+{"lemma": "делаться", "band": 4, "pos": "verb", "en_gloss": "become", "ja_gloss": "なる"}
+{"lemma": "боец", "band": 4, "pos": "noun", "en_gloss": "fighter, soldier", "ja_gloss": "戦士"}
+{"lemma": "произносить", "band": 4, "pos": "verb", "en_gloss": "pronounce", "ja_gloss": "発音する"}
+{"lemma": "заседание", "band": 4, "pos": "noun", "en_gloss": "session", "ja_gloss": "会議"}
+{"lemma": "лекция", "band": 4, "pos": "noun", "en_gloss": "lecture", "ja_gloss": "講義"}
+{"lemma": "общение", "band": 4, "pos": "noun", "en_gloss": "communication", "ja_gloss": "交流"}
+{"lemma": "деятельность", "band": 4, "pos": "noun", "en_gloss": "activity", "ja_gloss": "活動"}
+{"lemma": "экипаж", "band": 4, "pos": "noun", "en_gloss": "crew", "ja_gloss": "乗組員"}
+{"lemma": "увеличить", "band": 4, "pos": "verb", "en_gloss": "increase", "ja_gloss": "増やす"}
+{"lemma": "религия", "band": 4, "pos": "noun", "en_gloss": "religion", "ja_gloss": "宗教"}
+{"lemma": "деловой", "band": 4, "pos": "adj", "en_gloss": "business", "ja_gloss": "業務の"}
+{"lemma": "соглашаться", "band": 4, "pos": "verb", "en_gloss": "agree", "ja_gloss": "同意する"}
+{"lemma": "заболевание", "band": 4, "pos": "noun", "en_gloss": "disease", "ja_gloss": "病気"}
+{"lemma": "ущерб", "band": 4, "pos": "noun", "en_gloss": "damage", "ja_gloss": "損害"}
+{"lemma": "светлый", "band": 4, "pos": "adj", "en_gloss": "light", "ja_gloss": "明るい"}
+{"lemma": "основной", "band": 4, "pos": "adj", "en_gloss": "main", "ja_gloss": "主な"}
+{"lemma": "почитать", "band": 4, "pos": "verb", "en_gloss": "revere, honor", "ja_gloss": "敬う"}
+{"lemma": "воспринимать", "band": 4, "pos": "verb", "en_gloss": "perceive", "ja_gloss": "知覚する"}
+{"lemma": "состояться", "band": 4, "pos": "verb", "en_gloss": "take place", "ja_gloss": "行われる"}
+{"lemma": "революция", "band": 4, "pos": "noun", "en_gloss": "revolution", "ja_gloss": "革命"}
+{"lemma": "свидетельство", "band": 4, "pos": "noun", "en_gloss": "certificate, testimony", "ja_gloss": "証明書"}
+{"lemma": "зависимость", "band": 4, "pos": "noun", "en_gloss": "dependence", "ja_gloss": "依存"}
+{"lemma": "неизвестно", "band": 4, "pos": "predic", "en_gloss": "it's unknown", "ja_gloss": "不明だ"}
+{"lemma": "воевать", "band": 4, "pos": "verb", "en_gloss": "wage war", "ja_gloss": "戦う"}
+{"lemma": "различный", "band": 4, "pos": "adj", "en_gloss": "various", "ja_gloss": "さまざまな"}
+{"lemma": "назначение", "band": 4, "pos": "noun", "en_gloss": "purpose", "ja_gloss": "目的"}
+{"lemma": "питание", "band": 4, "pos": "noun", "en_gloss": "nutrition", "ja_gloss": "栄養"}
+{"lemma": "мероприятие", "band": 4, "pos": "noun", "en_gloss": "event", "ja_gloss": "行事"}
+{"lemma": "стих", "band": 4, "pos": "noun", "en_gloss": "poem", "ja_gloss": "詩"}
+{"lemma": "родина", "band": 4, "pos": "noun", "en_gloss": "homeland", "ja_gloss": "祖国"}
+{"lemma": "самостоятельно", "band": 4, "pos": "adv", "en_gloss": "independently", "ja_gloss": "自主的に"}
+{"lemma": "напряжение", "band": 4, "pos": "noun", "en_gloss": "voltage", "ja_gloss": "電圧"}
+{"lemma": "иван", "band": 4, "pos": "noun", "en_gloss": "Ivan (name)", "ja_gloss": "イワン(人名)"}
+{"lemma": "штаб", "band": 4, "pos": "noun", "en_gloss": "headquarters", "ja_gloss": "本部"}
+{"lemma": "удивиться", "band": 4, "pos": "verb", "en_gloss": "be surprised", "ja_gloss": "驚く"}
+{"lemma": "доход", "band": 4, "pos": "noun", "en_gloss": "income", "ja_gloss": "収入"}
+{"lemma": "фон", "band": 4, "pos": "noun", "en_gloss": "background", "ja_gloss": "背景"}
+{"lemma": "посвятить", "band": 4, "pos": "verb", "en_gloss": "dedicate", "ja_gloss": "捧げる"}
+{"lemma": "маршрут", "band": 4, "pos": "noun", "en_gloss": "route", "ja_gloss": "ルート"}
+{"lemma": "строгий", "band": 4, "pos": "adj", "en_gloss": "strict", "ja_gloss": "厳しい"}
+{"lemma": "помимо", "band": 4, "pos": "prep", "en_gloss": "besides", "ja_gloss": "ほかに"}
+{"lemma": "улыбнуться", "band": 4, "pos": "verb", "en_gloss": "smile", "ja_gloss": "微笑む"}
+{"lemma": "священный", "band": 4, "pos": "adj", "en_gloss": "sacred", "ja_gloss": "神聖な"}
+{"lemma": "оборона", "band": 4, "pos": "noun", "en_gloss": "defense", "ja_gloss": "防衛"}
+{"lemma": "кредит", "band": 4, "pos": "noun", "en_gloss": "credit", "ja_gloss": "信用"}
+{"lemma": "городок", "band": 4, "pos": "noun", "en_gloss": "small town", "ja_gloss": "小さな町"}
+{"lemma": "крест", "band": 4, "pos": "noun", "en_gloss": "cross", "ja_gloss": "十字架"}
+{"lemma": "полоса", "band": 4, "pos": "noun", "en_gloss": "strip", "ja_gloss": "帯"}
+{"lemma": "препарат", "band": 4, "pos": "noun", "en_gloss": "medication", "ja_gloss": "薬剤"}
+{"lemma": "жилье", "band": 4, "pos": "noun", "en_gloss": "housing", "ja_gloss": "住居"}
+{"lemma": "рамка", "band": 4, "pos": "noun", "en_gloss": "frame", "ja_gloss": "枠"}
+{"lemma": "объятие", "band": 4, "pos": "noun", "en_gloss": "hug", "ja_gloss": "抱擁"}
+{"lemma": "содержать", "band": 4, "pos": "verb", "en_gloss": "contain", "ja_gloss": "含む"}
+{"lemma": "фигура", "band": 4, "pos": "noun", "en_gloss": "figure", "ja_gloss": "姿"}
+{"lemma": "стратегия", "band": 4, "pos": "noun", "en_gloss": "strategy", "ja_gloss": "戦略"}
+{"lemma": "развестись", "band": 4, "pos": "verb", "en_gloss": "divorce", "ja_gloss": "離婚する"}
+{"lemma": "стадия", "band": 4, "pos": "noun", "en_gloss": "stage", "ja_gloss": "段階"}
+{"lemma": "запрос", "band": 4, "pos": "noun", "en_gloss": "request, query", "ja_gloss": "要求"}
+{"lemma": "решиться", "band": 4, "pos": "verb", "en_gloss": "decide, dare", "ja_gloss": "決心する"}
+{"lemma": "влиять", "band": 4, "pos": "verb", "en_gloss": "influence", "ja_gloss": "影響する"}
+{"lemma": "крепко", "band": 4, "pos": "adv", "en_gloss": "firmly", "ja_gloss": "しっかりと"}
+{"lemma": "текст", "band": 4, "pos": "noun", "en_gloss": "text", "ja_gloss": "本文"}
+{"lemma": "царь", "band": 4, "pos": "noun", "en_gloss": "tsár", "ja_gloss": "皇帝"}
+{"lemma": "совместный", "band": 4, "pos": "adj", "en_gloss": "joint", "ja_gloss": "共同の"}
+{"lemma": "комментарий", "band": 4, "pos": "noun", "en_gloss": "comment", "ja_gloss": "コメント"}
+{"lemma": "порт", "band": 4, "pos": "noun", "en_gloss": "port", "ja_gloss": "港"}
+{"lemma": "блок", "band": 4, "pos": "noun", "en_gloss": "block", "ja_gloss": "塊"}
+{"lemma": "открываться", "band": 4, "pos": "verb", "en_gloss": "open (itself)", "ja_gloss": "開く"}
+{"lemma": "конфликт", "band": 4, "pos": "noun", "en_gloss": "conflict", "ja_gloss": "対立"}
+{"lemma": "выпускать", "band": 4, "pos": "verb", "en_gloss": "release, produce", "ja_gloss": "発行する"}
+{"lemma": "заместитель", "band": 4, "pos": "noun", "en_gloss": "deputy", "ja_gloss": "代理"}
+{"lemma": "верх", "band": 4, "pos": "noun", "en_gloss": "top", "ja_gloss": "上部"}
+{"lemma": "тщательно", "band": 4, "pos": "adv", "en_gloss": "thoroughly", "ja_gloss": "入念に"}
+{"lemma": "сектор", "band": 4, "pos": "noun", "en_gloss": "sector", "ja_gloss": "部門"}
+{"lemma": "состав", "band": 4, "pos": "noun", "en_gloss": "composition", "ja_gloss": "構成"}
+{"lemma": "указание", "band": 4, "pos": "noun", "en_gloss": "instruction", "ja_gloss": "指示"}
+{"lemma": "ощущать", "band": 4, "pos": "verb", "en_gloss": "feel", "ja_gloss": "感じる"}
+{"lemma": "конкретный", "band": 4, "pos": "adj", "en_gloss": "concrete", "ja_gloss": "具体的な"}
+{"lemma": "надежный", "band": 4, "pos": "adj", "en_gloss": "reliable", "ja_gloss": "信頼できる"}
+{"lemma": "неприятный", "band": 4, "pos": "adj", "en_gloss": "unpleasant", "ja_gloss": "不快な"}
+{"lemma": "обернуться", "band": 4, "pos": "verb", "en_gloss": "turn around", "ja_gloss": "振り向く"}
+{"lemma": "поток", "band": 4, "pos": "noun", "en_gloss": "flow", "ja_gloss": "流れ"}
+{"lemma": "растение", "band": 4, "pos": "noun", "en_gloss": "plant", "ja_gloss": "植物"}
+{"lemma": "кулак", "band": 4, "pos": "noun", "en_gloss": "fist", "ja_gloss": "拳"}
+{"lemma": "рекомендовать", "band": 4, "pos": "verb", "en_gloss": "recommend", "ja_gloss": "勧める"}
+{"lemma": "печать", "band": 4, "pos": "noun", "en_gloss": "printing", "ja_gloss": "印刷"}
+{"lemma": "выставка", "band": 4, "pos": "noun", "en_gloss": "exhibition", "ja_gloss": "展覧会"}
+{"lemma": "расчет", "band": 4, "pos": "noun", "en_gloss": "calculation", "ja_gloss": "計算"}
+{"lemma": "превращаться", "band": 4, "pos": "verb", "en_gloss": "turn into", "ja_gloss": "変わる"}
+{"lemma": "бюджет", "band": 4, "pos": "noun", "en_gloss": "budget", "ja_gloss": "予算"}
+{"lemma": "москва", "band": 4, "pos": "noun", "en_gloss": "Moscow", "ja_gloss": "モスクワ"}
+{"lemma": "бок", "band": 4, "pos": "noun", "en_gloss": "side", "ja_gloss": "側"}
+{"lemma": "начальство", "band": 4, "pos": "noun", "en_gloss": "management, authorities", "ja_gloss": "上司"}
+{"lemma": "спектакль", "band": 4, "pos": "noun", "en_gloss": "performance, play", "ja_gloss": "演劇"}
+{"lemma": "потребовать", "band": 4, "pos": "verb", "en_gloss": "demand", "ja_gloss": "要求する"}
+{"lemma": "нация", "band": 4, "pos": "noun", "en_gloss": "nation", "ja_gloss": "国民"}
+{"lemma": "гитлер", "band": 4, "pos": "noun", "en_gloss": "Hitler", "ja_gloss": "ヒトラー"}
+{"lemma": "порог", "band": 4, "pos": "noun", "en_gloss": "threshold", "ja_gloss": "敷居"}
+{"lemma": "население", "band": 4, "pos": "noun", "en_gloss": "population", "ja_gloss": "人口"}
+{"lemma": "достижение", "band": 4, "pos": "noun", "en_gloss": "achievement", "ja_gloss": "成果"}
+{"lemma": "дальнейший", "band": 4, "pos": "adj", "en_gloss": "further", "ja_gloss": "今後の"}
+{"lemma": "покрыть", "band": 4, "pos": "verb", "en_gloss": "cover", "ja_gloss": "覆う"}
+{"lemma": "соседний", "band": 4, "pos": "adj", "en_gloss": "neighboring", "ja_gloss": "隣の"}
+{"lemma": "обязательство", "band": 4, "pos": "noun", "en_gloss": "obligation", "ja_gloss": "義務"}
+{"lemma": "фестиваль", "band": 4, "pos": "noun", "en_gloss": "festival", "ja_gloss": "フェスティバル"}
+{"lemma": "выдавать", "band": 4, "pos": "verb", "en_gloss": "issue, hand out", "ja_gloss": "発行する"}
+{"lemma": "схема", "band": 4, "pos": "noun", "en_gloss": "scheme", "ja_gloss": "構想"}
+{"lemma": "составлять", "band": 4, "pos": "verb", "en_gloss": "constitute", "ja_gloss": "構成する"}
+{"lemma": "окружающий", "band": 4, "pos": "adj", "en_gloss": "surrounding", "ja_gloss": "周囲の"}
+{"lemma": "психолог", "band": 4, "pos": "noun", "en_gloss": "psychologist", "ja_gloss": "心理学者"}
+{"lemma": "сотрудничество", "band": 4, "pos": "noun", "en_gloss": "cooperation", "ja_gloss": "協力"}
+{"lemma": "испытать", "band": 4, "pos": "verb", "en_gloss": "experience", "ja_gloss": "経験する"}
+{"lemma": "корпус", "band": 4, "pos": "noun", "en_gloss": "building", "ja_gloss": "建物"}
+{"lemma": "стоимость", "band": 4, "pos": "noun", "en_gloss": "cost", "ja_gloss": "費用"}
+{"lemma": "скала", "band": 4, "pos": "noun", "en_gloss": "cliff, rock", "ja_gloss": "岩"}
+{"lemma": "исполнение", "band": 4, "pos": "noun", "en_gloss": "performance", "ja_gloss": "実行"}
+{"lemma": "имущество", "band": 4, "pos": "noun", "en_gloss": "property", "ja_gloss": "財産"}
+{"lemma": "окончание", "band": 4, "pos": "noun", "en_gloss": "ending", "ja_gloss": "終わり"}
+{"lemma": "классический", "band": 4, "pos": "adj", "en_gloss": "classical", "ja_gloss": "古典的な"}
+{"lemma": "фронт", "band": 4, "pos": "noun", "en_gloss": "front", "ja_gloss": "前線"}
+{"lemma": "конференция", "band": 4, "pos": "noun", "en_gloss": "conference", "ja_gloss": "会議"}
+{"lemma": "четко", "band": 4, "pos": "adv", "en_gloss": "clearly", "ja_gloss": "明確に"}
+{"lemma": "крошечный", "band": 4, "pos": "adj", "en_gloss": "tiny", "ja_gloss": "とても小さい"}
+{"lemma": "прочее", "band": 4, "pos": "noun", "en_gloss": "the rest", "ja_gloss": "その他"}
+{"lemma": "отдельный", "band": 4, "pos": "adj", "en_gloss": "separate", "ja_gloss": "別々の"}
+{"lemma": "компьютерный", "band": 4, "pos": "adj", "en_gloss": "computer", "ja_gloss": "コンピューターの"}
+{"lemma": "двенадцать", "band": 4, "pos": "num", "en_gloss": "twelve", "ja_gloss": "12"}
+{"lemma": "исходить", "band": 4, "pos": "verb", "en_gloss": "originate", "ja_gloss": "由来する"}
+{"lemma": "ресурс", "band": 4, "pos": "noun", "en_gloss": "resource", "ja_gloss": "資源"}
+{"lemma": "плод", "band": 4, "pos": "noun", "en_gloss": "fruit", "ja_gloss": "果実"}
+{"lemma": "заключаться", "band": 4, "pos": "verb", "en_gloss": "consist", "ja_gloss": "から成る"}
+{"lemma": "портрет", "band": 4, "pos": "noun", "en_gloss": "portrait", "ja_gloss": "肖像画"}
+{"lemma": "багаж", "band": 4, "pos": "noun", "en_gloss": "luggage", "ja_gloss": "荷物"}
+{"lemma": "уголовный", "band": 4, "pos": "adj", "en_gloss": "criminal", "ja_gloss": "刑事の"}
+{"lemma": "корень", "band": 4, "pos": "noun", "en_gloss": "root", "ja_gloss": "根"}
+{"lemma": "палатка", "band": 4, "pos": "noun", "en_gloss": "tent", "ja_gloss": "テント"}
+{"lemma": "нынешний", "band": 4, "pos": "adj", "en_gloss": "current", "ja_gloss": "現在の"}
+{"lemma": "почва", "band": 4, "pos": "noun", "en_gloss": "soil", "ja_gloss": "土壌"}
+{"lemma": "собственно", "band": 4, "pos": "adv", "en_gloss": "actually", "ja_gloss": "実際"}
+{"lemma": "сложиться", "band": 4, "pos": "verb", "en_gloss": "develop", "ja_gloss": "形成される"}
+{"lemma": "командование", "band": 4, "pos": "noun", "en_gloss": "command (military)", "ja_gloss": "指揮"}
+{"lemma": "редакция", "band": 4, "pos": "noun", "en_gloss": "editorial office", "ja_gloss": "編集部"}
+{"lemma": "чрезвычайно", "band": 4, "pos": "adv", "en_gloss": "extremely", "ja_gloss": "非常に"}
+{"lemma": "транспорт", "band": 4, "pos": "noun", "en_gloss": "transport", "ja_gloss": "交通"}
+{"lemma": "англичанин", "band": 4, "pos": "noun", "en_gloss": "Englishman", "ja_gloss": "イギリス人"}
+{"lemma": "картофель", "band": 4, "pos": "noun", "en_gloss": "potato", "ja_gloss": "ジャガイモ"}
+{"lemma": "жест", "band": 4, "pos": "noun", "en_gloss": "gesture", "ja_gloss": "身振り"}
+{"lemma": "племянница", "band": 4, "pos": "noun", "en_gloss": "niece", "ja_gloss": "姪"}
+{"lemma": "премия", "band": 4, "pos": "noun", "en_gloss": "bonus, prize", "ja_gloss": "賞金"}
+{"lemma": "иметься", "band": 4, "pos": "verb", "en_gloss": "be available", "ja_gloss": "存在する"}
+{"lemma": "туман", "band": 4, "pos": "noun", "en_gloss": "fog", "ja_gloss": "霧"}
+{"lemma": "гарантия", "band": 4, "pos": "noun", "en_gloss": "guarantee", "ja_gloss": "保証"}
+{"lemma": "уникальный", "band": 4, "pos": "adj", "en_gloss": "unique", "ja_gloss": "独特な"}
+{"lemma": "лоб", "band": 4, "pos": "noun", "en_gloss": "forehead", "ja_gloss": "額"}
+{"lemma": "администрация", "band": 4, "pos": "noun", "en_gloss": "administration", "ja_gloss": "行政"}
+{"lemma": "пятнадцать", "band": 4, "pos": "num", "en_gloss": "fifteen", "ja_gloss": "十五"}
+{"lemma": "скромный", "band": 4, "pos": "adj", "en_gloss": "modest", "ja_gloss": "控えめな"}
+{"lemma": "независимо", "band": 4, "pos": "adv", "en_gloss": "independently", "ja_gloss": "独立して"}
+{"lemma": "следствие", "band": 4, "pos": "noun", "en_gloss": "investigation", "ja_gloss": "捜査"}
+{"lemma": "непременно", "band": 4, "pos": "adv", "en_gloss": "definitely", "ja_gloss": "必ず"}
+{"lemma": "получение", "band": 4, "pos": "noun", "en_gloss": "receipt", "ja_gloss": "受領"}
+{"lemma": "экономика", "band": 4, "pos": "noun", "en_gloss": "economy", "ja_gloss": "経済"}
+{"lemma": "юноша", "band": 4, "pos": "noun", "en_gloss": "young man", "ja_gloss": "青年"}
+{"lemma": "этап", "band": 4, "pos": "noun", "en_gloss": "stage", "ja_gloss": "段階"}
+{"lemma": "строительство", "band": 4, "pos": "noun", "en_gloss": "construction", "ja_gloss": "建設"}
+{"lemma": "вечерний", "band": 4, "pos": "adj", "en_gloss": "evening (adj)", "ja_gloss": "夜の"}
+{"lemma": "отсутствовать", "band": 4, "pos": "verb", "en_gloss": "be absent", "ja_gloss": "不在である"}
+{"lemma": "вдоль", "band": 4, "pos": "prep", "en_gloss": "along", "ja_gloss": "沿って"}
+{"lemma": "прибор", "band": 4, "pos": "noun", "en_gloss": "device, instrument", "ja_gloss": "機器"}
+{"lemma": "невозможный", "band": 4, "pos": "adj", "en_gloss": "impossible", "ja_gloss": "不可能な"}
+{"lemma": "содержание", "band": 4, "pos": "noun", "en_gloss": "content", "ja_gloss": "内容"}
+{"lemma": "обращение", "band": 4, "pos": "noun", "en_gloss": "appeal", "ja_gloss": "訴え"}
+{"lemma": "израиль", "band": 4, "pos": "noun", "en_gloss": "Israel", "ja_gloss": "イスラエル"}
+{"lemma": "окончательно", "band": 4, "pos": "adv", "en_gloss": "finally", "ja_gloss": "最終的に"}
+{"lemma": "горе", "band": 4, "pos": "noun", "en_gloss": "grief", "ja_gloss": "悲しみ"}
+{"lemma": "наступать", "band": 4, "pos": "verb", "en_gloss": "advance", "ja_gloss": "進む"}
+{"lemma": "земной", "band": 4, "pos": "adj", "en_gloss": "earthly", "ja_gloss": "地上の"}
+{"lemma": "столица", "band": 4, "pos": "noun", "en_gloss": "capital", "ja_gloss": "首都"}
+{"lemma": "действительность", "band": 4, "pos": "noun", "en_gloss": "reality", "ja_gloss": "現実"}
+{"lemma": "впрочем", "band": 4, "pos": "conj", "en_gloss": "however", "ja_gloss": "もっとも"}
+{"lemma": "жизненный", "band": 4, "pos": "adj", "en_gloss": "vital", "ja_gloss": "生活の"}
+{"lemma": "доклад", "band": 4, "pos": "noun", "en_gloss": "report", "ja_gloss": "報告"}
+{"lemma": "неожиданный", "band": 4, "pos": "adj", "en_gloss": "unexpected", "ja_gloss": "予想外の"}
+{"lemma": "механизм", "band": 4, "pos": "noun", "en_gloss": "mechanism", "ja_gloss": "仕組み"}
+{"lemma": "сообщество", "band": 4, "pos": "noun", "en_gloss": "community", "ja_gloss": "コミュニティ"}
+{"lemma": "религиозный", "band": 4, "pos": "adj", "en_gloss": "religious", "ja_gloss": "宗教的な"}
+{"lemma": "наличие", "band": 4, "pos": "noun", "en_gloss": "presence", "ja_gloss": "存在"}
+{"lemma": "производить", "band": 4, "pos": "verb", "en_gloss": "produce", "ja_gloss": "生産する"}
+{"lemma": "богатство", "band": 4, "pos": "noun", "en_gloss": "wealth", "ja_gloss": "富"}
+{"lemma": "салон", "band": 4, "pos": "noun", "en_gloss": "salon", "ja_gloss": "サロン"}
+{"lemma": "физика", "band": 4, "pos": "noun", "en_gloss": "physics", "ja_gloss": "物理学"}
+{"lemma": "саша", "band": 4, "pos": "noun", "en_gloss": "Sasha", "ja_gloss": "サーシャ"}
+{"lemma": "успешно", "band": 4, "pos": "adv", "en_gloss": "successfully", "ja_gloss": "うまく"}
+{"lemma": "мирный", "band": 4, "pos": "adj", "en_gloss": "peaceful", "ja_gloss": "平和な"}
+{"lemma": "таков", "band": 4, "pos": "pron", "en_gloss": "such", "ja_gloss": "そのような"}
+{"lemma": "показатель", "band": 4, "pos": "noun", "en_gloss": "indicator", "ja_gloss": "指標"}
+{"lemma": "сфера", "band": 4, "pos": "noun", "en_gloss": "sphere", "ja_gloss": "分野"}
+{"lemma": "увы", "band": 4, "pos": "intj", "en_gloss": "alas", "ja_gloss": "ああ残念"}
+{"lemma": "выясниться", "band": 4, "pos": "verb", "en_gloss": "turn out", "ja_gloss": "判明する"}
+{"lemma": "протянуть", "band": 4, "pos": "verb", "en_gloss": "stretch", "ja_gloss": "伸ばす"}
+{"lemma": "стандартный", "band": 4, "pos": "adj", "en_gloss": "standard", "ja_gloss": "標準的な"}
+{"lemma": "приобрести", "band": 4, "pos": "verb", "en_gloss": "acquire", "ja_gloss": "取得する"}
+{"lemma": "немало", "band": 4, "pos": "adv", "en_gloss": "quite a lot", "ja_gloss": "かなり"}
+{"lemma": "холод", "band": 4, "pos": "noun", "en_gloss": "cold", "ja_gloss": "寒さ"}
+{"lemma": "костер", "band": 4, "pos": "noun", "en_gloss": "campfire", "ja_gloss": "たき火"}
+{"lemma": "сущность", "band": 4, "pos": "noun", "en_gloss": "essence", "ja_gloss": "本質"}
+{"lemma": "строго", "band": 4, "pos": "adv", "en_gloss": "strictly", "ja_gloss": "厳しく"}
+{"lemma": "разработать", "band": 4, "pos": "verb", "en_gloss": "develop", "ja_gloss": "開発する"}
+{"lemma": "здравствовать", "band": 4, "pos": "verb", "en_gloss": "be healthy", "ja_gloss": "健康である"}
+{"lemma": "зарегистрировать", "band": 4, "pos": "verb", "en_gloss": "register", "ja_gloss": "登録する"}
+{"lemma": "звание", "band": 4, "pos": "noun", "en_gloss": "rank, title", "ja_gloss": "称号"}
+{"lemma": "мороз", "band": 4, "pos": "noun", "en_gloss": "frost", "ja_gloss": "霜"}
+{"lemma": "цивилизация", "band": 4, "pos": "noun", "en_gloss": "civilization", "ja_gloss": "文明"}
+{"lemma": "чистить", "band": 4, "pos": "verb", "en_gloss": "clean", "ja_gloss": "掃除する"}
+{"lemma": "нефть", "band": 4, "pos": "noun", "en_gloss": "oil", "ja_gloss": "石油"}
+{"lemma": "исполнять", "band": 4, "pos": "verb", "en_gloss": "perform, execute", "ja_gloss": "実行する"}
+{"lemma": "гибель", "band": 4, "pos": "noun", "en_gloss": "death, destruction", "ja_gloss": "破滅"}
+{"lemma": "оборот", "band": 4, "pos": "noun", "en_gloss": "turnover, revolution", "ja_gloss": "回転"}
+{"lemma": "молодежь", "band": 4, "pos": "noun", "en_gloss": "youth", "ja_gloss": "若者"}
+{"lemma": "поэт", "band": 4, "pos": "noun", "en_gloss": "poet", "ja_gloss": "詩人"}
+{"lemma": "сюжет", "band": 4, "pos": "noun", "en_gloss": "plot", "ja_gloss": "筋書き"}
+{"lemma": "монастырь", "band": 4, "pos": "noun", "en_gloss": "monastery", "ja_gloss": "修道院"}
+{"lemma": "килограмм", "band": 4, "pos": "noun", "en_gloss": "kilogram", "ja_gloss": "キログラム"}
+{"lemma": "стыд", "band": 4, "pos": "noun", "en_gloss": "shame", "ja_gloss": "恥"}
+{"lemma": "республика", "band": 4, "pos": "noun", "en_gloss": "republic", "ja_gloss": "共和国"}
+{"lemma": "перспектива", "band": 4, "pos": "noun", "en_gloss": "prospect", "ja_gloss": "見通し"}
+{"lemma": "учесть", "band": 4, "pos": "verb", "en_gloss": "take into account", "ja_gloss": "考慮する"}
+{"lemma": "технический", "band": 4, "pos": "adj", "en_gloss": "technical", "ja_gloss": "技術の"}
+{"lemma": "село", "band": 4, "pos": "noun", "en_gloss": "village", "ja_gloss": "村"}
+{"lemma": "удивляться", "band": 4, "pos": "verb", "en_gloss": "be surprised", "ja_gloss": "驚く"}
+{"lemma": "возникать", "band": 4, "pos": "verb", "en_gloss": "arise", "ja_gloss": "生じる"}
+{"lemma": "предназначить", "band": 4, "pos": "verb", "en_gloss": "intend, designate", "ja_gloss": "意図する"}
+{"lemma": "абсолютный", "band": 4, "pos": "adj", "en_gloss": "absolute", "ja_gloss": "絶対的な"}
+{"lemma": "направиться", "band": 4, "pos": "verb", "en_gloss": "head towards", "ja_gloss": "向かう"}
+{"lemma": "лента", "band": 4, "pos": "noun", "en_gloss": "ribbon, tape", "ja_gloss": "リボン"}
+{"lemma": "кончить", "band": 4, "pos": "verb", "en_gloss": "finish", "ja_gloss": "終える"}
+{"lemma": "упражнение", "band": 4, "pos": "noun", "en_gloss": "exercise", "ja_gloss": "練習"}
+{"lemma": "происхождение", "band": 4, "pos": "noun", "en_gloss": "origin", "ja_gloss": "起源"}
+{"lemma": "обсуждение", "band": 4, "pos": "noun", "en_gloss": "discussion", "ja_gloss": "議論"}
+{"lemma": "замечание", "band": 4, "pos": "noun", "en_gloss": "remark", "ja_gloss": "指摘"}
+{"lemma": "видный", "band": 4, "pos": "adj", "en_gloss": "prominent", "ja_gloss": "著名な"}
+{"lemma": "ломать", "band": 4, "pos": "verb", "en_gloss": "break", "ja_gloss": "壊す"}
+{"lemma": "архив", "band": 4, "pos": "noun", "en_gloss": "archive", "ja_gloss": "公文書館"}
+{"lemma": "воздействие", "band": 4, "pos": "noun", "en_gloss": "impact", "ja_gloss": "影響"}
+{"lemma": "моральный", "band": 4, "pos": "adj", "en_gloss": "moral", "ja_gloss": "道徳的な"}
+{"lemma": "длина", "band": 4, "pos": "noun", "en_gloss": "length", "ja_gloss": "長さ"}
+{"lemma": "активность", "band": 4, "pos": "noun", "en_gloss": "activity", "ja_gloss": "活動性"}
+{"lemma": "психологический", "band": 4, "pos": "adj", "en_gloss": "psychological", "ja_gloss": "心理的な"}
+{"lemma": "постепенно", "band": 4, "pos": "adv", "en_gloss": "gradually", "ja_gloss": "徐々に"}
+{"lemma": "подобно", "band": 4, "pos": "prep", "en_gloss": "like, similarly to", "ja_gloss": "~のように"}
+{"lemma": "верховный", "band": 4, "pos": "adj", "en_gloss": "supreme", "ja_gloss": "最高の"}
+{"lemma": "исключительно", "band": 4, "pos": "adv", "en_gloss": "exclusively", "ja_gloss": "もっぱら"}
+{"lemma": "рекомендация", "band": 4, "pos": "noun", "en_gloss": "recommendation", "ja_gloss": "推薦"}
+{"lemma": "петр", "band": 4, "pos": "noun", "en_gloss": "Pyotr", "ja_gloss": "ピョートル"}
+{"lemma": "проявлять", "band": 4, "pos": "verb", "en_gloss": "display, show", "ja_gloss": "示す"}
+{"lemma": "бесконечный", "band": 4, "pos": "adj", "en_gloss": "infinite", "ja_gloss": "無限の"}
+{"lemma": "оказывать", "band": 4, "pos": "verb", "en_gloss": "provide", "ja_gloss": "与える"}
+{"lemma": "обслуживание", "band": 4, "pos": "noun", "en_gloss": "service", "ja_gloss": "サービス"}
+{"lemma": "эпоха", "band": 4, "pos": "noun", "en_gloss": "era", "ja_gloss": "時代"}
+{"lemma": "твёрдый", "band": 4, "pos": "adj", "en_gloss": "hard", "ja_gloss": "硬い"}
+{"lemma": "логика", "band": 4, "pos": "noun", "en_gloss": "logic", "ja_gloss": "論理"}
+{"lemma": "сми", "band": 4, "pos": "noun", "en_gloss": "mass media", "ja_gloss": "マスメディア"}
+{"lemma": "потребность", "band": 4, "pos": "noun", "en_gloss": "need", "ja_gloss": "必要"}
+{"lemma": "текущий", "band": 4, "pos": "adj", "en_gloss": "current", "ja_gloss": "現在の"}
+{"lemma": "структура", "band": 4, "pos": "noun", "en_gloss": "structure", "ja_gloss": "構造"}
+{"lemma": "массовый", "band": 4, "pos": "adj", "en_gloss": "mass", "ja_gloss": "大衆の"}
+{"lemma": "частота", "band": 4, "pos": "noun", "en_gloss": "frequency", "ja_gloss": "頻度"}
+{"lemma": "значительный", "band": 4, "pos": "adj", "en_gloss": "significant", "ja_gloss": "重要な"}
+{"lemma": "рекламный", "band": 4, "pos": "adj", "en_gloss": "advertising", "ja_gloss": "広告の"}
+{"lemma": "соответствие", "band": 4, "pos": "noun", "en_gloss": "correspondence", "ja_gloss": "一致"}
+{"lemma": "продолжение", "band": 4, "pos": "noun", "en_gloss": "continuation", "ja_gloss": "続き"}
+{"lemma": "произведение", "band": 4, "pos": "noun", "en_gloss": "work (of art)", "ja_gloss": "作品"}
+{"lemma": "резко", "band": 4, "pos": "adv", "en_gloss": "sharply", "ja_gloss": "急に"}
+{"lemma": "искусственный", "band": 4, "pos": "adj", "en_gloss": "artificial", "ja_gloss": "人工的な"}
+{"lemma": "коснуться", "band": 4, "pos": "verb", "en_gloss": "touch", "ja_gloss": "触れる"}
+{"lemma": "дальний", "band": 4, "pos": "adj", "en_gloss": "distant", "ja_gloss": "遠い"}
+{"lemma": "готовность", "band": 4, "pos": "noun", "en_gloss": "readiness", "ja_gloss": "準備ができていること"}
+{"lemma": "потолок", "band": 4, "pos": "noun", "en_gloss": "ceiling", "ja_gloss": "天井"}
+{"lemma": "сложность", "band": 4, "pos": "noun", "en_gloss": "complexity", "ja_gloss": "複雑さ"}
+{"lemma": "ключевой", "band": 4, "pos": "adj", "en_gloss": "key (important)", "ja_gloss": "重要な"}
+{"lemma": "генеральный", "band": 4, "pos": "adj", "en_gloss": "general", "ja_gloss": "総合の"}
+{"lemma": "танк", "band": 4, "pos": "noun", "en_gloss": "tank", "ja_gloss": "戦車"}
+{"lemma": "аудитория", "band": 4, "pos": "noun", "en_gloss": "audience, classroom", "ja_gloss": "聴衆"}
+{"lemma": "мыть", "band": 4, "pos": "verb", "en_gloss": "wash", "ja_gloss": "洗う"}
+{"lemma": "чтение", "band": 4, "pos": "noun", "en_gloss": "reading", "ja_gloss": "読書"}
+{"lemma": "потенциальный", "band": 4, "pos": "adj", "en_gloss": "potential", "ja_gloss": "潜在的な"}
+{"lemma": "литература", "band": 4, "pos": "noun", "en_gloss": "literature", "ja_gloss": "文学"}
+{"lemma": "круглый", "band": 4, "pos": "adj", "en_gloss": "round", "ja_gloss": "丸い"}
+{"lemma": "родной", "band": 4, "pos": "adj", "en_gloss": "native/dear", "ja_gloss": "母国の"}
+{"lemma": "духовный", "band": 4, "pos": "adj", "en_gloss": "spiritual", "ja_gloss": "精神的な"}
+{"lemma": "аргумент", "band": 4, "pos": "noun", "en_gloss": "argument", "ja_gloss": "論拠"}
+{"lemma": "дрожать", "band": 4, "pos": "verb", "en_gloss": "tremble", "ja_gloss": "震える"}
+{"lemma": "еврейский", "band": 4, "pos": "adj", "en_gloss": "Jewish", "ja_gloss": "ユダヤの"}
+{"lemma": "иностранный", "band": 4, "pos": "adj", "en_gloss": "foreign", "ja_gloss": "外国の"}
+{"lemma": "прочий", "band": 4, "pos": "det", "en_gloss": "other", "ja_gloss": "その他の"}
+{"lemma": "исторический", "band": 4, "pos": "adj", "en_gloss": "historical", "ja_gloss": "歴史的な"}
+{"lemma": "потенциал", "band": 4, "pos": "noun", "en_gloss": "potential", "ja_gloss": "潜在能力"}
+{"lemma": "независимый", "band": 4, "pos": "adj", "en_gloss": "independent", "ja_gloss": "独立した"}
+{"lemma": "слой", "band": 4, "pos": "noun", "en_gloss": "layer", "ja_gloss": "層"}
+{"lemma": "дача", "band": 4, "pos": "noun", "en_gloss": "dacha, country house", "ja_gloss": "別荘"}
+{"lemma": "положительный", "band": 4, "pos": "adj", "en_gloss": "positive", "ja_gloss": "肯定的な"}
+{"lemma": "якобы", "band": 4, "pos": "part", "en_gloss": "allegedly", "ja_gloss": "~とされる"}
+{"lemma": "определение", "band": 4, "pos": "noun", "en_gloss": "definition", "ja_gloss": "定義"}
+{"lemma": "политик", "band": 4, "pos": "noun", "en_gloss": "politician", "ja_gloss": "政治家"}
+{"lemma": "сантиметр", "band": 4, "pos": "noun", "en_gloss": "centimeter", "ja_gloss": "センチメートル"}
+{"lemma": "доступный", "band": 4, "pos": "adj", "en_gloss": "available", "ja_gloss": "利用可能な"}
+{"lemma": "кодекс", "band": 4, "pos": "noun", "en_gloss": "code (law)", "ja_gloss": "法典"}
+{"lemma": "опубликовать", "band": 4, "pos": "verb", "en_gloss": "publish", "ja_gloss": "出版する"}
+{"lemma": "субъект", "band": 4, "pos": "noun", "en_gloss": "subject", "ja_gloss": "主体"}
+{"lemma": "бригада", "band": 4, "pos": "noun", "en_gloss": "brigade, team", "ja_gloss": "隊"}
+{"lemma": "комплекс", "band": 4, "pos": "noun", "en_gloss": "complex", "ja_gloss": "複合体"}
+{"lemma": "куст", "band": 4, "pos": "noun", "en_gloss": "bush", "ja_gloss": "茂み"}
+{"lemma": "значительно", "band": 4, "pos": "adv", "en_gloss": "significantly", "ja_gloss": "著しく"}
+{"lemma": "изучение", "band": 4, "pos": "noun", "en_gloss": "study", "ja_gloss": "研究"}
+{"lemma": "миг", "band": 4, "pos": "noun", "en_gloss": "moment, instant", "ja_gloss": "瞬間"}
+{"lemma": "функция", "band": 4, "pos": "noun", "en_gloss": "function", "ja_gloss": "機能"}
+{"lemma": "опытный", "band": 4, "pos": "adj", "en_gloss": "experienced", "ja_gloss": "経験豊富な"}
+{"lemma": "хозяйство", "band": 4, "pos": "noun", "en_gloss": "economy", "ja_gloss": "経済"}
+{"lemma": "ассоциация", "band": 4, "pos": "noun", "en_gloss": "association", "ja_gloss": "協会"}
+{"lemma": "активный", "band": 4, "pos": "adj", "en_gloss": "active", "ja_gloss": "活発な"}
+{"lemma": "применение", "band": 4, "pos": "noun", "en_gloss": "application", "ja_gloss": "適用"}
+{"lemma": "вагон", "band": 4, "pos": "noun", "en_gloss": "railcar", "ja_gloss": "車両"}
+{"lemma": "сервер", "band": 4, "pos": "noun", "en_gloss": "server", "ja_gloss": "サーバー"}
+{"lemma": "философия", "band": 4, "pos": "noun", "en_gloss": "philosophy", "ja_gloss": "哲学"}
+{"lemma": "разработка", "band": 4, "pos": "noun", "en_gloss": "development", "ja_gloss": "開発"}
+{"lemma": "снизу", "band": 4, "pos": "adv", "en_gloss": "from below", "ja_gloss": "下から"}
+{"lemma": "доходить", "band": 4, "pos": "verb", "en_gloss": "reach", "ja_gloss": "達する"}
+{"lemma": "узел", "band": 4, "pos": "noun", "en_gloss": "knot, node", "ja_gloss": "結び目"}
+{"lemma": "формула", "band": 4, "pos": "noun", "en_gloss": "formula", "ja_gloss": "公式"}
+{"lemma": "особенность", "band": 4, "pos": "noun", "en_gloss": "peculiarity", "ja_gloss": "特徴"}
+{"lemma": "воспитание", "band": 4, "pos": "noun", "en_gloss": "upbringing", "ja_gloss": "教育"}
+{"lemma": "федерация", "band": 4, "pos": "noun", "en_gloss": "federation", "ja_gloss": "連邦"}
+{"lemma": "высказать", "band": 4, "pos": "verb", "en_gloss": "express (opinion)", "ja_gloss": "述べる"}
+{"lemma": "перец", "band": 4, "pos": "noun", "en_gloss": "pepper", "ja_gloss": "胡椒"}
+{"lemma": "общее", "band": 4, "pos": "adj", "en_gloss": "general, common", "ja_gloss": "共通の"}
+{"lemma": "достаточный", "band": 4, "pos": "adj", "en_gloss": "sufficient", "ja_gloss": "十分な"}
+{"lemma": "демократия", "band": 4, "pos": "noun", "en_gloss": "democracy", "ja_gloss": "民主主義"}
+{"lemma": "учебный", "band": 4, "pos": "adj", "en_gloss": "educational", "ja_gloss": "教育の"}
+{"lemma": "установка", "band": 4, "pos": "noun", "en_gloss": "installation", "ja_gloss": "設置"}
+{"lemma": "переход", "band": 4, "pos": "noun", "en_gloss": "transition", "ja_gloss": "移行"}
+{"lemma": "проведение", "band": 4, "pos": "noun", "en_gloss": "conducting", "ja_gloss": "実施"}
+{"lemma": "ограничение", "band": 4, "pos": "noun", "en_gloss": "restriction", "ja_gloss": "制限"}
+{"lemma": "термин", "band": 4, "pos": "noun", "en_gloss": "term", "ja_gloss": "用語"}
+{"lemma": "расположить", "band": 4, "pos": "verb", "en_gloss": "place", "ja_gloss": "配置する"}
+{"lemma": "рейтинг", "band": 4, "pos": "noun", "en_gloss": "rating", "ja_gloss": "評価"}
+{"lemma": "темп", "band": 4, "pos": "noun", "en_gloss": "tempo, pace", "ja_gloss": "テンポ"}
+{"lemma": "пауза", "band": 4, "pos": "noun", "en_gloss": "pause", "ja_gloss": "間"}
+{"lemma": "наступление", "band": 4, "pos": "noun", "en_gloss": "offensive", "ja_gloss": "攻勢"}
+{"lemma": "таня", "band": 4, "pos": "noun", "en_gloss": "Tanya (name)", "ja_gloss": "ターニャ"}
+{"lemma": "поэзия", "band": 4, "pos": "noun", "en_gloss": "poetry", "ja_gloss": "詩"}
+{"lemma": "стандарт", "band": 4, "pos": "noun", "en_gloss": "standard", "ja_gloss": "標準"}
+{"lemma": "налоговый", "band": 4, "pos": "adj", "en_gloss": "tax", "ja_gloss": "税の"}
+{"lemma": "развиваться", "band": 4, "pos": "verb", "en_gloss": "develop", "ja_gloss": "発展する"}
+{"lemma": "вступать", "band": 4, "pos": "verb", "en_gloss": "enter, join", "ja_gloss": "加入する"}
+{"lemma": "учет", "band": 4, "pos": "noun", "en_gloss": "accounting", "ja_gloss": "会計"}
+{"lemma": "отмечать", "band": 4, "pos": "verb", "en_gloss": "note", "ja_gloss": "指摘する"}
+{"lemma": "убеждение", "band": 4, "pos": "noun", "en_gloss": "conviction, belief", "ja_gloss": "信念"}
+{"lemma": "парламент", "band": 4, "pos": "noun", "en_gloss": "parliament", "ja_gloss": "議会"}
+{"lemma": "фактор", "band": 4, "pos": "noun", "en_gloss": "factor", "ja_gloss": "要因"}
+{"lemma": "борис", "band": 4, "pos": "noun", "en_gloss": "Boris", "ja_gloss": "ボリス"}
+{"lemma": "приложение", "band": 4, "pos": "noun", "en_gloss": "application", "ja_gloss": "アプリ"}
+{"lemma": "незнакомый", "band": 4, "pos": "adj", "en_gloss": "unfamiliar", "ja_gloss": "見知らぬ"}
+{"lemma": "категория", "band": 4, "pos": "noun", "en_gloss": "category", "ja_gloss": "範疇"}
+{"lemma": "отрицательный", "band": 4, "pos": "adj", "en_gloss": "negative", "ja_gloss": "否定的な"}
+{"lemma": "регистрация", "band": 4, "pos": "noun", "en_gloss": "registration", "ja_gloss": "登録"}
+{"lemma": "учреждение", "band": 4, "pos": "noun", "en_gloss": "institution", "ja_gloss": "機関"}
+{"lemma": "князь", "band": 4, "pos": "noun", "en_gloss": "prince", "ja_gloss": "公爵"}
+{"lemma": "принятие", "band": 4, "pos": "noun", "en_gloss": "adoption", "ja_gloss": "採用"}
+{"lemma": "предприятие", "band": 4, "pos": "noun", "en_gloss": "enterprise", "ja_gloss": "企業"}
+{"lemma": "явление", "band": 4, "pos": "noun", "en_gloss": "phenomenon", "ja_gloss": "現象"}
+{"lemma": "ладонь", "band": 4, "pos": "noun", "en_gloss": "palm", "ja_gloss": "手のひら"}
+{"lemma": "катя", "band": 4, "pos": "noun", "en_gloss": "Katya (name)", "ja_gloss": "カーチャ"}
+{"lemma": "масштаб", "band": 4, "pos": "noun", "en_gloss": "scale", "ja_gloss": "規模"}
+{"lemma": "польша", "band": 4, "pos": "noun", "en_gloss": "Poland", "ja_gloss": "ポーランド"}
+{"lemma": "навстречу", "band": 4, "pos": "adv", "en_gloss": "towards, to meet", "ja_gloss": "出迎えに"}
+{"lemma": "инициатива", "band": 4, "pos": "noun", "en_gloss": "initiative", "ja_gloss": "主導権"}
+{"lemma": "максимальный", "band": 4, "pos": "adj", "en_gloss": "maximum", "ja_gloss": "最大の"}
+{"lemma": "психология", "band": 4, "pos": "noun", "en_gloss": "psychology", "ja_gloss": "心理学"}
+{"lemma": "следовательно", "band": 4, "pos": "adv", "en_gloss": "therefore", "ja_gloss": "したがって"}
+{"lemma": "определять", "band": 4, "pos": "verb", "en_gloss": "define", "ja_gloss": "定義する"}
+{"lemma": "лена", "band": 4, "pos": "noun", "en_gloss": "Lena (name)", "ja_gloss": "レーナ"}
+{"lemma": "цитата", "band": 4, "pos": "noun", "en_gloss": "quotation", "ja_gloss": "引用"}
+{"lemma": "рубль", "band": 4, "pos": "noun", "en_gloss": "ruble", "ja_gloss": "ルーブル"}
+{"lemma": "обеспечение", "band": 4, "pos": "noun", "en_gloss": "provision", "ja_gloss": "供給"}
+{"lemma": "единица", "band": 4, "pos": "noun", "en_gloss": "unit", "ja_gloss": "単位"}
+{"lemma": "столетие", "band": 4, "pos": "noun", "en_gloss": "century", "ja_gloss": "世紀"}
+{"lemma": "выражать", "band": 4, "pos": "verb", "en_gloss": "express", "ja_gloss": "表す"}
+{"lemma": "выделить", "band": 4, "pos": "verb", "en_gloss": "highlight", "ja_gloss": "強調する"}
+{"lemma": "антон", "band": 4, "pos": "noun", "en_gloss": "Anton (name)", "ja_gloss": "アントン"}
+{"lemma": "свидетельствовать", "band": 4, "pos": "verb", "en_gloss": "indicate", "ja_gloss": "証明する"}
+{"lemma": "михаил", "band": 4, "pos": "noun", "en_gloss": "Mikhail (name)", "ja_gloss": "ミハイル(人名)"}
+{"lemma": "литр", "band": 4, "pos": "noun", "en_gloss": "liter", "ja_gloss": "リットル"}
+{"lemma": "понятный", "band": 4, "pos": "adj", "en_gloss": "understandable", "ja_gloss": "分かりやすい"}
+{"lemma": "раздел", "band": 4, "pos": "noun", "en_gloss": "section", "ja_gloss": "節"}
+{"lemma": "учение", "band": 4, "pos": "noun", "en_gloss": "teaching", "ja_gloss": "教え"}
+{"lemma": "орден", "band": 4, "pos": "noun", "en_gloss": "order, medal", "ja_gloss": "勲章"}
+{"lemma": "критика", "band": 4, "pos": "noun", "en_gloss": "criticism", "ja_gloss": "批判"}
+{"lemma": "проявление", "band": 4, "pos": "noun", "en_gloss": "manifestation", "ja_gloss": "現れ"}
+{"lemma": "объединить", "band": 4, "pos": "verb", "en_gloss": "unite", "ja_gloss": "統合する"}
+{"lemma": "непосредственно", "band": 4, "pos": "adv", "en_gloss": "directly", "ja_gloss": "直接"}
+{"lemma": "денежный", "band": 4, "pos": "adj", "en_gloss": "monetary", "ja_gloss": "金銭の"}
+{"lemma": "броситься", "band": 4, "pos": "verb", "en_gloss": "rush", "ja_gloss": "駆け出す"}
+{"lemma": "щека", "band": 4, "pos": "noun", "en_gloss": "cheek", "ja_gloss": "頬"}
+{"lemma": "описывать", "band": 4, "pos": "verb", "en_gloss": "describe", "ja_gloss": "描写する"}
+{"lemma": "удивление", "band": 4, "pos": "noun", "en_gloss": "surprise", "ja_gloss": "驚き"}
+{"lemma": "различие", "band": 4, "pos": "noun", "en_gloss": "difference", "ja_gloss": "違い"}
+{"lemma": "цикл", "band": 4, "pos": "noun", "en_gloss": "cycle", "ja_gloss": "周期"}
+{"lemma": "соединение", "band": 4, "pos": "noun", "en_gloss": "connection", "ja_gloss": "接続"}
+{"lemma": "традиционный", "band": 4, "pos": "adj", "en_gloss": "traditional", "ja_gloss": "伝統的な"}
+{"lemma": "закричать", "band": 4, "pos": "verb", "en_gloss": "shout out", "ja_gloss": "叫び出す"}
+{"lemma": "половой", "band": 4, "pos": "adj", "en_gloss": "sexual", "ja_gloss": "性的な"}
+{"lemma": "стихи", "band": 4, "pos": "noun", "en_gloss": "poetry", "ja_gloss": "詩"}
+{"lemma": "идеал", "band": 4, "pos": "noun", "en_gloss": "ideal", "ja_gloss": "理想"}
+{"lemma": "выключать", "band": 4, "pos": "verb", "en_gloss": "turn off", "ja_gloss": "消す"}
+{"lemma": "деревянный", "band": 4, "pos": "adj", "en_gloss": "wooden", "ja_gloss": "木製の"}
+{"lemma": "широко", "band": 4, "pos": "adv", "en_gloss": "widely", "ja_gloss": "広く"}
+{"lemma": "распространение", "band": 4, "pos": "noun", "en_gloss": "spread", "ja_gloss": "普及"}
+{"lemma": "коммунист", "band": 4, "pos": "noun", "en_gloss": "communist", "ja_gloss": "共産主義者"}
+{"lemma": "чиновник", "band": 4, "pos": "noun", "en_gloss": "official", "ja_gloss": "官僚"}
+{"lemma": "финансирование", "band": 4, "pos": "noun", "en_gloss": "financing", "ja_gloss": "資金調達"}
+{"lemma": "каменный", "band": 4, "pos": "adj", "en_gloss": "stone", "ja_gloss": "石の"}
+{"lemma": "обеспечивать", "band": 4, "pos": "verb", "en_gloss": "provide", "ja_gloss": "供給する"}
+{"lemma": "умение", "band": 4, "pos": "noun", "en_gloss": "skill", "ja_gloss": "技能"}
+{"lemma": "десяток", "band": 4, "pos": "noun", "en_gloss": "dozen", "ja_gloss": "十ほど"}
+{"lemma": "окружать", "band": 4, "pos": "verb", "en_gloss": "surround", "ja_gloss": "取り囲む"}
+{"lemma": "павел", "band": 4, "pos": "noun", "en_gloss": "Pavel", "ja_gloss": "パーヴェル"}
+{"lemma": "инвестиция", "band": 4, "pos": "noun", "en_gloss": "investment", "ja_gloss": "投資"}
+{"lemma": "крестьянин", "band": 4, "pos": "noun", "en_gloss": "peasant", "ja_gloss": "農民"}
+{"lemma": "конституция", "band": 4, "pos": "noun", "en_gloss": "constitution", "ja_gloss": "憲法"}
+{"lemma": "капитал", "band": 4, "pos": "noun", "en_gloss": "capital", "ja_gloss": "資本"}
+{"lemma": "эффективный", "band": 4, "pos": "adj", "en_gloss": "effective", "ja_gloss": "効果的な"}
+{"lemma": "выполнение", "band": 4, "pos": "noun", "en_gloss": "fulfillment", "ja_gloss": "遂行"}
+{"lemma": "всеобщий", "band": 4, "pos": "adj", "en_gloss": "universal, general", "ja_gloss": "全般的な"}
+{"lemma": "сергей", "band": 4, "pos": "noun", "en_gloss": "Sergei (name)", "ja_gloss": "セルゲイ(人名)"}
+{"lemma": "предоставлять", "band": 4, "pos": "verb", "en_gloss": "provide", "ja_gloss": "提供する"}
+{"lemma": "явный", "band": 4, "pos": "adj", "en_gloss": "obvious", "ja_gloss": "明白な"}
+{"lemma": "европейский", "band": 4, "pos": "adj", "en_gloss": "European", "ja_gloss": "ヨーロッパの"}
+{"lemma": "сохранение", "band": 4, "pos": "noun", "en_gloss": "preservation", "ja_gloss": "保存"}
+{"lemma": "советский", "band": 4, "pos": "adj", "en_gloss": "Soviet", "ja_gloss": "ソビエトの"}
+{"lemma": "факультет", "band": 4, "pos": "noun", "en_gloss": "faculty, department", "ja_gloss": "学部"}
+{"lemma": "сохраниться", "band": 4, "pos": "verb", "en_gloss": "be preserved", "ja_gloss": "保存される"}
+{"lemma": "творческий", "band": 4, "pos": "adj", "en_gloss": "creative", "ja_gloss": "創造的な"}
+{"lemma": "концепция", "band": 4, "pos": "noun", "en_gloss": "concept", "ja_gloss": "概念"}
+{"lemma": "мышление", "band": 4, "pos": "noun", "en_gloss": "thinking", "ja_gloss": "思考"}
+{"lemma": "андрей", "band": 4, "pos": "noun", "en_gloss": "Andrei (name)", "ja_gloss": "アンドレイ(人名)"}
+{"lemma": "регион", "band": 4, "pos": "noun", "en_gloss": "region", "ja_gloss": "地域"}
+{"lemma": "резкий", "band": 4, "pos": "adj", "en_gloss": "sharp", "ja_gloss": "鋭い"}
+{"lemma": "строка", "band": 4, "pos": "noun", "en_gloss": "line", "ja_gloss": "行"}
+{"lemma": "спрос", "band": 4, "pos": "noun", "en_gloss": "demand", "ja_gloss": "需要"}
+{"lemma": "оценивать", "band": 4, "pos": "verb", "en_gloss": "evaluate", "ja_gloss": "評価する"}
+{"lemma": "николай", "band": 4, "pos": "noun", "en_gloss": "Nikolai (name)", "ja_gloss": "ニコライ(人名)"}
+{"lemma": "увеличение", "band": 4, "pos": "noun", "en_gloss": "increase", "ja_gloss": "増加"}
+{"lemma": "учебник", "band": 4, "pos": "noun", "en_gloss": "textbook", "ja_gloss": "教科書"}
+{"lemma": "ссылка", "band": 4, "pos": "noun", "en_gloss": "link", "ja_gloss": "リンク"}
+{"lemma": "многочисленный", "band": 4, "pos": "adj", "en_gloss": "numerous", "ja_gloss": "多数の"}
+{"lemma": "утверждение", "band": 4, "pos": "noun", "en_gloss": "statement", "ja_gloss": "主張"}
+{"lemma": "горный", "band": 4, "pos": "adj", "en_gloss": "mountain (adj)", "ja_gloss": "山の"}
+{"lemma": "семинар", "band": 4, "pos": "noun", "en_gloss": "seminar", "ja_gloss": "セミナー"}
+{"lemma": "стремление", "band": 4, "pos": "noun", "en_gloss": "aspiration", "ja_gloss": "願望"}
+{"lemma": "удовлетворение", "band": 4, "pos": "noun", "en_gloss": "satisfaction", "ja_gloss": "満足"}
+{"lemma": "рассмотрение", "band": 4, "pos": "noun", "en_gloss": "consideration", "ja_gloss": "検討"}
+{"lemma": "колонна", "band": 4, "pos": "noun", "en_gloss": "column", "ja_gloss": "縦隊"}
+{"lemma": "душевный", "band": 4, "pos": "adj", "en_gloss": "heartfelt", "ja_gloss": "心の"}
+{"lemma": "собор", "band": 4, "pos": "noun", "en_gloss": "cathedral", "ja_gloss": "大聖堂"}
+{"lemma": "вслед", "band": 4, "pos": "adv", "en_gloss": "after", "ja_gloss": "後を追って"}
+{"lemma": "марина", "band": 4, "pos": "noun", "en_gloss": "Marina", "ja_gloss": "マリーナ"}
+{"lemma": "производитель", "band": 4, "pos": "noun", "en_gloss": "manufacturer", "ja_gloss": "製造業者"}
+{"lemma": "ныне", "band": 4, "pos": "adv", "en_gloss": "now, nowadays", "ja_gloss": "今や"}
+{"lemma": "мол", "band": 4, "pos": "part", "en_gloss": "supposedly", "ja_gloss": "という"}
+{"lemma": "обучать", "band": 4, "pos": "verb", "en_gloss": "teach", "ja_gloss": "教える"}
+{"lemma": "конкуренция", "band": 4, "pos": "noun", "en_gloss": "competition", "ja_gloss": "競争"}
+{"lemma": "анекдот", "band": 4, "pos": "noun", "en_gloss": "joke", "ja_gloss": "小話"}
+{"lemma": "экономический", "band": 4, "pos": "adj", "en_gloss": "economic", "ja_gloss": "経済の"}
+{"lemma": "дмитрий", "band": 4, "pos": "noun", "en_gloss": "Dmitry", "ja_gloss": "ドミトリー"}
+{"lemma": "отражать", "band": 4, "pos": "verb", "en_gloss": "reflect", "ja_gloss": "反映する"}
+{"lemma": "контекст", "band": 4, "pos": "noun", "en_gloss": "context", "ja_gloss": "文脈"}
+{"lemma": "отнюдь", "band": 4, "pos": "part", "en_gloss": "by no means", "ja_gloss": "決して~ない"}
+{"lemma": "проводиться", "band": 4, "pos": "verb", "en_gloss": "be conducted", "ja_gloss": "行われる"}
+{"lemma": "дискуссия", "band": 4, "pos": "noun", "en_gloss": "discussion", "ja_gloss": "討論"}
+{"lemma": "объем", "band": 4, "pos": "noun", "en_gloss": "volume", "ja_gloss": "容量"}
+{"lemma": "нагрузка", "band": 4, "pos": "noun", "en_gloss": "load, workload", "ja_gloss": "負荷"}
+{"lemma": "узкий", "band": 4, "pos": "adj", "en_gloss": "narrow", "ja_gloss": "狭い"}
+{"lemma": "приниматься", "band": 4, "pos": "verb", "en_gloss": "begin, be accepted", "ja_gloss": "取り掛かる"}
+{"lemma": "глобальный", "band": 4, "pos": "adj", "en_gloss": "global", "ja_gloss": "グローバルな"}
+{"lemma": "сочинение", "band": 4, "pos": "noun", "en_gloss": "essay, composition", "ja_gloss": "作文"}
+{"lemma": "частность", "band": 4, "pos": "noun", "en_gloss": "particular", "ja_gloss": "詳細"}
+{"lemma": "полк", "band": 4, "pos": "noun", "en_gloss": "regiment", "ja_gloss": "連隊"}
+{"lemma": "проявляться", "band": 4, "pos": "verb", "en_gloss": "manifest itself", "ja_gloss": "現れる"}
+{"lemma": "издание", "band": 4, "pos": "noun", "en_gloss": "publication", "ja_gloss": "出版物"}
+{"lemma": "восприятие", "band": 4, "pos": "noun", "en_gloss": "perception", "ja_gloss": "知覚"}
+{"lemma": "соответственно", "band": 4, "pos": "adv", "en_gloss": "accordingly", "ja_gloss": "従って"}
+{"lemma": "диалог", "band": 4, "pos": "noun", "en_gloss": "dialogue", "ja_gloss": "対話"}
+{"lemma": "сталин", "band": 4, "pos": "noun", "en_gloss": "Stalin", "ja_gloss": "スターリン"}
+{"lemma": "молча", "band": 4, "pos": "adv", "en_gloss": "silently", "ja_gloss": "黙って"}
+{"lemma": "подробно", "band": 4, "pos": "adv", "en_gloss": "in detail", "ja_gloss": "詳しく"}
+{"lemma": "исследователь", "band": 4, "pos": "noun", "en_gloss": "researcher", "ja_gloss": "研究者"}
+{"lemma": "длительный", "band": 4, "pos": "adj", "en_gloss": "lengthy, prolonged", "ja_gloss": "長期の"}
+{"lemma": "наташа", "band": 4, "pos": "noun", "en_gloss": "Natasha (name)", "ja_gloss": "ナターシャ"}
+{"lemma": "коммерческий", "band": 4, "pos": "adj", "en_gloss": "commercial", "ja_gloss": "商業の"}
+{"lemma": "стихотворение", "band": 4, "pos": "noun", "en_gloss": "poem", "ja_gloss": "詩"}
+{"lemma": "милиция", "band": 4, "pos": "noun", "en_gloss": "police", "ja_gloss": "民警"}
+{"lemma": "художественный", "band": 4, "pos": "adj", "en_gloss": "artistic", "ja_gloss": "芸術的な"}
+{"lemma": "противоположный", "band": 4, "pos": "adj", "en_gloss": "opposite", "ja_gloss": "反対の"}
+{"lemma": "зимний", "band": 4, "pos": "adj", "en_gloss": "winter (adj)", "ja_gloss": "冬の"}
+{"lemma": "обработка", "band": 4, "pos": "noun", "en_gloss": "processing", "ja_gloss": "処理"}
+{"lemma": "коротко", "band": 4, "pos": "adv", "en_gloss": "briefly", "ja_gloss": "短く"}
+{"lemma": "народный", "band": 4, "pos": "adj", "en_gloss": "national, folk", "ja_gloss": "民衆の"}
+{"lemma": "природный", "band": 4, "pos": "adj", "en_gloss": "natural", "ja_gloss": "自然の"}
+{"lemma": "юрий", "band": 4, "pos": "noun", "en_gloss": "Yuri", "ja_gloss": "ユーリ"}
+{"lemma": "слушатель", "band": 4, "pos": "noun", "en_gloss": "listener", "ja_gloss": "聞き手"}
+{"lemma": "эффективность", "band": 4, "pos": "noun", "en_gloss": "efficiency", "ja_gloss": "効率"}
+{"lemma": "ресурсы", "band": 4, "pos": "noun", "en_gloss": "resources", "ja_gloss": "資源"}
+{"lemma": "олег", "band": 4, "pos": "noun", "en_gloss": "Oleg", "ja_gloss": "オレグ"}
+{"lemma": "промышленность", "band": 4, "pos": "noun", "en_gloss": "industry", "ja_gloss": "工業"}
+{"lemma": "алексей", "band": 4, "pos": "noun", "en_gloss": "Alexey", "ja_gloss": "アレクセイ"}
+{"lemma": "проживать", "band": 4, "pos": "verb", "en_gloss": "reside", "ja_gloss": "住む"}
+{"lemma": "владимир", "band": 4, "pos": "noun", "en_gloss": "Vladimir (name)", "ja_gloss": "ウラジーミル(人名)"}
+{"lemma": "достигать", "band": 4, "pos": "verb", "en_gloss": "achieve", "ja_gloss": "達成する"}
+{"lemma": "пользователь", "band": 4, "pos": "noun", "en_gloss": "user", "ja_gloss": "利用者"}
+{"lemma": "затрата", "band": 4, "pos": "noun", "en_gloss": "expense", "ja_gloss": "費用"}
+{"lemma": "лесной", "band": 4, "pos": "adj", "en_gloss": "forest (adj)", "ja_gloss": "森の"}
+{"lemma": "ольга", "band": 4, "pos": "noun", "en_gloss": "Olga", "ja_gloss": "オリガ"}
+{"lemma": "расширение", "band": 4, "pos": "noun", "en_gloss": "expansion", "ja_gloss": "拡大"}
+{"lemma": "применять", "band": 4, "pos": "verb", "en_gloss": "apply", "ja_gloss": "適用する"}
+{"lemma": "рубеж", "band": 4, "pos": "noun", "en_gloss": "frontier", "ja_gloss": "境界"}
+{"lemma": "творчество", "band": 4, "pos": "noun", "en_gloss": "creativity", "ja_gloss": "創作"}
+{"lemma": "христианский", "band": 4, "pos": "adj", "en_gloss": "Christian", "ja_gloss": "キリスト教の"}
+{"lemma": "свойство", "band": 4, "pos": "noun", "en_gloss": "property", "ja_gloss": "特性"}
+{"lemma": "игорь", "band": 4, "pos": "noun", "en_gloss": "Igor", "ja_gloss": "イーゴリ"}
+{"lemma": "снижение", "band": 4, "pos": "noun", "en_gloss": "reduction", "ja_gloss": "減少"}
+{"lemma": "коллектив", "band": 4, "pos": "noun", "en_gloss": "team", "ja_gloss": "集団"}
+{"lemma": "объединение", "band": 4, "pos": "noun", "en_gloss": "association", "ja_gloss": "団体"}
+{"lemma": "региональный", "band": 4, "pos": "adj", "en_gloss": "regional", "ja_gloss": "地域の"}
+{"lemma": "последующий", "band": 4, "pos": "adj", "en_gloss": "subsequent", "ja_gloss": "その後の"}
+{"lemma": "активно", "band": 4, "pos": "adv", "en_gloss": "actively", "ja_gloss": "積極的に"}
+{"lemma": "сельский", "band": 4, "pos": "adj", "en_gloss": "rural", "ja_gloss": "農村の"}
+{"lemma": "минимальный", "band": 4, "pos": "adj", "en_gloss": "minimal", "ja_gloss": "最小の"}
+{"lemma": "продукция", "band": 4, "pos": "noun", "en_gloss": "products", "ja_gloss": "製品"}
+{"lemma": "максим", "band": 4, "pos": "noun", "en_gloss": "Maxim (name)", "ja_gloss": "マキシム"}
+{"lemma": "банка", "band": 4, "pos": "noun", "en_gloss": "jar, can", "ja_gloss": "瓶"}
+{"lemma": "аспект", "band": 4, "pos": "noun", "en_gloss": "aspect", "ja_gloss": "側面"}
+{"lemma": "непонятный", "band": 4, "pos": "adj", "en_gloss": "incomprehensible", "ja_gloss": "分からない"}
+{"lemma": "иванович", "band": 4, "pos": "noun", "en_gloss": "Ivanovich", "ja_gloss": "イワノヴィチ"}
+{"lemma": "конструкция", "band": 4, "pos": "noun", "en_gloss": "construction, structure", "ja_gloss": "構造"}
+{"lemma": "взаимодействие", "band": 4, "pos": "noun", "en_gloss": "interaction", "ja_gloss": "相互作用"}
+{"lemma": "дивизия", "band": 4, "pos": "noun", "en_gloss": "division", "ja_gloss": "師団"}
+{"lemma": "путин", "band": 4, "pos": "noun", "en_gloss": "Putin", "ja_gloss": "プーチン"}
+{"lemma": "василий", "band": 4, "pos": "noun", "en_gloss": "Vasily", "ja_gloss": "ワシーリー"}
+{"lemma": "читатель", "band": 4, "pos": "noun", "en_gloss": "reader", "ja_gloss": "読者"}
+{"lemma": "образовать", "band": 4, "pos": "verb", "en_gloss": "form, create", "ja_gloss": "形成する"}
+{"lemma": "способствовать", "band": 4, "pos": "verb", "en_gloss": "contribute", "ja_gloss": "寄与する"}
+{"lemma": "распространить", "band": 4, "pos": "verb", "en_gloss": "spread, distribute", "ja_gloss": "広める"}
+{"lemma": "ирина", "band": 4, "pos": "noun", "en_gloss": "Irina", "ja_gloss": "イリーナ"}
+{"lemma": "характеристика", "band": 4, "pos": "noun", "en_gloss": "characteristic", "ja_gloss": "特徴"}
+{"lemma": "миша", "band": 4, "pos": "noun", "en_gloss": "Misha (name)", "ja_gloss": "ミーシャ"}
+{"lemma": "илья", "band": 4, "pos": "noun", "en_gloss": "Ilya (name)", "ja_gloss": "イリヤ"}
+{"lemma": "горький", "band": 4, "pos": "adj", "en_gloss": "bitter", "ja_gloss": "苦い"}
+{"lemma": "памятник", "band": 4, "pos": "noun", "en_gloss": "monument", "ja_gloss": "記念碑"}
+{"lemma": "противоречие", "band": 4, "pos": "noun", "en_gloss": "contradiction", "ja_gloss": "矛盾"}
+{"lemma": "введение", "band": 4, "pos": "noun", "en_gloss": "introduction", "ja_gloss": "導入"}
+{"lemma": "впоследствии", "band": 4, "pos": "adv", "en_gloss": "subsequently", "ja_gloss": "その後"}
+{"lemma": "философский", "band": 4, "pos": "adj", "en_gloss": "philosophical", "ja_gloss": "哲学的な"}
+{"lemma": "представляться", "band": 4, "pos": "verb", "en_gloss": "seem", "ja_gloss": "思われる"}
+{"lemma": "таблица", "band": 4, "pos": "noun", "en_gloss": "table, chart", "ja_gloss": "表"}
+{"lemma": "высказывание", "band": 4, "pos": "noun", "en_gloss": "statement", "ja_gloss": "発言"}
+{"lemma": "татьяна", "band": 4, "pos": "noun", "en_gloss": "Tatyana", "ja_gloss": "タチアナ"}
+{"lemma": "изделие", "band": 4, "pos": "noun", "en_gloss": "product, article", "ja_gloss": "製品"}
+{"lemma": "постановление", "band": 4, "pos": "noun", "en_gloss": "decree, resolution", "ja_gloss": "決議"}
+{"lemma": "подчеркнуть", "band": 4, "pos": "verb", "en_gloss": "emphasize", "ja_gloss": "強調する"}
+{"lemma": "программный", "band": 4, "pos": "adj", "en_gloss": "software", "ja_gloss": "ソフトウェアの"}
+{"lemma": "развивать", "band": 4, "pos": "verb", "en_gloss": "develop", "ja_gloss": "発展させる"}
+{"lemma": "высший", "band": 4, "pos": "adj", "en_gloss": "highest", "ja_gloss": "最高の"}
+{"lemma": "ссср", "band": 4, "pos": "noun", "en_gloss": "USSR", "ja_gloss": "ソ連"}
+{"lemma": "ближайший", "band": 4, "pos": "adj", "en_gloss": "nearest", "ja_gloss": "最も近い"}
+{"lemma": "украина", "band": 4, "pos": "noun", "en_gloss": "Ukraine", "ja_gloss": "ウクライナ"}
+{"lemma": "евгений", "band": 4, "pos": "noun", "en_gloss": "Evgeny", "ja_gloss": "エフゲニー"}
+{"lemma": "культурный", "band": 4, "pos": "adj", "en_gloss": "cultural", "ja_gloss": "文化の"}
+{"lemma": "существенный", "band": 4, "pos": "adj", "en_gloss": "significant", "ja_gloss": "重要な"}
+{"lemma": "бытие", "band": 4, "pos": "noun", "en_gloss": "being, existence", "ja_gloss": "存在"}
+{"lemma": "тенденция", "band": 4, "pos": "noun", "en_gloss": "trend", "ja_gloss": "傾向"}
+{"lemma": "наталья", "band": 4, "pos": "noun", "en_gloss": "Natalia (name)", "ja_gloss": "ナタリヤ"}
+{"lemma": "публикация", "band": 4, "pos": "noun", "en_gloss": "publication", "ja_gloss": "出版物"}
+{"lemma": "форум", "band": 4, "pos": "noun", "en_gloss": "forum", "ja_gloss": "フォーラム"}
+{"lemma": "посёлок", "band": 4, "pos": "noun", "en_gloss": "settlement", "ja_gloss": "集落"}
+{"lemma": "существующий", "band": 4, "pos": "adj", "en_gloss": "existing", "ja_gloss": "既存の"}
+{"lemma": "сборник", "band": 4, "pos": "noun", "en_gloss": "collection (book)", "ja_gloss": "選集"}
+{"lemma": "соответствующий", "band": 4, "pos": "adj", "en_gloss": "corresponding", "ja_gloss": "対応する"}
+{"lemma": "маша", "band": 4, "pos": "noun", "en_gloss": "Masha (name)", "ja_gloss": "マーシャ"}
+{"lemma": "параметр", "band": 4, "pos": "noun", "en_gloss": "parameter", "ja_gloss": "パラメータ"}
+{"lemma": "решаться", "band": 4, "pos": "verb", "en_gloss": "dare, decide", "ja_gloss": "決心する"}
+{"lemma": "вздохнуть", "band": 4, "pos": "verb", "en_gloss": "sigh", "ja_gloss": "ため息をつく"}
+{"lemma": "трудовой", "band": 4, "pos": "adj", "en_gloss": "labor (adj)", "ja_gloss": "労働の"}
+{"lemma": "превышать", "band": 4, "pos": "verb", "en_gloss": "exceed", "ja_gloss": "超える"}
+{"lemma": "реализовать", "band": 4, "pos": "verb", "en_gloss": "implement", "ja_gloss": "実現する"}
+{"lemma": "депутат", "band": 4, "pos": "noun", "en_gloss": "deputy", "ja_gloss": "議員"}
+{"lemma": "петрович", "band": 4, "pos": "noun", "en_gloss": "Petrovich (patronymic)", "ja_gloss": "ペトローヴィチ"}
+{"lemma": "корреспондент", "band": 4, "pos": "noun", "en_gloss": "correspondent", "ja_gloss": "特派員"}
+{"lemma": "раздаться", "band": 4, "pos": "verb", "en_gloss": "resound", "ja_gloss": "響く"}
+{"lemma": "определяться", "band": 4, "pos": "verb", "en_gloss": "be determined", "ja_gloss": "決まる"}
+{"lemma": "построение", "band": 4, "pos": "noun", "en_gloss": "construction, formation", "ja_gloss": "構築"}
+{"lemma": "крикнуть", "band": 4, "pos": "verb", "en_gloss": "shout", "ja_gloss": "叫ぶ"}
+{"lemma": "предприниматель", "band": 4, "pos": "noun", "en_gloss": "entrepreneur", "ja_gloss": "起業家"}
+{"lemma": "реформа", "band": 4, "pos": "noun", "en_gloss": "reform", "ja_gloss": "改革"}
+{"lemma": "демократический", "band": 4, "pos": "adj", "en_gloss": "democratic", "ja_gloss": "民主的な"}
+{"lemma": "российский", "band": 4, "pos": "adj", "en_gloss": "Russian", "ja_gloss": "ロシアの"}
+{"lemma": "распределение", "band": 4, "pos": "noun", "en_gloss": "distribution", "ja_gloss": "分配"}
+{"lemma": "непосредственный", "band": 4, "pos": "adj", "en_gloss": "direct, immediate", "ja_gloss": "直接の"}
+{"lemma": "создаваться", "band": 4, "pos": "verb", "en_gloss": "be created", "ja_gloss": "作られる"}
+{"lemma": "ленин", "band": 4, "pos": "noun", "en_gloss": "Lenin", "ja_gloss": "レーニン"}
+{"lemma": "величина", "band": 4, "pos": "noun", "en_gloss": "magnitude", "ja_gloss": "大きさ"}
+{"lemma": "огород", "band": 4, "pos": "noun", "en_gloss": "vegetable garden", "ja_gloss": "菜園"}
+{"lemma": "отрасль", "band": 4, "pos": "noun", "en_gloss": "industry", "ja_gloss": "産業"}
+{"lemma": "приобретать", "band": 4, "pos": "verb", "en_gloss": "acquire", "ja_gloss": "取得する"}
+{"lemma": "правовой", "band": 4, "pos": "adj", "en_gloss": "legal", "ja_gloss": "法的な"}
+{"lemma": "литературный", "band": 4, "pos": "adj", "en_gloss": "literary", "ja_gloss": "文学の"}
+{"lemma": "летчик", "band": 4, "pos": "noun", "en_gloss": "pilot", "ja_gloss": "飛行士"}
+{"lemma": "социально", "band": 4, "pos": "adv", "en_gloss": "socially", "ja_gloss": "社会的に"}
+{"lemma": "жанр", "band": 4, "pos": "noun", "en_gloss": "genre", "ja_gloss": "ジャンル"}
+{"lemma": "характерный", "band": 4, "pos": "adj", "en_gloss": "characteristic", "ja_gloss": "特徴的な"}
+{"lemma": "рыночный", "band": 4, "pos": "adj", "en_gloss": "market (adj)", "ja_gloss": "市場の"}
+{"lemma": "ремонтировать", "band": 4, "pos": "verb", "en_gloss": "repair", "ja_gloss": "修理する"}
+{"lemma": "нередко", "band": 4, "pos": "adv", "en_gloss": "not infrequently", "ja_gloss": "しばしば"}
+{"lemma": "осуществлять", "band": 4, "pos": "verb", "en_gloss": "carry out", "ja_gloss": "実施する"}
+{"lemma": "приняться", "band": 4, "pos": "verb", "en_gloss": "set about", "ja_gloss": "取りかかる"}
+{"lemma": "иванов", "band": 4, "pos": "noun", "en_gloss": "Ivanov (surname)", "ja_gloss": "イワノフ"}
+{"lemma": "критерий", "band": 4, "pos": "noun", "en_gloss": "criterion", "ja_gloss": "基準"}
+{"lemma": "формат", "band": 4, "pos": "noun", "en_gloss": "format", "ja_gloss": "形式"}
+{"lemma": "промышленный", "band": 4, "pos": "adj", "en_gloss": "industrial", "ja_gloss": "産業の"}
+{"lemma": "предусмотреть", "band": 4, "pos": "verb", "en_gloss": "foresee, provide for", "ja_gloss": "想定する"}
+{"lemma": "исходный", "band": 4, "pos": "adj", "en_gloss": "initial, original", "ja_gloss": "初期の"}
+{"lemma": "николаевич", "band": 4, "pos": "noun", "en_gloss": "Nikolaevich (patronymic)", "ja_gloss": "ニコラエヴィチ"}
+{"lemma": "потребитель", "band": 4, "pos": "noun", "en_gloss": "consumer", "ja_gloss": "消費者"}
+{"lemma": "интеллектуальный", "band": 4, "pos": "adj", "en_gloss": "intellectual", "ja_gloss": "知的な"}
+{"lemma": "кивнуть", "band": 4, "pos": "verb", "en_gloss": "nod", "ja_gloss": "うなずく"}
+{"lemma": "действующий", "band": 4, "pos": "adj", "en_gloss": "current, acting", "ja_gloss": "現行の"}
+{"lemma": "крупнейший", "band": 4, "pos": "adj", "en_gloss": "largest", "ja_gloss": "最大の"}
+{"lemma": "если бы", "band": 4, "pos": "conj", "en_gloss": "if only", "ja_gloss": "もしなら"}
+{"lemma": "пока что", "band": 4, "pos": "adv", "en_gloss": "so far", "ja_gloss": "今のところ"}
+{"lemma": "солёный", "band": 4, "pos": "adj", "en_gloss": "salty", "ja_gloss": "塩辛い"}
+{"lemma": "московский", "band": 4, "pos": "adj", "en_gloss": "Moscow (adj)", "ja_gloss": "モスクワの"}
+{"lemma": "рф", "band": 4, "pos": "noun", "en_gloss": "Russian Federation", "ja_gloss": "ロシア連邦"}
+{"lemma": "информационный", "band": 4, "pos": "adj", "en_gloss": "informational", "ja_gloss": "情報の"}
+{"lemma": "реализация", "band": 4, "pos": "noun", "en_gloss": "implementation", "ja_gloss": "実現"}
+{"lemma": "материальный", "band": 4, "pos": "adj", "en_gloss": "material", "ja_gloss": "物質的な"}
+{"lemma": "отечественный", "band": 4, "pos": "adj", "en_gloss": "domestic", "ja_gloss": "国内の"}
+{"lemma": "формирование", "band": 4, "pos": "noun", "en_gloss": "formation", "ja_gloss": "形成"}
+{"lemma": "законодательство", "band": 4, "pos": "noun", "en_gloss": "legislation", "ja_gloss": "法律"}
+{"lemma": "дума", "band": 4, "pos": "noun", "en_gloss": "Duma", "ja_gloss": "国会"}
+{"lemma": "меньший", "band": 4, "pos": "adj", "en_gloss": "smaller", "ja_gloss": "より小さい"}
+{"lemma": "индивидуальный", "band": 4, "pos": "adj", "en_gloss": "individual", "ja_gloss": "個別の"}
+{"lemma": "практический", "band": 4, "pos": "adj", "en_gloss": "practical", "ja_gloss": "実用的な"}
+{"lemma": "обязанный", "band": 4, "pos": "adj", "en_gloss": "obliged", "ja_gloss": "義務がある"}
+{"lemma": "православный", "band": 4, "pos": "adj", "en_gloss": "Orthodox", "ja_gloss": "正教会の"}
+{"lemma": "пушкин", "band": 4, "pos": "noun", "en_gloss": "Pushkin", "ja_gloss": "プーシキン"}
+{"lemma": "обязательный", "band": 4, "pos": "adj", "en_gloss": "mandatory", "ja_gloss": "義務的な"}
+{"lemma": "вынужденный", "band": 4, "pos": "adj", "en_gloss": "forced", "ja_gloss": "強いられた"}
+{"lemma": "санкт", "band": 4, "pos": "noun", "en_gloss": "Saint", "ja_gloss": "サンクト"}
+{"lemma": "петербург", "band": 4, "pos": "noun", "en_gloss": "Petersburg", "ja_gloss": "ペテルブルク"}
+{"lemma": "вуз", "band": 4, "pos": "noun", "en_gloss": "university", "ja_gloss": "大学"}
+{"lemma": "стратегический", "band": 4, "pos": "adj", "en_gloss": "strategic", "ja_gloss": "戦略的な"}
+{"lemma": "осуществляться", "band": 4, "pos": "verb", "en_gloss": "be carried out", "ja_gloss": "実現される"}
+{"lemma": "областной", "band": 4, "pos": "adj", "en_gloss": "regional", "ja_gloss": "州の"}
+{"lemma": "привычный", "band": 4, "pos": "adj", "en_gloss": "habitual, usual", "ja_gloss": "慣れた"}
+{"lemma": "казахстан", "band": 4, "pos": "noun", "en_gloss": "Kazakhstan", "ja_gloss": "カザフスタン"}
+{"lemma": "беларусь", "band": 4, "pos": "noun", "en_gloss": "Belarus", "ja_gloss": "ベラルーシ"}
+{"lemma": "административный", "band": 4, "pos": "adj", "en_gloss": "administrative", "ja_gloss": "行政の"}
+{"lemma": "качественный", "band": 4, "pos": "adj", "en_gloss": "high-quality", "ja_gloss": "質の高い"}
+{"lemma": "воскликнуть", "band": 4, "pos": "verb", "en_gloss": "exclaim", "ja_gloss": "叫ぶ"}
+{"lemma": "аналогичный", "band": 4, "pos": "adj", "en_gloss": "analogous", "ja_gloss": "類似の"}
+{"lemma": "самостоятельный", "band": 4, "pos": "adj", "en_gloss": "independent", "ja_gloss": "自立した"}
+{"lemma": "дима", "band": 4, "pos": "noun", "en_gloss": "Dima (name)", "ja_gloss": "ジーマ"}
+{"lemma": "осуществление", "band": 4, "pos": "noun", "en_gloss": "implementation", "ja_gloss": "実施"}
+{"lemma": "партийный", "band": 4, "pos": "adj", "en_gloss": "party (political)", "ja_gloss": "党の"}
+{"lemma": "украинский", "band": 4, "pos": "adj", "en_gloss": "Ukrainian", "ja_gloss": "ウクライナの"}
+{"lemma": "подъезд", "band": 4, "pos": "noun", "en_gloss": "building entrance", "ja_gloss": "玄関"}
+{"lemma": "чечня", "band": 4, "pos": "noun", "en_gloss": "Chechnya", "ja_gloss": "チェチェン"}
+{"lemma": "заметный", "band": 4, "pos": "adj", "en_gloss": "noticeable", "ja_gloss": "目立つ"}
+{"lemma": "германский", "band": 4, "pos": "adj", "en_gloss": "German", "ja_gloss": "ドイツの"}
+{"lemma": "разнообразный", "band": 4, "pos": "adj", "en_gloss": "diverse", "ja_gloss": "多様な"}
+{"lemma": "методика", "band": 4, "pos": "noun", "en_gloss": "methodology", "ja_gloss": "方法論"}
+{"lemma": "производственный", "band": 4, "pos": "adj", "en_gloss": "production (adj)", "ja_gloss": "生産の"}
+{"lemma": "важнейший", "band": 4, "pos": "adj", "en_gloss": "most important", "ja_gloss": "最も重要な"}
+{"lemma": "объективный", "band": 4, "pos": "adj", "en_gloss": "objective", "ja_gloss": "客観的な"}
+{"lemma": "идеология", "band": 4, "pos": "noun", "en_gloss": "ideology", "ja_gloss": "イデオロギー"}
+{"lemma": "зарубежный", "band": 4, "pos": "adj", "en_gloss": "foreign", "ja_gloss": "外国の"}
+{"lemma": "сетевой", "band": 4, "pos": "adj", "en_gloss": "network (adj)", "ja_gloss": "ネットワークの"}
