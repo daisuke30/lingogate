@@ -80,7 +80,8 @@ def main():
             line = line.strip()
             if line:
                 rows.append(json.loads(line))
-    new = [s for s in rows if s["id"] >= args.min_id and s["id"].startswith("T")]
+    id_prefix = re.match(r"[^0-9]*", args.min_id).group(0)
+    new = [s for s in rows if s["id"] >= args.min_id and s["id"].startswith(id_prefix)]
     new_ids = {s["id"] for s in new}
     corpus = all_corpus_ru(new_ids)
 
