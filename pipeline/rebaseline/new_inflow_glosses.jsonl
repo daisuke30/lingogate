@@ -196,3 +196,100 @@
 {"lemma":"путешествовать","rank":1574,"pos":"verb","en_gloss":"to travel","ja_gloss":"旅行する"}
 {"lemma":"заслужить","rank":1576,"pos":"verb","en_gloss":"to earn/deserve","ja_gloss":"値する"}
 {"lemma":"инспектор","rank":1577,"pos":"noun","en_gloss":"inspector","ja_gloss":"警部"}
+{"lemma":"папочка","rank":1580,"pos":"noun","en_gloss":"daddy","ja_gloss":"パパ"}
+{"lemma":"отвратительный","rank":1581,"pos":"adj","en_gloss":"disgusting","ja_gloss":"嫌悪感を催す"}
+{"lemma":"наслаждаться","rank":1584,"pos":"verb","en_gloss":"to enjoy","ja_gloss":"満喫する"}
+{"lemma":"застрелить","rank":1587,"pos":"verb","en_gloss":"to shoot dead","ja_gloss":"射殺する"}
+{"lemma":"виновный","rank":1590,"pos":"adj","en_gloss":"guilty","ja_gloss":"有罪の"}
+{"lemma":"безумие","rank":1593,"pos":"noun","en_gloss":"madness","ja_gloss":"狂気"}
+{"lemma":"днк","rank":1594,"pos":"noun","en_gloss":"DNA","ja_gloss":"DNA"}
+{"lemma":"потратить","rank":1596,"pos":"verb","en_gloss":"to spend","ja_gloss":"費やす"}
+{"lemma":"грузовик","rank":1598,"pos":"noun","en_gloss":"truck","ja_gloss":"トラック"}
+{"lemma":"холодильник","rank":1599,"pos":"noun","en_gloss":"refrigerator","ja_gloss":"冷蔵庫"}
+{"lemma":"проклятый","rank":1602,"pos":"adj","en_gloss":"cursed/damned","ja_gloss":"呪われた"}
+{"lemma":"шериф","rank":1605,"pos":"noun","en_gloss":"sheriff","ja_gloss":"保安官"}
+{"lemma":"мэр","rank":1614,"pos":"noun","en_gloss":"mayor","ja_gloss":"市長"}
+{"lemma":"отвести","rank":1616,"pos":"verb","en_gloss":"to lead/take (somewhere)","ja_gloss":"連れて行く"}
+{"lemma":"чашка","rank":1622,"pos":"noun","en_gloss":"cup","ja_gloss":"カップ"}
+{"lemma":"опасно","rank":1623,"pos":"adv","en_gloss":"dangerously/it's dangerous","ja_gloss":"危険だ"}
+{"lemma":"нападение","rank":1624,"pos":"noun","en_gloss":"attack","ja_gloss":"襲撃"}
+{"lemma":"невеста","rank":1626,"pos":"noun","en_gloss":"bride/fiancée","ja_gloss":"花嫁"}
+{"lemma":"прокурор","rank":1627,"pos":"noun","en_gloss":"prosecutor","ja_gloss":"検察官"}
+{"lemma":"рана","rank":1629,"pos":"noun","en_gloss":"wound","ja_gloss":"傷"}
+{"lemma":"внутрь","rank":1632,"pos":"adv","en_gloss":"inside (direction)","ja_gloss":"中へ"}
+{"lemma":"ошибиться","rank":1634,"pos":"verb","en_gloss":"to make a mistake","ja_gloss":"間違える"}
+{"lemma":"призрак","rank":1636,"pos":"noun","en_gloss":"ghost","ja_gloss":"幽霊"}
+{"lemma":"бакс","rank":1640,"pos":"noun","en_gloss":"buck (dollar, slang)","ja_gloss":"ドル(俗)"}
+{"lemma":"убежать","rank":1641,"pos":"verb","en_gloss":"to run away","ja_gloss":"逃げ出す"}
+{"lemma":"обвинять","rank":1642,"pos":"verb","en_gloss":"to accuse","ja_gloss":"非難する"}
+{"lemma":"чертовски","rank":1646,"pos":"adv","en_gloss":"damn (intensifier)","ja_gloss":"めちゃくちゃ"}
+{"lemma":"пугать","rank":1647,"pos":"verb","en_gloss":"to frighten","ja_gloss":"怖がらせる"}
+{"lemma":"мена","rank":1653,"pos":"noun","en_gloss":"exchange/barter","ja_gloss":"交換"}
+{"lemma":"подходящий","rank":1658,"pos":"adj","en_gloss":"suitable","ja_gloss":"適した"}
+{"lemma":"мм","rank":1662,"pos":"intj","en_gloss":"mm","ja_gloss":"うーん"}
+{"lemma":"рак","rank":1664,"pos":"noun","en_gloss":"cancer; crayfish","ja_gloss":"がん"}
+{"lemma":"кошмар","rank":1665,"pos":"noun","en_gloss":"nightmare","ja_gloss":"悪夢"}
+{"lemma":"побыть","rank":1667,"pos":"verb","en_gloss":"to stay for a while","ja_gloss":"しばらくいる"}
+{"lemma":"мяч","rank":1670,"pos":"noun","en_gloss":"ball","ja_gloss":"ボール"}
+{"lemma":"потрясающе","rank":1672,"pos":"adv","en_gloss":"amazingly","ja_gloss":"素晴らしく"}
+{"lemma":"полно","rank":1674,"pos":"adv","en_gloss":"plenty/full of","ja_gloss":"いっぱい"}
+{"lemma":"неправда","rank":1675,"pos":"noun","en_gloss":"untruth","ja_gloss":"嘘"}
+{"lemma":"драться","rank":1677,"pos":"verb","en_gloss":"to fight (physically)","ja_gloss":"喧嘩する"}
+{"lemma":"честной","rank":1678,"pos":"adj","en_gloss":"honest (archaic/folk register)","ja_gloss":"正直な(古風)"}
+{"lemma":"отменить","rank":1679,"pos":"verb","en_gloss":"to cancel","ja_gloss":"キャンセルする"}
+{"lemma":"секретный","rank":1685,"pos":"adj","en_gloss":"secret","ja_gloss":"秘密の"}
+{"lemma":"поработать","rank":1688,"pos":"verb","en_gloss":"to work for a while","ja_gloss":"少し働く"}
+{"lemma":"спрятать","rank":1692,"pos":"verb","en_gloss":"to hide (something)","ja_gloss":"隠す"}
+{"lemma":"пострадать","rank":1694,"pos":"verb","en_gloss":"to suffer/be injured","ja_gloss":"被害を受ける"}
+{"lemma":"штаны","rank":1695,"pos":"noun","en_gloss":"pants","ja_gloss":"ズボン"}
+{"lemma":"нервничать","rank":1699,"pos":"verb","en_gloss":"to be nervous","ja_gloss":"緊張する"}
+{"lemma":"присесть","rank":1700,"pos":"verb","en_gloss":"to sit down (briefly)","ja_gloss":"腰掛ける"}
+{"lemma":"притворяться","rank":1701,"pos":"verb","en_gloss":"to pretend","ja_gloss":"ふりをする"}
+{"lemma":"похитить","rank":1705,"pos":"verb","en_gloss":"to kidnap","ja_gloss":"誘拐する"}
+{"lemma":"великолепно","rank":1707,"pos":"adv","en_gloss":"magnificently","ja_gloss":"素晴らしく"}
+{"lemma":"безопасный","rank":1708,"pos":"adj","en_gloss":"safe","ja_gloss":"安全な"}
+{"lemma":"благодарный","rank":1709,"pos":"adj","en_gloss":"grateful","ja_gloss":"感謝している"}
+{"lemma":"по-прежнему","rank":1710,"pos":"adv","en_gloss":"still/as before","ja_gloss":"相変わらず"}
+{"lemma":"дождаться","rank":1712,"pos":"verb","en_gloss":"to wait until","ja_gloss":"待ち遂げる"}
+{"lemma":"вовремя","rank":1715,"pos":"adv","en_gloss":"on time","ja_gloss":"時間通りに"}
+{"lemma":"причинить","rank":1717,"pos":"verb","en_gloss":"to cause (harm)","ja_gloss":"引き起こす"}
+{"lemma":"застрять","rank":1720,"pos":"verb","en_gloss":"to get stuck","ja_gloss":"はまる"}
+{"lemma":"сериал","rank":1724,"pos":"noun","en_gloss":"TV series","ja_gloss":"連続ドラマ"}
+{"lemma":"ерунда","rank":1730,"pos":"noun","en_gloss":"nonsense","ja_gloss":"くだらないこと"}
+{"lemma":"тренер","rank":1733,"pos":"noun","en_gloss":"coach/trainer","ja_gloss":"コーチ"}
+{"lemma":"срочно","rank":1738,"pos":"adv","en_gloss":"urgently","ja_gloss":"至急"}
+{"lemma":"супер","rank":1740,"pos":"adj","en_gloss":"super/great","ja_gloss":"最高"}
+{"lemma":"дурацкий","rank":1744,"pos":"adj","en_gloss":"stupid/silly","ja_gloss":"ばかげた"}
+{"lemma":"чудесный","rank":1745,"pos":"adj","en_gloss":"wonderful","ja_gloss":"素敵な"}
+{"lemma":"наверх","rank":1748,"pos":"adv","en_gloss":"upstairs (direction)","ja_gloss":"上へ"}
+{"lemma":"дьявол","rank":1749,"pos":"noun","en_gloss":"devil","ja_gloss":"悪魔"}
+{"lemma":"куртка","rank":1750,"pos":"noun","en_gloss":"jacket","ja_gloss":"ジャケット"}
+{"lemma":"чушь","rank":1751,"pos":"noun","en_gloss":"nonsense","ja_gloss":"たわごと"}
+{"lemma":"расстаться","rank":1752,"pos":"verb","en_gloss":"to break up/part ways","ja_gloss":"別れる"}
+{"lemma":"красиво","rank":1753,"pos":"adv","en_gloss":"beautifully","ja_gloss":"美しく"}
+{"lemma":"полдень","rank":1765,"pos":"noun","en_gloss":"noon","ja_gloss":"正午"}
+{"lemma":"дважды","rank":1766,"pos":"adv","en_gloss":"twice","ja_gloss":"二度"}
+{"lemma":"дружище","rank":1768,"pos":"noun","en_gloss":"buddy/mate (address)","ja_gloss":"相棒"}
+{"lemma":"потрясать","rank":1769,"pos":"verb","en_gloss":"to shake/amaze","ja_gloss":"揺さぶる"}
+{"lemma":"пушка","rank":1771,"pos":"noun","en_gloss":"cannon/gun (slang)","ja_gloss":"大砲"}
+{"lemma":"монстр","rank":1773,"pos":"noun","en_gloss":"monster","ja_gloss":"怪物"}
+{"lemma":"трус","rank":1774,"pos":"noun","en_gloss":"coward","ja_gloss":"臆病者"}
+{"lemma":"болтать","rank":1775,"pos":"verb","en_gloss":"to chat/babble","ja_gloss":"おしゃべりする"}
+{"lemma":"сдаваться","rank":1777,"pos":"verb","en_gloss":"to give up","ja_gloss":"降参する"}
+{"lemma":"скучный","rank":1778,"pos":"adj","en_gloss":"boring","ja_gloss":"退屈な"}
+{"lemma":"миссия","rank":1781,"pos":"noun","en_gloss":"mission","ja_gloss":"任務"}
+{"lemma":"тарелка","rank":1782,"pos":"noun","en_gloss":"plate","ja_gloss":"皿"}
+{"lemma":"повсюду","rank":1785,"pos":"adv","en_gloss":"everywhere","ja_gloss":"至る所に"}
+{"lemma":"сдаться","rank":1786,"pos":"verb","en_gloss":"to surrender","ja_gloss":"降伏する"}
+{"lemma":"упустить","rank":1789,"pos":"verb","en_gloss":"to miss (an opportunity)","ja_gloss":"逃す"}
+{"lemma":"ловушка","rank":1793,"pos":"noun","en_gloss":"trap","ja_gloss":"罠"}
+{"lemma":"совпадение","rank":1794,"pos":"noun","en_gloss":"coincidence","ja_gloss":"偶然の一致"}
+{"lemma":"похороны","rank":1795,"pos":"noun","en_gloss":"funeral","ja_gloss":"葬式"}
+{"lemma":"ведьма","rank":1798,"pos":"noun","en_gloss":"witch","ja_gloss":"魔女"}
+{"lemma":"вампир","rank":1802,"pos":"noun","en_gloss":"vampire","ja_gloss":"吸血鬼"}
+{"lemma":"одеваться","rank":1805,"pos":"verb","en_gloss":"to get dressed","ja_gloss":"服を着る"}
+{"lemma":"повесить","rank":1808,"pos":"verb","en_gloss":"to hang (something)","ja_gloss":"掛ける"}
+{"lemma":"винить","rank":1817,"pos":"verb","en_gloss":"to blame","ja_gloss":"責める"}
+{"lemma":"завести","rank":1819,"pos":"verb","en_gloss":"to start (up)/acquire","ja_gloss":"始める"}
+{"lemma":"передумать","rank":1830,"pos":"verb","en_gloss":"to change one's mind","ja_gloss":"考え直す"}
+{"lemma":"магия","rank":1832,"pos":"noun","en_gloss":"magic","ja_gloss":"魔法"}
