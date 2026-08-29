@@ -189,12 +189,22 @@ export class ContentStore {
   }
 
   /** "会話頻出3000語マスター" figures (LINGO-013): distinct mastered lemmas
-   * (judged-known ∪ target words whose review stability ≥ threshold) across the
-   * whole deck (all bands = the 3000-word universe), plus the interpolated
+   * (judged-known ∪ target words whose review stability ≥ threshold) across
+   * bands 1-3 (the 3000-word universe), plus the interpolated
    * conversation-coverage % and level label. Delegates to the pure engine in
-   * mastery.ts. */
+   * mastery.ts.
+   *
+   * LINGO-020: band is capped at <=3 deliberately. band 4 (added by the RU
+   * rebaseline) is the "retired but retained" pool — old band1-3 lemmas that
+   * fell out of the top-3000 spoken-frequency cut but are kept in the Word
+   * table so a learner's existing ReviewState/wordKnowledge for them still
+   * resolves. They must NOT count toward the 3000-word mastery frame (that
+   * would silently inflate the target and dilute the coverage-% curve, which
+   * is calibrated to exactly a 3000-word scope). */
   masteryStats(stabilityThresholdDays: number = MASTERY_STABILITY_DAYS): MasteryStats {
-    const deckLemmas = new Set(this.deck.words.map((w) => w.lemma));
+    const deckLemmas = new Set(
+      this.deck.words.filter((w) => w.band <= 3).map((w) => w.lemma),
+    );
     return computeMasteryStats(
       this.deck.sentences,
       this.knowledge,
