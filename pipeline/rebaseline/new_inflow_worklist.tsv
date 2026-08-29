@@ -715,13 +715,11 @@ new_rank	lemma	new_band	in_trki	source
 2816	э-э	3	False	subtitle
 2817	терапия	3	False	subtitle
 2819	беспокойство	3	False	subtitle
-2820	езжать	3	False	subtitle
 2821	голосовать	3	False	subtitle
 2823	какой-либо	3	False	subtitle
 2824	парковка	3	False	subtitle
 2826	недалеко	3	False	subtitle
 2830	удобно	3	False	subtitle
-2832	дл	3	False	subtitle
 2833	иск	3	False	subtitle
 2838	фу	3	False	subtitle
 2840	фанат	3	False	subtitle
@@ -746,10 +744,8 @@ new_rank	lemma	new_band	in_trki	source
 2875	хорошенько	3	False	subtitle
 2881	стрелка	3	False	subtitle
 2882	завершить	3	False	subtitle
-2883	марь	3	False	subtitle
 2885	заказывать	3	False	subtitle
 2886	смелый	3	False	subtitle
-2888	чжина	3	False	subtitle
 2889	полгода	3	False	subtitle
 2890	опухоль	3	False	subtitle
 2892	сидение	3	False	subtitle
@@ -770,7 +766,6 @@ new_rank	lemma	new_band	in_trki	source
 2917	советник	3	False	subtitle
 2918	повести	3	False	subtitle
 2919	разойтись	3	False	subtitle
-2920	ти	3	False	subtitle
 2922	сломаться	3	False	subtitle
 2923	замешать	3	False	subtitle
 2924	хирург	3	False	subtitle
