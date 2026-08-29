@@ -610,3 +610,23 @@
 {"id": "T0997", "ru": "Я говорю серьёзно.", "en": "I'm speaking seriously.", "ja": "真面目に言ってる。", "lemmas": ["я", "говорить", "серьёзно"], "target_lemma": "серьёзно", "difficulty": 1, "kind": "sentence"}
 {"id": "T0998", "ru": "Ты говоришь правильно.", "en": "You're saying it correctly.", "ja": "その言い方で合ってるよ。", "lemmas": ["ты", "говорить", "правильно"], "target_lemma": "правильно", "difficulty": 1, "kind": "sentence"}
 {"id": "T1000", "ru": "Теперь всё ясно.", "en": "Now everything's clear.", "ja": "これで全部すっきりした。", "lemmas": ["теперь", "всё", "ясно"], "target_lemma": "ясно", "difficulty": 1, "kind": "sentence"}
+{"id":"T1001","ru":"Эй, ты здесь?","en":"Hey, are you here?","ja":"ねえ、いる?","lemmas":["эй","ты","здесь"],"target_lemma":"эй","difficulty":1,"kind":"sentence"}
+{"id":"T1002","ru":"Это из-за тебя.","en":"It's because of you.","ja":"それは君のせいだ。","lemmas":["это","из-за","ты"],"target_lemma":"из-за","difficulty":1,"kind":"sentence"}
+{"id":"T1003","ru":"Хочешь что-нибудь?","en":"Do you want something?","ja":"何か欲しい?","lemmas":["хотеть","что-нибудь"],"target_lemma":"что-нибудь","difficulty":1,"kind":"sentence"}
+{"id":"T1004","ru":"Тем лучше.","en":"All the better.","ja":"それならなおさら良い。","lemmas":["тем","хороший"],"target_lemma":"тем","difficulty":1,"kind":"sentence"}
+{"id":"T1005","ru":"Что ж, ладно.","en":"Well then, okay.","ja":"まあ、いいよ。","lemmas":["что","ж","ладно"],"target_lemma":"ж","difficulty":1,"kind":"sentence"}
+{"id":"T1006","ru":"У меня есть кое-что.","en":"I have something.","ja":"何かあるんだ。","lemmas":["у","я","быть","кое-что"],"target_lemma":"кое-что","difficulty":1,"kind":"sentence"}
+{"id":"T1007","ru":"Кто-нибудь дома?","en":"Is anyone home?","ja":"誰か家にいる?","lemmas":["кто-нибудь","дома"],"target_lemma":"кто-нибудь","difficulty":1,"kind":"sentence"}
+{"id":"T1008","ru":"Я хочу тебя уверить.","en":"I want to assure you.","ja":"君に確約したい。","lemmas":["я","хотеть","ты","уверить"],"target_lemma":"уверить","difficulty":1,"kind":"sentence"}
+{"id":"T1009","ru":"Мне всё равно.","en":"I don't care.","ja":"どうでもいい。","lemmas":["я","всё","равно"],"target_lemma":"равно","difficulty":1,"kind":"sentence"}
+{"id":"T1010","ru":"Простите, мисс.","en":"Excuse me, miss.","ja":"すみません、お嬢さん。","lemmas":["простить","мисс"],"target_lemma":"мисс","difficulty":1,"kind":"sentence"}
+{"id":"T1011","ru":"Всё нормально.","en":"Everything's fine.","ja":"大丈夫だよ。","lemmas":["всё","нормально"],"target_lemma":"нормально","difficulty":1,"kind":"sentence"}
+{"id":"T1012","ru":"Не волнуйся за меня.","en":"Don't worry about me.","ja":"心配しないで。","lemmas":["не","волноваться","я"],"target_lemma":"волноваться","difficulty":1,"kind":"sentence"}
+{"id":"T1013","ru":"Здравствуйте, миссис.","en":"Hello, ma'am.","ja":"こんにちは、奥様。","lemmas":["здравствуйте","миссис"],"target_lemma":"миссис","difficulty":1,"kind":"sentence"}
+{"id":"T1014","ru":"У меня свидание.","en":"I have a date.","ja":"デートがあるんだ。","lemmas":["у","я","свидание"],"target_lemma":"свидание","difficulty":1,"kind":"sentence"}
+{"id":"T1015","ru":"Это здорово!","en":"That's great!","ja":"それはすごい!","lemmas":["это","здорово"],"target_lemma":"здорово","difficulty":1,"kind":"sentence"}
+{"id":"T1016","ru":"Привет, чувак!","en":"Hey, dude!","ja":"よお、兄弟!","lemmas":["привет","чувак"],"target_lemma":"чувак","difficulty":1,"kind":"sentence"}
+{"id":"T1017","ru":"Увидимся вечером.","en":"See you in the evening.","ja":"夕方に会おう。","lemmas":["увидеться","вечером"],"target_lemma":"вечером","difficulty":1,"kind":"sentence"}
+{"id":"T1018","ru":"Вообще-то, я не знаю.","en":"Actually, I don't know.","ja":"実は、知らないんだ。","lemmas":["вообще-то","я","не","знать"],"target_lemma":"вообще-то","difficulty":1,"kind":"sentence"}
+{"id":"T1019","ru":"Мы должны увидеться.","en":"We should see each other.","ja":"また会うべきだね。","lemmas":["мы","должен","увидеться"],"target_lemma":"увидеться","difficulty":1,"kind":"sentence"}
+{"id":"T1020","ru":"Он работает ночью.","en":"He works at night.","ja":"彼は夜に働く。","lemmas":["он","работать","ночью"],"target_lemma":"ночью","difficulty":1,"kind":"sentence"}
