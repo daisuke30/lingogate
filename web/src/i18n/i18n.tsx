@@ -195,6 +195,72 @@ const M: Record<string, Entry> = {
     en: "This erases all learning state (FSRS, history, settings). Continue?",
     ru: "Будет удалён весь прогресс (FSRS, история, настройки). Продолжить?",
   },
+
+  // -- backup export/import (LINGO-021) --------------------------------------
+  "settings.backup.export.label": {
+    ja: "学習データをエクスポート",
+    en: "Export learning data",
+    ru: "Экспортировать данные обучения",
+  },
+  "settings.backup.export.sub": {
+    ja: "全コースの進捗と設定をJSONファイルでダウンロードします",
+    en: "Downloads every course's progress and settings as a JSON file.",
+    ru: "Скачает прогресс по всем курсам и настройки в файл JSON.",
+  },
+  "settings.backup.export.btn": { ja: "エクスポート", en: "Export", ru: "Экспорт" },
+  "settings.backup.import.label": {
+    ja: "学習データをインポート",
+    en: "Import learning data",
+    ru: "Импортировать данные обучения",
+  },
+  "settings.backup.import.sub": {
+    ja: "エクスポートしたJSONファイルから復元します",
+    en: "Restores from a previously exported JSON file.",
+    ru: "Восстановит данные из ранее экспортированного файла JSON.",
+  },
+  "settings.backup.import.btn": { ja: "ファイルを選択", en: "Choose file", ru: "Выбрать файл" },
+  "settings.backup.import.importing": { ja: "復元中…", en: "Restoring…", ru: "Восстановление…" },
+  "settings.backup.import.replaceAll": {
+    ja: "すべて置き換える（既存データを削除して復元）",
+    en: "Replace everything (deletes existing data before restoring)",
+    ru: "Заменить всё (удалит текущие данные перед восстановлением)",
+  },
+  "settings.backup.import.confirmReplace": {
+    ja: "既存の学習データがすべて削除され、選択したファイルの内容に置き換わります。よろしいですか？",
+    en: "This deletes all existing learning data and replaces it with the selected file's contents. Continue?",
+    ru: "Все текущие данные обучения будут удалены и заменены содержимым выбранного файла. Продолжить?",
+  },
+  "settings.backup.import.success": {
+    ja: "復元が完了しました。再読み込みします…",
+    en: "Restore complete. Reloading…",
+    ru: "Восстановление завершено. Перезагрузка…",
+  },
+  "settings.backup.import.error.invalid": {
+    ja: "ファイルの形式が正しくありません",
+    en: "This file's format isn't valid.",
+    ru: "Неверный формат файла.",
+  },
+  "settings.backup.import.error.unsupportedVersion": {
+    ja: "このファイルは新しいバージョンのアプリ用です。アプリを更新してから再度お試しください",
+    en: "This file was made by a newer app version. Please update the app and try again.",
+    ru: "Файл создан более новой версией приложения. Обновите приложение и попробуйте снова.",
+  },
+
+  // -- storage protection status (LINGO-021, shown small at the bottom) -----
+  "settings.storage.protected": { ja: "保護済み", en: "Protected", ru: "Защищено" },
+  "settings.storage.unprotected": { ja: "未保護", en: "Not protected", ru: "Не защищено" },
+  "settings.storage.unknown": { ja: "状態不明", en: "Status unknown", ru: "Статус неизвестен" },
+  "settings.storage.usage": {
+    ja: "ストレージ: {used} / {quota}",
+    en: "Storage: {used} / {quota}",
+    ru: "Хранилище: {used} / {quota}",
+  },
+  "settings.storage.usageOnly": {
+    ja: "ストレージ: {used}",
+    en: "Storage: {used}",
+    ru: "Хранилище: {used}",
+  },
+
   "settings.shieldNote": {
     ja: "シールド（対象アプリの強制遮断）はiOSネイティブ専用機能のためWeb版にはありません。Web版はオートメーション方式（弱い強制力）で、クイズ×FSRSの反復UX検証に集中します。",
     en: "Shielding (hard-blocking a target app) is an iOS-native-only feature and isn't in the web build. The web build uses the automation approach (soft enforcement), focusing on validating the quiz × FSRS repetition UX.",

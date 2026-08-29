@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   UNLOCK_CHOICES,
   TTS_RATE_CHOICES,
@@ -23,6 +23,9 @@ import { resetAll } from "../db/idb";
 // tell which deploy his device is actually running — see scripts/gen-version.mjs.
 import versionInfo from "../content/version.generated.json";
 import { checkForUpdate, hasPendingUpdate } from "../state/appUpdate";
+import { downloadBackupFile, exportBackup, importBackupText } from "../state/backup";
+import type { ImportOutcome } from "../state/backup";
+import { currentStoragePersisted, formatBytes, storageEstimate } from "../state/persistence";
 import { NATIVE_LANG_NAME, UI_LANGS, langName, useI18n } from "../i18n/i18n";
 
 function formatBuiltAt(iso: string): string {
@@ -50,6 +53,15 @@ export function SettingsView({
   // LINGO-014 language axes.
   const [courseId, setCourseId] = useState("ru");
   const [frontLang, setFrontLangState] = useState<Lang>("en");
+  // LINGO-021: storage protection + usage (display only — the actual
+  // persist() request already happened once at boot, in main.tsx).
+  const [persisted, setPersisted] = useState<boolean | null>(null);
+  const [usageBytes, setUsageBytes] = useState<number | null>(null);
+  const [quotaBytes, setQuotaBytes] = useState<number | null>(null);
+  const [replaceAll, setReplaceAll] = useState(false);
+  const [importing, setImporting] = useState(false);
+  const [importStatus, setImportStatus] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const course = resolveCourse(courseId);
   const targetLang = course.targetLang;
@@ -68,6 +80,11 @@ export function SettingsView({
     const unsub = subscribeVoices(() =>
       getActiveCourse().then((c) => setHasVoice(voiceAvailable(resolveCourse(c).targetLang))),
     );
+    currentStoragePersisted().then(setPersisted);
+    storageEstimate().then((e) => {
+      setUsageBytes(e.usageBytes);
+      setQuotaBytes(e.quotaBytes);
+    });
     return unsub;
   }, []);
 
@@ -104,6 +121,44 @@ export function SettingsView({
     if (!confirm(t("settings.data.resetConfirm"))) return;
     await resetAll();
     location.reload();
+  }
+
+  // LINGO-021: export -----------------------------------------------------
+  async function handleExport() {
+    const file = await exportBackup();
+    downloadBackupFile(file);
+  }
+
+  // LINGO-021: import -----------------------------------------------------
+  function importErrorKey(error: ImportOutcome["error"]): string {
+    if (error === "unsupported-schema-version") return "settings.backup.import.error.unsupportedVersion";
+    return "settings.backup.import.error.invalid"; // invalid-json / missing-schema-version / unknown
+  }
+
+  async function handleImportFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    e.target.value = ""; // allow re-selecting the same filename later
+    if (!file) return;
+    if (replaceAll && !confirm(t("settings.backup.import.confirmReplace"))) return;
+
+    setImporting(true);
+    setImportStatus(null);
+    try {
+      const text = await file.text();
+      const result = await importBackupText(text, replaceAll);
+      if (result.ok) {
+        setImportStatus(t("settings.backup.import.success"));
+        // Brief confirmation flash before the reload every import needs
+        // (fresh course packs / progress caches all read at boot).
+        setTimeout(() => location.reload(), 800);
+      } else {
+        setImportStatus(t(importErrorKey(result.error)));
+      }
+    } catch {
+      setImportStatus(t("settings.backup.import.error.invalid"));
+    } finally {
+      setImporting(false);
+    }
   }
 
   async function updateNow() {
@@ -301,6 +356,41 @@ export function SettingsView({
       <div className="list">
         <div className="row">
           <div>
+            <div className="label">{t("settings.backup.export.label")}</div>
+            <div className="sub">{t("settings.backup.export.sub")}</div>
+          </div>
+          <button className="btn" onClick={() => void handleExport()}>
+            {t("settings.backup.export.btn")}
+          </button>
+        </div>
+        <div className="row">
+          <div>
+            <div className="label">{t("settings.backup.import.label")}</div>
+            <div className="sub">{t("settings.backup.import.sub")}</div>
+          </div>
+          <button className="btn" onClick={() => fileInputRef.current?.click()} disabled={importing}>
+            {importing ? t("settings.backup.import.importing") : t("settings.backup.import.btn")}
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="application/json,.json"
+            style={{ display: "none" }}
+            onChange={(e) => void handleImportFile(e)}
+          />
+        </div>
+        <div className="row">
+          <label style={{ display: "flex", alignItems: "center", gap: 10, width: "100%", cursor: "pointer" }}>
+            <input
+              type="checkbox"
+              checked={replaceAll}
+              onChange={(e) => setReplaceAll(e.target.checked)}
+            />
+            <span className="label">{t("settings.backup.import.replaceAll")}</span>
+          </label>
+        </div>
+        <div className="row">
+          <div>
             <div className="label">{t("settings.data.resetLabel")}</div>
             <div className="sub">{t("settings.data.resetSub")}</div>
           </div>
@@ -309,6 +399,11 @@ export function SettingsView({
           </button>
         </div>
       </div>
+      {importStatus && (
+        <p className="muted" style={{ marginTop: 10 }}>
+          {importStatus}
+        </p>
+      )}
 
       <p className="muted" style={{ marginTop: 20 }}>
         {t("settings.shieldNote")}
@@ -341,6 +436,23 @@ export function SettingsView({
       <p className="muted" style={{ marginTop: 20, textAlign: "center", opacity: 0.6 }}>
         {t("settings.build", { v: versionInfo.version })}
         {versionInfo.builtAt ? `（${formatBuiltAt(versionInfo.builtAt)}）` : ""}
+      </p>
+      {/* LINGO-021: storage protection status + usage estimate — small, at
+          the very bottom, purely informational (the actual persist() request
+          already happened once at boot in main.tsx; this only displays the
+          resulting status). */}
+      <p className="muted" style={{ marginTop: 4, textAlign: "center", opacity: 0.6 }}>
+        {persisted === true
+          ? t("settings.storage.protected")
+          : persisted === false
+            ? t("settings.storage.unprotected")
+            : t("settings.storage.unknown")}
+        {(() => {
+          const used = formatBytes(usageBytes);
+          const quota = formatBytes(quotaBytes);
+          if (!used) return null;
+          return " · " + (quota ? t("settings.storage.usage", { used, quota }) : t("settings.storage.usageOnly", { used }));
+        })()}
       </p>
     </div>
   );

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { App } from "./ui/App";
 import { I18nProvider } from "./i18n/i18n";
 import { registerServiceWorkerAutoUpdate } from "./state/appUpdate";
+import { requestStoragePersistence } from "./state/persistence";
 import "./ui/styles.css";
 
 // React must get on screen no matter what — this is the only thing in this
@@ -26,6 +27,17 @@ try {
 } catch (err) {
   console.error("lingogate: failed to render app", err);
 }
+
+// LINGO-021: ask the browser to exempt this origin's storage from automatic
+// eviction (Safari especially — "clear website data" / storage pressure can
+// otherwise silently wipe all learning progress). Fire-and-forget, after the
+// render above so it can never delay first paint; requestStoragePersistence()
+// itself never throws (unsupported/denied both resolve to a status), and the
+// .catch() here is a second line of defense in case anything still escapes.
+// Settings displays the resulting status — this call doesn't need to.
+void requestStoragePersistence().catch((err) => {
+  console.error("lingogate: storage persistence request failed", err);
+});
 
 // Service worker registration/update-check is production-only (in dev it
 // would cache stale modules and fight Vite's HMR), deliberately wired up
