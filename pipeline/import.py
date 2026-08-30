@@ -78,8 +78,7 @@ def ensure_migrations(conn):
     if "target_lemma" not in have:
         conn.execute("ALTER TABLE Sentence ADD COLUMN target_lemma TEXT")
     # LINGO-012: verb aspect + its aspectual partner, for the card-back
-    # word-breakdown feature. NULL for non-verbs and for verbs with no true
-    # telic partner.
+    # word-breakdown feature. NULL for non-verbs.
     have_word = {row[1] for row in conn.execute("PRAGMA table_info(Word)")}
     if "aspect" not in have_word:
         conn.execute("ALTER TABLE Word ADD COLUMN aspect TEXT")
@@ -88,6 +87,12 @@ def ensure_migrations(conn):
     # LINGO-022: noun grammatical gender for the card-back word-breakdown.
     if "gender" not in have_word:
         conn.execute("ALTER TABLE Word ADD COLUMN gender TEXT")
+    # LINGO-025: pair_kind ('pair'|'related'|'none') + pair_note — every verb
+    # must show SOME aspect info on the card back, never a bare "no pair".
+    if "pair_kind" not in have_word:
+        conn.execute("ALTER TABLE Word ADD COLUMN pair_kind TEXT")
+    if "pair_note" not in have_word:
+        conn.execute("ALTER TABLE Word ADD COLUMN pair_note TEXT")
 
 
 def upsert_deck(conn):
@@ -113,9 +118,16 @@ def word_paths(data_dir):
 
 
 def word_aspect_paths(data_dir):
-    """data/words_band<N>_aspects.jsonl — LINGO-012 verb aspect sidecar files."""
-    paths = glob.glob(os.path.join(data_dir, "words_band*_aspects.jsonl"))
-    return sorted(p for p in paths if re.match(r"^words_band\d+_aspects\.jsonl$", os.path.basename(p)))
+    """LINGO-025: data/words_aspects.jsonl — the consolidated, all-band verb
+    aspect sidecar (replaces LINGO-012's per-band words_band1_aspects.jsonl,
+    which only ever covered band1). Also still picks up any stray legacy
+    words_band<N>_aspects.jsonl for backward compatibility during migration."""
+    paths = glob.glob(os.path.join(data_dir, "words_aspects.jsonl"))
+    paths += glob.glob(os.path.join(data_dir, "words_band*_aspects.jsonl"))
+    return sorted(
+        p for p in paths
+        if re.match(r"^words_aspects\.jsonl$|^words_band\d+_aspects\.jsonl$", os.path.basename(p))
+    )
 
 
 def import_words(conn, deck_id, data_dir):
@@ -144,10 +156,11 @@ def import_words(conn, deck_id, data_dir):
 
 
 def import_word_aspects(conn, deck_id, data_dir):
-    """Apply data/words_band<N>_aspects.jsonl (LINGO-012) on top of Word rows
-    already inserted by import_words. UPDATE-only: a lemma not present in Word
-    (e.g. typo, or word pruned) is reported back as unmatched, not inserted.
-    Idempotent — same file re-applied yields identical column values.
+    """Apply data/words_aspects.jsonl (LINGO-012, extended to all bands by
+    LINGO-025) on top of Word rows already inserted by import_words.
+    UPDATE-only: a lemma not present in Word (e.g. typo, or word pruned) is
+    reported back as unmatched, not inserted. Idempotent — same file
+    re-applied yields identical column values.
     """
     paths = word_aspect_paths(data_dir)
     n = 0
@@ -156,8 +169,10 @@ def import_word_aspects(conn, deck_id, data_dir):
         for lineno, a in load_jsonl(path):
             lemma = a["lemma"].strip()
             cur = conn.execute(
-                "UPDATE Word SET aspect=?, aspect_pair=? WHERE deck_id=? AND lemma=?",
-                (a.get("aspect"), a.get("aspect_pair"), deck_id, lemma),
+                """UPDATE Word SET aspect=?, aspect_pair=?, pair_kind=?, pair_note=?
+                   WHERE deck_id=? AND lemma=?""",
+                (a.get("aspect"), a.get("aspect_pair"), a.get("pair_kind"),
+                 a.get("pair_note"), deck_id, lemma),
             )
             if cur.rowcount == 0:
                 unmatched.append(lemma)

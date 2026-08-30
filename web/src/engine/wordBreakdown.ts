@@ -43,36 +43,91 @@ export function posLabel(pos: string): string {
 export interface AspectLabels {
   pf: string;
   impf: string;
+  /** LINGO-025: genuinely biaspectual verb label (両体動詞). */
+  both: string;
   /** Word for "counterpart / pair" (e.g. 対 / pair / пара). */
   pair: string;
+  /** LINGO-025: word for a non-strict related verb (e.g. 関連 / related /
+   * связано) — used both for pairKind="related" (⇔ arrow) and for
+   * pairKind="none" rows that still surface a related word for reference. */
+  related: string;
+  /** LINGO-025: "no pair" (対なし). */
+  noPair: string;
+  /** LINGO-025: "always" (常に), composed with pf/impf for the noPair line
+   * ("対なし・常に不完了体"). */
+  always: string;
 }
 
 const DEFAULT_ASPECT_LABELS: AspectLabels = {
   pf: "完了体",
   impf: "不完了体",
+  both: "両体動詞",
   pair: "対",
+  related: "関連",
+  noPair: "対なし",
+  always: "常に",
 };
 
 /**
- * Human-readable aspect line for a verb entry, with BOTH the head word and its
- * pair explicitly labelled so it is never ambiguous which verb each aspect
- * names (Katsuta feedback 2026-08-27: the old "不完了体 ⇔ 対: сделать" left the
- * bare label floating — a reader could not tell whether it described the head
- * word or its pair). The pair's aspect is derived as the opposite of the head's
- * (an aspect pair is by definition one pf + one impf), so we never need to
- * store it. e.g. "делать（不完了体） ⇔ 対: сделать（完了体）". A verb with no
- * pair shows just its own labelled form ("быть（不完了体）"). Returns null for
- * non-verbs / aspectless entries.
+ * Human-readable aspect line for a verb entry. Every verb with a non-null
+ * `aspect` always renders SOMETHING (Katsuta 2026-08-30: a bare "対なし" with
+ * no further information is not acceptable — every verb must show its aspect
+ * situation, never silently omit it). Three pairKind shapes (LINGO-025):
+ *
+ *   "pair"    — a standard textbook aspectual pair, both directions labelled
+ *               (Katsuta feedback 2026-08-27: never leave the pair's own
+ *               aspect unlabelled). e.g. "делать（不完了体） ⇔ 対: сделать
+ *               （完了体）".
+ *   "related" — a genuinely related but not strictly-paired verb (shifted
+ *               meaning, e.g. знать→узнать, or a multidirectional/
+ *               unidirectional motion counterpart). Same "⇔" shape as pair
+ *               (its aspect really is the opposite — see LINGO-025 audit) but
+ *               labelled 関連 instead of 対, plus the nuance note. e.g.
+ *               "знать（不完了体） ⇔ 関連: узнать（完了体）。узнать=知るよう
+ *               になる（意味がずれた派生語）".
+ *   "none"    — no aspectual partner exists at all. Always states the head's
+ *               own (fixed) aspect explicitly ("対なし・常に不完了体") rather
+ *               than a bare "no pair", and — when a merely-related word is
+ *               worth mentioning (e.g. лежать's delimitative полежать) —
+ *               appends it as a non-committal "関連:" mention, never a "⇔"
+ *               (that arrow is reserved for pairKind pair/related, where the
+ *               shown word really is aspectually opposite). e.g. "лежать
+ *               （対なし・常に不完了体）。関連: полежать（しばらく横になる）".
+ *
+ * aspect="both" (genuinely biaspectual, e.g. организовать) shows its own
+ * label with no pair machinery at all. Returns null only for non-verbs
+ * (aspect null).
  */
 export function formatAspectLine(
-  entry: Pick<WordBreakdownEntry, "lemma" | "aspect" | "aspectPair">,
+  entry: Pick<WordBreakdownEntry, "lemma" | "aspect" | "aspectPair" | "pairKind" | "pairNote">,
   labels: AspectLabels = DEFAULT_ASPECT_LABELS,
 ): string | null {
   if (!entry.aspect) return null;
+
+  if (entry.aspect === "both") {
+    const base = `${entry.lemma}（${labels.both}）`;
+    return entry.pairNote ? `${base}。${entry.pairNote}` : base;
+  }
+
   const own = `${entry.lemma}（${labels[entry.aspect]}）`;
-  if (!entry.aspectPair) return own;
   const oppAspect = entry.aspect === "impf" ? "pf" : "impf";
-  return `${own} ⇔ ${labels.pair}: ${entry.aspectPair}（${labels[oppAspect]}）`;
+
+  if (entry.pairKind === "pair" && entry.aspectPair) {
+    const base = `${own} ⇔ ${labels.pair}: ${entry.aspectPair}（${labels[oppAspect]}）`;
+    return entry.pairNote ? `${base}。${entry.pairNote}` : base;
+  }
+  if (entry.pairKind === "related" && entry.aspectPair) {
+    const base = `${own} ⇔ ${labels.related}: ${entry.aspectPair}（${labels[oppAspect]}）`;
+    return entry.pairNote ? `${base}。${entry.pairNote}` : base;
+  }
+  // pairKind "none" (also the fallback for any legacy/unmigrated row that has
+  // an aspect but no pairKind — never silently drop to a bare aspect-only line).
+  const base = `${entry.lemma}（${labels.noPair}・${labels.always}${labels[entry.aspect]}）`;
+  if (entry.aspectPair) {
+    const noted = entry.pairNote ? `${entry.aspectPair}（${entry.pairNote}）` : entry.aspectPair;
+    return `${base}。${labels.related}: ${noted}`;
+  }
+  return entry.pairNote ? `${base}。${entry.pairNote}` : base;
 }
 
 /** Labels for the five noun-gender codes (LINGO-022). UI-language driven,
@@ -112,8 +167,12 @@ export interface WordBreakdownEntry {
   lemma: string;
   pos: string;
   posLabel: string;
-  aspect: "pf" | "impf" | null;
+  aspect: "pf" | "impf" | "both" | null;
   aspectPair: string | null;
+  /** LINGO-025: see formatAspectLine doc comment. Null for non-verbs. */
+  pairKind: "pair" | "related" | "none" | null;
+  /** LINGO-025: short ja nuance note for pairKind related/none. Null for non-verbs. */
+  pairNote: string | null;
   /** Noun grammatical gender (LINGO-022); null for non-nouns. */
   gender: "m" | "f" | "n" | "pl" | "mf" | null;
   enGloss: string | null;
@@ -144,6 +203,8 @@ export function buildWordBreakdown(
       posLabel: posLabel(w.pos),
       aspect: w.aspect ?? null,
       aspectPair: w.aspectPair ?? null,
+      pairKind: w.pairKind ?? null,
+      pairNote: w.pairNote ?? null,
       gender: w.gender ?? null,
       enGloss: w.enGloss ?? null,
       jaGloss: w.jaGloss ?? null,

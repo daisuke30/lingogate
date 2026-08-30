@@ -137,15 +137,21 @@ function wordPaths(dataDir) {
     .sort();
 }
 
-// LINGO-012: <dataDir>/words_band<N>_aspects.jsonl — verb aspect + aspect_pair
-// sidecar, applied on top of the base word list (mirrors import.py's
+// LINGO-012/LINGO-025: <dataDir>/words_aspects.jsonl — the consolidated,
+// all-band verb aspect + aspect_pair + pair_kind + pair_note sidecar
+// (LINGO-025 extended LINGO-012's band1-only words_band1_aspects.jsonl to
+// cover band1-4), applied on top of the base word list (mirrors import.py's
 // import_word_aspects UPDATE-only semantics: a lemma with no matching Word is
 // silently ignored here since buildDeck has no separate "unmatched" report
-// for this file — import.py is the source of truth for that warning). RU
-// only today; the glob naturally finds nothing under the EN course's dataDir.
+// for this file — import.py is the source of truth for that warning). Also
+// still picks up any stray legacy words_band<N>_aspects.jsonl. RU only
+// today; the glob naturally finds nothing under the EN course's dataDir.
 function wordAspectPaths(dataDir) {
-  return globSync(join(dataDir, "words_band*_aspects.jsonl"))
-    .filter((p) => /^words_band\d+_aspects\.jsonl$/.test(basename(p)))
+  return [
+    ...globSync(join(dataDir, "words_aspects.jsonl")),
+    ...globSync(join(dataDir, "words_band*_aspects.jsonl")),
+  ]
+    .filter((p) => /^words_aspects\.jsonl$|^words_band\d+_aspects\.jsonl$/.test(basename(p)))
     .sort();
 }
 
@@ -184,11 +190,14 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
           // LINGO-022: noun grammatical gender ('m'|'f'|'n'|'pl'|'mf'), null
           // for non-nouns and any course that doesn't carry it.
           gender: w.gender ?? null,
-          // LINGO-012: filled in below from the words_band*_aspects.jsonl
-          // sidecar; null for non-verbs and verbs with no true telic partner,
-          // and for courses (EN) that don't carry a grammar sidecar at all.
+          // LINGO-012/025: filled in below from the words_aspects.jsonl
+          // sidecar; null for non-verbs and for courses (EN) that don't
+          // carry a grammar sidecar at all.
           aspect: null,
           aspectPair: null,
+          // LINGO-025: 'pair' | 'related' | 'none' | null — see wordBreakdown.ts.
+          pairKind: null,
+          pairNote: null,
         });
       } else {
         const existing = words.find((x) => x.id === id);
@@ -203,7 +212,8 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
     }
   }
 
-  // LINGO-012: apply verb aspect + aspect_pair on top of the base word list.
+  // LINGO-012/025: apply verb aspect + aspect_pair + pair_kind + pair_note
+  // on top of the base word list.
   for (const path of wordAspectPaths(dataDir)) {
     for (const [, a] of loadJsonl(path)) {
       const lemma = String(a.lemma).trim();
@@ -212,6 +222,8 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
       const existing = words.find((x) => x.id === id);
       existing.aspect = a.aspect ?? null;
       existing.aspectPair = a.aspect_pair ?? null;
+      existing.pairKind = a.pair_kind ?? null;
+      existing.pairNote = a.pair_note ?? null;
     }
   }
 

@@ -52,10 +52,24 @@ export interface DeckWord {
   jaGloss?: string | null;
   ruGloss?: string | null;
   /** Verb aspect (LINGO-012): "pf" (perfective) | "impf" (imperfective) |
-   * null for non-verbs and verbs with no true telic partner. */
-  aspect?: "pf" | "impf" | null;
-  /** The paired verb's lemma (opposite aspect), if one exists. */
+   * "both" (LINGO-025: genuinely biaspectual, same infinitive serves as
+   * both) | null for non-verbs. */
+  aspect?: "pf" | "impf" | "both" | null;
+  /** The paired/related verb's lemma, if one exists (LINGO-025: see pairKind
+   * for what kind of relation this is — not always a strict aspect pair). */
   aspectPair?: string | null;
+  /** LINGO-025: classifies aspectPair — "pair" = standard textbook aspectual
+   * partner; "related" = a genuinely related but not strictly-paired verb
+   * (delimitative/inchoative derivative, or the unidirectional partner of a
+   * multidirectional motion verb); "none" = no related verb shown. Every
+   * verb gets one of these three (never bare-null) so the card back always
+   * explains its aspect situation instead of silently omitting it. Null for
+   * non-verbs. */
+  pairKind?: "pair" | "related" | "none" | null;
+  /** Short ja explanation shown for pairKind "related"/"none" (why it isn't
+   * a strict pair, or what the shown related verb means). Null for "pair"
+   * (self-evident) and for non-verbs. */
+  pairNote?: string | null;
   /** Noun grammatical gender (LINGO-022): "m"|"f"|"n" singular genders,
    * "pl" pluralia tantum, "mf" common gender; null for non-nouns. */
   gender?: "m" | "f" | "n" | "pl" | "mf" | null;

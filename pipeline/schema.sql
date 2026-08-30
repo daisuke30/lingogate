@@ -33,12 +33,18 @@ CREATE TABLE IF NOT EXISTS Word (
     pos       TEXT NOT NULL,                -- part of speech (see README for tagset)
     en_gloss  TEXT,
     ja_gloss  TEXT,
-    -- LINGO-012 (card-back word breakdown). Verb aspect; NULL for non-verbs and
-    -- for verbs without a true telic partner (быть, мочь, ...). aspect_pair is
-    -- free text (the paired lemma need not itself be a Word row). Also added
-    -- via idempotent ALTER in import.py:ensure_migrations.
-    aspect      TEXT,                       -- 'pf' | 'impf' | NULL
-    aspect_pair TEXT,                       -- paired verb's lemma, or NULL
+    -- LINGO-012 (card-back word breakdown). Verb aspect; NULL for non-verbs.
+    -- aspect_pair is free text (the paired lemma need not itself be a Word
+    -- row). Also added via idempotent ALTER in import.py:ensure_migrations.
+    aspect      TEXT,                       -- 'pf' | 'impf' | 'both' | NULL
+    aspect_pair TEXT,                       -- paired/related verb's lemma, or NULL
+    -- LINGO-025: every verb must show SOME aspect information on the card
+    -- back (no bare "対なし" with nothing else) — pair_kind classifies what
+    -- aspect_pair actually is, and pair_note carries the ja explanation for
+    -- 'related'/'none' (why it isn't a strict textbook pair, or what the
+    -- shown related verb means). NULL for non-verbs.
+    pair_kind   TEXT,                       -- 'pair' | 'related' | 'none' | NULL
+    pair_note   TEXT,                       -- short ja explanation, or NULL
     -- LINGO-022 (card-back word breakdown). Grammatical gender for nouns:
     -- 'm'|'f'|'n' singular genders, 'pl' pluralia tantum (деньги/ножницы),
     -- 'mf' common gender (коллега/судья). NULL for non-nouns. Also added via

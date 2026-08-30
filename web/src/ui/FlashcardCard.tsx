@@ -296,7 +296,15 @@ function WordBreakdownList({
   // Structural labels (part of speech, verb aspect) follow the UI language, not
   // the front language: for the existing RU user (UI=ja, front=en) they stay
   // Japanese, so nothing regresses; other UI languages get their own.
-  const aspectLabels = { pf: t("aspect.pf"), impf: t("aspect.impf"), pair: t("aspect.pairOf") };
+  const aspectLabels = {
+    pf: t("aspect.pf"),
+    impf: t("aspect.impf"),
+    both: t("aspect.both"),
+    pair: t("aspect.pairOf"),
+    related: t("aspect.related"),
+    noPair: t("aspect.noPair"),
+    always: t("aspect.always"),
+  };
   const genderLabels = {
     m: t("gender.m"),
     f: t("gender.f"),

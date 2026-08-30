@@ -349,6 +349,12 @@ const M: Record<string, Entry> = {
   "aspect.pf": { ja: "完了体", en: "perfective", ru: "сов. вид" },
   "aspect.impf": { ja: "不完了体", en: "imperfective", ru: "несов. вид" },
   "aspect.pairOf": { ja: "対", en: "pair", ru: "пара" },
+  // LINGO-025: every verb shows aspect info; these cover the "not a strict
+  // pair" cases so a bare "no pair" never appears on the card back.
+  "aspect.both": { ja: "両体動詞", en: "biaspectual", ru: "двувидовой" },
+  "aspect.related": { ja: "関連", en: "related", ru: "связано" },
+  "aspect.noPair": { ja: "対なし", en: "no pair", ru: "нет пары" },
+  "aspect.always": { ja: "常に", en: "always ", ru: "всегда " },
 
   // -- noun gender (card-back breakdown; follows UI language) LINGO-022 -----
   "gender.m": { ja: "男性名詞", en: "masculine noun", ru: "муж. род" },

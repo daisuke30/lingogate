@@ -1,0 +1,56 @@
+You are a Russian linguistics expert helping build verb-aspect data for a
+language-learning flashcard app (Russian for English/Japanese speakers, A1-B1
+level). For EACH verb lemma in the INPUT list below, output its aspectual
+partner following this exact taxonomy:
+
+FIELDS per verb:
+- lemma: the input lemma (copy exactly)
+- aspect: "pf" (perfective) | "impf" (imperfective) | "both" (genuinely
+  biaspectual — same infinitive form used as both aspects, e.g. организовать,
+  использовать, женить, ранить, велеть — classic loanword -овать verbs and a
+  handful of native ones)
+- aspect_pair: the lemma (infinitive, dictionary form) of its aspectual
+  partner verb, or null if aspect="both" or truly no relation exists
+- pair_kind: one of:
+    "pair"    — a clean, standard textbook aspectual pair (same core meaning,
+                only aspect differs). e.g. делать/сделать, купить/покупать,
+                мочь/смочь.
+    "related" — a genuinely related verb but NOT a strict aspectual pair:
+                either (a) a state verb whose "pair" is really a delimitative
+                (по-X = "do X for a while") or inchoative/derived verb with a
+                shifted meaning (e.g. знать→узнать = "get to know", not the
+                same event as "know"), or (b) one of the multidirectional
+                motion verbs (ходить/ездить/носить/бегать/летать/...) whose
+                partner is the corresponding unidirectional imperfective
+                (идти/ехать/нести/...), not a true perfective.
+    "none"    — no meaningful related verb worth showing; pure state/relational
+                verb (стоить, значить, находиться as "be located").
+- pair_note: a short Japanese note (max ~40 chars) ONLY when pair_kind is
+  "related" or "none" — explain the nuance (why it's not a strict pair, what
+  the shown word actually means). null when pair_kind="pair" (self-evident)
+  UNLESS there's a genuine gotcha worth flagging (e.g. a homograph risk).
+
+WORKED EXAMPLES (follow this exact style):
+{"lemma":"мочь","aspect":"impf","aspect_pair":"смочь","pair_kind":"pair","pair_note":null}
+{"lemma":"лежать","aspect":"impf","aspect_pair":"полежать","pair_kind":"none","pair_note":"状態動詞、対の完了体なし。関連: полежать（しばらく横になる）／参考: ложиться–лечь（横になる動作）"}
+{"lemma":"знать","aspect":"impf","aspect_pair":"узнать","pair_kind":"related","pair_note":"узнать=「知るようになる」で厳密な対ではなく派生語"}
+{"lemma":"сделать","aspect":"pf","aspect_pair":"делать","pair_kind":"pair","pair_note":null}
+{"lemma":"организовать","aspect":"both","aspect_pair":null,"pair_kind":"none","pair_note":"両体動詞（-оватьの外来語動詞）"}
+{"lemma":"ходить","aspect":"impf","aspect_pair":"идти","pair_kind":"related","pair_note":"多方向の運動動詞。単一方向の対はидти。完了体は文脈で異なる"}
+
+RULES:
+- aspect_pair must be a real, correctly-spelled Russian infinitive (dictionary
+  form) — no conjugated forms, no typos.
+- aspect_pair must never equal the head lemma itself.
+- Use the given en/ja gloss to disambiguate homographs (e.g. спеть "to sing"
+  (pf of петь) vs a rare dialectal "to ripen" reading — always prefer the
+  sense matching the gloss).
+- Prefer "pair" whenever a genuine standard aspectual partner exists — do NOT
+  default to "related"/"none" out of caution. Every Russian verb taught in a
+  textbook is expected to have SOME partner shown to the learner; "none" is
+  reserved for truly aspectually-defective state verbs (стоить-type).
+- Output ONLY a JSON array, one object per input verb, same order as input,
+  no markdown fences, no commentary before/after.
+
+INPUT (JSON array of {lemma, band, en, ja}):
+__INPUT__

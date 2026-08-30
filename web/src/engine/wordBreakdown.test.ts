@@ -10,6 +10,8 @@ function word(over: Partial<DeckWord> & { id: number; lemma: string; pos: string
     jaGloss: null,
     aspect: null,
     aspectPair: null,
+    pairKind: null,
+    pairNote: null,
     ...over,
   };
 }
@@ -28,9 +30,21 @@ describe("buildWordBreakdown (LINGO-012 card-back word list)", () => {
         jaGloss: "言う",
         aspect: "pf",
         aspectPair: "говорить",
+        pairKind: "pair",
       }),
     ],
-    [4, word({ id: 4, lemma: "быть", pos: "verb", enGloss: "be", jaGloss: "である", aspect: "impf" })],
+    [
+      4,
+      word({
+        id: 4,
+        lemma: "быть",
+        pos: "verb",
+        enGloss: "be",
+        jaGloss: "である",
+        aspect: "impf",
+        pairKind: "none",
+      }),
+    ],
     [5, word({ id: 5, lemma: "дом", pos: "noun", enGloss: "house", jaGloss: "家", gender: "m" })],
   ]);
 
@@ -81,24 +95,60 @@ describe("buildWordBreakdown (LINGO-012 card-back word list)", () => {
   });
 });
 
-describe("formatAspectLine (Katsuta 2026-08-27: label both head and pair)", () => {
-  it("labels both the head verb and its pair, deriving the pair's aspect as the opposite", () => {
+describe("formatAspectLine (Katsuta 2026-08-27/2026-08-30: every verb shows its aspect situation)", () => {
+  it('pairKind="pair": labels both the head verb and its pair, deriving the pair\'s aspect as the opposite', () => {
     expect(
-      formatAspectLine({ lemma: "делать", aspect: "impf", aspectPair: "сделать" }),
+      formatAspectLine({ lemma: "делать", aspect: "impf", aspectPair: "сделать", pairKind: "pair", pairNote: null }),
     ).toBe("делать（不完了体） ⇔ 対: сделать（完了体）");
     expect(
-      formatAspectLine({ lemma: "сказать", aspect: "pf", aspectPair: "говорить" }),
+      formatAspectLine({ lemma: "сказать", aspect: "pf", aspectPair: "говорить", pairKind: "pair", pairNote: null }),
     ).toBe("сказать（完了体） ⇔ 対: говорить（不完了体）");
   });
 
-  it("shows only the head verb's own labelled aspect when there is no pair", () => {
-    expect(formatAspectLine({ lemma: "быть", aspect: "impf", aspectPair: null })).toBe(
-      "быть（不完了体）",
-    );
+  it('pairKind="related": same ⇔ shape as pair, labelled 関連, plus the nuance note (LINGO-025)', () => {
+    expect(
+      formatAspectLine({
+        lemma: "знать",
+        aspect: "impf",
+        aspectPair: "узнать",
+        pairKind: "related",
+        pairNote: "узнать=知るようになる（意味がずれた派生語）",
+      }),
+    ).toBe("знать（不完了体） ⇔ 関連: узнать（完了体）。узнать=知るようになる（意味がずれた派生語）");
+  });
+
+  it('pairKind="none": states the head\'s own fixed aspect explicitly, never a bare "no pair" (Katsuta 2026-08-30, лежать case)', () => {
+    expect(
+      formatAspectLine({
+        lemma: "лежать",
+        aspect: "impf",
+        aspectPair: "полежать",
+        pairKind: "none",
+        pairNote: "しばらく横になる",
+      }),
+    ).toBe("лежать（対なし・常に不完了体）。関連: полежать（しばらく横になる）");
+  });
+
+  it('pairKind="none" with no related word at all still states the fixed aspect (быть)', () => {
+    expect(
+      formatAspectLine({ lemma: "быть", aspect: "impf", aspectPair: null, pairKind: "none", pairNote: null }),
+    ).toBe("быть（対なし・常に不完了体）");
+  });
+
+  it('aspect="both": genuinely biaspectual verbs get their own label, no pair machinery', () => {
+    expect(
+      formatAspectLine({
+        lemma: "организовать",
+        aspect: "both",
+        aspectPair: null,
+        pairKind: "none",
+        pairNote: "両体動詞（-оватьの外来語動詞）",
+      }),
+    ).toBe("организовать（両体動詞）。両体動詞（-оватьの外来語動詞）");
   });
 
   it("returns null for entries with no aspect (non-verbs)", () => {
-    expect(formatAspectLine({ lemma: "дом", aspect: null, aspectPair: null })).toBeNull();
+    expect(formatAspectLine({ lemma: "дом", aspect: null, aspectPair: null, pairKind: null, pairNote: null })).toBeNull();
   });
 });
 
