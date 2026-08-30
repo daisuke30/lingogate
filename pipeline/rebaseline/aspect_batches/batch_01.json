@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "сделать",
+  "band": 1,
+  "en": "do, make",
+  "ja": "する"
+ },
+ {
+  "lemma": "смочь",
+  "band": 1,
+  "en": "be able to",
+  "ja": "できる"
+ },
+ {
+  "lemma": "иметь",
+  "band": 1,
+  "en": "have",
+  "ja": "持つ"
+ },
+ {
+  "lemma": "собираться",
+  "band": 1,
+  "en": "gather, intend to",
+  "ja": "集まる"
+ },
+ {
+  "lemma": "остаться",
+  "band": 1,
+  "en": "remain",
+  "ja": "残る"
+ },
+ {
+  "lemma": "увидеть",
+  "band": 1,
+  "en": "see",
+  "ja": "見る"
+ },
+ {
+  "lemma": "заниматься",
+  "band": 1,
+  "en": "engage in",
+  "ja": "従事する"
+ },
+ {
+  "lemma": "оставить",
+  "band": 1,
+  "en": "leave",
+  "ja": "残す"
+ },
+ {
+  "lemma": "извинить",
+  "band": 1,
+  "en": "forgive",
+  "ja": "許す"
+ },
+ {
+  "lemma": "подождать",
+  "band": 1,
+  "en": "wait",
+  "ja": "待つ"
+ },
+ {
+  "lemma": "подумать",
+  "band": 1,
+  "en": "think",
+  "ja": "考える"
+ },
+ {
+  "lemma": "чувствовать",
+  "band": 1,
+  "en": "feel",
+  "ja": "感じる"
+ },
+ {
+  "lemma": "прийтись",
+  "band": 1,
+  "en": "have to",
+  "ja": "せざるを得ない"
+ },
+ {
+  "lemma": "выглядеть",
+  "band": 1,
+  "en": "look, appear",
+  "ja": "見える"
+ },
+ {
+  "lemma": "послушать",
+  "band": 1,
+  "en": "listen",
+  "ja": "聞く"
+ },
+ {
+  "lemma": "звать",
+  "band": 1,
+  "en": "call, name",
+  "ja": "呼ぶ"
+ },
+ {
+  "lemma": "хватить",
+  "band": 1,
+  "en": "be enough",
+  "ja": "足りる"
+ },
+ {
+  "lemma": "использовать",
+  "band": 1,
+  "en": "use",
+  "ja": "使う"
+ },
+ {
+  "lemma": "поехать",
+  "band": 1,
+  "en": "go (by transport)",
+  "ja": "行く"
+ },
+ {
+  "lemma": "произойти",
+  "band": 1,
+  "en": "happen",
+  "ja": "起こる"
+ },
+ {
+  "lemma": "забрать",
+  "band": 1,
+  "en": "take",
+  "ja": "持ち去る"
+ },
+ {
+  "lemma": "уверить",
+  "band": 1,
+  "en": "to assure",
+  "ja": "確信させる"
+ },
+ {
+  "lemma": "написать",
+  "band": 1,
+  "en": "write",
+  "ja": "書く"
+ },
+ {
+  "lemma": "вернуть",
+  "band": 1,
+  "en": "return",
+  "ja": "返す"
+ },
+ {
+  "lemma": "поверить",
+  "band": 1,
+  "en": "believe",
+  "ja": "信じる"
+ },
+ {
+  "lemma": "попасть",
+  "band": 1,
+  "en": "get into, hit",
+  "ja": "たどり着く"
+ },
+ {
+  "lemma": "провести",
+  "band": 1,
+  "en": "conduct",
+  "ja": "行う"
+ },
+ {
+  "lemma": "попросить",
+  "band": 1,
+  "en": "ask, request",
+  "ja": "頼む"
+ },
+ {
+  "lemma": "волноваться",
+  "band": 1,
+  "en": "to worry",
+  "ja": "心配する"
+ },
+ {
+  "lemma": "следовать",
+  "band": 1,
+  "en": "follow",
+  "ja": "従う"
+ },
+ {
+  "lemma": "прислать",
+  "band": 1,
+  "en": "send",
+  "ja": "送る"
+ },
+ {
+  "lemma": "встретиться",
+  "band": 1,
+  "en": "meet",
+  "ja": "会う"
+ },
+ {
+  "lemma": "встречаться",
+  "band": 1,
+  "en": "meet (each other)",
+  "ja": "会う"
+ },
+ {
+  "lemma": "перестать",
+  "band": 1,
+  "en": "stop",
+  "ja": "やめる"
+ },
+ {
+  "lemma": "заставить",
+  "band": 1,
+  "en": "force",
+  "ja": "強制する"
+ },
+ {
+  "lemma": "прекратить",
+  "band": 1,
+  "en": "stop, cease",
+  "ja": "やめる"
+ },
+ {
+  "lemma": "называть",
+  "band": 1,
+  "en": "call, name",
+  "ja": "呼ぶ"
+ },
+ {
+  "lemma": "ненавидеть",
+  "band": 1,
+  "en": "hate",
+  "ja": "憎む"
+ },
+ {
+  "lemma": "оказаться",
+  "band": 1,
+  "en": "turn out to be",
+  "ja": "であることが分かる"
+ },
+ {
+  "lemma": "захотеть",
+  "band": 1,
+  "en": "want",
+  "ja": "望む"
+ },
+ {
+  "lemma": "находиться",
+  "band": 1,
+  "en": "be located",
+  "ja": "ある"
+ },
+ {
+  "lemma": "привести",
+  "band": 1,
+  "en": "bring, lead to",
+  "ja": "導く"
+ },
+ {
+  "lemma": "понравиться",
+  "band": 1,
+  "en": "like",
+  "ja": "気に入る"
+ },
+ {
+  "lemma": "разговаривать",
+  "band": 1,
+  "en": "talk",
+  "ja": "話す"
+ },
+ {
+  "lemma": "выпить",
+  "band": 1,
+  "en": "drink",
+  "ja": "飲む"
+ },
+ {
+  "lemma": "увидеться",
+  "band": 1,
+  "en": "to see each other",
+  "ja": "会う(互いに)"
+ },
+ {
+  "lemma": "услышать",
+  "band": 1,
+  "en": "hear",
+  "ja": "聞こえる"
+ },
+ {
+  "lemma": "справиться",
+  "band": 1,
+  "en": "cope, manage",
+  "ja": "対処する"
+ },
+ {
+  "lemma": "беспокоиться",
+  "band": 1,
+  "en": "to worry",
+  "ja": "心配する"
+ },
+ {
+  "lemma": "отпустить",
+  "band": 1,
+  "en": "let go",
+  "ja": "放す"
+ }
+]

@@ -1,0 +1,352 @@
+[
+ {
+  "lemma": "притворяться",
+  "aspect": "impf",
+  "aspect_pair": "притвориться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "допустить",
+  "aspect": "pf",
+  "aspect_pair": "допускать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "похитить",
+  "aspect": "pf",
+  "aspect_pair": "похищать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "прибыть",
+  "aspect": "pf",
+  "aspect_pair": "прибывать",
+  "pair_kind": "pair",
+  "pair_note": "прибыватьには「増加する」の同形語もある"
+ },
+ {
+  "lemma": "дождаться",
+  "aspect": "pf",
+  "aspect_pair": "дожидаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "достигнуть",
+  "aspect": "pf",
+  "aspect_pair": "достигать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "причинить",
+  "aspect": "pf",
+  "aspect_pair": "причинять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выполнять",
+  "aspect": "impf",
+  "aspect_pair": "выполнить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "застрять",
+  "aspect": "pf",
+  "aspect_pair": "застревать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "предпочитать",
+  "aspect": "impf",
+  "aspect_pair": "предпочесть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "утверждать",
+  "aspect": "impf",
+  "aspect_pair": "утвердить",
+  "pair_kind": "related",
+  "pair_note": "「主張する」は不完了体中心。утвердить=承認する"
+ },
+ {
+  "lemma": "приказать",
+  "aspect": "pf",
+  "aspect_pair": "приказывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "спуститься",
+  "aspect": "pf",
+  "aspect_pair": "спускаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "расстаться",
+  "aspect": "pf",
+  "aspect_pair": "расставаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "обратиться",
+  "aspect": "pf",
+  "aspect_pair": "обращаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "подниматься",
+  "aspect": "impf",
+  "aspect_pair": "подняться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "потрясать",
+  "aspect": "impf",
+  "aspect_pair": "потрясти",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "болтать",
+  "aspect": "impf",
+  "aspect_pair": "поболтать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сдаваться",
+  "aspect": "impf",
+  "aspect_pair": "сдаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "разбить",
+  "aspect": "pf",
+  "aspect_pair": "разбивать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "кончиться",
+  "aspect": "pf",
+  "aspect_pair": "кончаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "вынудить",
+  "aspect": "pf",
+  "aspect_pair": "вынуждать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сдаться",
+  "aspect": "pf",
+  "aspect_pair": "сдаваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выполнить",
+  "aspect": "pf",
+  "aspect_pair": "выполнять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "упустить",
+  "aspect": "pf",
+  "aspect_pair": "упускать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "интересовать",
+  "aspect": "impf",
+  "aspect_pair": "заинтересовать",
+  "pair_kind": "related",
+  "pair_note": "状態を表す。заинтересовать=興味を引き起こす"
+ },
+ {
+  "lemma": "терпеть",
+  "aspect": "impf",
+  "aspect_pair": "вытерпеть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "опустить",
+  "aspect": "pf",
+  "aspect_pair": "опускать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отдавать",
+  "aspect": "impf",
+  "aspect_pair": "отдать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "одеваться",
+  "aspect": "impf",
+  "aspect_pair": "одеться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "повесить",
+  "aspect": "pf",
+  "aspect_pair": "вешать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "винить",
+  "aspect": "impf",
+  "aspect_pair": "обвинить",
+  "pair_kind": "related",
+  "pair_note": "винить=責任を負わせる状態、обвинить=非難・告発する"
+ },
+ {
+  "lemma": "завести",
+  "aspect": "pf",
+  "aspect_pair": "заводить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "летать",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はлететь。完了体は文脈で異なる（例: полететь出発する）"
+ },
+ {
+  "lemma": "лезть",
+  "aspect": "impf",
+  "aspect_pair": "полезть",
+  "pair_kind": "related",
+  "pair_note": "полезть=登り始める・入り込もうとする"
+ },
+ {
+  "lemma": "передумать",
+  "aspect": "pf",
+  "aspect_pair": "передумывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "молиться",
+  "aspect": "impf",
+  "aspect_pair": "помолиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "справляться",
+  "aspect": "impf",
+  "aspect_pair": "справиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "торопиться",
+  "aspect": "impf",
+  "aspect_pair": "поторопиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "спорить",
+  "aspect": "impf",
+  "aspect_pair": "поспорить",
+  "pair_kind": "pair",
+  "pair_note": "поспоритьには「賭ける」の意味もある"
+ },
+ {
+  "lemma": "влюбиться",
+  "aspect": "pf",
+  "aspect_pair": "влюбляться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "задержать",
+  "aspect": "pf",
+  "aspect_pair": "задерживать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "поблагодарить",
+  "aspect": "pf",
+  "aspect_pair": "благодарить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "прочесть",
+  "aspect": "pf",
+  "aspect_pair": "читать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "подготовить",
+  "aspect": "pf",
+  "aspect_pair": "подготавливать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "поддержать",
+  "aspect": "pf",
+  "aspect_pair": "поддерживать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "рассчитывать",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "「当てにする」は状態的用法。рассчитатьは主に「計算する」"
+ },
+ {
+  "lemma": "разбираться",
+  "aspect": "impf",
+  "aspect_pair": "разобраться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выбросить",
+  "aspect": "pf",
+  "aspect_pair": "выбрасывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "вывести",
+  "aspect": "pf",
+  "aspect_pair": "выводить",
+  "pair_kind": "pair",
+  "pair_note": null
+ }
+]

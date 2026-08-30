@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "приводить",
+  "band": 3,
+  "en": "lead to",
+  "ja": "導く"
+ },
+ {
+  "lemma": "замолчать",
+  "band": 3,
+  "en": "to fall silent",
+  "ja": "黙り込む"
+ },
+ {
+  "lemma": "требоваться",
+  "band": 3,
+  "en": "be required",
+  "ja": "必要とされる"
+ },
+ {
+  "lemma": "отнести",
+  "band": 3,
+  "en": "to carry (there)",
+  "ja": "運ぶ"
+ },
+ {
+  "lemma": "наступить",
+  "band": 3,
+  "en": "arrive",
+  "ja": "到着する"
+ },
+ {
+  "lemma": "присматривать",
+  "band": 3,
+  "en": "to look after (habitually)",
+  "ja": "世話をする"
+ },
+ {
+  "lemma": "заканчивать",
+  "band": 3,
+  "en": "to finish (habitually)",
+  "ja": "終える"
+ },
+ {
+  "lemma": "говориться",
+  "band": 3,
+  "en": "be said",
+  "ja": "言われる"
+ },
+ {
+  "lemma": "осмотреть",
+  "band": 3,
+  "en": "to examine/inspect",
+  "ja": "調べる"
+ },
+ {
+  "lemma": "прикрыть",
+  "band": 3,
+  "en": "to cover (partially)",
+  "ja": "覆う"
+ },
+ {
+  "lemma": "привлечь",
+  "band": 3,
+  "en": "attract",
+  "ja": "引きつける"
+ },
+ {
+  "lemma": "направить",
+  "band": 3,
+  "en": "direct, send",
+  "ja": "向ける"
+ },
+ {
+  "lemma": "отследить",
+  "band": 3,
+  "en": "to track down",
+  "ja": "追跡する"
+ },
+ {
+  "lemma": "одолжить",
+  "band": 3,
+  "en": "to lend/borrow",
+  "ja": "貸す"
+ },
+ {
+  "lemma": "оплатить",
+  "band": 3,
+  "en": "to pay for",
+  "ja": "支払う"
+ },
+ {
+  "lemma": "перенести",
+  "band": 3,
+  "en": "postpone, transfer",
+  "ja": "延期する"
+ },
+ {
+  "lemma": "поменять",
+  "band": 3,
+  "en": "to exchange/change",
+  "ja": "交換する"
+ },
+ {
+  "lemma": "отказать",
+  "band": 3,
+  "en": "to refuse",
+  "ja": "断る"
+ },
+ {
+  "lemma": "подставить",
+  "band": 3,
+  "en": "to set up (frame someone)",
+  "ja": "はめる"
+ },
+ {
+  "lemma": "запустить",
+  "band": 3,
+  "en": "to launch/start",
+  "ja": "起動する"
+ },
+ {
+  "lemma": "считаться",
+  "band": 3,
+  "en": "be considered",
+  "ja": "みなされる"
+ },
+ {
+  "lemma": "описать",
+  "band": 3,
+  "en": "describe",
+  "ja": "記述する"
+ },
+ {
+  "lemma": "признавать",
+  "band": 3,
+  "en": "admit, recognize",
+  "ja": "認める"
+ },
+ {
+  "lemma": "подвести",
+  "band": 3,
+  "en": "to let (someone) down",
+  "ja": "がっかりさせる"
+ },
+ {
+  "lemma": "выгнать",
+  "band": 3,
+  "en": "to kick out",
+  "ja": "追い出す"
+ },
+ {
+  "lemma": "обидеть",
+  "band": 3,
+  "en": "to offend/hurt",
+  "ja": "傷つける"
+ },
+ {
+  "lemma": "спускаться",
+  "band": 3,
+  "en": "to descend",
+  "ja": "降りる"
+ },
+ {
+  "lemma": "посидеть",
+  "band": 3,
+  "en": "to sit for a while",
+  "ja": "しばらく座る"
+ },
+ {
+  "lemma": "прятать",
+  "band": 3,
+  "en": "to hide (something, habitually)",
+  "ja": "隠す"
+ },
+ {
+  "lemma": "задумать",
+  "band": 3,
+  "en": "to plan/intend",
+  "ja": "計画する"
+ },
+ {
+  "lemma": "поспать",
+  "band": 3,
+  "en": "to sleep for a while",
+  "ja": "少し眠る"
+ },
+ {
+  "lemma": "жаловаться",
+  "band": 3,
+  "en": "complain",
+  "ja": "不平を言う"
+ },
+ {
+  "lemma": "выдержать",
+  "band": 3,
+  "en": "withstand",
+  "ja": "耐える"
+ },
+ {
+  "lemma": "проехать",
+  "band": 3,
+  "en": "to drive past/through",
+  "ja": "通り過ぎる"
+ },
+ {
+  "lemma": "свалить",
+  "band": 3,
+  "en": "to dump/bail (slang)",
+  "ja": "逃げる(俗)"
+ },
+ {
+  "lemma": "ввести",
+  "band": 3,
+  "en": "introduce",
+  "ja": "導入する"
+ },
+ {
+  "lemma": "заявить",
+  "band": 3,
+  "en": "declare",
+  "ja": "宣言する"
+ },
+ {
+  "lemma": "увести",
+  "band": 3,
+  "en": "to lead away",
+  "ja": "連れ去る"
+ },
+ {
+  "lemma": "выкинуть",
+  "band": 3,
+  "en": "to throw out",
+  "ja": "放り出す"
+ },
+ {
+  "lemma": "повернуться",
+  "band": 3,
+  "en": "turn around",
+  "ja": "振り向く"
+ },
+ {
+  "lemma": "смириться",
+  "band": 3,
+  "en": "to come to terms with",
+  "ja": "甘んじる"
+ },
+ {
+  "lemma": "обратить",
+  "band": 3,
+  "en": "turn",
+  "ja": "向ける"
+ },
+ {
+  "lemma": "отрицать",
+  "band": 3,
+  "en": "to deny",
+  "ja": "否定する"
+ },
+ {
+  "lemma": "потерпеть",
+  "band": 3,
+  "en": "to endure (for a while)",
+  "ja": "少し我慢する"
+ },
+ {
+  "lemma": "достаться",
+  "band": 3,
+  "en": "to be gotten by/fall to",
+  "ja": "手に入る"
+ },
+ {
+  "lemma": "наказать",
+  "band": 3,
+  "en": "to punish",
+  "ja": "罰する"
+ },
+ {
+  "lemma": "веселиться",
+  "band": 3,
+  "en": "to have fun",
+  "ja": "楽しむ"
+ },
+ {
+  "lemma": "заговорить",
+  "band": 3,
+  "en": "start speaking",
+  "ja": "話し出す"
+ },
+ {
+  "lemma": "натворить",
+  "band": 3,
+  "en": "to do (something bad)",
+  "ja": "やらかす"
+ },
+ {
+  "lemma": "порвать",
+  "band": 3,
+  "en": "to tear/break up",
+  "ja": "破る"
+ }
+]

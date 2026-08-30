@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "превратить",
+  "band": 3,
+  "en": "to turn (something into)",
+  "ja": "変える"
+ },
+ {
+  "lemma": "испугаться",
+  "band": 3,
+  "en": "to get scared",
+  "ja": "怖がる"
+ },
+ {
+  "lemma": "гулять",
+  "band": 3,
+  "en": "walk",
+  "ja": "散歩する"
+ },
+ {
+  "lemma": "повредить",
+  "band": 3,
+  "en": "to damage/injure",
+  "ja": "傷つける"
+ },
+ {
+  "lemma": "соединить",
+  "band": 3,
+  "en": "connect",
+  "ja": "つなぐ"
+ },
+ {
+  "lemma": "оказываться",
+  "band": 3,
+  "en": "turn out",
+  "ja": "判明する"
+ },
+ {
+  "lemma": "заменить",
+  "band": 3,
+  "en": "replace",
+  "ja": "取り替える"
+ },
+ {
+  "lemma": "сбить",
+  "band": 3,
+  "en": "to knock down/hit",
+  "ja": "はねる"
+ },
+ {
+  "lemma": "прыгать",
+  "band": 3,
+  "en": "to jump",
+  "ja": "跳ぶ"
+ },
+ {
+  "lemma": "переспать",
+  "band": 3,
+  "en": "to sleep over/sleep with",
+  "ja": "一夜を共にする"
+ },
+ {
+  "lemma": "останавливаться",
+  "band": 3,
+  "en": "stop",
+  "ja": "止まる"
+ },
+ {
+  "lemma": "разбудить",
+  "band": 3,
+  "en": "to wake (someone) up",
+  "ja": "起こす"
+ },
+ {
+  "lemma": "уладить",
+  "band": 3,
+  "en": "to settle/sort out",
+  "ja": "解決する"
+ },
+ {
+  "lemma": "обвинить",
+  "band": 3,
+  "en": "to accuse (once)",
+  "ja": "告発する"
+ },
+ {
+  "lemma": "избежать",
+  "band": 3,
+  "en": "avoid",
+  "ja": "避ける"
+ },
+ {
+  "lemma": "заглянуть",
+  "band": 3,
+  "en": "peek, drop by",
+  "ja": "のぞく"
+ },
+ {
+  "lemma": "приглашать",
+  "band": 3,
+  "en": "invite",
+  "ja": "招待する"
+ },
+ {
+  "lemma": "определить",
+  "band": 3,
+  "en": "determine",
+  "ja": "決定する"
+ },
+ {
+  "lemma": "попрощаться",
+  "band": 3,
+  "en": "to say goodbye",
+  "ja": "別れを告げる"
+ },
+ {
+  "lemma": "отправлять",
+  "band": 3,
+  "en": "to send (habitually)",
+  "ja": "送る"
+ },
+ {
+  "lemma": "обращать",
+  "band": 3,
+  "en": "turn",
+  "ja": "向ける"
+ },
+ {
+  "lemma": "окончить",
+  "band": 3,
+  "en": "to finish/graduate",
+  "ja": "卒業する"
+ },
+ {
+  "lemma": "настаивать",
+  "band": 3,
+  "en": "to insist",
+  "ja": "主張する"
+ },
+ {
+  "lemma": "глядеть",
+  "band": 3,
+  "en": "look",
+  "ja": "見る"
+ },
+ {
+  "lemma": "сосредоточиться",
+  "band": 3,
+  "en": "to concentrate",
+  "ja": "集中する"
+ },
+ {
+  "lemma": "отключить",
+  "band": 3,
+  "en": "to switch off/disconnect",
+  "ja": "切断する"
+ },
+ {
+  "lemma": "навредить",
+  "band": 3,
+  "en": "to harm",
+  "ja": "害を与える"
+ },
+ {
+  "lemma": "составить",
+  "band": 3,
+  "en": "compose",
+  "ja": "作成する"
+ },
+ {
+  "lemma": "предпочесть",
+  "band": 3,
+  "en": "to prefer",
+  "ja": "好む"
+ },
+ {
+  "lemma": "починить",
+  "band": 3,
+  "en": "to repair",
+  "ja": "修理する"
+ },
+ {
+  "lemma": "нарушить",
+  "band": 3,
+  "en": "to violate/break (a rule)",
+  "ja": "違反する"
+ },
+ {
+  "lemma": "выдать",
+  "band": 3,
+  "en": "issue",
+  "ja": "発行する"
+ },
+ {
+  "lemma": "упоминать",
+  "band": 3,
+  "en": "to mention",
+  "ja": "言及する"
+ },
+ {
+  "lemma": "владеть",
+  "band": 3,
+  "en": "own",
+  "ja": "所有する"
+ },
+ {
+  "lemma": "жалеть",
+  "band": 3,
+  "en": "regret, pity",
+  "ja": "後悔する"
+ },
+ {
+  "lemma": "солгать",
+  "band": 3,
+  "en": "to tell a lie (once)",
+  "ja": "嘘をつく"
+ },
+ {
+  "lemma": "покидать",
+  "band": 3,
+  "en": "to leave/abandon",
+  "ja": "去る"
+ },
+ {
+  "lemma": "беречь",
+  "band": 3,
+  "en": "to protect/take care of",
+  "ja": "大切にする"
+ },
+ {
+  "lemma": "настать",
+  "band": 3,
+  "en": "to come/arrive (of time)",
+  "ja": "到来する"
+ },
+ {
+  "lemma": "попасться",
+  "band": 3,
+  "en": "to get caught",
+  "ja": "捕まる"
+ },
+ {
+  "lemma": "проследить",
+  "band": 3,
+  "en": "to track/make sure",
+  "ja": "見届ける"
+ },
+ {
+  "lemma": "давить",
+  "band": 3,
+  "en": "to press/pressure",
+  "ja": "圧迫する"
+ },
+ {
+  "lemma": "кормить",
+  "band": 3,
+  "en": "feed",
+  "ja": "養う"
+ },
+ {
+  "lemma": "просыпаться",
+  "band": 3,
+  "en": "to wake up (habitually)",
+  "ja": "目覚める"
+ },
+ {
+  "lemma": "указывать",
+  "band": 3,
+  "en": "indicate",
+  "ja": "示す"
+ },
+ {
+  "lemma": "прожить",
+  "band": 3,
+  "en": "live through",
+  "ja": "生き抜く"
+ },
+ {
+  "lemma": "приготовиться",
+  "band": 3,
+  "en": "to get ready",
+  "ja": "準備する"
+ },
+ {
+  "lemma": "подавать",
+  "band": 3,
+  "en": "serve, submit",
+  "ja": "出す"
+ },
+ {
+  "lemma": "заболеть",
+  "band": 3,
+  "en": "to fall ill",
+  "ja": "病気になる"
+ },
+ {
+  "lemma": "присмотреть",
+  "band": 3,
+  "en": "to keep an eye on",
+  "ja": "見守る"
+ }
+]

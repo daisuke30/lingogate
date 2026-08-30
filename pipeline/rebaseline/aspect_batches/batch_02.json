@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "хотеться",
+  "band": 1,
+  "en": "want",
+  "ja": "〜したい"
+ },
+ {
+  "lemma": "бывать",
+  "band": 1,
+  "en": "happen, be sometimes",
+  "ja": "たまにある"
+ },
+ {
+  "lemma": "назвать",
+  "band": 1,
+  "en": "name, call",
+  "ja": "名付ける"
+ },
+ {
+  "lemma": "познакомиться",
+  "band": 1,
+  "en": "meet",
+  "ja": "知り合う"
+ },
+ {
+  "lemma": "заплатить",
+  "band": 1,
+  "en": "pay",
+  "ja": "支払う"
+ },
+ {
+  "lemma": "держаться",
+  "band": 1,
+  "en": "hold on",
+  "ja": "持ちこたえる"
+ },
+ {
+  "lemma": "успокоиться",
+  "band": 1,
+  "en": "calm down",
+  "ja": "落ち着く"
+ },
+ {
+  "lemma": "заняться",
+  "band": 1,
+  "en": "take up",
+  "ja": "取り組む"
+ },
+ {
+  "lemma": "звучать",
+  "band": 1,
+  "en": "sound",
+  "ja": "響く"
+ },
+ {
+  "lemma": "доверять",
+  "band": 1,
+  "en": "trust",
+  "ja": "信頼する"
+ },
+ {
+  "lemma": "двигаться",
+  "band": 1,
+  "en": "move",
+  "ja": "動く"
+ },
+ {
+  "lemma": "достать",
+  "band": 1,
+  "en": "get",
+  "ja": "手に入れる"
+ },
+ {
+  "lemma": "заткнуться",
+  "band": 1,
+  "en": "to shut up",
+  "ja": "黙る"
+ },
+ {
+  "lemma": "разобраться",
+  "band": 1,
+  "en": "figure out",
+  "ja": "理解する"
+ },
+ {
+  "lemma": "проводить",
+  "band": 1,
+  "en": "conduct",
+  "ja": "行う"
+ },
+ {
+  "lemma": "шутить",
+  "band": 1,
+  "en": "to joke",
+  "ja": "冗談を言う"
+ },
+ {
+  "lemma": "погодить",
+  "band": 1,
+  "en": "to wait a bit",
+  "ja": "少し待つ"
+ },
+ {
+  "lemma": "уметь",
+  "band": 1,
+  "en": "know how to",
+  "ja": "できる"
+ },
+ {
+  "lemma": "украсть",
+  "band": 1,
+  "en": "to steal",
+  "ja": "盗む"
+ },
+ {
+  "lemma": "следить",
+  "band": 1,
+  "en": "watch",
+  "ja": "見守る"
+ },
+ {
+  "lemma": "закончиться",
+  "band": 1,
+  "en": "end",
+  "ja": "終わる"
+ },
+ {
+  "lemma": "устроить",
+  "band": 1,
+  "en": "arrange",
+  "ja": "手配する"
+ },
+ {
+  "lemma": "понадобиться",
+  "band": 1,
+  "en": "be needed",
+  "ja": "必要になる"
+ },
+ {
+  "lemma": "сходить",
+  "band": 1,
+  "en": "go",
+  "ja": "行ってくる"
+ },
+ {
+  "lemma": "взглянуть",
+  "band": 1,
+  "en": "glance",
+  "ja": "ちらりと見る"
+ },
+ {
+  "lemma": "пропасть",
+  "band": 1,
+  "en": "disappear",
+  "ja": "消える"
+ },
+ {
+  "lemma": "выяснить",
+  "band": 1,
+  "en": "find out",
+  "ja": "明らかにする"
+ },
+ {
+  "lemma": "поступить",
+  "band": 1,
+  "en": "act",
+  "ja": "行動する"
+ },
+ {
+  "lemma": "вызвать",
+  "band": 1,
+  "en": "cause, call",
+  "ja": "引き起こす"
+ },
+ {
+  "lemma": "пригласить",
+  "band": 1,
+  "en": "invite",
+  "ja": "招待する"
+ },
+ {
+  "lemma": "выиграть",
+  "band": 1,
+  "en": "win",
+  "ja": "勝つ"
+ },
+ {
+  "lemma": "измениться",
+  "band": 1,
+  "en": "change",
+  "ja": "変わる"
+ },
+ {
+  "lemma": "сбежать",
+  "band": 1,
+  "en": "to run away",
+  "ja": "逃げる"
+ },
+ {
+  "lemma": "убрать",
+  "band": 1,
+  "en": "remove, clean up",
+  "ja": "片付ける"
+ },
+ {
+  "lemma": "связать",
+  "band": 1,
+  "en": "connect",
+  "ja": "結びつける"
+ },
+ {
+  "lemma": "начаться",
+  "band": 1,
+  "en": "begin",
+  "ja": "始まる"
+ },
+ {
+  "lemma": "уничтожить",
+  "band": 1,
+  "en": "destroy",
+  "ja": "破壊する"
+ },
+ {
+  "lemma": "сообщить",
+  "band": 1,
+  "en": "inform",
+  "ja": "知らせる"
+ },
+ {
+  "lemma": "садиться",
+  "band": 1,
+  "en": "sit down",
+  "ja": "座る"
+ },
+ {
+  "lemma": "придумать",
+  "band": 1,
+  "en": "invent",
+  "ja": "考案する"
+ },
+ {
+  "lemma": "заходить",
+  "band": 1,
+  "en": "enter",
+  "ja": "立ち寄る"
+ },
+ {
+  "lemma": "скучать",
+  "band": 1,
+  "en": "to miss/be bored",
+  "ja": "恋しく思う"
+ },
+ {
+  "lemma": "врать",
+  "band": 1,
+  "en": "to lie",
+  "ja": "嘘をつく"
+ },
+ {
+  "lemma": "попытаться",
+  "band": 1,
+  "en": "try",
+  "ja": "試みる"
+ },
+ {
+  "lemma": "повезти",
+  "band": 1,
+  "en": "be lucky",
+  "ja": "運がいい"
+ },
+ {
+  "lemma": "подозревать",
+  "band": 1,
+  "en": "suspect",
+  "ja": "疑う"
+ },
+ {
+  "lemma": "ожидать",
+  "band": 1,
+  "en": "expect",
+  "ja": "期待する"
+ },
+ {
+  "lemma": "желать",
+  "band": 1,
+  "en": "wish",
+  "ja": "望む"
+ },
+ {
+  "lemma": "являться",
+  "band": 1,
+  "en": "be",
+  "ja": "である"
+ },
+ {
+  "lemma": "означать",
+  "band": 1,
+  "en": "mean",
+  "ja": "意味する"
+ }
+]

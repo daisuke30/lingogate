@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "присоединиться",
+  "band": 2,
+  "en": "to join",
+  "ja": "参加する"
+ },
+ {
+  "lemma": "запомнить",
+  "band": 2,
+  "en": "memorize",
+  "ja": "覚える"
+ },
+ {
+  "lemma": "выпустить",
+  "band": 2,
+  "en": "release",
+  "ja": "発売する"
+ },
+ {
+  "lemma": "разрушить",
+  "band": 2,
+  "en": "destroy",
+  "ja": "破壊する"
+ },
+ {
+  "lemma": "находить",
+  "band": 2,
+  "en": "find",
+  "ja": "見つける"
+ },
+ {
+  "lemma": "заказать",
+  "band": 2,
+  "en": "to order",
+  "ja": "注文する"
+ },
+ {
+  "lemma": "волновать",
+  "band": 2,
+  "en": "to worry/excite (someone)",
+  "ja": "心配させる"
+ },
+ {
+  "lemma": "поддерживать",
+  "band": 2,
+  "en": "support",
+  "ja": "支える"
+ },
+ {
+  "lemma": "расстроить",
+  "band": 2,
+  "en": "to upset",
+  "ja": "がっかりさせる"
+ },
+ {
+  "lemma": "освободить",
+  "band": 2,
+  "en": "free, release",
+  "ja": "解放する"
+ },
+ {
+  "lemma": "нанять",
+  "band": 2,
+  "en": "to hire",
+  "ja": "雇う"
+ },
+ {
+  "lemma": "помешать",
+  "band": 2,
+  "en": "to disturb/prevent",
+  "ja": "邪魔をする"
+ },
+ {
+  "lemma": "исправить",
+  "band": 2,
+  "en": "to fix/correct",
+  "ja": "直す"
+ },
+ {
+  "lemma": "обращаться",
+  "band": 2,
+  "en": "turn to, address",
+  "ja": "訴える"
+ },
+ {
+  "lemma": "перезвонить",
+  "band": 2,
+  "en": "to call back",
+  "ja": "かけ直す"
+ },
+ {
+  "lemma": "скрывать",
+  "band": 2,
+  "en": "hide",
+  "ja": "隠す"
+ },
+ {
+  "lemma": "сыграть",
+  "band": 2,
+  "en": "play",
+  "ja": "演じる"
+ },
+ {
+  "lemma": "молчать",
+  "band": 2,
+  "en": "be silent",
+  "ja": "黙る"
+ },
+ {
+  "lemma": "участвовать",
+  "band": 2,
+  "en": "participate",
+  "ja": "参加する"
+ },
+ {
+  "lemma": "обсуждать",
+  "band": 2,
+  "en": "discuss",
+  "ja": "話し合う"
+ },
+ {
+  "lemma": "мешать",
+  "band": 2,
+  "en": "hinder",
+  "ja": "妨げる"
+ },
+ {
+  "lemma": "тратить",
+  "band": 2,
+  "en": "spend",
+  "ja": "使う"
+ },
+ {
+  "lemma": "общаться",
+  "band": 2,
+  "en": "communicate",
+  "ja": "交流する"
+ },
+ {
+  "lemma": "прочитать",
+  "band": 2,
+  "en": "read",
+  "ja": "読む"
+ },
+ {
+  "lemma": "преследовать",
+  "band": 2,
+  "en": "to pursue/chase",
+  "ja": "追跡する"
+ },
+ {
+  "lemma": "ранить",
+  "band": 2,
+  "en": "to wound",
+  "ja": "傷つける"
+ },
+ {
+  "lemma": "побрать",
+  "band": 2,
+  "en": "to take (idiom: чёрт побери)",
+  "ja": "取る(慣用句)"
+ },
+ {
+  "lemma": "начинаться",
+  "band": 2,
+  "en": "begin (intrans)",
+  "ja": "始まる"
+ },
+ {
+  "lemma": "сражаться",
+  "band": 2,
+  "en": "to fight/battle",
+  "ja": "戦う"
+ },
+ {
+  "lemma": "извиниться",
+  "band": 2,
+  "en": "to apologize",
+  "ja": "謝る"
+ },
+ {
+  "lemma": "страдать",
+  "band": 2,
+  "en": "suffer",
+  "ja": "苦しむ"
+ },
+ {
+  "lemma": "собирать",
+  "band": 2,
+  "en": "collect",
+  "ja": "集める"
+ },
+ {
+  "lemma": "видеться",
+  "band": 2,
+  "en": "to see each other",
+  "ja": "会う"
+ },
+ {
+  "lemma": "подарить",
+  "band": 2,
+  "en": "give",
+  "ja": "贈る"
+ },
+ {
+  "lemma": "пережить",
+  "band": 2,
+  "en": "survive, live through",
+  "ja": "生き延びる"
+ },
+ {
+  "lemma": "подняться",
+  "band": 2,
+  "en": "rise",
+  "ja": "上がる"
+ },
+ {
+  "lemma": "контролировать",
+  "band": 2,
+  "en": "control",
+  "ja": "管理する"
+ },
+ {
+  "lemma": "сдать",
+  "band": 2,
+  "en": "hand in, pass",
+  "ja": "提出する"
+ },
+ {
+  "lemma": "добиться",
+  "band": 2,
+  "en": "achieve",
+  "ja": "達成する"
+ },
+ {
+  "lemma": "угадать",
+  "band": 2,
+  "en": "to guess (correctly)",
+  "ja": "言い当てる"
+ },
+ {
+  "lemma": "прятаться",
+  "band": 2,
+  "en": "to hide",
+  "ja": "隠れる"
+ },
+ {
+  "lemma": "ценить",
+  "band": 2,
+  "en": "to value/appreciate",
+  "ja": "評価する"
+ },
+ {
+  "lemma": "устраивать",
+  "band": 2,
+  "en": "arrange",
+  "ja": "手配する"
+ },
+ {
+  "lemma": "пустить",
+  "band": 2,
+  "en": "let go, let in",
+  "ja": "通す"
+ },
+ {
+  "lemma": "возражать",
+  "band": 2,
+  "en": "to object",
+  "ja": "反対する"
+ },
+ {
+  "lemma": "служить",
+  "band": 2,
+  "en": "serve",
+  "ja": "仕える"
+ },
+ {
+  "lemma": "воспользоваться",
+  "band": 2,
+  "en": "use",
+  "ja": "利用する"
+ },
+ {
+  "lemma": "назначить",
+  "band": 2,
+  "en": "appoint",
+  "ja": "任命する"
+ },
+ {
+  "lemma": "извиняться",
+  "band": 2,
+  "en": "to apologize",
+  "ja": "謝る"
+ },
+ {
+  "lemma": "перевести",
+  "band": 2,
+  "en": "translate",
+  "ja": "翻訳する"
+ }
+]

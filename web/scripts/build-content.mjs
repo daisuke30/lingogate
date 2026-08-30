@@ -137,21 +137,22 @@ function wordPaths(dataDir) {
     .sort();
 }
 
-// LINGO-012/LINGO-025: <dataDir>/words_aspects.jsonl — the consolidated,
-// all-band verb aspect + aspect_pair + pair_kind + pair_note sidecar
-// (LINGO-025 extended LINGO-012's band1-only words_band1_aspects.jsonl to
-// cover band1-4), applied on top of the base word list (mirrors import.py's
-// import_word_aspects UPDATE-only semantics: a lemma with no matching Word is
-// silently ignored here since buildDeck has no separate "unmatched" report
-// for this file — import.py is the source of truth for that warning). Also
-// still picks up any stray legacy words_band<N>_aspects.jsonl. RU only
-// today; the glob naturally finds nothing under the EN course's dataDir.
+// LINGO-012/LINGO-025: <dataDir>/words_aspects.jsonl — the single,
+// consolidated, all-band verb aspect + aspect_pair + pair_kind + pair_note
+// sidecar (LINGO-025 extended LINGO-012's band1-only
+// words_band1_aspects.jsonl to cover band1-4; that file is now archived at
+// pipeline/rebaseline/legacy_words_band1_aspects.jsonl as a frozen one-time
+// input to the LINGO-025 assembly script, NOT live here — globbing both
+// used to double-apply the old file AFTER the new one and silently wipe
+// pair_kind/pair_note for 255 lemmas back to null), applied on top of the
+// base word list (mirrors import.py's import_word_aspects UPDATE-only
+// semantics: a lemma with no matching Word is silently ignored here since
+// buildDeck has no separate "unmatched" report for this file — import.py is
+// the source of truth for that warning). RU only today; the glob naturally
+// finds nothing under the EN course's dataDir.
 function wordAspectPaths(dataDir) {
-  return [
-    ...globSync(join(dataDir, "words_aspects.jsonl")),
-    ...globSync(join(dataDir, "words_band*_aspects.jsonl")),
-  ]
-    .filter((p) => /^words_aspects\.jsonl$|^words_band\d+_aspects\.jsonl$/.test(basename(p)))
+  return globSync(join(dataDir, "words_aspects.jsonl"))
+    .filter((p) => basename(p) === "words_aspects.jsonl")
     .sort();
 }
 

@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "арестовать",
+  "band": 1,
+  "en": "to arrest",
+  "ja": "逮捕する"
+ },
+ {
+  "lemma": "стараться",
+  "band": 1,
+  "en": "try",
+  "ja": "努力する"
+ },
+ {
+  "lemma": "хватать",
+  "band": 1,
+  "en": "be enough",
+  "ja": "足りる"
+ },
+ {
+  "lemma": "погибнуть",
+  "band": 1,
+  "en": "perish",
+  "ja": "死亡する"
+ },
+ {
+  "lemma": "устать",
+  "band": 1,
+  "en": "get tired",
+  "ja": "疲れる"
+ },
+ {
+  "lemma": "позаботиться",
+  "band": 1,
+  "en": "to take care of",
+  "ja": "世話をする"
+ },
+ {
+  "lemma": "пропустить",
+  "band": 1,
+  "en": "miss, let pass",
+  "ja": "見逃す"
+ },
+ {
+  "lemma": "сойти",
+  "band": 1,
+  "en": "to get off/descend",
+  "ja": "降りる"
+ },
+ {
+  "lemma": "добраться",
+  "band": 1,
+  "en": "reach",
+  "ja": "たどり着く"
+ },
+ {
+  "lemma": "обнаружить",
+  "band": 1,
+  "en": "discover",
+  "ja": "発見する"
+ },
+ {
+  "lemma": "удаться",
+  "band": 1,
+  "en": "succeed",
+  "ja": "成功する"
+ },
+ {
+  "lemma": "благодарить",
+  "band": 1,
+  "en": "thank",
+  "ja": "感謝する"
+ },
+ {
+  "lemma": "пожаловать",
+  "band": 1,
+  "en": "to welcome/deign (добро пожаловать)",
+  "ja": "ようこそ"
+ },
+ {
+  "lemma": "клясться",
+  "band": 1,
+  "en": "to swear/vow",
+  "ja": "誓う"
+ },
+ {
+  "lemma": "заставлять",
+  "band": 1,
+  "en": "force",
+  "ja": "強いる"
+ },
+ {
+  "lemma": "занять",
+  "band": 1,
+  "en": "occupy",
+  "ja": "占める"
+ },
+ {
+  "lemma": "отправиться",
+  "band": 1,
+  "en": "set off",
+  "ja": "出発する"
+ },
+ {
+  "lemma": "сработать",
+  "band": 1,
+  "en": "to work/take effect",
+  "ja": "うまくいく"
+ },
+ {
+  "lemma": "вытащить",
+  "band": 1,
+  "en": "pull out",
+  "ja": "引き出す"
+ },
+ {
+  "lemma": "уезжать",
+  "band": 1,
+  "en": "leave, depart",
+  "ja": "出発する"
+ },
+ {
+  "lemma": "действовать",
+  "band": 1,
+  "en": "act",
+  "ja": "行動する"
+ },
+ {
+  "lemma": "собраться",
+  "band": 1,
+  "en": "gather",
+  "ja": "集まる"
+ },
+ {
+  "lemma": "приезжать",
+  "band": 1,
+  "en": "arrive",
+  "ja": "到着する"
+ },
+ {
+  "lemma": "переживать",
+  "band": 1,
+  "en": "worry, experience",
+  "ja": "心配する"
+ },
+ {
+  "lemma": "отвезти",
+  "band": 1,
+  "en": "to take (by vehicle)",
+  "ja": "車で送る"
+ },
+ {
+  "lemma": "съесть",
+  "band": 1,
+  "en": "eat up",
+  "ja": "食べる"
+ },
+ {
+  "lemma": "называться",
+  "band": 1,
+  "en": "be called",
+  "ja": "と呼ばれる"
+ },
+ {
+  "lemma": "сомневаться",
+  "band": 1,
+  "en": "doubt",
+  "ja": "疑う"
+ },
+ {
+  "lemma": "заботиться",
+  "band": 2,
+  "en": "to take care",
+  "ja": "気にかける"
+ },
+ {
+  "lemma": "лгать",
+  "band": 2,
+  "en": "to lie",
+  "ja": "嘘をつく"
+ },
+ {
+  "lemma": "убираться",
+  "band": 2,
+  "en": "to clean up/get out",
+  "ja": "掃除する"
+ },
+ {
+  "lemma": "спасть",
+  "band": 2,
+  "en": "to subside",
+  "ja": "静まる"
+ },
+ {
+  "lemma": "постараться",
+  "band": 2,
+  "en": "try",
+  "ja": "努力する"
+ },
+ {
+  "lemma": "договориться",
+  "band": 2,
+  "en": "agree",
+  "ja": "合意する"
+ },
+ {
+  "lemma": "принадлежать",
+  "band": 2,
+  "en": "belong",
+  "ja": "属する"
+ },
+ {
+  "lemma": "связаться",
+  "band": 2,
+  "en": "to contact",
+  "ja": "連絡する"
+ },
+ {
+  "lemma": "оставлять",
+  "band": 2,
+  "en": "leave",
+  "ja": "残す"
+ },
+ {
+  "lemma": "ударить",
+  "band": 2,
+  "en": "hit",
+  "ja": "打つ"
+ },
+ {
+  "lemma": "собрать",
+  "band": 2,
+  "en": "gather",
+  "ja": "集める"
+ },
+ {
+  "lemma": "бить",
+  "band": 2,
+  "en": "beat",
+  "ja": "打つ"
+ },
+ {
+  "lemma": "выжить",
+  "band": 2,
+  "en": "to survive",
+  "ja": "生き残る"
+ },
+ {
+  "lemma": "отойти",
+  "band": 2,
+  "en": "move away",
+  "ja": "離れる"
+ },
+ {
+  "lemma": "уволить",
+  "band": 2,
+  "en": "to fire (dismiss)",
+  "ja": "解雇する"
+ },
+ {
+  "lemma": "успеть",
+  "band": 2,
+  "en": "manage in time",
+  "ja": "間に合う"
+ },
+ {
+  "lemma": "постоять",
+  "band": 2,
+  "en": "to stand for a while",
+  "ja": "しばらく立つ"
+ },
+ {
+  "lemma": "избавиться",
+  "band": 2,
+  "en": "to get rid of",
+  "ja": "取り除く"
+ },
+ {
+  "lemma": "сожалеть",
+  "band": 2,
+  "en": "to regret",
+  "ja": "後悔する"
+ },
+ {
+  "lemma": "касаться",
+  "band": 2,
+  "en": "concern, touch",
+  "ja": "関わる"
+ },
+ {
+  "lemma": "почувствовать",
+  "band": 2,
+  "en": "feel",
+  "ja": "感じる"
+ },
+ {
+  "lemma": "убедиться",
+  "band": 2,
+  "en": "make sure",
+  "ja": "確かめる"
+ }
+]

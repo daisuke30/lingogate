@@ -118,16 +118,16 @@ def word_paths(data_dir):
 
 
 def word_aspect_paths(data_dir):
-    """LINGO-025: data/words_aspects.jsonl — the consolidated, all-band verb
-    aspect sidecar (replaces LINGO-012's per-band words_band1_aspects.jsonl,
-    which only ever covered band1). Also still picks up any stray legacy
-    words_band<N>_aspects.jsonl for backward compatibility during migration."""
+    """LINGO-025: data/words_aspects.jsonl — the single, consolidated,
+    all-band verb aspect sidecar (replaces LINGO-012's per-band
+    words_band1_aspects.jsonl, which only ever covered band1; that file is
+    now archived at pipeline/rebaseline/legacy_words_band1_aspects.jsonl as
+    a frozen one-time input to the LINGO-025 assembly script, NOT live here
+    — a previous version of this function globbed both files, which
+    double-applied the old one AFTER the new one and silently wiped
+    pair_kind/pair_note for 255 lemmas back to NULL; single-file glob only)."""
     paths = glob.glob(os.path.join(data_dir, "words_aspects.jsonl"))
-    paths += glob.glob(os.path.join(data_dir, "words_band*_aspects.jsonl"))
-    return sorted(
-        p for p in paths
-        if re.match(r"^words_aspects\.jsonl$|^words_band\d+_aspects\.jsonl$", os.path.basename(p))
-    )
+    return sorted(p for p in paths if os.path.basename(p) == "words_aspects.jsonl")
 
 
 def import_words(conn, deck_id, data_dir):

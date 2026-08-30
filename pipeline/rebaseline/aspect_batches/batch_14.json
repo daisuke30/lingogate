@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "увеличить",
+  "band": 4,
+  "en": "increase",
+  "ja": "増やす"
+ },
+ {
+  "lemma": "почитать",
+  "band": 4,
+  "en": "revere, honor",
+  "ja": "敬う"
+ },
+ {
+  "lemma": "воспринимать",
+  "band": 4,
+  "en": "perceive",
+  "ja": "知覚する"
+ },
+ {
+  "lemma": "состояться",
+  "band": 4,
+  "en": "take place",
+  "ja": "行われる"
+ },
+ {
+  "lemma": "воевать",
+  "band": 4,
+  "en": "wage war",
+  "ja": "戦う"
+ },
+ {
+  "lemma": "удивиться",
+  "band": 4,
+  "en": "be surprised",
+  "ja": "驚く"
+ },
+ {
+  "lemma": "посвятить",
+  "band": 4,
+  "en": "dedicate",
+  "ja": "捧げる"
+ },
+ {
+  "lemma": "улыбнуться",
+  "band": 4,
+  "en": "smile",
+  "ja": "微笑む"
+ },
+ {
+  "lemma": "содержать",
+  "band": 4,
+  "en": "contain",
+  "ja": "含む"
+ },
+ {
+  "lemma": "решиться",
+  "band": 4,
+  "en": "decide, dare",
+  "ja": "決心する"
+ },
+ {
+  "lemma": "влиять",
+  "band": 4,
+  "en": "influence",
+  "ja": "影響する"
+ },
+ {
+  "lemma": "открываться",
+  "band": 4,
+  "en": "open (itself)",
+  "ja": "開く"
+ },
+ {
+  "lemma": "выпускать",
+  "band": 4,
+  "en": "release, produce",
+  "ja": "発行する"
+ },
+ {
+  "lemma": "ощущать",
+  "band": 4,
+  "en": "feel",
+  "ja": "感じる"
+ },
+ {
+  "lemma": "обернуться",
+  "band": 4,
+  "en": "turn around",
+  "ja": "振り向く"
+ },
+ {
+  "lemma": "рекомендовать",
+  "band": 4,
+  "en": "recommend",
+  "ja": "勧める"
+ },
+ {
+  "lemma": "превращаться",
+  "band": 4,
+  "en": "turn into",
+  "ja": "変わる"
+ },
+ {
+  "lemma": "потребовать",
+  "band": 4,
+  "en": "demand",
+  "ja": "要求する"
+ },
+ {
+  "lemma": "покрыть",
+  "band": 4,
+  "en": "cover",
+  "ja": "覆う"
+ },
+ {
+  "lemma": "выдавать",
+  "band": 4,
+  "en": "issue, hand out",
+  "ja": "発行する"
+ },
+ {
+  "lemma": "составлять",
+  "band": 4,
+  "en": "constitute",
+  "ja": "構成する"
+ },
+ {
+  "lemma": "испытать",
+  "band": 4,
+  "en": "experience",
+  "ja": "経験する"
+ },
+ {
+  "lemma": "исходить",
+  "band": 4,
+  "en": "originate",
+  "ja": "由来する"
+ },
+ {
+  "lemma": "заключаться",
+  "band": 4,
+  "en": "consist",
+  "ja": "から成る"
+ },
+ {
+  "lemma": "сложиться",
+  "band": 4,
+  "en": "develop",
+  "ja": "形成される"
+ },
+ {
+  "lemma": "иметься",
+  "band": 4,
+  "en": "be available",
+  "ja": "存在する"
+ },
+ {
+  "lemma": "отсутствовать",
+  "band": 4,
+  "en": "be absent",
+  "ja": "不在である"
+ },
+ {
+  "lemma": "наступать",
+  "band": 4,
+  "en": "advance",
+  "ja": "進む"
+ },
+ {
+  "lemma": "производить",
+  "band": 4,
+  "en": "produce",
+  "ja": "生産する"
+ },
+ {
+  "lemma": "выясниться",
+  "band": 4,
+  "en": "turn out",
+  "ja": "判明する"
+ },
+ {
+  "lemma": "протянуть",
+  "band": 4,
+  "en": "stretch",
+  "ja": "伸ばす"
+ },
+ {
+  "lemma": "приобрести",
+  "band": 4,
+  "en": "acquire",
+  "ja": "取得する"
+ },
+ {
+  "lemma": "разработать",
+  "band": 4,
+  "en": "develop",
+  "ja": "開発する"
+ },
+ {
+  "lemma": "здравствовать",
+  "band": 4,
+  "en": "be healthy",
+  "ja": "健康である"
+ },
+ {
+  "lemma": "зарегистрировать",
+  "band": 4,
+  "en": "register",
+  "ja": "登録する"
+ },
+ {
+  "lemma": "исполнять",
+  "band": 4,
+  "en": "perform, execute",
+  "ja": "実行する"
+ },
+ {
+  "lemma": "учесть",
+  "band": 4,
+  "en": "take into account",
+  "ja": "考慮する"
+ },
+ {
+  "lemma": "удивляться",
+  "band": 4,
+  "en": "be surprised",
+  "ja": "驚く"
+ },
+ {
+  "lemma": "возникать",
+  "band": 4,
+  "en": "arise",
+  "ja": "生じる"
+ },
+ {
+  "lemma": "предназначить",
+  "band": 4,
+  "en": "intend, designate",
+  "ja": "意図する"
+ },
+ {
+  "lemma": "направиться",
+  "band": 4,
+  "en": "head towards",
+  "ja": "向かう"
+ },
+ {
+  "lemma": "проявлять",
+  "band": 4,
+  "en": "display, show",
+  "ja": "示す"
+ },
+ {
+  "lemma": "оказывать",
+  "band": 4,
+  "en": "provide",
+  "ja": "与える"
+ },
+ {
+  "lemma": "дрожать",
+  "band": 4,
+  "en": "tremble",
+  "ja": "震える"
+ },
+ {
+  "lemma": "опубликовать",
+  "band": 4,
+  "en": "publish",
+  "ja": "出版する"
+ },
+ {
+  "lemma": "доходить",
+  "band": 4,
+  "en": "reach",
+  "ja": "達する"
+ },
+ {
+  "lemma": "высказать",
+  "band": 4,
+  "en": "express (opinion)",
+  "ja": "述べる"
+ },
+ {
+  "lemma": "расположить",
+  "band": 4,
+  "en": "place",
+  "ja": "配置する"
+ },
+ {
+  "lemma": "развиваться",
+  "band": 4,
+  "en": "develop",
+  "ja": "発展する"
+ },
+ {
+  "lemma": "вступать",
+  "band": 4,
+  "en": "enter, join",
+  "ja": "加入する"
+ }
+]

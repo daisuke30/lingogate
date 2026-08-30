@@ -1,0 +1,352 @@
+[
+ {
+  "lemma": "приводить",
+  "aspect": "impf",
+  "aspect_pair": "привести",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "замолчать",
+  "aspect": "pf",
+  "aspect_pair": "замолкать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "требоваться",
+  "aspect": "impf",
+  "aspect_pair": "потребоваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отнести",
+  "aspect": "pf",
+  "aspect_pair": "относить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "наступить",
+  "aspect": "pf",
+  "aspect_pair": "наступать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "присматривать",
+  "aspect": "impf",
+  "aspect_pair": "присмотреть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заканчивать",
+  "aspect": "impf",
+  "aspect_pair": "закончить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "говориться",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "「言われる」の受動・非人称用法には完了体の対なし"
+ },
+ {
+  "lemma": "осмотреть",
+  "aspect": "pf",
+  "aspect_pair": "осматривать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "прикрыть",
+  "aspect": "pf",
+  "aspect_pair": "прикрывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "привлечь",
+  "aspect": "pf",
+  "aspect_pair": "привлекать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "направить",
+  "aspect": "pf",
+  "aspect_pair": "направлять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отследить",
+  "aspect": "pf",
+  "aspect_pair": "отслеживать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "одолжить",
+  "aspect": "pf",
+  "aspect_pair": "одалживать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "оплатить",
+  "aspect": "pf",
+  "aspect_pair": "оплачивать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "перенести",
+  "aspect": "pf",
+  "aspect_pair": "переносить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "поменять",
+  "aspect": "pf",
+  "aspect_pair": "менять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отказать",
+  "aspect": "pf",
+  "aspect_pair": "отказывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "подставить",
+  "aspect": "pf",
+  "aspect_pair": "подставлять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "запустить",
+  "aspect": "pf",
+  "aspect_pair": "запускать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "считаться",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "「～とみなされる」の状態用法には完了体の対なし"
+ },
+ {
+  "lemma": "описать",
+  "aspect": "pf",
+  "aspect_pair": "описывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "признавать",
+  "aspect": "impf",
+  "aspect_pair": "признать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "подвести",
+  "aspect": "pf",
+  "aspect_pair": "подводить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выгнать",
+  "aspect": "pf",
+  "aspect_pair": "выгонять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "обидеть",
+  "aspect": "pf",
+  "aspect_pair": "обижать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "спускаться",
+  "aspect": "impf",
+  "aspect_pair": "спуститься",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "посидеть",
+  "aspect": "pf",
+  "aspect_pair": "сидеть",
+  "pair_kind": "none",
+  "pair_note": "сидетьの限定相（少し座る）"
+ },
+ {
+  "lemma": "прятать",
+  "aspect": "impf",
+  "aspect_pair": "спрятать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "задумать",
+  "aspect": "pf",
+  "aspect_pair": "задумывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "поспать",
+  "aspect": "pf",
+  "aspect_pair": "спать",
+  "pair_kind": "none",
+  "pair_note": "спатьの限定相（少し眠る）"
+ },
+ {
+  "lemma": "жаловаться",
+  "aspect": "impf",
+  "aspect_pair": "пожаловаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выдержать",
+  "aspect": "pf",
+  "aspect_pair": "выдерживать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "проехать",
+  "aspect": "pf",
+  "aspect_pair": "проезжать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "свалить",
+  "aspect": "pf",
+  "aspect_pair": "сваливать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "ввести",
+  "aspect": "pf",
+  "aspect_pair": "вводить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заявить",
+  "aspect": "pf",
+  "aspect_pair": "заявлять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "увести",
+  "aspect": "pf",
+  "aspect_pair": "уводить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выкинуть",
+  "aspect": "pf",
+  "aspect_pair": "выкидывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "повернуться",
+  "aspect": "pf",
+  "aspect_pair": "поворачиваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "смириться",
+  "aspect": "pf",
+  "aspect_pair": "смиряться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "обратить",
+  "aspect": "pf",
+  "aspect_pair": "обращать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отрицать",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "「否定する」には一般的な完了体の対がない"
+ },
+ {
+  "lemma": "потерпеть",
+  "aspect": "pf",
+  "aspect_pair": "терпеть",
+  "pair_kind": "none",
+  "pair_note": "少し我慢する"
+ },
+ {
+  "lemma": "достаться",
+  "aspect": "pf",
+  "aspect_pair": "доставаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "наказать",
+  "aspect": "pf",
+  "aspect_pair": "наказывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "веселиться",
+  "aspect": "impf",
+  "aspect_pair": "повеселиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заговорить",
+  "aspect": "pf",
+  "aspect_pair": "говорить",
+  "pair_kind": "related",
+  "pair_note": "говоритьの開始を表す起動相「話し始める」"
+ },
+ {
+  "lemma": "натворить",
+  "aspect": "pf",
+  "aspect_pair": "натворять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "порвать",
+  "aspect": "pf",
+  "aspect_pair": "рвать",
+  "pair_kind": "pair",
+  "pair_note": null
+ }
+]

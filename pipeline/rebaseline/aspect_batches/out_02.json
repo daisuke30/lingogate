@@ -1,0 +1,352 @@
+[
+ {
+  "lemma": "хотеться",
+  "aspect": "impf",
+  "aspect_pair": "захотеться",
+  "pair_kind": "related",
+  "pair_note": "захотеться＝「欲しくなる」という起動相"
+ },
+ {
+  "lemma": "бывать",
+  "aspect": "impf",
+  "aspect_pair": "случиться",
+  "pair_kind": "related",
+  "pair_note": "быватьは反復・時折、случитьсяは一度起こる"
+ },
+ {
+  "lemma": "назвать",
+  "aspect": "pf",
+  "aspect_pair": "называть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "познакомиться",
+  "aspect": "pf",
+  "aspect_pair": "знакомиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заплатить",
+  "aspect": "pf",
+  "aspect_pair": "платить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "держаться",
+  "aspect": "impf",
+  "aspect_pair": "продержаться",
+  "pair_kind": "related",
+  "pair_note": "完了体は意味で異なる。продержаться＝持ちこたえる"
+ },
+ {
+  "lemma": "успокоиться",
+  "aspect": "pf",
+  "aspect_pair": "успокаиваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заняться",
+  "aspect": "pf",
+  "aspect_pair": "заниматься",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "звучать",
+  "aspect": "impf",
+  "aspect_pair": "прозвучать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "доверять",
+  "aspect": "impf",
+  "aspect_pair": "довериться",
+  "pair_kind": "related",
+  "pair_note": "状態的。довериться＝相手を信頼して身を委ねる"
+ },
+ {
+  "lemma": "двигаться",
+  "aspect": "impf",
+  "aspect_pair": "двинуться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "достать",
+  "aspect": "pf",
+  "aspect_pair": "доставать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заткнуться",
+  "aspect": "pf",
+  "aspect_pair": "затыкаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "разобраться",
+  "aspect": "pf",
+  "aspect_pair": "разбираться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "проводить",
+  "aspect": "impf",
+  "aspect_pair": "провести",
+  "pair_kind": "pair",
+  "pair_note": "「行う」はпроводи́ть。完了体同形прово́дитьに注意"
+ },
+ {
+  "lemma": "шутить",
+  "aspect": "impf",
+  "aspect_pair": "пошутить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "погодить",
+  "aspect": "pf",
+  "aspect_pair": "ждать",
+  "pair_kind": "related",
+  "pair_note": "「少し待つ」という限界相。ждатьは一般的な「待つ」"
+ },
+ {
+  "lemma": "уметь",
+  "aspect": "impf",
+  "aspect_pair": "научиться",
+  "pair_kind": "related",
+  "pair_note": "能力の状態動詞。научиться＝できるようになる"
+ },
+ {
+  "lemma": "украсть",
+  "aspect": "pf",
+  "aspect_pair": "красть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "следить",
+  "aspect": "impf",
+  "aspect_pair": "проследить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "закончиться",
+  "aspect": "pf",
+  "aspect_pair": "заканчиваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "устроить",
+  "aspect": "pf",
+  "aspect_pair": "устраивать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "понадобиться",
+  "aspect": "pf",
+  "aspect_pair": "нуждаться",
+  "pair_kind": "related",
+  "pair_note": "「必要になる」。нуждаться＝「必要とする」で主語が異なる"
+ },
+ {
+  "lemma": "сходить",
+  "aspect": "pf",
+  "aspect_pair": "ходить",
+  "pair_kind": "pair",
+  "pair_note": "ここでは「行って戻る」。別義ではсойтиの不完了体"
+ },
+ {
+  "lemma": "взглянуть",
+  "aspect": "pf",
+  "aspect_pair": "взглядывать",
+  "pair_kind": "pair",
+  "pair_note": "взглядыватьは正規の不完了体だが使用頻度は低い"
+ },
+ {
+  "lemma": "пропасть",
+  "aspect": "pf",
+  "aspect_pair": "пропадать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выяснить",
+  "aspect": "pf",
+  "aspect_pair": "выяснять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "поступить",
+  "aspect": "pf",
+  "aspect_pair": "поступать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "вызвать",
+  "aspect": "pf",
+  "aspect_pair": "вызывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "пригласить",
+  "aspect": "pf",
+  "aspect_pair": "приглашать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выиграть",
+  "aspect": "pf",
+  "aspect_pair": "выигрывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "измениться",
+  "aspect": "pf",
+  "aspect_pair": "изменяться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сбежать",
+  "aspect": "pf",
+  "aspect_pair": "сбегать",
+  "pair_kind": "pair",
+  "pair_note": "сбегатьには完了体「急いで往復する」の同形語もある"
+ },
+ {
+  "lemma": "убрать",
+  "aspect": "pf",
+  "aspect_pair": "убирать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "связать",
+  "aspect": "pf",
+  "aspect_pair": "связывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "начаться",
+  "aspect": "pf",
+  "aspect_pair": "начинаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "уничтожить",
+  "aspect": "pf",
+  "aspect_pair": "уничтожать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сообщить",
+  "aspect": "pf",
+  "aspect_pair": "сообщать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "садиться",
+  "aspect": "impf",
+  "aspect_pair": "сесть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "придумать",
+  "aspect": "pf",
+  "aspect_pair": "придумывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заходить",
+  "aspect": "impf",
+  "aspect_pair": "зайти",
+  "pair_kind": "pair",
+  "pair_note": "「入る・立ち寄る」の意。別義の完了体заходитьに注意"
+ },
+ {
+  "lemma": "скучать",
+  "aspect": "impf",
+  "aspect_pair": "соскучиться",
+  "pair_kind": "related",
+  "pair_note": "状態動詞。соскучиться＝恋しくなる・恋しさが募る"
+ },
+ {
+  "lemma": "врать",
+  "aspect": "impf",
+  "aspect_pair": "соврать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "попытаться",
+  "aspect": "pf",
+  "aspect_pair": "пытаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "повезти",
+  "aspect": "pf",
+  "aspect_pair": "везти",
+  "pair_kind": "pair",
+  "pair_note": "ここでは非人称の「運がよい」。運搬の同形義もある"
+ },
+ {
+  "lemma": "подозревать",
+  "aspect": "impf",
+  "aspect_pair": "заподозрить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "ожидать",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "期待・予想の状態動詞で、対応する完了体なし"
+ },
+ {
+  "lemma": "желать",
+  "aspect": "impf",
+  "aspect_pair": "пожелать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "являться",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "「〜である」は連結・状態用法で完了体なし"
+ },
+ {
+  "lemma": "означать",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "意味・関係を表す状態動詞で完了体なし"
+ }
+]

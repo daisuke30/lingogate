@@ -72,7 +72,12 @@ def load_all_verbs():
 
 def load_legacy():
     legacy = {}
-    path = os.path.join(DATA, "words_band1_aspects.jsonl")
+    # LINGO-012's original band1-only sidecar — moved out of pipeline/data/
+    # (see LINGO-025 log: import.py double-applying both this file AND the
+    # new consolidated words_aspects.jsonl was wiping pair_kind/pair_note for
+    # these 255 lemmas). Kept here purely as a frozen one-time input to this
+    # assembly script; no longer live at import/build time.
+    path = os.path.join(HERE, "legacy_words_band1_aspects.jsonl")
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
             for line in f:

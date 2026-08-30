@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "поиграть",
+  "band": 2,
+  "en": "to play for a while",
+  "ja": "少し遊ぶ"
+ },
+ {
+  "lemma": "пробовать",
+  "band": 2,
+  "en": "try",
+  "ja": "試す"
+ },
+ {
+  "lemma": "дерзить",
+  "band": 2,
+  "en": "to be cheeky/sassy",
+  "ja": "生意気な口をきく"
+ },
+ {
+  "lemma": "испытывать",
+  "band": 2,
+  "en": "experience",
+  "ja": "経験する"
+ },
+ {
+  "lemma": "издеваться",
+  "band": 2,
+  "en": "to mock/bully",
+  "ja": "いじめる"
+ },
+ {
+  "lemma": "пообещать",
+  "band": 2,
+  "en": "to promise",
+  "ja": "約束する"
+ },
+ {
+  "lemma": "пожениться",
+  "band": 2,
+  "en": "to get married (couple)",
+  "ja": "結婚する"
+ },
+ {
+  "lemma": "ужинать",
+  "band": 2,
+  "en": "to have dinner",
+  "ja": "夕食を食べる"
+ },
+ {
+  "lemma": "бегать",
+  "band": 2,
+  "en": "run",
+  "ja": "走る"
+ },
+ {
+  "lemma": "отвалить",
+  "band": 2,
+  "en": "to bugger off (slang)",
+  "ja": "消え失せる"
+ },
+ {
+  "lemma": "выступать",
+  "band": 2,
+  "en": "perform, speak",
+  "ja": "発言する"
+ },
+ {
+  "lemma": "организовать",
+  "band": 2,
+  "en": "organize",
+  "ja": "組織する"
+ },
+ {
+  "lemma": "предоставить",
+  "band": 2,
+  "en": "provide",
+  "ja": "提供する"
+ },
+ {
+  "lemma": "направляться",
+  "band": 2,
+  "en": "to head (towards)",
+  "ja": "向かう"
+ },
+ {
+  "lemma": "поживать",
+  "band": 2,
+  "en": "to be doing/getting along",
+  "ja": "暮らす"
+ },
+ {
+  "lemma": "выслушать",
+  "band": 2,
+  "en": "to hear out",
+  "ja": "聞き終える"
+ },
+ {
+  "lemma": "обедать",
+  "band": 2,
+  "en": "to have lunch",
+  "ja": "昼食を食べる"
+ },
+ {
+  "lemma": "сжечь",
+  "band": 2,
+  "en": "to burn (something)",
+  "ja": "燃やす"
+ },
+ {
+  "lemma": "творить",
+  "band": 2,
+  "en": "to create",
+  "ja": "創造する"
+ },
+ {
+  "lemma": "охотиться",
+  "band": 2,
+  "en": "to hunt",
+  "ja": "狩る"
+ },
+ {
+  "lemma": "пожелать",
+  "band": 2,
+  "en": "to wish (someone)",
+  "ja": "願う"
+ },
+ {
+  "lemma": "потребоваться",
+  "band": 2,
+  "en": "to be required/needed",
+  "ja": "必要となる"
+ },
+ {
+  "lemma": "предупреждать",
+  "band": 2,
+  "en": "to warn",
+  "ja": "警告する"
+ },
+ {
+  "lemma": "приближаться",
+  "band": 2,
+  "en": "approach",
+  "ja": "近づく"
+ },
+ {
+  "lemma": "совершать",
+  "band": 2,
+  "en": "commit",
+  "ja": "行う"
+ },
+ {
+  "lemma": "догадаться",
+  "band": 2,
+  "en": "guess",
+  "ja": "気づく"
+ },
+ {
+  "lemma": "взяться",
+  "band": 3,
+  "en": "undertake",
+  "ja": "取りかかる"
+ },
+ {
+  "lemma": "надоесть",
+  "band": 3,
+  "en": "to get tired of",
+  "ja": "飽きる"
+ },
+ {
+  "lemma": "отстать",
+  "band": 3,
+  "en": "to fall behind; leave alone",
+  "ja": "遅れる"
+ },
+ {
+  "lemma": "раскрыть",
+  "band": 3,
+  "en": "to uncover/reveal",
+  "ja": "明らかにする"
+ },
+ {
+  "lemma": "тянуть",
+  "band": 3,
+  "en": "pull",
+  "ja": "引く"
+ },
+ {
+  "lemma": "превратиться",
+  "band": 3,
+  "en": "turn into",
+  "ja": "変わる"
+ },
+ {
+  "lemma": "поискать",
+  "band": 3,
+  "en": "to search for a while",
+  "ja": "探してみる"
+ },
+ {
+  "lemma": "сменить",
+  "band": 3,
+  "en": "to change/replace",
+  "ja": "交代する"
+ },
+ {
+  "lemma": "поторопиться",
+  "band": 3,
+  "en": "to hurry up",
+  "ja": "急ぐ"
+ },
+ {
+  "lemma": "удивить",
+  "band": 3,
+  "en": "surprise",
+  "ja": "驚かせる"
+ },
+ {
+  "lemma": "объявить",
+  "band": 3,
+  "en": "announce",
+  "ja": "発表する"
+ },
+ {
+  "lemma": "продолжаться",
+  "band": 3,
+  "en": "continue",
+  "ja": "続く"
+ },
+ {
+  "lemma": "очнуться",
+  "band": 3,
+  "en": "to come to/regain consciousness",
+  "ja": "我に返る"
+ },
+ {
+  "lemma": "гореть",
+  "band": 3,
+  "en": "burn",
+  "ja": "燃える"
+ },
+ {
+  "lemma": "оказать",
+  "band": 3,
+  "en": "provide",
+  "ja": "与える"
+ },
+ {
+  "lemma": "поделиться",
+  "band": 3,
+  "en": "to share",
+  "ja": "分け合う"
+ },
+ {
+  "lemma": "вынести",
+  "band": 3,
+  "en": "carry out, endure",
+  "ja": "運び出す"
+ },
+ {
+  "lemma": "водить",
+  "band": 3,
+  "en": "to drive (habitually)",
+  "ja": "運転する"
+ },
+ {
+  "lemma": "поделать",
+  "band": 3,
+  "en": "to do (about it)",
+  "ja": "どうにかする"
+ },
+ {
+  "lemma": "возникнуть",
+  "band": 3,
+  "en": "arise",
+  "ja": "生じる"
+ },
+ {
+  "lemma": "обойтись",
+  "band": 3,
+  "en": "manage",
+  "ja": "済ませる"
+ },
+ {
+  "lemma": "зарабатывать",
+  "band": 3,
+  "en": "to earn",
+  "ja": "稼ぐ"
+ },
+ {
+  "lemma": "шевелиться",
+  "band": 3,
+  "en": "to move/stir",
+  "ja": "動く"
+ },
+ {
+  "lemma": "убегать",
+  "band": 3,
+  "en": "to run away (habitually)",
+  "ja": "逃げる"
+ }
+]

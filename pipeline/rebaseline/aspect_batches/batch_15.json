@@ -1,0 +1,254 @@
+[
+ {
+  "lemma": "отмечать",
+  "band": 4,
+  "en": "note",
+  "ja": "指摘する"
+ },
+ {
+  "lemma": "определять",
+  "band": 4,
+  "en": "define",
+  "ja": "定義する"
+ },
+ {
+  "lemma": "выражать",
+  "band": 4,
+  "en": "express",
+  "ja": "表す"
+ },
+ {
+  "lemma": "выделить",
+  "band": 4,
+  "en": "highlight",
+  "ja": "強調する"
+ },
+ {
+  "lemma": "свидетельствовать",
+  "band": 4,
+  "en": "indicate",
+  "ja": "証明する"
+ },
+ {
+  "lemma": "объединить",
+  "band": 4,
+  "en": "unite",
+  "ja": "統合する"
+ },
+ {
+  "lemma": "броситься",
+  "band": 4,
+  "en": "rush",
+  "ja": "駆け出す"
+ },
+ {
+  "lemma": "описывать",
+  "band": 4,
+  "en": "describe",
+  "ja": "描写する"
+ },
+ {
+  "lemma": "закричать",
+  "band": 4,
+  "en": "shout out",
+  "ja": "叫び出す"
+ },
+ {
+  "lemma": "обеспечивать",
+  "band": 4,
+  "en": "provide",
+  "ja": "供給する"
+ },
+ {
+  "lemma": "окружать",
+  "band": 4,
+  "en": "surround",
+  "ja": "取り囲む"
+ },
+ {
+  "lemma": "предоставлять",
+  "band": 4,
+  "en": "provide",
+  "ja": "提供する"
+ },
+ {
+  "lemma": "сохраниться",
+  "band": 4,
+  "en": "be preserved",
+  "ja": "保存される"
+ },
+ {
+  "lemma": "оценивать",
+  "band": 4,
+  "en": "evaluate",
+  "ja": "評価する"
+ },
+ {
+  "lemma": "отражать",
+  "band": 4,
+  "en": "reflect",
+  "ja": "反映する"
+ },
+ {
+  "lemma": "проводиться",
+  "band": 4,
+  "en": "be conducted",
+  "ja": "行われる"
+ },
+ {
+  "lemma": "приниматься",
+  "band": 4,
+  "en": "begin, be accepted",
+  "ja": "取り掛かる"
+ },
+ {
+  "lemma": "проявляться",
+  "band": 4,
+  "en": "manifest itself",
+  "ja": "現れる"
+ },
+ {
+  "lemma": "проживать",
+  "band": 4,
+  "en": "reside",
+  "ja": "住む"
+ },
+ {
+  "lemma": "достигать",
+  "band": 4,
+  "en": "achieve",
+  "ja": "達成する"
+ },
+ {
+  "lemma": "применять",
+  "band": 4,
+  "en": "apply",
+  "ja": "適用する"
+ },
+ {
+  "lemma": "образовать",
+  "band": 4,
+  "en": "form, create",
+  "ja": "形成する"
+ },
+ {
+  "lemma": "способствовать",
+  "band": 4,
+  "en": "contribute",
+  "ja": "寄与する"
+ },
+ {
+  "lemma": "распространить",
+  "band": 4,
+  "en": "spread, distribute",
+  "ja": "広める"
+ },
+ {
+  "lemma": "представляться",
+  "band": 4,
+  "en": "seem",
+  "ja": "思われる"
+ },
+ {
+  "lemma": "подчеркнуть",
+  "band": 4,
+  "en": "emphasize",
+  "ja": "強調する"
+ },
+ {
+  "lemma": "развивать",
+  "band": 4,
+  "en": "develop",
+  "ja": "発展させる"
+ },
+ {
+  "lemma": "решаться",
+  "band": 4,
+  "en": "dare, decide",
+  "ja": "決心する"
+ },
+ {
+  "lemma": "вздохнуть",
+  "band": 4,
+  "en": "sigh",
+  "ja": "ため息をつく"
+ },
+ {
+  "lemma": "превышать",
+  "band": 4,
+  "en": "exceed",
+  "ja": "超える"
+ },
+ {
+  "lemma": "реализовать",
+  "band": 4,
+  "en": "implement",
+  "ja": "実現する"
+ },
+ {
+  "lemma": "раздаться",
+  "band": 4,
+  "en": "resound",
+  "ja": "響く"
+ },
+ {
+  "lemma": "определяться",
+  "band": 4,
+  "en": "be determined",
+  "ja": "決まる"
+ },
+ {
+  "lemma": "крикнуть",
+  "band": 4,
+  "en": "shout",
+  "ja": "叫ぶ"
+ },
+ {
+  "lemma": "создаваться",
+  "band": 4,
+  "en": "be created",
+  "ja": "作られる"
+ },
+ {
+  "lemma": "приобретать",
+  "band": 4,
+  "en": "acquire",
+  "ja": "取得する"
+ },
+ {
+  "lemma": "осуществлять",
+  "band": 4,
+  "en": "carry out",
+  "ja": "実施する"
+ },
+ {
+  "lemma": "приняться",
+  "band": 4,
+  "en": "set about",
+  "ja": "取りかかる"
+ },
+ {
+  "lemma": "предусмотреть",
+  "band": 4,
+  "en": "foresee, provide for",
+  "ja": "想定する"
+ },
+ {
+  "lemma": "кивнуть",
+  "band": 4,
+  "en": "nod",
+  "ja": "うなずく"
+ },
+ {
+  "lemma": "осуществляться",
+  "band": 4,
+  "en": "be carried out",
+  "ja": "実現される"
+ },
+ {
+  "lemma": "воскликнуть",
+  "band": 4,
+  "en": "exclaim",
+  "ja": "叫ぶ"
+ }
+]

@@ -1,0 +1,296 @@
+[
+ {
+  "lemma": "отмечать",
+  "aspect": "impf",
+  "aspect_pair": "отметить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "определять",
+  "aspect": "impf",
+  "aspect_pair": "определить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выражать",
+  "aspect": "impf",
+  "aspect_pair": "выразить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выделить",
+  "aspect": "pf",
+  "aspect_pair": "выделять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "свидетельствовать",
+  "aspect": "impf",
+  "aspect_pair": "засвидетельствовать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "объединить",
+  "aspect": "pf",
+  "aspect_pair": "объединять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "броситься",
+  "aspect": "pf",
+  "aspect_pair": "бросаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "описывать",
+  "aspect": "impf",
+  "aspect_pair": "описать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "закричать",
+  "aspect": "pf",
+  "aspect_pair": "кричать",
+  "pair_kind": "related",
+  "pair_note": "закричать=「叫び始める」。開始を表す派生語"
+ },
+ {
+  "lemma": "обеспечивать",
+  "aspect": "impf",
+  "aspect_pair": "обеспечить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "окружать",
+  "aspect": "impf",
+  "aspect_pair": "окружить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "предоставлять",
+  "aspect": "impf",
+  "aspect_pair": "предоставить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сохраниться",
+  "aspect": "pf",
+  "aspect_pair": "сохраняться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "оценивать",
+  "aspect": "impf",
+  "aspect_pair": "оценить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отражать",
+  "aspect": "impf",
+  "aspect_pair": "отразить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "проводиться",
+  "aspect": "impf",
+  "aspect_pair": "провестись",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "приниматься",
+  "aspect": "impf",
+  "aspect_pair": "приняться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "проявляться",
+  "aspect": "impf",
+  "aspect_pair": "проявиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "проживать",
+  "aspect": "impf",
+  "aspect_pair": "прожить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "достигать",
+  "aspect": "impf",
+  "aspect_pair": "достигнуть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "применять",
+  "aspect": "impf",
+  "aspect_pair": "применить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "образовать",
+  "aspect": "pf",
+  "aspect_pair": "образовывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "способствовать",
+  "aspect": "impf",
+  "aspect_pair": "поспособствовать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "распространить",
+  "aspect": "pf",
+  "aspect_pair": "распространять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "представляться",
+  "aspect": "impf",
+  "aspect_pair": "представиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "подчеркнуть",
+  "aspect": "pf",
+  "aspect_pair": "подчёркивать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "развивать",
+  "aspect": "impf",
+  "aspect_pair": "развить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "решаться",
+  "aspect": "impf",
+  "aspect_pair": "решиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "вздохнуть",
+  "aspect": "pf",
+  "aspect_pair": "вздыхать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "превышать",
+  "aspect": "impf",
+  "aspect_pair": "превысить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "реализовать",
+  "aspect": "both",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "両体動詞（-оватьの外来語動詞）"
+ },
+ {
+  "lemma": "раздаться",
+  "aspect": "pf",
+  "aspect_pair": "раздаваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "определяться",
+  "aspect": "impf",
+  "aspect_pair": "определиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "крикнуть",
+  "aspect": "pf",
+  "aspect_pair": "кричать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "создаваться",
+  "aspect": "impf",
+  "aspect_pair": "создаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "приобретать",
+  "aspect": "impf",
+  "aspect_pair": "приобрести",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "осуществлять",
+  "aspect": "impf",
+  "aspect_pair": "осуществить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "приняться",
+  "aspect": "pf",
+  "aspect_pair": "приниматься",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "предусмотреть",
+  "aspect": "pf",
+  "aspect_pair": "предусматривать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "кивнуть",
+  "aspect": "pf",
+  "aspect_pair": "кивать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "осуществляться",
+  "aspect": "impf",
+  "aspect_pair": "осуществиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "воскликнуть",
+  "aspect": "pf",
+  "aspect_pair": "восклицать",
+  "pair_kind": "pair",
+  "pair_note": null
+ }
+]

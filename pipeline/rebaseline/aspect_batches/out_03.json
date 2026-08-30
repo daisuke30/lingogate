@@ -1,0 +1,352 @@
+[
+ {
+  "lemma": "арестовать",
+  "aspect": "both",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "両体動詞。ただし未完了体арестовыватьも使われる"
+ },
+ {
+  "lemma": "стараться",
+  "aspect": "impf",
+  "aspect_pair": "постараться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "хватать",
+  "aspect": "impf",
+  "aspect_pair": "хватить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "погибнуть",
+  "aspect": "pf",
+  "aspect_pair": "погибать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "устать",
+  "aspect": "pf",
+  "aspect_pair": "уставать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "позаботиться",
+  "aspect": "pf",
+  "aspect_pair": "заботиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "пропустить",
+  "aspect": "pf",
+  "aspect_pair": "пропускать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сойти",
+  "aspect": "pf",
+  "aspect_pair": "сходить",
+  "pair_kind": "pair",
+  "pair_note": "сходитьには完了体「行ってくる」の用法もある"
+ },
+ {
+  "lemma": "добраться",
+  "aspect": "pf",
+  "aspect_pair": "добираться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "обнаружить",
+  "aspect": "pf",
+  "aspect_pair": "обнаруживать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "удаться",
+  "aspect": "pf",
+  "aspect_pair": "удаваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "благодарить",
+  "aspect": "impf",
+  "aspect_pair": "поблагодарить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "пожаловать",
+  "aspect": "pf",
+  "aspect_pair": "жаловать",
+  "pair_kind": "pair",
+  "pair_note": "добро пожаловатьは定型句。жаловатьは古風"
+ },
+ {
+  "lemma": "клясться",
+  "aspect": "impf",
+  "aspect_pair": "поклясться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заставлять",
+  "aspect": "impf",
+  "aspect_pair": "заставить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "занять",
+  "aspect": "pf",
+  "aspect_pair": "занимать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отправиться",
+  "aspect": "pf",
+  "aspect_pair": "отправляться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сработать",
+  "aspect": "pf",
+  "aspect_pair": "срабатывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "вытащить",
+  "aspect": "pf",
+  "aspect_pair": "вытаскивать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "уезжать",
+  "aspect": "impf",
+  "aspect_pair": "уехать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "действовать",
+  "aspect": "impf",
+  "aspect_pair": "подействовать",
+  "pair_kind": "related",
+  "pair_note": "状態・継続動詞。подействоватьは「効く／少し作用する」"
+ },
+ {
+  "lemma": "собраться",
+  "aspect": "pf",
+  "aspect_pair": "собираться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "приезжать",
+  "aspect": "impf",
+  "aspect_pair": "приехать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "переживать",
+  "aspect": "impf",
+  "aspect_pair": "попереживать",
+  "pair_kind": "none",
+  "pair_note": "しばらく心配する"
+ },
+ {
+  "lemma": "отвезти",
+  "aspect": "pf",
+  "aspect_pair": "отвозить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "съесть",
+  "aspect": "pf",
+  "aspect_pair": "съедать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "называться",
+  "aspect": "impf",
+  "aspect_pair": "назваться",
+  "pair_kind": "related",
+  "pair_note": "「〜と呼ばれる」は状態。назватьсяは主に「名乗る」"
+ },
+ {
+  "lemma": "сомневаться",
+  "aspect": "impf",
+  "aspect_pair": "усомниться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заботиться",
+  "aspect": "impf",
+  "aspect_pair": "позаботиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "лгать",
+  "aspect": "impf",
+  "aspect_pair": "солгать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "убираться",
+  "aspect": "impf",
+  "aspect_pair": "убраться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "спасть",
+  "aspect": "pf",
+  "aspect_pair": "спадать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "постараться",
+  "aspect": "pf",
+  "aspect_pair": "стараться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "договориться",
+  "aspect": "pf",
+  "aspect_pair": "договариваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "принадлежать",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "所属・所有関係を表す状態動詞で完了体なし"
+ },
+ {
+  "lemma": "связаться",
+  "aspect": "pf",
+  "aspect_pair": "связываться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "оставлять",
+  "aspect": "impf",
+  "aspect_pair": "оставить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "ударить",
+  "aspect": "pf",
+  "aspect_pair": "ударять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "собрать",
+  "aspect": "pf",
+  "aspect_pair": "собирать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "бить",
+  "aspect": "impf",
+  "aspect_pair": "побить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выжить",
+  "aspect": "pf",
+  "aspect_pair": "выживать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отойти",
+  "aspect": "pf",
+  "aspect_pair": "отходить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "уволить",
+  "aspect": "pf",
+  "aspect_pair": "увольнять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "успеть",
+  "aspect": "pf",
+  "aspect_pair": "успевать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "постоять",
+  "aspect": "pf",
+  "aspect_pair": "стоять",
+  "pair_kind": "none",
+  "pair_note": "стоятьの限定相（少し立つ）"
+ },
+ {
+  "lemma": "избавиться",
+  "aspect": "pf",
+  "aspect_pair": "избавляться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сожалеть",
+  "aspect": "impf",
+  "aspect_pair": "пожалеть",
+  "pair_kind": "pair",
+  "pair_note": "пожалетьには「同情する、惜しむ」の意味もある"
+ },
+ {
+  "lemma": "касаться",
+  "aspect": "impf",
+  "aspect_pair": "коснуться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "почувствовать",
+  "aspect": "pf",
+  "aspect_pair": "чувствовать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "убедиться",
+  "aspect": "pf",
+  "aspect_pair": "убеждаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ }
+]

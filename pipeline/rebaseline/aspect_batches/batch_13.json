@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "замешать",
+  "band": 3,
+  "en": "to implicate/mix in",
+  "ja": "巻き込む"
+ },
+ {
+  "lemma": "тошнить",
+  "band": 3,
+  "en": "to feel sick/nauseous",
+  "ja": "吐き気がする"
+ },
+ {
+  "lemma": "обыскать",
+  "band": 3,
+  "en": "to search (a place/person)",
+  "ja": "捜索する"
+ },
+ {
+  "lemma": "разрешать",
+  "band": 3,
+  "en": "to allow (habitually)",
+  "ja": "許可する"
+ },
+ {
+  "lemma": "сбросить",
+  "band": 3,
+  "en": "to drop/throw off",
+  "ja": "落とす"
+ },
+ {
+  "lemma": "игнорировать",
+  "band": 3,
+  "en": "to ignore",
+  "ja": "無視する"
+ },
+ {
+  "lemma": "сдохнуть",
+  "band": 3,
+  "en": "to croak/die (vulgar, of animals/people)",
+  "ja": "くたばる"
+ },
+ {
+  "lemma": "валить",
+  "band": 3,
+  "en": "to knock down; to bail (slang)",
+  "ja": "倒す"
+ },
+ {
+  "lemma": "атаковать",
+  "band": 3,
+  "en": "to attack",
+  "ja": "攻撃する"
+ },
+ {
+  "lemma": "прикончить",
+  "band": 3,
+  "en": "to finish off (kill)",
+  "ja": "とどめを刺す"
+ },
+ {
+  "lemma": "нарисовать",
+  "band": 3,
+  "en": "to draw (once)",
+  "ja": "描く"
+ },
+ {
+  "lemma": "расследовать",
+  "band": 3,
+  "en": "to investigate",
+  "ja": "捜査する"
+ },
+ {
+  "lemma": "опознать",
+  "band": 3,
+  "en": "to identify",
+  "ja": "識別する"
+ },
+ {
+  "lemma": "поклясться",
+  "band": 3,
+  "en": "to swear/vow (once)",
+  "ja": "誓う"
+ },
+ {
+  "lemma": "исключить",
+  "band": 3,
+  "en": "exclude",
+  "ja": "除外する"
+ },
+ {
+  "lemma": "подержать",
+  "band": 3,
+  "en": "to hold for a while",
+  "ja": "少し持つ"
+ },
+ {
+  "lemma": "напиться",
+  "band": 3,
+  "en": "to get drunk",
+  "ja": "酔っ払う"
+ },
+ {
+  "lemma": "поместить",
+  "band": 3,
+  "en": "to place/put",
+  "ja": "配置する"
+ },
+ {
+  "lemma": "деться",
+  "band": 3,
+  "en": "to get to/disappear to",
+  "ja": "消えてしまう"
+ },
+ {
+  "lemma": "поужинать",
+  "band": 3,
+  "en": "to have dinner (once)",
+  "ja": "夕食をとる"
+ },
+ {
+  "lemma": "переезжать",
+  "band": 3,
+  "en": "to move house (habitually)",
+  "ja": "引っ越す"
+ },
+ {
+  "lemma": "подвезти",
+  "band": 3,
+  "en": "to give a lift",
+  "ja": "車に乗せる"
+ },
+ {
+  "lemma": "кататься",
+  "band": 3,
+  "en": "to ride (for fun)",
+  "ja": "乗り回す"
+ },
+ {
+  "lemma": "отрезать",
+  "band": 3,
+  "en": "to cut off",
+  "ja": "切り取る"
+ },
+ {
+  "lemma": "стремиться",
+  "band": 4,
+  "en": "strive",
+  "ja": "目指す"
+ },
+ {
+  "lemma": "основать",
+  "band": 4,
+  "en": "found",
+  "ja": "設立する"
+ },
+ {
+  "lemma": "вступить",
+  "band": 4,
+  "en": "enter",
+  "ja": "入る"
+ },
+ {
+  "lemma": "занимать",
+  "band": 4,
+  "en": "occupy",
+  "ja": "占める"
+ },
+ {
+  "lemma": "предстоять",
+  "band": 4,
+  "en": "lie ahead",
+  "ja": "控えている"
+ },
+ {
+  "lemma": "внести",
+  "band": 4,
+  "en": "contribute",
+  "ja": "持ち込む"
+ },
+ {
+  "lemma": "сохранять",
+  "band": 4,
+  "en": "preserve",
+  "ja": "保つ"
+ },
+ {
+  "lemma": "обладать",
+  "band": 4,
+  "en": "possess",
+  "ja": "持っている"
+ },
+ {
+  "lemma": "задуматься",
+  "band": 4,
+  "en": "ponder",
+  "ja": "考え込む"
+ },
+ {
+  "lemma": "произнести",
+  "band": 4,
+  "en": "utter",
+  "ja": "発音する"
+ },
+ {
+  "lemma": "соответствовать",
+  "band": 4,
+  "en": "correspond",
+  "ja": "一致する"
+ },
+ {
+  "lemma": "произвести",
+  "band": 4,
+  "en": "produce",
+  "ja": "生み出す"
+ },
+ {
+  "lemma": "привлекать",
+  "band": 4,
+  "en": "attract",
+  "ja": "引き付ける"
+ },
+ {
+  "lemma": "последовать",
+  "band": 4,
+  "en": "follow",
+  "ja": "続く"
+ },
+ {
+  "lemma": "подтверждать",
+  "band": 4,
+  "en": "confirm",
+  "ja": "確認する"
+ },
+ {
+  "lemma": "рассмотреть",
+  "band": 4,
+  "en": "consider",
+  "ja": "検討する"
+ },
+ {
+  "lemma": "рассматривать",
+  "band": 4,
+  "en": "consider",
+  "ja": "検討する"
+ },
+ {
+  "lemma": "использоваться",
+  "band": 4,
+  "en": "be used",
+  "ja": "使用される"
+ },
+ {
+  "lemma": "висеть",
+  "band": 4,
+  "en": "hang",
+  "ja": "掛かる"
+ },
+ {
+  "lemma": "удаваться",
+  "band": 4,
+  "en": "succeed",
+  "ja": "うまくいく"
+ },
+ {
+  "lemma": "выразить",
+  "band": 4,
+  "en": "express",
+  "ja": "表現する"
+ },
+ {
+  "lemma": "поразить",
+  "band": 4,
+  "en": "amaze, strike",
+  "ja": "驚かせる"
+ },
+ {
+  "lemma": "посетить",
+  "band": 4,
+  "en": "visit",
+  "ja": "訪問する"
+ },
+ {
+  "lemma": "побывать",
+  "band": 4,
+  "en": "visit, have been to",
+  "ja": "行ったことがある"
+ },
+ {
+  "lemma": "делаться",
+  "band": 4,
+  "en": "become",
+  "ja": "なる"
+ },
+ {
+  "lemma": "произносить",
+  "band": 4,
+  "en": "pronounce",
+  "ja": "発音する"
+ }
+]

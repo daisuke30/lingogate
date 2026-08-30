@@ -1,0 +1,352 @@
+[
+ {
+  "lemma": "покинуть",
+  "aspect": "pf",
+  "aspect_pair": "покидать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "опаздывать",
+  "aspect": "impf",
+  "aspect_pair": "опоздать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "судить",
+  "aspect": "impf",
+  "aspect_pair": "посудить",
+  "pair_kind": "none",
+  "pair_note": "しばらく判断・考察する"
+ },
+ {
+  "lemma": "получаться",
+  "aspect": "impf",
+  "aspect_pair": "получиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "отправляться",
+  "aspect": "impf",
+  "aspect_pair": "отправиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "вызывать",
+  "aspect": "impf",
+  "aspect_pair": "вызвать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "расслабиться",
+  "aspect": "pf",
+  "aspect_pair": "расслабляться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "ошибаться",
+  "aspect": "impf",
+  "aspect_pair": "ошибиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "признать",
+  "aspect": "pf",
+  "aspect_pair": "признавать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "научиться",
+  "aspect": "pf",
+  "aspect_pair": "учиться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "совершить",
+  "aspect": "pf",
+  "aspect_pair": "совершать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "гордиться",
+  "aspect": "impf",
+  "aspect_pair": "погордиться",
+  "pair_kind": "none",
+  "pair_note": "しばらく誇らしく思う"
+ },
+ {
+  "lemma": "управлять",
+  "aspect": "impf",
+  "aspect_pair": "поуправлять",
+  "pair_kind": "none",
+  "pair_note": "しばらく管理・運転する"
+ },
+ {
+  "lemma": "поздравлять",
+  "aspect": "impf",
+  "aspect_pair": "поздравить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "обсудить",
+  "aspect": "pf",
+  "aspect_pair": "обсуждать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "продолжить",
+  "aspect": "pf",
+  "aspect_pair": "продолжать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "показаться",
+  "aspect": "pf",
+  "aspect_pair": "казаться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "подписать",
+  "aspect": "pf",
+  "aspect_pair": "подписывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "позволять",
+  "aspect": "impf",
+  "aspect_pair": "позволить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "опоздать",
+  "aspect": "pf",
+  "aspect_pair": "опаздывать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "наблюдать",
+  "aspect": "impf",
+  "aspect_pair": "понаблюдать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "злиться",
+  "aspect": "impf",
+  "aspect_pair": "разозлиться",
+  "pair_kind": "related",
+  "pair_note": "разозлиться=「怒り出す」で状態への移行"
+ },
+ {
+  "lemma": "привезти",
+  "aspect": "pf",
+  "aspect_pair": "привозить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "относиться",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "「関係する」は関係・状態を表し、完了体の対なし"
+ },
+ {
+  "lemma": "напугать",
+  "aspect": "pf",
+  "aspect_pair": "пугать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "приходиться",
+  "aspect": "impf",
+  "aspect_pair": "прийтись",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "установить",
+  "aspect": "pf",
+  "aspect_pair": "устанавливать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "покончить",
+  "aspect": "pf",
+  "aspect_pair": "кончать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "обожать",
+  "aspect": "impf",
+  "aspect_pair": null,
+  "pair_kind": "none",
+  "pair_note": "感情の状態動詞で、対応する完了体なし"
+ },
+ {
+  "lemma": "заслуживать",
+  "aspect": "impf",
+  "aspect_pair": "заслужить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "испортить",
+  "aspect": "pf",
+  "aspect_pair": "портить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "заключить",
+  "aspect": "pf",
+  "aspect_pair": "заключать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "планировать",
+  "aspect": "impf",
+  "aspect_pair": "спланировать",
+  "pair_kind": "pair",
+  "pair_note": "「計画する」は不完了体。滑空の語義とは別"
+ },
+ {
+  "lemma": "плевать",
+  "aspect": "impf",
+  "aspect_pair": "плюнуть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "научить",
+  "aspect": "pf",
+  "aspect_pair": "учить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сохранить",
+  "aspect": "pf",
+  "aspect_pair": "сохранять",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "подать",
+  "aspect": "pf",
+  "aspect_pair": "подавать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "выбраться",
+  "aspect": "pf",
+  "aspect_pair": "выбираться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "поступать",
+  "aspect": "impf",
+  "aspect_pair": "поступить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "убедить",
+  "aspect": "pf",
+  "aspect_pair": "убеждать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "забирать",
+  "aspect": "impf",
+  "aspect_pair": "забрать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "признаться",
+  "aspect": "pf",
+  "aspect_pair": "признаваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "беспокоить",
+  "aspect": "impf",
+  "aspect_pair": "побеспокоить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "сметь",
+  "aspect": "impf",
+  "aspect_pair": "посметь",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "переехать",
+  "aspect": "pf",
+  "aspect_pair": "переезжать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "хранить",
+  "aspect": "impf",
+  "aspect_pair": "сохранить",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "пользоваться",
+  "aspect": "impf",
+  "aspect_pair": "воспользоваться",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "поесть",
+  "aspect": "pf",
+  "aspect_pair": "есть",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "задать",
+  "aspect": "pf",
+  "aspect_pair": "задавать",
+  "pair_kind": "pair",
+  "pair_note": null
+ },
+ {
+  "lemma": "доставить",
+  "aspect": "pf",
+  "aspect_pair": "доставлять",
+  "pair_kind": "pair",
+  "pair_note": null
+ }
+]

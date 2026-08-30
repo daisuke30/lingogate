@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "предупредить",
+  "band": 2,
+  "en": "to warn",
+  "ja": "警告する"
+ },
+ {
+  "lemma": "рисковать",
+  "band": 2,
+  "en": "to risk",
+  "ja": "賭ける"
+ },
+ {
+  "lemma": "влюбить",
+  "band": 2,
+  "en": "to make (someone) fall in love",
+  "ja": "恋させる"
+ },
+ {
+  "lemma": "случаться",
+  "band": 2,
+  "en": "happen",
+  "ja": "起こる"
+ },
+ {
+  "lemma": "зависеть",
+  "band": 2,
+  "en": "depend",
+  "ja": "依存する"
+ },
+ {
+  "lemma": "предать",
+  "band": 2,
+  "en": "to betray",
+  "ja": "裏切る"
+ },
+ {
+  "lemma": "посадить",
+  "band": 2,
+  "en": "plant, seat",
+  "ja": "植える"
+ },
+ {
+  "lemma": "отдыхать",
+  "band": 2,
+  "en": "rest",
+  "ja": "休む"
+ },
+ {
+  "lemma": "построить",
+  "band": 2,
+  "en": "build",
+  "ja": "建てる"
+ },
+ {
+  "lemma": "напоминать",
+  "band": 2,
+  "en": "remind",
+  "ja": "思い出させる"
+ },
+ {
+  "lemma": "запереть",
+  "band": 2,
+  "en": "to lock",
+  "ja": "鍵をかける"
+ },
+ {
+  "lemma": "учитывать",
+  "band": 2,
+  "en": "consider",
+  "ja": "考慮する"
+ },
+ {
+  "lemma": "угрожать",
+  "band": 2,
+  "en": "to threaten",
+  "ja": "脅す"
+ },
+ {
+  "lemma": "отдохнуть",
+  "band": 2,
+  "en": "to rest",
+  "ja": "休む"
+ },
+ {
+  "lemma": "умолять",
+  "band": 2,
+  "en": "to beg",
+  "ja": "懇願する"
+ },
+ {
+  "lemma": "курить",
+  "band": 2,
+  "en": "smoke",
+  "ja": "喫煙する"
+ },
+ {
+  "lemma": "лить",
+  "band": 2,
+  "en": "to pour",
+  "ja": "注ぐ"
+ },
+ {
+  "lemma": "путешествовать",
+  "band": 2,
+  "en": "to travel",
+  "ja": "旅行する"
+ },
+ {
+  "lemma": "заслужить",
+  "band": 2,
+  "en": "to earn/deserve",
+  "ja": "値する"
+ },
+ {
+  "lemma": "дойти",
+  "band": 2,
+  "en": "reach",
+  "ja": "たどり着く"
+ },
+ {
+  "lemma": "приносить",
+  "band": 2,
+  "en": "bring",
+  "ja": "持ってくる"
+ },
+ {
+  "lemma": "наслаждаться",
+  "band": 2,
+  "en": "to enjoy",
+  "ja": "満喫する"
+ },
+ {
+  "lemma": "добавить",
+  "band": 2,
+  "en": "add",
+  "ja": "加える"
+ },
+ {
+  "lemma": "застрелить",
+  "band": 2,
+  "en": "to shoot dead",
+  "ja": "射殺する"
+ },
+ {
+  "lemma": "потратить",
+  "band": 2,
+  "en": "to spend",
+  "ja": "費やす"
+ },
+ {
+  "lemma": "перейти",
+  "band": 2,
+  "en": "cross over",
+  "ja": "移る"
+ },
+ {
+  "lemma": "заработать",
+  "band": 2,
+  "en": "earn",
+  "ja": "稼ぐ"
+ },
+ {
+  "lemma": "отвести",
+  "band": 2,
+  "en": "to lead/take (somewhere)",
+  "ja": "連れて行く"
+ },
+ {
+  "lemma": "захватить",
+  "band": 2,
+  "en": "capture",
+  "ja": "捕らえる"
+ },
+ {
+  "lemma": "привыкнуть",
+  "band": 2,
+  "en": "get used",
+  "ja": "慣れる"
+ },
+ {
+  "lemma": "ошибиться",
+  "band": 2,
+  "en": "to make a mistake",
+  "ja": "間違える"
+ },
+ {
+  "lemma": "убежать",
+  "band": 2,
+  "en": "to run away",
+  "ja": "逃げ出す"
+ },
+ {
+  "lemma": "обвинять",
+  "band": 2,
+  "en": "to accuse",
+  "ja": "非難する"
+ },
+ {
+  "lemma": "подтвердить",
+  "band": 2,
+  "en": "confirm",
+  "ja": "確認する"
+ },
+ {
+  "lemma": "пугать",
+  "band": 2,
+  "en": "to frighten",
+  "ja": "怖がらせる"
+ },
+ {
+  "lemma": "уважать",
+  "band": 2,
+  "en": "respect",
+  "ja": "尊敬する"
+ },
+ {
+  "lemma": "схватить",
+  "band": 2,
+  "en": "grab",
+  "ja": "つかむ"
+ },
+ {
+  "lemma": "готовиться",
+  "band": 2,
+  "en": "prepare",
+  "ja": "準備する"
+ },
+ {
+  "lemma": "побыть",
+  "band": 2,
+  "en": "to stay for a while",
+  "ja": "しばらくいる"
+ },
+ {
+  "lemma": "драться",
+  "band": 2,
+  "en": "to fight (physically)",
+  "ja": "喧嘩する"
+ },
+ {
+  "lemma": "отменить",
+  "band": 2,
+  "en": "to cancel",
+  "ja": "キャンセルする"
+ },
+ {
+  "lemma": "напомнить",
+  "band": 2,
+  "en": "remind",
+  "ja": "思い出させる"
+ },
+ {
+  "lemma": "поработать",
+  "band": 2,
+  "en": "to work for a while",
+  "ja": "少し働く"
+ },
+ {
+  "lemma": "предполагать",
+  "band": 2,
+  "en": "assume",
+  "ja": "仮定する"
+ },
+ {
+  "lemma": "спешить",
+  "band": 2,
+  "en": "hurry",
+  "ja": "急ぐ"
+ },
+ {
+  "lemma": "спрятать",
+  "band": 2,
+  "en": "to hide (something)",
+  "ja": "隠す"
+ },
+ {
+  "lemma": "задавать",
+  "band": 2,
+  "en": "ask",
+  "ja": "尋ねる"
+ },
+ {
+  "lemma": "пострадать",
+  "band": 2,
+  "en": "to suffer/be injured",
+  "ja": "被害を受ける"
+ },
+ {
+  "lemma": "нервничать",
+  "band": 2,
+  "en": "to be nervous",
+  "ja": "緊張する"
+ },
+ {
+  "lemma": "присесть",
+  "band": 2,
+  "en": "to sit down (briefly)",
+  "ja": "腰掛ける"
+ }
+]

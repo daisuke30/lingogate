@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "навестить",
+  "band": 3,
+  "en": "to visit (someone)",
+  "ja": "見舞う"
+ },
+ {
+  "lemma": "взорваться",
+  "band": 3,
+  "en": "to explode",
+  "ja": "爆発する"
+ },
+ {
+  "lemma": "интересоваться",
+  "band": 3,
+  "en": "be interested in",
+  "ja": "興味を持つ"
+ },
+ {
+  "lemma": "пристрелить",
+  "band": 3,
+  "en": "to shoot dead",
+  "ja": "射殺する"
+ },
+ {
+  "lemma": "повеселиться",
+  "band": 3,
+  "en": "to have fun (for a while)",
+  "ja": "楽しく過ごす"
+ },
+ {
+  "lemma": "присутствовать",
+  "band": 3,
+  "en": "be present",
+  "ja": "出席する"
+ },
+ {
+  "lemma": "пожалеть",
+  "band": 3,
+  "en": "to pity/regret",
+  "ja": "気の毒に思う"
+ },
+ {
+  "lemma": "побежать",
+  "band": 3,
+  "en": "start running",
+  "ja": "走り出す"
+ },
+ {
+  "lemma": "удалить",
+  "band": 3,
+  "en": "to delete/remove",
+  "ja": "削除する"
+ },
+ {
+  "lemma": "заехать",
+  "band": 3,
+  "en": "to stop by (by vehicle)",
+  "ja": "立ち寄る"
+ },
+ {
+  "lemma": "нажать",
+  "band": 3,
+  "en": "to press (a button)",
+  "ja": "押す"
+ },
+ {
+  "lemma": "присаживаться",
+  "band": 3,
+  "en": "to take a seat",
+  "ja": "腰を下ろす"
+ },
+ {
+  "lemma": "проникнуть",
+  "band": 3,
+  "en": "to infiltrate/get in",
+  "ja": "侵入する"
+ },
+ {
+  "lemma": "тащить",
+  "band": 3,
+  "en": "to drag/haul",
+  "ja": "引きずる"
+ },
+ {
+  "lemma": "глянуть",
+  "band": 3,
+  "en": "to take a glance",
+  "ja": "ちらっと見る"
+ },
+ {
+  "lemma": "умываться",
+  "band": 3,
+  "en": "to wash one's face",
+  "ja": "顔を洗う"
+ },
+ {
+  "lemma": "изменять",
+  "band": 3,
+  "en": "to change; to cheat (on)",
+  "ja": "変える"
+ },
+ {
+  "lemma": "соврать",
+  "band": 3,
+  "en": "to tell a lie (once)",
+  "ja": "嘘をつく"
+ },
+ {
+  "lemma": "целоваться",
+  "band": 3,
+  "en": "to kiss (each other)",
+  "ja": "キスする"
+ },
+ {
+  "lemma": "предположить",
+  "band": 3,
+  "en": "suppose",
+  "ja": "推測する"
+ },
+ {
+  "lemma": "состоять",
+  "band": 3,
+  "en": "consist of",
+  "ja": "成り立つ"
+ },
+ {
+  "lemma": "похоронить",
+  "band": 3,
+  "en": "to bury",
+  "ja": "埋葬する"
+ },
+ {
+  "lemma": "осознать",
+  "band": 3,
+  "en": "to realize",
+  "ja": "自覚する"
+ },
+ {
+  "lemma": "довериться",
+  "band": 3,
+  "en": "to trust (someone)",
+  "ja": "信頼する"
+ },
+ {
+  "lemma": "наделать",
+  "band": 3,
+  "en": "to make/cause (a lot of)",
+  "ja": "やらかす"
+ },
+ {
+  "lemma": "восстановить",
+  "band": 3,
+  "en": "to restore",
+  "ja": "回復する"
+ },
+ {
+  "lemma": "приветствовать",
+  "band": 3,
+  "en": "to greet/welcome",
+  "ja": "歓迎する"
+ },
+ {
+  "lemma": "переходить",
+  "band": 3,
+  "en": "cross",
+  "ja": "渡る"
+ },
+ {
+  "lemma": "засунуть",
+  "band": 3,
+  "en": "to shove/stick (into)",
+  "ja": "押し込む"
+ },
+ {
+  "lemma": "пригодиться",
+  "band": 3,
+  "en": "to come in handy",
+  "ja": "役に立つ"
+ },
+ {
+  "lemma": "заснуть",
+  "band": 3,
+  "en": "to fall asleep",
+  "ja": "眠りにつく"
+ },
+ {
+  "lemma": "указать",
+  "band": 3,
+  "en": "indicate",
+  "ja": "示す"
+ },
+ {
+  "lemma": "наплевать",
+  "band": 3,
+  "en": "not to care (slang)",
+  "ja": "どうでもいい"
+ },
+ {
+  "lemma": "сводить",
+  "band": 3,
+  "en": "to take (somewhere and back)",
+  "ja": "連れて行く"
+ },
+ {
+  "lemma": "уснуть",
+  "band": 3,
+  "en": "to fall asleep",
+  "ja": "寝入る"
+ },
+ {
+  "lemma": "велеть",
+  "band": 3,
+  "en": "order, command",
+  "ja": "命じる"
+ },
+ {
+  "lemma": "разочаровать",
+  "band": 3,
+  "en": "to disappoint",
+  "ja": "失望させる"
+ },
+ {
+  "lemma": "твориться",
+  "band": 3,
+  "en": "to be going on (happening)",
+  "ja": "起こっている"
+ },
+ {
+  "lemma": "упомянуть",
+  "band": 3,
+  "en": "mention",
+  "ja": "言及する"
+ },
+ {
+  "lemma": "выступить",
+  "band": 3,
+  "en": "perform",
+  "ja": "出演する"
+ },
+ {
+  "lemma": "задержаться",
+  "band": 3,
+  "en": "to be delayed/stay longer",
+  "ja": "長居する"
+ },
+ {
+  "lemma": "скрыть",
+  "band": 3,
+  "en": "to conceal",
+  "ja": "隠す"
+ },
+ {
+  "lemma": "проявить",
+  "band": 3,
+  "en": "display, show",
+  "ja": "示す"
+ },
+ {
+  "lemma": "спрятаться",
+  "band": 3,
+  "en": "to hide (oneself)",
+  "ja": "隠れる"
+ },
+ {
+  "lemma": "столкнуться",
+  "band": 3,
+  "en": "to collide/encounter",
+  "ja": "直面する"
+ },
+ {
+  "lemma": "спеть",
+  "band": 3,
+  "en": "to sing (once)",
+  "ja": "歌う"
+ },
+ {
+  "lemma": "открыться",
+  "band": 3,
+  "en": "open",
+  "ja": "開く"
+ },
+ {
+  "lemma": "попадать",
+  "band": 3,
+  "en": "get into",
+  "ja": "入る"
+ },
+ {
+  "lemma": "разделить",
+  "band": 3,
+  "en": "divide",
+  "ja": "分ける"
+ },
+ {
+  "lemma": "сообщать",
+  "band": 3,
+  "en": "report",
+  "ja": "報告する"
+ }
+]

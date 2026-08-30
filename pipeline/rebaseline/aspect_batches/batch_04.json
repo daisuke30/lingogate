@@ -1,0 +1,302 @@
+[
+ {
+  "lemma": "покинуть",
+  "band": 2,
+  "en": "leave",
+  "ja": "去る"
+ },
+ {
+  "lemma": "опаздывать",
+  "band": 2,
+  "en": "to be late",
+  "ja": "遅れる"
+ },
+ {
+  "lemma": "судить",
+  "band": 2,
+  "en": "judge",
+  "ja": "判断する"
+ },
+ {
+  "lemma": "получаться",
+  "band": 2,
+  "en": "turn out, work out",
+  "ja": "うまくいく"
+ },
+ {
+  "lemma": "отправляться",
+  "band": 2,
+  "en": "set off, depart",
+  "ja": "出発する"
+ },
+ {
+  "lemma": "вызывать",
+  "band": 2,
+  "en": "cause",
+  "ja": "引き起こす"
+ },
+ {
+  "lemma": "расслабиться",
+  "band": 2,
+  "en": "to relax",
+  "ja": "リラックスする"
+ },
+ {
+  "lemma": "ошибаться",
+  "band": 2,
+  "en": "to be mistaken",
+  "ja": "間違える"
+ },
+ {
+  "lemma": "признать",
+  "band": 2,
+  "en": "recognize",
+  "ja": "認める"
+ },
+ {
+  "lemma": "научиться",
+  "band": 2,
+  "en": "learn",
+  "ja": "学ぶ"
+ },
+ {
+  "lemma": "совершить",
+  "band": 2,
+  "en": "commit",
+  "ja": "行う"
+ },
+ {
+  "lemma": "гордиться",
+  "band": 2,
+  "en": "to be proud",
+  "ja": "誇りに思う"
+ },
+ {
+  "lemma": "управлять",
+  "band": 2,
+  "en": "manage",
+  "ja": "管理する"
+ },
+ {
+  "lemma": "поздравлять",
+  "band": 2,
+  "en": "to congratulate",
+  "ja": "祝う"
+ },
+ {
+  "lemma": "обсудить",
+  "band": 2,
+  "en": "discuss",
+  "ja": "話し合う"
+ },
+ {
+  "lemma": "продолжить",
+  "band": 2,
+  "en": "continue",
+  "ja": "続ける"
+ },
+ {
+  "lemma": "показаться",
+  "band": 2,
+  "en": "seem",
+  "ja": "のように見える"
+ },
+ {
+  "lemma": "подписать",
+  "band": 2,
+  "en": "sign",
+  "ja": "署名する"
+ },
+ {
+  "lemma": "позволять",
+  "band": 2,
+  "en": "allow",
+  "ja": "許す"
+ },
+ {
+  "lemma": "опоздать",
+  "band": 2,
+  "en": "to be late",
+  "ja": "遅刻する"
+ },
+ {
+  "lemma": "наблюдать",
+  "band": 2,
+  "en": "observe",
+  "ja": "観察する"
+ },
+ {
+  "lemma": "злиться",
+  "band": 2,
+  "en": "to be angry",
+  "ja": "怒る"
+ },
+ {
+  "lemma": "привезти",
+  "band": 2,
+  "en": "bring",
+  "ja": "持ってくる"
+ },
+ {
+  "lemma": "относиться",
+  "band": 2,
+  "en": "relate to",
+  "ja": "関係する"
+ },
+ {
+  "lemma": "напугать",
+  "band": 2,
+  "en": "to scare",
+  "ja": "怖がらせる"
+ },
+ {
+  "lemma": "приходиться",
+  "band": 2,
+  "en": "have to",
+  "ja": "せざるを得ない"
+ },
+ {
+  "lemma": "установить",
+  "band": 2,
+  "en": "establish",
+  "ja": "設置する"
+ },
+ {
+  "lemma": "покончить",
+  "band": 2,
+  "en": "to finish/end (with)",
+  "ja": "終わらせる"
+ },
+ {
+  "lemma": "обожать",
+  "band": 2,
+  "en": "to adore",
+  "ja": "崇拝する"
+ },
+ {
+  "lemma": "заслуживать",
+  "band": 2,
+  "en": "to deserve",
+  "ja": "値する"
+ },
+ {
+  "lemma": "испортить",
+  "band": 2,
+  "en": "to spoil/ruin",
+  "ja": "台無しにする"
+ },
+ {
+  "lemma": "заключить",
+  "band": 2,
+  "en": "conclude",
+  "ja": "締結する"
+ },
+ {
+  "lemma": "планировать",
+  "band": 2,
+  "en": "plan",
+  "ja": "計画する"
+ },
+ {
+  "lemma": "плевать",
+  "band": 2,
+  "en": "to spit; not to care",
+  "ja": "唾を吐く"
+ },
+ {
+  "lemma": "научить",
+  "band": 2,
+  "en": "teach",
+  "ja": "教える"
+ },
+ {
+  "lemma": "сохранить",
+  "band": 2,
+  "en": "preserve",
+  "ja": "保存する"
+ },
+ {
+  "lemma": "подать",
+  "band": 2,
+  "en": "submit",
+  "ja": "提出する"
+ },
+ {
+  "lemma": "выбраться",
+  "band": 2,
+  "en": "to get out",
+  "ja": "抜け出す"
+ },
+ {
+  "lemma": "поступать",
+  "band": 2,
+  "en": "act",
+  "ja": "行動する"
+ },
+ {
+  "lemma": "убедить",
+  "band": 2,
+  "en": "convince",
+  "ja": "説得する"
+ },
+ {
+  "lemma": "забирать",
+  "band": 2,
+  "en": "to take/pick up",
+  "ja": "引き取る"
+ },
+ {
+  "lemma": "признаться",
+  "band": 2,
+  "en": "confess",
+  "ja": "告白する"
+ },
+ {
+  "lemma": "беспокоить",
+  "band": 2,
+  "en": "to bother",
+  "ja": "悩ませる"
+ },
+ {
+  "lemma": "сметь",
+  "band": 2,
+  "en": "to dare",
+  "ja": "あえて〜する"
+ },
+ {
+  "lemma": "переехать",
+  "band": 2,
+  "en": "to move (house)",
+  "ja": "引っ越す"
+ },
+ {
+  "lemma": "хранить",
+  "band": 2,
+  "en": "keep, store",
+  "ja": "保管する"
+ },
+ {
+  "lemma": "пользоваться",
+  "band": 2,
+  "en": "use",
+  "ja": "利用する"
+ },
+ {
+  "lemma": "поесть",
+  "band": 2,
+  "en": "to have a bite to eat",
+  "ja": "食事をする"
+ },
+ {
+  "lemma": "задать",
+  "band": 2,
+  "en": "ask",
+  "ja": "尋ねる"
+ },
+ {
+  "lemma": "доставить",
+  "band": 2,
+  "en": "deliver",
+  "ja": "届ける"
+ }
+]
