@@ -45,6 +45,15 @@ CREATE TABLE IF NOT EXISTS Word (
     -- shown related verb means). NULL for non-verbs.
     pair_kind   TEXT,                       -- 'pair' | 'related' | 'none' | NULL
     pair_note   TEXT,                       -- short ja explanation, or NULL
+    -- LINGO-026: pair_note was ja-only, which leaked raw Japanese into the UI
+    -- for non-ja app languages. Parallel translated fields (not a nested
+    -- {ja,en,ru} object — matches this schema's flat-column convention and
+    -- keeps every existing pair_note consumer working unchanged). Also added
+    -- via idempotent ALTER in import.py:ensure_migrations. Resolved by the web
+    -- app via the front→UI→en→ja fallback chain (engine/localizedText.ts),
+    -- never rendered raw.
+    pair_note_en TEXT,
+    pair_note_ru TEXT,
     -- LINGO-022 (card-back word breakdown). Grammatical gender for nouns:
     -- 'm'|'f'|'n' singular genders, 'pl' pluralia tantum (деньги/ножницы),
     -- 'mf' common gender (коллега/судья). NULL for non-nouns. Also added via
@@ -72,6 +81,10 @@ CREATE TABLE IF NOT EXISTS Sentence (
     kind        TEXT NOT NULL DEFAULT 'sentence', -- 'sentence' | 'word' (vocab flashcard)
     kana        TEXT,                       -- katakana pronunciation, best-effort, may be NULL
     note        TEXT,                       -- etymology / grammar note the author wrote
+    -- LINGO-026: same ja-only-leak fix as Word.pair_note above — parallel
+    -- translated fields, resolved via the front→UI→en→ja fallback chain.
+    note_en     TEXT,
+    note_ru     TEXT,
     -- LINGO-011 (target-word-driven sentences). The single band-vocab lemma this
     -- sentence is built to teach; the quiz picks it via target_lemma. NULL for
     -- pre-LINGO-011 rows. Also added via idempotent ALTER in ensure_migrations.

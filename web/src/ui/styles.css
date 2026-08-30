@@ -650,6 +650,126 @@ button {
   margin-left: 6px;
 }
 
+/* ---- List row + bottom sheet picker (LINGO-026) ------------------------ */
+.row-link {
+  width: 100%;
+  text-align: left;
+}
+.row-value {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+}
+.row-value .value {
+  color: var(--ink-dim);
+  font-size: 14px;
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.row-value .chevron {
+  color: var(--ink-faint);
+  font-size: 18px;
+  line-height: 1;
+}
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+  animation: sheet-backdrop-in 0.15s ease;
+}
+.sheet {
+  width: 100%;
+  max-width: 480px;
+  max-height: 75vh;
+  overflow-y: auto;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  animation: sheet-slide-up 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.sheet-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  margin: 10px auto 6px;
+}
+.sheet-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 4px 20px 10px;
+}
+.sheet-options {
+  display: flex;
+  flex-direction: column;
+}
+.sheet-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  padding: 14px 20px;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+}
+.sheet-option:first-child {
+  border-top: none;
+}
+.sheet-option.on .label {
+  color: var(--indigo-bright);
+  font-weight: 700;
+}
+.sheet-option:disabled {
+  color: var(--ink-faint);
+  cursor: default;
+}
+.sheet-option:disabled .label {
+  color: var(--ink-faint);
+}
+.sheet-check {
+  color: var(--indigo-bright);
+  font-weight: 800;
+  flex: none;
+}
+.sheet-cancel {
+  width: 100%;
+  text-align: center;
+  padding: 16px 20px 4px;
+  color: var(--ink-dim);
+  font-weight: 600;
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
+}
+@keyframes sheet-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sheet-slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .steps {
   counter-reset: step;
   display: flex;

@@ -2,12 +2,9 @@ import { useState } from "react";
 import { advanceOnboarding } from "../engine/onboarding";
 import { COURSES, frontLangFromUILang } from "../content/courses";
 import { completeOnboardingWithCourse, markOnboardingSeen } from "../state/onboarding";
-import { NATIVE_LANG_NAME, UI_LANGS, langName, useI18n } from "../i18n/i18n";
+import { NATIVE_LANG_NAME, UI_LANGS, useI18n } from "../i18n/i18n";
 import type { Lang } from "../i18n/i18n";
-
-/** Compact codes for the screen-1 corner language switch — NATIVE_LANG_NAME's
- * full words ("日本語"/"Русский") are too wide for a small top-corner control. */
-const LANG_SHORT: Record<Lang, string> = { ja: "JA", en: "EN", ru: "RU" };
+import { ListPicker } from "./ListPicker";
 
 /**
  * First-run onboarding (LINGO-017): 5 static screens explaining the app's
@@ -92,57 +89,40 @@ export function OnboardingFlow({
             <div className="big-emoji">🌐</div>
             <h1>{t("onboard.course.title")}</h1>
           </div>
+          {/* LINGO-026: same list-row + bottom-sheet pattern as Settings —
+              endonym labels, no side-by-side buttons. Course selection needs
+              its own onSelect (not just ListPicker's built-in state) since
+              picking a course also seeds the front-language suggestion. */}
           <div className="list" style={{ marginTop: 8 }}>
-            {COURSES.map((c) => {
-              const available = c.status === "available";
-              const isSelected = selectedCourseId === c.courseId;
-              return (
-                <div className="row" key={c.courseId}>
-                  <div>
-                    <div className="label">
-                      {langName(lang, c.targetLang)}
-                      {!available && <span className="badge">{t("badge.comingSoon")}</span>}
-                    </div>
-                    <div className="sub">{NATIVE_LANG_NAME[c.targetLang]}</div>
-                  </div>
-                  {available ? (
-                    <button
-                      className={isSelected ? "btn primary" : "btn ghost"}
-                      onClick={() => selectCourse(c.courseId)}
-                    >
-                      {isSelected ? t("badge.inUse") : t("common.on")}
-                    </button>
-                  ) : (
-                    <button className="btn" disabled>
-                      {t("badge.comingSoon")}
-                    </button>
-                  )}
-                </div>
-              );
-            })}
+            <ListPicker
+              label={t("onboard.course.title")}
+              options={COURSES.map((c) => ({
+                value: c.courseId,
+                label: NATIVE_LANG_NAME[c.targetLang],
+                disabled: c.status !== "available",
+                badge: c.status === "available" ? undefined : t("badge.comingSoon"),
+              }))}
+              selected={selectedCourseId ?? ""}
+              onSelect={selectCourse}
+              closeLabel={t("common.close")}
+            />
           </div>
 
           {selectedCourse && frontLang && (
             <>
               <div className="section-title">{t("settings.section.frontLang")}</div>
-              <div className="card">
-                <div className="row" style={{ padding: 0, background: "transparent" }}>
-                  <div>
-                    <div className="label">{t("settings.section.frontLang")}</div>
-                    <div className="sub">{t("onboard.course.frontNote", { lang: NATIVE_LANG_NAME[lang] })}</div>
-                  </div>
-                  <div className="seg">
-                    {selectedCourse.availableFrontLangs.map((l) => (
-                      <button
-                        key={l}
-                        className={frontLang === l ? "on" : ""}
-                        onClick={() => setFrontLangChoice(l)}
-                      >
-                        {NATIVE_LANG_NAME[l]}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+              <div className="list">
+                <ListPicker
+                  label={t("settings.section.frontLang")}
+                  sub={t("onboard.course.frontNote", { lang: NATIVE_LANG_NAME[lang] })}
+                  options={selectedCourse.availableFrontLangs.map((l) => ({
+                    value: l,
+                    label: NATIVE_LANG_NAME[l],
+                  }))}
+                  selected={frontLang}
+                  onSelect={setFrontLangChoice}
+                  closeLabel={t("common.close")}
+                />
               </div>
               <button className="btn primary block" style={{ marginTop: 14 }} onClick={() => void confirmCourse()}>
                 {t("onboard.next")}
@@ -166,9 +146,13 @@ export function OnboardingFlow({
               current screen's copy immediately. */}
           {screenIndex === 0 && (
             <div className="seg" style={{ marginRight: 8 }}>
+              {/* LINGO-026: endonym labels (日本語/English/Русский), not the
+                  old JA/EN/RU abbreviation — Katsuta's approved design bans
+                  anything other than each language's own name (no flags,
+                  no codes) everywhere a language picker appears. */}
               {UI_LANGS.map((l) => (
                 <button key={l} className={lang === l ? "on" : ""} onClick={() => setLang(l)}>
-                  {LANG_SHORT[l]}
+                  {NATIVE_LANG_NAME[l]}
                 </button>
               ))}
             </div>

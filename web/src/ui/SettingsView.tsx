@@ -26,7 +26,8 @@ import { checkForUpdate, hasPendingUpdate } from "../state/appUpdate";
 import { downloadBackupFile, exportBackup, importBackupText } from "../state/backup";
 import type { ImportOutcome } from "../state/backup";
 import { currentStoragePersisted, formatBytes, storageEstimate } from "../state/persistence";
-import { NATIVE_LANG_NAME, UI_LANGS, langName, useI18n } from "../i18n/i18n";
+import { NATIVE_LANG_NAME, UI_LANGS, useI18n } from "../i18n/i18n";
+import { ListPicker, ListRow } from "./ListPicker";
 
 function formatBuiltAt(iso: string): string {
   const d = new Date(iso);
@@ -43,7 +44,7 @@ export function SettingsView({
 }) {
   const { lang: uiLang, setLang, t } = useI18n();
   const [minutes, setMinutes] = useState(10);
-  const [, setQuizModeState] = useState<QuizMode>("flashcard");
+  const [quizMode, setQuizModeState] = useState<QuizMode>("flashcard");
   const [ttsOn, setTtsOn] = useState(true);
   const [ttsRate, setTtsRateState] = useState(1.0);
   const [hasVoice, setHasVoice] = useState(false);
@@ -64,7 +65,6 @@ export function SettingsView({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const course = resolveCourse(courseId);
-  const targetLang = course.targetLang;
 
   useEffect(() => {
     getUnlockMinutes().then(setMinutes);
@@ -88,18 +88,20 @@ export function SettingsView({
     return unsub;
   }, []);
 
-  function pick(m: number) {
+  function pickMinutes(v: string) {
+    const m = Number(v);
     setMinutes(m);
     void setUnlockMinutes(m);
   }
 
-  function toggleTts() {
-    const next = !ttsOn;
+  function pickTtsOn(v: "on" | "off") {
+    const next = v === "on";
     setTtsOn(next);
     void setTtsEnabled(next);
   }
 
-  function pickRate(r: number) {
+  function pickRate(v: string) {
+    const r = Number(v);
     setTtsRateState(r);
     void setTtsRate(r);
   }
@@ -112,9 +114,9 @@ export function SettingsView({
     location.reload();
   }
 
-  function pickFrontLang(l: Lang) {
-    setFrontLangState(l);
-    void setFrontLang(courseId, l);
+  function pickFrontLang(l: string) {
+    setFrontLangState(l as Lang);
+    void setFrontLang(courseId, l as Lang);
   }
 
   async function reset() {
@@ -178,7 +180,11 @@ export function SettingsView({
     }
   }
 
-  const targetLangName = langName(uiLang, targetLang);
+  const closeLabel = t("common.close");
+  // LINGO-026 (Katsuta-approved design): language names in every picker are
+  // ALWAYS endonyms (日本語/English/Русский) — never translated into the UI
+  // language, never a flag. NATIVE_LANG_NAME is exactly that lookup.
+  const targetLangName = NATIVE_LANG_NAME[course.targetLang];
 
   return (
     <div className="app">
@@ -189,134 +195,90 @@ export function SettingsView({
 
       {/* -- App language (UI) -- */}
       <div className="section-title">{t("settings.section.appLang")}</div>
-      <div className="card">
-        <div className="row" style={{ padding: 0, background: "transparent" }}>
-          <div>
-            <div className="label">{t("settings.section.appLang")}</div>
-            <div className="sub">{t("settings.appLang.sub")}</div>
-          </div>
-          <div className="seg">
-            {UI_LANGS.map((l) => (
-              <button key={l} className={uiLang === l ? "on" : ""} onClick={() => setLang(l)}>
-                {NATIVE_LANG_NAME[l]}
-              </button>
-            ))}
-          </div>
-        </div>
+      <div className="list">
+        <ListPicker
+          label={t("settings.section.appLang")}
+          sub={t("settings.appLang.sub")}
+          options={UI_LANGS.map((l) => ({ value: l, label: NATIVE_LANG_NAME[l] }))}
+          selected={uiLang}
+          onSelect={setLang}
+          closeLabel={closeLabel}
+        />
       </div>
 
       {/* -- LINGO-017: replay the first-run intro on demand -- */}
       <div className="list" style={{ marginTop: 8 }}>
-        <button className="row" style={{ width: "100%" }} onClick={onShowOnboarding}>
-          <div className="label">{t("settings.viewOnboarding")}</div>
-          <span className="linkbtn">›</span>
-        </button>
+        <ListRow label={t("settings.viewOnboarding")} onClick={onShowOnboarding} />
       </div>
 
       {/* -- Course (back-of-card language) -- */}
       <div className="section-title">{t("settings.section.course")}</div>
       <div className="list">
-        {COURSES.map((c) => {
-          const available = c.status === "available";
-          const name = langName(uiLang, c.targetLang);
-          return (
-            <div className="row" key={c.courseId}>
-              <div>
-                <div className="label">
-                  {name}
-                  {!available && <span className="badge">{t("badge.comingSoon")}</span>}
-                </div>
-                <div className="sub">{NATIVE_LANG_NAME[c.targetLang]}</div>
-              </div>
-              <div className="seg">
-                {available ? (
-                  <button
-                    className={courseId === c.courseId ? "on" : ""}
-                    onClick={() => void pickCourse(c.courseId)}
-                  >
-                    {courseId === c.courseId ? t("badge.inUse") : t("common.on")}
-                  </button>
-                ) : (
-                  <button disabled>{t("badge.comingSoon")}</button>
-                )}
-              </div>
-            </div>
-          );
-        })}
+        <ListPicker
+          label={t("settings.section.course")}
+          sub={t("settings.course.sub")}
+          options={COURSES.map((c) => ({
+            value: c.courseId,
+            label: NATIVE_LANG_NAME[c.targetLang],
+            disabled: c.status !== "available",
+            badge: c.status === "available" ? undefined : t("badge.comingSoon"),
+          }))}
+          selected={courseId}
+          onSelect={(id) => void pickCourse(id)}
+          closeLabel={closeLabel}
+        />
       </div>
-      <p className="muted" style={{ marginTop: 8 }}>
-        {t("settings.course.sub")}
-      </p>
 
       {/* -- Front (prompt) language -- */}
       <div className="section-title">{t("settings.section.frontLang")}</div>
-      <div className="card">
-        <div className="row" style={{ padding: 0, background: "transparent" }}>
-          <div>
-            <div className="label">{t("settings.section.frontLang")}</div>
-            <div className="sub">{t("settings.frontLang.sub")}</div>
-          </div>
-          <div className="seg">
-            {course.availableFrontLangs.map((l) => (
-              <button
-                key={l}
-                className={frontLang === l ? "on" : ""}
-                onClick={() => pickFrontLang(l)}
-              >
-                {NATIVE_LANG_NAME[l]}
-              </button>
-            ))}
-          </div>
-        </div>
+      <div className="list">
+        <ListPicker
+          label={t("settings.section.frontLang")}
+          sub={t("settings.frontLang.sub")}
+          options={course.availableFrontLangs.map((l) => ({ value: l, label: NATIVE_LANG_NAME[l] }))}
+          selected={frontLang}
+          onSelect={pickFrontLang}
+          closeLabel={closeLabel}
+        />
       </div>
 
       <div className="section-title">{t("settings.section.unlock")}</div>
-      <div className="card">
-        <div className="row" style={{ padding: 0, background: "transparent" }}>
-          <div>
-            <div className="label">{t("settings.unlock.label")}</div>
-            <div className="sub">{t("settings.unlock.sub")}</div>
-          </div>
-          <div className="seg">
-            {UNLOCK_CHOICES.map((m) => (
-              <button key={m} className={minutes === m ? "on" : ""} onClick={() => pick(m)}>
-                {t("settings.unlock.minutes", { m })}
-              </button>
-            ))}
-          </div>
-        </div>
+      <div className="list">
+        <ListPicker
+          label={t("settings.unlock.label")}
+          sub={t("settings.unlock.sub")}
+          options={UNLOCK_CHOICES.map((m) => ({ value: String(m), label: t("settings.unlock.minutes", { m }) }))}
+          selected={String(minutes)}
+          onSelect={pickMinutes}
+          closeLabel={closeLabel}
+        />
       </div>
 
       <div className="section-title">{t("settings.section.tts")}</div>
       {hasVoice ? (
         <div className="list">
-          <div className="row">
-            <div>
-              <div className="label">{t("settings.tts.label", { lang: targetLangName })}</div>
-              <div className="sub">{t("settings.tts.sub")}</div>
-            </div>
-            <div className="seg">
-              <button className={ttsOn ? "on" : ""} onClick={() => ttsOn || toggleTts()}>
-                {t("common.on")}
-              </button>
-              <button className={!ttsOn ? "on" : ""} onClick={() => ttsOn && toggleTts()}>
-                {t("common.off")}
-              </button>
-            </div>
-          </div>
-          <div className="row">
-            <div>
-              <div className="label">{t("settings.tts.rateLabel")}</div>
-              <div className="sub">{t("settings.tts.rateSub")}</div>
-            </div>
-            <div className="seg">
-              {TTS_RATE_CHOICES.map((r) => (
-                <button key={r} className={ttsRate === r ? "on" : ""} onClick={() => pickRate(r)}>
-                  {r === 1.0 ? t("settings.tts.rateNormal") : "0.8x"}
-                </button>
-              ))}
-            </div>
-          </div>
+          <ListPicker
+            label={t("settings.tts.label", { lang: targetLangName })}
+            sub={t("settings.tts.sub")}
+            options={[
+              { value: "on", label: t("common.on") },
+              { value: "off", label: t("common.off") },
+            ]}
+            selected={ttsOn ? "on" : "off"}
+            onSelect={pickTtsOn}
+            closeLabel={closeLabel}
+          />
+          <ListPicker
+            label={t("settings.tts.rateLabel")}
+            sub={t("settings.tts.rateSub")}
+            options={TTS_RATE_CHOICES.map((r) => ({
+              value: String(r),
+              label: r === 1.0 ? t("settings.tts.rateNormal") : "0.8x",
+            }))}
+            selected={String(ttsRate)}
+            onSelect={pickRate}
+            closeLabel={closeLabel}
+          />
         </div>
       ) : (
         <p className="muted">{t("settings.tts.noVoice", { lang: targetLangName })}</p>
@@ -324,32 +286,16 @@ export function SettingsView({
 
       <div className="section-title">{t("settings.section.quizUI")}</div>
       <div className="list">
-        <div className="row">
-          <div>
-            <div className="label">
-              {t("settings.quiz.flashcard")}
-              <span className="badge">{t("badge.default")}</span>
-            </div>
-            <div className="sub">{t("settings.quiz.flashcardSub")}</div>
-          </div>
-          <div className="seg">
-            <button className="on" disabled>
-              {t("badge.inUse")}
-            </button>
-          </div>
-        </div>
-        <div className="row">
-          <div>
-            <div className="label">
-              {t("settings.quiz.strict")}
-              <span className="badge">{t("badge.comingSoon")}</span>
-            </div>
-            <div className="sub">{t("settings.quiz.strictSub")}</div>
-          </div>
-          <div className="seg">
-            <button disabled>{t("badge.comingSoon")}</button>
-          </div>
-        </div>
+        <ListPicker
+          label={t("settings.section.quizUI")}
+          options={[
+            { value: "flashcard", label: t("settings.quiz.flashcard"), sub: t("settings.quiz.flashcardSub"), badge: t("badge.default") },
+            { value: "strict", label: t("settings.quiz.strict"), sub: t("settings.quiz.strictSub"), disabled: true, badge: t("badge.comingSoon") },
+          ]}
+          selected={quizMode}
+          onSelect={() => setQuizModeState("flashcard")} // strict is disabled -> only a no-op re-select is reachable
+          closeLabel={closeLabel}
+        />
       </div>
 
       <div className="section-title">{t("settings.section.data")}</div>
@@ -435,7 +381,7 @@ export function SettingsView({
 
       <p className="muted" style={{ marginTop: 20, textAlign: "center", opacity: 0.6 }}>
         {t("settings.build", { v: versionInfo.version })}
-        {versionInfo.builtAt ? `（${formatBuiltAt(versionInfo.builtAt)}）` : ""}
+        {versionInfo.builtAt ? t("settings.buildAt", { at: formatBuiltAt(versionInfo.builtAt) }) : ""}
       </p>
       {/* LINGO-021: storage protection status + usage estimate — small, at
           the very bottom, purely informational (the actual persist() request

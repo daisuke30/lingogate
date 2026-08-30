@@ -198,7 +198,12 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
           aspectPair: null,
           // LINGO-025: 'pair' | 'related' | 'none' | null — see wordBreakdown.ts.
           pairKind: null,
+          // LINGO-026: pairNote is ja-only by convention; pairNoteEn/Ru are
+          // the translated counterparts. All three resolved by the UI layer
+          // (engine/localizedText.ts) via front→UI→en→ja, never rendered raw.
           pairNote: null,
+          pairNoteEn: null,
+          pairNoteRu: null,
         });
       } else {
         const existing = words.find((x) => x.id === id);
@@ -225,6 +230,11 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
       existing.aspectPair = a.aspect_pair ?? null;
       existing.pairKind = a.pair_kind ?? null;
       existing.pairNote = a.pair_note ?? null;
+      // LINGO-026: parallel translated fields, added alongside the existing
+      // ja-only pair_note (see the module-level Sentence.note comment below
+      // for the same "parallel fields, not a nested object" schema decision).
+      existing.pairNoteEn = a.pair_note_en ?? null;
+      existing.pairNoteRu = a.pair_note_ru ?? null;
     }
   }
 
@@ -297,8 +307,17 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
         kana: s.kana ?? null,
         // Etymology/grammar note (RU) or irregular-verb principal parts in
         // "go-went-gone" form (EN, LINGO-015) — same free-text field, course
-        // decides what it means.
+        // decides what it means. LINGO-026: `note` itself stays ja-only (RU
+        // course) / whatever the source language already was (EN course's
+        // "go-went-gone" is already language-neutral ASCII); note_en/note_ru
+        // are parallel translated fields (not a nested {ja,en,ru} object —
+        // keeps every existing consumer of the bare `note` string working
+        // unchanged, and matches the flat-column convention the rest of this
+        // schema already uses for aspect/aspectPair/pairKind). Resolved by
+        // the UI layer via engine/localizedText.ts's front→UI→en→ja chain.
         note: s.note ?? null,
+        noteEn: s.note_en ?? null,
+        noteRu: s.note_ru ?? null,
         band: s.band ?? band,
         difficulty: s.difficulty ?? 1,
         source: s.source ?? "generated",

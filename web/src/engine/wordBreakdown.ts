@@ -30,6 +30,9 @@ const POS_LABELS: Record<string, string> = {
   prep: "前置詞",
   conj: "接続詞",
   part: "助詞",
+  // LINGO-026: was missing entirely (no i18n key either) — 38 RU words
+  // (спасибо, привет, пожалуйста...) fell through to the raw "intj" string.
+  intj: "感動詞",
 };
 
 /** Parts of speech dropped from a *sentence* card's breakdown, unless the
@@ -98,8 +101,23 @@ const DEFAULT_ASPECT_LABELS: AspectLabels = {
  * label with no pair machinery at all. Returns null only for non-verbs
  * (aspect null).
  */
+export interface AspectLineEntry {
+  lemma: string;
+  aspect: "pf" | "impf" | "both" | null;
+  aspectPair: string | null;
+  pairKind: "pair" | "related" | "none" | null;
+  /** LINGO-026: the nuance note ALREADY resolved to a single display string
+   * for the current front/UI language (via engine/localizedText.ts's
+   * resolveLocalizedText()) — this function has no opinion on language
+   * fallback, it just renders whatever string it's handed. Deliberately an
+   * inline type rather than `Pick<WordBreakdownEntry, ...>`: WordBreakdownEntry
+   * itself carries the raw pairNoteJa/En/Ru triple, not a single resolved
+   * value, so the two shapes are intentionally different. */
+  pairNote: string | null;
+}
+
 export function formatAspectLine(
-  entry: Pick<WordBreakdownEntry, "lemma" | "aspect" | "aspectPair" | "pairKind" | "pairNote">,
+  entry: AspectLineEntry,
   labels: AspectLabels = DEFAULT_ASPECT_LABELS,
 ): string | null {
   if (!entry.aspect) return null;
@@ -171,8 +189,16 @@ export interface WordBreakdownEntry {
   aspectPair: string | null;
   /** LINGO-025: see formatAspectLine doc comment. Null for non-verbs. */
   pairKind: "pair" | "related" | "none" | null;
-  /** LINGO-025: short ja nuance note for pairKind related/none. Null for non-verbs. */
-  pairNote: string | null;
+  /** LINGO-026: raw ja/en/ru nuance-note triple for pairKind related/none
+   * (null for non-verbs). NOT for direct rendering — resolve to one string
+   * via engine/localizedText.ts's resolveLocalizedText() first (see
+   * AspectLineEntry.pairNote), the same front→UI→en→ja chain used for
+   * Sentence.note. Named with the "Ja/En/Ru" suffix (rather than a bare
+   * `pairNote`, which used to be the single ja-only field before LINGO-026)
+   * so a call site can't accidentally render the untranslated raw value. */
+  pairNoteJa: string | null;
+  pairNoteEn: string | null;
+  pairNoteRu: string | null;
   /** Noun grammatical gender (LINGO-022); null for non-nouns. */
   gender: "m" | "f" | "n" | "pl" | "mf" | null;
   enGloss: string | null;
@@ -204,7 +230,9 @@ export function buildWordBreakdown(
       aspect: w.aspect ?? null,
       aspectPair: w.aspectPair ?? null,
       pairKind: w.pairKind ?? null,
-      pairNote: w.pairNote ?? null,
+      pairNoteJa: w.pairNote ?? null,
+      pairNoteEn: w.pairNoteEn ?? null,
+      pairNoteRu: w.pairNoteRu ?? null,
       gender: w.gender ?? null,
       enGloss: w.enGloss ?? null,
       jaGloss: w.jaGloss ?? null,

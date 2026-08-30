@@ -22,7 +22,17 @@ export interface Sentence {
   en: string;
   ja: string | null;
   kana: string | null;
+  /** ja text (LINGO-026: kept as the bare `note` field for back-compat —
+   * effectively "noteJa"). Resolve via engine/localizedText.ts's
+   * resolveLocalizedText() using {ja: note, en: noteEn, ru: noteRu} rather
+   * than rendering this field directly — a raw `note` render shows Japanese
+   * regardless of UI language. */
   note: string | null;
+  /** LINGO-026: English translation of `note`; undefined/null for content
+   * not yet translated (resolveLocalizedText falls back gracefully). */
+  noteEn?: string | null;
+  /** LINGO-026: Russian translation of `note`. */
+  noteRu?: string | null;
   band: number;
   difficulty: number;
   source: string;
@@ -66,10 +76,16 @@ export interface DeckWord {
    * explains its aspect situation instead of silently omitting it. Null for
    * non-verbs. */
   pairKind?: "pair" | "related" | "none" | null;
-  /** Short ja explanation shown for pairKind "related"/"none" (why it isn't
-   * a strict pair, or what the shown related verb means). Null for "pair"
-   * (self-evident) and for non-verbs. */
+  /** ja explanation shown for pairKind "related"/"none" (why it isn't a
+   * strict pair, or what the shown related verb means). Null for "pair"
+   * (self-evident) and for non-verbs. LINGO-026: kept as the bare `pairNote`
+   * field for back-compat (effectively "pairNoteJa") — resolve via
+   * engine/localizedText.ts rather than rendering this field directly. */
   pairNote?: string | null;
+  /** LINGO-026: English translation of `pairNote`. */
+  pairNoteEn?: string | null;
+  /** LINGO-026: Russian translation of `pairNote`. */
+  pairNoteRu?: string | null;
   /** Noun grammatical gender (LINGO-022): "m"|"f"|"n" singular genders,
    * "pl" pluralia tantum, "mf" common gender; null for non-nouns. */
   gender?: "m" | "f" | "n" | "pl" | "mf" | null;

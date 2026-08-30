@@ -74,6 +74,12 @@ def ensure_migrations(conn):
         conn.execute("ALTER TABLE Sentence ADD COLUMN kana TEXT")
     if "note" not in have:
         conn.execute("ALTER TABLE Sentence ADD COLUMN note TEXT")
+    # LINGO-026: parallel en/ru translations of `note` (was ja-only, leaking
+    # raw Japanese into non-ja app languages — see engine/localizedText.ts).
+    if "note_en" not in have:
+        conn.execute("ALTER TABLE Sentence ADD COLUMN note_en TEXT")
+    if "note_ru" not in have:
+        conn.execute("ALTER TABLE Sentence ADD COLUMN note_ru TEXT")
     # LINGO-011: the single band-vocab lemma a sentence is built to teach.
     if "target_lemma" not in have:
         conn.execute("ALTER TABLE Sentence ADD COLUMN target_lemma TEXT")
@@ -93,6 +99,12 @@ def ensure_migrations(conn):
         conn.execute("ALTER TABLE Word ADD COLUMN pair_kind TEXT")
     if "pair_note" not in have_word:
         conn.execute("ALTER TABLE Word ADD COLUMN pair_note TEXT")
+    # LINGO-026: parallel en/ru translations of pair_note (same ja-only-leak
+    # fix as Sentence.note_en/note_ru above).
+    if "pair_note_en" not in have_word:
+        conn.execute("ALTER TABLE Word ADD COLUMN pair_note_en TEXT")
+    if "pair_note_ru" not in have_word:
+        conn.execute("ALTER TABLE Word ADD COLUMN pair_note_ru TEXT")
 
 
 def upsert_deck(conn):
@@ -169,10 +181,12 @@ def import_word_aspects(conn, deck_id, data_dir):
         for lineno, a in load_jsonl(path):
             lemma = a["lemma"].strip()
             cur = conn.execute(
-                """UPDATE Word SET aspect=?, aspect_pair=?, pair_kind=?, pair_note=?
+                """UPDATE Word SET aspect=?, aspect_pair=?, pair_kind=?, pair_note=?,
+                     pair_note_en=?, pair_note_ru=?
                    WHERE deck_id=? AND lemma=?""",
                 (a.get("aspect"), a.get("aspect_pair"), a.get("pair_kind"),
-                 a.get("pair_note"), deck_id, lemma),
+                 a.get("pair_note"), a.get("pair_note_en"), a.get("pair_note_ru"),
+                 deck_id, lemma),
             )
             if cur.rowcount == 0:
                 unmatched.append(lemma)
@@ -208,18 +222,20 @@ def import_sentences(conn, deck_id, data_dir):
             conn.execute(
                 """INSERT INTO Sentence
                      (id, deck_id, ru, en, ja, band, difficulty, source, kind,
-                      kana, note, target_lemma)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                      kana, note, note_en, note_ru, target_lemma)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                    ON CONFLICT(id) DO UPDATE SET
                      deck_id=excluded.deck_id, ru=excluded.ru, en=excluded.en,
                      ja=excluded.ja, band=excluded.band,
                      difficulty=excluded.difficulty, source=excluded.source,
                      kind=excluded.kind, kana=excluded.kana, note=excluded.note,
+                     note_en=excluded.note_en, note_ru=excluded.note_ru,
                      target_lemma=excluded.target_lemma""",
                 (sid, deck_id, s["ru"], s["en"], s.get("ja"),
                  s.get("band", band), s.get("difficulty", 1),
                  s.get("source", "generated"), s.get("kind", "sentence"),
-                 s.get("kana"), s.get("note"), s.get("target_lemma")),
+                 s.get("kana"), s.get("note"), s.get("note_en"), s.get("note_ru"),
+                 s.get("target_lemma")),
             )
             # rebuild links for this sentence
             conn.execute("DELETE FROM sentence_words WHERE sentence_id=?", (sid,))

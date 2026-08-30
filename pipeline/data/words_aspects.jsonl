@@ -1,6 +1,6 @@
-{"lemma": "быть", "aspect": "impf", "aspect_pair": "побыть", "pair_kind": "none", "pair_note": "しばらくいる"}
+{"lemma": "быть", "aspect": "impf", "aspect_pair": "побыть", "pair_kind": "none", "pair_note": "しばらくいる", "pair_note_en": "to stay for a while", "pair_note_ru": "побыть некоторое время"}
 {"lemma": "мочь", "aspect": "impf", "aspect_pair": "смочь", "pair_kind": "pair", "pair_note": null}
-{"lemma": "знать", "aspect": "impf", "aspect_pair": "узнать", "pair_kind": "related", "pair_note": "узнать=「知るようになる」（知り合う/気づく）で厳密な対ではなく派生語"}
+{"lemma": "знать", "aspect": "impf", "aspect_pair": "узнать", "pair_kind": "related", "pair_note": "узнать=「知るようになる」（知り合う/気づく）で厳密な対ではなく派生語", "pair_note_en": "узнать = ‘to come to know’ (to get acquainted / realize); a derivative rather than a strict aspectual counterpart", "pair_note_ru": "узнать = «узнать, познакомиться / осознать»; производный глагол, а не строгая видовая пара"}
 {"lemma": "хотеть", "aspect": "impf", "aspect_pair": "захотеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сказать", "aspect": "pf", "aspect_pair": "говорить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "думать", "aspect": "impf", "aspect_pair": "подумать", "pair_kind": "pair", "pair_note": null}
@@ -22,10 +22,10 @@
 {"lemma": "взять", "aspect": "pf", "aspect_pair": "брать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "простить", "aspect": "pf", "aspect_pair": "прощать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "убить", "aspect": "pf", "aspect_pair": "убивать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "иметь", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "所有を表す状態動詞で、対応する完了体なし"}
+{"lemma": "иметь", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "所有を表す状態動詞で、対応する完了体なし", "pair_note_en": "stative verb of possession; no corresponding perfective", "pair_note_ru": "стативный глагол со значением обладания; соответствующего совершенного вида нет"}
 {"lemma": "вернуться", "aspect": "pf", "aspect_pair": "возвращаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "работать", "aspect": "impf", "aspect_pair": "поработать", "pair_kind": "none", "pair_note": "少し働く"}
-{"lemma": "стоить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（値段・価値）、対の完了体なし"}
+{"lemma": "работать", "aspect": "impf", "aspect_pair": "поработать", "pair_kind": "none", "pair_note": "少し働く", "pair_note_en": "to work for a while", "pair_note_ru": "немного поработать"}
+{"lemma": "стоить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（値段・価値）、対の完了体なし", "pair_note_en": "stative verb (price/value); no perfective counterpart", "pair_note_ru": "стативный глагол (цена, стоимость); видовой пары совершенного вида нет"}
 {"lemma": "понять", "aspect": "pf", "aspect_pair": "понимать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "смотреть", "aspect": "impf", "aspect_pair": "посмотреть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "прийти", "aspect": "pf", "aspect_pair": "приходить", "pair_kind": "pair", "pair_note": null}
@@ -34,7 +34,7 @@
 {"lemma": "собираться", "aspect": "impf", "aspect_pair": "собраться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "нравиться", "aspect": "impf", "aspect_pair": "понравиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "случиться", "aspect": "pf", "aspect_pair": "случаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "жить", "aspect": "impf", "aspect_pair": "пожить", "pair_kind": "none", "pair_note": "しばらく暮らす／прожить=〜年生きる（期間）"}
+{"lemma": "жить", "aspect": "impf", "aspect_pair": "пожить", "pair_kind": "none", "pair_note": "しばらく暮らす／прожить=〜年生きる（期間）", "pair_note_en": "to live for a while / прожить = to live for ~ years (duration)", "pair_note_ru": "пожить некоторое время / прожить = прожить сколько-либо лет (длительность)"}
 {"lemma": "пытаться", "aspect": "impf", "aspect_pair": "попытаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "получить", "aspect": "pf", "aspect_pair": "получать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поговорить", "aspect": "pf", "aspect_pair": "говорить", "pair_kind": "pair", "pair_note": null}
@@ -51,35 +51,35 @@
 {"lemma": "оставить", "aspect": "pf", "aspect_pair": "оставлять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "извинить", "aspect": "pf", "aspect_pair": "извинять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "умереть", "aspect": "pf", "aspect_pair": "умирать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "помнить", "aspect": "impf", "aspect_pair": "вспомнить", "pair_kind": "related", "pair_note": "「思い出す」（起動相）はвспомнить。状態としての「覚えている」自体に対の完了体なし"}
+{"lemma": "помнить", "aspect": "impf", "aspect_pair": "вспомнить", "pair_kind": "related", "pair_note": "「思い出す」（起動相）はвспомнить。状態としての「覚えている」自体に対の完了体なし", "pair_note_en": "вспомнить means ‘to remember/recall’ (inchoative); stative ‘to remember’ itself has no perfective counterpart", "pair_note_ru": "вспомнить — «вспомнить» (начинательное значение); у стативного значения «помнить» как такового нет совершенного вида"}
 {"lemma": "подождать", "aspect": "pf", "aspect_pair": "ждать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подумать", "aspect": "pf", "aspect_pair": "думать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "чувствовать", "aspect": "impf", "aspect_pair": "почувствовать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "спать", "aspect": "impf", "aspect_pair": "поспать", "pair_kind": "none", "pair_note": "少し眠る。「眠りに落ちる」はуснуть⇔засыпать（別動詞）"}
+{"lemma": "спать", "aspect": "impf", "aspect_pair": "поспать", "pair_kind": "none", "pair_note": "少し眠る。「眠りに落ちる」はуснуть⇔засыпать（別動詞）", "pair_note_en": "to sleep for a while. ‘To fall asleep’ is уснуть ⇔ засыпать (a different verb)", "pair_note_ru": "немного поспать. «Заснуть» — уснуть ⇔ засыпать (другой глагол)"}
 {"lemma": "начать", "aspect": "pf", "aspect_pair": "начинать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "забыть", "aspect": "pf", "aspect_pair": "забывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "позволить", "aspect": "pf", "aspect_pair": "позволять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выйти", "aspect": "pf", "aspect_pair": "выходить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "надеяться", "aspect": "impf", "aspect_pair": "понадеяться", "pair_kind": "none", "pair_note": "少し期待する・あてにする"}
+{"lemma": "надеяться", "aspect": "impf", "aspect_pair": "понадеяться", "pair_kind": "none", "pair_note": "少し期待する・あてにする", "pair_note_en": "to hope/rely on something for a while", "pair_note_ru": "некоторое время надеяться, рассчитывать"}
 {"lemma": "прийтись", "aspect": "pf", "aspect_pair": "приходиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "выглядеть", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（外見）、対の完了体なし"}
+{"lemma": "выглядеть", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（外見）、対の完了体なし", "pair_note_en": "stative verb (appearance); no perfective counterpart", "pair_note_ru": "стативный глагол (внешний вид); видовой пары совершенного вида нет"}
 {"lemma": "послушать", "aspect": "pf", "aspect_pair": "слушать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "искать", "aspect": "impf", "aspect_pair": "найти", "pair_kind": "pair", "pair_note": "суплетив対（искать/найти、異なる語根）。LINGO-012で確認済み"}
+{"lemma": "искать", "aspect": "impf", "aspect_pair": "найти", "pair_kind": "pair", "pair_note": "суплетив対（искать/найти、異なる語根）。LINGO-012で確認済み", "pair_note_en": "suppletive pair (искать/найти, different roots). Confirmed in LINGO-012", "pair_note_ru": "супплетивная пара (искать/найти, разные корни). Проверено в LINGO-012"}
 {"lemma": "решить", "aspect": "pf", "aspect_pair": "решать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "послать", "aspect": "pf", "aspect_pair": "посылать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "бояться", "aspect": "impf", "aspect_pair": "испугаться", "pair_kind": "related", "pair_note": "испугаться=「怖くなる」（起動相、別動詞）。状態としての「怖がっている」自体に対の完了体なし"}
+{"lemma": "бояться", "aspect": "impf", "aspect_pair": "испугаться", "pair_kind": "related", "pair_note": "испугаться=「怖くなる」（起動相、別動詞）。状態としての「怖がっている」自体に対の完了体なし", "pair_note_en": "испугаться = ‘to become frightened’ (inchoative, a different verb). Stative ‘to be afraid’ itself has no perfective counterpart", "pair_note_ru": "испугаться = «испугаться» (начинательное значение, другой глагол). У стативного значения «бояться» как такового нет совершенного вида"}
 {"lemma": "происходить", "aspect": "impf", "aspect_pair": "произойти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "позвонить", "aspect": "pf", "aspect_pair": "звонить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "считать", "aspect": "impf", "aspect_pair": "посчитать", "pair_kind": "related", "pair_note": "「数える」の完了体はпосчитать／сосчитать。「〜と思う」の意味では対なし（счесть は文語）"}
-{"lemma": "звать", "aspect": "impf", "aspect_pair": "позвать", "pair_kind": "pair", "pair_note": "「名前を～と呼ぶ」の完了体はназвать"}
+{"lemma": "считать", "aspect": "impf", "aspect_pair": "посчитать", "pair_kind": "related", "pair_note": "「数える」の完了体はпосчитать／сосчитать。「〜と思う」の意味では対なし（счесть は文語）", "pair_note_en": "The perfective of ‘to count’ is посчитать / сосчитать. In the sense ‘to think/consider,’ there is no counterpart (счесть is literary)", "pair_note_ru": "Совершенный вид в значении «считать числа» — посчитать / сосчитать. В значении «полагать» видовой пары нет (счесть — книжное)"}
+{"lemma": "звать", "aspect": "impf", "aspect_pair": "позвать", "pair_kind": "pair", "pair_note": "「名前を～と呼ぶ」の完了体はназвать", "pair_note_en": "The perfective of ‘to call/name someone ~’ is назвать", "pair_note_ru": "Совершенный вид в значении «называть кого-либо каким-либо именем» — назвать"}
 {"lemma": "верить", "aspect": "impf", "aspect_pair": "поверить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пройти", "aspect": "pf", "aspect_pair": "проходить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "играть", "aspect": "impf", "aspect_pair": "сыграть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "уходить", "aspect": "impf", "aspect_pair": "уйти", "pair_kind": "pair", "pair_note": null}
-{"lemma": "держать", "aspect": "impf", "aspect_pair": "подержать", "pair_kind": "none", "pair_note": "少し持つ"}
+{"lemma": "держать", "aspect": "impf", "aspect_pair": "подержать", "pair_kind": "none", "pair_note": "少し持つ", "pair_note_en": "to hold for a while", "pair_note_ru": "немного подержать"}
 {"lemma": "показать", "aspect": "pf", "aspect_pair": "показывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "хватить", "aspect": "pf", "aspect_pair": "хватать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "использовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）"}
+{"lemma": "использовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）", "pair_note_en": "biaspectual verb (foreign verb in -овать)", "pair_note_ru": "двувидовой глагол (заимствованный глагол на -овать)"}
 {"lemma": "поехать", "aspect": "pf", "aspect_pair": "ехать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "произойти", "aspect": "pf", "aspect_pair": "происходить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "спросить", "aspect": "pf", "aspect_pair": "спрашивать", "pair_kind": "pair", "pair_note": null}
@@ -95,9 +95,9 @@
 {"lemma": "приехать", "aspect": "pf", "aspect_pair": "приезжать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "закончить", "aspect": "pf", "aspect_pair": "заканчивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "оставаться", "aspect": "impf", "aspect_pair": "остаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "сидеть", "aspect": "impf", "aspect_pair": "посидеть", "pair_kind": "none", "pair_note": "少し座る。別動詞: садиться→сесть（座る動作そのもの）"}
+{"lemma": "сидеть", "aspect": "impf", "aspect_pair": "посидеть", "pair_kind": "none", "pair_note": "少し座る。別動詞: садиться→сесть（座る動作そのもの）", "pair_note_en": "to sit for a while. Different verb: садиться → сесть (the action of sitting down itself)", "pair_note_ru": "немного посидеть. Другой глагол: садиться → сесть (само действие принятия сидячего положения)"}
 {"lemma": "спасти", "aspect": "pf", "aspect_pair": "спасать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "ходить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はидти。完了体は文脈で異なる（例: пойти出発する／сходить往復する）"}
+{"lemma": "ходить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はидти。完了体は文脈で異なる（例: пойти出発する／сходить往復する）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is идти. The perfective depends on context (e.g. пойти ‘to set off’ / сходить ‘to make a round trip’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — идти. Совершенный вид зависит от контекста (например, пойти «отправиться» / сходить «сходить туда и обратно»)"}
 {"lemma": "написать", "aspect": "pf", "aspect_pair": "писать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "открыть", "aspect": "pf", "aspect_pair": "открывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вернуть", "aspect": "pf", "aspect_pair": "возвращать", "pair_kind": "pair", "pair_note": null}
@@ -105,15 +105,15 @@
 {"lemma": "проверить", "aspect": "pf", "aspect_pair": "проверять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "попробовать", "aspect": "pf", "aspect_pair": "пробовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "попасть", "aspect": "pf", "aspect_pair": "попадать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "провести", "aspect": "pf", "aspect_pair": "проводить", "pair_kind": "pair", "pair_note": "проводитьは別アクセントで「見送る」の完了体にもなる"}
+{"lemma": "провести", "aspect": "pf", "aspect_pair": "проводить", "pair_kind": "pair", "pair_note": "проводитьは別アクセントで「見送る」の完了体にもなる", "pair_note_en": "проводить, with a different stress, is also the perfective of ‘to see someone off’", "pair_note_ru": "проводить при другом ударении также является совершенным видом глагола со значением «провожать»"}
 {"lemma": "продолжать", "aspect": "impf", "aspect_pair": "продолжить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "начинать", "aspect": "impf", "aspect_pair": "начать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "приходить", "aspect": "impf", "aspect_pair": "прийти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отдать", "aspect": "pf", "aspect_pair": "отдавать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "попросить", "aspect": "pf", "aspect_pair": "просить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "ехать", "aspect": "impf", "aspect_pair": "поехать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "волноваться", "aspect": "impf", "aspect_pair": "взволноваться", "pair_kind": "related", "pair_note": "状態動詞。взволноваться=心配・動揺し始める"}
-{"lemma": "обещать", "aspect": "impf", "aspect_pair": "пообещать", "pair_kind": "pair", "pair_note": "元来は両体動詞だが現代語ではпообещатьが完了体として定着"}
+{"lemma": "волноваться", "aspect": "impf", "aspect_pair": "взволноваться", "pair_kind": "related", "pair_note": "状態動詞。взволноваться=心配・動揺し始める", "pair_note_en": "stative verb. взволноваться = to begin to worry/become agitated", "pair_note_ru": "стативный глагол. взволноваться = начать беспокоиться, прийти в волнение"}
+{"lemma": "обещать", "aspect": "impf", "aspect_pair": "пообещать", "pair_kind": "pair", "pair_note": "元来は両体動詞だが現代語ではпообещатьが完了体として定着", "pair_note_en": "Originally biaspectual, but in modern usage пообещать is established as the perfective", "pair_note_ru": "первоначально двувидовой глагол, но в современном языке пообещать закрепилось как совершенный вид"}
 {"lemma": "брать", "aspect": "impf", "aspect_pair": "взять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "следовать", "aspect": "impf", "aspect_pair": "последовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "прислать", "aspect": "pf", "aspect_pair": "присылать", "pair_kind": "pair", "pair_note": null}
@@ -124,12 +124,12 @@
 {"lemma": "заставить", "aspect": "pf", "aspect_pair": "заставлять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "прекратить", "aspect": "pf", "aspect_pair": "прекращать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "называть", "aspect": "impf", "aspect_pair": "назвать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "ненавидеть", "aspect": "impf", "aspect_pair": "возненавидеть", "pair_kind": "related", "pair_note": "状態動詞。возненавидеть=憎むようになる"}
+{"lemma": "ненавидеть", "aspect": "impf", "aspect_pair": "возненавидеть", "pair_kind": "related", "pair_note": "状態動詞。возненавидеть=憎むようになる", "pair_note_en": "stative verb. возненавидеть = to come to hate", "pair_note_ru": "стативный глагол. возненавидеть = начать ненавидеть"}
 {"lemma": "оказаться", "aspect": "pf", "aspect_pair": "оказываться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выходить", "aspect": "impf", "aspect_pair": "выйти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "захотеть", "aspect": "pf", "aspect_pair": "хотеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "учиться", "aspect": "impf", "aspect_pair": "научиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "находиться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（位置）、対の完了体なし"}
+{"lemma": "находиться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（位置）、対の完了体なし", "pair_note_en": "stative verb (location); no perfective counterpart", "pair_note_ru": "стативный глагол (местонахождение); видовой пары совершенного вида нет"}
 {"lemma": "привести", "aspect": "pf", "aspect_pair": "приводить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "понравиться", "aspect": "pf", "aspect_pair": "нравиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "разговаривать", "aspect": "impf", "aspect_pair": "поговорить", "pair_kind": "pair", "pair_note": null}
@@ -139,13 +139,13 @@
 {"lemma": "спрашивать", "aspect": "impf", "aspect_pair": "спросить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "уехать", "aspect": "pf", "aspect_pair": "уезжать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "увидеться", "aspect": "pf", "aspect_pair": "видеться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "полагать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（〜と思う）、対の完了体なし。類義: предполагать⇔предположить"}
+{"lemma": "полагать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（〜と思う）、対の完了体なし。類義: предполагать⇔предположить", "pair_note_en": "stative verb (‘to think’); no perfective counterpart. Synonym: предполагать ⇔ предположить", "pair_note_ru": "стативный глагол («считать, полагать»); видовой пары совершенного вида нет. Синоним: предполагать ⇔ предположить"}
 {"lemma": "получиться", "aspect": "pf", "aspect_pair": "получаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "остановить", "aspect": "pf", "aspect_pair": "останавливать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "услышать", "aspect": "pf", "aspect_pair": "слышать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "помогать", "aspect": "impf", "aspect_pair": "помочь", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пить", "aspect": "impf", "aspect_pair": "выпить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "бежать", "aspect": "impf", "aspect_pair": "побежать", "pair_kind": "pair", "pair_note": "побежать=走り出す（起動相）"}
+{"lemma": "бежать", "aspect": "impf", "aspect_pair": "побежать", "pair_kind": "pair", "pair_note": "побежать=走り出す（起動相）", "pair_note_en": "побежать = to start running (inchoative)", "pair_note_ru": "побежать = начать бежать (начинательное значение)"}
 {"lemma": "представлять", "aspect": "impf", "aspect_pair": "представить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "ответить", "aspect": "pf", "aspect_pair": "отвечать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "читать", "aspect": "impf", "aspect_pair": "прочитать", "pair_kind": "pair", "pair_note": null}
@@ -155,11 +155,11 @@
 {"lemma": "появиться", "aspect": "pf", "aspect_pair": "появляться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "остановиться", "aspect": "pf", "aspect_pair": "останавливаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "принимать", "aspect": "impf", "aspect_pair": "принять", "pair_kind": "pair", "pair_note": null}
-{"lemma": "беспокоиться", "aspect": "impf", "aspect_pair": "побеспокоиться", "pair_kind": "none", "pair_note": "しばらく心配する"}
+{"lemma": "беспокоиться", "aspect": "impf", "aspect_pair": "побеспокоиться", "pair_kind": "none", "pair_note": "しばらく心配する", "pair_note_en": "to worry for a while", "pair_note_ru": "некоторое время побеспокоиться"}
 {"lemma": "отпустить", "aspect": "pf", "aspect_pair": "отпускать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вставать", "aspect": "impf", "aspect_pair": "встать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "хотеться", "aspect": "impf", "aspect_pair": "захотеться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "бывать", "aspect": "impf", "aspect_pair": "случиться", "pair_kind": "related", "pair_note": "быватьは反復・時折、случитьсяは一度起こる"}
+{"lemma": "бывать", "aspect": "impf", "aspect_pair": "случиться", "pair_kind": "related", "pair_note": "быватьは反復・時折、случитьсяは一度起こる", "pair_note_en": "бывать denotes recurrence/occasional occurrence; случиться denotes a single occurrence", "pair_note_ru": "бывать обозначает повторяемость или периодическое событие; случиться — однократное событие"}
 {"lemma": "назвать", "aspect": "pf", "aspect_pair": "называть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выбрать", "aspect": "pf", "aspect_pair": "выбирать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "готовить", "aspect": "impf", "aspect_pair": "приготовить", "pair_kind": "pair", "pair_note": null}
@@ -170,7 +170,7 @@
 {"lemma": "передать", "aspect": "pf", "aspect_pair": "передавать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "рассказывать", "aspect": "impf", "aspect_pair": "рассказать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заплатить", "aspect": "pf", "aspect_pair": "платить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "держаться", "aspect": "impf", "aspect_pair": "продержаться", "pair_kind": "related", "pair_note": "完了体は意味で異なる。продержаться＝持ちこたえる"}
+{"lemma": "держаться", "aspect": "impf", "aspect_pair": "продержаться", "pair_kind": "related", "pair_note": "完了体は意味で異なる。продержаться＝持ちこたえる", "pair_note_en": "The perfective varies by meaning. продержаться = to hold out", "pair_note_ru": "Совершенный вид зависит от значения. продержаться = выдержать, устоять"}
 {"lemma": "снять", "aspect": "pf", "aspect_pair": "снимать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "успокоиться", "aspect": "pf", "aspect_pair": "успокаиваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поймать", "aspect": "pf", "aspect_pair": "ловить", "pair_kind": "pair", "pair_note": null}
@@ -179,23 +179,23 @@
 {"lemma": "поставить", "aspect": "pf", "aspect_pair": "ставить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "зайти", "aspect": "pf", "aspect_pair": "заходить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "изменить", "aspect": "pf", "aspect_pair": "изменять", "pair_kind": "pair", "pair_note": null}
-{"lemma": "доверять", "aspect": "impf", "aspect_pair": "довериться", "pair_kind": "related", "pair_note": "状態的。довериться＝相手を信頼して身を委ねる"}
+{"lemma": "доверять", "aspect": "impf", "aspect_pair": "довериться", "pair_kind": "related", "pair_note": "状態的。довериться＝相手を信頼して身を委ねる", "pair_note_en": "stative. довериться = to trust someone and place oneself in their hands", "pair_note_ru": "стативное значение. довериться = довериться кому-либо, вверить себя ему"}
 {"lemma": "отвечать", "aspect": "impf", "aspect_pair": "ответить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "двигаться", "aspect": "impf", "aspect_pair": "двинуться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "стрелять", "aspect": "impf", "aspect_pair": "выстрелить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "становиться", "aspect": "impf", "aspect_pair": "стать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "стоять", "aspect": "impf", "aspect_pair": "постоять", "pair_kind": "none", "pair_note": "少し立つ"}
+{"lemma": "стоять", "aspect": "impf", "aspect_pair": "постоять", "pair_kind": "none", "pair_note": "少し立つ", "pair_note_en": "to stand for a while", "pair_note_ru": "немного постоять"}
 {"lemma": "достать", "aspect": "pf", "aspect_pair": "доставать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заткнуться", "aspect": "pf", "aspect_pair": "затыкаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "разобраться", "aspect": "pf", "aspect_pair": "разбираться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "проводить", "aspect": "impf", "aspect_pair": "провести", "pair_kind": "pair", "pair_note": null}
 {"lemma": "шутить", "aspect": "impf", "aspect_pair": "пошутить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "погодить", "aspect": "pf", "aspect_pair": "ждать", "pair_kind": "related", "pair_note": "「少し待つ」という限界相。ждатьは一般的な「待つ」"}
+{"lemma": "погодить", "aspect": "pf", "aspect_pair": "ждать", "pair_kind": "related", "pair_note": "「少し待つ」という限界相。ждатьは一般的な「待つ」", "pair_note_en": "delimitative ‘to wait a little.’ ждать is the general verb ‘to wait’", "pair_note_ru": "делимитативное значение «немного подождать». ждать — общеупотребительное «ожидать»"}
 {"lemma": "продавать", "aspect": "impf", "aspect_pair": "продать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "войти", "aspect": "pf", "aspect_pair": "входить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "положить", "aspect": "pf", "aspect_pair": "класть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "проходить", "aspect": "impf", "aspect_pair": "пройти", "pair_kind": "pair", "pair_note": null}
-{"lemma": "уметь", "aspect": "impf", "aspect_pair": "научиться", "pair_kind": "related", "pair_note": "能力の状態動詞。научиться＝できるようになる"}
+{"lemma": "уметь", "aspect": "impf", "aspect_pair": "научиться", "pair_kind": "related", "pair_note": "能力の状態動詞。научиться＝できるようになる", "pair_note_en": "stative verb of ability. научиться = to learn/become able to do something", "pair_note_ru": "стативный глагол способности. научиться = приобрести умение, научиться делать что-либо"}
 {"lemma": "украсть", "aspect": "pf", "aspect_pair": "красть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подойти", "aspect": "pf", "aspect_pair": "подходить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "следить", "aspect": "impf", "aspect_pair": "проследить", "pair_kind": "pair", "pair_note": null}
@@ -203,10 +203,10 @@
 {"lemma": "получать", "aspect": "impf", "aspect_pair": "получить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "устроить", "aspect": "pf", "aspect_pair": "устраивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "покупать", "aspect": "impf", "aspect_pair": "купить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "понадобиться", "aspect": "pf", "aspect_pair": "нуждаться", "pair_kind": "related", "pair_note": "「必要になる」。нуждаться＝「必要とする」で主語が異なる"}
-{"lemma": "сходить", "aspect": "pf", "aspect_pair": "ходить", "pair_kind": "related", "pair_note": "完了体（〜へ行って戻る、往復）。対応する不完了体はходить（多方向）"}
+{"lemma": "понадобиться", "aspect": "pf", "aspect_pair": "нуждаться", "pair_kind": "related", "pair_note": "「必要になる」。нуждаться＝「必要とする」で主語が異なる", "pair_note_en": "‘to become necessary.’ нуждаться means ‘to need’ and has a different subject", "pair_note_ru": "«стать необходимым». нуждаться = «испытывать потребность»; субъект другой"}
+{"lemma": "сходить", "aspect": "pf", "aspect_pair": "ходить", "pair_kind": "related", "pair_note": "完了体（〜へ行って戻る、往復）。対応する不完了体はходить（多方向）", "pair_note_en": "perfective (to go somewhere and return; round trip). Its corresponding imperfective is ходить (multidirectional)", "pair_note_ru": "совершенный вид (сходить куда-либо и вернуться; движение туда и обратно). Соответствующий несовершенный вид — ходить (разнонаправленное движение)"}
 {"lemma": "умирать", "aspect": "impf", "aspect_pair": "умереть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "взглянуть", "aspect": "pf", "aspect_pair": "взглядывать", "pair_kind": "pair", "pair_note": "взглядыватьは正規の不完了体だが使用頻度は低い"}
+{"lemma": "взглянуть", "aspect": "pf", "aspect_pair": "взглядывать", "pair_kind": "pair", "pair_note": "взглядыватьは正規の不完了体だが使用頻度は低い", "pair_note_en": "взглядывать is the regular imperfective, but is infrequent", "pair_note_ru": "взглядывать — регулярный несовершенный вид, но употребляется редко"}
 {"lemma": "пропасть", "aspect": "pf", "aspect_pair": "пропадать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выяснить", "aspect": "pf", "aspect_pair": "выяснять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поступить", "aspect": "pf", "aspect_pair": "поступать", "pair_kind": "pair", "pair_note": null}
@@ -214,9 +214,9 @@
 {"lemma": "пригласить", "aspect": "pf", "aspect_pair": "приглашать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выиграть", "aspect": "pf", "aspect_pair": "выигрывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "измениться", "aspect": "pf", "aspect_pair": "изменяться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "сбежать", "aspect": "pf", "aspect_pair": "сбегать", "pair_kind": "pair", "pair_note": "сбегатьには完了体「急いで往復する」の同形語もある"}
+{"lemma": "сбежать", "aspect": "pf", "aspect_pair": "сбегать", "pair_kind": "pair", "pair_note": "сбегатьには完了体「急いで往復する」の同形語もある", "pair_note_en": "сбегать also has a homonymous perfective meaning ‘to make a quick round trip’", "pair_note_ru": "у сбегать есть также омонимичный совершенный вид со значением «быстро сходить туда и обратно»"}
 {"lemma": "убрать", "aspect": "pf", "aspect_pair": "убирать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "носить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はнести。完了体は文脈で異なる（例: отнести持っていく／принести持ってくる）"}
+{"lemma": "носить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はнести。完了体は文脈で異なる（例: отнести持っていく／принести持ってくる）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is нести. The perfective depends on context (e.g. отнести ‘to take/carry’ / принести ‘to bring’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — нести. Совершенный вид зависит от контекста (например, отнести «унести, доставить» / принести «доставить сюда»)"}
 {"lemma": "связать", "aspect": "pf", "aspect_pair": "связывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "начаться", "aspect": "pf", "aspect_pair": "начинаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "уничтожить", "aspect": "pf", "aspect_pair": "уничтожать", "pair_kind": "pair", "pair_note": null}
@@ -228,23 +228,23 @@
 {"lemma": "заходить", "aspect": "impf", "aspect_pair": "зайти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "согласиться", "aspect": "pf", "aspect_pair": "соглашаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "встретить", "aspect": "pf", "aspect_pair": "встречать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "скучать", "aspect": "impf", "aspect_pair": "соскучиться", "pair_kind": "related", "pair_note": "状態動詞。соскучиться＝恋しくなる・恋しさが募る"}
+{"lemma": "скучать", "aspect": "impf", "aspect_pair": "соскучиться", "pair_kind": "related", "pair_note": "状態動詞。соскучиться＝恋しくなる・恋しさが募る", "pair_note_en": "stative verb. соскучиться = to begin to miss someone / miss someone increasingly", "pair_note_ru": "стативный глагол. соскучиться = начать скучать, сильно затосковать"}
 {"lemma": "врать", "aspect": "impf", "aspect_pair": "соврать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "попытаться", "aspect": "pf", "aspect_pair": "пытаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "болеть", "aspect": "impf", "aspect_pair": "заболеть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "повезти", "aspect": "pf", "aspect_pair": "везти", "pair_kind": "pair", "pair_note": "ここでは非人称の「運がよい」。運搬の同形義もある"}
+{"lemma": "повезти", "aspect": "pf", "aspect_pair": "везти", "pair_kind": "pair", "pair_note": "ここでは非人称の「運がよい」。運搬の同形義もある", "pair_note_en": "Here, the impersonal meaning ‘to be lucky.’ It also has a homonymous transportation sense", "pair_note_ru": "здесь — безличное значение «посчастливиться». Есть также омонимичное значение перевозки"}
 {"lemma": "подходить", "aspect": "impf", "aspect_pair": "подойти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "исчезнуть", "aspect": "pf", "aspect_pair": "исчезать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "создать", "aspect": "pf", "aspect_pair": "создавать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "существовать", "aspect": "impf", "aspect_pair": "просуществовать", "pair_kind": "none", "pair_note": "〜の間存在した"}
+{"lemma": "существовать", "aspect": "impf", "aspect_pair": "просуществовать", "pair_kind": "none", "pair_note": "〜の間存在した", "pair_note_en": "to exist for a period of time", "pair_note_ru": "просуществовать в течение некоторого времени"}
 {"lemma": "подозревать", "aspect": "impf", "aspect_pair": "заподозрить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "ожидать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "期待・予想の状態動詞で、対応する完了体なし"}
+{"lemma": "ожидать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "期待・予想の状態動詞で、対応する完了体なし", "pair_note_en": "stative verb of expectation/anticipation; no corresponding perfective", "pair_note_ru": "стативный глагол ожидания или предвкушения; соответствующего совершенного вида нет"}
 {"lemma": "желать", "aspect": "impf", "aspect_pair": "пожелать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "являться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「〜である」は連結・状態用法で完了体なし"}
-{"lemma": "означать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "意味・関係を表す状態動詞で完了体なし"}
+{"lemma": "являться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「〜である」は連結・状態用法で完了体なし", "pair_note_en": "In the sense ‘to be,’ it is a copular/stative use with no perfective", "pair_note_ru": "в значении «быть, являться» это связочное, стативное употребление без совершенного вида"}
+{"lemma": "означать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "意味・関係を表す状態動詞で完了体なし", "pair_note_en": "stative verb expressing meaning or relation; no perfective", "pair_note_ru": "стативный глагол со значением смысла или отношения; совершенного вида нет"}
 {"lemma": "продать", "aspect": "pf", "aspect_pair": "продавать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "встать", "aspect": "pf", "aspect_pair": "вставать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "арестовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞。ただし未完了体арестовыватьも使われる"}
+{"lemma": "арестовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞。ただし未完了体арестовыватьも使われる", "pair_note_en": "biaspectual verb. However, the imperfective арестовывать is also used", "pair_note_ru": "двувидовой глагол. Однако употребляется и несовершенный вид арестовывать"}
 {"lemma": "стараться", "aspect": "impf", "aspect_pair": "постараться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "хватать", "aspect": "impf", "aspect_pair": "хватить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вспомнить", "aspect": "pf", "aspect_pair": "вспоминать", "pair_kind": "pair", "pair_note": null}
@@ -255,12 +255,12 @@
 {"lemma": "отказаться", "aspect": "pf", "aspect_pair": "отказываться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пропустить", "aspect": "pf", "aspect_pair": "пропускать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "смеяться", "aspect": "impf", "aspect_pair": "засмеяться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "сойти", "aspect": "pf", "aspect_pair": "сходить", "pair_kind": "pair", "pair_note": "сходитьには完了体「行ってくる」の用法もある"}
+{"lemma": "сойти", "aspect": "pf", "aspect_pair": "сходить", "pair_kind": "pair", "pair_note": "сходитьには完了体「行ってくる」の用法もある", "pair_note_en": "сходить also has a perfective use meaning ‘to go and come back’", "pair_note_ru": "сходить имеет также значение совершенного вида «сходить и вернуться»"}
 {"lemma": "добраться", "aspect": "pf", "aspect_pair": "добираться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обнаружить", "aspect": "pf", "aspect_pair": "обнаруживать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "удаться", "aspect": "pf", "aspect_pair": "удаваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "благодарить", "aspect": "impf", "aspect_pair": "поблагодарить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "пожаловать", "aspect": "pf", "aspect_pair": "жаловать", "pair_kind": "pair", "pair_note": "добро пожаловатьは定型句。жаловатьは古風"}
+{"lemma": "пожаловать", "aspect": "pf", "aspect_pair": "жаловать", "pair_kind": "pair", "pair_note": "добро пожаловатьは定型句。жаловатьは古風", "pair_note_en": "добро пожаловать is a fixed expression. жаловать is archaic", "pair_note_ru": "добро пожаловать — устойчивое выражение. жаловать — устаревшее"}
 {"lemma": "поднять", "aspect": "pf", "aspect_pair": "поднимать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "повторять", "aspect": "impf", "aspect_pair": "повторить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "клясться", "aspect": "impf", "aspect_pair": "поклясться", "pair_kind": "pair", "pair_note": null}
@@ -271,7 +271,7 @@
 {"lemma": "занять", "aspect": "pf", "aspect_pair": "занимать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "снимать", "aspect": "impf", "aspect_pair": "снять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отправиться", "aspect": "pf", "aspect_pair": "отправляться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "лежать", "aspect": "impf", "aspect_pair": "полежать", "pair_kind": "none", "pair_note": "しばらく横になる／参考: ложиться–лечь（横になる動作）"}
+{"lemma": "лежать", "aspect": "impf", "aspect_pair": "полежать", "pair_kind": "none", "pair_note": "しばらく横になる／参考: ложиться–лечь（横になる動作）", "pair_note_en": "to lie for a while / cf. ложиться–лечь (the action of lying down)", "pair_note_ru": "немного полежать / ср. ложиться–лечь (действие принятия лежачего положения)"}
 {"lemma": "сработать", "aspect": "pf", "aspect_pair": "срабатывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "защищать", "aspect": "impf", "aspect_pair": "защитить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вытащить", "aspect": "pf", "aspect_pair": "вытаскивать", "pair_kind": "pair", "pair_note": null}
@@ -279,14 +279,14 @@
 {"lemma": "уезжать", "aspect": "impf", "aspect_pair": "уехать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "упасть", "aspect": "pf", "aspect_pair": "падать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "предлагать", "aspect": "impf", "aspect_pair": "предложить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "действовать", "aspect": "impf", "aspect_pair": "подействовать", "pair_kind": "related", "pair_note": "状態・継続動詞。подействоватьは「効く／少し作用する」"}
+{"lemma": "действовать", "aspect": "impf", "aspect_pair": "подействовать", "pair_kind": "related", "pair_note": "状態・継続動詞。подействоватьは「効く／少し作用する」", "pair_note_en": "stative/durative verb. подействовать means ‘to take effect / act for a while’", "pair_note_ru": "стативный или длительный глагол. подействовать означает «оказать действие / действовать некоторое время»"}
 {"lemma": "собраться", "aspect": "pf", "aspect_pair": "собираться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "приезжать", "aspect": "impf", "aspect_pair": "приехать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "переживать", "aspect": "impf", "aspect_pair": "попереживать", "pair_kind": "none", "pair_note": "しばらく心配する"}
-{"lemma": "жениться", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）"}
+{"lemma": "переживать", "aspect": "impf", "aspect_pair": "попереживать", "pair_kind": "none", "pair_note": "しばらく心配する", "pair_note_en": "to worry for a while", "pair_note_ru": "некоторое время попереживать"}
+{"lemma": "жениться", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）", "pair_note_en": "biaspectual verb (same form for imperfective and perfective)", "pair_note_ru": "двувидовой глагол (одна форма для несовершенного и совершенного вида)"}
 {"lemma": "отвезти", "aspect": "pf", "aspect_pair": "отвозить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "съесть", "aspect": "pf", "aspect_pair": "съедать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "называться", "aspect": "impf", "aspect_pair": "назваться", "pair_kind": "related", "pair_note": "「〜と呼ばれる」は状態。назватьсяは主に「名乗る」"}
+{"lemma": "называться", "aspect": "impf", "aspect_pair": "назваться", "pair_kind": "related", "pair_note": "「〜と呼ばれる」は状態。назватьсяは主に「名乗る」", "pair_note_en": "‘to be called ~’ is stative. назваться primarily means ‘to identify oneself by name’", "pair_note_ru": "«называться как-либо» — стативное значение. назваться преимущественно означает «представиться, назвать себя»"}
 {"lemma": "петь", "aspect": "impf", "aspect_pair": "спеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сомневаться", "aspect": "impf", "aspect_pair": "усомниться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заботиться", "aspect": "impf", "aspect_pair": "позаботиться", "pair_kind": "pair", "pair_note": null}
@@ -299,7 +299,7 @@
 {"lemma": "договориться", "aspect": "pf", "aspect_pair": "договариваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "терять", "aspect": "impf", "aspect_pair": "потерять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "входить", "aspect": "impf", "aspect_pair": "войти", "pair_kind": "pair", "pair_note": null}
-{"lemma": "принадлежать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "所属・所有関係を表す状態動詞で完了体なし"}
+{"lemma": "принадлежать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "所属・所有関係を表す状態動詞で完了体なし", "pair_note_en": "stative verb expressing affiliation or possession; no perfective", "pair_note_ru": "стативный глагол со значением принадлежности или обладания; совершенного вида нет"}
 {"lemma": "кричать", "aspect": "impf", "aspect_pair": "крикнуть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "связаться", "aspect": "pf", "aspect_pair": "связываться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "показывать", "aspect": "impf", "aspect_pair": "показать", "pair_kind": "pair", "pair_note": null}
@@ -312,12 +312,12 @@
 {"lemma": "уволить", "aspect": "pf", "aspect_pair": "увольнять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "нести", "aspect": "impf", "aspect_pair": "понести", "pair_kind": "pair", "pair_note": null}
 {"lemma": "успеть", "aspect": "pf", "aspect_pair": "успевать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "постоять", "aspect": "pf", "aspect_pair": "стоять", "pair_kind": "none", "pair_note": "стоятьの限定相（少し立つ）"}
+{"lemma": "постоять", "aspect": "pf", "aspect_pair": "стоять", "pair_kind": "none", "pair_note": "стоятьの限定相（少し立つ）", "pair_note_en": "delimitative of стоять (to stand for a while)", "pair_note_ru": "делимитатив от стоять (немного постоять)"}
 {"lemma": "надеть", "aspect": "pf", "aspect_pair": "надевать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "избавиться", "aspect": "pf", "aspect_pair": "избавляться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "родиться", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）"}
+{"lemma": "родиться", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）", "pair_note_en": "biaspectual verb (same form for imperfective and perfective)", "pair_note_ru": "двувидовой глагол (одна форма для несовершенного и совершенного вида)"}
 {"lemma": "танцевать", "aspect": "impf", "aspect_pair": "станцевать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "сожалеть", "aspect": "impf", "aspect_pair": "пожалеть", "pair_kind": "pair", "pair_note": "пожалетьには「同情する、惜しむ」の意味もある"}
+{"lemma": "сожалеть", "aspect": "impf", "aspect_pair": "пожалеть", "pair_kind": "pair", "pair_note": "пожалетьには「同情する、惜しむ」の意味もある", "pair_note_en": "пожалеть can also mean ‘to pity’ or ‘to regret/spare’", "pair_note_ru": "пожалеть может также означать «посочувствовать, испытать сожаление, пощадить»"}
 {"lemma": "касаться", "aspect": "impf", "aspect_pair": "коснуться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "объяснять", "aspect": "impf", "aspect_pair": "объяснить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "почувствовать", "aspect": "pf", "aspect_pair": "чувствовать", "pair_kind": "pair", "pair_note": null}
@@ -328,10 +328,10 @@
 {"lemma": "покинуть", "aspect": "pf", "aspect_pair": "покидать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "опаздывать", "aspect": "impf", "aspect_pair": "опоздать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сломать", "aspect": "pf", "aspect_pair": "ломать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "судить", "aspect": "impf", "aspect_pair": "посудить", "pair_kind": "none", "pair_note": "しばらく判断・考察する"}
+{"lemma": "судить", "aspect": "impf", "aspect_pair": "посудить", "pair_kind": "none", "pair_note": "しばらく判断・考察する", "pair_note_en": "to judge/reflect for a while", "pair_note_ru": "некоторое время посудить, поразмышлять"}
 {"lemma": "получаться", "aspect": "impf", "aspect_pair": "получиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "дышать", "aspect": "impf", "aspect_pair": "подышать", "pair_kind": "none", "pair_note": "少し呼吸する"}
-{"lemma": "бороться", "aspect": "impf", "aspect_pair": "побороться", "pair_kind": "none", "pair_note": "少し闘う"}
+{"lemma": "дышать", "aspect": "impf", "aspect_pair": "подышать", "pair_kind": "none", "pair_note": "少し呼吸する", "pair_note_en": "to breathe for a while", "pair_note_ru": "немного подышать"}
+{"lemma": "бороться", "aspect": "impf", "aspect_pair": "побороться", "pair_kind": "none", "pair_note": "少し闘う", "pair_note_en": "to fight for a while", "pair_note_ru": "немного побороться"}
 {"lemma": "отправляться", "aspect": "impf", "aspect_pair": "отправиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вызывать", "aspect": "impf", "aspect_pair": "вызвать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "решать", "aspect": "impf", "aspect_pair": "решить", "pair_kind": "pair", "pair_note": null}
@@ -340,8 +340,8 @@
 {"lemma": "признать", "aspect": "pf", "aspect_pair": "признавать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "научиться", "aspect": "pf", "aspect_pair": "учиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "совершить", "aspect": "pf", "aspect_pair": "совершать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "гордиться", "aspect": "impf", "aspect_pair": "погордиться", "pair_kind": "none", "pair_note": "しばらく誇らしく思う"}
-{"lemma": "управлять", "aspect": "impf", "aspect_pair": "поуправлять", "pair_kind": "none", "pair_note": "しばらく管理・運転する"}
+{"lemma": "гордиться", "aspect": "impf", "aspect_pair": "погордиться", "pair_kind": "none", "pair_note": "しばらく誇らしく思う", "pair_note_en": "to feel proud for a while", "pair_note_ru": "некоторое время погордиться"}
+{"lemma": "управлять", "aspect": "impf", "aspect_pair": "поуправлять", "pair_kind": "none", "pair_note": "しばらく管理・運転する", "pair_note_en": "to manage/drive for a while", "pair_note_ru": "некоторое время поуправлять, поводить"}
 {"lemma": "выбирать", "aspect": "impf", "aspect_pair": "выбрать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поздравлять", "aspect": "impf", "aspect_pair": "поздравить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обсудить", "aspect": "pf", "aspect_pair": "обсуждать", "pair_kind": "pair", "pair_note": null}
@@ -353,23 +353,23 @@
 {"lemma": "позволять", "aspect": "impf", "aspect_pair": "позволить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "опоздать", "aspect": "pf", "aspect_pair": "опаздывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "наблюдать", "aspect": "impf", "aspect_pair": "понаблюдать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "злиться", "aspect": "impf", "aspect_pair": "разозлиться", "pair_kind": "related", "pair_note": "разозлиться=「怒り出す」で状態への移行"}
+{"lemma": "злиться", "aspect": "impf", "aspect_pair": "разозлиться", "pair_kind": "related", "pair_note": "разозлиться=「怒り出す」で状態への移行", "pair_note_en": "разозлиться = ‘to become angry,’ a transition into a state", "pair_note_ru": "разозлиться = «начать злиться», переход в состояние"}
 {"lemma": "привезти", "aspect": "pf", "aspect_pair": "привозить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "ложиться", "aspect": "impf", "aspect_pair": "лечь", "pair_kind": "pair", "pair_note": null}
-{"lemma": "относиться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「関係する」は関係・状態を表し、完了体の対なし"}
+{"lemma": "относиться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「関係する」は関係・状態を表し、完了体の対なし", "pair_note_en": "In the sense ‘to relate to,’ it expresses a relation/state and has no perfective counterpart", "pair_note_ru": "в значении «иметь отношение» выражает отношение или состояние и не имеет видовой пары совершенного вида"}
 {"lemma": "напугать", "aspect": "pf", "aspect_pair": "пугать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "приходиться", "aspect": "impf", "aspect_pair": "прийтись", "pair_kind": "pair", "pair_note": null}
 {"lemma": "ставить", "aspect": "impf", "aspect_pair": "поставить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "установить", "aspect": "pf", "aspect_pair": "устанавливать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "покончить", "aspect": "pf", "aspect_pair": "кончать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "обожать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "感情の状態動詞で、対応する完了体なし"}
+{"lemma": "обожать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "感情の状態動詞で、対応する完了体なし", "pair_note_en": "stative verb of emotion; no corresponding perfective", "pair_note_ru": "стативный глагол эмоции; соответствующего совершенного вида нет"}
 {"lemma": "заслуживать", "aspect": "impf", "aspect_pair": "заслужить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "испортить", "aspect": "pf", "aspect_pair": "портить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заключить", "aspect": "pf", "aspect_pair": "заключать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "планировать", "aspect": "impf", "aspect_pair": "спланировать", "pair_kind": "pair", "pair_note": "「計画する」は不完了体。滑空の語義とは別"}
+{"lemma": "планировать", "aspect": "impf", "aspect_pair": "спланировать", "pair_kind": "pair", "pair_note": "「計画する」は不完了体。滑空の語義とは別", "pair_note_en": "‘to plan’ is imperfective. Distinct from the gliding sense", "pair_note_ru": "в значении «составлять план» — несовершенный вид. Не связано со значением «планировать в воздухе»"}
 {"lemma": "учить", "aspect": "impf", "aspect_pair": "выучить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "плевать", "aspect": "impf", "aspect_pair": "плюнуть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "мечтать", "aspect": "impf", "aspect_pair": "помечтать", "pair_kind": "none", "pair_note": "少し夢想する"}
+{"lemma": "мечтать", "aspect": "impf", "aspect_pair": "помечтать", "pair_kind": "none", "pair_note": "少し夢想する", "pair_note_en": "to dream/daydream for a while", "pair_note_ru": "немного помечтать"}
 {"lemma": "прощать", "aspect": "impf", "aspect_pair": "простить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "научить", "aspect": "pf", "aspect_pair": "учить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сохранить", "aspect": "pf", "aspect_pair": "сохранять", "pair_kind": "pair", "pair_note": null}
@@ -397,9 +397,9 @@
 {"lemma": "присоединиться", "aspect": "pf", "aspect_pair": "присоединяться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "запомнить", "aspect": "pf", "aspect_pair": "запоминать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выпустить", "aspect": "pf", "aspect_pair": "выпускать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "нуждаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞、対の完了体なし"}
+{"lemma": "нуждаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞、対の完了体なし", "pair_note_en": "stative verb; no perfective counterpart", "pair_note_ru": "стативный глагол; видовой пары совершенного вида нет"}
 {"lemma": "разрушить", "aspect": "pf", "aspect_pair": "разрушать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "ездить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はехать。完了体は文脈で異なる（例: поехать出発する／съездить往復する）"}
+{"lemma": "ездить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はехать。完了体は文脈で異なる（例: поехать出発する／съездить往復する）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is ехать. The perfective depends on context (e.g. поехать ‘to set off’ / съездить ‘to make a round trip’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — ехать. Совершенный вид зависит от контекста (например, поехать «отправиться» / съездить «съездить туда и обратно»)"}
 {"lemma": "находить", "aspect": "impf", "aspect_pair": "найти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "проиграть", "aspect": "pf", "aspect_pair": "проигрывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заказать", "aspect": "pf", "aspect_pair": "заказывать", "pair_kind": "pair", "pair_note": null}
@@ -417,21 +417,21 @@
 {"lemma": "перезвонить", "aspect": "pf", "aspect_pair": "перезванивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "скрывать", "aspect": "impf", "aspect_pair": "скрыть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сыграть", "aspect": "pf", "aspect_pair": "играть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "молчать", "aspect": "impf", "aspect_pair": "помолчать", "pair_kind": "none", "pair_note": "しばらく黙る"}
-{"lemma": "участвовать", "aspect": "impf", "aspect_pair": "поучаствовать", "pair_kind": "none", "pair_note": "一定時間・一度参加する"}
+{"lemma": "молчать", "aspect": "impf", "aspect_pair": "помолчать", "pair_kind": "none", "pair_note": "しばらく黙る", "pair_note_en": "to remain silent for a while", "pair_note_ru": "некоторое время помолчать"}
+{"lemma": "участвовать", "aspect": "impf", "aspect_pair": "поучаствовать", "pair_kind": "none", "pair_note": "一定時間・一度参加する", "pair_note_en": "to participate for a certain time / on one occasion", "pair_note_ru": "поучаствовать в течение определённого времени или один раз"}
 {"lemma": "обсуждать", "aspect": "impf", "aspect_pair": "обсудить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "мешать", "aspect": "impf", "aspect_pair": "помешать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "менять", "aspect": "impf", "aspect_pair": "поменять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "тратить", "aspect": "impf", "aspect_pair": "потратить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "общаться", "aspect": "impf", "aspect_pair": "пообщаться", "pair_kind": "none", "pair_note": "しばらく交流・会話する"}
+{"lemma": "общаться", "aspect": "impf", "aspect_pair": "пообщаться", "pair_kind": "none", "pair_note": "しばらく交流・会話する", "pair_note_en": "to interact/converse for a while", "pair_note_ru": "некоторое время пообщаться"}
 {"lemma": "прочитать", "aspect": "pf", "aspect_pair": "читать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "преследовать", "aspect": "impf", "aspect_pair": "попреследовать", "pair_kind": "none", "pair_note": "しばらく追う"}
-{"lemma": "ранить", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）"}
-{"lemma": "побрать", "aspect": "pf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「чёрт побери（畜生！）」という慣用句でのみ使用。単独の動詞としては使わない"}
+{"lemma": "преследовать", "aspect": "impf", "aspect_pair": "попреследовать", "pair_kind": "none", "pair_note": "しばらく追う", "pair_note_en": "to pursue/chase for a while", "pair_note_ru": "некоторое время попреследовать"}
+{"lemma": "ранить", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）", "pair_note_en": "biaspectual verb (same form for imperfective and perfective)", "pair_note_ru": "двувидовой глагол (одна форма для несовершенного и совершенного вида)"}
+{"lemma": "побрать", "aspect": "pf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「чёрт побери（畜生！）」という慣用句でのみ使用。単独の動詞としては使わない", "pair_note_en": "Used only in the idiom чёрт побери (‘damn it!’). Not used as an independent verb", "pair_note_ru": "употребляется только в устойчивом выражении чёрт побери («чёрт возьми!»). Как самостоятельный глагол не используется"}
 {"lemma": "начинаться", "aspect": "impf", "aspect_pair": "начаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "сражаться", "aspect": "impf", "aspect_pair": "посражаться", "pair_kind": "none", "pair_note": "しばらく戦う"}
+{"lemma": "сражаться", "aspect": "impf", "aspect_pair": "посражаться", "pair_kind": "none", "pair_note": "しばらく戦う", "pair_note_en": "to fight for a while", "pair_note_ru": "некоторое время посражаться"}
 {"lemma": "извиниться", "aspect": "pf", "aspect_pair": "извиняться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "страдать", "aspect": "impf", "aspect_pair": "пострадать", "pair_kind": "related", "pair_note": "пострадать＝被害・苦痛を受けるという結果的意味"}
+{"lemma": "страдать", "aspect": "impf", "aspect_pair": "пострадать", "pair_kind": "related", "pair_note": "пострадать＝被害・苦痛を受けるという結果的意味", "pair_note_en": "пострадать has the resultative meaning ‘to suffer harm/pain’", "pair_note_ru": "пострадать имеет результативное значение «понести ущерб, испытать страдание»"}
 {"lemma": "собирать", "aspect": "impf", "aspect_pair": "собрать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "видеться", "aspect": "impf", "aspect_pair": "увидеться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подарить", "aspect": "pf", "aspect_pair": "дарить", "pair_kind": "pair", "pair_note": null}
@@ -442,11 +442,11 @@
 {"lemma": "добиться", "aspect": "pf", "aspect_pair": "добиваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "угадать", "aspect": "pf", "aspect_pair": "угадывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "прятаться", "aspect": "impf", "aspect_pair": "спрятаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "ценить", "aspect": "impf", "aspect_pair": "оценить", "pair_kind": "related", "pair_note": "状態動詞。оценить＝評価する・価値を認める"}
+{"lemma": "ценить", "aspect": "impf", "aspect_pair": "оценить", "pair_kind": "related", "pair_note": "状態動詞。оценить＝評価する・価値を認める", "pair_note_en": "stative verb. оценить = to evaluate / recognize the value of", "pair_note_ru": "стативный глагол. оценить = дать оценку, признать ценность"}
 {"lemma": "устраивать", "aspect": "impf", "aspect_pair": "устроить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пустить", "aspect": "pf", "aspect_pair": "пускать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "возражать", "aspect": "impf", "aspect_pair": "возразить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "служить", "aspect": "impf", "aspect_pair": "послужить", "pair_kind": "none", "pair_note": "一定期間仕える"}
+{"lemma": "служить", "aspect": "impf", "aspect_pair": "послужить", "pair_kind": "none", "pair_note": "一定期間仕える", "pair_note_en": "to serve for a certain period", "pair_note_ru": "прослужить определённый срок"}
 {"lemma": "воспользоваться", "aspect": "pf", "aspect_pair": "пользоваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "назначить", "aspect": "pf", "aspect_pair": "назначать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "извиняться", "aspect": "impf", "aspect_pair": "извиниться", "pair_kind": "pair", "pair_note": null}
@@ -455,22 +455,22 @@
 {"lemma": "рисковать", "aspect": "impf", "aspect_pair": "рискнуть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "влюбить", "aspect": "pf", "aspect_pair": "влюблять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "случаться", "aspect": "impf", "aspect_pair": "случиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "зависеть", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞で、対応する完了体なし"}
+{"lemma": "зависеть", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞で、対応する完了体なし", "pair_note_en": "stative verb; no corresponding perfective", "pair_note_ru": "стативный глагол; соответствующего совершенного вида нет"}
 {"lemma": "предать", "aspect": "pf", "aspect_pair": "предавать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "посадить", "aspect": "pf", "aspect_pair": "сажать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отдыхать", "aspect": "impf", "aspect_pair": "отдохнуть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "построить", "aspect": "pf", "aspect_pair": "строить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "напоминать", "aspect": "impf", "aspect_pair": "напомнить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "пахнуть", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（匂い）、対の完了体なし"}
+{"lemma": "пахнуть", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（匂い）、対の完了体なし", "pair_note_en": "stative verb (smell); no perfective counterpart", "pair_note_ru": "стативный глагол (запах); видовой пары совершенного вида нет"}
 {"lemma": "запереть", "aspect": "pf", "aspect_pair": "запирать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "учитывать", "aspect": "impf", "aspect_pair": "учесть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "угрожать", "aspect": "impf", "aspect_pair": "пригрозить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отдохнуть", "aspect": "pf", "aspect_pair": "отдыхать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "умолять", "aspect": "impf", "aspect_pair": "умолить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "курить", "aspect": "impf", "aspect_pair": "покурить", "pair_kind": "none", "pair_note": "しばらく吸う"}
-{"lemma": "лить", "aspect": "impf", "aspect_pair": "налить", "pair_kind": "related", "pair_note": "結果で完了体が分岐。налить＝容器に注ぐ"}
+{"lemma": "курить", "aspect": "impf", "aspect_pair": "покурить", "pair_kind": "none", "pair_note": "しばらく吸う", "pair_note_en": "to smoke for a while", "pair_note_ru": "немного покурить"}
+{"lemma": "лить", "aspect": "impf", "aspect_pair": "налить", "pair_kind": "related", "pair_note": "結果で完了体が分岐。налить＝容器に注ぐ", "pair_note_en": "The perfective branches according to the result. налить = to pour into a container", "pair_note_ru": "совершенный вид различается в зависимости от результата. налить = налить в ёмкость"}
 {"lemma": "встречать", "aspect": "impf", "aspect_pair": "встретить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "путешествовать", "aspect": "impf", "aspect_pair": "попутешествовать", "pair_kind": "none", "pair_note": "しばらく旅行する"}
+{"lemma": "путешествовать", "aspect": "impf", "aspect_pair": "попутешествовать", "pair_kind": "none", "pair_note": "しばらく旅行する", "pair_note_en": "to travel for a while", "pair_note_ru": "некоторое время попутешествовать"}
 {"lemma": "заслужить", "aspect": "pf", "aspect_pair": "заслуживать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "дойти", "aspect": "pf", "aspect_pair": "доходить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "приносить", "aspect": "impf", "aspect_pair": "принести", "pair_kind": "pair", "pair_note": null}
@@ -489,25 +489,25 @@
 {"lemma": "обвинять", "aspect": "impf", "aspect_pair": "обвинить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подтвердить", "aspect": "pf", "aspect_pair": "подтверждать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пугать", "aspect": "impf", "aspect_pair": "испугать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "уважать", "aspect": "impf", "aspect_pair": "зауважать", "pair_kind": "related", "pair_note": "зауважать＝尊敬するようになる（口語的）"}
+{"lemma": "уважать", "aspect": "impf", "aspect_pair": "зауважать", "pair_kind": "related", "pair_note": "зауважать＝尊敬するようになる（口語的）", "pair_note_en": "зауважать = to come to respect (colloquial)", "pair_note_ru": "зауважать = начать уважать (разговорное)"}
 {"lemma": "схватить", "aspect": "pf", "aspect_pair": "хватать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "готовиться", "aspect": "impf", "aspect_pair": "подготовиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "побыть", "aspect": "pf", "aspect_pair": "быть", "pair_kind": "none", "pair_note": "бытьの限定相（しばらくいる）"}
+{"lemma": "побыть", "aspect": "pf", "aspect_pair": "быть", "pair_kind": "none", "pair_note": "бытьの限定相（しばらくいる）", "pair_note_en": "delimitative of быть (to stay for a while)", "pair_note_ru": "делимитатив от быть (побыть некоторое время)"}
 {"lemma": "драться", "aspect": "impf", "aspect_pair": "подраться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отменить", "aspect": "pf", "aspect_pair": "отменять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "напомнить", "aspect": "pf", "aspect_pair": "напоминать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "поработать", "aspect": "pf", "aspect_pair": "работать", "pair_kind": "none", "pair_note": "работатьの限定相（少し働く）"}
+{"lemma": "поработать", "aspect": "pf", "aspect_pair": "работать", "pair_kind": "none", "pair_note": "работатьの限定相（少し働く）", "pair_note_en": "delimitative of работать (to work for a while)", "pair_note_ru": "делимитатив от работать (немного поработать)"}
 {"lemma": "предполагать", "aspect": "impf", "aspect_pair": "предположить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "спешить", "aspect": "impf", "aspect_pair": "поспешить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "спрятать", "aspect": "pf", "aspect_pair": "прятать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "задавать", "aspect": "impf", "aspect_pair": "задать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "пострадать", "aspect": "pf", "aspect_pair": "страдать", "pair_kind": "related", "pair_note": "пострадать＝被害・苦痛を受けるという結果的意味。継続的な「苦しむ」страдатьとは意味がずれる"}
-{"lemma": "нервничать", "aspect": "impf", "aspect_pair": "понервничать", "pair_kind": "none", "pair_note": "しばらく緊張・心配する"}
+{"lemma": "пострадать", "aspect": "pf", "aspect_pair": "страдать", "pair_kind": "related", "pair_note": "пострадать＝被害・苦痛を受けるという結果的意味。継続的な「苦しむ」страдатьとは意味がずれる", "pair_note_en": "пострадать has the resultative meaning ‘to suffer harm/pain,’ differing in meaning from durative страдать ‘to suffer’", "pair_note_ru": "пострадать имеет результативное значение «понести ущерб, испытать страдание» и семантически отличается от длительного страдать «мучиться»"}
+{"lemma": "нервничать", "aspect": "impf", "aspect_pair": "понервничать", "pair_kind": "none", "pair_note": "しばらく緊張・心配する", "pair_note_en": "to feel nervous/worry for a while", "pair_note_ru": "некоторое время понервничать, поволноваться"}
 {"lemma": "присесть", "aspect": "pf", "aspect_pair": "присаживаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "притворяться", "aspect": "impf", "aspect_pair": "притвориться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "допустить", "aspect": "pf", "aspect_pair": "допускать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "похитить", "aspect": "pf", "aspect_pair": "похищать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "прибыть", "aspect": "pf", "aspect_pair": "прибывать", "pair_kind": "pair", "pair_note": "прибыватьには「増加する」の同形語もある"}
+{"lemma": "прибыть", "aspect": "pf", "aspect_pair": "прибывать", "pair_kind": "pair", "pair_note": "прибыватьには「増加する」の同形語もある", "pair_note_en": "прибывать also has a homonym meaning ‘to increase’", "pair_note_ru": "у прибывать есть также омоним со значением «увеличиваться»"}
 {"lemma": "дождаться", "aspect": "pf", "aspect_pair": "дожидаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "достигнуть", "aspect": "pf", "aspect_pair": "достигать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "причинить", "aspect": "pf", "aspect_pair": "причинять", "pair_kind": "pair", "pair_note": null}
@@ -517,7 +517,7 @@
 {"lemma": "поцеловать", "aspect": "pf", "aspect_pair": "целовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "предпочитать", "aspect": "impf", "aspect_pair": "предпочесть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "падать", "aspect": "impf", "aspect_pair": "упасть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "утверждать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（主張する）、対の完了体なし。注意: утвердитьは「承認する」で別の意味（false friend）"}
+{"lemma": "утверждать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（主張する）、対の完了体なし。注意: утвердитьは「承認する」で別の意味（false friend）", "pair_note_en": "stative verb (‘to assert’); no perfective counterpart. Note: утвердить means ‘to approve’ and has a different meaning (false friend)", "pair_note_ru": "стативный глагол («заявлять, настаивать»); видовой пары совершенного вида нет. Внимание: утвердить означает «одобрить» и имеет другое значение (ложный друг)"}
 {"lemma": "приказать", "aspect": "pf", "aspect_pair": "приказывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "спуститься", "aspect": "pf", "aspect_pair": "спускаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "расстаться", "aspect": "pf", "aspect_pair": "расставаться", "pair_kind": "pair", "pair_note": null}
@@ -532,22 +532,22 @@
 {"lemma": "сдаться", "aspect": "pf", "aspect_pair": "сдаваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выполнить", "aspect": "pf", "aspect_pair": "выполнять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "упустить", "aspect": "pf", "aspect_pair": "упускать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "интересовать", "aspect": "impf", "aspect_pair": "заинтересовать", "pair_kind": "related", "pair_note": "状態を表す。заинтересовать=興味を引き起こす"}
+{"lemma": "интересовать", "aspect": "impf", "aspect_pair": "заинтересовать", "pair_kind": "related", "pair_note": "状態を表す。заинтересовать=興味を引き起こす", "pair_note_en": "expresses a state. заинтересовать = to arouse interest", "pair_note_ru": "выражает состояние. заинтересовать = вызвать интерес"}
 {"lemma": "терпеть", "aspect": "impf", "aspect_pair": "вытерпеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "опустить", "aspect": "pf", "aspect_pair": "опускать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отдавать", "aspect": "impf", "aspect_pair": "отдать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "одеваться", "aspect": "impf", "aspect_pair": "одеться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "повесить", "aspect": "pf", "aspect_pair": "вешать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "винить", "aspect": "impf", "aspect_pair": "обвинить", "pair_kind": "related", "pair_note": "винить=責任を負わせる状態、обвинить=非難・告発する"}
+{"lemma": "винить", "aspect": "impf", "aspect_pair": "обвинить", "pair_kind": "related", "pair_note": "винить=責任を負わせる状態、обвинить=非難・告発する", "pair_note_en": "винить = to hold someone responsible; обвинить = to accuse/charge", "pair_note_ru": "винить = считать кого-либо ответственным; обвинить = осудить, предъявить обвинение"}
 {"lemma": "завести", "aspect": "pf", "aspect_pair": "заводить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "летать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はлететь。完了体は文脈で異なる（例: полететь出発する）"}
-{"lemma": "лезть", "aspect": "impf", "aspect_pair": "полезть", "pair_kind": "related", "pair_note": "полезть=登り始める・入り込もうとする"}
+{"lemma": "летать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はлететь。完了体は文脈で異なる（例: полететь出発する）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is лететь. The perfective depends on context (e.g. полететь ‘to set off’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — лететь. Совершенный вид зависит от контекста (например, полететь «отправиться в полёт»)"}
+{"lemma": "лезть", "aspect": "impf", "aspect_pair": "полезть", "pair_kind": "related", "pair_note": "полезть=登り始める・入り込もうとする", "pair_note_en": "полезть = to begin climbing / try to get into", "pair_note_ru": "полезть = начать лезть, попытаться проникнуть внутрь"}
 {"lemma": "передумать", "aspect": "pf", "aspect_pair": "передумывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отказываться", "aspect": "impf", "aspect_pair": "отказаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "молиться", "aspect": "impf", "aspect_pair": "помолиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "справляться", "aspect": "impf", "aspect_pair": "справиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "торопиться", "aspect": "impf", "aspect_pair": "поторопиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "спорить", "aspect": "impf", "aspect_pair": "поспорить", "pair_kind": "pair", "pair_note": "поспоритьには「賭ける」の意味もある"}
+{"lemma": "спорить", "aspect": "impf", "aspect_pair": "поспорить", "pair_kind": "pair", "pair_note": "поспоритьには「賭ける」の意味もある", "pair_note_en": "поспорить can also mean ‘to bet’", "pair_note_ru": "поспорить может также означать «заключить пари»"}
 {"lemma": "влюбиться", "aspect": "pf", "aspect_pair": "влюбляться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "задержать", "aspect": "pf", "aspect_pair": "задерживать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поблагодарить", "aspect": "pf", "aspect_pair": "благодарить", "pair_kind": "pair", "pair_note": null}
@@ -558,13 +558,13 @@
 {"lemma": "подготовить", "aspect": "pf", "aspect_pair": "подготавливать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поддержать", "aspect": "pf", "aspect_pair": "поддерживать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "спасать", "aspect": "impf", "aspect_pair": "спасти", "pair_kind": "pair", "pair_note": null}
-{"lemma": "рассчитывать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「当てにする」は状態的用法。рассчитатьは主に「計算する」"}
+{"lemma": "рассчитывать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「当てにする」は状態的用法。рассчитатьは主に「計算する」", "pair_note_en": "‘to rely on’ is a stative use. рассчитать primarily means ‘to calculate’", "pair_note_ru": "в значении «полагаться» употребляется стативно. рассчитать преимущественно означает «вычислить»"}
 {"lemma": "разбираться", "aspect": "impf", "aspect_pair": "разобраться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "ловить", "aspect": "impf", "aspect_pair": "поймать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выбросить", "aspect": "pf", "aspect_pair": "выбрасывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "запретить", "aspect": "pf", "aspect_pair": "запрещать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вывести", "aspect": "pf", "aspect_pair": "выводить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "поиграть", "aspect": "pf", "aspect_pair": "играть", "pair_kind": "none", "pair_note": "少し遊ぶ"}
+{"lemma": "поиграть", "aspect": "pf", "aspect_pair": "играть", "pair_kind": "none", "pair_note": "少し遊ぶ", "pair_note_en": "to play for a while", "pair_note_ru": "немного поиграть"}
 {"lemma": "улыбаться", "aspect": "impf", "aspect_pair": "улыбнуться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пробовать", "aspect": "impf", "aspect_pair": "попробовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "дерзить", "aspect": "impf", "aspect_pair": "надерзить", "pair_kind": "pair", "pair_note": null}
@@ -573,23 +573,23 @@
 {"lemma": "пообещать", "aspect": "pf", "aspect_pair": "обещать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пожениться", "aspect": "pf", "aspect_pair": "жениться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "ужинать", "aspect": "impf", "aspect_pair": "поужинать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "бегать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はбежать。完了体は文脈で異なる（例: побежать走り出す）"}
+{"lemma": "бегать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はбежать。完了体は文脈で異なる（例: побежать走り出す）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is бежать. The perfective depends on context (e.g. побежать ‘to start running’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — бежать. Совершенный вид зависит от контекста (например, побежать «начать бежать»)"}
 {"lemma": "меняться", "aspect": "impf", "aspect_pair": "измениться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "создавать", "aspect": "impf", "aspect_pair": "создать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отвалить", "aspect": "pf", "aspect_pair": "отваливать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выступать", "aspect": "impf", "aspect_pair": "выступить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "организовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）"}
+{"lemma": "организовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）", "pair_note_en": "biaspectual verb (foreign verb in -овать)", "pair_note_ru": "двувидовой глагол (заимствованный глагол на -овать)"}
 {"lemma": "предоставить", "aspect": "pf", "aspect_pair": "предоставлять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "направляться", "aspect": "impf", "aspect_pair": "направиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "изучать", "aspect": "impf", "aspect_pair": "изучить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "поживать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "不完了体のみ。対応する完了体のない慣用的動詞"}
+{"lemma": "поживать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "不完了体のみ。対応する完了体のない慣用的動詞", "pair_note_en": "imperfective only; an idiomatic verb with no corresponding perfective", "pair_note_ru": "только несовершенный вид; идиоматический глагол без соответствующего совершенного вида"}
 {"lemma": "выслушать", "aspect": "pf", "aspect_pair": "выслушивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обедать", "aspect": "impf", "aspect_pair": "пообедать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обмануть", "aspect": "pf", "aspect_pair": "обманывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сжечь", "aspect": "pf", "aspect_pair": "сжигать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "строить", "aspect": "impf", "aspect_pair": "построить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "творить", "aspect": "impf", "aspect_pair": "сотворить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "охотиться", "aspect": "impf", "aspect_pair": "поохотиться", "pair_kind": "none", "pair_note": "しばらく狩りをする"}
+{"lemma": "охотиться", "aspect": "impf", "aspect_pair": "поохотиться", "pair_kind": "none", "pair_note": "しばらく狩りをする", "pair_note_en": "to hunt for a while", "pair_note_ru": "некоторое время поохотиться"}
 {"lemma": "пожелать", "aspect": "pf", "aspect_pair": "желать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "потребоваться", "aspect": "pf", "aspect_pair": "требоваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "предупреждать", "aspect": "impf", "aspect_pair": "предупредить", "pair_kind": "pair", "pair_note": null}
@@ -600,24 +600,24 @@
 {"lemma": "взяться", "aspect": "pf", "aspect_pair": "браться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "надоесть", "aspect": "pf", "aspect_pair": "надоедать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отстать", "aspect": "pf", "aspect_pair": "отставать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "значить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞、対の完了体なし"}
+{"lemma": "значить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞、対の完了体なし", "pair_note_en": "stative verb; no perfective counterpart", "pair_note_ru": "стативный глагол; видовой пары совершенного вида нет"}
 {"lemma": "раскрыть", "aspect": "pf", "aspect_pair": "раскрывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "найтись", "aspect": "pf", "aspect_pair": "находиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "тянуть", "aspect": "impf", "aspect_pair": "потянуть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "превратиться", "aspect": "pf", "aspect_pair": "превращаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "поискать", "aspect": "pf", "aspect_pair": "искать", "pair_kind": "none", "pair_note": "искатьの限定相（少し探す）。искать自体の対はнайти"}
+{"lemma": "поискать", "aspect": "pf", "aspect_pair": "искать", "pair_kind": "none", "pair_note": "искатьの限定相（少し探す）。искать自体の対はнайти", "pair_note_en": "delimitative of искать (to search for a while). The counterpart of искать itself is найти", "pair_note_ru": "делимитатив от искать (немного поискать). Видовая пара самого искать — найти"}
 {"lemma": "сменить", "aspect": "pf", "aspect_pair": "сменять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поторопиться", "aspect": "pf", "aspect_pair": "торопиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "удивить", "aspect": "pf", "aspect_pair": "удивлять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "объявить", "aspect": "pf", "aspect_pair": "объявлять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "продолжаться", "aspect": "impf", "aspect_pair": "продолжиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "очнуться", "aspect": "pf", "aspect_pair": null, "pair_kind": "none", "pair_note": "完了体のみ。標準的な単語一語の不完了体対なし"}
+{"lemma": "очнуться", "aspect": "pf", "aspect_pair": null, "pair_kind": "none", "pair_note": "完了体のみ。標準的な単語一語の不完了体対なし", "pair_note_en": "perfective only; no standard one-word imperfective counterpart", "pair_note_ru": "только совершенный вид; стандартной однословной пары несовершенного вида нет"}
 {"lemma": "гореть", "aspect": "impf", "aspect_pair": "сгореть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "оказать", "aspect": "pf", "aspect_pair": "оказывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поделиться", "aspect": "pf", "aspect_pair": "делиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вынести", "aspect": "pf", "aspect_pair": "выносить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "водить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はвести。完了体は文脈で異なる（例: отвести連れて行く／провести案内する）"}
-{"lemma": "поделать", "aspect": "pf", "aspect_pair": "делать", "pair_kind": "related", "pair_note": "限時形または慣用表現。делатьの標準完了体はсделать"}
+{"lemma": "водить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はвести。完了体は文脈で異なる（例: отвести連れて行く／провести案内する）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is вести. The perfective depends on context (e.g. отвести ‘to take/lead’ / провести ‘to guide’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — вести. Совершенный вид зависит от контекста (например, отвести «отвести кого-либо» / провести «провести, показать путь»)"}
+{"lemma": "поделать", "aspect": "pf", "aspect_pair": "делать", "pair_kind": "related", "pair_note": "限時形または慣用表現。делатьの標準完了体はсделать", "pair_note_en": "delimitative form or idiomatic expression. The standard perfective of делать is сделать", "pair_note_ru": "делимитативная форма или устойчивое выражение. Стандартный совершенный вид от делать — сделать"}
 {"lemma": "возникнуть", "aspect": "pf", "aspect_pair": "возникать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обойтись", "aspect": "pf", "aspect_pair": "обходиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "зарабатывать", "aspect": "impf", "aspect_pair": "заработать", "pair_kind": "pair", "pair_note": null}
@@ -649,7 +649,7 @@
 {"lemma": "обращать", "aspect": "impf", "aspect_pair": "обратить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "окончить", "aspect": "pf", "aspect_pair": "оканчивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "замечать", "aspect": "impf", "aspect_pair": "заметить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "настаивать", "aspect": "impf", "aspect_pair": "настоять", "pair_kind": "pair", "pair_note": "「主張する」の意。煎じる意味もある"}
+{"lemma": "настаивать", "aspect": "impf", "aspect_pair": "настоять", "pair_kind": "pair", "pair_note": "「主張する」の意。煎じる意味もある", "pair_note_en": "In the sense ‘to insist/assert.’ Also has the meaning ‘to infuse/brew’", "pair_note_ru": "в значении «утверждать, настаивать». Имеет также значение «настаивать настой»"}
 {"lemma": "глядеть", "aspect": "impf", "aspect_pair": "поглядеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сосредоточиться", "aspect": "pf", "aspect_pair": "сосредоточиваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отключить", "aspect": "pf", "aspect_pair": "отключать", "pair_kind": "pair", "pair_note": null}
@@ -661,8 +661,8 @@
 {"lemma": "вспоминать", "aspect": "impf", "aspect_pair": "вспомнить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выдать", "aspect": "pf", "aspect_pair": "выдавать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "упоминать", "aspect": "impf", "aspect_pair": "упомянуть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "владеть", "aspect": "impf", "aspect_pair": "овладеть", "pair_kind": "related", "pair_note": "状態動詞。овладеть＝手に入れる・習得する"}
-{"lemma": "родить", "aspect": "pf", "aspect_pair": "рожать", "pair_kind": "related", "pair_note": "対応する不完了体はрожать（родить自体も両体的に使われることがある）"}
+{"lemma": "владеть", "aspect": "impf", "aspect_pair": "овладеть", "pair_kind": "related", "pair_note": "状態動詞。овладеть＝手に入れる・習得する", "pair_note_en": "stative verb. овладеть = to acquire/master", "pair_note_ru": "стативный глагол. овладеть = завладеть, освоить"}
+{"lemma": "родить", "aspect": "pf", "aspect_pair": "рожать", "pair_kind": "related", "pair_note": "対応する不完了体はрожать（родить自体も両体的に使われることがある）", "pair_note_en": "The corresponding imperfective is рожать (родить itself is sometimes used biaspectually)", "pair_note_ru": "соответствующий несовершенный вид — рожать (сам родить иногда употребляется как двувидовой)"}
 {"lemma": "лечь", "aspect": "pf", "aspect_pair": "ложиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "жалеть", "aspect": "impf", "aspect_pair": "пожалеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "солгать", "aspect": "pf", "aspect_pair": "лгать", "pair_kind": "pair", "pair_note": null}
@@ -678,7 +678,7 @@
 {"lemma": "прожить", "aspect": "pf", "aspect_pair": "проживать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "приготовиться", "aspect": "pf", "aspect_pair": "приготовляться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подавать", "aspect": "impf", "aspect_pair": "подать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "заболеть", "aspect": "pf", "aspect_pair": "болеть", "pair_kind": "pair", "pair_note": "заболеть=病気になる（起動相だが標準的な対として教えられる）"}
+{"lemma": "заболеть", "aspect": "pf", "aspect_pair": "болеть", "pair_kind": "pair", "pair_note": "заболеть=病気になる（起動相だが標準的な対として教えられる）", "pair_note_en": "заболеть = to become ill (inchoative, but taught as the standard counterpart)", "pair_note_ru": "заболеть = начать болеть, стать больным (начинательное значение, но преподаётся как стандартная видовая пара)"}
 {"lemma": "присмотреть", "aspect": "pf", "aspect_pair": "присматривать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "приводить", "aspect": "impf", "aspect_pair": "привести", "pair_kind": "pair", "pair_note": null}
 {"lemma": "замолчать", "aspect": "pf", "aspect_pair": "замолкать", "pair_kind": "pair", "pair_note": null}
@@ -687,7 +687,7 @@
 {"lemma": "наступить", "aspect": "pf", "aspect_pair": "наступать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "присматривать", "aspect": "impf", "aspect_pair": "присмотреть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заканчивать", "aspect": "impf", "aspect_pair": "закончить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "говориться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「言われる」の受動・非人称用法には完了体の対なし"}
+{"lemma": "говориться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「言われる」の受動・非人称用法には完了体の対なし", "pair_note_en": "The passive/impersonal use ‘it is said’ has no perfective counterpart", "pair_note_ru": "у пассивного или безличного употребления в значении «говорят, говорится» нет видовой пары совершенного вида"}
 {"lemma": "осмотреть", "aspect": "pf", "aspect_pair": "осматривать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "прикрыть", "aspect": "pf", "aspect_pair": "прикрывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "привлечь", "aspect": "pf", "aspect_pair": "привлекать", "pair_kind": "pair", "pair_note": null}
@@ -703,17 +703,17 @@
 {"lemma": "подставить", "aspect": "pf", "aspect_pair": "подставлять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "запустить", "aspect": "pf", "aspect_pair": "запускать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "полюбить", "aspect": "pf", "aspect_pair": "любить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "считаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「～とみなされる」の状態用法には完了体の対なし"}
+{"lemma": "считаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「～とみなされる」の状態用法には完了体の対なし", "pair_note_en": "The stative use ‘to be regarded as ~’ has no perfective counterpart", "pair_note_ru": "у стативного употребления в значении «считаться кем-либо или чем-либо» нет видовой пары совершенного вида"}
 {"lemma": "описать", "aspect": "pf", "aspect_pair": "описывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "признавать", "aspect": "impf", "aspect_pair": "признать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подвести", "aspect": "pf", "aspect_pair": "подводить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выгнать", "aspect": "pf", "aspect_pair": "выгонять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обидеть", "aspect": "pf", "aspect_pair": "обижать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "спускаться", "aspect": "impf", "aspect_pair": "спуститься", "pair_kind": "pair", "pair_note": null}
-{"lemma": "посидеть", "aspect": "pf", "aspect_pair": "сидеть", "pair_kind": "none", "pair_note": "сидетьの限定相（少し座る）"}
+{"lemma": "посидеть", "aspect": "pf", "aspect_pair": "сидеть", "pair_kind": "none", "pair_note": "сидетьの限定相（少し座る）", "pair_note_en": "delimitative of сидеть (to sit for a while)", "pair_note_ru": "делимитатив от сидеть (немного посидеть)"}
 {"lemma": "прятать", "aspect": "impf", "aspect_pair": "спрятать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "задумать", "aspect": "pf", "aspect_pair": "задумывать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "поспать", "aspect": "pf", "aspect_pair": "спать", "pair_kind": "none", "pair_note": "спатьの限定相（少し眠る）"}
+{"lemma": "поспать", "aspect": "pf", "aspect_pair": "спать", "pair_kind": "none", "pair_note": "спатьの限定相（少し眠る）", "pair_note_en": "delimitative of спать (to sleep for a while)", "pair_note_ru": "делимитатив от спать (немного поспать)"}
 {"lemma": "жаловаться", "aspect": "impf", "aspect_pair": "пожаловаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выдержать", "aspect": "pf", "aspect_pair": "выдерживать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "проехать", "aspect": "pf", "aspect_pair": "проезжать", "pair_kind": "pair", "pair_note": null}
@@ -725,35 +725,35 @@
 {"lemma": "повернуться", "aspect": "pf", "aspect_pair": "поворачиваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "смириться", "aspect": "pf", "aspect_pair": "смиряться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обратить", "aspect": "pf", "aspect_pair": "обращать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "отрицать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「否定する」には一般的な完了体の対がない"}
-{"lemma": "потерпеть", "aspect": "pf", "aspect_pair": "терпеть", "pair_kind": "none", "pair_note": "少し我慢する"}
+{"lemma": "отрицать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「否定する」には一般的な完了体の対がない", "pair_note_en": "In the sense ‘to deny,’ there is no common perfective counterpart", "pair_note_ru": "в значении «отрицать» общеупотребительной видовой пары совершенного вида нет"}
+{"lemma": "потерпеть", "aspect": "pf", "aspect_pair": "терпеть", "pair_kind": "none", "pair_note": "少し我慢する", "pair_note_en": "to endure for a while", "pair_note_ru": "немного потерпеть"}
 {"lemma": "достаться", "aspect": "pf", "aspect_pair": "доставаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "наказать", "aspect": "pf", "aspect_pair": "наказывать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "веселиться", "aspect": "impf", "aspect_pair": "повеселиться", "pair_kind": "none", "pair_note": "少し楽しむ"}
-{"lemma": "заговорить", "aspect": "pf", "aspect_pair": "говорить", "pair_kind": "related", "pair_note": "говоритьの開始を表す起動相「話し始める」"}
+{"lemma": "веселиться", "aspect": "impf", "aspect_pair": "повеселиться", "pair_kind": "none", "pair_note": "少し楽しむ", "pair_note_en": "to have fun for a while", "pair_note_ru": "немного повеселиться"}
+{"lemma": "заговорить", "aspect": "pf", "aspect_pair": "говорить", "pair_kind": "related", "pair_note": "говоритьの開始を表す起動相「話し始める」", "pair_note_en": "inchoative derivative of говорить: ‘to start speaking’", "pair_note_ru": "начинательный производный глагол от говорить: «начать говорить»"}
 {"lemma": "натворить", "aspect": "pf", "aspect_pair": "натворять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "порвать", "aspect": "pf", "aspect_pair": "рвать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "навестить", "aspect": "pf", "aspect_pair": "навещать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "взорваться", "aspect": "pf", "aspect_pair": "взрываться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "интересоваться", "aspect": "impf", "aspect_pair": "заинтересоваться", "pair_kind": "related", "pair_note": "状態を表す。заинтересоваться=興味を持つようになる"}
+{"lemma": "интересоваться", "aspect": "impf", "aspect_pair": "заинтересоваться", "pair_kind": "related", "pair_note": "状態を表す。заинтересоваться=興味を持つようになる", "pair_note_en": "expresses a state. заинтересоваться = to become interested", "pair_note_ru": "выражает состояние. заинтересоваться = начать интересоваться, проявить интерес"}
 {"lemma": "пристрелить", "aspect": "pf", "aspect_pair": "пристреливать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "повеселиться", "aspect": "pf", "aspect_pair": "веселиться", "pair_kind": "none", "pair_note": "веселитьсяの限定相（少し楽しく過ごす）"}
-{"lemma": "присутствовать", "aspect": "impf", "aspect_pair": "поприсутствовать", "pair_kind": "none", "pair_note": "しばらく出席する"}
+{"lemma": "повеселиться", "aspect": "pf", "aspect_pair": "веселиться", "pair_kind": "none", "pair_note": "веселитьсяの限定相（少し楽しく過ごす）", "pair_note_en": "delimitative of веселиться (to have fun for a while)", "pair_note_ru": "делимитатив от веселиться (немного повеселиться)"}
+{"lemma": "присутствовать", "aspect": "impf", "aspect_pair": "поприсутствовать", "pair_kind": "none", "pair_note": "しばらく出席する", "pair_note_en": "to attend/be present for a while", "pair_note_ru": "некоторое время поприсутствовать"}
 {"lemma": "пожалеть", "aspect": "pf", "aspect_pair": "жалеть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "побежать", "aspect": "pf", "aspect_pair": "бежать", "pair_kind": "pair", "pair_note": "побежать=走り出す（起動相だが標準的な対として教えられる）"}
+{"lemma": "побежать", "aspect": "pf", "aspect_pair": "бежать", "pair_kind": "pair", "pair_note": "побежать=走り出す（起動相だが標準的な対として教えられる）", "pair_note_en": "побежать = to start running (inchoative, but taught as the standard counterpart)", "pair_note_ru": "побежать = начать бежать (начинательное значение, но преподаётся как стандартная видовая пара)"}
 {"lemma": "удалить", "aspect": "pf", "aspect_pair": "удалять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заехать", "aspect": "pf", "aspect_pair": "заезжать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "нажать", "aspect": "pf", "aspect_pair": "нажимать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "присаживаться", "aspect": "impf", "aspect_pair": "присесть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "проникнуть", "aspect": "pf", "aspect_pair": "проникать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "тащить", "aspect": "impf", "aspect_pair": "потащить", "pair_kind": "related", "pair_note": "потащить=引きずり始める。到達点で完了体が異なる"}
+{"lemma": "тащить", "aspect": "impf", "aspect_pair": "потащить", "pair_kind": "related", "pair_note": "потащить=引きずり始める。到達点で完了体が異なる", "pair_note_en": "потащить = to begin dragging. The perfective varies with the destination", "pair_note_ru": "потащить = начать тащить. Совершенный вид различается в зависимости от конечного пункта"}
 {"lemma": "глянуть", "aspect": "pf", "aspect_pair": "глядеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "умываться", "aspect": "impf", "aspect_pair": "умыться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "изменять", "aspect": "impf", "aspect_pair": "изменить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "соврать", "aspect": "pf", "aspect_pair": "врать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "целоваться", "aspect": "impf", "aspect_pair": "поцеловаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "предположить", "aspect": "pf", "aspect_pair": "предполагать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "состоять", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「～から成る」という関係・状態動詞で完了体なし"}
+{"lemma": "состоять", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「～から成る」という関係・状態動詞で完了体なし", "pair_note_en": "relational/stative verb meaning ‘to consist of ~’; no perfective", "pair_note_ru": "глагол отношения или состояния со значением «состоять из чего-либо»; совершенного вида нет"}
 {"lemma": "включать", "aspect": "impf", "aspect_pair": "включить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "похоронить", "aspect": "pf", "aspect_pair": "хоронить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "осознать", "aspect": "pf", "aspect_pair": "осознавать", "pair_kind": "pair", "pair_note": null}
@@ -761,18 +761,18 @@
 {"lemma": "наделать", "aspect": "pf", "aspect_pair": "наделывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "рисовать", "aspect": "impf", "aspect_pair": "нарисовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "восстановить", "aspect": "pf", "aspect_pair": "восстанавливать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "приветствовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）"}
+{"lemma": "приветствовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）", "pair_note_en": "biaspectual verb (foreign verb in -овать)", "pair_note_ru": "двувидовой глагол (заимствованный глагол на -овать)"}
 {"lemma": "переходить", "aspect": "impf", "aspect_pair": "перейти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "засунуть", "aspect": "pf", "aspect_pair": "засовывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "пригодиться", "aspect": "pf", "aspect_pair": "пригождаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заснуть", "aspect": "pf", "aspect_pair": "засыпать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "указать", "aspect": "pf", "aspect_pair": "указывать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "наплевать", "aspect": "pf", "aspect_pair": "плевать", "pair_kind": "pair", "pair_note": "比喩義では両方とも「気にしない」の意味で使う"}
-{"lemma": "сводить", "aspect": "pf", "aspect_pair": "водить", "pair_kind": "related", "pair_note": "完了体（連れて行って戻る）。対応する不完了体はводить（多方向）"}
+{"lemma": "наплевать", "aspect": "pf", "aspect_pair": "плевать", "pair_kind": "pair", "pair_note": "比喩義では両方とも「気にしない」の意味で使う", "pair_note_en": "In the figurative sense, both are used to mean ‘not to care’", "pair_note_ru": "в переносном значении обе формы употребляются в смысле «не обращать внимания»"}
+{"lemma": "сводить", "aspect": "pf", "aspect_pair": "водить", "pair_kind": "related", "pair_note": "完了体（連れて行って戻る）。対応する不完了体はводить（多方向）", "pair_note_en": "perfective (to take someone somewhere and return). Its corresponding imperfective is водить (multidirectional)", "pair_note_ru": "совершенный вид (сводить кого-либо куда-либо и вернуться). Соответствующий несовершенный вид — водить (разнонаправленное движение)"}
 {"lemma": "уснуть", "aspect": "pf", "aspect_pair": "засыпать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "велеть", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）"}
+{"lemma": "велеть", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（不完了体・完了体同形）", "pair_note_en": "biaspectual verb (same form for imperfective and perfective)", "pair_note_ru": "двувидовой глагол (одна форма для несовершенного и совершенного вида)"}
 {"lemma": "разочаровать", "aspect": "pf", "aspect_pair": "разочаровывать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "твориться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "進行中の出来事を表し、この意味で直接の完了体なし"}
+{"lemma": "твориться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "進行中の出来事を表し、この意味で直接の完了体なし", "pair_note_en": "denotes an event in progress; no direct perfective in this meaning", "pair_note_ru": "обозначает происходящее событие; в этом значении прямой пары совершенного вида нет"}
 {"lemma": "упомянуть", "aspect": "pf", "aspect_pair": "упоминать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выступить", "aspect": "pf", "aspect_pair": "выступать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "задержаться", "aspect": "pf", "aspect_pair": "задерживаться", "pair_kind": "pair", "pair_note": null}
@@ -788,42 +788,42 @@
 {"lemma": "заводить", "aspect": "impf", "aspect_pair": "завести", "pair_kind": "pair", "pair_note": null}
 {"lemma": "заполучить", "aspect": "pf", "aspect_pair": "заполучать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "оценить", "aspect": "pf", "aspect_pair": "оценивать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "биться", "aspect": "impf", "aspect_pair": "побиться", "pair_kind": "none", "pair_note": "しばらく戦う。心臓の鼓動には完了体なし"}
+{"lemma": "биться", "aspect": "impf", "aspect_pair": "побиться", "pair_kind": "none", "pair_note": "しばらく戦う。心臓の鼓動には完了体なし", "pair_note_en": "to fight for a while. For a heartbeat, there is no perfective", "pair_note_ru": "некоторое время побиться. В значении биения сердца совершенного вида нет"}
 {"lemma": "избегать", "aspect": "impf", "aspect_pair": "избежать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вмешиваться", "aspect": "impf", "aspect_pair": "вмешаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "плавать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はплыть。完了体は文脈で異なる（例: поплыть泳ぎ出す）"}
+{"lemma": "плавать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はплыть。完了体は文脈で異なる（例: поплыть泳ぎ出す）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is плыть. The perfective depends on context (e.g. поплыть ‘to start swimming’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — плыть. Совершенный вид зависит от контекста (например, поплыть «начать плыть»)"}
 {"lemma": "заканчиваться", "aspect": "impf", "aspect_pair": "закончиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "прогуляться", "aspect": "pf", "aspect_pair": "прогуливаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обнять", "aspect": "pf", "aspect_pair": "обнимать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "облажаться", "aspect": "pf", "aspect_pair": "облаживаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обеспечить", "aspect": "pf", "aspect_pair": "обеспечивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "записывать", "aspect": "impf", "aspect_pair": "записать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "нанести", "aspect": "pf", "aspect_pair": "наносить", "pair_kind": "pair", "pair_note": "наноситьには同綴りの別義完了体もある"}
+{"lemma": "нанести", "aspect": "pf", "aspect_pair": "наносить", "pair_kind": "pair", "pair_note": "наноситьには同綴りの別義完了体もある", "pair_note_en": "наносить also has a homographic perfective with a different meaning", "pair_note_ru": "у наносить есть также омографический совершенный вид с другим значением"}
 {"lemma": "заполнить", "aspect": "pf", "aspect_pair": "заполнять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поспорить", "aspect": "pf", "aspect_pair": "спорить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "радоваться", "aspect": "impf", "aspect_pair": "обрадоваться", "pair_kind": "related", "pair_note": "обрадоваться=「うれしくなる」という起動相"}
+{"lemma": "радоваться", "aspect": "impf", "aspect_pair": "обрадоваться", "pair_kind": "related", "pair_note": "обрадоваться=「うれしくなる」という起動相", "pair_note_en": "обрадоваться = ‘to become glad,’ an inchoative", "pair_note_ru": "обрадоваться = «обрадоваться, стать радостным», начинательное значение"}
 {"lemma": "проваливать", "aspect": "impf", "aspect_pair": "провалить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "красть", "aspect": "impf", "aspect_pair": "украсть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отметить", "aspect": "pf", "aspect_pair": "отмечать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "ревновать", "aspect": "impf", "aspect_pair": "приревновать", "pair_kind": "related", "pair_note": "приревновать=ある時に嫉妬を感じる"}
+{"lemma": "ревновать", "aspect": "impf", "aspect_pair": "приревновать", "pair_kind": "related", "pair_note": "приревновать=ある時に嫉妬を感じる", "pair_note_en": "приревновать = to feel jealous on a particular occasion", "pair_note_ru": "приревновать = испытать ревность в конкретный момент"}
 {"lemma": "трахаться", "aspect": "impf", "aspect_pair": "трахнуться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "явиться", "aspect": "pf", "aspect_pair": "являться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "взорвать", "aspect": "pf", "aspect_pair": "взрывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "лишить", "aspect": "pf", "aspect_pair": "лишать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "уверять", "aspect": "impf", "aspect_pair": "уверить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "завидовать", "aspect": "impf", "aspect_pair": "позавидовать", "pair_kind": "none", "pair_note": "一時的に羨む"}
+{"lemma": "завидовать", "aspect": "impf", "aspect_pair": "позавидовать", "pair_kind": "none", "pair_note": "一時的に羨む", "pair_note_en": "to feel envious temporarily", "pair_note_ru": "временно позавидовать"}
 {"lemma": "впустить", "aspect": "pf", "aspect_pair": "впускать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "советовать", "aspect": "impf", "aspect_pair": "посоветовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "переводить", "aspect": "impf", "aspect_pair": "перевести", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выставить", "aspect": "pf", "aspect_pair": "выставлять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "голосовать", "aspect": "impf", "aspect_pair": "проголосовать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "отличаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「異なる」は状態的で完了体なし。отличитьсяは別義"}
+{"lemma": "отличаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「異なる」は状態的で完了体なし。отличитьсяは別義", "pair_note_en": "‘to differ’ is stative and has no perfective. отличиться has a different meaning", "pair_note_ru": "в значении «различаться» глагол стативный и не имеет совершенного вида. отличиться имеет другое значение"}
 {"lemma": "класть", "aspect": "impf", "aspect_pair": "положить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "целовать", "aspect": "impf", "aspect_pair": "поцеловать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "забить", "aspect": "pf", "aspect_pair": "забивать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "смотреться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「〜に見える」は状態的で完了体なし"}
+{"lemma": "смотреться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「〜に見える」は状態的で完了体なし", "pair_note_en": "‘to look/seem ~’ is stative and has no perfective", "pair_note_ru": "в значении «выглядеть как-либо» глагол стативный и не имеет совершенного вида"}
 {"lemma": "доставать", "aspect": "impf", "aspect_pair": "достать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "сердиться", "aspect": "impf", "aspect_pair": "рассердиться", "pair_kind": "related", "pair_note": "рассердиться=「怒りだす」という起動相"}
+{"lemma": "сердиться", "aspect": "impf", "aspect_pair": "рассердиться", "pair_kind": "related", "pair_note": "рассердиться=「怒りだす」という起動相", "pair_note_en": "рассердиться = ‘to become angry,’ an inchoative", "pair_note_ru": "рассердиться = «рассердиться, начать сердиться», начинательное значение"}
 {"lemma": "захотеться", "aspect": "pf", "aspect_pair": "хотеться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "развлекаться", "aspect": "impf", "aspect_pair": "развлечься", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отомстить", "aspect": "pf", "aspect_pair": "мстить", "pair_kind": "pair", "pair_note": null}
@@ -833,7 +833,7 @@
 {"lemma": "нападать", "aspect": "impf", "aspect_pair": "напасть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отпускать", "aspect": "impf", "aspect_pair": "отпустить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "повернуть", "aspect": "pf", "aspect_pair": "поворачивать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "спятить", "aspect": "pf", "aspect_pair": null, "pair_kind": "none", "pair_note": "完了体のみで、同義の不完了体はない"}
+{"lemma": "спятить", "aspect": "pf", "aspect_pair": null, "pair_kind": "none", "pair_note": "完了体のみで、同義の不完了体はない", "pair_note_en": "perfective only, with no synonymous imperfective", "pair_note_ru": "только совершенный вид; синонимичного несовершенного вида нет"}
 {"lemma": "делиться", "aspect": "impf", "aspect_pair": "поделиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "суметь", "aspect": "pf", "aspect_pair": "уметь", "pair_kind": "pair", "pair_note": null}
 {"lemma": "одеть", "aspect": "pf", "aspect_pair": "одевать", "pair_kind": "pair", "pair_note": null}
@@ -841,51 +841,51 @@
 {"lemma": "разойтись", "aspect": "pf", "aspect_pair": "расходиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сломаться", "aspect": "pf", "aspect_pair": "ломаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "замешать", "aspect": "pf", "aspect_pair": "замешивать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "тошнить", "aspect": "impf", "aspect_pair": "затошнить", "pair_kind": "related", "pair_note": "状態動詞。затошнить＝吐き気がし始める"}
+{"lemma": "тошнить", "aspect": "impf", "aspect_pair": "затошнить", "pair_kind": "related", "pair_note": "状態動詞。затошнить＝吐き気がし始める", "pair_note_en": "stative verb. затошнить = to begin to feel nauseous", "pair_note_ru": "стативный глагол. затошнить = начать испытывать тошноту"}
 {"lemma": "обыскать", "aspect": "pf", "aspect_pair": "обыскивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "разрешать", "aspect": "impf", "aspect_pair": "разрешить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сбросить", "aspect": "pf", "aspect_pair": "сбрасывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "игнорировать", "aspect": "impf", "aspect_pair": "проигнорировать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сдохнуть", "aspect": "pf", "aspect_pair": "сдыхать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "валить", "aspect": "impf", "aspect_pair": "свалить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "атаковать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）"}
+{"lemma": "атаковать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）", "pair_note_en": "biaspectual verb (foreign verb in -овать)", "pair_note_ru": "двувидовой глагол (заимствованный глагол на -овать)"}
 {"lemma": "прикончить", "aspect": "pf", "aspect_pair": "приканчивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "надевать", "aspect": "impf", "aspect_pair": "надеть", "pair_kind": "pair", "pair_note": null}
 {"lemma": "нарисовать", "aspect": "pf", "aspect_pair": "рисовать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "расследовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）"}
+{"lemma": "расследовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）", "pair_note_en": "biaspectual verb (foreign verb in -овать)", "pair_note_ru": "двувидовой глагол (заимствованный глагол на -овать)"}
 {"lemma": "опознать", "aspect": "pf", "aspect_pair": "опознавать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поклясться", "aspect": "pf", "aspect_pair": "клясться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "исключить", "aspect": "pf", "aspect_pair": "исключать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "подержать", "aspect": "pf", "aspect_pair": "держать", "pair_kind": "none", "pair_note": "держатьの限定相（少し持つ）"}
+{"lemma": "подержать", "aspect": "pf", "aspect_pair": "держать", "pair_kind": "none", "pair_note": "держатьの限定相（少し持つ）", "pair_note_en": "delimitative of держать (to hold for a while)", "pair_note_ru": "делимитатив от держать (немного подержать)"}
 {"lemma": "напиться", "aspect": "pf", "aspect_pair": "напиваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поместить", "aspect": "pf", "aspect_pair": "помещать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "деться", "aspect": "pf", "aspect_pair": "деваться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поужинать", "aspect": "pf", "aspect_pair": "ужинать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "переезжать", "aspect": "impf", "aspect_pair": "переехать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подвезти", "aspect": "pf", "aspect_pair": "подвозить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "кататься", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はкатиться。完了体は文脈で異なる（例: покататься少し乗る）"}
-{"lemma": "отрезать", "aspect": "pf", "aspect_pair": "резать", "pair_kind": "pair", "pair_note": "対応する不完了体はрезать（切る、一般）"}
-{"lemma": "стремиться", "aspect": "impf", "aspect_pair": "устремиться", "pair_kind": "related", "pair_note": "устремиться＝勢いよく向かう・集中する"}
+{"lemma": "кататься", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "多方向の運動動詞（不完了体のみ）。単一方向はкатиться。完了体は文脈で異なる（例: покататься少し乗る）", "pair_note_en": "multidirectional motion verb (imperfective only). The unidirectional verb is катиться. The perfective depends on context (e.g. покататься ‘to ride for a while’)", "pair_note_ru": "разнонаправленный глагол движения (только несовершенный вид). Однонаправленный глагол — катиться. Совершенный вид зависит от контекста (например, покататься «немного покататься»)"}
+{"lemma": "отрезать", "aspect": "pf", "aspect_pair": "резать", "pair_kind": "pair", "pair_note": "対応する不完了体はрезать（切る、一般）", "pair_note_en": "The corresponding imperfective is резать (general ‘to cut’)", "pair_note_ru": "соответствующий несовершенный вид — резать (общее значение «резать»)"}
+{"lemma": "стремиться", "aspect": "impf", "aspect_pair": "устремиться", "pair_kind": "related", "pair_note": "устремиться＝勢いよく向かう・集中する", "pair_note_en": "устремиться = to rush/head toward / concentrate", "pair_note_ru": "устремиться = стремительно направиться, сосредоточиться"}
 {"lemma": "основать", "aspect": "pf", "aspect_pair": "основывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "вступить", "aspect": "pf", "aspect_pair": "вступать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "занимать", "aspect": "impf", "aspect_pair": "занять", "pair_kind": "pair", "pair_note": null}
-{"lemma": "предстоять", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "未来に控える状態を表し、完了体の対なし"}
+{"lemma": "предстоять", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "未来に控える状態を表し、完了体の対なし", "pair_note_en": "denotes a future state lying ahead; no perfective counterpart", "pair_note_ru": "обозначает предстоящее в будущем состояние; видовой пары совершенного вида нет"}
 {"lemma": "внести", "aspect": "pf", "aspect_pair": "вносить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "сохранять", "aspect": "impf", "aspect_pair": "сохранить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "обладать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "所有・属性を表す状態動詞で完了体の対なし"}
+{"lemma": "обладать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "所有・属性を表す状態動詞で完了体の対なし", "pair_note_en": "stative verb expressing possession or an attribute; no perfective counterpart", "pair_note_ru": "стативный глагол со значением обладания или свойства; видовой пары совершенного вида нет"}
 {"lemma": "доказывать", "aspect": "impf", "aspect_pair": "доказать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "задуматься", "aspect": "pf", "aspect_pair": "задумываться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "произнести", "aspect": "pf", "aspect_pair": "произносить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "соответствовать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "対応・一致という関係を表し完了体の対なし"}
+{"lemma": "соответствовать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "対応・一致という関係を表し完了体の対なし", "pair_note_en": "expresses a relation of correspondence/agreement; no perfective counterpart", "pair_note_ru": "выражает отношение соответствия или совпадения; видовой пары совершенного вида нет"}
 {"lemma": "произвести", "aspect": "pf", "aspect_pair": "производить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "привлекать", "aspect": "impf", "aspect_pair": "привлечь", "pair_kind": "pair", "pair_note": null}
 {"lemma": "последовать", "aspect": "pf", "aspect_pair": "следовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "подтверждать", "aspect": "impf", "aspect_pair": "подтвердить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "рассмотреть", "aspect": "pf", "aspect_pair": "рассматривать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "рассматривать", "aspect": "impf", "aspect_pair": "рассмотреть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "использоваться", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞использоватьの受動・再帰形"}
+{"lemma": "использоваться", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞использоватьの受動・再帰形", "pair_note_en": "passive/reflexive form of the biaspectual verb использовать", "pair_note_ru": "пассивно-возвратная форма двувидового глагола использовать"}
 {"lemma": "исчезать", "aspect": "impf", "aspect_pair": "исчезнуть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "висеть", "aspect": "impf", "aspect_pair": "повисеть", "pair_kind": "none", "pair_note": "しばらく掛かっている"}
+{"lemma": "висеть", "aspect": "impf", "aspect_pair": "повисеть", "pair_kind": "none", "pair_note": "しばらく掛かっている", "pair_note_en": "to hang for a while", "pair_note_ru": "некоторое время повисеть"}
 {"lemma": "удаваться", "aspect": "impf", "aspect_pair": "удаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выразить", "aspect": "pf", "aspect_pair": "выражать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "поразить", "aspect": "pf", "aspect_pair": "поражать", "pair_kind": "pair", "pair_note": null}
@@ -895,14 +895,14 @@
 {"lemma": "произносить", "aspect": "impf", "aspect_pair": "произнести", "pair_kind": "pair", "pair_note": null}
 {"lemma": "увеличить", "aspect": "pf", "aspect_pair": "увеличивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "соглашаться", "aspect": "impf", "aspect_pair": "согласиться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "почитать", "aspect": "impf", "aspect_pair": "почтить", "pair_kind": "related", "pair_note": "対応する完了体почтить（敬意を表す、文語）。同形の別動詞почитать(pf,少し読む)と紛らわしいので注意"}
+{"lemma": "почитать", "aspect": "impf", "aspect_pair": "почтить", "pair_kind": "related", "pair_note": "対応する完了体почтить（敬意を表す、文語）。同形の別動詞почитать(pf,少し読む)と紛らわしいので注意", "pair_note_en": "The corresponding perfective is почтить (‘to pay respect,’ literary). Note the homonymous verb почитать (perfective, ‘to read for a while’)", "pair_note_ru": "соответствующий совершенный вид — почтить («выразить почтение», книжное). Следует отличать от омонимичного глагола почитать (совершенный вид, «немного почитать»)"}
 {"lemma": "воспринимать", "aspect": "impf", "aspect_pair": "воспринять", "pair_kind": "pair", "pair_note": null}
-{"lemma": "состояться", "aspect": "pf", "aspect_pair": "происходить", "pair_kind": "related", "pair_note": "происходитьは「起こっている」を表す一般的な不完了体"}
-{"lemma": "воевать", "aspect": "impf", "aspect_pair": "повоевать", "pair_kind": "none", "pair_note": "しばらく戦う（限界相）"}
+{"lemma": "состояться", "aspect": "pf", "aspect_pair": "происходить", "pair_kind": "related", "pair_note": "происходитьは「起こっている」を表す一般的な不完了体", "pair_note_en": "происходить is the general imperfective meaning ‘to be happening’", "pair_note_ru": "происходить — общеупотребительный несовершенный вид со значением «происходить, быть в процессе»"}
+{"lemma": "воевать", "aspect": "impf", "aspect_pair": "повоевать", "pair_kind": "none", "pair_note": "しばらく戦う（限界相）", "pair_note_en": "to fight for a while (delimitative)", "pair_note_ru": "некоторое время повоевать (делимитатив)"}
 {"lemma": "удивиться", "aspect": "pf", "aspect_pair": "удивляться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "посвятить", "aspect": "pf", "aspect_pair": "посвящать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "улыбнуться", "aspect": "pf", "aspect_pair": "улыбаться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "содержать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「含む」の状態用法には完了体なし"}
+{"lemma": "содержать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "「含む」の状態用法には完了体なし", "pair_note_en": "The stative use ‘to contain’ has no perfective", "pair_note_ru": "у стативного употребления в значении «включать, содержать» нет совершенного вида"}
 {"lemma": "развестись", "aspect": "pf", "aspect_pair": "разводиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "решиться", "aspect": "pf", "aspect_pair": "решаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "влиять", "aspect": "impf", "aspect_pair": "повлиять", "pair_kind": "pair", "pair_note": null}
@@ -910,25 +910,25 @@
 {"lemma": "выпускать", "aspect": "impf", "aspect_pair": "выпустить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "ощущать", "aspect": "impf", "aspect_pair": "ощутить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обернуться", "aspect": "pf", "aspect_pair": "оборачиваться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "рекомендовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）"}
+{"lemma": "рекомендовать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "両体動詞（-оватьの外来語動詞）", "pair_note_en": "biaspectual verb (foreign verb in -овать)", "pair_note_ru": "двувидовой глагол (заимствованный глагол на -овать)"}
 {"lemma": "превращаться", "aspect": "impf", "aspect_pair": "превратиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "потребовать", "aspect": "pf", "aspect_pair": "требовать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "покрыть", "aspect": "pf", "aspect_pair": "покрывать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выдавать", "aspect": "impf", "aspect_pair": "выдать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "составлять", "aspect": "impf", "aspect_pair": "составить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "испытать", "aspect": "pf", "aspect_pair": "испытывать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "исходить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（〜に基づく）、対の完了体なし"}
-{"lemma": "заключаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（〜から成る）、対の完了体なし。同形のзаключиться（契約が締結される）とは意味が異なる（false friend）"}
+{"lemma": "исходить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（〜に基づく）、対の完了体なし", "pair_note_en": "stative verb (‘to be based on ~’); no perfective counterpart", "pair_note_ru": "стативный глагол («основываться на чём-либо»); видовой пары совершенного вида нет"}
+{"lemma": "заключаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞（〜から成る）、対の完了体なし。同形のзаключиться（契約が締結される）とは意味が異なる（false friend）", "pair_note_en": "stative verb (‘to consist of ~’); no perfective counterpart. Distinct in meaning from the homonymous заключиться (‘for a contract to be concluded’; false friend)", "pair_note_ru": "стативный глагол («состоять в чём-либо»); видовой пары совершенного вида нет. Отличается по значению от омонимичного заключиться («быть заключённым» о договоре; ложный друг)"}
 {"lemma": "сложиться", "aspect": "pf", "aspect_pair": "складываться", "pair_kind": "pair", "pair_note": null}
-{"lemma": "иметься", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "存在・所有を表す状態動詞で完了体なし"}
-{"lemma": "отсутствовать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "不在状態を表し、対応する完了体なし"}
+{"lemma": "иметься", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "存在・所有を表す状態動詞で完了体なし", "pair_note_en": "stative verb expressing existence or possession; no perfective", "pair_note_ru": "стативный глагол со значением существования или наличия; совершенного вида нет"}
+{"lemma": "отсутствовать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "不在状態を表し、対応する完了体なし", "pair_note_en": "denotes a state of absence; no corresponding perfective", "pair_note_ru": "обозначает состояние отсутствия; соответствующего совершенного вида нет"}
 {"lemma": "наступать", "aspect": "impf", "aspect_pair": "наступить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "производить", "aspect": "impf", "aspect_pair": "произвести", "pair_kind": "pair", "pair_note": null}
 {"lemma": "выясниться", "aspect": "pf", "aspect_pair": "выясняться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "протянуть", "aspect": "pf", "aspect_pair": "протягивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "приобрести", "aspect": "pf", "aspect_pair": "приобретать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "разработать", "aspect": "pf", "aspect_pair": "разрабатывать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "здравствовать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "健康状態を表す動詞で完了体なし"}
+{"lemma": "здравствовать", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "健康状態を表す動詞で完了体なし", "pair_note_en": "denotes a state of health; no perfective", "pair_note_ru": "обозначает состояние здоровья; совершенного вида нет"}
 {"lemma": "зарегистрировать", "aspect": "pf", "aspect_pair": "регистрировать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "чистить", "aspect": "impf", "aspect_pair": "почистить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "исполнять", "aspect": "impf", "aspect_pair": "исполнить", "pair_kind": "pair", "pair_note": null}
@@ -943,7 +943,7 @@
 {"lemma": "оказывать", "aspect": "impf", "aspect_pair": "оказать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "коснуться", "aspect": "pf", "aspect_pair": "касаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "мыть", "aspect": "impf", "aspect_pair": "помыть", "pair_kind": "pair", "pair_note": null}
-{"lemma": "дрожать", "aspect": "impf", "aspect_pair": "задрожать", "pair_kind": "related", "pair_note": "задрожать=震え始める（開始相）"}
+{"lemma": "дрожать", "aspect": "impf", "aspect_pair": "задрожать", "pair_kind": "related", "pair_note": "задрожать=震え始める（開始相）", "pair_note_en": "задрожать = to begin trembling (inchoative)", "pair_note_ru": "задрожать = начать дрожать (начинательное значение)"}
 {"lemma": "опубликовать", "aspect": "pf", "aspect_pair": "публиковать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "доходить", "aspect": "impf", "aspect_pair": "дойти", "pair_kind": "pair", "pair_note": null}
 {"lemma": "высказать", "aspect": "pf", "aspect_pair": "высказывать", "pair_kind": "pair", "pair_note": null}
@@ -958,7 +958,7 @@
 {"lemma": "объединить", "aspect": "pf", "aspect_pair": "объединять", "pair_kind": "pair", "pair_note": null}
 {"lemma": "броситься", "aspect": "pf", "aspect_pair": "бросаться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "описывать", "aspect": "impf", "aspect_pair": "описать", "pair_kind": "pair", "pair_note": null}
-{"lemma": "закричать", "aspect": "pf", "aspect_pair": "кричать", "pair_kind": "related", "pair_note": "закричать=「叫び始める」。開始を表す派生語"}
+{"lemma": "закричать", "aspect": "pf", "aspect_pair": "кричать", "pair_kind": "related", "pair_note": "закричать=「叫び始める」。開始を表す派生語", "pair_note_en": "закричать = ‘to start shouting’; an inchoative derivative", "pair_note_ru": "закричать = «начать кричать»; производный глагол с начинательным значением"}
 {"lemma": "выключать", "aspect": "impf", "aspect_pair": "выключить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обеспечивать", "aspect": "impf", "aspect_pair": "обеспечить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "окружать", "aspect": "impf", "aspect_pair": "окружить", "pair_kind": "pair", "pair_note": null}
@@ -967,7 +967,7 @@
 {"lemma": "оценивать", "aspect": "impf", "aspect_pair": "оценить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "обучать", "aspect": "impf", "aspect_pair": "обучить", "pair_kind": "pair", "pair_note": null}
 {"lemma": "отражать", "aspect": "impf", "aspect_pair": "отразить", "pair_kind": "pair", "pair_note": null}
-{"lemma": "проводиться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "受動的な状態用法（行われている）で完了体の対なし。「開催された」はпройти/состоятьсяで表す"}
+{"lemma": "проводиться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "受動的な状態用法（行われている）で完了体の対なし。「開催された」はпройти/состоятьсяで表す", "pair_note_en": "passive stative use (‘to be under way’) with no perfective counterpart. ‘Was held’ is expressed by пройти/состояться", "pair_note_ru": "пассивно-стативное употребление («проводится, идёт»), без видовой пары совершенного вида. Значение «было проведено» передаётся глаголами пройти/состояться"}
 {"lemma": "приниматься", "aspect": "impf", "aspect_pair": "приняться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "проявляться", "aspect": "impf", "aspect_pair": "проявиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "проживать", "aspect": "impf", "aspect_pair": "прожить", "pair_kind": "pair", "pair_note": null}

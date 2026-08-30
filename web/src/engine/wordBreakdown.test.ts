@@ -93,6 +93,36 @@ describe("buildWordBreakdown (LINGO-012 card-back word list)", () => {
     expect(posLabel("verb")).toBe("動詞");
     expect(posLabel("xyz")).toBe("xyz");
   });
+
+  it("posLabel covers intj (LINGO-026: was previously missing, fell through to raw 'intj')", () => {
+    expect(posLabel("intj")).toBe("感動詞");
+  });
+
+  it("LINGO-026: carries the ja/en/ru pairNote triple through separately (not a single resolved string)", () => {
+    const wordByIdWithNote = new Map<number, DeckWord>([
+      [
+        3,
+        word({
+          id: 3,
+          lemma: "сказать",
+          pos: "verb",
+          aspect: "pf",
+          aspectPair: "говорить",
+          pairKind: "pair",
+          pairNote: "ja note",
+          pairNoteEn: "en note",
+          pairNoteRu: "ru note",
+        }),
+      ],
+    ]);
+    const out = buildWordBreakdown(
+      { kind: "sentence" as const, targetLemma: "сказать", wordIds: [3] },
+      wordByIdWithNote,
+    );
+    expect(out[0].pairNoteJa).toBe("ja note");
+    expect(out[0].pairNoteEn).toBe("en note");
+    expect(out[0].pairNoteRu).toBe("ru note");
+  });
 });
 
 describe("formatAspectLine (Katsuta 2026-08-27/2026-08-30: every verb shows its aspect situation)", () => {

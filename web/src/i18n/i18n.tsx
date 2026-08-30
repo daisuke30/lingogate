@@ -35,6 +35,7 @@ const M: Record<string, Entry> = {
   "common.checking": { ja: "確認中…", en: "Checking…", ru: "Проверка…" },
   "common.on": { ja: "オン", en: "On", ru: "Вкл" },
   "common.off": { ja: "オフ", en: "Off", ru: "Выкл" },
+  "common.close": { ja: "閉じる", en: "Close", ru: "Закрыть" },
   "badge.default": { ja: "既定", en: "Default", ru: "По умолч." },
   "badge.comingSoon": { ja: "準備中", en: "Coming soon", ru: "Скоро" },
   "badge.inUse": { ja: "使用中", en: "In use", ru: "Активно" },
@@ -87,6 +88,13 @@ const M: Record<string, Entry> = {
   },
   "home.band.title": { ja: "band1 の進み具合", en: "band1 progress", ru: "Прогресс band1" },
   "home.band.coverage": { ja: "語彙カバー", en: "Vocabulary covered", ru: "Охват слов" },
+  // LINGO-026: was a hardcoded full-width （）paren template regardless of UI
+  // language — moved into the catalog with locale-appropriate punctuation.
+  "home.band.coverageValue": {
+    ja: "{covered}/{total}（{pct}%）",
+    en: "{covered}/{total} ({pct}%)",
+    ru: "{covered}/{total} ({pct}%)",
+  },
   "home.band.retention": { ja: "定着率", en: "Retention", ru: "Удержание" },
   "home.band.noData": { ja: "まだデータなし", en: "No data yet", ru: "Пока нет данных" },
   "home.band.retentionValue": {
@@ -296,6 +304,9 @@ const M: Record<string, Entry> = {
     ru: "Доступна новая версия (применится при следующем запуске).",
   },
   "settings.build": { ja: "ビルド: {v}", en: "Build: {v}", ru: "Сборка: {v}" },
+  // LINGO-026: was a hardcoded full-width （）paren template regardless of UI
+  // language, appended in code after settings.build.
+  "settings.buildAt": { ja: "（{at}）", en: " ({at})", ru: " ({at})" },
 
   // -- quiz -----------------------------------------------------------------
   "quiz.exit": { ja: "終了", en: "Exit", ru: "Выход" },
@@ -375,6 +386,9 @@ const M: Record<string, Entry> = {
   "pos.prep": { ja: "前置詞", en: "preposition", ru: "предлог" },
   "pos.conj": { ja: "接続詞", en: "conjunction", ru: "союз" },
   "pos.part": { ja: "助詞", en: "particle", ru: "частица" },
+  // LINGO-026: was missing entirely (38 RU words — спасибо/привет/etc. — fell
+  // through to the raw untranslated "intj" string in all 3 UI languages).
+  "pos.intj": { ja: "感動詞", en: "interjection", ru: "межд." },
 
   // -- calibration ----------------------------------------------------------
   "calib.exit": { ja: "やめる", en: "Quit", ru: "Выйти" },

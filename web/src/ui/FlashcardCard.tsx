@@ -4,9 +4,10 @@ import type { Sentence } from "../engine/content";
 import { buildWordBreakdown, formatAspectLine, formatGenderLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
 import { applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
+import { resolveLocalizedText } from "../engine/localizedText";
 import { WORD_BY_ID } from "../state/service";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
-import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
+import { NATIVE_LANG_NAME, useI18n } from "../i18n/i18n";
 import type { Lang } from "../i18n/i18n";
 
 type Dir = "again" | "hard" | "good" | null;
@@ -56,7 +57,7 @@ export function FlashcardCard({
   /** Card-front (prompt) language — drives which sentence field is shown + gloss order. */
   frontLang?: Lang;
 }) {
-  const t = useT();
+  const { lang: uiLang, t } = useI18n();
   // LINGO-019: tap flips the card either direction, any number of times, via
   // the pure applyFlipToggle() (see engine/grading.ts) — purely a face toggle
   // now, with no side effect on grading availability (see canEval below).
@@ -167,6 +168,12 @@ export function FlashcardCard({
   const showOverlay = drag.active && !!dir;
 
   const front = sentenceLangText(sentence, frontLang);
+  // LINGO-026: front→UI→en→ja fallback for the free-text grammar note.
+  const resolvedNote = resolveLocalizedText(
+    { ja: sentence.note, en: sentence.noteEn ?? null, ru: sentence.noteRu ?? null },
+    frontLang,
+    uiLang,
+  );
 
   return (
     <>
@@ -222,8 +229,14 @@ export function FlashcardCard({
             {frontLang !== "ja" && targetLangTyped !== "ja" && sentence.ja && (
               <div className="ja">{sentence.ja}</div>
             )}
-            {sentence.note && <div className="note">{sentence.note}</div>}
-            {breakdown.length > 0 && <WordBreakdownList entries={breakdown} frontLang={frontLang} />}
+            {/* LINGO-026: was `sentence.note` rendered raw (ja-only prose,
+                unconditional) — the reported "UI=en shows JA" bug. Now
+                resolved via the front→UI→en→ja fallback chain, same as the
+                word-breakdown's pairNote below. */}
+            {resolvedNote && <div className="note">{resolvedNote}</div>}
+            {breakdown.length > 0 && (
+              <WordBreakdownList entries={breakdown} frontLang={frontLang} uiLang={uiLang} />
+            )}
             {showOverlay && <RateOverlay color={overlayColor} text={overlayText} />}
             {!canEval && <div className="hint">…</div>}
           </div>
@@ -288,14 +301,22 @@ function orderedGloss(w: WordBreakdownEntry, frontLang: Lang): string {
 function WordBreakdownList({
   entries,
   frontLang,
+  uiLang,
 }: {
   entries: WordBreakdownEntry[];
   frontLang: Lang;
+  /** LINGO-026: needed to resolve each entry's pairNote (free-text nuance
+   * note) via the front→UI→en→ja chain — see resolveLocalizedText(). */
+  uiLang: Lang;
 }) {
-  const t = useT();
+  const { t } = useI18n();
   // Structural labels (part of speech, verb aspect) follow the UI language, not
   // the front language: for the existing RU user (UI=ja, front=en) they stay
-  // Japanese, so nothing regresses; other UI languages get their own.
+  // Japanese, so nothing regresses; other UI languages get their own. This is
+  // a deliberate, documented split from the free-text pairNote below, which
+  // DOES follow front→UI→en (LINGO-026): the aspect/pos/gender vocabulary is
+  // a closed, fully-3-language set acting as UI chrome (like a button label),
+  // while pairNote is prose that may only exist in some languages.
   const aspectLabels = {
     pf: t("aspect.pf"),
     impf: t("aspect.impf"),
@@ -315,7 +336,12 @@ function WordBreakdownList({
   return (
     <div className="word-breakdown" onPointerDown={(e) => e.stopPropagation()}>
       {entries.map((w) => {
-        const aspectLine = formatAspectLine(w, aspectLabels);
+        const pairNote = resolveLocalizedText(
+          { ja: w.pairNoteJa, en: w.pairNoteEn, ru: w.pairNoteRu },
+          frontLang,
+          uiLang,
+        );
+        const aspectLine = formatAspectLine({ ...w, pairNote }, aspectLabels);
         const genderLine = formatGenderLine(w, genderLabels);
         const gloss = orderedGloss(w, frontLang);
         const posKey = "pos." + w.pos;

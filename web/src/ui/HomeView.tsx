@@ -155,8 +155,13 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
           <div className="head">
             <span>{t("home.band.coverage")}</span>
             <span>
-              {stats ? `${stats.coverage.covered}/${stats.coverage.total}` : "–"}（
-              {stats ? stats.coverage.pct : 0}%）
+              {stats
+                ? t("home.band.coverageValue", {
+                    covered: stats.coverage.covered,
+                    total: stats.coverage.total,
+                    pct: stats.coverage.pct,
+                  })
+                : "–"}
             </span>
           </div>
           <div className="track">

@@ -6,6 +6,7 @@ web/public/icons/
 ios/DerivedData/
 pipeline/notes/jpeg/
 pipeline/lingogate.db
+__pycache__/
 *.xcuserdata
 
 # LINGO-020 rebaseline: local venv only (raw data + scripts ARE committed)
