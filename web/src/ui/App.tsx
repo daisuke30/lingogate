@@ -7,6 +7,9 @@ import { GateEntry } from "./GateEntry";
 import { PlacementScreen } from "./PlacementScreen";
 import { OnboardingFlow } from "./OnboardingFlow";
 import { shouldShowOnboarding } from "../state/onboarding";
+// LINGO-028: dev-only art preview, reached only by typing /pet-gallery. Not
+// linked from any production nav. Lives entirely under src/pet/art/.
+import { PetGallery } from "../pet/art/PetGallery";
 
 export type Route =
   | { name: "home" }
@@ -23,13 +26,18 @@ export type Route =
   // LINGO-017: "firstRun" = the automatic first-launch funnel (finishing leads
   // to course-select -> placement); "settings" = a replay via Settings' "アプ
   // リの説明を見る" (finishing/skipping just returns to Settings).
-  | { name: "onboarding"; origin: "firstRun" | "settings" };
+  | { name: "onboarding"; origin: "firstRun" | "settings" }
+  // LINGO-028: dev-only art gallery (all 16 monsters × 4 faces + care props).
+  | { name: "petGallery" };
 
 function routeFromLocation(): Route {
   const path = window.location.pathname;
   const params = new URLSearchParams(window.location.search);
   if (path.startsWith("/gate")) {
     return { name: "gate", returnApp: params.get("return") };
+  }
+  if (path.startsWith("/pet-gallery")) {
+    return { name: "petGallery" };
   }
   return { name: "home" };
 }
@@ -70,6 +78,8 @@ export function App() {
     } else if (next.name === "gate") {
       const q = next.returnApp ? `?return=${encodeURIComponent(next.returnApp)}` : "";
       window.history.pushState({}, "", `/gate${q}`);
+    } else if (next.name === "petGallery") {
+      window.history.pushState({}, "", "/pet-gallery");
     } else {
       window.history.pushState({}, "", "/");
     }
@@ -103,6 +113,8 @@ export function App() {
       return <AutomationGuideView onBack={goHome} />;
     case "placement":
       return <PlacementScreen onExit={goHome} />;
+    case "petGallery":
+      return <PetGallery onBack={goHome} />;
     case "onboarding":
       return (
         <OnboardingFlow
