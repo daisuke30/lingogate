@@ -8,11 +8,14 @@
 
 import type { ReviewState } from "../engine/fsrs";
 import type { WordKnowledge } from "../engine/calibration";
+import type { PetState, PetCollectionEntry } from "../pet/engine";
 // LINGO-014 course dimension (additive-only key scoping — see courseScope.ts).
 import { DEFAULT_COURSE, belongsToCourse, scopeKey, unscopeKey } from "./courseScope";
 
 const DB_NAME = "lingogate";
-const DB_VERSION = 2;
+// v3 (LINGO-029): additive-only bump adding the global pet stores. Older DBs
+// upgrade in place; no existing store is touched or migrated.
+const DB_VERSION = 3;
 
 export interface GateSessionRow {
   id?: number;
@@ -40,25 +43,44 @@ let dbPromise: Promise<IDBDatabase> | null = null;
 // silently never showed up. Fix: every connection we open registers
 // onversionchange and closes itself as soon as *another* open() elsewhere
 // requests a newer version, so upgrades never hang.
+/** Create any stores that don't yet exist. Idempotent and additive-only — safe
+ * to run on every version's onupgradeneeded, so an install at ANY prior version
+ * lands on the full current schema without per-version migration steps. Exported
+ * for unit testing the v2→v3 pet-store addition without a live IndexedDB. */
+export function ensureStores(db: {
+  objectStoreNames: { contains(name: string): boolean };
+  createObjectStore(name: string, opts?: IDBObjectStoreParameters): unknown;
+}): void {
+  if (!db.objectStoreNames.contains("reviewStates")) {
+    db.createObjectStore("reviewStates", { keyPath: "sentenceId" });
+  }
+  if (!db.objectStoreNames.contains("gateSessions")) {
+    db.createObjectStore("gateSessions", { keyPath: "id", autoIncrement: true });
+  }
+  if (!db.objectStoreNames.contains("meta")) {
+    db.createObjectStore("meta", { keyPath: "key" });
+  }
+  // v2 (LINGO-010): per-lemma known/unknown calibration map.
+  if (!db.objectStoreNames.contains("wordKnowledge")) {
+    db.createObjectStore("wordKnowledge", { keyPath: "lemma" });
+  }
+  // v3 (LINGO-029):育成ペット — global (course-independent). petState holds the
+  // single current pet under a fixed key; petCollection is the 図鑑 keyed by
+  // speciesId (first-discovery rows).
+  if (!db.objectStoreNames.contains("petState")) {
+    db.createObjectStore("petState", { keyPath: "key" });
+  }
+  if (!db.objectStoreNames.contains("petCollection")) {
+    db.createObjectStore("petCollection", { keyPath: "speciesId" });
+  }
+}
+
 function openDB(): Promise<IDBDatabase> {
   if (dbPromise) return dbPromise;
   dbPromise = new Promise((resolve, reject) => {
     const req = indexedDB.open(DB_NAME, DB_VERSION);
     req.onupgradeneeded = () => {
-      const db = req.result;
-      if (!db.objectStoreNames.contains("reviewStates")) {
-        db.createObjectStore("reviewStates", { keyPath: "sentenceId" });
-      }
-      if (!db.objectStoreNames.contains("gateSessions")) {
-        db.createObjectStore("gateSessions", { keyPath: "id", autoIncrement: true });
-      }
-      if (!db.objectStoreNames.contains("meta")) {
-        db.createObjectStore("meta", { keyPath: "key" });
-      }
-      // v2 (LINGO-010): per-lemma known/unknown calibration map.
-      if (!db.objectStoreNames.contains("wordKnowledge")) {
-        db.createObjectStore("wordKnowledge", { keyPath: "lemma" });
-      }
+      ensureStores(req.result);
     };
     req.onblocked = () => {
       console.warn(
@@ -185,6 +207,39 @@ export function setMeta<T>(key: string, value: T): Promise<void> {
   return tx("meta", "readwrite", (s) => s.put({ key, value })).then(() => undefined);
 }
 
+// MARK: pet (LINGO-029 — global, not course-scoped)
+
+const PET_KEY = "current";
+
+/** The single current pet, or null before the first one is created. */
+export function getPetState(): Promise<PetState | null> {
+  return tx<{ key: string; state: PetState } | undefined>("petState", "readonly", (s) =>
+    s.get(PET_KEY),
+  ).then((row) => (row ? row.state : null));
+}
+
+export function putPetState(state: PetState): Promise<void> {
+  return tx("petState", "readwrite", (s) => s.put({ key: PET_KEY, state })).then(() => undefined);
+}
+
+export function getPetCollection(): Promise<PetCollectionEntry[]> {
+  return tx<PetCollectionEntry[]>("petCollection", "readonly", (s) => s.getAll());
+}
+
+/** Persist the whole 図鑑 (dedup already handled in the engine). */
+export function putPetCollection(entries: PetCollectionEntry[]): Promise<void> {
+  return openDB().then(
+    (db) =>
+      new Promise<void>((resolve, reject) => {
+        const t = db.transaction("petCollection", "readwrite");
+        const store = t.objectStore("petCollection");
+        for (const e of entries) store.put(e);
+        t.oncomplete = () => resolve();
+        t.onerror = () => reject(t.error);
+      }),
+  );
+}
+
 /** Wipe all learning state — used by the dev "reset" affordance so a fresh
  * reproduction run starts from zero. */
 export function resetAll(): Promise<void> {
@@ -192,13 +247,15 @@ export function resetAll(): Promise<void> {
     (db) =>
       new Promise<void>((resolve, reject) => {
         const t = db.transaction(
-          ["reviewStates", "gateSessions", "meta", "wordKnowledge"],
+          ["reviewStates", "gateSessions", "meta", "wordKnowledge", "petState", "petCollection"],
           "readwrite",
         );
         t.objectStore("reviewStates").clear();
         t.objectStore("gateSessions").clear();
         t.objectStore("meta").clear();
         t.objectStore("wordKnowledge").clear();
+        t.objectStore("petState").clear();
+        t.objectStore("petCollection").clear();
         t.oncomplete = () => resolve();
         t.onerror = () => reject(t.error);
       }),
