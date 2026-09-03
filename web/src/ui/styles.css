@@ -1206,3 +1206,56 @@ button {
 .pet-dex-cell.locked .pet-dex-name {
   color: var(--ink-faint);
 }
+
+/* ---- Study → pet earnings banner (LINGO-031, on the quiz complete /
+   batch-complete screens) ---- */
+.pet-earn-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+/* ---- Home mini pet status row (LINGO-031) ---- */
+.pet-mini-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 14px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+.pet-mini-icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pet-mini-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-dim);
+}
+.pet-mini-marks {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+.pet-mini-mark {
+  font-size: 14px;
+  filter: drop-shadow(0 0 0 transparent);
+}

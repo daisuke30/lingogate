@@ -300,6 +300,68 @@ describe("GateSessionRunner: continuous mode (requeueAgain:false) — Again reso
   });
 });
 
+// LINGO-031: gradedCounts() is what state/service.ts feeds into
+// commitSessionToPet (state/pet.ts) — 新規カード=餌2個、復習カード=餌1個
+// (design §1). These tests pin the boundary (isReview from the plan) and the
+// two properties the task called out explicitly: no double-counting a card
+// that needed several grading attempts, and a partial (early-exit) session
+// only earning for what was actually graded.
+describe("GateSessionRunner.gradedCounts() — pet food/掃除P wiring basis (LINGO-031)", () => {
+  function runnerOf(n: number) {
+    const store = new ContentStore(makeDeck(n), []);
+    const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
+    return new GateSessionRunner(plan, fsrs);
+  }
+
+  it("splits new vs review by the plan's isReview flag, counting only graded cards", () => {
+    const deck = makeDeck(50);
+    const due: ReviewState = {
+      ...newReviewState("s005"),
+      stability: 3,
+      difficulty: 5,
+      due: NOW - 2 * DAY,
+      reps: 1,
+      state: CardState.Review,
+      lastReview: NOW - 5 * DAY,
+    };
+    const store = new ContentStore(deck, [due]);
+    const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
+    expect(plan.cards[0].isReview).toBe(true); // s005, the due review, leads
+    const r = new GateSessionRunner(plan, fsrs);
+    r.submitRating(Rating.Good, NOW); // grades the review card
+    for (let i = 0; i < 5; i++) r.submitRating(Rating.Good, NOW); // 5 new cards
+    expect(r.gradedCounts()).toEqual({ newCount: 5, reviewCount: 1 });
+  });
+
+  it("never double-counts a card that needed multiple grading attempts (gate requeue)", () => {
+    const r = runnerOf(3); // all-new deck (no review states)
+    r.submitRating(Rating.Again, NOW); // card 1: graded once, requeued to the end
+    r.submitRating(Rating.Good, NOW); // card 2
+    r.submitRating(Rating.Good, NOW); // card 3
+    // Card 1 resolves on its second showing — this is NOT a new grading event
+    // (submitRating's `else` branch — see the doc comment above `graded`).
+    const final = r.submitRating(Rating.Good, NOW);
+    expect(final.sessionComplete).toBe(true);
+    const counts = r.gradedCounts();
+    expect(counts.newCount + counts.reviewCount).toBe(3); // 3 distinct cards, not 4 grading events
+    expect(counts).toEqual({ newCount: 3, reviewCount: 0 });
+  });
+
+  it("a partial (early-exit) session counts only what was actually graded, not the full planned batch", () => {
+    const r = runnerOf(10);
+    r.submitRating(Rating.Good, NOW);
+    r.submitRating(Rating.Good, NOW);
+    r.submitRating(Rating.Hard, NOW);
+    expect(r.isComplete).toBe(false); // 7 cards never seen — mirrors commitPartialSession's early exit
+    expect(r.gradedCounts()).toEqual({ newCount: 3, reviewCount: 0 });
+  });
+
+  it("a session with nothing graded yet earns nothing", () => {
+    const r = runnerOf(10);
+    expect(r.gradedCounts()).toEqual({ newCount: 0, reviewCount: 0 });
+  });
+});
+
 describe("GateSessionRunner: gate mode (default) keeps the requeue-until-clear toll", () => {
   function gateRunnerOf(n: number) {
     const store = new ContentStore(makeDeck(n), []);

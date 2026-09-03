@@ -37,7 +37,7 @@ export function cleanDisabled(s: Pick<PetSnapshot, "cleanPoints" | "poop">): boo
 /** The bottom tab bar is only shown on the two top-level tabs (学習 / 育成).
  * Every immersive or single-purpose flow — the gate toll (/gate), the quiz,
  * the placement test, onboarding, and the leaf settings/guide screens — hides
- * it to preserve the current, focused动线 (design §5). */
+ * it to preserve the current, focused動線 (design §5). */
 export function showTabBar(routeName: string): boolean {
   return routeName === "home" || routeName === "pet";
 }
@@ -47,4 +47,29 @@ export function activeTab(routeName: string): "learn" | "raise" | null {
   if (routeName === "home") return "learn";
   if (routeName === "pet") return "raise";
   return null;
+}
+
+// MARK: LINGO-031 — study-session earnings wiring & Home's mini status
+
+/** A finished/partial session only "counts" toward pet care (studied flag +
+ * streak, not just food/掃除P) when it actually graded something — guards a
+ * zero-card open-and-immediately-exit from silently bumping the study streak
+ * (see state/service.ts commitSession/commitPartialSession). */
+export function sessionEarnedPetRewards(counts: { newCount: number; reviewCount: number }): boolean {
+  return counts.newCount + counts.reviewCount > 0;
+}
+
+export interface PetAttention {
+  /** 満腹度 has dropped into the 空腹 range — the same threshold chooseExpression uses. */
+  hungry: boolean;
+  /** Any うんこ present. */
+  dirty: boolean;
+}
+
+/** Home's mini status (design "学習完了サマリ…育成タブへの導線" + neglect
+ * awareness): which attention marks to show next to the pet's face icon.
+ * Mirrors chooseExpression's own thresholds so the mini row never disagrees
+ * with the 育成 screen's face. */
+export function petAttention(s: Pick<PetSnapshot, "satiety" | "poop">): PetAttention {
+  return { hungry: s.satiety < HUNGRY_AT, dirty: s.poop > 0 };
 }

@@ -49,6 +49,19 @@ export function loadCollection(): Promise<PetCollection> {
   return getPetCollection();
 }
 
+/** Read-only glance at the pet — e.g. Home's mini status (LINGO-031). Loads
+ * but does NOT advance the pet (no tick()): satiety/poop are still live via
+ * petSnapshot's time-based decay/overdue read, so this stays honest without
+ * risking a hatch/evolve/depart side effect firing from a screen that isn't
+ * the 育成 tab (only PetView's own tickPet() call does that). */
+export async function peekPet(
+  overdueCount: number,
+  now: number = Date.now(),
+): Promise<PetSnapshot> {
+  const pet = await loadPet(now);
+  return petSnapshot(pet, now, overdueCount);
+}
+
 /** Advance the pet to `now` and persist: writes the (possibly next-generation)
  * pet, folds hatch/evolve events into the 図鑑, and returns the fresh snapshot
  * plus what happened (so the UI can celebrate an evolution / 旅立ち). */

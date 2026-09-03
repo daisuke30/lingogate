@@ -9,6 +9,13 @@ import { resolveCourse } from "../content/courses";
 import { langName, useI18n } from "../i18n/i18n";
 import type { Lang } from "../i18n/i18n";
 import type { Route } from "./App";
+// LINGO-031: mini pet status row (face + attention marks) so neglect is
+// visible from Home, not just inside the 育成 tab.
+import { peekPet } from "../state/pet";
+import type { PetSnapshot } from "../pet/engine";
+import { PetSprite } from "../pet/art/sprite";
+import { EggSprite } from "../pet/art/props";
+import { chooseExpression, petAttention } from "../pet/petDisplay";
 
 // Fallback shown if calibrationProgress() rejects (e.g. a transient IndexedDB
 // hiccup) — bug report 2026-08-26: the card silently never showed on one
@@ -32,12 +39,21 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
   // Katsuta's existing RU judgements), so nobody gets re-nagged for a test
   // their existing data already makes redundant.
   const [showLevelCheck, setShowLevelCheck] = useState(false);
+  const [petSnap, setPetSnap] = useState<PetSnapshot | null>(null);
 
   useEffect(() => {
     homeStats()
       .then((s) => {
         setStats(s);
         setTargetLang(resolveCourse(activeCourse()).targetLang);
+        // Reuse homeStats' own dueNow (= dueReviews(unlockedBand).length) as
+        // the pet's overdue count instead of a second ContentStore pass —
+        // same figure the 育成 tab injects (see state/service.overdueReviewCount).
+        // Read-only (peekPet never ticks) so opening Home can't trigger a
+        // hatch/evolve/depart — only the 育成 tab does that.
+        peekPet(s.dueNow)
+          .then(setPetSnap)
+          .catch((err) => console.error("peekPet failed", err));
       })
       .catch((err) => console.error("homeStats failed", err));
     Promise.all([calibrationProgress(), isPlacementDone()])
@@ -78,6 +94,34 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
           </button>
         </div>
       </div>
+
+      {petSnap && (
+        <button type="button" className="pet-mini-row" onClick={() => navigate({ name: "pet" })}>
+          <span className="pet-mini-icon">
+            {petSnap.stage === "egg" ? (
+              <EggSprite size={28} />
+            ) : (
+              <PetSprite speciesId={petSnap.speciesId} expr={chooseExpression(petSnap)} size={28} />
+            )}
+          </span>
+          <span className="pet-mini-label">{t("home.pet.mini")}</span>
+          <span className="pet-mini-marks">
+            {petAttention(petSnap).hungry && (
+              <span className="pet-mini-mark" role="img" aria-label={t("home.pet.mini.hungryTitle")}>
+                🍖
+              </span>
+            )}
+            {petAttention(petSnap).dirty && (
+              <span className="pet-mini-mark" role="img" aria-label={t("home.pet.mini.dirtyTitle")}>
+                💩
+              </span>
+            )}
+          </span>
+          <span className="chevron" aria-hidden="true">
+            ›
+          </span>
+        </button>
+      )}
 
       <div className="stats">
         <div className="stat">

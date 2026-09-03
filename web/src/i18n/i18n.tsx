@@ -687,6 +687,19 @@ const M: Record<string, Entry> = {
     ru: "{name} не выжил — записан в коллекцию, и осталось новое яйцо.",
   },
   "pet.event.ok": { ja: "つづける", en: "Continue", ru: "Дальше" },
+
+  // -- study → pet earnings (LINGO-031) -------------------------------------
+  "pet.earn.summary": {
+    ja: "🍖 餌 +{food} ／ 🧹 掃除P +{clean}",
+    en: "🍖 Food +{food} · 🧹 Clean pts +{clean}",
+    ru: "🍖 Еда +{food} · 🧹 Очков +{clean}",
+  },
+  "pet.earn.goTo": { ja: "育成タブへ", en: "Go to Raise", ru: "К питомцу" },
+
+  // -- Home mini pet status (LINGO-031) --------------------------------------
+  "home.pet.mini": { ja: "ペット", en: "Pet", ru: "Питомец" },
+  "home.pet.mini.hungryTitle": { ja: "お腹が空いています", en: "Getting hungry", ru: "Проголодался" },
+  "home.pet.mini.dirtyTitle": { ja: "うんこがたまっています", en: "Needs cleaning", ru: "Нужна уборка" },
 };
 
 /** Exposed for the completeness test only (every key must carry ja/en/ru). */

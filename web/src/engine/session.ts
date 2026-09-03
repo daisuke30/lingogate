@@ -120,6 +120,10 @@ interface RuntimeCard {
   reviewState: ReviewState;
   graded: boolean;
   everWrong: boolean;
+  /** Whether this card already had FSRS history when the session was built
+   * (design §1's 新規/復習 split — LINGO-031). Carried straight from the
+   * plan's PlannedCard.isReview; never recomputed mid-session. */
+  isReview: boolean;
 }
 
 interface RatingUndoRecord {
@@ -178,6 +182,7 @@ export class GateSessionRunner {
       reviewState: c.reviewState,
       graded: false,
       everWrong: false,
+      isReview: c.isReview,
     }));
     this.allCards = this.queue.slice();
     this.totalCards = plan.cards.length;
@@ -201,6 +206,25 @@ export class GateSessionRunner {
     return this.allCards
       .filter((c) => c.graded)
       .map((c) => ({ sentence: c.sentence, again: c.everWrong }));
+  }
+
+  /** Distinct cards graded this session, split new vs review (LINGO-031: the
+   * basis for pet food/掃除P earnings — design §1's "新規カード=餌2個、復習
+   * カード=餌1個"). A card is counted once no matter how many grading
+   * attempts it took: `graded` flips true on the FIRST submitRating and
+   * subsequent re-shows (gate-mode Again requeues) only move the queue, they
+   * never re-enter the `!card.graded` branch — so this naturally also gives a
+   * partial (early-exit) session credit for exactly what was actually graded,
+   * not the full planned batch. */
+  gradedCounts(): { newCount: number; reviewCount: number } {
+    let newCount = 0;
+    let reviewCount = 0;
+    for (const c of this.allCards) {
+      if (!c.graded) continue;
+      if (c.isReview) reviewCount++;
+      else newCount++;
+    }
+    return { newCount, reviewCount };
   }
 
   /** The sentence currently facing the learner, or null when done. */

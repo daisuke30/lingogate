@@ -5,6 +5,8 @@ import {
   cleanDisabled,
   showTabBar,
   activeTab,
+  sessionEarnedPetRewards,
+  petAttention,
   HUNGRY_AT,
   JOY_AT,
 } from "./petDisplay";
@@ -78,5 +80,32 @@ describe("showTabBar / activeTab — tabs only on 学習 & 育成", () => {
     expect(activeTab("home")).toBe("learn");
     expect(activeTab("pet")).toBe("raise");
     expect(activeTab("gate")).toBe(null);
+  });
+});
+
+describe("sessionEarnedPetRewards — LINGO-031 guard against a zero-progress session", () => {
+  it("false when nothing was graded (immediate exit)", () => {
+    expect(sessionEarnedPetRewards({ newCount: 0, reviewCount: 0 })).toBe(false);
+  });
+  it("true with at least one new card graded", () => {
+    expect(sessionEarnedPetRewards({ newCount: 1, reviewCount: 0 })).toBe(true);
+  });
+  it("true with at least one review card graded", () => {
+    expect(sessionEarnedPetRewards({ newCount: 0, reviewCount: 1 })).toBe(true);
+  });
+});
+
+describe("petAttention — Home mini-status marks (LINGO-031)", () => {
+  it("no marks when full and clean", () => {
+    expect(petAttention({ satiety: 90, poop: 0 })).toEqual({ hungry: false, dirty: false });
+  });
+  it("hungry mark below HUNGRY_AT", () => {
+    expect(petAttention({ satiety: HUNGRY_AT - 1, poop: 0 })).toEqual({ hungry: true, dirty: false });
+  });
+  it("dirty mark with any poop", () => {
+    expect(petAttention({ satiety: 90, poop: 1 })).toEqual({ hungry: false, dirty: true });
+  });
+  it("both marks can be true at once", () => {
+    expect(petAttention({ satiety: 5, poop: 3 })).toEqual({ hungry: true, dirty: true });
   });
 });

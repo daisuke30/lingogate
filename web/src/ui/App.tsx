@@ -110,6 +110,7 @@ export function App() {
             seed={route.seed}
             continuous={route.continuous}
             onExit={goHome}
+            onGoToPet={() => navigate({ name: "pet" })}
           />
         );
       case "gate":

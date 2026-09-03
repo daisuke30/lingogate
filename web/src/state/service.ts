@@ -23,6 +23,14 @@ import {
   getAllWordKnowledge,
   putWordKnowledge,
 } from "../db/idb";
+// LINGO-031: a committed (or partially-committed) study session earns 育成
+// 餌/掃除P — see design §1's "餌: カードを評価するたびに獲得". Both the gate
+// toll (/gate) and continuous home practice funnel through commitSession, so
+// gate sessions earn exactly like practice ones (a positive-reinforcement
+// path back to the thing being gated).
+import { commitSessionToPet } from "./pet";
+import type { PetEarnings } from "../pet/engine";
+import { sessionEarnedPetRewards } from "../pet/petDisplay";
 
 // LINGO-014: the deck is now the *active course's* pack, loaded lazily. These
 // are live bindings (mutable) so a course switch can swap them in place; they
@@ -188,17 +196,38 @@ async function persistGrades(runner: GateSessionRunner): Promise<void> {
   await putWordKnowledge(knowledgeUpdates, activeCourseId);
 }
 
+const NO_PET_EARNINGS: PetEarnings = { food: 0, cleanPoints: 0 };
+
+export interface SessionCommitResult {
+  bandPromotion: BandProgress | null;
+  /** LINGO-031: 餌/掃除P earned by this commit (0s when nothing was graded —
+   * see sessionEarnedPetRewards). The completion/batch-summary screens show
+   * this; state/pet.ts's own care log is already updated by the time this
+   * resolves. */
+  petEarned: PetEarnings;
+}
+
+/** LINGO-031: fold this session's graded cards into the pet's 餌/掃除P + care
+ * log (state/pet.ts commitSessionToPet), skipping the write entirely when
+ * nothing was actually graded (sessionEarnedPetRewards) so a zero-progress
+ * open-and-exit can't falsely mark "studied today" and inflate the streak. */
+async function earnPetRewards(runner: GateSessionRunner): Promise<PetEarnings> {
+  const counts = runner.gradedCounts();
+  if (!sessionEarnedPetRewards(counts)) return NO_PET_EARNINGS;
+  return commitSessionToPet(counts);
+}
+
 /** Persist a finished gate session: commit buffered FSRS grades + knowledge
- * feedback, record the GateSession row (today's stats), and evaluate band
+ * feedback, record the GateSession row (today's stats), evaluate band
  * promotion (LINGO-024) for the course's currently unlocked band — this is
- * the "セッション完了時に評価" trigger. Returns the promotion progress (never
- * throws on a non-promotion; `.promoted` tells the caller whether to
- * celebrate) so the UI can show "band2解放！" — or null when there's no next
- * band to evaluate at all (see checkBandPromotion's doc comment). */
+ * the "セッション完了時に評価" trigger — and earn 育成 rewards (LINGO-031) for
+ * whatever was graded. `bandPromotion` is null when there's no next band to
+ * evaluate at all (see checkBandPromotion's doc comment); `petEarned` is
+ * `{food:0, cleanPoints:0}` on a zero-graded session. */
 export async function commitSession(
   session: StartedSession,
   opts: { appKey: string | null; unlocked: boolean },
-): Promise<BandProgress | null> {
+): Promise<SessionCommitResult> {
   const { runner, startedAt } = session;
   const endedAt = Date.now();
   await persistGrades(runner);
@@ -217,7 +246,11 @@ export async function commitSession(
   );
 
   const unlockedBand = await getUnlockedBand(activeCourseId);
-  return checkBandPromotion(unlockedBand);
+  const [bandPromotion, petEarned] = await Promise.all([
+    checkBandPromotion(unlockedBand),
+    earnPetRewards(runner),
+  ]);
+  return { bandPromotion, petEarned };
 }
 
 /** Persist an early exit mid-batch (continuous home-practice mode): whatever
@@ -226,12 +259,18 @@ export async function commitSession(
  * never actually completed, so it shouldn't count toward today's gate/unlock
  * stats. Ungraded (still-queued) cards are simply dropped along with the
  * runner; nothing references them once this resolves. Band promotion is
- * still evaluated (LINGO-024) — whatever was graded before exiting still
- * counts toward it, same as any other persisted grade. */
-export async function commitPartialSession(session: StartedSession): Promise<BandProgress | null> {
+ * still evaluated (LINGO-024), and 育成 rewards (LINGO-031) are still earned
+ * for whatever was graded before exiting — both count toward their target
+ * the same as any other persisted grade (this is the "部分終了時の按分": no
+ * scaling, just the real graded count). */
+export async function commitPartialSession(session: StartedSession): Promise<SessionCommitResult> {
   await persistGrades(session.runner);
   const unlockedBand = await getUnlockedBand(activeCourseId);
-  return checkBandPromotion(unlockedBand);
+  const [bandPromotion, petEarned] = await Promise.all([
+    checkBandPromotion(unlockedBand),
+    earnPetRewards(session.runner),
+  ]);
+  return { bandPromotion, petEarned };
 }
 
 export interface HomeStats {

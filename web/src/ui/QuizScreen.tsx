@@ -17,6 +17,10 @@ import { suppressUntil, returnDisplayName, returnTarget } from "../engine/gate";
 import { langName, useI18n, useT } from "../i18n/i18n";
 import type { Lang } from "../i18n/i18n";
 import { FlashcardCard } from "./FlashcardCard";
+// LINGO-031: 餌/掃除P earnings summary + small link to the 育成 tab.
+import type { PetEarnings } from "../pet/engine";
+
+const NO_PET_EARNINGS: PetEarnings = { food: 0, cleanPoints: 0 };
 
 const BATCH_SIZE = 10;
 
@@ -38,11 +42,15 @@ export function QuizScreen({
   seed,
   continuous,
   onExit,
+  onGoToPet,
 }: {
   returnApp: string | null;
   seed?: number;
   continuous?: boolean;
   onExit: () => void;
+  /** LINGO-031: "育成タブへ" link on the completion/batch-summary screens.
+   * Optional so existing call sites keep compiling; App.tsx wires it. */
+  onGoToPet?: () => void;
 }) {
   const t = useT();
   const [phase, setPhase] = useState<Phase>("loading");
@@ -66,6 +74,7 @@ export function QuizScreen({
   // never re-report promoted=true on a later session — safe to render as a
   // one-shot celebration with no extra "newly unlocked" bookkeeping needed).
   const [bandPromotion, setBandPromotion] = useState<BandProgress | null>(null);
+  const [petEarned, setPetEarned] = useState<PetEarnings>(NO_PET_EARNINGS);
 
   useEffect(
     () => () => {
@@ -78,6 +87,7 @@ export function QuizScreen({
     setPhase("loading");
     committedRef.current = false;
     setBandPromotion(null);
+    setPetEarned(NO_PET_EARNINGS);
     const [session, mins, ttsSettings] = await Promise.all([
       startSession({ seed, continuous }),
       getUnlockMinutes(),
@@ -103,8 +113,14 @@ export function QuizScreen({
     const session = sessionRef.current;
     if (!session || committedRef.current) return;
     committedRef.current = true;
-    const progress = await commitSession(session, { appKey: returnApp, unlocked: true });
-    if (mountedRef.current) setBandPromotion(progress);
+    const { bandPromotion: progress, petEarned: earned } = await commitSession(session, {
+      appKey: returnApp,
+      unlocked: true,
+    });
+    if (mountedRef.current) {
+      setBandPromotion(progress);
+      setPetEarned(earned);
+    }
     if (returnApp) {
       await setSuppressUntil(returnApp, suppressUntil(Date.now(), unlockMin));
     }
@@ -169,7 +185,9 @@ export function QuizScreen({
         unlockMin={unlockMin}
         targetLang={langs.target}
         bandPromotion={bandPromotion}
+        petEarned={petEarned}
         onExit={onExit}
+        onGoToPet={onGoToPet}
       />
     );
   }
@@ -180,8 +198,10 @@ export function QuizScreen({
         summary={runner.ratingSummary}
         batchNumber={batchNumber}
         bandPromotion={bandPromotion}
+        petEarned={petEarned}
         onContinue={nextBatch}
         onExit={onExit}
+        onGoToPet={onGoToPet}
       />
     );
   }
@@ -268,20 +288,43 @@ function BandPromotionBanner({ bandPromotion }: { bandPromotion: BandProgress | 
   );
 }
 
+/** "🍖 餌 +N ／ 🧹 掃除P +N" + a small "育成タブへ" link (LINGO-031 design
+ * §5: "学習完了サマリに「餌+N・掃除+N獲得」を表示…学習→育成の導線"). Renders
+ * nothing when nothing was earned (e.g. a session with a lot of Again's on
+ * review-only cards can still earn 0 掃除P, or onGoToPet wasn't wired). */
+function PetEarnBanner({ earned, onGoToPet }: { earned: PetEarnings; onGoToPet?: () => void }) {
+  const t = useT();
+  if (earned.food <= 0 && earned.cleanPoints <= 0) return null;
+  return (
+    <div className="pet-earn-banner">
+      <span>{t("pet.earn.summary", { food: earned.food, clean: earned.cleanPoints })}</span>
+      {onGoToPet && (
+        <button type="button" className="linkbtn" onClick={onGoToPet}>
+          {t("pet.earn.goTo")}
+        </button>
+      )}
+    </div>
+  );
+}
+
 function CompleteScreen({
   summary,
   returnApp,
   unlockMin,
   targetLang,
   bandPromotion,
+  petEarned,
   onExit,
+  onGoToPet,
 }: {
   summary: RatingSummary;
   returnApp: string | null;
   unlockMin: number;
   targetLang: string;
   bandPromotion: BandProgress | null;
+  petEarned: PetEarnings;
   onExit: () => void;
+  onGoToPet?: () => void;
 }) {
   const { lang, t } = useI18n();
   const target = returnApp ? returnTarget(returnApp) : undefined;
@@ -306,6 +349,7 @@ function CompleteScreen({
         </p>
         <BandPromotionBanner bandPromotion={bandPromotion} />
         <RatingBreakdown summary={summary} />
+        <PetEarnBanner earned={petEarned} onGoToPet={onGoToPet} />
         {returnApp ? (
           <div className="stack" style={{ width: "100%" }}>
             <button className="btn primary block" onClick={goBack}>
@@ -332,14 +376,18 @@ function BatchCompleteScreen({
   summary,
   batchNumber,
   bandPromotion,
+  petEarned,
   onContinue,
   onExit,
+  onGoToPet,
 }: {
   summary: RatingSummary;
   batchNumber: number;
   bandPromotion: BandProgress | null;
+  petEarned: PetEarnings;
   onContinue: () => void;
   onExit: () => void;
+  onGoToPet?: () => void;
 }) {
   const t = useT();
   return (
@@ -350,6 +398,7 @@ function BatchCompleteScreen({
         <p>{t("quiz.batch.sub")}</p>
         <BandPromotionBanner bandPromotion={bandPromotion} />
         <RatingBreakdown summary={summary} />
+        <PetEarnBanner earned={petEarned} onGoToPet={onGoToPet} />
         <div className="stack" style={{ width: "100%" }}>
           <button className="btn primary block" onClick={onContinue}>
             {t("quiz.batch.continue")}
