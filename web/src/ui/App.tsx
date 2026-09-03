@@ -10,6 +10,10 @@ import { shouldShowOnboarding } from "../state/onboarding";
 // LINGO-028: dev-only art preview, reached only by typing /pet-gallery. Not
 // linked from any production nav. Lives entirely under src/pet/art/.
 import { PetGallery } from "../pet/art/PetGallery";
+// LINGO-030: 育成 tab + bottom tab bar.
+import { PetView } from "./PetView";
+import { TabBar } from "./TabBar";
+import { showTabBar } from "../pet/petDisplay";
 
 export type Route =
   | { name: "home" }
@@ -28,7 +32,9 @@ export type Route =
   // リの説明を見る" (finishing/skipping just returns to Settings).
   | { name: "onboarding"; origin: "firstRun" | "settings" }
   // LINGO-028: dev-only art gallery (all 16 monsters × 4 faces + care props).
-  | { name: "petGallery" };
+  | { name: "petGallery" }
+  // LINGO-030: 育成 tab (the pet screen), reached from the bottom tab bar.
+  | { name: "pet" };
 
 function routeFromLocation(): Route {
   const path = window.location.pathname;
@@ -38,6 +44,9 @@ function routeFromLocation(): Route {
   }
   if (path.startsWith("/pet-gallery")) {
     return { name: "petGallery" };
+  }
+  if (path.startsWith("/pet")) {
+    return { name: "pet" };
   }
   return { name: "home" };
 }
@@ -80,6 +89,8 @@ export function App() {
       window.history.pushState({}, "", `/gate${q}`);
     } else if (next.name === "petGallery") {
       window.history.pushState({}, "", "/pet-gallery");
+    } else if (next.name === "pet") {
+      window.history.pushState({}, "", "/pet");
     } else {
       window.history.pushState({}, "", "/");
     }
@@ -88,43 +99,54 @@ export function App() {
 
   const goHome = () => navigate({ name: "home" });
 
-  switch (route.name) {
-    case "home":
-      return <HomeView navigate={navigate} />;
-    case "quiz":
-      return (
-        <QuizScreen
-          returnApp={route.returnApp}
-          seed={route.seed}
-          continuous={route.continuous}
-          onExit={goHome}
-        />
-      );
-    case "gate":
-      return <GateEntry returnApp={route.returnApp} onExit={goHome} />;
-    case "settings":
-      return (
-        <SettingsView
-          onBack={goHome}
-          onShowOnboarding={() => navigate({ name: "onboarding", origin: "settings" })}
-        />
-      );
-    case "guide":
-      return <AutomationGuideView onBack={goHome} />;
-    case "placement":
-      return <PlacementScreen onExit={goHome} />;
-    case "petGallery":
-      return <PetGallery onBack={goHome} />;
-    case "onboarding":
-      return (
-        <OnboardingFlow
-          origin={route.origin}
-          onFinish={(dest) => {
-            if (dest === "placement") navigate({ name: "placement" });
-            else if (dest === "settings") navigate({ name: "settings" });
-            else navigate({ name: "home" });
-          }}
-        />
-      );
+  function renderRoute() {
+    switch (route.name) {
+      case "home":
+        return <HomeView navigate={navigate} />;
+      case "quiz":
+        return (
+          <QuizScreen
+            returnApp={route.returnApp}
+            seed={route.seed}
+            continuous={route.continuous}
+            onExit={goHome}
+          />
+        );
+      case "gate":
+        return <GateEntry returnApp={route.returnApp} onExit={goHome} />;
+      case "settings":
+        return (
+          <SettingsView
+            onBack={goHome}
+            onShowOnboarding={() => navigate({ name: "onboarding", origin: "settings" })}
+          />
+        );
+      case "guide":
+        return <AutomationGuideView onBack={goHome} />;
+      case "placement":
+        return <PlacementScreen onExit={goHome} />;
+      case "petGallery":
+        return <PetGallery onBack={goHome} />;
+      case "pet":
+        return <PetView />;
+      case "onboarding":
+        return (
+          <OnboardingFlow
+            origin={route.origin}
+            onFinish={(dest) => {
+              if (dest === "placement") navigate({ name: "placement" });
+              else if (dest === "settings") navigate({ name: "settings" });
+              else navigate({ name: "home" });
+            }}
+          />
+        );
+    }
   }
+
+  return (
+    <>
+      {renderRoute()}
+      {showTabBar(route.name) && <TabBar routeName={route.name} navigate={navigate} />}
+    </>
+  );
 }

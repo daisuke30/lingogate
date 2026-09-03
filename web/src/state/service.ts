@@ -321,3 +321,14 @@ export async function homeStats(): Promise<HomeStats> {
     bandPromotion,
   };
 }
+
+/** Overdue-review count for the pet engine's うんこ mapping (LINGO-029/030).
+ * The pet is course-independent but its "poop" reflects the active course's
+ * neglected reviews — the same figure Home shows as `dueNow`. The state layer
+ * injects this into tickPet/feedPet/cleanPet per the engine's dependency-
+ * injection contract (the engine never reads the ContentStore itself). */
+export async function overdueReviewCount(now: number = Date.now()): Promise<number> {
+  const store = await loadStore();
+  const unlockedBand = await getUnlockedBand(activeCourseId);
+  return store.dueReviews(unlockedBand, now, 9999).length;
+}

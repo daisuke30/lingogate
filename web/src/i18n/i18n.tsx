@@ -616,6 +616,77 @@ const M: Record<string, Entry> = {
     en: "View the app intro",
     ru: "Посмотреть введение",
   },
+
+  // -- bottom tab bar (LINGO-030) -------------------------------------------
+  "tab.learn": { ja: "学習", en: "Learn", ru: "Учёба" },
+  "tab.raise": { ja: "育成", en: "Raise", ru: "Питомец" },
+
+  // -- pet / 育成 (LINGO-030) ------------------------------------------------
+  "pet.title": { ja: "育成", en: "Raise", ru: "Питомец" },
+  "pet.loading": { ja: "読み込み中…", en: "Loading…", ru: "Загрузка…" },
+  "pet.stage.egg": { ja: "タマゴ", en: "Egg", ru: "Яйцо" },
+  "pet.stage.baby": { ja: "幼年期", en: "Baby", ru: "Малыш" },
+  "pet.stage.child": { ja: "成長期", en: "Growth", ru: "Рост" },
+  "pet.stage.adult": { ja: "成熟期", en: "Mature", ru: "Зрелость" },
+  "pet.stage.perfect": { ja: "完全体", en: "Perfect", ru: "Совершенство" },
+  "pet.stage.ultimate": { ja: "究極体", en: "Ultimate", ru: "Абсолют" },
+  // {stage} = localized stage name, {age} = whole days, {gen} = generation no.
+  "pet.meta": {
+    ja: "{stage}・{age}日目・{gen}代目",
+    en: "{stage} · day {age} · gen {gen}",
+    ru: "{stage} · день {age} · пок. {gen}",
+  },
+  "pet.gauge.satiety": { ja: "満腹度", en: "Fullness", ru: "Сытость" },
+  "pet.gauge.cleanliness": { ja: "清潔さ", en: "Cleanliness", ru: "Чистота" },
+  "pet.poop.label": { ja: "うんこ {n}/{max}", en: "Poop {n}/{max}", ru: "Какашки {n}/{max}" },
+  "pet.poop.none": { ja: "きれい", en: "All clean", ru: "Чисто" },
+  "pet.action.feed": { ja: "餌をあげる", en: "Feed", ru: "Покормить" },
+  "pet.action.clean": { ja: "掃除する", en: "Clean", ru: "Убрать" },
+  "pet.owned.food": { ja: "餌 ×{n}", en: "Food ×{n}", ru: "Еда ×{n}" },
+  "pet.owned.cleanPts": { ja: "掃除P ×{n}", en: "Clean pts ×{n}", ru: "Очки ×{n}" },
+  "pet.streak": { ja: "連続学習 {n}日", en: "{n}-day streak", ru: "Серия: {n} дн." },
+  "pet.name.placeholder": { ja: "名前をつける", en: "Name your pet", ru: "Дать имя" },
+  "pet.name.save": { ja: "決定", en: "Save", ru: "Готово" },
+  "pet.name.cancel": { ja: "キャンセル", en: "Cancel", ru: "Отмена" },
+  "pet.name.title": { ja: "名前をつける", en: "Name your pet", ru: "Имя питомца" },
+  "pet.dex.open": { ja: "図鑑を見る", en: "Collection", ru: "Коллекция" },
+  "pet.dex.title": { ja: "図鑑", en: "Collection", ru: "Коллекция" },
+  "pet.dex.count": { ja: "{found}/{total} 種発見", en: "{found}/{total} discovered", ru: "Открыто {found}/{total}" },
+  "pet.dex.unknown": { ja: "？？？", en: "???", ru: "???" },
+  "pet.dex.back": { ja: "‹ 育成へ", en: "‹ Back", ru: "‹ Назад" },
+  "pet.hardMode.label": { ja: "ハードモード", en: "Hard mode", ru: "Хардкор" },
+  "pet.hardMode.sub": {
+    ja: "放置で去る演出を「死亡」に変えます",
+    en: "Frames an early exit as death, not departure.",
+    ru: "Ранний уход показывается как гибель, а не прощание.",
+  },
+
+  // -- pet events (hatch / evolve / depart) ---------------------------------
+  "pet.event.hatch.title": { ja: "タマゴがかえった！", en: "It hatched!", ru: "Вылупился!" },
+  "pet.event.hatch.body": {
+    ja: "{name} が生まれました。世話をして育てよう。",
+    en: "{name} was born. Care for it as it grows.",
+    ru: "{name} появился. Заботьтесь о нём.",
+  },
+  "pet.event.evolve.title": { ja: "進化した！", en: "Evolved!", ru: "Эволюция!" },
+  "pet.event.evolve.body": {
+    ja: "{name} に進化した！世話の質が姿に表れます。",
+    en: "Evolved into {name}! Your care shows in its form.",
+    ru: "Превратился в {name}! Забота отражается в облике.",
+  },
+  "pet.event.depart.title": { ja: "旅立ち", en: "A farewell", ru: "Прощание" },
+  "pet.event.depart.body": {
+    ja: "{name} は旅立ちました。図鑑に記録され、新しいタマゴが残されました。",
+    en: "{name} has departed — recorded in your collection, and a new egg was left behind.",
+    ru: "{name} отправился в путь — записан в коллекцию, и осталось новое яйцо.",
+  },
+  "pet.event.death.title": { ja: "力尽きた…", en: "It didn't make it…", ru: "Не выжил…" },
+  "pet.event.death.body": {
+    ja: "{name} は力尽きました。図鑑に記録され、新しいタマゴが残されました。",
+    en: "{name} didn't make it — recorded in your collection, and a new egg was left behind.",
+    ru: "{name} не выжил — записан в коллекцию, и осталось новое яйцо.",
+  },
+  "pet.event.ok": { ja: "つづける", en: "Continue", ru: "Дальше" },
 };
 
 /** Exposed for the completeness test only (every key must carry ja/en/ru). */

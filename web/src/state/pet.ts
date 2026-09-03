@@ -32,6 +32,8 @@ import {
   putPetState,
   getPetCollection,
   putPetCollection,
+  getMeta,
+  setMeta,
 } from "../db/idb";
 
 /** Load the current pet, creating (and persisting) generation 1 on first run. */
@@ -97,6 +99,18 @@ export async function commitSessionToPet(
   const { pet: next, earned } = applySession(pet, input, now);
   await putPetState(next);
   return earned;
+}
+
+/** The current pet's user-given name, or null when unnamed (UI then shows the
+ * art-catalog default). Names are per generation — each new egg starts unnamed
+ * — and live in the generic `meta` KV store, so the engine's PetState (a fixed
+ * LINGO-029 contract) stays untouched. */
+export function getPetName(generation: number): Promise<string | null> {
+  return getMeta<string | null>(`pet.name.${generation}`, null);
+}
+
+export function setPetName(generation: number, name: string): Promise<void> {
+  return setMeta(`pet.name.${generation}`, name);
 }
 
 /** Update the pet's settings (e.g. the hard-mode 旅立ち/死亡 toggle). */
