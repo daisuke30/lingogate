@@ -136,28 +136,37 @@ export class ContentStore {
     return this.states.get(sentenceId);
   }
 
-  /** Due reviews for a band: state != new and due <= now, most overdue first. */
+  /** Due reviews for a band pool: state != new and due <= now, most overdue
+   * first. LINGO-024: `band` is a POOL CEILING, not an exact match — includes
+   * every unlocked band (1..band), so a due card from an already-unlocked
+   * band 2 still surfaces once band 2 opens up, not just band 1's. Passing
+   * the same fixed value everywhere (as every caller did pre-LINGO-024) is
+   * exactly the old single-band behaviour, so this is backward compatible. */
   dueReviews(band: number, now: number, limit: number): DueCard[] {
     const out: DueCard[] = [];
     for (const st of this.states.values()) {
       if (st.state === CardState.New) continue;
       if (st.due == null || st.due > now) continue;
       const s = this.byId.get(st.sentenceId);
-      if (!s || s.band !== band) continue;
+      if (!s || s.band > band) continue;
       out.push({ state: st, sentence: s });
     }
     out.sort((a, b) => (a.state.due! - b.state.due!) || cmp(a.sentence.id, b.sentence.id));
     return out.slice(0, limit);
   }
 
-  /** New (never-studied) sentences for a band. Once the learner has judged enough
-   * words (>= CALIBRATION_FALLBACK_THRESHOLD) the order is driven by the known-map:
-   * only sentences with few unknown words are eligible, ordered by (unknown score,
-   * target/lowest-unknown rank). Before that it falls back to plain frequency order
-   * (the sentence teaching the most frequent not-yet-covered word first). */
+  /** New (never-studied) sentences from the unlocked band pool (1..band — see
+   * dueReviews' doc comment on the pool-ceiling semantics). Once the learner
+   * has judged enough words (>= CALIBRATION_FALLBACK_THRESHOLD) the order is
+   * driven by the known-map: only sentences with few unknown words are
+   * eligible, ordered by (unknown score, target/lowest-unknown rank). Before
+   * that it falls back to plain frequency order (the sentence teaching the
+   * most frequent not-yet-covered word first) — band 2+ sentences naturally
+   * sort after band 1's this way (higher band = higher-rank/less-frequent
+   * target words), no separate band-ordering logic needed. */
   newSentences(band: number, excluding: Set<string>, limit: number): Sentence[] {
     const candidates = this.deck.sentences.filter(
-      (s) => s.band === band && !this.states.has(s.id) && !excluding.has(s.id),
+      (s) => s.band <= band && !this.states.has(s.id) && !excluding.has(s.id),
     );
 
     if (this.judged < CALIBRATION_FALLBACK_THRESHOLD) {
@@ -178,13 +187,14 @@ export class ContentStore {
     return scored.slice(0, limit).map((x) => x.s);
   }
 
-  /** Not-yet-due review cards, earliest due first — only to top up a short deck. */
+  /** Not-yet-due review cards, earliest due first — only to top up a short
+   * deck. Pool-ceiling `band` semantics, same as dueReviews/newSentences. */
   upcomingReviews(band: number, excluding: Set<string>, limit: number): DueCard[] {
     const out: DueCard[] = [];
     for (const st of this.states.values()) {
       if (st.state === CardState.New) continue;
       const s = this.byId.get(st.sentenceId);
-      if (!s || s.band !== band || excluding.has(s.id)) continue;
+      if (!s || s.band > band || excluding.has(s.id)) continue;
       out.push({ state: st, sentence: s });
     }
     out.sort((a, b) => {

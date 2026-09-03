@@ -10,9 +10,11 @@ import { FSRS } from "../engine/fsrs";
 import { buildGateSession, GateSessionRunner } from "../engine/session";
 import { SeededRNG } from "../engine/rng";
 import { knowledgeUpdatesFromOutcomes } from "../engine/calibration";
+import { evaluateBandPromotion } from "../engine/bandPromotion";
+import type { BandProgress } from "../engine/bandPromotion";
 import { BOOTSTRAP_DECK, DEFAULT_COURSE_ID, resolveCourse } from "../content/courses";
 import type { Lang } from "../content/courses";
-import { getActiveCourse, getFrontLang } from "./settings";
+import { getActiveCourse, getFrontLang, getUnlockedBand, setUnlockedBand } from "./settings";
 import {
   getAllReviewStates,
   putReviewStates,
@@ -79,6 +81,49 @@ export function activeFrontLanguage(): Lang {
   return activeFrontLang;
 }
 
+// MARK: band promotion (LINGO-024)
+
+/** Bands above this are never a promotion target, even if the deck ships
+ * sentences for them (RU's band 4 does — see engine/content.ts's ContentStore
+ * .masteryStats doc comment: band 4 is the "retired but retained" pool of
+ * old band1-3 lemmas that fell out of the top-3000 frequency cut during the
+ * LINGO-020 rebaseline, kept only so existing progress still resolves — never
+ * a genuine curriculum band). Matches mastery.ts's 3000-word mastery frame. */
+export const MAX_ACTIVE_BAND = 3;
+
+/**
+ * Evaluate `band`'s own coverage/retention against BandPromotion's
+ * thresholds and, if it passes AND `band` is still the course's currently
+ * unlocked band AND band+1 actually exists as real content in this course,
+ * unlock band+1. Returns the progress either way (so a caller can show a
+ * progress readout even when not promoted yet), or null when there's no next
+ * band to evaluate at all (already at MAX_ACTIVE_BAND, or the course has no
+ * band+1 sentences yet — e.g. EN today, band1-only).
+ */
+export async function checkBandPromotion(band: number): Promise<BandProgress | null> {
+  const nextBand = band + 1;
+  if (band >= MAX_ACTIVE_BAND || !DECK.bands.includes(nextBand)) return null;
+
+  const store = await loadStore();
+  const vocab = store.bandVocabStats(band);
+  const ret = store.bandRetention(band);
+  const progress = evaluateBandPromotion({
+    band,
+    seenWords: vocab.studied,
+    totalWords: vocab.total,
+    coverableWords: vocab.coverable,
+    reps: ret.reps,
+    lapses: ret.lapses,
+    reviewCards: ret.reviewCards,
+  });
+
+  if (progress.promoted) {
+    const current = await getUnlockedBand(activeCourseId);
+    if (current === band) await setUnlockedBand(activeCourseId, nextBand);
+  }
+  return progress;
+}
+
 async function loadKnowledge(): Promise<Map<string, "known" | "unknown" | "unset">> {
   const rows = await getAllWordKnowledge(activeCourseId);
   const map = new Map<string, "known" | "unknown" | "unset">();
@@ -104,14 +149,21 @@ export interface StartedSession {
  * every card — Again included — after exactly one grade (see session.ts's
  * GateSessionRunner doc comment). Omitted/false (=/gate, and the default)
  * keeps the toll behaviour: a batch only completes once every card has a
- * non-Again grade. */
+ * non-Again grade.
+ *
+ * LINGO-024: the session pool ceiling is the course's persisted
+ * `unlockedBand`, not the fixed PRIMARY_BAND (=band 1) — once band 2
+ * promotes, new cards and due reviews are drawn from the whole 1..
+ * unlockedBand pool (see engine/content.ts's dueReviews/newSentences pool-
+ * ceiling doc comments). */
 export async function startSession(
   opts: { seed?: number; continuous?: boolean } = {},
 ): Promise<StartedSession> {
   const store = await loadStore();
+  const unlockedBand = await getUnlockedBand(activeCourseId);
   const now = Date.now();
   const rng = new SeededRNG(opts.seed ?? now);
-  const plan = buildGateSession(store, { band: PRIMARY_BAND, now, rng });
+  const plan = buildGateSession(store, { band: unlockedBand, now, rng });
   const runner = new GateSessionRunner(plan, fsrs, { requeueAgain: !opts.continuous });
   return { runner, startedAt: now };
 }
@@ -137,11 +189,16 @@ async function persistGrades(runner: GateSessionRunner): Promise<void> {
 }
 
 /** Persist a finished gate session: commit buffered FSRS grades + knowledge
- * feedback, and record the GateSession row (today's stats). */
+ * feedback, record the GateSession row (today's stats), and evaluate band
+ * promotion (LINGO-024) for the course's currently unlocked band — this is
+ * the "セッション完了時に評価" trigger. Returns the promotion progress (never
+ * throws on a non-promotion; `.promoted` tells the caller whether to
+ * celebrate) so the UI can show "band2解放！" — or null when there's no next
+ * band to evaluate at all (see checkBandPromotion's doc comment). */
 export async function commitSession(
   session: StartedSession,
   opts: { appKey: string | null; unlocked: boolean },
-): Promise<void> {
+): Promise<BandProgress | null> {
   const { runner, startedAt } = session;
   const endedAt = Date.now();
   await persistGrades(runner);
@@ -158,6 +215,9 @@ export async function commitSession(
     },
     activeCourseId,
   );
+
+  const unlockedBand = await getUnlockedBand(activeCourseId);
+  return checkBandPromotion(unlockedBand);
 }
 
 /** Persist an early exit mid-batch (continuous home-practice mode): whatever
@@ -165,20 +225,33 @@ export async function commitSession(
  * like a normal completion, but no GateSession row is written — the batch was
  * never actually completed, so it shouldn't count toward today's gate/unlock
  * stats. Ungraded (still-queued) cards are simply dropped along with the
- * runner; nothing references them once this resolves. */
-export async function commitPartialSession(session: StartedSession): Promise<void> {
+ * runner; nothing references them once this resolves. Band promotion is
+ * still evaluated (LINGO-024) — whatever was graded before exiting still
+ * counts toward it, same as any other persisted grade. */
+export async function commitPartialSession(session: StartedSession): Promise<BandProgress | null> {
   await persistGrades(session.runner);
+  const unlockedBand = await getUnlockedBand(activeCourseId);
+  return checkBandPromotion(unlockedBand);
 }
 
 export interface HomeStats {
   todayGates: number;
   todayUnlocks: number;
   knownRatePct: number | null; // over today's answered questions
+  /** LINGO-024: the course's currently unlocked band (1 = only band 1). */
+  unlockedBand: number;
   coverage: { covered: number; total: number; pct: number };
   retentionPct: number | null;
   reviewCards: number;
   dueNow: number;
   mastery: MasteryStats; // "会話頻出3000語マスター" (LINGO-013)
+  /** LINGO-024: progress toward promoting PAST `unlockedBand` — the actual
+   * coverage/retention ratios BandPromotion gates on (coverable-word
+   * denominator), distinct from `coverage` above (which uses a total-word
+   * denominator for the general vocab-progress meter — a different, older
+   * metric kept as-is). null once there's no next band to promote to (already
+   * at MAX_ACTIVE_BAND, or the course has no band+1 content yet — e.g. EN). */
+  bandPromotion: BandProgress | null;
 }
 
 function isToday(ts: number, now: number): boolean {
@@ -202,28 +275,49 @@ export async function homeStats(): Promise<HomeStats> {
   const c = today.reduce((a, s) => a + s.correct, 0);
   const knownRatePct = q > 0 ? Math.round((100 * c) / q) : null;
 
-  const vocab = store.bandVocabStats(PRIMARY_BAND);
+  const unlockedBand = await getUnlockedBand(activeCourseId);
+
+  const vocab = store.bandVocabStats(unlockedBand);
   const coverage = {
     covered: vocab.studied,
     total: vocab.total,
     pct: vocab.total > 0 ? Math.round((100 * vocab.studied) / vocab.total) : 0,
   };
-  const ret = store.bandRetention(PRIMARY_BAND);
+  const ret = store.bandRetention(unlockedBand);
   const retDenom = ret.reps + ret.lapses;
   const retentionPct = retDenom > 0 ? Math.round((100 * ret.reps) / retDenom) : null;
 
-  const dueNow = store.dueReviews(PRIMARY_BAND, now, 9999).length;
+  const dueNow = store.dueReviews(unlockedBand, now, 9999).length;
 
   const mastery = store.masteryStats();
+
+  // LINGO-024: read-only progress readout toward promoting past
+  // `unlockedBand` — never writes/promotes here, Home only reports status.
+  // null once there's no next band left to promote into.
+  const nextBand = unlockedBand + 1;
+  const bandPromotion =
+    nextBand <= MAX_ACTIVE_BAND && DECK.bands.includes(nextBand)
+      ? evaluateBandPromotion({
+          band: unlockedBand,
+          seenWords: vocab.studied,
+          totalWords: vocab.total,
+          coverableWords: vocab.coverable,
+          reps: ret.reps,
+          lapses: ret.lapses,
+          reviewCards: ret.reviewCards,
+        })
+      : null;
 
   return {
     todayGates,
     todayUnlocks,
     knownRatePct,
+    unlockedBand,
     coverage,
     retentionPct,
     reviewCards: ret.reviewCards,
     dueNow,
     mastery,
+    bandPromotion,
   };
 }

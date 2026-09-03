@@ -7,7 +7,7 @@
 // finalizeAndPersistPlacement never overwriting an already-judged lemma (see
 // its doc comment below).
 
-import { DECK, activeCourse, activeFrontLanguage, ensureCourse } from "./service";
+import { DECK, MAX_ACTIVE_BAND, activeCourse, activeFrontLanguage, checkBandPromotion, ensureCourse } from "./service";
 import { resolveCourse } from "../content/courses";
 import type { Lang } from "../content/courses";
 import { getPlacementDone, getTtsSettings, setPlacementDone } from "./settings";
@@ -168,5 +168,19 @@ export async function finalizeAndPersistPlacement(
   if (seeds.length) await putReviewStates(seeds, courseId);
 
   await setPlacementDone(courseId, true);
+
+  // LINGO-024: seedKnownReviewStatesForLemmas above seeds review states
+  // across ALL of DECK.sentences (every band), not just band1 — so a
+  // high-vocabulary learner can already clear band1's (and even band2's)
+  // promotion thresholds on their very first screen. Cascade the promotion
+  // check upward (1->2->3) right here so they start from the correct band
+  // immediately, instead of only unlocking on their first quiz completion.
+  let band = 1;
+  while (band < MAX_ACTIVE_BAND) {
+    const progress = await checkBandPromotion(band);
+    if (!progress?.promoted) break;
+    band++;
+  }
+
   return { written: rows.length };
 }

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Rating } from "../engine/fsrs";
 import type { RatingSummary } from "../engine/session";
+import type { BandProgress } from "../engine/bandPromotion";
 import {
   activeCourse,
   activeFrontLanguage,
@@ -58,6 +59,13 @@ export function QuizScreen({
     target: "ru",
     front: "en",
   });
+  // LINGO-024: set once finish()'s commitSession() resolves — `.promoted`
+  // true means THIS session just crossed the threshold (see
+  // state/service.ts's checkBandPromotion doc comment: the band argument is
+  // always freshly re-read per call, so a stale/already-promoted band can
+  // never re-report promoted=true on a later session — safe to render as a
+  // one-shot celebration with no extra "newly unlocked" bookkeeping needed).
+  const [bandPromotion, setBandPromotion] = useState<BandProgress | null>(null);
 
   useEffect(
     () => () => {
@@ -69,6 +77,7 @@ export function QuizScreen({
   const loadBatch = useCallback(async () => {
     setPhase("loading");
     committedRef.current = false;
+    setBandPromotion(null);
     const [session, mins, ttsSettings] = await Promise.all([
       startSession({ seed, continuous }),
       getUnlockMinutes(),
@@ -94,7 +103,8 @@ export function QuizScreen({
     const session = sessionRef.current;
     if (!session || committedRef.current) return;
     committedRef.current = true;
-    await commitSession(session, { appKey: returnApp, unlocked: true });
+    const progress = await commitSession(session, { appKey: returnApp, unlocked: true });
+    if (mountedRef.current) setBandPromotion(progress);
     if (returnApp) {
       await setSuppressUntil(returnApp, suppressUntil(Date.now(), unlockMin));
     }
@@ -158,6 +168,7 @@ export function QuizScreen({
         returnApp={returnApp}
         unlockMin={unlockMin}
         targetLang={langs.target}
+        bandPromotion={bandPromotion}
         onExit={onExit}
       />
     );
@@ -168,6 +179,7 @@ export function QuizScreen({
       <BatchCompleteScreen
         summary={runner.ratingSummary}
         batchNumber={batchNumber}
+        bandPromotion={bandPromotion}
         onContinue={nextBatch}
         onExit={onExit}
       />
@@ -241,17 +253,34 @@ function RatingBreakdown({ summary }: { summary: RatingSummary }) {
   );
 }
 
+/** "band2解放！次の1000語へ" (LINGO-024) — shown on a complete screen only
+ * when `bandPromotion?.promoted` is true (a genuine, just-happened unlock;
+ * see QuizScreen's bandPromotion state doc comment). `progress.band` is the
+ * band that was just cleared, so the newly-unlocked band is band+1. */
+function BandPromotionBanner({ bandPromotion }: { bandPromotion: BandProgress | null }) {
+  const t = useT();
+  if (!bandPromotion?.promoted) return null;
+  const newBand = bandPromotion.band + 1;
+  return (
+    <p className="band-promoted" style={{ margin: "8px 0 0", fontWeight: 600 }}>
+      {t("quiz.complete.bandPromoted", { band: newBand, n: newBand * 1000 })}
+    </p>
+  );
+}
+
 function CompleteScreen({
   summary,
   returnApp,
   unlockMin,
   targetLang,
+  bandPromotion,
   onExit,
 }: {
   summary: RatingSummary;
   returnApp: string | null;
   unlockMin: number;
   targetLang: string;
+  bandPromotion: BandProgress | null;
   onExit: () => void;
 }) {
   const { lang, t } = useI18n();
@@ -275,6 +304,7 @@ function CompleteScreen({
             ? t("quiz.complete.unlockMsg", { min: unlockMin })
             : t("quiz.complete.practiceMsg", { lang: langName(lang, targetLang as Lang) })}
         </p>
+        <BandPromotionBanner bandPromotion={bandPromotion} />
         <RatingBreakdown summary={summary} />
         {returnApp ? (
           <div className="stack" style={{ width: "100%" }}>
@@ -301,11 +331,13 @@ function CompleteScreen({
 function BatchCompleteScreen({
   summary,
   batchNumber,
+  bandPromotion,
   onContinue,
   onExit,
 }: {
   summary: RatingSummary;
   batchNumber: number;
+  bandPromotion: BandProgress | null;
   onContinue: () => void;
   onExit: () => void;
 }) {
@@ -316,6 +348,7 @@ function BatchCompleteScreen({
         <div className="big-emoji">✅</div>
         <h1>{t("quiz.batch.title", { n: batchNumber })}</h1>
         <p>{t("quiz.batch.sub")}</p>
+        <BandPromotionBanner bandPromotion={bandPromotion} />
         <RatingBreakdown summary={summary} />
         <div className="stack" style={{ width: "100%" }}>
           <button className="btn primary block" onClick={onContinue}>

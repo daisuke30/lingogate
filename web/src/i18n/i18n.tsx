@@ -86,7 +86,19 @@ const M: Record<string, Entry> = {
     en: "{n} words assessed",
     ru: "Оценено слов: {n}",
   },
-  "home.band.title": { ja: "band1 の進み具合", en: "band1 progress", ru: "Прогресс band1" },
+  // LINGO-024: was a static "band1 の進み具合" — now shows the actual
+  // unlocked word range (1〜N語, N = unlockedBand*1000), since band
+  // promotion means this is no longer always band1.
+  "home.band.title": {
+    ja: "現在: 1〜{n}語帯の進み具合",
+    en: "Current: words 1–{n}",
+    ru: "Сейчас: слова 1–{n}",
+  },
+  "home.band.nextUnlock": {
+    ja: "次の解放まで カバー率{coverage}/90%・定着率{retention}/80%",
+    en: "Until next unlock: coverage {coverage}/90%, retention {retention}/80%",
+    ru: "До следующего открытия: охват {coverage}/90%, удержание {retention}/80%",
+  },
   "home.band.coverage": { ja: "語彙カバー", en: "Vocabulary covered", ru: "Охват слов" },
   // LINGO-026: was a hardcoded full-width （）paren template regardless of UI
   // language — moved into the catalog with locale-appropriate punctuation.
@@ -321,6 +333,14 @@ const M: Record<string, Entry> = {
     ja: "今日の{lang}、進みました",
     en: "You made progress in {lang} today",
     ru: "Сегодня вы продвинулись: {lang}",
+  },
+  // LINGO-024: shown on the complete screen when a session just crossed the
+  // promotion threshold — {band} is the newly-unlocked band, {n} its word
+  // count (band*1000).
+  "quiz.complete.bandPromoted": {
+    ja: "band{band}解放！次の{n}語へ",
+    en: "Band {band} unlocked! On to the next {n} words",
+    ru: "Открыт band {band}! Следующие {n} слов",
   },
   "quiz.breakdown.of": { ja: "{n}枚中", en: "of {n} cards", ru: "из {n} карт." },
   "quiz.breakdown.good": { ja: "覚えていた", en: "Knew it", ru: "Помнил" },

@@ -16,7 +16,7 @@ import type { ReviewState } from "./fsrs";
 const NOW = 1_700_000_000_000;
 const DAY = 86_400_000;
 
-function sentence(id: string, minRank: number | null = 1): Sentence {
+function sentence(id: string, minRank: number | null = 1, band = 1): Sentence {
   return {
     id,
     ru: `ру ${id}`,
@@ -24,7 +24,7 @@ function sentence(id: string, minRank: number | null = 1): Sentence {
     ja: null,
     kana: null,
     note: null,
-    band: 1,
+    band,
     difficulty: 1,
     source: "generated",
     kind: "sentence",
@@ -123,5 +123,64 @@ describe("ContentStore tolerates orphan ReviewStates (sentence removed from deck
     const plan = buildGateSession(store, { band: 1, now: NOW, size: 3, rng: new SeededRNG(1) });
     expect(plan.cards.map((c) => c.sentence.id)).not.toContain("ghost-long-sentence");
     expect(plan.cards.length).toBe(3); // filled entirely from real new sentences
+  });
+});
+
+// LINGO-024: `band` on dueReviews/newSentences/upcomingReviews became a POOL
+// CEILING (1..band), not an exact match — the whole point of band promotion
+// unlocking band 2 is that band 1 AND band 2 content both become eligible.
+describe("ContentStore band-pool ceiling (LINGO-024 band promotion wiring)", () => {
+  it("newSentences(1) only offers band-1 sentences; newSentences(2) offers band-1 AND band-2", () => {
+    const deck = makeDeck([sentence("b1a", 1, 1), sentence("b1b", 2, 1), sentence("b2a", 1001, 2)]);
+    const store = new ContentStore(deck);
+    expect(store.newSentences(1, new Set(), 10).map((s) => s.id).sort()).toEqual(["b1a", "b1b"]);
+    expect(store.newSentences(2, new Set(), 10).map((s) => s.id).sort()).toEqual(["b1a", "b1b", "b2a"]);
+  });
+
+  it("newSentences never offers a band ABOVE the ceiling, even with room to spare", () => {
+    const deck = makeDeck([sentence("b1a", 1, 1), sentence("b3a", 1, 3)]);
+    const store = new ContentStore(deck);
+    expect(store.newSentences(1, new Set(), 10).map((s) => s.id)).toEqual(["b1a"]);
+  });
+
+  it("dueReviews(2) surfaces a due band-2 card once band 2 is in the pool, not just band 1's", () => {
+    const deck = makeDeck([sentence("b1", 1, 1), sentence("b2", 1, 2)]);
+    const state1 = orphanState("b1", NOW - DAY);
+    const state2 = orphanState("b2", NOW - DAY);
+    const store = new ContentStore(deck, [state1, state2]);
+    expect(store.dueReviews(1, NOW, 10).map((c) => c.sentence.id)).toEqual(["b1"]);
+    expect(store.dueReviews(2, NOW, 10).map((c) => c.sentence.id).sort()).toEqual(["b1", "b2"]);
+  });
+
+  it("upcomingReviews(2) includes band-2 cards once unlocked", () => {
+    const deck = makeDeck([sentence("b1", 1, 1), sentence("b2", 1, 2)]);
+    const state1 = orphanState("b1", NOW + DAY);
+    const state2 = orphanState("b2", NOW + DAY);
+    const store = new ContentStore(deck, [state1, state2]);
+    expect(store.upcomingReviews(1, new Set(), 10).map((c) => c.sentence.id)).toEqual(["b1"]);
+    expect(store.upcomingReviews(2, new Set(), 10).map((c) => c.sentence.id).sort()).toEqual(["b1", "b2"]);
+  });
+
+  it("bandVocabStats/bandRetention stay EXACT-band (unaffected by the pool ceiling) — they measure one band's own promotion readiness, not the pool", () => {
+    const deck: Deck = {
+      code: "T",
+      name: "t",
+      targetLang: "ru",
+      sourceLang: "en",
+      bands: [1, 2],
+      words: [
+        { id: 1, lemma: "a", rank: 1, band: 1, pos: "noun" },
+        { id: 2, lemma: "b", rank: 1001, band: 2, pos: "noun" },
+      ],
+      sentences: [
+        { ...sentence("s1", 1, 1), wordIds: [1] },
+        { ...sentence("s2", 1001, 2), wordIds: [2] },
+      ],
+    };
+    const store = new ContentStore(deck, [orphanState("s1", NOW - DAY)]);
+    const band1 = store.bandVocabStats(1);
+    const band2 = store.bandVocabStats(2);
+    expect(band1.studied).toBe(1); // s1 has a state
+    expect(band2.studied).toBe(0); // s2 does not, even though band 1 < band 2
   });
 });

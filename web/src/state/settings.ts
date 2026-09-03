@@ -25,6 +25,7 @@ const K = {
   frontLangPrefix: "course.frontLang.", // + courseId; the card-front (prompt/hint) language
   placementDonePrefix: "course.placementDone.", // + courseId (LINGO-016)
   onboardingSeen: "onboarding.seen", // global, not course-scoped (LINGO-017)
+  unlockedBandPrefix: "course.unlockedBand.", // + courseId (LINGO-024)
 };
 
 // MARK: i18n (app UI language) — LINGO-014
@@ -75,6 +76,19 @@ export function getPlacementDone(courseId: string): Promise<boolean> {
 
 export function setPlacementDone(courseId: string, done: boolean): Promise<void> {
   return setMeta(K.placementDonePrefix + courseId, done);
+}
+
+// MARK: unlocked band (LINGO-024) — per course, the highest 1000-word band
+// whose new cards are eligible for practice. 1 = only band 1 (everyone's
+// starting point); promotion (engine/bandPromotion.ts) raises it.
+
+export async function getUnlockedBand(courseId: string): Promise<number> {
+  const v = await getMeta<number>(K.unlockedBandPrefix + courseId, 1);
+  return Number.isInteger(v) && v >= 1 ? v : 1;
+}
+
+export function setUnlockedBand(courseId: string, band: number): Promise<void> {
+  return setMeta(K.unlockedBandPrefix + courseId, band);
 }
 
 // MARK: onboarding (LINGO-017) — global "has the learner seen/skipped the

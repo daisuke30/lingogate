@@ -149,7 +149,9 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         </>
       )}
 
-      <div className="section-title">{t("home.band.title")}</div>
+      <div className="section-title">
+        {t("home.band.title", { n: ((stats?.unlockedBand ?? 1) * 1000).toLocaleString() })}
+      </div>
       <div className="card">
         <div className="meter">
           <div className="head">
@@ -184,6 +186,14 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         {stats && stats.dueNow > 0 && (
           <p className="muted" style={{ marginTop: 12, marginBottom: 0 }}>
             {t("home.band.dueNow", { n: stats.dueNow })}
+          </p>
+        )}
+        {stats?.bandPromotion && (
+          <p className="muted" style={{ marginTop: 12, marginBottom: 0 }}>
+            {t("home.band.nextUnlock", {
+              coverage: Math.round(stats.bandPromotion.coverage * 100),
+              retention: Math.round(stats.bandPromotion.retention * 100),
+            })}
           </p>
         )}
       </div>
