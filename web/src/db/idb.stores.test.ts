@@ -26,6 +26,22 @@ describe("ensureStores (idb v3 migration, LINGO-029)", () => {
     expect(db.created.map((c) => c.name)).toEqual(["petState", "petCollection"]);
   });
 
+  // LINGO-032 QA: 勝田's real device may have installed at v1 (before the
+  // wordKnowledge store existed) and never opened a v2 build — so it upgrades
+  // v1 → v3 in a single jump. The additive ensureStores must backfill BOTH the
+  // skipped v2 store and the new v3 pet stores, while leaving the three original
+  // data-bearing stores (his real learning history) completely untouched — the
+  // property that guarantees no existing card/gate/setting is lost.
+  it("v1 → v3 (skipping the v2 build) backfills wordKnowledge + pet stores, touching no original store", () => {
+    const db = mockDb(["reviewStates", "gateSessions", "meta"]);
+    ensureStores(db);
+    expect(db.created.map((c) => c.name)).toEqual(["wordKnowledge", "petState", "petCollection"]);
+    // The three pre-existing stores were never re-created → their data survives.
+    for (const original of ["reviewStates", "gateSessions", "meta"]) {
+      expect(db.created.some((c) => c.name === original)).toBe(false);
+    }
+  });
+
   it("a fresh (v0) DB creates the full six-store schema in one pass", () => {
     const db = mockDb([]);
     ensureStores(db);

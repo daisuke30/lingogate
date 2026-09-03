@@ -336,6 +336,65 @@ describe("tick: early 旅立ち on 3-day abandonment (design §2)", () => {
     expect(r.pet.generation).toBe(2);
     expect(r.pet.stage).toBe("egg");
   });
+
+  // LINGO-032 QA: the abandon window's exact boundary, measured from a real
+  // lastStudyDate (not the bornAt fallback the case above exercises). A learner
+  // who studied on day 0 and then stops must survive 2 idle calendar days and
+  // depart on the 3rd — off-by-one here would either kill pets a day early or
+  // let them linger forever.
+  it("survives exactly 2 idle days but departs on the 3rd (measured from lastStudyDate)", () => {
+    const studied = applySession(newPet(1, T0), { newCount: 1, reviewCount: 0 }, at(0)).pet;
+    expect(studied.lastStudyDate).toBe(localDateStr(at(0)));
+
+    const day2 = tick(studied, { now: at(2), overdueCount: 5 });
+    expect(day2.events.some((e) => e.type === "depart")).toBe(false); // 2 idle days: still here
+    expect(day2.pet.generation).toBe(1);
+    expect(day2.pet.stage).toBe("child"); // aged into 成長期, kept growing
+
+    const day3 = tick(studied, { now: at(3), overdueCount: 5 });
+    expect(day3.events.find((e) => e.type === "depart")?.reason).toBe("early");
+    expect(day3.pet.generation).toBe(2);
+  });
+
+  // LINGO-032 QA: step ordering — abandonment is checked BEFORE the natural
+  // day-12 departure. A pet that both hit day 12 AND went 3 days unstudied must
+  // read as an 'early' 旅立ち (the honest signal = "you stopped studying"), not
+  // a 'natural' graduation it didn't earn.
+  it("abandonment takes priority over the natural day-12 depart", () => {
+    const pet = { ...newPet(1, T0), lastStudyDate: localDateStr(at(8)) }; // 4 idle days by day 12
+    const r = tick(pet, { now: at(12), overdueCount: 5 });
+    expect(r.events.find((e) => e.type === "depart")?.reason).toBe("early");
+  });
+});
+
+// LINGO-032 QA: the "honest gamification" invariant across the band↔pet seam.
+// うんこ is a pure projection of the injected overdue-review count (which the
+// state layer computes over the CURRENT unlockedBand, growing after a band
+// promotion). Cleaning buys a care-score grace window but must NOT fake the
+// poop away — only actually doing the overdue reviews (a smaller injected
+// count) may clear it. And however large the post-promotion overdue queue
+// grows, the display caps at MAX_POOP.
+describe("poop honesty: cleaning never fakes it away; only doing reviews clears it", () => {
+  it("掃除する leaves the visible poop untouched for the same overdue count", () => {
+    const dirty = { ...newPet(1, T0), cleanPoints: 3 };
+    const overdue = 4;
+    const cleaned = applyClean(dirty, overdue, T0);
+    expect(cleaned.cleanPoints).toBe(2); // a point was spent (care-score grace)
+    // …but the honest poop mapping is unchanged: it reflects the real queue.
+    expect(petSnapshot(cleaned, T0, overdue).poop).toBe(petSnapshot(dirty, T0, overdue).poop);
+    expect(petSnapshot(cleaned, T0, overdue).poop).toBe(4);
+  });
+  it("poop drops only when the overdue queue actually shrinks (reviews done)", () => {
+    const pet = newPet(1, T0);
+    expect(petSnapshot(pet, T0, 4).poop).toBe(4);
+    expect(petSnapshot(pet, T0, 1).poop).toBe(1); // 3 reviews cleared → 1 left
+    expect(petSnapshot(pet, T0, 0).poop).toBe(0);
+  });
+  it("a large post-band-promotion overdue queue still caps at MAX_POOP", () => {
+    // After unlockedBand expands, overdueReviewCount can jump well past 5.
+    const pet = newPet(1, T0);
+    expect(petSnapshot(pet, T0, 12).poop).toBe(MAX_POOP);
+  });
 });
 
 describe("tick: 怠 at 完全体 (design §3 hidden/stall split at 究極体)", () => {
