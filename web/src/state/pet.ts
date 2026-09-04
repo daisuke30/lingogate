@@ -18,6 +18,7 @@ import {
   applySession,
   petSnapshot,
   recordDiscoveriesFromEvents,
+  migrateLegacyPet,
 } from "../pet/engine";
 import type {
   PetState,
@@ -36,13 +37,29 @@ import {
   setMeta,
 } from "../db/idb";
 
-/** Load the current pet, creating (and persisting) generation 1 on first run. */
-export async function loadPet(now: number = Date.now()): Promise<PetState> {
+/** Load the current pet, creating (and persisting) generation 1 on first run.
+ *
+ * `overdueCountForMigration` is ONLY consulted for the one-time v2 (LINGO-029
+ * poop-stock overhaul, 2026-09-05) backfill below — a pet persisted before
+ * poopCount/poopAccruedAt existed gets seeded from whatever overdue count the
+ * caller currently has (clamped to MAX_POOP), matching the coordinator's
+ * "現在のoverdueから算出した値" migration spec. Callers with no overdue figure
+ * handy (e.g. a bare loadPet() from a screen that already ticked) just pass 0,
+ * which is harmless — real pets almost always hit this path via tickPet()
+ * first, which does have the figure. */
+export async function loadPet(
+  now: number = Date.now(),
+  overdueCountForMigration = 0,
+): Promise<PetState> {
   const existing = await getPetState();
-  if (existing) return existing;
-  const pet = newPet(1, now);
-  await putPetState(pet);
-  return pet;
+  if (!existing) {
+    const pet = newPet(1, now);
+    await putPetState(pet);
+    return pet;
+  }
+  const migrated = migrateLegacyPet(existing, now, overdueCountForMigration);
+  if (migrated !== existing) await putPetState(migrated);
+  return migrated;
 }
 
 export function loadCollection(): Promise<PetCollection> {
@@ -50,55 +67,66 @@ export function loadCollection(): Promise<PetCollection> {
 }
 
 /** Read-only glance at the pet — e.g. Home's mini status (LINGO-031). Loads
- * but does NOT advance the pet (no tick()): satiety/poop are still live via
- * petSnapshot's time-based decay/overdue read, so this stays honest without
- * risking a hatch/evolve/depart side effect firing from a screen that isn't
- * the 育成 tab (only PetView's own tickPet() call does that). */
+ * but does NOT advance the pet (no tick()): satiety is still live (continuous
+ * decay), but poop (v2, 2026-09-05) is a discrete stock that only grows via
+ * tick()'s accrual catch-up — this shows the last-ticked value, same as any
+ * real Tamagotchi-style widget that isn't the main screen. No risk of a
+ * hatch/evolve/depart side effect firing from a screen that isn't the 育成 tab
+ * (only PetView's own tickPet() call does that). `overdueCount` is kept as a
+ * parameter solely to feed the one-time legacy-pet migration in loadPet(). */
 export async function peekPet(
   overdueCount: number,
   now: number = Date.now(),
 ): Promise<PetSnapshot> {
-  const pet = await loadPet(now);
-  return petSnapshot(pet, now, overdueCount);
+  const pet = await loadPet(now, overdueCount);
+  return petSnapshot(pet, now);
 }
 
-/** Advance the pet to `now` and persist: writes the (possibly next-generation)
- * pet, folds hatch/evolve events into the 図鑑, and returns the fresh snapshot
- * plus what happened (so the UI can celebrate an evolution / 旅立ち). */
+/** Advance the pet to `now` and persist: catches the poop stock up (the only
+ * thing that actually consumes overdueCount now — see pet/engine.ts's
+ * advancePoop), writes the (possibly next-generation) pet, folds hatch/evolve
+ * events into the 図鑑, and returns the fresh snapshot plus what happened (so
+ * the UI can celebrate an evolution / 旅立ち). */
 export async function tickPet(
   overdueCount: number,
   now: number = Date.now(),
 ): Promise<{ snapshot: PetSnapshot; events: PetEvent[] }> {
-  const pet = await loadPet(now);
+  const pet = await loadPet(now, overdueCount);
   const { pet: next, events } = tick(pet, { now, overdueCount });
   await putPetState(next);
   if (events.length > 0) {
     const collection = recordDiscoveriesFromEvents(await getPetCollection(), events);
     await putPetCollection(collection);
   }
-  return { snapshot: petSnapshot(next, now, overdueCount), events };
+  return { snapshot: petSnapshot(next, now), events };
 }
 
-/** 餌をあげる. Returns the updated snapshot. */
+/** 餌をあげる. Returns the updated snapshot. `overdueCount` is only used for
+ * the legacy-pet migration in loadPet() (see its doc comment) — feeding
+ * itself has never depended on it. */
 export async function feedPet(
   overdueCount: number,
   now: number = Date.now(),
 ): Promise<PetSnapshot> {
-  const pet = await loadPet(now);
+  const pet = await loadPet(now, overdueCount);
   const next = applyFeed(pet, now);
   await putPetState(next);
-  return petSnapshot(next, now, overdueCount);
+  return petSnapshot(next, now);
 }
 
-/** 掃除する. Returns the updated snapshot. */
+/** 掃除する: deletes exactly one うんこ from the stock per 掃除P spent (design
+ * §1 v2, 2026-09-05 — fixes the earlier "掃除ボタンが壊れている" bug, where
+ * poop was derived live from overdueCount so spending 掃除P never visibly did
+ * anything). Returns the updated snapshot. `overdueCount` is only used for the
+ * legacy-pet migration in loadPet(). */
 export async function cleanPet(
   overdueCount: number,
   now: number = Date.now(),
 ): Promise<PetSnapshot> {
-  const pet = await loadPet(now);
-  const next = applyClean(pet, overdueCount, now);
+  const pet = await loadPet(now, overdueCount);
+  const next = applyClean(pet);
   await putPetState(next);
-  return petSnapshot(next, now, overdueCount);
+  return petSnapshot(next, now);
 }
 
 /** Session-commit hook for LINGO-031: adds 餌/掃除P, marks today studied, and

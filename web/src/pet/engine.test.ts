@@ -3,11 +3,13 @@ import {
   DAY_MS,
   FEED_RESTORE,
   MAX_POOP,
-  CLEAN_GRACE_MS,
+  POOP_INTERVAL_MAX_MS,
+  POOP_INTERVAL_MIN_MS,
   SPECIES_IDS,
+  poopIntervalMs,
   newPet,
+  migrateLegacyPet,
   satietyAt,
-  poopCount,
   onSessionCommitted,
   applyFeed,
   applyClean,
@@ -37,6 +39,9 @@ const at = (day: number) => T0 + day * DAY_MS;
 
 // --- helpers -------------------------------------------------------------
 
+/** CareDay fixture — `clean` is the desired cleanRatio (0..1), expressed as a
+ * dirty/tracked ms split over a unit "day" so dailyCareScore's ratio math
+ * comes out exactly as specified without needing real ms magnitudes. */
 function makeCareDay(
   date: string,
   stage: PetStage,
@@ -50,8 +55,8 @@ function makeCareDay(
     reviewCount: o.reviewCount ?? 0,
     fedSum: o.fed,
     fedN: 1,
-    cleanSum: o.clean,
-    cleanN: 1,
+    trackedMs: 1,
+    dirtyMs: 1 - o.clean,
   };
 }
 
@@ -61,12 +66,21 @@ function feedFull(pet: PetState, now: number): PetState {
   return p;
 }
 
-/** A perfectly-tended day: study, fill the belly, no overdue reviews → daily
- * care score ≈ 1. Returns the ticked pet + events. */
+/** A well-tended day under the v2 (2026-09-05) poop-stock model: study enough
+ * to earn a 掃除P, fill the belly, tick (which spawns poop at overdueCount's
+ * rate), then immediately clean up whatever spawned — mirroring a learner who
+ * opens the app once a day and always taps 掃除する. With overdueCount=0 the
+ * spawn interval equals exactly one day (POOP_INTERVAL_MAX_MS = DAY_MS), so a
+ * poop lands right at the end of each day's span and is cleaned before it can
+ * accumulate any real dirty time — cleanRatio stays ~1, same as the old
+ * "always clean" fixture used to assert for the healthy-lifecycle path. */
 function healthyDay(pet: PetState, day: number, tendency: { newCount: number; reviewCount: number }) {
   let p = applySession(pet, tendency, at(day)).pet;
   p = feedFull(p, at(day));
-  return tick(p, { now: at(day), overdueCount: 0 });
+  const r = tick(p, { now: at(day), overdueCount: 0 });
+  p = r.pet;
+  while (p.poopCount > 0 && p.cleanPoints > 0) p = applyClean(p);
+  return { pet: p, events: r.events };
 }
 
 // --- core mappings (design §1) ------------------------------------------
@@ -83,15 +97,32 @@ describe("satietyAt: 満腹度 linear 24h decay (design §1)", () => {
   });
 });
 
-describe("poopCount: overdue-review mapping (design §1, clamp 0..5)", () => {
-  it("is zero when nothing is overdue", () => {
-    expect(poopCount(0)).toBe(0);
-    expect(poopCount(-3)).toBe(0);
+describe("poopIntervalMs: spawn rate vs overdue count (design §1 v2, 2026-09-05)", () => {
+  it("matches the coordinator's three worked examples", () => {
+    expect(poopIntervalMs(0)).toBeCloseTo(24 * 60 * 60 * 1000, -2); // overdue 0 → 24h (exact)
+    expect(poopIntervalMs(10)).toBeCloseTo(8 * 60 * 60 * 1000, -2); // overdue 10 → 8h (exact, the anchor)
+    // overdue 30+ → "approx 4h": the continuous exponential lands close to but
+    // not exactly at the floor (≈4h10m here) — assert it's within 30min of 4h
+    // rather than exact, since "continuous formula, approximately these
+    // points" is what the coordinator's spec asked for, not a hard clamp.
+    const thirty = poopIntervalMs(30);
+    expect(Math.abs(thirty - 4 * 60 * 60 * 1000)).toBeLessThan(30 * 60 * 1000);
   });
-  it("tracks the overdue count and clamps at MAX_POOP", () => {
-    expect(poopCount(3)).toBe(3);
-    expect(poopCount(5)).toBe(MAX_POOP);
-    expect(poopCount(50)).toBe(MAX_POOP);
+  it("is continuous, non-increasing, and never drops below MIN", () => {
+    let prev = poopIntervalMs(0);
+    expect(prev).toBe(POOP_INTERVAL_MAX_MS);
+    for (const o of [1, 2, 5, 10, 20, 50, 100, 1000]) {
+      const cur = poopIntervalMs(o);
+      // Non-strict: at very large overdue counts exp(-o/TAU) underflows to
+      // exactly 0 in double precision, so the curve legitimately reaches
+      // POOP_INTERVAL_MIN_MS exactly rather than approaching it forever.
+      expect(cur).toBeLessThanOrEqual(prev);
+      expect(cur).toBeGreaterThanOrEqual(POOP_INTERVAL_MIN_MS);
+      prev = cur;
+    }
+  });
+  it("negative/garbage overdue counts clamp to the overdue=0 rate", () => {
+    expect(poopIntervalMs(-5)).toBe(poopIntervalMs(0));
   });
 });
 
@@ -125,29 +156,36 @@ describe("applyFeed", () => {
   });
 });
 
-describe("applyClean", () => {
-  it("consumes one 掃除P and opens a clean-grace window", () => {
-    const pet = { ...newPet(1, T0), cleanPoints: 2 };
-    const cleaned = applyClean(pet, 4, T0);
+describe("applyClean: instant 1-for-1 poop deletion (design §1 v2, 2026-09-05)", () => {
+  // This is the direct fix for the reported bug: 掃除する used to spend a
+  // 掃除P against a poop count that was DERIVED live from overdueCount, so
+  // spending it never visibly changed anything (overdueCount only drops when
+  // reviews are actually done). Now poopCount is real stock state that
+  // applyClean mutates directly — independent of overdueCount entirely.
+  it("consumes exactly one 掃除P and removes exactly one うんこ, immediately", () => {
+    const pet = { ...newPet(1, T0), poopCount: 3, cleanPoints: 2 };
+    const cleaned = applyClean(pet);
+    expect(cleaned.poopCount).toBe(2);
     expect(cleaned.cleanPoints).toBe(1);
-    expect(cleaned.lastCleanedAt).toBe(T0);
   });
-  it("is a no-op with no 掃除P or nothing to clean", () => {
-    const noPts = { ...newPet(1, T0), cleanPoints: 0 };
-    expect(applyClean(noPts, 4, T0)).toBe(noPts);
-    const noPoop = { ...newPet(1, T0), cleanPoints: 2 };
-    expect(applyClean(noPoop, 0, T0)).toBe(noPoop);
+  it("is a no-op with no 掃除P, regardless of poop stock", () => {
+    const pet = { ...newPet(1, T0), poopCount: 5, cleanPoints: 0 };
+    expect(applyClean(pet)).toBe(pet);
   });
-  it("clean grace expires after CLEAN_GRACE_MS", () => {
-    const pet = { ...newPet(1, T0), cleanPoints: 1, lastCleanedAt: T0 };
-    // A day sampled within grace scores clean=1; beyond it, poop drags it down.
-    const withinGrace = tick(pet, { now: T0 + CLEAN_GRACE_MS - 1, overdueCount: 5 });
-    const dayA = withinGrace.pet.careLog[0];
-    expect(dayA.cleanSum / dayA.cleanN).toBe(1);
-    const pet2 = { ...newPet(1, T0), lastCleanedAt: T0 };
-    const afterGrace = tick(pet2, { now: T0 + CLEAN_GRACE_MS + 1, overdueCount: 5 });
-    const dayB = afterGrace.pet.careLog[0];
-    expect(dayB.cleanSum / dayB.cleanN).toBe(0); // 5 poop → cleanliness 0
+  it("is a no-op with an empty poop stock, regardless of 掃除P held", () => {
+    const pet = { ...newPet(1, T0), poopCount: 0, cleanPoints: 4 };
+    expect(applyClean(pet)).toBe(pet);
+  });
+  it("repeated calls drain the stock one at a time, then stop", () => {
+    let pet = { ...newPet(1, T0), poopCount: 2, cleanPoints: 5 };
+    pet = applyClean(pet);
+    expect(pet.poopCount).toBe(1);
+    pet = applyClean(pet);
+    expect(pet.poopCount).toBe(0);
+    expect(pet.cleanPoints).toBe(3); // 2 spent, 3 left over
+    pet = applyClean(pet); // nothing left to clean
+    expect(pet.poopCount).toBe(0);
+    expect(pet.cleanPoints).toBe(3);
   });
 });
 
@@ -180,13 +218,117 @@ describe("applySession: earnings + study log + streak", () => {
   });
 });
 
+// --- poop accrual (tick) --------------------------------------------------
+
+describe("tick: poop stock accrual (design §1 v2, 2026-09-05)", () => {
+  it("spawns nothing before a full interval has elapsed", () => {
+    const pet = newPet(1, T0);
+    const r = tick(pet, { now: T0 + POOP_INTERVAL_MAX_MS - 1, overdueCount: 0 });
+    expect(r.pet.poopCount).toBe(0);
+  });
+  it("spawns exactly one poop once the interval elapses (overdue=0 → 24h)", () => {
+    const pet = newPet(1, T0);
+    const r = tick(pet, { now: T0 + POOP_INTERVAL_MAX_MS, overdueCount: 0 });
+    expect(r.pet.poopCount).toBe(1);
+  });
+  it("a higher overdue count spawns proportionally faster (10 → 8h interval)", () => {
+    const pet = newPet(1, T0);
+    const before = tick(pet, { now: T0 + 8 * 60 * 60 * 1000 - 1, overdueCount: 10 });
+    expect(before.pet.poopCount).toBe(0);
+    const after = tick(pet, { now: T0 + 8 * 60 * 60 * 1000, overdueCount: 10 });
+    expect(after.pet.poopCount).toBe(1);
+  });
+  // Both of the following jump `now` a couple of days ahead of bornAt (to
+  // exercise a real offline catch-up) but stay well under the 3-day
+  // abandonment threshold AND under the age-9-day "ultimate" transition (the
+  // only evolution boundary a fully-unstudied careLog could force into an
+  // early perfect-stall departure) — so the pet is still alive as itself when
+  // we inspect its accrued poop. A recent lastStudyDate sidesteps the
+  // calendar-date (not exact-hours) 3-day abandonment check regardless of
+  // exactly where the offset lands relative to local midnight.
+  it("catches up multiple spawns across a long offline gap, capped at MAX_POOP", () => {
+    const now = T0 + 2.9 * DAY_MS;
+    const pet = { ...newPet(1, T0), lastStudyDate: localDateStr(now - 1 * DAY_MS) };
+    // ~70h offline at overdue=1000 (rate floors to the 4h MIN interval) would
+    // be ~17 poops — clamped to 5.
+    const r = tick(pet, { now, overdueCount: 1000 });
+    expect(r.pet.poopCount).toBe(MAX_POOP);
+  });
+  it("does not bank backlog credit once capped — a clean after capping still needs a fresh interval", () => {
+    const now0 = T0 + 2.9 * DAY_MS;
+    let pet: PetState = { ...newPet(1, T0), lastStudyDate: localDateStr(now0 - 1 * DAY_MS) };
+    // Way overdue → stock caps out fast.
+    pet = tick(pet, { now: now0, overdueCount: 1000 }).pet;
+    expect(pet.poopCount).toBe(MAX_POOP);
+    pet = { ...pet, cleanPoints: 1 };
+    pet = applyClean(pet);
+    expect(pet.poopCount).toBe(MAX_POOP - 1);
+    // Immediately re-ticking (no time passed) must NOT instantly refill from
+    // banked backlog — the accrual clock only resumed at the capped tick.
+    const immediate = tick(pet, { now: now0, overdueCount: 1000 });
+    expect(immediate.pet.poopCount).toBe(MAX_POOP - 1);
+  });
+  it("cleaning mid-visit is reflected immediately in the next tick's starting stock", () => {
+    let pet = newPet(1, T0);
+    pet = tick(pet, { now: T0 + POOP_INTERVAL_MAX_MS, overdueCount: 0 }).pet;
+    expect(pet.poopCount).toBe(1);
+    pet = { ...pet, cleanPoints: 1 };
+    pet = applyClean(pet);
+    expect(pet.poopCount).toBe(0);
+    // Next tick a full interval later spawns exactly one more, not a
+    // leftover-plus-one — confirms clean actually zeroed the live stock.
+    const next = tick(pet, { now: T0 + 2 * POOP_INTERVAL_MAX_MS, overdueCount: 0 });
+    expect(next.pet.poopCount).toBe(1);
+  });
+});
+
 // --- care scoring --------------------------------------------------------
 
-describe("care scoring (design §1 & §3)", () => {
+describe("care scoring (design §1 v2, 2026-09-05: time-weighted cleanliness)", () => {
   it("dailyCareScore = fedRatio × cleanRatio × studiedFlag", () => {
     expect(dailyCareScore(makeCareDay("d", "baby", { studied: true, fed: 1, clean: 1 }))).toBe(1);
     expect(dailyCareScore(makeCareDay("d", "baby", { studied: false, fed: 1, clean: 1 }))).toBe(0);
     expect(dailyCareScore(makeCareDay("d", "baby", { studied: true, fed: 0.5, clean: 0.6 }))).toBeCloseTo(0.3, 9);
+  });
+  it("cleanRatio = 1 - dirtyMs/trackedMs (fraction of the day NOT left dirty)", () => {
+    const mostlyClean: CareDay = {
+      date: "d",
+      stage: "child",
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      fedSum: 1,
+      fedN: 1,
+      trackedMs: DAY_MS,
+      dirtyMs: DAY_MS * 0.1, // dirty for just 10% of the day
+    };
+    expect(dailyCareScore(mostlyClean)).toBeCloseTo(0.9, 9);
+  });
+  it("a day with no tracked time (never caught up) scores as neglected, not crashes", () => {
+    const untracked: CareDay = {
+      date: "d",
+      stage: "child",
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      fedSum: 1,
+      fedN: 1,
+      trackedMs: 0,
+      dirtyMs: 0,
+    };
+    expect(dailyCareScore(untracked)).toBe(0);
+  });
+  it("defensively handles pre-v2 persisted rows missing dirtyMs/trackedMs", () => {
+    const legacyRow = {
+      date: "d",
+      stage: "child" as PetStage,
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      fedSum: 1,
+      fedN: 1,
+    } as CareDay; // simulates a pre-migration IndexedDB row (fields absent at runtime)
+    expect(dailyCareScore(legacyRow)).toBe(0);
   });
   it("careTier: 良 ≥0.8 / 並 0.4–0.8 / 怠 <0.4", () => {
     expect(careTier(0.9)).toBe("good");
@@ -215,6 +357,11 @@ describe("care scoring (design §1 & §3)", () => {
 });
 
 // --- evolution branch table: 1:1 with design §3 (all 16 species + DEPART) ---
+// branchSpecies takes already-computed priorCare/tendency inputs, so it is
+// entirely unaffected by the poop-stock/cleanliness rework above — these
+// cases are unchanged from the original LINGO-029 implementation and still
+// hold under the new score definition (branchSpecies never looks at CareDay
+// shape directly).
 
 describe("branchSpecies: design §3 branch table (all 16種)", () => {
   const GOOD = 0.9;
@@ -227,7 +374,7 @@ describe("branchSpecies: design §3 branch table (all 16種)", () => {
     expect(branchSpecies({ toStage: "baby", priorCare: NEGLECT, tendency: "R", ...base })).toBe("mochi");
   });
 
-  it("成長期: 良/並 → キュート系 (cute), 怠 → ヨゴレ系 (grime)", () => {
+  it("成長期: 良/並 → キュート系 (cutie), 怠 → ヨゴレ系 (grimy)", () => {
     expect(branchSpecies({ toStage: "child", priorCare: GOOD, tendency: "N", ...base })).toBe("cutie");
     expect(branchSpecies({ toStage: "child", priorCare: OK, tendency: "R", ...base })).toBe("cutie");
     expect(branchSpecies({ toStage: "child", priorCare: NEGLECT, tendency: "N", ...base })).toBe("grimy");
@@ -237,7 +384,7 @@ describe("branchSpecies: design §3 branch table (all 16種)", () => {
     expect(branchSpecies({ toStage: "adult", priorCare: GOOD, tendency: "N", ...base })).toBe("hero");
     expect(branchSpecies({ toStage: "adult", priorCare: GOOD, tendency: "R", ...base })).toBe("sage");
   });
-  it("成熟期: 並×N → わんぱく系 (rascal), 並×R → まったり系 (chill)", () => {
+  it("成熟期: 並×N → わんぱく系 (rascal), 並×R → まったり系 (mellow)", () => {
     expect(branchSpecies({ toStage: "adult", priorCare: OK, tendency: "N", ...base })).toBe("rascal");
     expect(branchSpecies({ toStage: "adult", priorCare: OK, tendency: "R", ...base })).toBe("mellow");
   });
@@ -257,7 +404,7 @@ describe("branchSpecies: design §3 branch table (all 16種)", () => {
     expect(branchSpecies({ toStage: "perfect", priorCare: NEGLECT, tendency: "N", ...base })).toBe("berserk");
   });
 
-  it("究極体: 良 → 聖竜系 (holy-dragon), 並 → 機神系 (machine-god)", () => {
+  it("究極体: 良 → 聖竜系 (holy-dragon), 並 → 機神系 (mech-god)", () => {
     expect(branchSpecies({ toStage: "ultimate", priorCare: GOOD, tendency: "N", ...base })).toBe("holy-dragon");
     expect(branchSpecies({ toStage: "ultimate", priorCare: OK, tendency: "N", ...base })).toBe("mech-god");
   });
@@ -303,11 +450,11 @@ describe("stageForAgeDays: lifecycle schedule (design §2)", () => {
 // --- tick integration: full lifecycles -----------------------------------
 
 describe("tick: hatch + healthy 12-day lifecycle → 聖竜系, then 旅立ち", () => {
-  it("evolves mochi → cute → hero → knight → holy-dragon, then departs to a gen-2 egg", () => {
+  it("evolves mochi → cutie → hero → knight → holy-dragon, then departs to a gen-2 egg", () => {
     let pet = newPet(1, T0);
     const events: PetEvent[] = [];
     for (let day = 0; day <= 12; day++) {
-      const r = healthyDay(pet, day, { newCount: 5, reviewCount: 1 }); // N tendency
+      const r = healthyDay(pet, day, { newCount: 5, reviewCount: 3 }); // N tendency (5≥3), earns 1 掃除P/day
       pet = r.pet;
       events.push(...r.events);
     }
@@ -337,11 +484,12 @@ describe("tick: early 旅立ち on 3-day abandonment (design §2)", () => {
     expect(r.pet.stage).toBe("egg");
   });
 
-  // LINGO-032 QA: the abandon window's exact boundary, measured from a real
-  // lastStudyDate (not the bornAt fallback the case above exercises). A learner
-  // who studied on day 0 and then stops must survive 2 idle calendar days and
-  // depart on the 3rd — off-by-one here would either kill pets a day early or
-  // let them linger forever.
+  // LINGO-032 QA (carried forward unchanged — pure abandonment timing, no poop
+  // involved): the abandon window's exact boundary, measured from a real
+  // lastStudyDate (not the bornAt fallback the case above exercises). A
+  // learner who studied on day 0 and then stops must survive 2 idle calendar
+  // days and depart on the 3rd — off-by-one here would either kill pets a day
+  // early or let them linger forever.
   it("survives exactly 2 idle days but departs on the 3rd (measured from lastStudyDate)", () => {
     const studied = applySession(newPet(1, T0), { newCount: 1, reviewCount: 0 }, at(0)).pet;
     expect(studied.lastStudyDate).toBe(localDateStr(at(0)));
@@ -356,10 +504,10 @@ describe("tick: early 旅立ち on 3-day abandonment (design §2)", () => {
     expect(day3.pet.generation).toBe(2);
   });
 
-  // LINGO-032 QA: step ordering — abandonment is checked BEFORE the natural
-  // day-12 departure. A pet that both hit day 12 AND went 3 days unstudied must
-  // read as an 'early' 旅立ち (the honest signal = "you stopped studying"), not
-  // a 'natural' graduation it didn't earn.
+  // LINGO-032 QA (carried forward unchanged): step ordering — abandonment is
+  // checked BEFORE the natural day-12 departure. A pet that both hit day 12
+  // AND went 3 days unstudied must read as an 'early' 旅立ち (the honest
+  // signal = "you stopped studying"), not a 'natural' graduation it didn't earn.
   it("abandonment takes priority over the natural day-12 depart", () => {
     const pet = { ...newPet(1, T0), lastStudyDate: localDateStr(at(8)) }; // 4 idle days by day 12
     const r = tick(pet, { now: at(12), overdueCount: 5 });
@@ -367,39 +515,18 @@ describe("tick: early 旅立ち on 3-day abandonment (design §2)", () => {
   });
 });
 
-// LINGO-032 QA: the "honest gamification" invariant across the band↔pet seam.
-// うんこ is a pure projection of the injected overdue-review count (which the
-// state layer computes over the CURRENT unlockedBand, growing after a band
-// promotion). Cleaning buys a care-score grace window but must NOT fake the
-// poop away — only actually doing the overdue reviews (a smaller injected
-// count) may clear it. And however large the post-promotion overdue queue
-// grows, the display caps at MAX_POOP.
-describe("poop honesty: cleaning never fakes it away; only doing reviews clears it", () => {
-  it("掃除する leaves the visible poop untouched for the same overdue count", () => {
-    const dirty = { ...newPet(1, T0), cleanPoints: 3 };
-    const overdue = 4;
-    const cleaned = applyClean(dirty, overdue, T0);
-    expect(cleaned.cleanPoints).toBe(2); // a point was spent (care-score grace)
-    // …but the honest poop mapping is unchanged: it reflects the real queue.
-    expect(petSnapshot(cleaned, T0, overdue).poop).toBe(petSnapshot(dirty, T0, overdue).poop);
-    expect(petSnapshot(cleaned, T0, overdue).poop).toBe(4);
-  });
-  it("poop drops only when the overdue queue actually shrinks (reviews done)", () => {
-    const pet = newPet(1, T0);
-    expect(petSnapshot(pet, T0, 4).poop).toBe(4);
-    expect(petSnapshot(pet, T0, 1).poop).toBe(1); // 3 reviews cleared → 1 left
-    expect(petSnapshot(pet, T0, 0).poop).toBe(0);
-  });
-  it("a large post-band-promotion overdue queue still caps at MAX_POOP", () => {
-    // After unlockedBand expands, overdueReviewCount can jump well past 5.
-    const pet = newPet(1, T0);
-    expect(petSnapshot(pet, T0, 12).poop).toBe(MAX_POOP);
-  });
-});
+// LINGO-032 had a "poop honesty" suite here asserting 掃除する left the
+// visible poop untouched for a given overdueCount ("cleaning never fakes it
+// away — only doing the overdue reviews clears it"). That was a precise
+// description of the bug Katsuta reported 2026-09-05: spending 掃除P against a
+// count *derived live from overdueCount* meant the button visibly did
+// nothing. The v2 stock model inverts this on purpose — 掃除する now deletes
+// real stock immediately (see "applyClean: instant 1-for-1 poop deletion"
+// above) — so that suite is superseded, not carried forward.
 
 describe("tick: 怠 at 完全体 (design §3 hidden/stall split at 究極体)", () => {
   // Build a pet sitting at 完全体 (berserk) at age ~9, whose 完全体 days were all
-  // 怠 (low fed/clean). Whether it reaches 魔王系 or 旅立ちs depends only on
+  // 怠 (low cleanRatio). Whether it reaches 魔王系 or 旅立ちs depends only on
   // whether the learner studied every 完全体 day ("維持した").
   function neglectedPerfect(studiedDays: string[]): PetState {
     const perfectDates = [localDateStr(at(6)), localDateStr(at(7)), localDateStr(at(8))];
@@ -434,6 +561,42 @@ describe("tick: 怠 at 完全体 (design §3 hidden/stall split at 究極体)", 
   });
 });
 
+// --- migration (v2, 2026-09-05 poop-stock overhaul) -----------------------
+
+describe("migrateLegacyPet: additive-only poopCount/poopAccruedAt backfill", () => {
+  it("seeds poopCount from the current overdue count, clamped to MAX_POOP", () => {
+    const legacy = { ...newPet(1, T0) } as any;
+    delete legacy.poopCount;
+    delete legacy.poopAccruedAt;
+    const migrated = migrateLegacyPet(legacy, at(1), 3);
+    expect(migrated.poopCount).toBe(3);
+    expect(migrated.poopAccruedAt).toBe(at(1));
+  });
+  it("clamps an overdue seed above MAX_POOP", () => {
+    const legacy = { ...newPet(1, T0) } as any;
+    delete legacy.poopCount;
+    delete legacy.poopAccruedAt;
+    const migrated = migrateLegacyPet(legacy, at(1), 999);
+    expect(migrated.poopCount).toBe(MAX_POOP);
+  });
+  it("leaves every other field untouched (additive-only)", () => {
+    const legacy = { ...newPet(1, T0), foodCount: 7, cleanPoints: 2, studyStreak: 4 } as any;
+    delete legacy.poopCount;
+    delete legacy.poopAccruedAt;
+    const migrated = migrateLegacyPet(legacy, at(1), 0);
+    expect(migrated.foodCount).toBe(7);
+    expect(migrated.cleanPoints).toBe(2);
+    expect(migrated.studyStreak).toBe(4);
+  });
+  it("is idempotent — an already-migrated pet passes through unchanged", () => {
+    const pet = { ...newPet(1, T0), poopCount: 2, poopAccruedAt: T0 };
+    const result = migrateLegacyPet(pet, at(5), 4); // different now/overdue: must be ignored
+    expect(result).toBe(pet); // same reference — no-op
+    expect(result.poopCount).toBe(2);
+    expect(result.poopAccruedAt).toBe(T0);
+  });
+});
+
 // --- 図鑑 (collection) ----------------------------------------------------
 
 describe("recordDiscovery: 図鑑 keeps the first sighting", () => {
@@ -459,13 +622,20 @@ describe("recordDiscovery: 図鑑 keeps the first sighting", () => {
 
 describe("petSnapshot: pure UI read-model", () => {
   it("exposes derived display values without mutating", () => {
-    const pet = { ...newPet(3, T0), foodCount: 4, cleanPoints: 2 };
-    const snap = petSnapshot(pet, T0 + DAY_MS / 2, 3);
+    const pet = { ...newPet(3, T0), foodCount: 4, cleanPoints: 2, poopCount: 3 };
+    const snap = petSnapshot(pet, T0 + DAY_MS / 2);
     expect(snap.generation).toBe(3);
     expect(snap.satiety).toBeCloseTo(50, 9);
     expect(snap.poop).toBe(3);
     expect(snap.ageDays).toBeCloseTo(0.5, 9);
     expect(snap.foodCount).toBe(4);
+  });
+  it("poop reflects the stored stock, not a live overdue recompute (v2 semantics)", () => {
+    // Even though petSnapshot no longer takes overdueCount, the value shown
+    // is whatever the stock was as of the last tick() catch-up — proving the
+    // snapshot can't silently "self-heal" poop from live overdue data.
+    const pet = { ...newPet(1, T0), poopCount: 4 };
+    expect(petSnapshot(pet, T0 + 999 * DAY_MS).poop).toBe(4);
   });
 });
 

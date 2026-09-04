@@ -88,6 +88,12 @@ export function PetView() {
 
   async function handleClean() {
     if (!snapshot) return;
+    // Reuse the feed bounce for a quick "that did something" beat — うんこ
+    // count itself drops instantly in the returned snapshot now (design §1 v2,
+    // 2026-09-05: 掃除する deletes real stock immediately, not a derived
+    // overdue-linked count that never visibly moved).
+    setBounce(true);
+    window.setTimeout(() => setBounce(false), 420);
     const next = await cleanPet(overdue);
     setSnapshot(next);
   }

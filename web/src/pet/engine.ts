@@ -15,10 +15,20 @@
 //   餌 (food)        = earned per graded card: new card +2, review +1.
 //   掃除P (cleanPts) = earned per 3 reviews (+1). Spent by 掃除する (applyClean).
 //   満腹度 (hunger)  = fullness 0..100, decays 100→0 linearly over 24h.
-//   うんこ (poop)    = clamp(overdue review cards, 0..5). Derived, honest:
-//                      it drops only when you actually do your reviews.
+//   うんこ (poop)    = a real 0..5 STOCK on PetState (poopCount), not a live
+//                      function of overdue reviews. It spawns over time — the
+//                      interval between spawns shrinks continuously as the
+//                      overdue-review queue grows — and 掃除する deletes
+//                      exactly one from the stock immediately. (v2, 2026-09-05
+//                      UXフィードバック: the original "poop = clamp(overdue)"
+//                      derivation meant 掃除する never visibly did anything,
+//                      since spending 掃除P didn't change `overdue`. See
+//                      poopIntervalMs/advancePoop below — ai-org/Ideas/
+//                      20260903-lingogate-pet-design.md §1 updated to match.)
 //   ケアスコア        = daily fedRatio × cleanRatio × studiedFlag, averaged over
-//                      a stage; picks the evolution branch (§3).
+//                      a stage; picks the evolution branch (§3). cleanRatio is
+//                      now "fraction of the day NOT spent with poopCount > 0"
+//                      (time-weighted), not a per-visit sample average.
 
 // MARK: species & stages
 
@@ -60,11 +70,41 @@ export const DAY_MS = 24 * 60 * 60 * 1000;
 export const HUNGER_DECAY_MS = DAY_MS;
 /** One 餌 restores this much 満腹度 (≈3 feeds fill an empty belly). */
 export const FEED_RESTORE = 34;
-/** Poop tops out at this many icons (design §1: "上限5個表示"). */
+/** Poop stock tops out at this many (design §1: "上限5個表示"). */
 export const MAX_POOP = 5;
-/** A 掃除する action keeps the pet "clean" for care-scoring for this long,
- * even while real overdue reviews remain — it rewards the tidying visit. */
-export const CLEAN_GRACE_MS = 6 * 60 * 60 * 1000;
+
+// うんこ発生間隔 (design §1 v2, 2026-09-05 UXフィードバック反映): 期限切れ復習数
+// が多いほど頻繁に1個発生する。連続関数でよい、と指定されたので指数減衰を採用し、
+// 勝田の例示3点にフィットさせた: overdue 0件→24hに1個 / 10件→8hに1個 /
+// 30件以上→約4hに1個（漸近下限、明示クランプ不要なほど収束が速い）。
+//   interval(overdue) = MIN + (MAX-MIN) * exp(-overdue / TAU)
+// TAU は overdue=10→8h の点から逆算する（POOP_INTERVAL_TAU の式を参照）。
+/** overdue=0 のときの発生間隔（24h に1個）。 */
+export const POOP_INTERVAL_MAX_MS = 24 * 60 * 60 * 1000;
+/** overdue→∞ で漸近する発生間隔の下限（4h に1個）。 */
+export const POOP_INTERVAL_MIN_MS = 4 * 60 * 60 * 1000;
+const POOP_INTERVAL_ANCHOR_OVERDUE = 10;
+const POOP_INTERVAL_ANCHOR_MS = 8 * 60 * 60 * 1000; // overdue=10 → 8h の実例点
+const POOP_INTERVAL_TAU =
+  -POOP_INTERVAL_ANCHOR_OVERDUE /
+  Math.log(
+    (POOP_INTERVAL_ANCHOR_MS - POOP_INTERVAL_MIN_MS) /
+      (POOP_INTERVAL_MAX_MS - POOP_INTERVAL_MIN_MS),
+  );
+
+/** ms between poop spawns at a given overdue-review count — continuous,
+ * monotonically decreasing, asymptotic to POOP_INTERVAL_MIN_MS. Pure function
+ * of the CURRENT overdue count; advancePoop() treats it as roughly constant
+ * across the elapsed span since the last accrual checkpoint (accurate enough
+ * given the app is opened far more often than the interval floor of 4h). */
+export function poopIntervalMs(overdueCount: number): number {
+  const o = Math.max(0, overdueCount);
+  return (
+    POOP_INTERVAL_MIN_MS +
+    (POOP_INTERVAL_MAX_MS - POOP_INTERVAL_MIN_MS) * Math.exp(-o / POOP_INTERVAL_TAU)
+  );
+}
+
 /** 餌 per graded card (design §1). */
 export const FOOD_PER_NEW = 2;
 export const FOOD_PER_REVIEW = 1;
@@ -95,9 +135,12 @@ export interface PetSettings {
 }
 
 /** One calendar day of care history. dailyCareScore = fedRatio × cleanRatio ×
- * studiedFlag (design §1). fed/clean ratios are the MEAN of the samples `tick`
- * takes while the day is on screen (so tending the pet when you visit raises
- * them); `studied` is set by a committed learning session that day. */
+ * studiedFlag (design §1). `studied` is set by a committed learning session
+ * that day. fedRatio is still the MEAN of per-visit satiety samples (tick()
+ * samples once per screen view); cleanRatio (v2, 2026-09-05) is now TIME-
+ * WEIGHTED — trackedMs/dirtyMs accumulate real elapsed ms as advancePoop()
+ * catches the poop stock up, so "放置していた時間割合" is measured directly
+ * instead of sampled per visit. */
 export interface CareDay {
   date: string; // local YYYY-MM-DD
   stage: PetStage; // stage the pet was in when this day was first recorded
@@ -106,8 +149,10 @@ export interface CareDay {
   reviewCount: number; // review cards graded that day
   fedSum: number; // Σ satiety-fraction samples (0..1)
   fedN: number;
-  cleanSum: number; // Σ cleanliness samples (0..1)
-  cleanN: number;
+  /** ms of this day covered by an accrual pass (tick() catch-up spans). */
+  trackedMs: number;
+  /** Of trackedMs, how many ms had poopCount > 0 (the pet was "dirty"). */
+  dirtyMs: number;
 }
 
 export interface PetState {
@@ -121,7 +166,13 @@ export interface PetState {
   lastFedAt: number;
   foodCount: number; // 所持餌
   cleanPoints: number; // 所持掃除P
-  lastCleanedAt: number | null; // for the CLEAN_GRACE_MS care window
+  /** うんこ在庫 (v2, 2026-09-05): 0..MAX_POOP. A real stock — spawns via
+   * advancePoop()'s time-based accrual, deleted 1-for-1 by applyClean(). */
+  poopCount: number;
+  /** Accrual checkpoint: advancePoop() has fully accounted for real elapsed
+   * time up to this timestamp (both stock growth and dirty-time bookkeeping
+   * in careLog). Only tick() ever advances it. */
+  poopAccruedAt: number;
   careLog: CareDay[];
   /** Global consecutive study-day streak; carried across generations so the
    * 天使系 7-day bonus reflects the LEARNER, not one pet. */
@@ -188,19 +239,98 @@ export function satietyAt(pet: PetState, now: number): number {
   return Math.max(0, Math.min(100, v));
 }
 
-/** うんこ count from the overdue-review queue (design §1: clamp 0..5). */
-export function poopCount(overdueCount: number): number {
-  if (!Number.isFinite(overdueCount) || overdueCount <= 0) return 0;
-  return Math.min(MAX_POOP, Math.floor(overdueCount));
+// MARK: poop accrual (design §1 v2, 2026-09-05 — stock model)
+
+function nextLocalMidnight(ts: number): number {
+  const d = new Date(ts);
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1, 0, 0, 0, 0).getTime();
 }
 
-/** Cleanliness fraction 0..1 used for care scoring: a recent 掃除する counts as
- * fully clean for CLEAN_GRACE_MS; otherwise it reflects the live poop level. */
-function cleanlinessAt(pet: PetState, now: number, overdueCount: number): number {
-  if (pet.lastCleanedAt != null && now - pet.lastCleanedAt >= 0 && now - pet.lastCleanedAt <= CLEAN_GRACE_MS) {
-    return 1;
+/** Split [startMs, endMs) into per-local-calendar-date ms buckets — used to
+ * attribute a (possibly multi-day, offline-catch-up) accrual span to the
+ * right CareDay rows. Loop-guarded so a very long absence still terminates
+ * quickly (the pet would have long since departed by then anyway). */
+function splitByLocalDate(startMs: number, endMs: number): Map<string, number> {
+  const out = new Map<string, number>();
+  if (endMs <= startMs) return out;
+  let cursor = startMs;
+  let guard = 0;
+  while (cursor < endMs && guard < 2000) {
+    guard++;
+    const boundary = Math.min(endMs, nextLocalMidnight(cursor));
+    const date = localDateStr(cursor);
+    out.set(date, (out.get(date) ?? 0) + (boundary - cursor));
+    cursor = boundary;
   }
-  return 1 - poopCount(overdueCount) / MAX_POOP;
+  return out;
+}
+
+interface PoopAdvance {
+  poopCount: number;
+  poopAccruedAt: number;
+  trackedByDate: Map<string, number>;
+  dirtyByDate: Map<string, number>;
+}
+
+/** Catch the poop stock up to `now`: how many new poops spawned since
+ * `pet.poopAccruedAt` (at the CURRENT overdueCount's rate — see
+ * poopIntervalMs), and how much of that elapsed span was "dirty" (stock > 0)
+ * for the time-weighted cleanliness score. While the stock is at MAX_POOP no
+ * further credit is banked — the accrual checkpoint resets to `now` instead —
+ * so cleaning down from a full stock doesn't cause an unearned instant
+ * refill from backlog. */
+function advancePoop(pet: PetState, now: number, overdueCount: number): PoopAdvance {
+  const from = Math.min(pet.poopAccruedAt, now); // guard a clock that moved backward
+  const trackedByDate = splitByLocalDate(from, now);
+  const elapsed = now - from;
+  if (elapsed <= 0) {
+    return { poopCount: pet.poopCount, poopAccruedAt: pet.poopAccruedAt, trackedByDate, dirtyByDate: new Map() };
+  }
+
+  const interval = poopIntervalMs(overdueCount);
+  const oldPoop = pet.poopCount;
+  let newPoops = 0;
+  let dirtyFrom: number | null = null; // instant within [from, now) the span turned dirty
+
+  if (oldPoop > 0) {
+    dirtyFrom = from; // already dirty for the whole span
+    if (oldPoop < MAX_POOP) newPoops = Math.floor(elapsed / interval);
+  } else {
+    newPoops = Math.floor(elapsed / interval);
+    if (newPoops > 0) dirtyFrom = from + interval; // first spawn instant
+  }
+
+  const poopCount = Math.min(MAX_POOP, oldPoop + newPoops);
+  const poopAccruedAt = poopCount >= MAX_POOP ? now : from + newPoops * interval;
+  const dirtyByDate = dirtyFrom == null ? new Map<string, number>() : splitByLocalDate(dirtyFrom, now);
+
+  return { poopCount, poopAccruedAt, trackedByDate, dirtyByDate };
+}
+
+/** Merge a (possibly multi-day) tracked/dirty span into careLog — creating any
+ * missing day rows (tagged with the CURRENT stage, same simplification the
+ * fed sampling already makes: no per-historical-day stage tracking). */
+function mergeCareMs(
+  careLog: CareDay[],
+  stage: PetStage,
+  tracked: Map<string, number>,
+  dirty: Map<string, number>,
+): CareDay[] {
+  if (tracked.size === 0) return careLog;
+  const log = careLog.slice();
+  for (const [date, ms] of tracked) {
+    let i = log.findIndex((d) => d.date === date);
+    if (i < 0) {
+      log.push({ date, stage, studied: false, newCount: 0, reviewCount: 0, fedSum: 0, fedN: 0, trackedMs: 0, dirtyMs: 0 });
+      i = log.length - 1;
+    }
+    log[i] = {
+      ...log[i],
+      trackedMs: log[i].trackedMs + ms,
+      dirtyMs: log[i].dirtyMs + (dirty.get(date) ?? 0),
+    };
+  }
+  return log;
 }
 
 /** 餌/掃除P earned from a committed session. PURE — the state layer adds these
@@ -219,7 +349,14 @@ export function onSessionCommitted(input: { newCount: number; reviewCount: numbe
 
 export function dailyCareScore(day: CareDay): number {
   const fedRatio = day.fedN > 0 ? day.fedSum / day.fedN : 0;
-  const cleanRatio = day.cleanN > 0 ? day.cleanSum / day.cleanN : 0;
+  // v2 (2026-09-05): cleanRatio = fraction of the day's TRACKED time that was
+  // NOT dirty (poopCount > 0) — "放置していた時間割合" per the UX fix, not a
+  // per-visit sample average. Days with no tracked ms (defensive: covers
+  // pre-v2 persisted rows missing these fields too) score as neglected (0),
+  // same treatment expectedStageDays already gives to unopened days.
+  const trackedMs = day.trackedMs ?? 0;
+  const dirtyMs = day.dirtyMs ?? 0;
+  const cleanRatio = trackedMs > 0 ? Math.max(0, 1 - dirtyMs / trackedMs) : 0;
   return fedRatio * cleanRatio * (day.studied ? 1 : 0);
 }
 
@@ -355,11 +492,46 @@ export function newPet(
     lastFedAt: now,
     foodCount: 0,
     cleanPoints: 0,
-    lastCleanedAt: null,
+    poopCount: 0,
+    poopAccruedAt: now,
     careLog: [],
     studyStreak: carry?.studyStreak ?? 0,
     lastStudyDate: carry?.lastStudyDate ?? null,
     settings: carry?.settings ?? { hardMode: false },
+  };
+}
+
+// MARK: migration (v2, 2026-09-05 poop-stock overhaul)
+
+/** A pet persisted before poopCount/poopAccruedAt existed — every other field
+ * is guaranteed present (it round-tripped through IndexedDB as a real
+ * PetState at the time), only these two are possibly missing. */
+export type LegacyPetState = Omit<PetState, "poopCount" | "poopAccruedAt"> & {
+  poopCount?: number;
+  poopAccruedAt?: number;
+};
+
+/** Backfill poopCount/poopAccruedAt on a pet persisted before this field
+ * existed. Additive-only — every other field passes through untouched.
+ * Idempotent: an already-migrated pet passes straight through unchanged.
+ * `overdueCountForMigration` seeds the initial stock from whatever overdue
+ * count the caller currently has, clamped 0..MAX_POOP (the coordinator's
+ * migration spec: "現在のoverdueから算出した値をクランプ") — the same clamp
+ * the old (removed) derived poopCount(overdueCount) used to apply. Pulled out
+ * as a pure function (no IndexedDB) so it's unit-testable — mirrors db/idb.ts's
+ * ensureStores() extraction for the same reason. */
+export function migrateLegacyPet(
+  existing: LegacyPetState,
+  now: number,
+  overdueCountForMigration: number,
+): PetState {
+  if (typeof existing.poopCount === "number" && typeof existing.poopAccruedAt === "number") {
+    return existing as PetState;
+  }
+  return {
+    ...existing,
+    poopCount: Math.min(MAX_POOP, Math.max(0, Math.floor(overdueCountForMigration))),
+    poopAccruedAt: now,
   };
 }
 
@@ -369,7 +541,7 @@ function ensureToday(careLog: CareDay[], now: number, stage: PetStage): { log: C
   const i = careLog.findIndex((d) => d.date === date);
   if (i >= 0) return { log: careLog.slice(), i };
   const log = careLog.slice();
-  log.push({ date, stage, studied: false, newCount: 0, reviewCount: 0, fedSum: 0, fedN: 0, cleanSum: 0, cleanN: 0 });
+  log.push({ date, stage, studied: false, newCount: 0, reviewCount: 0, fedSum: 0, fedN: 0, trackedMs: 0, dirtyMs: 0 });
   return { log, i: log.length - 1 };
 }
 
@@ -382,13 +554,15 @@ export function applyFeed(pet: PetState, now: number): PetState {
   return { ...pet, hunger: restored, lastFedAt: now, foodCount: pet.foodCount - 1 };
 }
 
-/** 掃除する: consume one 掃除P and start a clean-grace window. No-op with no
- * clean points or nothing to clean (design §1). Note: does NOT lower overdue —
- * poop truly clears only by doing the reviews. */
-export function applyClean(pet: PetState, overdueCount: number, now: number): PetState {
-  if (pet.cleanPoints <= 0) return pet;
-  if (poopCount(overdueCount) <= 0) return pet;
-  return { ...pet, cleanPoints: pet.cleanPoints - 1, lastCleanedAt: now };
+/** 掃除する: 掃除P 1個 = うんこ在庫1個を確実に削除（design §1 v2, 2026-09-05）。
+ * No-op with no clean points or nothing to clean. Does NOT touch
+ * poopAccruedAt — the accrual clock is exclusively tick()'s concern; a clean
+ * happening mid-visit is a negligible fraction of the (≥4h floor) spawn
+ * interval, so the next tick's catch-up still lands within a few minutes of
+ * correct. */
+export function applyClean(pet: PetState): PetState {
+  if (pet.cleanPoints <= 0 || pet.poopCount <= 0) return pet;
+  return { ...pet, cleanPoints: pet.cleanPoints - 1, poopCount: pet.poopCount - 1 };
 }
 
 /** Apply a committed learning session: add earnings, mark today studied, log
@@ -461,25 +635,36 @@ export function tick(pet: PetState, ctx: { now: number; overdueCount: number }):
     }
   }
 
-  // 2. Sample today's care into the care log.
+  // 2. Catch the poop stock up to `now` (design §1 v2) — spawns since the last
+  // accrual checkpoint at the current overdueCount's rate, plus the
+  // time-weighted dirty/tracked ms this contributes to the care log.
+  {
+    const adv = advancePoop(p, now, overdueCount);
+    p = {
+      ...p,
+      poopCount: adv.poopCount,
+      poopAccruedAt: adv.poopAccruedAt,
+      careLog: mergeCareMs(p.careLog, p.stage, adv.trackedByDate, adv.dirtyByDate),
+    };
+  }
+
+  // 3. Sample today's satiety into the care log (once per visit — unchanged).
   {
     const { log, i } = ensureToday(p.careLog, now, p.stage);
     log[i] = {
       ...log[i],
       fedSum: log[i].fedSum + satietyAt(p, now) / 100,
       fedN: log[i].fedN + 1,
-      cleanSum: log[i].cleanSum + cleanlinessAt(p, now, overdueCount),
-      cleanN: log[i].cleanN + 1,
     };
     p = { ...p, careLog: log };
   }
 
-  // 3. Early 旅立ち — 3+ consecutive calendar days without study (design §2).
+  // 4. Early 旅立ち — 3+ consecutive calendar days without study (design §2).
   if (daysSinceStudy(p, now) >= ABANDON_DAYS) {
     return depart(p, now, "early", events);
   }
 
-  // 4. Evolutions: step through every stage boundary the age has crossed.
+  // 5. Evolutions: step through every stage boundary the age has crossed.
   const target = stageForAgeDays(ageDays(p, now));
   const targetIndex = target === "depart" ? STAGE_ORDER.length : STAGE_ORDER.indexOf(target);
   while (STAGE_ORDER.indexOf(p.stage) < targetIndex && STAGE_ORDER.indexOf(p.stage) < STAGE_ORDER.length - 1) {
@@ -500,7 +685,7 @@ export function tick(pet: PetState, ctx: { now: number; overdueCount: number }):
     events.push({ type: "evolve", speciesId: species, stage: toStage, generation: p.generation, at: now });
   }
 
-  // 5. Natural 旅立ち at day 12 (design §2).
+  // 6. Natural 旅立ち at day 12 (design §2).
   if (target === "depart") {
     return depart(p, now, "natural", events);
   }
@@ -564,15 +749,21 @@ export interface PetSnapshot {
   studyStreak: number;
 }
 
-/** Pure read-model for the UI — no state change (call tick() to progress). */
-export function petSnapshot(pet: PetState, now: number, overdueCount: number): PetSnapshot {
+/** Pure read-model for the UI — no state change (call tick() to progress).
+ * `poop` is the real stock (pet.poopCount) as of the last accrual catch-up —
+ * it does NOT recompute live from a current overdueCount (v2, 2026-09-05):
+ * unlike 満腹度's continuous decay, poop is a discrete stock that only grows
+ * via tick()'s time-based accrual, so a caller that only peeks (e.g. Home's
+ * mini status, state/pet.ts peekPet) sees the last-ticked value, not a
+ * recomputed one — exactly the "たまごっち正攻法" stock semantics. */
+export function petSnapshot(pet: PetState, now: number): PetSnapshot {
   return {
     stage: pet.stage,
     speciesId: pet.speciesId,
     generation: pet.generation,
     ageDays: ageDays(pet, now),
     satiety: satietyAt(pet, now),
-    poop: poopCount(overdueCount),
+    poop: pet.poopCount,
     foodCount: pet.foodCount,
     cleanPoints: pet.cleanPoints,
     studyStreak: pet.studyStreak,
