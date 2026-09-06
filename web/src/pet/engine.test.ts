@@ -3,12 +3,15 @@ import {
   DAY_MS,
   FEED_RESTORE,
   MAX_POOP,
+  MAX_FOOD,
+  MAX_CLEAN_POINTS,
   POOP_INTERVAL_MAX_MS,
   POOP_INTERVAL_MIN_MS,
   SPECIES_IDS,
   poopIntervalMs,
   newPet,
   migrateLegacyPet,
+  clampEconomy,
   satietyAt,
   onSessionCommitted,
   applyFeed,
@@ -126,15 +129,75 @@ describe("poopIntervalMs: spawn rate vs overdue count (design §1 v2, 2026-09-05
   });
 });
 
+const EMPTY_POCKET = { foodCount: 0, cleanPoints: 0 };
+
 describe("onSessionCommitted: 餌/掃除P earnings (design §1)", () => {
+  // Kept comfortably under MAX_FOOD=6/MAX_CLEAN_POINTS=3 (LINGO-034) so these
+  // exercise the raw per-card formula, not the pocket cap — the cap has its
+  // own describe block below.
   it("new card = +2 餌, review = +1 餌", () => {
-    expect(onSessionCommitted({ newCount: 3, reviewCount: 0 }).food).toBe(6);
-    expect(onSessionCommitted({ newCount: 0, reviewCount: 4 }).food).toBe(4);
-    expect(onSessionCommitted({ newCount: 3, reviewCount: 4 }).food).toBe(10);
+    expect(onSessionCommitted({ newCount: 2, reviewCount: 0 }, EMPTY_POCKET).food).toBe(4);
+    expect(onSessionCommitted({ newCount: 0, reviewCount: 4 }, EMPTY_POCKET).food).toBe(4);
+    expect(onSessionCommitted({ newCount: 1, reviewCount: 2 }, EMPTY_POCKET).food).toBe(4);
   });
   it("3 reviews = +1 掃除P (floored)", () => {
-    expect(onSessionCommitted({ newCount: 0, reviewCount: 7 }).cleanPoints).toBe(2);
-    expect(onSessionCommitted({ newCount: 0, reviewCount: 2 }).cleanPoints).toBe(0);
+    expect(onSessionCommitted({ newCount: 0, reviewCount: 3 }, { foodCount: 0, cleanPoints: 0 }).cleanPoints).toBe(1);
+    expect(onSessionCommitted({ newCount: 0, reviewCount: 2 }, EMPTY_POCKET).cleanPoints).toBe(0);
+  });
+  it("an empty pocket with room to spare is never reported as capped", () => {
+    const e = onSessionCommitted({ newCount: 1, reviewCount: 2 }, EMPTY_POCKET);
+    expect(e.foodCapped).toBe(false);
+    expect(e.cleanCapped).toBe(false);
+  });
+});
+
+// LINGO-034 (2026-09-07, 勝田指摘): uncapped 餌/掃除P let a learner bank enough
+// to coast the pet without studying — the pull mechanic's whole point dies.
+// MAX_FOOD=6 / MAX_CLEAN_POINTS=3 (design: 餌≒2日分の備蓄, 掃除P≒うんこ半分強を
+// 即処理できる程度) clamp earnings AT THE SOURCE, and report whether anything
+// was discarded so the UI can show a non-judgmental "pocket was full" note.
+describe("onSessionCommitted: pocket caps (LINGO-034, 2026-09-07)", () => {
+  it("clamps 餌 to the room left in the pocket, not the full MAX_FOOD", () => {
+    // 4 already held, cap 6 → only 2 more fit, even though the raw earn is 6.
+    const e = onSessionCommitted({ newCount: 3, reviewCount: 0 }, { foodCount: 4, cleanPoints: 0 });
+    expect(e.food).toBe(2);
+    expect(e.foodCapped).toBe(true);
+  });
+  it("clamps 掃除P to the room left in the pocket, not the full MAX_CLEAN_POINTS", () => {
+    // 2 already held, cap 3 → only 1 more fits, even though the raw earn is 2.
+    const e = onSessionCommitted({ newCount: 0, reviewCount: 6 }, { foodCount: 0, cleanPoints: 2 });
+    expect(e.cleanPoints).toBe(1);
+    expect(e.cleanCapped).toBe(true);
+  });
+  it("a pocket already exactly at MAX earns nothing further, and reports capped iff the raw earn was > 0", () => {
+    const full = { foodCount: MAX_FOOD, cleanPoints: MAX_CLEAN_POINTS };
+    const withEarnings = onSessionCommitted({ newCount: 1, reviewCount: 3 }, full);
+    expect(withEarnings.food).toBe(0);
+    expect(withEarnings.cleanPoints).toBe(0);
+    expect(withEarnings.foodCapped).toBe(true);
+    expect(withEarnings.cleanCapped).toBe(true);
+    // A session that earns nothing at all (e.g. 0 new, <3 reviews) shouldn't
+    // claim the pocket capped anything — nothing was actually discarded.
+    const zeroEarn = onSessionCommitted({ newCount: 0, reviewCount: 0 }, full);
+    expect(zeroEarn.foodCapped).toBe(false);
+    expect(zeroEarn.cleanCapped).toBe(false);
+  });
+  it("boundary: earning exactly the remaining room is NOT reported as capped", () => {
+    // 5 held, cap 6 → exactly 1 room; earning exactly 1 (new=0,review=1) fits fully.
+    const e = onSessionCommitted({ newCount: 0, reviewCount: 1 }, { foodCount: 5, cleanPoints: 0 });
+    expect(e.food).toBe(1);
+    expect(e.foodCapped).toBe(false);
+  });
+  it("boundary: earning one more than the remaining room IS reported as capped", () => {
+    // 5 held, cap 6 → 1 room; earning 2 (new=1,review=0) only 1 fits.
+    const e = onSessionCommitted({ newCount: 1, reviewCount: 0 }, { foodCount: 5, cleanPoints: 0 });
+    expect(e.food).toBe(1);
+    expect(e.foodCapped).toBe(true);
+  });
+  it("a pocket somehow already over the cap (pre-migration data) earns nothing and clamps to no negative room", () => {
+    const e = onSessionCommitted({ newCount: 3, reviewCount: 3 }, { foodCount: 999, cleanPoints: 999 });
+    expect(e.food).toBe(0);
+    expect(e.cleanPoints).toBe(0);
   });
 });
 
@@ -190,16 +253,29 @@ describe("applyClean: instant 1-for-1 poop deletion (design §1 v2, 2026-09-05)"
 });
 
 describe("applySession: earnings + study log + streak", () => {
-  it("adds earnings and marks today studied with N/R counts", () => {
+  it("adds earnings (clamped to the pocket cap, LINGO-034) and marks today studied with N/R counts", () => {
+    // Raw earn would be food=16 (5*2+6*1), cleanPoints=2 (floor(6/3)) — food
+    // clamps to the MAX_FOOD=6 pocket cap from a fresh (empty) pet; the
+    // cleanPoints raw earn of 2 fits under MAX_CLEAN_POINTS=3 untouched.
     const { pet, earned } = applySession(newPet(1, T0), { newCount: 5, reviewCount: 6 }, T0);
-    expect(earned).toEqual({ food: 16, cleanPoints: 2 });
-    expect(pet.foodCount).toBe(16);
+    expect(earned).toEqual({ food: MAX_FOOD, cleanPoints: 2, foodCapped: true, cleanCapped: false });
+    expect(pet.foodCount).toBe(MAX_FOOD);
     expect(pet.cleanPoints).toBe(2);
     const today = pet.careLog[0];
     expect(today.studied).toBe(true);
     expect(today.newCount).toBe(5);
     expect(today.reviewCount).toBe(6);
     expect(pet.studyStreak).toBe(1);
+  });
+  it("never lets foodCount/cleanPoints exceed the caps across repeated sessions", () => {
+    let p = newPet(1, T0);
+    for (let i = 0; i < 5; i++) {
+      p = applySession(p, { newCount: 5, reviewCount: 6 }, at(i)).pet;
+      expect(p.foodCount).toBeLessThanOrEqual(MAX_FOOD);
+      expect(p.cleanPoints).toBeLessThanOrEqual(MAX_CLEAN_POINTS);
+    }
+    expect(p.foodCount).toBe(MAX_FOOD);
+    expect(p.cleanPoints).toBe(MAX_CLEAN_POINTS);
   });
   it("increments the streak on consecutive days, resets after a gap", () => {
     let p = applySession(newPet(1, T0), { newCount: 1, reviewCount: 0 }, at(0)).pet;
@@ -594,6 +670,37 @@ describe("migrateLegacyPet: additive-only poopCount/poopAccruedAt backfill", () 
     expect(result).toBe(pet); // same reference — no-op
     expect(result.poopCount).toBe(2);
     expect(result.poopAccruedAt).toBe(T0);
+  });
+});
+
+// --- economy caps (LINGO-034, 2026-09-07) ---------------------------------
+
+describe("clampEconomy: retroactive pocket-cap normalization", () => {
+  it("clamps foodCount/cleanPoints down to the caps when over", () => {
+    const pet = { ...newPet(1, T0), foodCount: 40, cleanPoints: 9 };
+    const clamped = clampEconomy(pet);
+    expect(clamped.foodCount).toBe(MAX_FOOD);
+    expect(clamped.cleanPoints).toBe(MAX_CLEAN_POINTS);
+  });
+  it("is a no-op (same reference) for a pet already within both caps", () => {
+    const pet = { ...newPet(1, T0), foodCount: 3, cleanPoints: 1 };
+    expect(clampEconomy(pet)).toBe(pet);
+  });
+  it("is a no-op at the exact boundary (== cap, not >)", () => {
+    const pet = { ...newPet(1, T0), foodCount: MAX_FOOD, cleanPoints: MAX_CLEAN_POINTS };
+    expect(clampEconomy(pet)).toBe(pet);
+  });
+  it("clamps only whichever of the two is over, leaving the other untouched", () => {
+    const pet = { ...newPet(1, T0), foodCount: 999, cleanPoints: 1 };
+    const clamped = clampEconomy(pet);
+    expect(clamped.foodCount).toBe(MAX_FOOD);
+    expect(clamped.cleanPoints).toBe(1);
+  });
+  it("touches nothing else on the pet", () => {
+    const pet = { ...newPet(1, T0), foodCount: 999, poopCount: 3, studyStreak: 5 };
+    const clamped = clampEconomy(pet);
+    expect(clamped.poopCount).toBe(3);
+    expect(clamped.studyStreak).toBe(5);
   });
 });
 

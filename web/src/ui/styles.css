@@ -1254,6 +1254,15 @@ button {
   font-size: 13px;
   color: var(--ink-dim);
 }
+/* LINGO-034: pocket-full note — its own row, softer tone (reassuring, not an
+   error) so it reads as a tip rather than a penalty for having studied. */
+.pet-earn-capped {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.85;
+}
 
 /* ---- Home mini pet status row (LINGO-031) ---- */
 .pet-mini-row {

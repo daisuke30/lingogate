@@ -19,6 +19,7 @@ import {
   petSnapshot,
   recordDiscoveriesFromEvents,
   migrateLegacyPet,
+  clampEconomy,
 } from "../pet/engine";
 import type {
   PetState,
@@ -57,7 +58,11 @@ export async function loadPet(
     await putPetState(pet);
     return pet;
   }
-  const migrated = migrateLegacyPet(existing, now, overdueCountForMigration);
+  // LINGO-034 (2026-09-07): also normalize any pre-cap stock down to
+  // MAX_FOOD/MAX_CLEAN_POINTS on every load — clampEconomy is idempotent
+  // (same reference back once within caps), so this composes with the
+  // poop-stock migration above into a single conditional write.
+  const migrated = clampEconomy(migrateLegacyPet(existing, now, overdueCountForMigration));
   if (migrated !== existing) await putPetState(migrated);
   return migrated;
 }

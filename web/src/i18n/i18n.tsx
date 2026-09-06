@@ -642,8 +642,10 @@ const M: Record<string, Entry> = {
   "pet.poop.none": { ja: "きれい", en: "All clean", ru: "Чисто" },
   "pet.action.feed": { ja: "餌をあげる", en: "Feed", ru: "Покормить" },
   "pet.action.clean": { ja: "掃除する", en: "Clean", ru: "Убрать" },
-  "pet.owned.food": { ja: "餌 ×{n}", en: "Food ×{n}", ru: "Еда ×{n}" },
-  "pet.owned.cleanPts": { ja: "掃除P ×{n}", en: "Clean pts ×{n}", ru: "Очки ×{n}" },
+  // LINGO-034 (2026-09-07): pocket caps — shown as "n/max" like poop.label,
+  // so the ceiling is always visible (not just the count).
+  "pet.owned.food": { ja: "餌 {n}/{max}", en: "Food {n}/{max}", ru: "Еда {n}/{max}" },
+  "pet.owned.cleanPts": { ja: "掃除P {n}/{max}", en: "Clean pts {n}/{max}", ru: "Очки {n}/{max}" },
   "pet.streak": { ja: "連続学習 {n}日", en: "{n}-day streak", ru: "Серия: {n} дн." },
   "pet.name.placeholder": { ja: "名前をつける", en: "Name your pet", ru: "Дать имя" },
   "pet.name.save": { ja: "決定", en: "Save", ru: "Готово" },
@@ -695,6 +697,15 @@ const M: Record<string, Entry> = {
     ru: "🍖 Еда +{food} · 🧹 Очков +{clean}",
   },
   "pet.earn.goTo": { ja: "育成タブへ", en: "Go to Raise", ru: "К питомцу" },
+  // LINGO-034 (2026-09-07): shown when the pocket cap discarded part of this
+  // session's earnings — reassuring tone, never framing the studying itself
+  // as wasted (the session still counted for everything else: streak, band
+  // progress, mastery).
+  "pet.earn.capped": {
+    ja: "ポケットが満杯だった分は持ち越せなかったよ。「あげる」「掃除する」で早めに使ってね",
+    en: "Your pockets were already full, so a bit of this didn't carry over — spend some soon!",
+    ru: "Карманы уже были полны, часть не поместилась — потратьте пораньше!",
+  },
 
   // -- Home mini pet status (LINGO-031) --------------------------------------
   "home.pet.mini": { ja: "ペット", en: "Pet", ru: "Питомец" },

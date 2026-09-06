@@ -196,7 +196,7 @@ async function persistGrades(runner: GateSessionRunner): Promise<void> {
   await putWordKnowledge(knowledgeUpdates, activeCourseId);
 }
 
-const NO_PET_EARNINGS: PetEarnings = { food: 0, cleanPoints: 0 };
+const NO_PET_EARNINGS: PetEarnings = { food: 0, cleanPoints: 0, foodCapped: false, cleanCapped: false };
 
 export interface SessionCommitResult {
   bandPromotion: BandProgress | null;

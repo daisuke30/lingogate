@@ -21,7 +21,7 @@ import {
   setPetSettings,
 } from "../state/pet";
 import { overdueReviewCount } from "../state/service";
-import { MAX_POOP } from "../pet/engine";
+import { MAX_POOP, MAX_FOOD, MAX_CLEAN_POINTS } from "../pet/engine";
 import type { PetSnapshot, PetEvent, PetStage } from "../pet/engine";
 import { PET_SPECIES_BY_ID } from "../pet/art";
 import { SPECIES_META } from "../pet/art/catalog";
@@ -215,7 +215,7 @@ export function PetView() {
         >
           <FoodSprite size={26} />
           <span>{t("pet.action.feed")}</span>
-          <span className="pet-owned">{t("pet.owned.food", { n: snapshot.foodCount })}</span>
+          <span className="pet-owned">{t("pet.owned.food", { n: snapshot.foodCount, max: MAX_FOOD })}</span>
         </button>
         <button
           type="button"
@@ -225,7 +225,7 @@ export function PetView() {
         >
           <PoopSprite size={26} />
           <span>{t("pet.action.clean")}</span>
-          <span className="pet-owned">{t("pet.owned.cleanPts", { n: snapshot.cleanPoints })}</span>
+          <span className="pet-owned">{t("pet.owned.cleanPts", { n: snapshot.cleanPoints, max: MAX_CLEAN_POINTS })}</span>
         </button>
       </div>
 

@@ -20,7 +20,7 @@ import { FlashcardCard } from "./FlashcardCard";
 // LINGO-031: 餌/掃除P earnings summary + small link to the 育成 tab.
 import type { PetEarnings } from "../pet/engine";
 
-const NO_PET_EARNINGS: PetEarnings = { food: 0, cleanPoints: 0 };
+const NO_PET_EARNINGS: PetEarnings = { food: 0, cleanPoints: 0, foodCapped: false, cleanCapped: false };
 
 const BATCH_SIZE = 10;
 
@@ -294,10 +294,16 @@ function BandPromotionBanner({ bandPromotion }: { bandPromotion: BandProgress | 
  * review-only cards can still earn 0 掃除P, or onGoToPet wasn't wired). */
 function PetEarnBanner({ earned, onGoToPet }: { earned: PetEarnings; onGoToPet?: () => void }) {
   const t = useT();
-  if (earned.food <= 0 && earned.cleanPoints <= 0) return null;
+  // LINGO-034 (2026-09-07): even a session that earned 0 of BOTH (pocket
+  // already full on both fronts) should still surface the "pocket was full"
+  // note rather than silently disappearing — that 0 is exactly the moment the
+  // learner most needs the "go spend it" nudge.
+  const capped = earned.foodCapped || earned.cleanCapped;
+  if (earned.food <= 0 && earned.cleanPoints <= 0 && !capped) return null;
   return (
     <div className="pet-earn-banner">
       <span>{t("pet.earn.summary", { food: earned.food, clean: earned.cleanPoints })}</span>
+      {capped && <span className="pet-earn-capped">{t("pet.earn.capped")}</span>}
       {onGoToPet && (
         <button type="button" className="linkbtn" onClick={onGoToPet}>
           {t("pet.earn.goTo")}

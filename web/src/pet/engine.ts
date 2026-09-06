@@ -110,6 +110,14 @@ export const FOOD_PER_NEW = 2;
 export const FOOD_PER_REVIEW = 1;
 /** Reviews needed per 掃除P (design §1: "3枚=1掃除"). */
 export const REVIEWS_PER_CLEAN_POINT = 3;
+
+// 所持上限 (LINGO-034, 2026-09-07勝田指摘): 餌・掃除Pが無限に貯め込めると
+// 「問題を解かなくても世話が回る」状態になり、継続学習の強制力が死ぬ。
+// 餌=6個（満腹1回=約1/3個分の消費換算で概ね2日分の備蓄）、掃除P=3個（うんこ最大
+// 5個のざっくり半分強を即座に処理できる程度）で天井を設け、貯め込みより「早め
+// に使い切る」プレイを誘導する。獲得時にクランプし、超過分は捨てる（onSessionCommitted）。
+export const MAX_FOOD = 6;
+export const MAX_CLEAN_POINTS = 3;
 /** No study for this many consecutive calendar days → early 旅立ち (design §2). */
 export const ABANDON_DAYS = 3;
 /** Consecutive study-day streak that unlocks 天使系 (design §3: "連続学習7日"). */
@@ -190,8 +198,17 @@ export interface PetCollectionEntry {
 export type PetCollection = PetCollectionEntry[];
 
 export interface PetEarnings {
+  /** Actually added to foodCount — already clamped against MAX_FOOD and
+   * whatever room the current stock had left (LINGO-034). */
   food: number;
+  /** Actually added to cleanPoints — already clamped against MAX_CLEAN_POINTS. */
   cleanPoints: number;
+  /** True if some of the raw (uncapped) 餌 earned this session was discarded
+   * because the pocket was already full — drives the "ポケットが満杯だった"
+   * summary note (never framed as the learner's studying being wasted). */
+  foodCapped: boolean;
+  /** Same as foodCapped, for 掃除P. */
+  cleanCapped: boolean;
 }
 
 export type PetEventType = "hatch" | "evolve" | "depart";
@@ -333,15 +350,33 @@ function mergeCareMs(
   return log;
 }
 
-/** 餌/掃除P earned from a committed session. PURE — the state layer adds these
- * to the pet (see applySession). This is LINGO-031's "onSessionCommitted"
- * earnings contract. */
-export function onSessionCommitted(input: { newCount: number; reviewCount: number }): PetEarnings {
+/** 餌/掃除P earned from a committed session, CLAMPED against the pocket caps
+ * (LINGO-034, 2026-09-07: uncapped stock let a learner bank enough 餌/掃除P to
+ * coast the pet through days without studying — the whole point of the pull
+ * mechanic is to keep bringing them back). `current` is the pet's stock
+ * BEFORE this session's earnings, so the clamp reflects the room actually
+ * left — the state layer adds the (already-capped) result straight onto the
+ * pet (see applySession). This is LINGO-031's "onSessionCommitted" earnings
+ * contract, extended with the cap. */
+export function onSessionCommitted(
+  input: { newCount: number; reviewCount: number },
+  current: { foodCount: number; cleanPoints: number },
+): PetEarnings {
   const newCount = Math.max(0, Math.floor(input.newCount));
   const reviewCount = Math.max(0, Math.floor(input.reviewCount));
+  const rawFood = newCount * FOOD_PER_NEW + reviewCount * FOOD_PER_REVIEW;
+  const rawCleanPoints = Math.floor(reviewCount / REVIEWS_PER_CLEAN_POINT);
+
+  const foodRoom = Math.max(0, MAX_FOOD - current.foodCount);
+  const cleanRoom = Math.max(0, MAX_CLEAN_POINTS - current.cleanPoints);
+  const food = Math.min(rawFood, foodRoom);
+  const cleanPoints = Math.min(rawCleanPoints, cleanRoom);
+
   return {
-    food: newCount * FOOD_PER_NEW + reviewCount * FOOD_PER_REVIEW,
-    cleanPoints: Math.floor(reviewCount / REVIEWS_PER_CLEAN_POINT),
+    food,
+    cleanPoints,
+    foodCapped: food < rawFood,
+    cleanCapped: cleanPoints < rawCleanPoints,
   };
 }
 
@@ -535,6 +570,25 @@ export function migrateLegacyPet(
   };
 }
 
+// MARK: economy caps (LINGO-034, 2026-09-07)
+
+/** Clamp a pet's foodCount/cleanPoints down to the pocket caps. This is an
+ * EXCEPTION to the additive-only migration principle elsewhere in this file
+ * (migrateLegacyPet only ever adds fields, never shrinks values) — Katsuta
+ * explicitly approved retroactively clamping any stock a pet banked before
+ * MAX_FOOD/MAX_CLEAN_POINTS existed, since letting it stay above the new cap
+ * would keep the exact "coast without studying" problem this fix targets
+ * alive for existing pets. Idempotent: returns the SAME reference when
+ * already within both caps, so callers (loadPet) can cheaply detect "nothing
+ * to persist" with `!==`. Safe to call on every load — a pet that's within
+ * caps (the overwhelmingly common case once this ships) is a no-op. */
+export function clampEconomy(pet: PetState): PetState {
+  const foodCount = Math.min(pet.foodCount, MAX_FOOD);
+  const cleanPoints = Math.min(pet.cleanPoints, MAX_CLEAN_POINTS);
+  if (foodCount === pet.foodCount && cleanPoints === pet.cleanPoints) return pet;
+  return { ...pet, foodCount, cleanPoints };
+}
+
 /** Get or create today's CareDay (immutably); returns the log copy and index. */
 function ensureToday(careLog: CareDay[], now: number, stage: PetStage): { log: CareDay[]; i: number } {
   const date = localDateStr(now);
@@ -573,7 +627,7 @@ export function applySession(
   input: { newCount: number; reviewCount: number },
   now: number,
 ): { pet: PetState; earned: PetEarnings } {
-  const earned = onSessionCommitted(input);
+  const earned = onSessionCommitted(input, { foodCount: pet.foodCount, cleanPoints: pet.cleanPoints });
   const stage = pet.stage === "egg" ? "baby" : pet.stage;
   const { log, i } = ensureToday(pet.careLog, now, stage);
   const newCount = Math.max(0, Math.floor(input.newCount));
