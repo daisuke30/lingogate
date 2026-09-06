@@ -324,6 +324,11 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
         kind,
         // The lemma this sentence is built to teach (quiz target).
         targetLemma: s.target_lemma ?? null,
+        // LINGO-033: per-token case/number for the card-back "文中の形"
+        // display — [{lemma, surface, case, number}], only for tokens
+        // pymorphy3 could confidently resolve (see pipeline/rebaseline/
+        // annotate_cases.py). RU course only; EN/undeclared rows get [].
+        forms: s.forms ?? [],
         wordIds,
         minRank,
         // LINGO-010 fix: real target-language content-word count, vs.

@@ -88,7 +88,15 @@ CREATE TABLE IF NOT EXISTS Sentence (
     -- LINGO-011 (target-word-driven sentences). The single band-vocab lemma this
     -- sentence is built to teach; the quiz picks it via target_lemma. NULL for
     -- pre-LINGO-011 rows. Also added via idempotent ALTER in ensure_migrations.
-    target_lemma TEXT
+    target_lemma TEXT,
+    -- LINGO-033 (card-back "文中の形" case display). JSON-encoded array of
+    -- {lemma, surface, case, number} for each noun/adjective/pronoun token
+    -- pymorphy3 could confidently resolve (see pipeline/rebaseline/
+    -- annotate_cases.py) — case is 1-6 (RU pedagogical numbering), number is
+    -- 'sg'|'pl'. Ambiguous tokens are simply absent from the array, never
+    -- guessed. NULL/empty for rows with no resolved forms. Also added via
+    -- idempotent ALTER in import.py:ensure_migrations.
+    forms TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_sentence_band ON Sentence(deck_id, band);

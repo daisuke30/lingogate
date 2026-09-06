@@ -394,6 +394,15 @@ const M: Record<string, Entry> = {
   "gender.pl": { ja: "複数のみ", en: "plural only", ru: "только мн. ч." },
   "gender.mf": { ja: "通性名詞", en: "common gender", ru: "общий род" },
 
+  // -- grammatical case in text (card-back breakdown) LINGO-033 -----------
+  "case.form": { ja: "文中の形", en: "form in the sentence", ru: "форма в тексте" },
+  "case.1": { ja: "1格・主格", en: "case 1 (nominative)", ru: "именительный (1-й)" },
+  "case.2": { ja: "2格・生格", en: "case 2 (genitive)", ru: "родительный (2-й)" },
+  "case.3": { ja: "3格・与格", en: "case 3 (dative)", ru: "дательный (3-й)" },
+  "case.4": { ja: "4格・対格", en: "case 4 (accusative)", ru: "винительный (4-й)" },
+  "case.5": { ja: "5格・造格", en: "case 5 (instrumental)", ru: "творительный (5-й)" },
+  "case.6": { ja: "6格・前置格", en: "case 6 (prepositional)", ru: "предложный (6-й)" },
+
   // -- part of speech (card-back breakdown; follows UI language) ------------
   "pos.verb": { ja: "動詞", en: "verb", ru: "глагол" },
   "pos.noun": { ja: "名詞", en: "noun", ru: "сущ." },

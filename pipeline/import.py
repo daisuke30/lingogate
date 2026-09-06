@@ -83,6 +83,9 @@ def ensure_migrations(conn):
     # LINGO-011: the single band-vocab lemma a sentence is built to teach.
     if "target_lemma" not in have:
         conn.execute("ALTER TABLE Sentence ADD COLUMN target_lemma TEXT")
+    # LINGO-033: JSON-encoded per-token case/number annotations, see schema.sql.
+    if "forms" not in have:
+        conn.execute("ALTER TABLE Sentence ADD COLUMN forms TEXT")
     # LINGO-012: verb aspect + its aspectual partner, for the card-back
     # word-breakdown feature. NULL for non-verbs.
     have_word = {row[1] for row in conn.execute("PRAGMA table_info(Word)")}
@@ -219,23 +222,25 @@ def import_sentences(conn, deck_id, data_dir):
             if sid in seen_ids:
                 raise SystemExit(f"{path}:{lineno}: duplicate sentence id {sid!r}")
             seen_ids.add(sid)
+            forms = s.get("forms")
+            forms_json = json.dumps(forms, ensure_ascii=False) if forms else None
             conn.execute(
                 """INSERT INTO Sentence
                      (id, deck_id, ru, en, ja, band, difficulty, source, kind,
-                      kana, note, note_en, note_ru, target_lemma)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                      kana, note, note_en, note_ru, target_lemma, forms)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                    ON CONFLICT(id) DO UPDATE SET
                      deck_id=excluded.deck_id, ru=excluded.ru, en=excluded.en,
                      ja=excluded.ja, band=excluded.band,
                      difficulty=excluded.difficulty, source=excluded.source,
                      kind=excluded.kind, kana=excluded.kana, note=excluded.note,
                      note_en=excluded.note_en, note_ru=excluded.note_ru,
-                     target_lemma=excluded.target_lemma""",
+                     target_lemma=excluded.target_lemma, forms=excluded.forms""",
                 (sid, deck_id, s["ru"], s["en"], s.get("ja"),
                  s.get("band", band), s.get("difficulty", 1),
                  s.get("source", "generated"), s.get("kind", "sentence"),
                  s.get("kana"), s.get("note"), s.get("note_en"), s.get("note_ru"),
-                 s.get("target_lemma")),
+                 s.get("target_lemma"), forms_json),
             )
             # rebuild links for this sentence
             conn.execute("DELETE FROM sentence_words WHERE sentence_id=?", (sid,))

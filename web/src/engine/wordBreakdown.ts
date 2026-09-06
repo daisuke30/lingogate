@@ -181,6 +181,53 @@ export function formatGenderLine(
   return `${entry.lemma}（${labels[entry.gender]}）`;
 }
 
+/** Labels for the case-in-text line (LINGO-033). `form` is the leading
+ * "文中の形:" / "form in the sentence:" / "форма в тексте:" prefix; case1..6
+ * are the full "N格・和名" / "case N (english)" / "русское (N-й)" labels for
+ * each of the 6 RU cases. UI-language driven, same convention as
+ * AspectLabels/GenderLabels — see i18n keys case.form / case.1 .. case.6. */
+export interface CaseLabels {
+  form: string;
+  case1: string;
+  case2: string;
+  case3: string;
+  case4: string;
+  case5: string;
+  case6: string;
+}
+
+const DEFAULT_CASE_LABELS: CaseLabels = {
+  form: "文中の形",
+  case1: "1格・主格",
+  case2: "2格・生格",
+  case3: "3格・与格",
+  case4: "4格・対格",
+  case5: "5格・造格",
+  case6: "6格・前置格",
+};
+
+/**
+ * "文中の形" line for a noun/adjective/pronoun entry whose inflected surface
+ * form in this specific sentence pymorphy3 could confidently resolve to a
+ * case (LINGO-033), e.g. "文中の形: книгу（4格・対格）" for книга used as
+ * "Я читаю книгу" (I read a/the book). Mirrors formatGenderLine/
+ * formatAspectLine's "label: value（tag）" shape. Returns null when this
+ * entry has no resolved case (ambiguous tokens are never guessed — see
+ * pipeline/rebaseline/annotate_cases.py's quality gate — or the entry's
+ * surface form is identical to its dictionary lemma, in which case showing
+ * "文中の形" would be redundant noise).
+ */
+export function formatCaseLine(
+  entry: Pick<WordBreakdownEntry, "lemma" | "caseForm">,
+  labels: CaseLabels = DEFAULT_CASE_LABELS,
+): string | null {
+  if (!entry.caseForm) return null;
+  const { surface, case: c } = entry.caseForm;
+  if (surface === entry.lemma) return null;
+  const caseLabel = labels[`case${c}` as keyof CaseLabels];
+  return `${labels.form}: ${surface}（${caseLabel}）`;
+}
+
 export interface WordBreakdownEntry {
   lemma: string;
   pos: string;
@@ -201,6 +248,11 @@ export interface WordBreakdownEntry {
   pairNoteRu: string | null;
   /** Noun grammatical gender (LINGO-022); null for non-nouns. */
   gender: "m" | "f" | "n" | "pl" | "mf" | null;
+  /** LINGO-033: this word's resolved case/number as it actually appears in
+   * THIS sentence (e.g. книга used as "книгу" -> {surface:"книгу", case:4,
+   * number:"sg"}), or null when pymorphy3 couldn't confidently resolve it
+   * (never guessed) or this word isn't a noun/adjective/pronoun. */
+  caseForm: { surface: string; case: 1 | 2 | 3 | 4 | 5 | 6; number: "sg" | "pl" } | null;
   enGloss: string | null;
   jaGloss: string | null;
   ruGloss: string | null;
@@ -214,9 +266,20 @@ export interface WordBreakdownEntry {
  * in their original (roughly text) order — word-kind cards keep every linked
  * word, function words included, since there's no target/support split. */
 export function buildWordBreakdown(
-  sentence: Pick<Sentence, "kind" | "targetLemma" | "wordIds">,
+  sentence: Pick<Sentence, "kind" | "targetLemma" | "wordIds" | "forms">,
   wordById: Map<number, DeckWord>,
 ): WordBreakdownEntry[] {
+  // LINGO-033: consumed left-to-right and removed as matched, so a lemma
+  // repeated across two wordIds (rare) pairs each with a distinct forms[]
+  // entry instead of both showing the same (first) resolved case.
+  const remainingForms = (sentence.forms ?? []).slice();
+  function takeCaseForm(lemma: string) {
+    const idx = remainingForms.findIndex((f) => f.lemma === lemma);
+    if (idx === -1) return null;
+    const [f] = remainingForms.splice(idx, 1);
+    return { surface: f.surface, case: f.case, number: f.number };
+  }
+
   const out: WordBreakdownEntry[] = [];
   for (const wid of sentence.wordIds) {
     const w = wordById.get(wid);
@@ -234,6 +297,7 @@ export function buildWordBreakdown(
       pairNoteEn: w.pairNoteEn ?? null,
       pairNoteRu: w.pairNoteRu ?? null,
       gender: w.gender ?? null,
+      caseForm: takeCaseForm(w.lemma),
       enGloss: w.enGloss ?? null,
       jaGloss: w.jaGloss ?? null,
       ruGloss: w.ruGloss ?? null,

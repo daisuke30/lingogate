@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildWordBreakdown, formatAspectLine, formatGenderLine, posLabel } from "./wordBreakdown";
+import { buildWordBreakdown, formatAspectLine, formatGenderLine, formatCaseLine, posLabel } from "./wordBreakdown";
 import type { DeckWord } from "./content";
 
 function word(over: Partial<DeckWord> & { id: number; lemma: string; pos: string }): DeckWord {
@@ -209,5 +209,74 @@ describe("noun gender (LINGO-022 card-back breakdown)", () => {
 
   it("returns null for entries with no gender (non-nouns)", () => {
     expect(formatGenderLine({ lemma: "делать", gender: null })).toBeNull();
+  });
+});
+
+describe("case-in-text (LINGO-033 card-back breakdown)", () => {
+  const wordById = new Map<number, DeckWord>([
+    [1, word({ id: 1, lemma: "я", pos: "pron", enGloss: "I" })],
+    [2, word({ id: 2, lemma: "книга", pos: "noun", enGloss: "book", gender: "f" })],
+  ]);
+
+  it("buildWordBreakdown matches a linked word's caseForm by lemma from sentence.forms", () => {
+    const sentence = {
+      kind: "sentence" as const,
+      targetLemma: "книга",
+      wordIds: [1, 2],
+      forms: [{ lemma: "книга", surface: "книгу", case: 4 as const, number: "sg" as const }],
+    };
+    const out = buildWordBreakdown(sentence, wordById);
+    const kniga = out.find((e) => e.lemma === "книга")!;
+    expect(kniga.caseForm).toEqual({ surface: "книгу", case: 4, number: "sg" });
+  });
+
+  it("caseForm is null when sentence.forms has no entry for this word (ambiguous/dropped, or forms omitted)", () => {
+    const out = buildWordBreakdown(
+      { kind: "sentence" as const, targetLemma: "книга", wordIds: [2] },
+      wordById,
+    );
+    expect(out[0].caseForm).toBeNull();
+  });
+
+  it('formatCaseLine renders "文中の形: <surface>（<label>）" for the task\'s own example (Я читаю книгу)', () => {
+    expect(formatCaseLine({ lemma: "книга", caseForm: { surface: "книгу", case: 4, number: "sg" } })).toBe(
+      "文中の形: книгу（4格・対格）",
+    );
+  });
+
+  it("covers all 6 cases with the default (ja) labels", () => {
+    const c = (n: 1 | 2 | 3 | 4 | 5 | 6) =>
+      formatCaseLine({ lemma: "x", caseForm: { surface: "y", case: n, number: "sg" } });
+    expect(c(1)).toBe("文中の形: y（1格・主格）");
+    expect(c(2)).toBe("文中の形: y（2格・生格）");
+    expect(c(3)).toBe("文中の形: y（3格・与格）");
+    expect(c(4)).toBe("文中の形: y（4格・対格）");
+    expect(c(5)).toBe("文中の形: y（5格・造格）");
+    expect(c(6)).toBe("文中の形: y（6格・前置格）");
+  });
+
+  it("honours caller-provided (UI-language) labels", () => {
+    const en = {
+      form: "form in the sentence",
+      case1: "case 1 (nominative)",
+      case2: "case 2 (genitive)",
+      case3: "case 3 (dative)",
+      case4: "case 4 (accusative)",
+      case5: "case 5 (instrumental)",
+      case6: "case 6 (prepositional)",
+    };
+    expect(
+      formatCaseLine({ lemma: "книга", caseForm: { surface: "книгу", case: 4, number: "sg" } }, en),
+    ).toBe("form in the sentence: книгу（case 4 (accusative)）");
+  });
+
+  it("returns null when there is no resolved case (ambiguous token, dropped by the pipeline)", () => {
+    expect(formatCaseLine({ lemma: "книга", caseForm: null })).toBeNull();
+  });
+
+  it("returns null when the surface form equals the dictionary lemma (nothing new to show)", () => {
+    expect(
+      formatCaseLine({ lemma: "книга", caseForm: { surface: "книга", case: 1, number: "sg" } }),
+    ).toBeNull();
   });
 });

@@ -47,6 +47,24 @@ export interface Sentence {
    * counts lemmas that resolved to a deck word. undefined/null for synthetic
    * test sentences that don't set it — treated as "no unlinked words". */
   tokenCount?: number | null;
+  /** LINGO-033: per-token case/number for the card-back "文中の形" display —
+   * one entry per noun/adjective/pronoun token pymorphy3 could confidently
+   * resolve (ambiguous tokens are simply absent, never guessed). Empty/
+   * undefined for rows with no resolved forms or courses that don't carry
+   * grammatical case (EN). */
+  forms?: SentenceForm[];
+}
+
+/** One resolved case annotation (LINGO-033). `case` is 1-6, RU pedagogical
+ * numbering (1=nominative/主格 .. 6=prepositional/前置格). `surface` is the
+ * exact inflected form as it appears in the sentence text (e.g. "книгу");
+ * `lemma` is its dictionary form, matching one entry of the sentence's own
+ * lemma list. */
+export interface SentenceForm {
+  lemma: string;
+  surface: string;
+  case: 1 | 2 | 3 | 4 | 5 | 6;
+  number: "sg" | "pl";
 }
 
 export interface DeckWord {

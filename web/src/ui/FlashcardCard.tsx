@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
-import { buildWordBreakdown, formatAspectLine, formatGenderLine } from "../engine/wordBreakdown";
+import { buildWordBreakdown, formatAspectLine, formatGenderLine, formatCaseLine } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
 import { applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
 import { resolveLocalizedText } from "../engine/localizedText";
@@ -333,6 +333,15 @@ function WordBreakdownList({
     pl: t("gender.pl"),
     mf: t("gender.mf"),
   };
+  const caseLabels = {
+    form: t("case.form"),
+    case1: t("case.1"),
+    case2: t("case.2"),
+    case3: t("case.3"),
+    case4: t("case.4"),
+    case5: t("case.5"),
+    case6: t("case.6"),
+  };
   return (
     <div className="word-breakdown" onPointerDown={(e) => e.stopPropagation()}>
       {entries.map((w) => {
@@ -343,6 +352,7 @@ function WordBreakdownList({
         );
         const aspectLine = formatAspectLine({ ...w, pairNote }, aspectLabels);
         const genderLine = formatGenderLine(w, genderLabels);
+        const caseLine = formatCaseLine(w, caseLabels);
         const gloss = orderedGloss(w, frontLang);
         const posKey = "pos." + w.pos;
         const posText = t(posKey);
@@ -354,6 +364,7 @@ function WordBreakdownList({
             </div>
             {aspectLine && <div className="wb-aspect">{aspectLine}</div>}
             {genderLine && <div className="wb-gender">{genderLine}</div>}
+            {caseLine && <div className="wb-case">{caseLine}</div>}
             {gloss && <div className="wb-gloss">{gloss}</div>}
           </div>
         );
