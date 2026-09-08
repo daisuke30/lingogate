@@ -29,6 +29,18 @@
 //                      a stage; picks the evolution branch (§3). cleanRatio is
 //                      now "fraction of the day NOT spent with poopCount > 0"
 //                      (time-weighted), not a per-visit sample average.
+//   睡眠時間 (v3, 2026-09-08): a per-pet local-time window (default 23:00〜
+//                      08:00) during which NOTHING happens to the pet — no
+//                      満腹度 decay, no うんこ accrual. Katsuta's overnight
+//                      report (0時就寝→10時起床でうんこ上限張り付き) was the
+//                      lifecycle continuing to run while both the pet and the
+//                      learner were asleep. satietyAt/advancePoop now compute
+//                      against "AWAKE elapsed time" (see awakeMs/advanceAwakeMs)
+//                      instead of raw wall-clock elapsed. Investigating the
+//                      "満腹度が全く減っていない" half of that report found the
+//                      decay MATH itself already spec-correct (see satietyAt's
+//                      doc comment + its dedicated test) — Katsuta later
+//                      confirmed it was more like ~40%, i.e. no bug there.
 
 // MARK: species & stages
 
@@ -66,22 +78,30 @@ export const STAGE_ORDER: PetStage[] = ["baby", "child", "adult", "perfect", "ul
 // MARK: tunables (all named so the design's numbers live in one place)
 
 export const DAY_MS = 24 * 60 * 60 * 1000;
-/** 満腹度 falls 100→0 over exactly this window (design §1: "24hで満腹→空腹"). */
-export const HUNGER_DECAY_MS = DAY_MS;
+// 満腹度の減衰基準時間 (v3, 2026-09-08 睡眠時間導入に伴う再調整): 満タン→空腹
+// を「起きている時間」だけで測って約16時間に設定（デフォルト睡眠9h=起床15h/日
+// を踏まえ、1〜2日弱の起床時間でちょうど1周し、1日2〜3回の餌やりが自然になる
+// 体感を狙う）。旧仕様は24h・かつ睡眠中も止まらず減衰し続けていた（Katsuta実運用
+// フィードバック 2026-09-08 の一因）。satietyAt は now-lastFedAt の生の経過時間
+// ではなく awakeMs()（睡眠窓を除いた実効経過時間）で計算する。
+/** 満腹度 falls 100→0 over exactly this much AWAKE elapsed time (design §1 v3). */
+export const HUNGER_DECAY_MS = 16 * 60 * 60 * 1000;
 /** One 餌 restores this much 満腹度 (≈3 feeds fill an empty belly). */
 export const FEED_RESTORE = 34;
 /** Poop stock tops out at this many (design §1: "上限5個表示"). */
 export const MAX_POOP = 5;
 
-// うんこ発生間隔 (design §1 v2, 2026-09-05 UXフィードバック反映): 期限切れ復習数
-// が多いほど頻繁に1個発生する。連続関数でよい、と指定されたので指数減衰を採用し、
-// 勝田の例示3点にフィットさせた: overdue 0件→24hに1個 / 10件→8hに1個 /
-// 30件以上→約4hに1個（漸近下限、明示クランプ不要なほど収束が速い）。
+// うんこ発生間隔 (design §1 v2, 2026-09-05 UXフィードバック反映 → v3,
+// 2026-09-08 睡眠時間導入で再調整): 期限切れ復習数が多いほど頻繁に1個発生する。
+// 連続関数でよい、と指定されたので指数減衰を採用。v3では「起きている時間」だけ
+// で測るようにした上で、overdue=0の基準点を24h→16h（＝満腹度と同じ「起床1日」）
+// に再アンカー。overdue=10→8hの実測点とMIN=4hの漸近下限は据え置き（現行の
+// 加速カーブの形自体は維持しつつ、夜間分の山だけを排除する狙い）。
 //   interval(overdue) = MIN + (MAX-MIN) * exp(-overdue / TAU)
 // TAU は overdue=10→8h の点から逆算する（POOP_INTERVAL_TAU の式を参照）。
-/** overdue=0 のときの発生間隔（24h に1個）。 */
-export const POOP_INTERVAL_MAX_MS = 24 * 60 * 60 * 1000;
-/** overdue→∞ で漸近する発生間隔の下限（4h に1個）。 */
+/** overdue=0 のときの発生間隔（起床16hに1個、v3で24h→16hに再調整）。 */
+export const POOP_INTERVAL_MAX_MS = 16 * 60 * 60 * 1000;
+/** overdue→∞ で漸近する発生間隔の下限（4h に1個、不変）。 */
 export const POOP_INTERVAL_MIN_MS = 4 * 60 * 60 * 1000;
 const POOP_INTERVAL_ANCHOR_OVERDUE = 10;
 const POOP_INTERVAL_ANCHOR_MS = 8 * 60 * 60 * 1000; // overdue=10 → 8h の実例点
@@ -140,6 +160,12 @@ export const DEPART_DAYS = 12;
 export interface PetSettings {
   /** Off (default): early exit is framed as 旅立ち. On: 死亡 framing (design §2). */
   hardMode: boolean;
+  /** Local device hour (0-23) sleep begins (design §2 v3, 2026-09-08). Read
+   * defensively via resolveSleepWindow() — pre-LINGO-035 persisted settings
+   * lack this field at runtime even though the type says it's required. */
+  sleepStartHour: number;
+  /** Local device hour (0-23) sleep ends (wake time). */
+  sleepEndHour: number;
 }
 
 /** One calendar day of care history. dailyCareScore = fedRatio × cleanRatio ×
@@ -177,10 +203,19 @@ export interface PetState {
   /** うんこ在庫 (v2, 2026-09-05): 0..MAX_POOP. A real stock — spawns via
    * advancePoop()'s time-based accrual, deleted 1-for-1 by applyClean(). */
   poopCount: number;
-  /** Accrual checkpoint: advancePoop() has fully accounted for real elapsed
-   * time up to this timestamp (both stock growth and dirty-time bookkeeping
-   * in careLog). Only tick() ever advances it. */
+  /** Care-log processing checkpoint: advancePoop() has fully folded real
+   * elapsed time up to this timestamp into careLog's trackedMs/dirtyMs.
+   * Always advances to `now` on every tick() — see poopProgressMs for why
+   * this is a SEPARATE field from spawn-timing progress (v3, 2026-09-08). */
   poopAccruedAt: number;
+  /** Spawn-timing progress (v3, 2026-09-08): awake-ms accumulated toward the
+   * next poop spawn (0..poopIntervalMs(overdueCount)), reset to 0 on a spawn
+   * or while capped at MAX_POOP. Split out from poopAccruedAt because that
+   * field must unconditionally advance to `now` every tick (to avoid
+   * double-counting careLog time across visits — see advancePoop's doc
+   * comment for the bug this fixes), which would otherwise silently discard
+   * partial spawn progress between short, frequent visits. */
+  poopProgressMs: number;
   careLog: CareDay[];
   /** Global consecutive study-day streak; carried across generations so the
    * 天使系 7-day bonus reflects the LEARNER, not one pet. */
@@ -247,27 +282,158 @@ export function calendarDayDiff(a: string, b: string): number {
   return Math.round((parseLocalDate(b) - parseLocalDate(a)) / DAY_MS);
 }
 
+// MARK: sleep window (design §2 v3, 2026-09-08)
+
+export interface SleepWindow {
+  /** Local hour (0-23) sleep begins. */
+  startHour: number;
+  /** Local hour (0-23) sleep ends (wake time). */
+  endHour: number;
+}
+
+export const DEFAULT_SLEEP_START_HOUR = 23;
+export const DEFAULT_SLEEP_END_HOUR = 8;
+export const DEFAULT_SLEEP_WINDOW: SleepWindow = {
+  startHour: DEFAULT_SLEEP_START_HOUR,
+  endHour: DEFAULT_SLEEP_END_HOUR,
+};
+
+/** Read a pet's configured sleep window, defensively defaulting any missing
+ * field to the design default — covers pets persisted before LINGO-035 (their
+ * `settings` object round-tripped through IndexedDB without these fields,
+ * even though the PetSettings TYPE now declares them required) without a
+ * dedicated migration write, the same `??` idiom dailyCareScore already uses
+ * for pre-v2 CareDay rows. */
+export function resolveSleepWindow(settings: PetSettings): SleepWindow {
+  return {
+    startHour: settings.sleepStartHour ?? DEFAULT_SLEEP_START_HOUR,
+    endHour: settings.sleepEndHour ?? DEFAULT_SLEEP_END_HOUR,
+  };
+}
+
+function localMidnight(ts: number): number {
+  const d = new Date(ts);
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate(), 0, 0, 0, 0).getTime();
+}
+
+/** The sleep instance that BEGINS on the local calendar day containing
+ * `dayAnchorMs` (any timestamp within that day) — [start, end), wraps to the
+ * next calendar day when endHour <= startHour (the normal overnight case,
+ * e.g. 23→8), stays same-day otherwise (an unusual but valid daytime nap
+ * window, e.g. a custom 13→14). `startHour === endHour` is special-cased to a
+ * ZERO-WIDTH instance (no sleep at all) rather than the wrap rule's naive
+ * "24h asleep every day" — treating identical start/end as "no window
+ * configured" is the safer reading (a pet permanently frozen because of an
+ * accidental same-hour pick would be a nasty trap; this doubles as a clean
+ * way to disable the feature entirely, e.g. in tests unrelated to sleep). */
+function sleepInstanceOn(dayAnchorMs: number, sw: SleepWindow): [number, number] {
+  const dayStart = localMidnight(dayAnchorMs);
+  const start = dayStart + sw.startHour * 60 * 60 * 1000;
+  if (sw.endHour === sw.startHour) return [start, start];
+  let end = dayStart + sw.endHour * 60 * 60 * 1000;
+  if (end <= start) end += DAY_MS;
+  return [start, end];
+}
+
+/** True if `now` falls inside the configured sleep window (local device time). */
+export function isAsleep(sw: SleepWindow, now: number): boolean {
+  const anchor = localMidnight(now);
+  const [s, e] = sleepInstanceOn(anchor, sw);
+  if (now >= s && now < e) return true;
+  // `now` can also fall inside an instance that STARTED the previous
+  // calendar day (e.g. 01:00, inside last night's 23:00→08:00 instance).
+  const [sPrev, ePrev] = sleepInstanceOn(anchor - DAY_MS, sw);
+  return now >= sPrev && now < ePrev;
+}
+
+/** Every sleep instance intersecting [fromMs, toMs), clipped to that range and
+ * sorted by start. Loop-guarded (one instance per calendar day) so even a
+ * many-day offline gap terminates quickly. */
+function sleepInstancesIn(sw: SleepWindow, fromMs: number, toMs: number): Array<[number, number]> {
+  const out: Array<[number, number]> = [];
+  if (toMs <= fromMs) return out;
+  // An instance can start the day before `from` and still be running into it.
+  let dayAnchor = localMidnight(fromMs) - DAY_MS;
+  let guard = 0;
+  while (dayAnchor < toMs && guard < 4000) {
+    guard++;
+    const [s, e] = sleepInstanceOn(dayAnchor, sw);
+    const clippedStart = Math.max(s, fromMs);
+    const clippedEnd = Math.min(e, toMs);
+    if (clippedEnd > clippedStart) out.push([clippedStart, clippedEnd]);
+    dayAnchor += DAY_MS;
+  }
+  out.sort((a, b) => a[0] - b[0]);
+  return out;
+}
+
+/** Total ms of [fromMs, toMs) NOT inside the sleep window — the "effective
+ * awake elapsed time" satietyAt/advancePoop decay/accrue against (design §1/§2
+ * v3, 2026-09-08). */
+export function awakeMs(sw: SleepWindow, fromMs: number, toMs: number): number {
+  if (toMs <= fromMs) return 0;
+  const asleep = sleepInstancesIn(sw, fromMs, toMs).reduce((a, [s, e]) => a + (e - s), 0);
+  return Math.max(0, toMs - fromMs - asleep);
+}
+
+/** Inverse of awakeMs: the wall-clock timestamp reached after `targetAwakeMs`
+ * of AWAKE time elapses starting from `fromMs`, skipping over any sleep
+ * windows in between. Used to place an event (e.g. a poop spawn) computed in
+ * awake-ms terms at its correct wall-clock instant. Loop-guarded; a
+ * pathological sleep window (e.g. startHour === endHour → 24h "asleep" every
+ * day) can never actually accumulate the target and returns a best-effort
+ * result once the guard is exhausted rather than looping forever. */
+export function advanceAwakeMs(sw: SleepWindow, fromMs: number, targetAwakeMs: number): number {
+  if (targetAwakeMs <= 0) return fromMs;
+  let cursor = fromMs;
+  let remaining = targetAwakeMs;
+  let guard = 0;
+  while (remaining > 0 && guard < 4000) {
+    guard++;
+    const next = sleepInstancesIn(sw, cursor, cursor + DAY_MS * 2)[0];
+    const gapToSleep = next ? next[0] - cursor : Infinity;
+    if (gapToSleep >= remaining) return cursor + remaining;
+    remaining -= gapToSleep;
+    cursor = next![1]; // jump past the sleep instance; awake time resumes counting there
+  }
+  return cursor;
+}
+
 // MARK: core mappings (design §1)
 
-/** Live 満腹度 at `now` (linear 100→0 decay over 24h, clamped 0..100). */
+/** Live 満腹度 at `now`: linear 100→0 decay over HUNGER_DECAY_MS of AWAKE
+ * elapsed time (design §1 v3, 2026-09-08 — decay pauses entirely during the
+ * pet's sleep window; see awakeMs). Investigated 2026-09-08 per a "満腹度が
+ * 全然減っていない" overnight report: this formula is a straightforward
+ * (pet.hunger baseline) − (100 × elapsed/HUNGER_DECAY_MS), clamped 0..100 —
+ * mathematically it DOES decay continuously with elapsed AWAKE time (verified
+ * by "satietyAt matches the documented decay formula exactly" in
+ * engine.test.ts); Katsuta separately confirmed the real overnight drop was
+ * closer to ~40%, i.e. within spec — no bug found in this function. */
 export function satietyAt(pet: PetState, now: number): number {
-  const elapsed = Math.max(0, now - pet.lastFedAt);
+  const sw = resolveSleepWindow(pet.settings);
+  const elapsed = Math.max(0, awakeMs(sw, pet.lastFedAt, now));
   const v = pet.hunger - (100 * elapsed) / HUNGER_DECAY_MS;
   return Math.max(0, Math.min(100, v));
 }
 
-// MARK: poop accrual (design §1 v2, 2026-09-05 — stock model)
+// MARK: poop accrual (design §1 v2, 2026-09-05 — stock model; v3, 2026-09-08 —
+// sleep-window exclusion)
 
 function nextLocalMidnight(ts: number): number {
   const d = new Date(ts);
   return new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1, 0, 0, 0, 0).getTime();
 }
 
-/** Split [startMs, endMs) into per-local-calendar-date ms buckets — used to
- * attribute a (possibly multi-day, offline-catch-up) accrual span to the
- * right CareDay rows. Loop-guarded so a very long absence still terminates
- * quickly (the pet would have long since departed by then anyway). */
-function splitByLocalDate(startMs: number, endMs: number): Map<string, number> {
+/** Split [startMs, endMs) into per-local-calendar-date AWAKE-ms buckets (sleep
+ * window excluded via awakeMs per day-bucket) — used to attribute a (possibly
+ * multi-day, offline-catch-up) accrual span to the right CareDay rows without
+ * the pet's sleep hours counting toward either "tracked" or "dirty" time
+ * (design §1/§2 v3, 2026-09-08: overnight neglect shouldn't drag down the
+ * evolution care score any more than overnight poop should pile up). Loop-
+ * guarded so a very long absence still terminates quickly (the pet would have
+ * long since departed by then anyway). */
+function splitAwakeByLocalDate(sw: SleepWindow, startMs: number, endMs: number): Map<string, number> {
   const out = new Map<string, number>();
   if (endMs <= startMs) return out;
   let cursor = startMs;
@@ -276,7 +442,8 @@ function splitByLocalDate(startMs: number, endMs: number): Map<string, number> {
     guard++;
     const boundary = Math.min(endMs, nextLocalMidnight(cursor));
     const date = localDateStr(cursor);
-    out.set(date, (out.get(date) ?? 0) + (boundary - cursor));
+    const awake = awakeMs(sw, cursor, boundary);
+    if (awake > 0) out.set(date, (out.get(date) ?? 0) + awake);
     cursor = boundary;
   }
   return out;
@@ -285,43 +452,67 @@ function splitByLocalDate(startMs: number, endMs: number): Map<string, number> {
 interface PoopAdvance {
   poopCount: number;
   poopAccruedAt: number;
+  poopProgressMs: number;
   trackedByDate: Map<string, number>;
   dirtyByDate: Map<string, number>;
 }
 
-/** Catch the poop stock up to `now`: how many new poops spawned since
- * `pet.poopAccruedAt` (at the CURRENT overdueCount's rate — see
- * poopIntervalMs), and how much of that elapsed span was "dirty" (stock > 0)
- * for the time-weighted cleanliness score. While the stock is at MAX_POOP no
- * further credit is banked — the accrual checkpoint resets to `now` instead —
- * so cleaning down from a full stock doesn't cause an unearned instant
- * refill from backlog. */
+/** Catch the poop stock up to `now`.
+ *
+ * Two checkpoints are tracked SEPARATELY on purpose (v3, 2026-09-08 fix — see
+ * PetState.poopProgressMs's doc comment): `poopAccruedAt` is the care-log
+ * processing checkpoint and ALWAYS advances to `now`, so trackedMs/dirtyMs
+ * (both awake-ms only — design §1/§2 v3) are folded into careLog exactly
+ * once per real elapsed span, never re-counted across visits. `poopProgressMs`
+ * is the awake-ms accumulated toward the next spawn (at the CURRENT
+ * overdueCount's rate — poopIntervalMs) and carries any sub-interval leftover
+ * forward across calls — otherwise a learner who opens the app more often
+ * than the spawn interval (any visit that finds no new poop) would either
+ * lose that progress (undercounting future spawns) or, if the checkpoint
+ * were naively reused for both purposes, cause the SAME already-recorded
+ * time span to be folded into careLog again on every subsequent visit
+ * (a real bug this fixes: it used to only advance the shared checkpoint by
+ * whole intervals, so any call with zero NEW spawns left it stuck, and the
+ * next call's [stuck, now) span re-included time already recorded).
+ * While the stock is at MAX_POOP no further progress is banked — it resets
+ * to 0 instead — so cleaning down from a full stock doesn't cause an
+ * unearned instant refill from backlog. */
 function advancePoop(pet: PetState, now: number, overdueCount: number): PoopAdvance {
+  const sw = resolveSleepWindow(pet.settings);
   const from = Math.min(pet.poopAccruedAt, now); // guard a clock that moved backward
-  const trackedByDate = splitByLocalDate(from, now);
-  const elapsed = now - from;
+  const trackedByDate = splitAwakeByLocalDate(sw, from, now);
+  const elapsed = awakeMs(sw, from, now);
   if (elapsed <= 0) {
-    return { poopCount: pet.poopCount, poopAccruedAt: pet.poopAccruedAt, trackedByDate, dirtyByDate: new Map() };
+    return {
+      poopCount: pet.poopCount,
+      poopAccruedAt: pet.poopAccruedAt,
+      poopProgressMs: pet.poopProgressMs,
+      trackedByDate,
+      dirtyByDate: new Map(),
+    };
   }
 
   const interval = poopIntervalMs(overdueCount);
   const oldPoop = pet.poopCount;
-  let newPoops = 0;
-  let dirtyFrom: number | null = null; // instant within [from, now) the span turned dirty
+  const progress = pet.poopProgressMs + elapsed;
+  const newPoops = oldPoop < MAX_POOP ? Math.floor(progress / interval) : 0;
+  let dirtyFromAwakeOffset: number | null = null; // awake-ms offset from `from` the span turned dirty
 
   if (oldPoop > 0) {
-    dirtyFrom = from; // already dirty for the whole span
-    if (oldPoop < MAX_POOP) newPoops = Math.floor(elapsed / interval);
-  } else {
-    newPoops = Math.floor(elapsed / interval);
-    if (newPoops > 0) dirtyFrom = from + interval; // first spawn instant
+    dirtyFromAwakeOffset = 0; // already dirty for the whole span
+  } else if (newPoops > 0) {
+    // First spawn instant this call: however much MORE awake time (beyond
+    // what was already banked in poopProgressMs) was needed to complete one
+    // full interval.
+    dirtyFromAwakeOffset = Math.max(0, interval - pet.poopProgressMs);
   }
 
   const poopCount = Math.min(MAX_POOP, oldPoop + newPoops);
-  const poopAccruedAt = poopCount >= MAX_POOP ? now : from + newPoops * interval;
-  const dirtyByDate = dirtyFrom == null ? new Map<string, number>() : splitByLocalDate(dirtyFrom, now);
+  const poopProgressMs = poopCount >= MAX_POOP ? 0 : progress - newPoops * interval;
+  const dirtyFrom = dirtyFromAwakeOffset == null ? null : advanceAwakeMs(sw, from, dirtyFromAwakeOffset);
+  const dirtyByDate = dirtyFrom == null ? new Map<string, number>() : splitAwakeByLocalDate(sw, dirtyFrom, now);
 
-  return { poopCount, poopAccruedAt, trackedByDate, dirtyByDate };
+  return { poopCount, poopAccruedAt: now, poopProgressMs, trackedByDate, dirtyByDate };
 }
 
 /** Merge a (possibly multi-day) tracked/dirty span into careLog — creating any
@@ -529,44 +720,58 @@ export function newPet(
     cleanPoints: 0,
     poopCount: 0,
     poopAccruedAt: now,
+    poopProgressMs: 0,
     careLog: [],
     studyStreak: carry?.studyStreak ?? 0,
     lastStudyDate: carry?.lastStudyDate ?? null,
-    settings: carry?.settings ?? { hardMode: false },
+    settings: carry?.settings ?? {
+      hardMode: false,
+      sleepStartHour: DEFAULT_SLEEP_START_HOUR,
+      sleepEndHour: DEFAULT_SLEEP_END_HOUR,
+    },
   };
 }
 
 // MARK: migration (v2, 2026-09-05 poop-stock overhaul)
 
-/** A pet persisted before poopCount/poopAccruedAt existed — every other field
- * is guaranteed present (it round-tripped through IndexedDB as a real
- * PetState at the time), only these two are possibly missing. */
-export type LegacyPetState = Omit<PetState, "poopCount" | "poopAccruedAt"> & {
+/** A pet persisted before poopCount/poopAccruedAt (v2, 2026-09-05) or
+ * poopProgressMs (v3, 2026-09-08) existed — every other field is guaranteed
+ * present (it round-tripped through IndexedDB as a real PetState at the
+ * time), only these three are possibly missing. */
+export type LegacyPetState = Omit<PetState, "poopCount" | "poopAccruedAt" | "poopProgressMs"> & {
   poopCount?: number;
   poopAccruedAt?: number;
+  poopProgressMs?: number;
 };
 
-/** Backfill poopCount/poopAccruedAt on a pet persisted before this field
- * existed. Additive-only — every other field passes through untouched.
- * Idempotent: an already-migrated pet passes straight through unchanged.
- * `overdueCountForMigration` seeds the initial stock from whatever overdue
- * count the caller currently has, clamped 0..MAX_POOP (the coordinator's
- * migration spec: "現在のoverdueから算出した値をクランプ") — the same clamp
- * the old (removed) derived poopCount(overdueCount) used to apply. Pulled out
- * as a pure function (no IndexedDB) so it's unit-testable — mirrors db/idb.ts's
+/** Backfill poopCount/poopAccruedAt/poopProgressMs on a pet persisted before
+ * these fields existed. Additive-only — every other field passes through
+ * untouched. Idempotent: an already-migrated pet passes straight through
+ * unchanged. `overdueCountForMigration` seeds the initial stock from
+ * whatever overdue count the caller currently has, clamped 0..MAX_POOP (the
+ * coordinator's migration spec: "現在のoverdueから算出した値をクランプ") — the
+ * same clamp the old (removed) derived poopCount(overdueCount) used to
+ * apply; poopProgressMs always starts fresh at 0 (an honest "no spawn
+ * progress banked yet" default, same as a brand-new pet). Pulled out as a
+ * pure function (no IndexedDB) so it's unit-testable — mirrors db/idb.ts's
  * ensureStores() extraction for the same reason. */
 export function migrateLegacyPet(
   existing: LegacyPetState,
   now: number,
   overdueCountForMigration: number,
 ): PetState {
-  if (typeof existing.poopCount === "number" && typeof existing.poopAccruedAt === "number") {
+  if (
+    typeof existing.poopCount === "number" &&
+    typeof existing.poopAccruedAt === "number" &&
+    typeof existing.poopProgressMs === "number"
+  ) {
     return existing as PetState;
   }
   return {
     ...existing,
-    poopCount: Math.min(MAX_POOP, Math.max(0, Math.floor(overdueCountForMigration))),
-    poopAccruedAt: now,
+    poopCount: existing.poopCount ?? Math.min(MAX_POOP, Math.max(0, Math.floor(overdueCountForMigration))),
+    poopAccruedAt: existing.poopAccruedAt ?? now,
+    poopProgressMs: existing.poopProgressMs ?? 0,
   };
 }
 
@@ -698,6 +903,7 @@ export function tick(pet: PetState, ctx: { now: number; overdueCount: number }):
       ...p,
       poopCount: adv.poopCount,
       poopAccruedAt: adv.poopAccruedAt,
+      poopProgressMs: adv.poopProgressMs,
       careLog: mergeCareMs(p.careLog, p.stage, adv.trackedByDate, adv.dirtyByDate),
     };
   }
@@ -801,6 +1007,10 @@ export interface PetSnapshot {
   foodCount: number;
   cleanPoints: number;
   studyStreak: number;
+  /** True while `now` falls inside the pet's configured sleep window (design
+   * §2 v3, 2026-09-08). Drives the UI's Zzz overlay and disables 餌/掃除する
+   * ("起こさないであげよう" — see pet/petDisplay.ts feedDisabled/cleanDisabled). */
+  asleep: boolean;
 }
 
 /** Pure read-model for the UI — no state change (call tick() to progress).
@@ -821,5 +1031,6 @@ export function petSnapshot(pet: PetState, now: number): PetSnapshot {
     foodCount: pet.foodCount,
     cleanPoints: pet.cleanPoints,
     studyStreak: pet.studyStreak,
+    asleep: isAsleep(resolveSleepWindow(pet.settings), now),
   };
 }

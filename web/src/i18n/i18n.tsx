@@ -672,6 +672,16 @@ const M: Record<string, Entry> = {
     ru: "Ранний уход показывается как гибель, а не прощание.",
   },
 
+  // -- pet sleep window (LINGO-035, 2026-09-08) ------------------------------
+  "pet.sleep.start.label": { ja: "就寝時刻", en: "Bedtime", ru: "Время сна" },
+  "pet.sleep.end.label": { ja: "起床時刻", en: "Wake time", ru: "Время подъёма" },
+  "pet.sleep.sub": {
+    ja: "この間は満腹度が減らず、うんこも出ません",
+    en: "Fullness won't drop and no poop appears during this window.",
+    ru: "В это время сытость не падает и какашки не появляются.",
+  },
+  "pet.sleeping": { ja: "おやすみ中…そっとしておこう", en: "Sleeping… let it rest", ru: "Спит… не будите" },
+
   // -- pet events (hatch / evolve / depart) ---------------------------------
   "pet.event.hatch.title": { ja: "タマゴがかえった！", en: "It hatched!", ru: "Вылупился!" },
   "pet.event.hatch.body": {

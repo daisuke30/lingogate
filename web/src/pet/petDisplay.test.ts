@@ -22,6 +22,7 @@ const base: PetSnapshot = {
   foodCount: 3,
   cleanPoints: 2,
   studyStreak: 2,
+  asleep: false,
 };
 
 describe("chooseExpression — priority 空腹>汚れ>喜び>通常", () => {
@@ -52,6 +53,11 @@ describe("feedDisabled — 満腹時 or no food", () => {
   it("enabled when hungry and holding food", () => {
     expect(feedDisabled({ ...base, foodCount: 1, satiety: 40 })).toBe(false);
   });
+  // LINGO-035 (2026-09-08): "起こさないであげよう" — sleep disables feeding
+  // even when there's food and room to eat.
+  it("disabled while asleep even with food and room to eat", () => {
+    expect(feedDisabled({ ...base, asleep: true, foodCount: 3, satiety: 50 })).toBe(true);
+  });
 });
 
 describe("cleanDisabled — no points or nothing to clean", () => {
@@ -63,6 +69,11 @@ describe("cleanDisabled — no points or nothing to clean", () => {
   });
   it("enabled with points and poop present", () => {
     expect(cleanDisabled({ ...base, cleanPoints: 1, poop: 2 })).toBe(false);
+  });
+  // LINGO-035 (2026-09-08): "起こさないであげよう" — sleep disables cleaning
+  // even when there's 掃除P and poop present.
+  it("disabled while asleep even with 掃除P and poop present", () => {
+    expect(cleanDisabled({ ...base, asleep: true, cleanPoints: 2, poop: 3 })).toBe(true);
   });
 });
 

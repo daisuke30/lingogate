@@ -21,13 +21,21 @@ import {
   setPetSettings,
 } from "../state/pet";
 import { overdueReviewCount } from "../state/service";
-import { MAX_POOP, MAX_FOOD, MAX_CLEAN_POINTS } from "../pet/engine";
-import type { PetSnapshot, PetEvent, PetStage } from "../pet/engine";
+import { MAX_POOP, MAX_FOOD, MAX_CLEAN_POINTS, DEFAULT_SLEEP_START_HOUR, DEFAULT_SLEEP_END_HOUR } from "../pet/engine";
+import type { PetSnapshot, PetEvent, PetStage, PetSettings } from "../pet/engine";
 import { PET_SPECIES_BY_ID } from "../pet/art";
 import { SPECIES_META } from "../pet/art/catalog";
 import { PetSprite } from "../pet/art/sprite";
 import { EggSprite, PoopSprite, FoodSprite } from "../pet/art/props";
 import { chooseExpression, feedDisabled, cleanDisabled } from "../pet/petDisplay";
+import { ListPicker } from "./ListPicker";
+import type { ListPickerOption } from "./ListPicker";
+
+// 就寝/起床時刻ピッカーの選択肢: 0..23時、"HH:00"表示（言語非依存の24h表記）。
+const HOUR_OPTIONS: ListPickerOption<string>[] = Array.from({ length: 24 }, (_, h) => ({
+  value: String(h),
+  label: `${String(h).padStart(2, "0")}:00`,
+}));
 
 const STAGE_KEY: Record<PetStage, string> = {
   egg: "pet.stage.egg",
@@ -48,6 +56,11 @@ export function PetView() {
   const [overdue, setOverdue] = useState(0);
   const [petName, setPetNameState] = useState<string | null>(null);
   const [hardMode, setHardMode] = useState(false);
+  // LINGO-035 (2026-09-08): 就寝/起床時刻。settings全体はまとめて1オブジェクト
+  // として永続化するので、ここではローカルstateを2つ持ちつつ更新時は必ず
+  // フルの PetSettings を組み立てて setPetSettings に渡す（hardModeを壊さない）。
+  const [sleepStart, setSleepStartState] = useState(DEFAULT_SLEEP_START_HOUR);
+  const [sleepEnd, setSleepEndState] = useState(DEFAULT_SLEEP_END_HOUR);
   const [events, setEvents] = useState<PetEvent[]>([]);
   const [showDex, setShowDex] = useState(false);
   const [discovered, setDiscovered] = useState<Set<string>>(new Set());
@@ -70,6 +83,8 @@ export function PetView() {
       setSnapshot(snap);
       setEvents(evts);
       setHardMode(pet.settings.hardMode);
+      setSleepStartState(pet.settings.sleepStartHour ?? DEFAULT_SLEEP_START_HOUR);
+      setSleepEndState(pet.settings.sleepEndHour ?? DEFAULT_SLEEP_END_HOUR);
       setDiscovered(new Set(collection.map((e) => e.speciesId)));
       setPetNameState(name);
     })().catch((err) => console.error("pet init failed", err));
@@ -108,10 +123,26 @@ export function PetView() {
     setNaming(false);
   }
 
+  function currentSettings(overrides: Partial<PetSettings> = {}): PetSettings {
+    return { hardMode, sleepStartHour: sleepStart, sleepEndHour: sleepEnd, ...overrides };
+  }
+
   async function toggleHardMode() {
     const next = !hardMode;
     setHardMode(next);
-    await setPetSettings({ hardMode: next });
+    await setPetSettings(currentSettings({ hardMode: next }));
+  }
+
+  async function changeSleepStart(value: string) {
+    const hour = Number(value);
+    setSleepStartState(hour);
+    await setPetSettings(currentSettings({ sleepStartHour: hour }));
+  }
+
+  async function changeSleepEnd(value: string) {
+    const hour = Number(value);
+    setSleepEndState(hour);
+    await setPetSettings(currentSettings({ sleepEndHour: hour }));
   }
 
   function dismissEvent() {
@@ -169,13 +200,22 @@ export function PetView() {
       </div>
 
       <div className="pet-stage">
-        <div className={"pet-sprite-wrap" + (bounce ? " bounce" : "")}>
+        <div className={"pet-sprite-wrap" + (bounce ? " bounce" : "") + (snapshot.asleep ? " sleeping" : "")}>
           {snapshot.stage === "egg" ? (
             <EggSprite size={168} />
           ) : (
             <PetSprite speciesId={snapshot.speciesId} expr={expr} size={168} />
           )}
+          {/* LINGO-035: Zzz overlay — pure CSS, no art-package change (the
+              body sprite/expression stay honest underneath; this just signals
+              "asleep, don't poke"). */}
+          {snapshot.asleep && (
+            <span className="pet-zzz" aria-hidden="true">
+              💤
+            </span>
+          )}
         </div>
+        {snapshot.asleep && <div className="pet-sleeping-note">{t("pet.sleeping")}</div>}
         <div className="pet-poop-row" aria-label={t("pet.poop.label", { n: snapshot.poop, max: MAX_POOP })}>
           {snapshot.poop > 0 ? (
             Array.from({ length: snapshot.poop }).map((_, i) => <PoopSprite key={i} size={30} />)
@@ -245,6 +285,24 @@ export function PetView() {
           <div className="pet-toggle-knob" />
         </div>
       </button>
+
+      <ListPicker
+        label={t("pet.sleep.start.label")}
+        sub={t("pet.sleep.sub")}
+        options={HOUR_OPTIONS}
+        selected={String(sleepStart)}
+        onSelect={changeSleepStart}
+        sheetTitle={t("pet.sleep.start.label")}
+        closeLabel={t("pet.name.cancel")}
+      />
+      <ListPicker
+        label={t("pet.sleep.end.label")}
+        options={HOUR_OPTIONS}
+        selected={String(sleepEnd)}
+        onSelect={changeSleepEnd}
+        sheetTitle={t("pet.sleep.end.label")}
+        closeLabel={t("pet.name.cancel")}
+      />
 
       {currentEvent && (
         <EventModal event={currentEvent} lang={lang} hardMode={hardMode} onClose={dismissEvent} />
