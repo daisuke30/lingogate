@@ -345,6 +345,64 @@ describe("care score excludes sleep hours (design §2 v3)", () => {
   });
 });
 
+// 2026-09-10 (Katsuta instruction, post-LINGO-035): unlike feeding, 掃除する
+// does NOT need to wake the pet — only feedDisabled keeps the sleep gate
+// (see petDisplay.ts). applyClean() itself has no time/sleep awareness at all
+// (engine.ts: a pure instantaneous poopCount/cleanPoints decrement) — this
+// test proves that's still care-score-correct: cleaning mid-sleep is exactly
+// as effective as cleaning while awake, because the NEXT tick()'s
+// advancePoop() reads the already-reduced poopCount as `oldPoop` for whatever
+// awake span comes next, and sleep hours never contribute trackedMs/dirtyMs
+// either way (cleaned or not) — so there's no separate "sleep" code path to
+// get wrong.
+describe("applyClean during sleep is care-score-correct (2026-09-10, Katsuta instruction)", () => {
+  it("cleaning at MAX_POOP in the middle of the night zeroes the dirty contribution of the NEXT awake hour", () => {
+    // Awake 1h (22:00→23:00), then asleep 23:00→08:00 next day, already at
+    // MAX_POOP going into the night (matches "0時過ぎ就寝でうんこ5個" reports).
+    const pet = { ...newPetWithSleep(1, T0 + 22 * H), poopCount: 5, cleanPoints: 5 };
+    const beforeSleep = tick(pet, { now: T0 + 23 * H, overdueCount: 0 }).pet;
+    expect(beforeSleep.poopCount).toBe(5); // still full going into the night
+
+    // Clean to 0 in the middle of the night. `applyClean` takes no `now` —
+    // this really is midnight cleaning, confirmed via isAsleep.
+    const midSleep = T0 + 26 * H; // 02:00, well inside the sleep window
+    expect(isAsleep(resolveSleepWindow(beforeSleep.settings), midSleep)).toBe(true);
+    let cleaned = beforeSleep;
+    for (let i = 0; i < 5; i++) cleaned = applyClean(cleaned);
+    expect(cleaned.poopCount).toBe(0);
+    expect(cleaned.cleanPoints).toBe(0);
+
+    const trackedBefore = cleaned.careLog.reduce((a, d) => a + d.trackedMs, 0);
+    const dirtyBefore = cleaned.careLog.reduce((a, d) => a + d.dirtyMs, 0);
+
+    // Wake up (08:00) and stay awake 1h more (→09:00). This tick's
+    // advancePoop reads the ALREADY-cleaned poopCount=0 as `oldPoop`, so the
+    // newly-awake hour must be recorded as fully clean, not dirty.
+    const afterWake = tick(cleaned, { now: T0 + 33 * H, overdueCount: 0 }).pet;
+    const trackedAfter = afterWake.careLog.reduce((a, d) => a + d.trackedMs, 0);
+    const dirtyAfter = afterWake.careLog.reduce((a, d) => a + d.dirtyMs, 0);
+
+    expect(trackedAfter - trackedBefore).toBe(1 * H); // the post-wake hour IS tracked
+    expect(dirtyAfter - dirtyBefore).toBe(0); // ...but not dirty, thanks to the sleep-time clean
+  });
+
+  it("without the sleep-time clean, the same post-wake hour would have scored dirty", () => {
+    // Same setup, but skip the clean — a direct contrast proving the
+    // "care-score-correct" claim above isn't a tautology of the test itself.
+    const pet = { ...newPetWithSleep(1, T0 + 22 * H), poopCount: 5, cleanPoints: 5 };
+    const beforeSleep = tick(pet, { now: T0 + 23 * H, overdueCount: 0 }).pet;
+    const trackedBefore = beforeSleep.careLog.reduce((a, d) => a + d.trackedMs, 0);
+    const dirtyBefore = beforeSleep.careLog.reduce((a, d) => a + d.dirtyMs, 0);
+
+    const afterWake = tick(beforeSleep, { now: T0 + 33 * H, overdueCount: 0 }).pet;
+    const trackedAfter = afterWake.careLog.reduce((a, d) => a + d.trackedMs, 0);
+    const dirtyAfter = afterWake.careLog.reduce((a, d) => a + d.dirtyMs, 0);
+
+    expect(trackedAfter - trackedBefore).toBe(1 * H);
+    expect(dirtyAfter - dirtyBefore).toBe(1 * H); // fully dirty — nothing cleaned it
+  });
+});
+
 describe("petSnapshot.asleep reflects the configured window", () => {
   it("true during the night, false during the day", () => {
     const pet = newPetWithSleep(1, T0);

@@ -70,10 +70,15 @@ describe("cleanDisabled — no points or nothing to clean", () => {
   it("enabled with points and poop present", () => {
     expect(cleanDisabled({ ...base, cleanPoints: 1, poop: 2 })).toBe(false);
   });
-  // LINGO-035 (2026-09-08): "起こさないであげよう" — sleep disables cleaning
-  // even when there's 掃除P and poop present.
-  it("disabled while asleep even with 掃除P and poop present", () => {
-    expect(cleanDisabled({ ...base, asleep: true, cleanPoints: 2, poop: 3 })).toBe(true);
+  // 2026-09-10 (Katsuta instruction, post-LINGO-035): unlike feeding, cleaning
+  // does NOT require waking the pet — only feedDisabled keeps the sleep gate
+  // now. cleanDisabled's signature was narrowed to drop `asleep` entirely (it
+  // no longer has an opinion on it), so passing the pet's actual sleeping
+  // snapshot (which still carries `asleep: true`) must type-check and behave
+  // exactly like an awake one with the same cleanPoints/poop.
+  it("ignores asleep entirely — a sleeping snapshot behaves exactly like an awake one", () => {
+    const sleeping = { ...base, asleep: true, cleanPoints: 2, poop: 3 };
+    expect(cleanDisabled(sleeping)).toBe(false);
   });
 });
 

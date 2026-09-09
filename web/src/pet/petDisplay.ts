@@ -31,10 +31,18 @@ export function feedDisabled(s: Pick<PetSnapshot, "foodCount" | "satiety" | "asl
   return s.asleep || s.foodCount <= 0 || s.satiety >= 100;
 }
 
-/** 掃除する is disabled with no clean points, nothing to clean (うんこ0), or
- * while asleep (same "起こさないであげよう" reasoning as feedDisabled). */
-export function cleanDisabled(s: Pick<PetSnapshot, "cleanPoints" | "poop" | "asleep">): boolean {
-  return s.asleep || s.cleanPoints <= 0 || s.poop <= 0;
+/** 掃除する is disabled with no clean points, or nothing to clean (うんこ0).
+ * Unlike feedDisabled, sleep does NOT disable this (2026-09-08 → 2026-09-10
+ * revision, Katsuta instruction): cleaning up while the pet sleeps doesn't
+ * require poking/waking it — only feeding does ("起こさないであげよう" stays
+ * feed-only). applyClean() is a pure instantaneous stock decrement (engine.ts)
+ * that never touches the awake/asleep-aware accrual clock, so a clean during
+ * sleep is care-score-correct for free: the next tick()'s advancePoop() reads
+ * the ALREADY-reduced poopCount as `oldPoop`, so the next awake span is
+ * correctly recorded as clean — sleep hours never contribute trackedMs/
+ * dirtyMs either way, cleaned or not. */
+export function cleanDisabled(s: Pick<PetSnapshot, "cleanPoints" | "poop">): boolean {
+  return s.cleanPoints <= 0 || s.poop <= 0;
 }
 
 /** The bottom tab bar is only shown on the two top-level tabs (学習 / 育成).

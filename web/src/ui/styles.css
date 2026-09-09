@@ -31,30 +31,51 @@
  * stale, shorter viewport, leaving the true bottom few px uncovered so the
  * page background shows through. `100dvh` (dynamic viewport height) tracks
  * the real visible area instead — kept alongside the 100% fallback for
- * browsers without dvh support. Pet was likely first to surface it simply
- * because its content height/scroll behaviour differs from Home's, not
- * because of anything Pet-specific in the CSS itself — both routes share
- * this exact rule, so this fixes both. */
+ * browsers without dvh support.
+ *
+ * Follow-up fix (2026-09-10, Katsuta bug report): pulling to rubber-band
+ * (overscroll) — either tab, any route — revealed a black gap too, reported
+ * first on /pet but confirmed on Home as well. Root cause is a DIFFERENT iOS
+ * quirk from the one above: WebKit's native elastic bounce on the
+ * document/body scroller ignores `overscroll-behavior` entirely (it only
+ * honours that property on a NON-document scrollable element) — so the
+ * `overscroll-behavior: none` already on `body` below never actually
+ * suppressed the bounce, it only stopped scroll-chaining. The fix moves the
+ * real scrolling from the document (html/body) into `#root` itself: html/body
+ * become a fixed, non-scrolling 100dvh frame (painted with the app's own
+ * background, so there is nothing else for a stray bounce to expose), and
+ * `#root` becomes the actual `overflow-y:auto` scroll container, where
+ * `overscroll-behavior-y: contain` IS honoured by WebKit. Applies to every
+ * route uniformly (all screens share this same html/body/#root shell), so
+ * this one change covers Home, Pet, quiz, gate, settings, etc. together. */
 html,
-body,
-#root {
+body {
   height: 100%;
   height: 100dvh;
+  margin: 0;
+  overflow: hidden; /* the outer frame itself never scrolls/bounces */
+  background: var(--bg);
 }
 
 body {
-  margin: 0;
-  background: var(--bg);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans",
     "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overscroll-behavior: none;
+  overscroll-behavior: none; /* backstop; #root below is the real scroller */
 }
 
 #root {
+  height: 100%;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
+  /* The actual scroll container (see the fix comment above): WebKit DOES
+   * respect overscroll-behavior here, unlike on html/body. */
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  background: var(--bg);
 }
 
 .app {
@@ -62,6 +83,12 @@ body {
   max-width: 480px;
   margin: 0 auto;
   padding: max(20px, env(safe-area-inset-top)) 20px calc(28px + env(safe-area-inset-bottom));
+  /* Explicit floor in addition to flex:1 (belt-and-suspenders, per the fix's
+   * "container min-height 100dvh" requirement) — every screen using `.app`
+   * (Home, Pet, quiz, gate, settings, ...) fills at least the full viewport
+   * even before flex layout resolves, and #root scrolls if content is taller. */
+  min-height: 100%;
+  min-height: 100dvh;
   flex: 1;
   display: flex;
   flex-direction: column;
