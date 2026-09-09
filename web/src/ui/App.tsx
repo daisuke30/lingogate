@@ -120,6 +120,7 @@ export function App() {
           <SettingsView
             onBack={goHome}
             onShowOnboarding={() => navigate({ name: "onboarding", origin: "settings" })}
+            navigate={navigate}
           />
         );
       case "guide":

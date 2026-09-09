@@ -224,6 +224,7 @@ export function PlacementScreen({ onExit }: { onExit: () => void }) {
           <div className="big-emoji">🏁</div>
           <h1>{t("placement.result.title")}</h1>
           <p>{t("placement.result.summary", { n: n.toLocaleString(), level: levelLabel(t, n) })}</p>
+          <p className="muted">{t("placement.result.masteryUpdated")}</p>
           <button className="btn primary block" style={{ width: "100%", marginTop: 22 }} onClick={onExit}>
             {t("placement.result.startLearning")}
           </button>

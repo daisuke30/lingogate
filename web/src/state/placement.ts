@@ -16,7 +16,7 @@ import { getAllReviewStates, getAllWordKnowledge, putReviewStates, putWordKnowle
 import { seedKnownReviewStatesForLemmas } from "../engine/calibration";
 import type { KnowledgeMap, WordKnowledge } from "../engine/calibration";
 import { FSRS } from "../engine/fsrs";
-import { finalizePlacement, placementCandidates } from "../engine/placement";
+import { finalizePlacement, placementCandidates, resolvePlacementWriteRows } from "../engine/placement";
 import type { PlacementFit, PlacementResponse, RankedWord } from "../engine/placement";
 import type { DeckWord, Sentence } from "../engine/content";
 
@@ -131,21 +131,15 @@ export async function finalizeAndPersistPlacement(
   const words = rankedCourseWords();
   const writeout = finalizePlacement(fit, responses, words);
 
-  const rows: WordKnowledge[] = [];
-  for (const lemma of writeout.judgedKnown) {
-    rows.push({ lemma, status: "known", updatedAt: now, source: "placement" });
-  }
-  for (const lemma of writeout.judgedUnknown) {
-    rows.push({ lemma, status: "unknown", updatedAt: now, source: "placement" });
-  }
-  for (const lemma of writeout.assumedKnown) {
-    if ((existingKnowledge.get(lemma) ?? "unset") !== "unset") continue; // never clobber real judgements
-    rows.push({ lemma, status: "known", updatedAt: now, source: "placement" });
-  }
-  for (const lemma of writeout.assumedUnknown) {
-    if ((existingKnowledge.get(lemma) ?? "unset") !== "unset") continue;
-    rows.push({ lemma, status: "unknown", updatedAt: now, source: "placement" });
-  }
+  // Pure split (engine/placement.ts's resolvePlacementWriteRows) — see its
+  // doc comment for the retake safety guarantee this pins.
+  const writeRows = resolvePlacementWriteRows(writeout, (lemma) => existingKnowledge.get(lemma) ?? "unset");
+  const rows: WordKnowledge[] = writeRows.map((r) => ({
+    lemma: r.lemma,
+    status: r.status,
+    updatedAt: now,
+    source: "placement",
+  }));
   if (rows.length) await putWordKnowledge(rows, courseId);
 
   // FSRS seed only the lemmas we actually wrote as known (post clobber-guard),

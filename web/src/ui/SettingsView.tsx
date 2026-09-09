@@ -26,8 +26,10 @@ import { checkForUpdate, hasPendingUpdate } from "../state/appUpdate";
 import { downloadBackupFile, exportBackup, importBackupText } from "../state/backup";
 import type { ImportOutcome } from "../state/backup";
 import { currentStoragePersisted, formatBytes, storageEstimate } from "../state/persistence";
+import { isPlacementDone } from "../state/placement";
 import { NATIVE_LANG_NAME, UI_LANGS, useI18n } from "../i18n/i18n";
 import { ListPicker, ListRow } from "./ListPicker";
+import type { Route } from "./App";
 
 function formatBuiltAt(iso: string): string {
   const d = new Date(iso);
@@ -38,9 +40,11 @@ function formatBuiltAt(iso: string): string {
 export function SettingsView({
   onBack,
   onShowOnboarding,
+  navigate,
 }: {
   onBack: () => void;
   onShowOnboarding: () => void;
+  navigate: (r: Route) => void;
 }) {
   const { lang: uiLang, setLang, t } = useI18n();
   const [minutes, setMinutes] = useState(10);
@@ -54,6 +58,8 @@ export function SettingsView({
   // LINGO-014 language axes.
   const [courseId, setCourseId] = useState("ru");
   const [frontLang, setFrontLangState] = useState<Lang>("en");
+  // 2026-09-09 fix: permanent level-check entry point, per course.
+  const [placementDone, setPlacementDone] = useState(false);
   // LINGO-021: storage protection + usage (display only — the actual
   // persist() request already happened once at boot, in main.tsx).
   const [persisted, setPersisted] = useState<boolean | null>(null);
@@ -76,6 +82,7 @@ export function SettingsView({
       setCourseId(c);
       getFrontLang(c).then(setFrontLangState);
       setHasVoice(voiceAvailable(resolveCourse(c).targetLang));
+      isPlacementDone().then(setPlacementDone);
     });
     const unsub = subscribeVoices(() =>
       getActiveCourse().then((c) => setHasVoice(voiceAvailable(resolveCourse(c).targetLang))),
@@ -239,6 +246,19 @@ export function SettingsView({
           selected={frontLang}
           onSelect={pickFrontLang}
           closeLabel={closeLabel}
+        />
+      </div>
+
+      {/* 2026-09-09 fix: the adaptive placement test (LINGO-016) was only
+          reachable from a Home CTA hidden once judged<100 words — invisible
+          to anyone who partly did the old linear calibration flow. Always
+          available here, per course. */}
+      <div className="section-title">{t("settings.section.placement")}</div>
+      <div className="list">
+        <ListRow
+          label={t(placementDone ? "settings.placement.redo" : "settings.placement.start")}
+          sub={t("settings.placement.sub")}
+          onClick={() => navigate({ name: "placement" })}
         />
       </div>
 

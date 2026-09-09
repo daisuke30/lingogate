@@ -491,6 +491,14 @@ const M: Record<string, Entry> = {
     en: "~{n} words mastered ({level})",
     ru: "≈{n} слов освоено ({level})",
   },
+  // 2026-09-09 fix: confirms the estimate above already landed in Home's
+  // mastery count (not just a preview) — most relevant right after a retake,
+  // so the number visibly having moved isn't a mystery.
+  "placement.result.masteryUpdated": {
+    ja: "マスター指標に反映されました",
+    en: "Reflected in your mastery count",
+    ru: "Учтено в показателе освоения",
+  },
   "placement.result.startLearning": {
     ja: "学習を始める",
     en: "Start learning",
@@ -624,6 +632,28 @@ const M: Record<string, Entry> = {
     ja: "アプリの説明を見る",
     en: "View the app intro",
     ru: "Посмотреть введение",
+  },
+
+  // -- level check entry point (2026-09-09 fix): the adaptive placement test
+  // (LINGO-016) was only reachable from a Home CTA that hides once
+  // judged<100 words — invisible to anyone who partly did the old linear
+  // calibration flow. A permanent Settings entry lets it be taken or retaken
+  // any time, per course. -------------------------------------------------
+  "settings.section.placement": { ja: "レベルチェック", en: "Level check", ru: "Проверка уровня" },
+  "settings.placement.start": {
+    ja: "レベルチェックを受ける",
+    en: "Take the level check",
+    ru: "Пройти проверку уровня",
+  },
+  "settings.placement.redo": {
+    ja: "レベルチェックをやり直す",
+    en: "Retake the level check",
+    ru: "Пройти проверку уровня заново",
+  },
+  "settings.placement.sub": {
+    ja: "約1〜3分。学習履歴はそのまま、推定だけ更新します。",
+    en: "About 1–3 min. Updates your estimate without touching your learning history.",
+    ru: "~1–3 мин. Обновляет оценку, не затрагивая историю обучения.",
   },
 
   // -- bottom tab bar (LINGO-030) -------------------------------------------

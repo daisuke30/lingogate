@@ -490,3 +490,43 @@ export function finalizePlacement(
     seedStabilityDaysByLemma,
   };
 }
+
+export interface PlacementWriteRow {
+  lemma: string;
+  status: "known" | "unknown";
+}
+
+/**
+ * Decide which lemmas from a finished placement run should actually be
+ * written, given what's already known for this course (2026-09-09: "レベル
+ * チェックをやり直す" fix — this pure split is what makes the safety
+ * guarantee below directly unit-testable without a database).
+ *
+ * - Directly-judged (swiped) lemmas ALWAYS write — they're fresh ground
+ *   truth for this run, including on a retake: a changed swipe should stick,
+ *   the same as the very first placement (or the old linear calibration
+ *   flow's unconditional overwrite).
+ * - Assumed (never-asked, extrapolated-from-theta) lemmas only write when
+ *   nothing is known yet (`existingStatus(lemma)` is "unset"). An
+ *   extrapolated guess must never silently overwrite a real judgement —
+ *   from an earlier placement run, the old calibration flow, or ordinary
+ *   review feedback — which is exactly what protects existing learning
+ *   history when the level check is re-run.
+ */
+export function resolvePlacementWriteRows(
+  writeout: PlacementWriteout,
+  existingStatus: (lemma: string) => "known" | "unknown" | "unset",
+): PlacementWriteRow[] {
+  const rows: PlacementWriteRow[] = [];
+  for (const lemma of writeout.judgedKnown) rows.push({ lemma, status: "known" });
+  for (const lemma of writeout.judgedUnknown) rows.push({ lemma, status: "unknown" });
+  for (const lemma of writeout.assumedKnown) {
+    if (existingStatus(lemma) !== "unset") continue;
+    rows.push({ lemma, status: "known" });
+  }
+  for (const lemma of writeout.assumedUnknown) {
+    if (existingStatus(lemma) !== "unset") continue;
+    rows.push({ lemma, status: "unknown" });
+  }
+  return rows;
+}

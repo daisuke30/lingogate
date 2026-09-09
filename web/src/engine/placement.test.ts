@@ -16,9 +16,10 @@ import {
   isBeginnerAfterBlock1,
   isSuperFunctionWord,
   placementCandidates,
+  resolvePlacementWriteRows,
   selectWordsForRanks,
 } from "./placement";
-import type { CandidateWord, PlacementResponse, RankedWord } from "./placement";
+import type { CandidateWord, PlacementResponse, PlacementWriteout, RankedWord } from "./placement";
 
 const MAX_RANK = 3000;
 
@@ -386,6 +387,87 @@ describe("finalizePlacement (write-out partitioning)", () => {
     const fit = fitPlacement(block1, 1000);
     const out = finalizePlacement(fit, block1, allWords);
     expect(out.assumedKnown.length).toBeLessThan(20); // near-zero, not the whole deck
+  });
+});
+
+// --- resolvePlacementWriteRows (2026-09-09 "レベルチェックをやり直す" retake safety) ---
+
+describe("resolvePlacementWriteRows (retake never clobbers existing judgements)", () => {
+  function writeout(partial: Partial<PlacementWriteout>): PlacementWriteout {
+    return {
+      judgedKnown: [],
+      judgedUnknown: [],
+      assumedKnown: [],
+      assumedUnknown: [],
+      bandLowRank: 100,
+      bandHighRank: 200,
+      seedStabilityDaysByLemma: new Map(),
+      ...partial,
+    };
+  }
+
+  it("always writes directly-judged lemmas, even when already judged the other way", () => {
+    const out = writeout({ judgedKnown: ["a"], judgedUnknown: ["b"] });
+    const existing = new Map([
+      ["a", "unknown"],
+      ["b", "known"],
+    ]);
+    const rows = resolvePlacementWriteRows(out, (l) => (existing.get(l) as "known" | "unknown") ?? "unset");
+    expect(rows).toEqual(
+      expect.arrayContaining([
+        { lemma: "a", status: "known" }, // this run's fresh swipe wins
+        { lemma: "b", status: "unknown" },
+      ]),
+    );
+  });
+
+  it("never overwrites an already-judged lemma with an assumed value", () => {
+    const out = writeout({ assumedKnown: ["a"], assumedUnknown: ["b"] });
+    const existing = new Map([
+      ["a", "unknown"], // real judgement from a prior run / review feedback
+      ["b", "known"],
+    ]);
+    const rows = resolvePlacementWriteRows(out, (l) => (existing.get(l) as "known" | "unknown") ?? "unset");
+    expect(rows).toEqual([]); // both already judged -> no clobber, nothing written
+  });
+
+  it("writes an assumed value only for lemmas still unset", () => {
+    const out = writeout({ assumedKnown: ["a", "c"], assumedUnknown: ["b"] });
+    const existing = new Map([["a", "unknown"]]); // "c" and "b" are unset
+    const rows = resolvePlacementWriteRows(out, (l) => (existing.get(l) as "known" | "unknown") ?? "unset");
+    expect(rows).toEqual(
+      expect.arrayContaining([
+        { lemma: "c", status: "known" },
+        { lemma: "b", status: "unknown" },
+      ]),
+    );
+    expect(rows.find((r) => r.lemma === "a")).toBeUndefined();
+  });
+
+  it("a full retake with identical responses is idempotent against existing state", () => {
+    // Simulates: run placement once, persist it, then immediately re-run with
+    // the exact same swipes — nothing should change on the second pass.
+    const responses = [resp(20, true, "w20"), resp(900, false, "w900")];
+    const fit = fitPlacement(responses, 1000);
+    const allWords = words(1000);
+    const out = finalizePlacement(fit, responses, allWords);
+
+    // First run: everything unset.
+    const firstRows = resolvePlacementWriteRows(out, () => "unset");
+    const knowledgeAfterFirst = new Map(firstRows.map((r) => [r.lemma, r.status]));
+
+    // Second run (retake, identical answers): existing state now reflects run 1.
+    const secondRows = resolvePlacementWriteRows(
+      out,
+      (l) => knowledgeAfterFirst.get(l) ?? "unset",
+    );
+    const knowledgeAfterSecond = new Map(knowledgeAfterFirst);
+    for (const r of secondRows) knowledgeAfterSecond.set(r.lemma, r.status);
+
+    // Judged lemmas re-write identically (ground truth reaffirmed); assumed
+    // lemmas are now all "already judged" so the second pass writes nothing
+    // for them either. End state is unchanged.
+    expect(knowledgeAfterSecond).toEqual(knowledgeAfterFirst);
   });
 });
 
