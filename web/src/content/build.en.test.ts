@@ -63,11 +63,33 @@ describe("EN course content build", () => {
     }
   });
 
-  it("marks irregular-verb targets with a 'base-past-participle' note", () => {
-    const withNote = deck.sentences.filter((s: any) => s.note);
+  it("marks irregular-verb targets with a 'base-past-participle' note, in the en slot", () => {
+    // LINGO-039 pre-work: these notes used to sit in the bare `note` field,
+    // which build-content maps to the deck's *ja* slot (`note` == "noteJa" by
+    // the LINGO-026 convention) — LINGO-037 finding #9. They are
+    // language-neutral ASCII, so they belong in `noteEn`, the neutral last
+    // resort every persona's front→UI→en fallback chain lands on.
+    const withNote = deck.sentences.filter((s: any) => s.noteEn);
     expect(withNote.length).toBeGreaterThan(0);
     const goSentence = deck.sentences.find((s: any) => s.targetLemma === "go");
-    expect(goSentence.note).toBe("go-went-gone");
+    expect(goSentence.noteEn).toBe("go-went-gone");
+    expect(goSentence.note).toBeNull();
+  });
+
+  it("ships no note in the ja slot (the EN course has no Japanese prose)", () => {
+    expect(deck.sentences.filter((s: any) => s.note)).toEqual([]);
+  });
+
+  it("ships no maintainer lemma-linking annotations to learners", () => {
+    // The other half of the same finding: 80 rows carried notes like
+    // "lemma 'you' covers the possessive form 'your'", which document the
+    // deck's internal lemma-linking convention rather than teaching the
+    // learner anything. They now live on a `lemma_note` key that
+    // build-content.mjs deliberately does not read.
+    const leaked = deck.sentences.filter((s: any) =>
+      [s.note, s.noteEn, s.noteRu].some((n) => n && /lemma '|uses lemma /.test(n)),
+    );
+    expect(leaked).toEqual([]);
   });
 
   it("has no duplicate sentence ids and every id is E####", () => {

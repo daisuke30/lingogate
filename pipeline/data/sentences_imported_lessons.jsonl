@@ -176,7 +176,7 @@
 {"id": "L0176", "ru": "в неделю", "en": "per week", "ja": "per week", "kind": "word", "source": "imported", "band": 1, "difficulty": 1, "lemmas": ["в"]}
 {"id": "L0177", "ru": "на неделю", "en": "for a week", "ja": "for a week", "kind": "word", "source": "imported", "band": 1, "difficulty": 1, "lemmas": ["на"]}
 {"id": "L0178", "ru": "из-за", "en": "because of", "ja": "because of", "kind": "word", "source": "imported", "band": 1, "difficulty": 1, "lemmas": []}
-{"id": "L0179", "ru": "короткий", "en": "short", "ja": "short", "note": "人の身長には使わない (not used to describe a person's height)", "kind": "word", "source": "imported", "band": 1, "difficulty": 1, "lemmas": ["короткий"]}
+{"id": "L0179", "ru": "короткий", "en": "short", "ja": "short", "note": "人の身長には使わない (not used to describe a person's height)", "note_en": "Not used to describe a person's height.", "note_ru": "Не используется для описания роста человека.", "kind": "word", "source": "imported", "band": 1, "difficulty": 1, "lemmas": ["короткий"]}
 {"id": "L0180", "ru": "завтракать", "en": "to have breakfast", "ja": "to have breakfast", "kind": "word", "source": "imported", "band": 1, "difficulty": 1, "lemmas": []}
 {"id": "L0181", "ru": "У меня хорошее настроение", "en": "I am in a good mood.", "note": "ты: у тебя хорошее настроение", "kind": "sentence", "source": "imported", "band": 1, "difficulty": 1, "lemmas": ["у", "настроение"]}
 {"id": "L0182", "ru": "Я завтракаю дома.", "en": "I am having breakfast at home.", "note": "спряжение: я завтракаю, ты завтракаешь, он завтракает, они завтракают", "kind": "sentence", "source": "imported", "band": 1, "difficulty": 1, "lemmas": ["я"]}
