@@ -1,10 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Rating } from "../engine/fsrs";
 import type { Sentence } from "../engine/content";
-import { buildWordBreakdown, formatAspectLine, formatGenderLine, formatCaseLine } from "../engine/wordBreakdown";
+import {
+  buildWordBreakdown,
+  formatAspectLine,
+  formatGenderLine,
+  formatCaseLine,
+  punctFor,
+} from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
 import { applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
-import { resolveLocalizedText } from "../engine/localizedText";
+import { resolveLocalizedText, readsJapanese } from "../engine/localizedText";
 import { WORD_BY_ID } from "../state/service";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useI18n } from "../i18n/i18n";
@@ -168,11 +174,17 @@ export function FlashcardCard({
   const showOverlay = drag.active && !!dir;
 
   const front = sentenceLangText(sentence, frontLang);
+  // LINGO-037: the two Japanese-only reading aids on the back (kana transcription
+  // and the ja translation line) are shown only to a learner who reads Japanese
+  // — i.e. picked it as their UI or prompt language.
+  const showJaAid = readsJapanese(frontLang, uiLang);
   // LINGO-026: front→UI→en→ja fallback for the free-text grammar note.
+  // LINGO-037: the trailing ja step only for a learner who reads it.
   const resolvedNote = resolveLocalizedText(
     { ja: sentence.note, en: sentence.noteEn ?? null, ru: sentence.noteRu ?? null },
     frontLang,
     uiLang,
+    showJaAid,
   );
 
   return (
@@ -221,12 +233,23 @@ export function FlashcardCard({
                 target language actually is (`back`), so a non-RU course (EN)
                 shows/speaks its own target text instead of the RU field. */}
             <div className="ru">{back}</div>
-            {sentence.kana && <div className="kana">{sentence.kana}</div>}
+            {/* LINGO-037: `kana` is a katakana pronunciation aid for the 85
+                word-cards — written FOR a Japanese reader, and previously
+                rendered with no language condition at all, so a UI=en learner
+                got "ウディヴィーチェリナ" under Удивительно. Gated on the same
+                "reads Japanese" test as the ja line below. */}
+            {showJaAid && sentence.kana && <div className="kana">{sentence.kana}</div>}
             {/* The back also shows the ja-field translation as a bonus reference
                 line (Katsuta reads Japanese natively) — skipped when it would
                 duplicate either the front prompt or the back target text
-                itself (frontLang/targetLang already ja). */}
-            {frontLang !== "ja" && targetLangTyped !== "ja" && sentence.ja && (
+                itself (frontLang/targetLang already ja).
+                LINGO-037: the condition tested only frontLang/targetLang, never
+                uiLang — so the "Katsuta reads Japanese natively" rationale in
+                this very comment was not actually encoded, and EVERY card in
+                both packs (2378 RU + 1000 EN) rendered a Japanese sentence for
+                UI=en/front=en/back=ru and UI=ru/front=ru/back=en. Now it needs
+                a learner who actually reads Japanese. */}
+            {showJaAid && frontLang !== "ja" && targetLangTyped !== "ja" && sentence.ja && (
               <div className="ja">{sentence.ja}</div>
             )}
             {/* LINGO-026: was `sentence.note` rendered raw (ja-only prose,
@@ -286,16 +309,36 @@ export function FlashcardCard({
  * button above) so a touch-scroll here can never be misread as a rate-flick
  * by the card's own drag handling. */
 /** Order the available glosses so the front-language one comes first (design:
- * the back's gloss follows the front/prompt language), then fall back to the
- * others (English last-resort). */
-function orderedGloss(w: WordBreakdownEntry, frontLang: Lang): string {
-  const order: (string | null | undefined)[] =
-    frontLang === "ja"
-      ? [w.jaGloss, w.enGloss, w.ruGloss]
-      : frontLang === "ru"
-        ? [w.ruGloss, w.enGloss, w.jaGloss]
-        : [w.enGloss, w.jaGloss, w.ruGloss];
-  return order.filter(Boolean).join(" / ");
+ * the back's gloss follows the front/prompt language).
+ *
+ * LINGO-037 fix: this used to say "fall back to the others" but actually
+ * CONCATENATED every gloss the word had, in all three languages, with " / ".
+ * The effect was invisible for Katsuta (UI=ja, front=en) because the RU pack
+ * has no ruGloss at all, so "I / 私" is exactly the two languages he reads —
+ * but it meant every other pattern got a gloss in a language it never asked
+ * for: all 3819 RU words showed 私 to a UI=en/front=en learner, and all 3000
+ * EN words showed 私 to a UI=ru/front=ru learner. The single largest source of
+ * Japanese leakage in the app (every word of every card).
+ *
+ * The gloss now spans only the two languages the learner actually chose —
+ * front and UI — deduped, front first. That keeps Katsuta's "I / 私" byte for
+ * byte (front=en + UI=ja), collapses to one gloss when the two axes agree, and
+ * falls back to en (then ja, only if they read it) when the pack happens to
+ * have no gloss in either chosen language. */
+function orderedGloss(w: WordBreakdownEntry, frontLang: Lang, uiLang: Lang): string {
+  const glossOf = (l: Lang) => (l === "ja" ? w.jaGloss : l === "ru" ? w.ruGloss : w.enGloss);
+  const chosen: Lang[] = frontLang === uiLang ? [frontLang] : [frontLang, uiLang];
+  const picked = chosen.map(glossOf).filter((g): g is string => !!g);
+  if (picked.length > 0) return dedupe(picked).join(" / ");
+  // Neither chosen language has a gloss for this word: English as the neutral
+  // last resort, then ja — but only for a learner who reads it (same rule as
+  // resolveLocalizedText's allowJaFallback).
+  const fallback = w.enGloss ?? (readsJapanese(frontLang, uiLang) ? w.jaGloss : null);
+  return fallback ?? "";
+}
+
+function dedupe(xs: string[]): string[] {
+  return xs.filter((x, i) => xs.indexOf(x) === i);
 }
 
 function WordBreakdownList({
@@ -342,6 +385,10 @@ function WordBreakdownList({
     case5: t("case.5"),
     case6: t("case.6"),
   };
+  // LINGO-037: the punctuation composing these lines follows the UI language
+  // too (（）。・ for ja, ASCII for en/ru) — see punctFor()'s note.
+  const punct = punctFor(uiLang);
+  const allowJa = readsJapanese(frontLang, uiLang);
   return (
     <div className="word-breakdown" onPointerDown={(e) => e.stopPropagation()}>
       {entries.map((w) => {
@@ -349,11 +396,12 @@ function WordBreakdownList({
           { ja: w.pairNoteJa, en: w.pairNoteEn, ru: w.pairNoteRu },
           frontLang,
           uiLang,
+          allowJa,
         );
-        const aspectLine = formatAspectLine({ ...w, pairNote }, aspectLabels);
-        const genderLine = formatGenderLine(w, genderLabels);
-        const caseLine = formatCaseLine(w, caseLabels);
-        const gloss = orderedGloss(w, frontLang);
+        const aspectLine = formatAspectLine({ ...w, pairNote }, aspectLabels, punct);
+        const genderLine = formatGenderLine(w, genderLabels, punct);
+        const caseLine = formatCaseLine(w, caseLabels, punct);
+        const gloss = orderedGloss(w, frontLang, uiLang);
         const posKey = "pos." + w.pos;
         const posText = t(posKey);
         return (

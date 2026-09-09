@@ -809,6 +809,16 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     getAppLang().then(setLangState);
   }, []);
 
+  // LINGO-037: index.html ships `<html lang="ja">` and nothing ever updated it,
+  // so every document stayed declared as Japanese no matter the UI language —
+  // screen readers applied Japanese pronunciation to Russian and English text,
+  // and browsers' "translate this page?" heuristics misfired. Not a visible
+  // string, but the same rule one layer down: the document's declared language
+  // must follow the UI language.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   const setLang = useCallback((next: Lang) => {
     setLangState(next); // immediate switch
     void setAppLang(next);

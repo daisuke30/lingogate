@@ -25,13 +25,41 @@ export interface LocalizedText {
 
 /** Resolve one piece of localized free text via the front→UI→en→ja chain.
  * Returns null only if every field is null/empty. An empty string is treated
- * the same as null (never resolves to a blank line in the UI). */
+ * the same as null (never resolves to a blank line in the UI).
+ *
+ * LINGO-037: the trailing `ja` step is now opt-in (`allowJaFallback`, default
+ * true so the pure contract and its tests are unchanged). The safety net above
+ * was written when ja was the only UI language, so "showing SOMETHING beats an
+ * element vanishing" was always true — the reader could read it. It stops being
+ * true for a UI=ru/front=ru learner: untranslated Japanese prose is not a
+ * degraded note, it is the exact "日本語が読めない人のUIに日本語が出る" failure
+ * this rule exists to prevent, and an absent note is strictly better. Call
+ * sites pass `frontLang === "ja" || uiLang === "ja"` so the net still catches
+ * Katsuta (UI=ja) and disappears for everyone who cannot read it.
+ *
+ * The audited data debt this guards (LINGO-037): deck.ru.json has 12 sentences
+ * whose only note is Japanese, and deck.en.json has 141 notes parked in the
+ * `ja` slot that are not actually Japanese. Translating those is content work
+ * tracked separately; this makes the leak impossible meanwhile. */
 export function resolveLocalizedText(
   text: LocalizedText,
   frontLang: NoteLang,
   uiLang: NoteLang,
+  allowJaFallback = true,
 ): string | null {
-  return pick(text[frontLang]) ?? pick(text[uiLang]) ?? pick(text.en) ?? pick(text.ja) ?? null;
+  return (
+    pick(text[frontLang]) ??
+    pick(text[uiLang]) ??
+    pick(text.en) ??
+    (allowJaFallback ? pick(text.ja) : null) ??
+    null
+  );
+}
+
+/** Whether the last-resort `ja` note is readable for this learner — i.e. they
+ * chose Japanese on at least one of the two axes. Pass to resolveLocalizedText. */
+export function readsJapanese(frontLang: NoteLang, uiLang: NoteLang): boolean {
+  return frontLang === "ja" || uiLang === "ja";
 }
 
 function pick(v: string | null | undefined): string | null {

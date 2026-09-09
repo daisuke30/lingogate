@@ -39,6 +39,39 @@ const POS_LABELS: Record<string, string> = {
  * word is that sentence's target. See module doc comment for rationale. */
 const FUNCTION_POS = new Set(["part", "prep", "conj", "pron", "det"]);
 
+/**
+ * LINGO-037: the breakdown lines are COMPOSED here from a label plus the
+ * learner's own lemma, and the glue between them used to be hardcoded CJK
+ * punctuation (（）。・) regardless of UI language — so an English or Russian
+ * UI got "делать（imperfective） ⇔ pair: сделать（perfective）", full-width
+ * Japanese brackets and an ideographic full stop around Latin/Cyrillic text.
+ * That is the same class of bug LINGO-026 fixed inside the i18n catalog
+ * (home.band.coverageValue / settings.buildAt), just one layer down.
+ *
+ * The glue therefore follows the UI language like every other structural
+ * label: full-width and space-less for ja (correct Japanese typography, and
+ * unchanged for Katsuta's UI=ja setup), ASCII with the spacing Latin/Cyrillic
+ * typography expects for en/ru.
+ */
+export interface Punct {
+  /** Opens a parenthetical tag after a lemma. */
+  open: string;
+  /** Closes it. */
+  close: string;
+  /** Ends a clause before an appended free-text note. */
+  stop: string;
+  /** Joins two tags inside one parenthetical (e.g. "no pair" + "always impf"). */
+  mid: string;
+}
+
+export const JA_PUNCT: Punct = { open: "（", close: "）", stop: "。", mid: "・" };
+export const LATIN_PUNCT: Punct = { open: " (", close: ")", stop: ". ", mid: ", " };
+
+/** Punctuation set for a UI language. ja keeps full-width; en/ru get ASCII. */
+export function punctFor(uiLang: "ja" | "en" | "ru"): Punct {
+  return uiLang === "ja" ? JA_PUNCT : LATIN_PUNCT;
+}
+
 export function posLabel(pos: string): string {
   return POS_LABELS[pos] ?? pos;
 }
@@ -119,33 +152,36 @@ export interface AspectLineEntry {
 export function formatAspectLine(
   entry: AspectLineEntry,
   labels: AspectLabels = DEFAULT_ASPECT_LABELS,
+  p: Punct = JA_PUNCT,
 ): string | null {
   if (!entry.aspect) return null;
 
   if (entry.aspect === "both") {
-    const base = `${entry.lemma}（${labels.both}）`;
-    return entry.pairNote ? `${base}。${entry.pairNote}` : base;
+    const base = `${entry.lemma}${p.open}${labels.both}${p.close}`;
+    return entry.pairNote ? `${base}${p.stop}${entry.pairNote}` : base;
   }
 
-  const own = `${entry.lemma}（${labels[entry.aspect]}）`;
+  const own = `${entry.lemma}${p.open}${labels[entry.aspect]}${p.close}`;
   const oppAspect = entry.aspect === "impf" ? "pf" : "impf";
 
   if (entry.pairKind === "pair" && entry.aspectPair) {
-    const base = `${own} ⇔ ${labels.pair}: ${entry.aspectPair}（${labels[oppAspect]}）`;
-    return entry.pairNote ? `${base}。${entry.pairNote}` : base;
+    const base = `${own} ⇔ ${labels.pair}: ${entry.aspectPair}${p.open}${labels[oppAspect]}${p.close}`;
+    return entry.pairNote ? `${base}${p.stop}${entry.pairNote}` : base;
   }
   if (entry.pairKind === "related" && entry.aspectPair) {
-    const base = `${own} ⇔ ${labels.related}: ${entry.aspectPair}（${labels[oppAspect]}）`;
-    return entry.pairNote ? `${base}。${entry.pairNote}` : base;
+    const base = `${own} ⇔ ${labels.related}: ${entry.aspectPair}${p.open}${labels[oppAspect]}${p.close}`;
+    return entry.pairNote ? `${base}${p.stop}${entry.pairNote}` : base;
   }
   // pairKind "none" (also the fallback for any legacy/unmigrated row that has
   // an aspect but no pairKind — never silently drop to a bare aspect-only line).
-  const base = `${entry.lemma}（${labels.noPair}・${labels.always}${labels[entry.aspect]}）`;
+  const base = `${entry.lemma}${p.open}${labels.noPair}${p.mid}${labels.always}${labels[entry.aspect]}${p.close}`;
   if (entry.aspectPair) {
-    const noted = entry.pairNote ? `${entry.aspectPair}（${entry.pairNote}）` : entry.aspectPair;
-    return `${base}。${labels.related}: ${noted}`;
+    const noted = entry.pairNote
+      ? `${entry.aspectPair}${p.open}${entry.pairNote}${p.close}`
+      : entry.aspectPair;
+    return `${base}${p.stop}${labels.related}: ${noted}`;
   }
-  return entry.pairNote ? `${base}。${entry.pairNote}` : base;
+  return entry.pairNote ? `${base}${p.stop}${entry.pairNote}` : base;
 }
 
 /** Labels for the five noun-gender codes (LINGO-022). UI-language driven,
@@ -176,9 +212,10 @@ const DEFAULT_GENDER_LABELS: GenderLabels = {
 export function formatGenderLine(
   entry: Pick<WordBreakdownEntry, "lemma" | "gender">,
   labels: GenderLabels = DEFAULT_GENDER_LABELS,
+  p: Punct = JA_PUNCT,
 ): string | null {
   if (!entry.gender) return null;
-  return `${entry.lemma}（${labels[entry.gender]}）`;
+  return `${entry.lemma}${p.open}${labels[entry.gender]}${p.close}`;
 }
 
 /** Labels for the case-in-text line (LINGO-033). `form` is the leading
@@ -220,12 +257,13 @@ const DEFAULT_CASE_LABELS: CaseLabels = {
 export function formatCaseLine(
   entry: Pick<WordBreakdownEntry, "lemma" | "caseForm">,
   labels: CaseLabels = DEFAULT_CASE_LABELS,
+  p: Punct = JA_PUNCT,
 ): string | null {
   if (!entry.caseForm) return null;
   const { surface, case: c } = entry.caseForm;
   if (surface === entry.lemma) return null;
   const caseLabel = labels[`case${c}` as keyof CaseLabels];
-  return `${labels.form}: ${surface}（${caseLabel}）`;
+  return `${labels.form}: ${surface}${p.open}${caseLabel}${p.close}`;
 }
 
 export interface WordBreakdownEntry {

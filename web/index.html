@@ -11,7 +11,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="LingoGate" />
-    <meta name="description" content="開きたい衝動を、ロシア語10問に変える。脱スマホ中毒フラッシュカード。" />
+    <!-- LINGO-037: was a hardcoded Japanese sentence that also hardcoded
+         "ロシア語" — served identically to every UI language, and wrong for the
+         EN course. Static files can't follow the in-app UI language, so this is
+         the neutral English default; the in-app copy is what's localised. -->
+    <meta name="description" content="Turn the urge to open an app into 10 flashcards. Spaced-repetition vocabulary, gated on your phone habit." />
   </head>
   <body>
     <div id="root"></div>

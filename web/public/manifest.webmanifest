@@ -1,7 +1,7 @@
 {
   "name": "LingoGate",
   "short_name": "LingoGate",
-  "description": "開きたい衝動を、ロシア語10問に変える。脱スマホ中毒フラッシュカード。",
+  "description": "Turn the urge to open an app into 10 flashcards. Spaced-repetition vocabulary, gated on your phone habit.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
