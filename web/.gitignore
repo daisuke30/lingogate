@@ -10,5 +10,7 @@ public/icons/
 *.local
 .DS_Store
 # Screenshots from scripts/ui-audit.mjs (LINGO-042) — ephemeral evidence for
-# the human running the gate, not source control artifacts.
+# the human running the gate, not source control artifacts. Default dir is
+# ui-audit-out/; a custom dir (e.g. ui-audit-prod/) can be passed as argv[2].
 ui-audit-out/
+ui-audit-prod/
