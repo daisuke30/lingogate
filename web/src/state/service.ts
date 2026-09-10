@@ -299,7 +299,9 @@ export interface HomeStats {
   mastery: MasteryStats; // 覚えた語 (LINGO-013, renamed from "マスター" in LINGO-040)
   /** LINGO-040 (QA-2): real cumulative word count of the unlocked steps —
    * replaces the old `unlockedBand * 1000` guess, which printed "1〜1,000語"
-   * next to a meter reading "/998" on the RU deck. */
+   * next to a meter reading "/998" on the RU deck (RU band sizes are now
+   * exactly 1000/1000/1000 as of LINGO-043, but this field stays real/dynamic
+   * rather than assuming any fixed size). */
   stepWords: number;
   /** LINGO-040: words still to be introduced before the next step's coverage
    * gate opens; null when there is no next step (already at MAX_ACTIVE_BAND,

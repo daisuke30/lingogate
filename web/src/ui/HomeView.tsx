@@ -40,7 +40,8 @@ import type { PetSnapshot } from "../pet/engine";
  * bounded promise ("10 questions"), not an open-ended loop. */
 const BATCH_SIZE = 10;
 
-/** Round a real step word count (998 / 1993 / 2960 on RU) to the nearest
+/** Round a real step word count (1000 / 2000 / 3000 on RU post-LINGO-043;
+ * was 998 / 1993 / 2960 before that band-size normalization) to the nearest
  * hundred for display. The label always carries 約/~ so the rounding is
  * stated, never implied: the exact figure is in the details sheet, where a
  * precise denominator is what the reader came for. */

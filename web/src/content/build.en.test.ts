@@ -15,9 +15,12 @@ describe("EN course content build", () => {
     expect(deck.defaultFrontLang).toBe("ja");
   });
 
-  it("imports 3000 NGSL words (band1-3) and 1000 band1 core sentences", () => {
+  it("imports 3000 NGSL words (band1-3) and 1002 band1 core sentences", () => {
+    // LINGO-043: 1000 original + 2 gap-fill sentences (E1001 "put", E1002
+    // "call") for the two band1 words a duplicate target_lemma bug (money,
+    // fact each targeted twice) had left with zero core sentences.
     expect(deck.words.length).toBe(3000);
-    expect(deck.sentences.length).toBe(1000);
+    expect(deck.sentences.length).toBe(1002);
     expect(deck.bands).toEqual([1]); // only band1 has sentences so far
   });
 
@@ -31,7 +34,7 @@ describe("EN course content build", () => {
 
   it("carries target lemmas that resolve to real deck words", () => {
     const targeted = deck.sentences.filter((s: any) => s.targetLemma);
-    expect(targeted.length).toBe(1000);
+    expect(targeted.length).toBe(1002); // LINGO-043: +2 (E1001/E1002)
     const lemmas = new Set(deck.words.map((w: any) => w.lemma));
     for (const s of targeted.slice(0, 50)) expect(lemmas.has(s.targetLemma)).toBe(true);
   });

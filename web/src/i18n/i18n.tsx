@@ -92,8 +92,9 @@ const M: Record<string, Entry> = {
   // point of LINGO-040 was to leave exactly one thing to aim at. The bar now
   // tracks the current step, and the step line is the only goal on screen.
   // "ステップ" replaces band/語帯 everywhere a learner can see it. The word
-  // count is rounded and marked 約: the real per-step totals are 998/995/967
-  // on RU, and printing those raw was exactly the confusion this ticket fixes
+  // count is rounded and marked 約: the real per-step totals are 1000/1000/1000
+  // on RU (LINGO-043; were 998/995/967 before that band-size normalization),
+  // and printing those raw was exactly the confusion this ticket fixes
   // (the exact figures live in the details sheet).
   "home.step.title": {
     ja: "ステップ{step}（最初の約{n}語）",

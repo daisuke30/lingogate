@@ -13,20 +13,24 @@ describe("content build", () => {
     expect(deck.bands).toContain(1);
   });
 
-  it("LINGO-013/LINGO-020: loads the ~3000-word frame (bands 1-3) plus a band4 retired pool", () => {
+  it("LINGO-013/LINGO-020/LINGO-043: loads exactly the 3000-word frame (bands 1-3, 1000 each) plus a band4 retired pool", () => {
     const byBand: Record<number, number> = {};
     for (const w of deck.words) byBand[w.band] = (byBand[w.band] ?? 0) + 1;
-    // LINGO-020 (OpenSubtitles spoken-frequency rebaseline): bands are no
-    // longer exactly 1000/1000/1000. ~57 new-inflow candidates were dropped
-    // during cleanup (pymorphy mis-lemmatisations, character names) and not
-    // backfilled — see pipeline/rebaseline/assemble_words.py docstring. band4
-    // is new: old band1-3 words retired by the rebaseline, kept (not
-    // deleted) so existing learner ReviewState/wordKnowledge still resolves.
-    expect(byBand[1]).toBe(998);
-    expect(byBand[2]).toBe(995);
-    expect(byBand[3]).toBe(967);
-    expect(byBand[4]).toBe(859);
-    expect(deck.words.length).toBe(998 + 995 + 967 + 859);
+    // LINGO-043: band1-3 are now EXACTLY 1000/1000/1000 (Katsuta's repeated
+    // "why 998, not 1000" — the LINGO-020 rebaseline left ~57 new-inflow
+    // candidates dropped during cleanup and un-backfilled; LINGO-043
+    // telescoped the resulting gaps closed — band1's 2-word shortfall filled
+    // from band2's top, band2's resulting gap from band3's top, band3's from
+    // the band4 retirement pool's top (by original candidate rank) — and
+    // renumbered rank 1..3000 contiguously. band4 (old band1-3 words retired
+    // by the LINGO-020 rebaseline, kept — not deleted — so existing learner
+    // ReviewState/wordKnowledge still resolves) shrank by the 40 words
+    // recovered into band3: 859 -> 819.
+    expect(byBand[1]).toBe(1000);
+    expect(byBand[2]).toBe(1000);
+    expect(byBand[3]).toBe(1000);
+    expect(byBand[4]).toBe(819);
+    expect(deck.words.length).toBe(1000 + 1000 + 1000 + 819);
     // Every band1-3 lemma is unique across the whole deck (no band4 collision).
     const seen = new Set<string>();
     for (const w of deck.words) {
@@ -37,12 +41,14 @@ describe("content build", () => {
     for (const w of deck.words) {
       expect(w.pos).toBeTruthy();
     }
-    // Ranks span 1..3000 across bands 1-3 (not necessarily contiguous — see
-    // the ~40-word gap noted above); band4 words carry no rank (null).
+    // Ranks span 1..3000 across bands 1-3, now fully contiguous (LINGO-043 —
+    // no gaps); band4 words carry no rank (null).
     const rankedWords = deck.words.filter((w: any) => w.band <= 3);
     const ranks = rankedWords.map((w: any) => w.rank).sort((a: number, b: number) => a - b);
     expect(ranks[0]).toBe(1);
     expect(ranks[ranks.length - 1]).toBe(3000);
+    expect(ranks.length).toBe(3000);
+    for (let i = 0; i < ranks.length; i++) expect(ranks[i]).toBe(i + 1);
     for (const w of deck.words.filter((w: any) => w.band === 4)) {
       expect(w.rank).toBeNull();
     }
@@ -122,7 +128,7 @@ describe("content build", () => {
       expect(leaked).toEqual([]);
     });
 
-    it("keeps exactly the core sentences (2134 post-LINGO-023) plus any word cards", () => {
+    it("keeps exactly the core sentences (2135 post-LINGO-043) plus any word cards", () => {
       // LINGO-020: 1000 original T#### core sentences, retagged across bands
       // 1-4 by their target_lemma's new band (stage4a), plus 71 new T1001+
       // sentences for genuinely-new band1 words with no prior core sentence
@@ -131,11 +137,15 @@ describe("content build", () => {
       // words that still lacked a target example = 1386.
       // LINGO-023: +748 B-prefixed core sentences for the band2/3 inflow words
       // that lacked a target example (band2 B2001-B2286 = 286, band3
-      // B3001-B3462 = 462) = 2134. These ship in the deck but stay dormant at
+      // B3001-B3462 = 462) = 2134.
+      // LINGO-043: band normalization to exactly 1000/1000/1000 moved 2 words
+      // from band2 into band1 (сложно, животное); животное already had a core
+      // sentence (retagged into sentences_band1_core.jsonl), сложно did not —
+      // +1 new T1387 = 2135. These ship in the deck but stay dormant at
       // runtime while PRIMARY_BAND is fixed at 1 (band progression = LINGO-024).
       const core = deck.sentences.filter((s: any) => s.kind === "sentence");
       const words = deck.sentences.filter((s: any) => s.kind === "word");
-      expect(core.length).toBe(2134);
+      expect(core.length).toBe(2135);
       expect(deck.sentences.length).toBe(core.length + words.length);
     });
 

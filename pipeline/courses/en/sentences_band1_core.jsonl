@@ -998,3 +998,5 @@
 {"id":"E0998","en":"I know your favorite color.","ja":"君の好きな色を知ってる。","ru":"Я знаю твой любимый цвет.","lemmas":["i","know","you","favorite","color"],"target_lemma":"favorite","difficulty":1,"kind":"sentence","lemma_note":"lemma 'you' covers the possessive form 'your'"}
 {"id":"E0999","en":"I know this difficulty well.","ja":"この難しさはよく知ってる。","ru":"Я хорошо знаю эту трудность.","lemmas":["i","know","this","difficulty","well"],"target_lemma":"difficulty","difficulty":1,"kind":"sentence"}
 {"id":"E1000","en":"I want to make this purchase.","ja":"この購入をしたい。","ru":"Я хочу сделать эту покупку.","lemmas":["i","want","to","make","this","purchase"],"target_lemma":"purchase","difficulty":1,"kind":"sentence"}
+{"id": "E1001", "en": "Put it here.", "ja": "それをここに置いて。", "ru": "Положи это сюда.", "lemmas": ["put", "it", "here"], "target_lemma": "put", "difficulty": 1, "kind": "sentence", "note_en": "put-put-put"}
+{"id": "E1002", "en": "I will call you back.", "ja": "あとで電話するね。", "ru": "Я перезвоню тебе.", "lemmas": ["i", "will", "call", "you", "back"], "target_lemma": "call", "difficulty": 1, "kind": "sentence"}
