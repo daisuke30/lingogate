@@ -1,8 +1,22 @@
 :root {
-  --bg: #0b0b12;
-  --bg-elev: #14141f;
-  --bg-elev-2: #1c1c2b;
-  --line: #2a2a3d;
+  /* LINGO-045 — the palette was lifted off near-black.
+   *
+   * Katsuta kept reporting "a black space at the bottom" on his iPhone even
+   * after the layout bug (LINGO-042) was fixed. WebKit and Chromium at iPhone
+   * size agree there is no gap — the tab bar's bottom edge is exactly the
+   * viewport's. What he was seeing was the *page itself*: on a short screen
+   * (Home for a new learner, the pet tab) the content ends halfway down and
+   * everything below it was #0b0b12, which an OLED iPhone renders as pure
+   * black. With cards only 9 RGB points lighter, the empty half had no surface
+   * quality at all — it read as a hole in the app, not as a page.
+   *
+   * These values keep the app unmistakably dark but give every surface
+   * something to sit on, and preserve the old relative separation between
+   * bg / card / raised card. */
+  --bg: #111119;
+  --bg-elev: #1b1b28;
+  --bg-elev-2: #24243a;
+  --line: #32324a;
   --ink: #f2f2f7;
   --ink-dim: #a2a2b8;
   --ink-faint: #6c6c85;
@@ -73,7 +87,19 @@ body {
   overflow-y: auto;
   overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
-  background: var(--bg);
+  /* LINGO-045: a solid base colour (so there is never an unpainted pixel, and
+   * so anything sampling the page background still reads one flat value) plus
+   * a very slight lift toward the bottom of the VIEWPORT. An element's own
+   * background is anchored to its border box, not to its scrolled content, so
+   * this stays put while the page scrolls.
+   *
+   * The purpose is the empty lower half of a short screen: flat near-black
+   * there looked like a hole with a bar floating in it. Warming the last ~45%
+   * by a couple of RGB points makes the page feel like it continues down into
+   * the tab bar instead of stopping dead. It is deliberately below the
+   * threshold of "a visible gradient" — you should only notice its absence. */
+  background-color: var(--bg);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(150, 160, 255, 0.035) 100%);
 }
 
 .app {
@@ -979,9 +1005,24 @@ button {
   max-width: 480px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: color-mix(in srgb, var(--bg-elev) 92%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* LINGO-045 — the bar is now an opaque surface, for three reasons:
+   *
+   * 1. It was `color-mix(... 92%, transparent)` over a near-black page, so it
+   *    rendered ≈#131320 — barely distinguishable from the page. It did not
+   *    read as a bar at all, and content scrolled visibly *through* it (the
+   *    pet screen's care buttons showed straight through the glass).
+   * 2. That translucency also made the bar a DIFFERENT colour from the solid
+   *    strip painted beneath it for the home indicator (::after, --bg-elev).
+   *    On a device with a safe-area inset those two shades met in a visible
+   *    seam — a real "black band", just a subtle one, and invisible in
+   *    headless testing where env(safe-area-inset-bottom) is 0.
+   * 3. `color-mix()` needs Safari 16.2+ and had no fallback: on anything older
+   *    the whole declaration is invalid, leaving the bar fully transparent.
+   *
+   * Opaque removes all three at once, and drops the backdrop-filter — a known
+   * source of compositing-edge artifacts on iOS — since there is nothing left
+   * to blur. */
+  background: var(--bg-elev);
   border-top: 1px solid var(--line);
   padding-bottom: max(env(safe-area-inset-bottom), 0px);
   z-index: 50;

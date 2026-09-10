@@ -21,7 +21,7 @@
 //
 // Exits non-zero on any failure. Every deploy must pass it — see README.
 
-import { chromium } from "playwright";
+import { chromium, webkit, devices } from "playwright";
 import { mkdir } from "node:fs/promises";
 import { spawn } from "node:child_process";
 
@@ -55,14 +55,25 @@ const VIEWPORT = { width: 390, height: 844 }; // iPhone 14-ish, Katsuta's device
 
 const failures = [];
 const notes = [];
-function check(ok, message) {
-  if (!ok) failures.push(message);
-  return ok;
-}
 
 await mkdir(outDir, { recursive: true });
-const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: VIEWPORT, deviceScaleFactor: 2 });
+
+/**
+ * The whole audit, run once per browser engine. Chromium alone was not enough:
+ * Katsuta's device is an iPhone, and the bugs that reach him live in WebKit's
+ * rendering (LINGO-045 — a translucent tab bar that let content show through
+ * it, and a `color-mix()` background with no fallback that older Safari would
+ * have dropped entirely). Failures are prefixed with the engine so a
+ * WebKit-only regression is obvious.
+ */
+async function runAudit(engineName, engine) {
+const label0 = engineName;
+function check(ok, message) {
+  if (!ok) failures.push(`[${label0}] ${message}`);
+  return ok;
+}
+const browser = await engine.launch();
+const page = await browser.newPage({ ...devices["iPhone 13"], viewport: VIEWPORT });
 
 const consoleErrors = [];
 page.on("console", (m) => {
@@ -70,7 +81,7 @@ page.on("console", (m) => {
 });
 page.on("pageerror", (e) => consoleErrors.push("pageerror: " + String(e).slice(0, 300)));
 
-const shot = (name) => page.screenshot({ path: `${outDir}/${name}.png`, fullPage: false });
+const shot = (name) => page.screenshot({ path: `${outDir}/${engineName}-${name}.png`, fullPage: false });
 
 /** Geometry of the first match, as the user's screen sees it. */
 async function boxOf(selector) {
@@ -179,6 +190,59 @@ async function assertNoBottomBand(label) {
   );
 }
 
+/**
+ * Background continuity (LINGO-045). Katsuta reported a "black space" at the
+ * bottom of Home and the pet tab on a real iPhone that no Chromium check saw.
+ * There was no gap — the causes were tonal, and these assertions pin them:
+ *
+ *  - the tab bar must be OPAQUE. It used to be `color-mix(... 92%, transparent)`
+ *    over a near-black page, so content scrolled visibly through it and it did
+ *    not read as a bar at all.
+ *  - it must be exactly the same colour as the strip painted below it for the
+ *    home indicator. Those two differed (translucent bar vs solid ::after), so
+ *    on a device with a safe-area inset they met in a visible seam — invisible
+ *    in headless testing, where env(safe-area-inset-bottom) is 0.
+ *  - html / body / #root must all paint the same base colour, so no ancestor
+ *    can show a different shade through any gap.
+ */
+async function assertBackgroundContinuity(label) {
+  const r = await page.evaluate(() => {
+    const tabbar = document.querySelector(".tabbar");
+    const bg = (el, pseudo) => (el ? getComputedStyle(el, pseudo).backgroundColor : null);
+    return {
+      html: bg(document.documentElement),
+      body: bg(document.body),
+      root: bg(document.querySelector("#root")),
+      tabbar: tabbar ? bg(tabbar) : null,
+      tabbarAfter: tabbar ? bg(tabbar, "::after") : null,
+      tabbarRaw: tabbar ? getComputedStyle(tabbar).background : null,
+    };
+  });
+  if (!r.tabbar) return; // screens without a tab bar
+  // Computed colours arrive as `rgb()`, `rgba()` or — for a color-mix() result —
+  // `color(srgb r g b / a)`. Alpha has to be read out of all three forms, or
+  // the very case this guards against (a translucent bar) reads as opaque.
+  const alpha = (c) => {
+    if (!c) return 1;
+    const slash = /\/\s*([\d.]+)\s*\)/.exec(c); // color(srgb ... / 0.92)
+    if (slash) return Number(slash[1]);
+    const rgba = /^rgba\(\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*,\s*([\d.]+)\s*\)/.exec(c);
+    return rgba ? Number(rgba[1]) : 1;
+  };
+  check(
+    alpha(r.tabbar) === 1,
+    `${label}: tab bar is translucent (${r.tabbar}) — content scrolls visibly through it`,
+  );
+  check(
+    r.tabbar === r.tabbarAfter,
+    `${label}: tab bar (${r.tabbar}) and the strip beneath it (${r.tabbarAfter}) are different colours — a seam appears wherever the safe-area inset is non-zero`,
+  );
+  check(
+    r.html === r.body && r.body === r.root,
+    `${label}: page base colours differ — html ${r.html}, body ${r.body}, #root ${r.root}`,
+  );
+}
+
 /** #root must be the only scroller: html/body never move (iOS bounce fix). */
 async function assertRootIsTheScroller(label) {
   const r = await page.evaluate(() => {
@@ -256,6 +320,7 @@ await assertReallyVisible(".btn.primary", "home: primary CTA", 44);
 await assertHasSideMargin(".home-progress", "home: progress block");
 await assertNoHorizontalOverflow("home");
 await assertNoBottomBand("home");
+await assertBackgroundContinuity("home");
 
 // Exactly one goal on the home screen (LINGO-042, Katsuta's instruction).
 const meterCount = await page.locator(".home-progress .meter").count();
@@ -361,6 +426,7 @@ if (check(await petTab.count(), "tab bar: 育成 tab missing")) {
   await shot("06-pet");
   await assertNoHorizontalOverflow("pet");
   await assertNoBottomBand("pet");
+await assertBackgroundContinuity("pet");
   await assertRootIsTheScroller("pet");
   await scrollToBottom();
   await page.waitForTimeout(500);
@@ -420,6 +486,10 @@ check(
 check(consoleErrors.length === 0, `console errors: ${consoleErrors.join(" | ")}`);
 
 await browser.close();
+}
+
+await runAudit("chromium", chromium);
+await runAudit("webkit", webkit);
 
 if (preview) preview.kill();
 
