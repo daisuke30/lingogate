@@ -30,6 +30,10 @@ export interface BackupGateSession {
   correct: number;
   durationMs: number | null;
   unlocked: boolean;
+  /** LINGO-046: cards actually graded; absent on older files → read as
+   * `questions`. Carried through export/import so restoring a backup does not
+   * lose an early-exit session's contribution to that day's goal. */
+  graded?: number;
 }
 
 export interface BackupCourseData {

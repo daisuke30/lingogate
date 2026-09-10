@@ -9,6 +9,12 @@ import type { Lang } from "../content/courses";
 export const UNLOCK_CHOICES = [5, 10, 15, 30] as const;
 export type QuizMode = "flashcard" | "strict";
 
+/** LINGO-046: cards per day the learner is aiming for. 30 is three batches —
+ * roughly 5 minutes, small enough to keep on a bad day and the reason the
+ * default is not 50. */
+export const DAILY_GOAL_CHOICES = [10, 30, 50, 100] as const;
+export const DEFAULT_DAILY_GOAL = 30;
+
 /** Speech rates offered in Settings; 1.0 = normal, 0.8 = slower for new words. */
 export const TTS_RATE_CHOICES = [0.8, 1.0] as const;
 
@@ -26,6 +32,8 @@ const K = {
   placementDonePrefix: "course.placementDone.", // + courseId (LINGO-016)
   onboardingSeen: "onboarding.seen", // global, not course-scoped (LINGO-017)
   unlockedBandPrefix: "course.unlockedBand.", // + courseId (LINGO-024)
+  dailyGoal: "study.dailyGoal", // LINGO-046; global, not course-scoped
+  placementDeferredPrefix: "course.placementDeferred.", // + courseId (LINGO-046)
 };
 
 // MARK: i18n (app UI language) — LINGO-014
@@ -78,6 +86,24 @@ export function setPlacementDone(courseId: string, done: boolean): Promise<void>
   return setMeta(K.placementDonePrefix + courseId, done);
 }
 
+/**
+ * LINGO-046: the learner tapped "あとで（すぐ始める）" on the level-check card.
+ *
+ * Without this, Home's block 2 stayed on the level-check variant for as long
+ * as the test went untaken — which meant anyone who chose to skip it never saw
+ * the daily-goal card at all, and the app kept asking a question they had
+ * already answered. Deferring is a real answer, so it is remembered. The
+ * permanent entry point in Settings is unaffected: the test is always one tap
+ * away, it just stops occupying the one block that tells them what to do today.
+ */
+export function getPlacementDeferred(courseId: string): Promise<boolean> {
+  return getMeta<boolean>(K.placementDeferredPrefix + courseId, false);
+}
+
+export function setPlacementDeferred(courseId: string, deferred: boolean): Promise<void> {
+  return setMeta(K.placementDeferredPrefix + courseId, deferred);
+}
+
 // MARK: unlocked band (LINGO-024) — per course, the highest 1000-word band
 // whose new cards are eligible for practice. 1 = only band 1 (everyone's
 // starting point); promotion (engine/bandPromotion.ts) raises it.
@@ -110,6 +136,19 @@ export async function getUnlockMinutes(): Promise<number> {
 
 export function setUnlockMinutes(m: number): Promise<void> {
   return setMeta(K.unlockMinutes, m);
+}
+
+/** LINGO-046: the learner's daily card target. Global rather than per course —
+ * it is a statement about how much time they want to spend today, not about
+ * any one language. Falls back to the default for an unrecognised stored value
+ * (e.g. a choice removed from DAILY_GOAL_CHOICES in a later build). */
+export async function getDailyGoal(): Promise<number> {
+  const v = await getMeta<number>(K.dailyGoal, DEFAULT_DAILY_GOAL);
+  return (DAILY_GOAL_CHOICES as readonly number[]).includes(v) ? v : DEFAULT_DAILY_GOAL;
+}
+
+export function setDailyGoal(n: number): Promise<void> {
+  return setMeta(K.dailyGoal, n);
 }
 
 export async function getQuizMode(): Promise<QuizMode> {

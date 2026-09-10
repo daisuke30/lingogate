@@ -57,6 +57,7 @@ function toBackupSession(row: GateSessionRow, fallbackCourseId: string): BackupG
     correct: row.correct,
     durationMs: row.durationMs,
     unlocked: row.unlocked,
+    graded: row.graded,
   };
 }
 

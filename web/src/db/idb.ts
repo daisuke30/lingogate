@@ -29,6 +29,12 @@ export interface GateSessionRow {
   correct: number;
   durationMs: number | null;
   unlocked: boolean;
+  /** LINGO-046: cards actually GRADED in this session, which is what the daily
+   * goal counts. For a completed batch it equals `questions`; for an early exit
+   * it is smaller (and such a session had no row at all before LINGO-046, so
+   * whatever the learner did before quitting simply vanished). Absent on every
+   * pre-LINGO-046 row → read it as `questions`. */
+  graded?: number;
 }
 
 let dbPromise: Promise<IDBDatabase> | null = null;

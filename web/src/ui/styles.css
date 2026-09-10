@@ -1473,6 +1473,40 @@ button {
   margin: 0;
 }
 
+/* Today card + daily-goal ring (LINGO-046). The ring gives the card real
+ * vertical presence, which also does some of the work of filling the short
+ * screen Katsuta kept seeing as empty. */
+.today-main {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.goal-ring {
+  flex: none;
+}
+.today-figures {
+  min-width: 0;
+}
+.today-headline {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+.today-headline.done {
+  font-size: 20px;
+  color: var(--good);
+}
+.today-sub {
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+.today-sub.faint {
+  color: var(--ink-faint);
+  font-size: 12px;
+}
+
 /* Block 3 — the single progress bar. */
 .home-progress {
   margin-top: 14px;

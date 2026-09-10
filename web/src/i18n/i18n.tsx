@@ -73,20 +73,40 @@ const M: Record<string, Entry> = {
   "home.streak": { ja: "{n}日つづけて", en: "{n}-day streak", ru: "{n} дней подряд" },
   // Block 2 — the single thing to do today.
   "home.today.title": { ja: "今日やること", en: "Today", ru: "Сегодня" },
-  "home.today.withReviews": {
-    ja: "復習 {n}枚 ＋ 新しい単語",
-    en: "{n} reviews + new words",
-    ru: "Повторений: {n} + новые слова",
+  // LINGO-046 (勝田要望): "復習 8枚 ＋ 新しい単語" told the learner what the app
+  // had queued, not what they were being asked to do, and gave them nothing to
+  // finish. The card now leads with a distance to a target they chose —
+  // "あと22問" — and the mix is demoted to a supporting line.
+  "home.today.remaining": { ja: "あと{n}問", en: "{n} to go", ru: "Осталось {n}" },
+  "home.today.goal": { ja: "今日の目標 {n}問", en: "Today's goal: {n}", ru: "Цель на сегодня: {n}" },
+  "home.today.ofWhichReviews": {
+    ja: "うち復習 {n}枚",
+    en: "including {n} reviews",
+    ru: "из них повторений: {n}",
   },
   "home.today.freshOnly": {
     ja: "新しい単語からはじめます",
     en: "Starting with new words",
     ru: "Начнём с новых слов",
   },
+  "home.today.achieved": {
+    ja: "今日の目標達成！",
+    en: "Goal reached for today!",
+    ru: "Цель на сегодня выполнена!",
+  },
+  // Passing the goal is not the end of the day — the count keeps going, so
+  // someone on a roll is never told to stop.
+  "home.today.beyond": { ja: "目標＋{n}問", en: "{n} past your goal", ru: "+{n} сверх цели" },
   "home.today.start": { ja: "{n}問はじめる", en: "Start {n} questions", ru: "Начать: {n} заданий" },
+  "home.today.continue": { ja: "＋{n}問つづける", en: "Keep going: {n} more", ru: "Ещё {n} заданий" },
   // Block 3 — one bar, aimed at the next 500-word milestone.
   "home.progress.learned": { ja: "覚えた語", en: "Words learned", ru: "Выучено слов" },
   "home.progress.words": { ja: "{n}語", en: "{n} words", ru: "Слов: {n}" },
+  // LINGO-046: the headline count is rounded down to a round ten. A precise
+  // "275語" invites the reader to ask what the 5 means, and the honest answer
+  // is "nothing you can rely on" — see engine/mastery.ts approximateWordCount.
+  // The details sheet still shows the exact figure.
+  "home.progress.approxWords": { ja: "約{n}語", en: "about {n} words", ru: "около {n} слов" },
   // LINGO-042 (勝田指示): the 500-word milestone line is gone. It sat directly
   // above "次のステップまで あとN語" and the two goals competed — the whole
   // point of LINGO-040 was to leave exactly one thing to aim at. The bar now
@@ -725,6 +745,19 @@ const M: Record<string, Entry> = {
     en: "About 1–3 min. Updates your estimate without touching your learning history.",
     ru: "~1–3 мин. Обновляет оценку, не затрагивая историю обучения.",
   },
+
+  // -- daily goal (LINGO-046) ----------------------------------------------
+  "settings.section.dailyGoal": { ja: "1日の目標", en: "Daily goal", ru: "Цель на день" },
+  "settings.dailyGoal.label": { ja: "1日に解く問題数", en: "Questions per day", ru: "Заданий в день" },
+  // No {n} here on purpose: the ListPicker row already shows the current value
+  // on its right-hand side, so repeating it in the subtitle just says the same
+  // number twice.
+  "settings.dailyGoal.sub": {
+    ja: "ホームの「あと◯問」の基準になります。いつでも変えられます。",
+    en: "Sets the target Home counts down to. Change it whenever you like.",
+    ru: "Задаёт цель, до которой считает главный экран. Можно изменить в любой момент.",
+  },
+  "settings.dailyGoal.questions": { ja: "{n}問", en: "{n} questions", ru: "{n} заданий" },
 
   // -- app lock (LINGO-040): the automation guide, moved off Home. It needs
   // iOS Shortcuts knowledge to act on, so it belongs where someone goes

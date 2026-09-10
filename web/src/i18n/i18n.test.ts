@@ -30,10 +30,11 @@ describe("i18n catalog (LINGO-014)", () => {
   it("interpolates named params", () => {
     expect(translate("ja", "settings.unlock.minutes", { m: 10 })).toBe("10分");
     expect(translate("en", "settings.unlock.minutes", { m: 10 })).toBe("10 min");
-    // LINGO-040: home.band.dueNow retired with the rest of the band card —
-    // the same interpolation path is now exercised through the home copy that
-    // replaced it ("復習の期限が来たカード" → "今日やること").
-    expect(translate("en", "home.today.withReviews", { n: 3 })).toBe("3 reviews + new words");
+    // LINGO-040 retired home.band.dueNow with the rest of the band card, and
+    // LINGO-046 retired its replacement (home.today.withReviews) in turn. The
+    // same interpolation path is now exercised through the copy that stands
+    // today: the daily goal's countdown.
+    expect(translate("en", "home.today.remaining", { n: 3 })).toBe("3 to go");
   });
 
   it("falls back to Japanese for an unknown language and to the raw key for an unknown key", () => {

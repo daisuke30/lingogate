@@ -24,6 +24,29 @@ export const MASTERY_STABILITY_DAYS = 21;
  * currently ships (band2/3 generation can yield slightly fewer than 1000 each). */
 export const MASTERY_TARGET_WORDS = 3000;
 
+/**
+ * LINGO-046: the home screen's headline word count, rounded DOWN to a round
+ * ten — 275 becomes 270, shown as "約270語".
+ *
+ * Katsuta's point: a precise 275 invites the reader to ask what the 5 means,
+ * and the honest answer is "not much" — the figure blends a self-declared
+ * level check with FSRS stability crossing a threshold, and it moves whenever
+ * a card matures. A number that precise implies a measurement it isn't.
+ * Rounding down also keeps the claim conservative: never say the learner knows
+ * more than they do.
+ *
+ * Below ten there is nothing to round — "約0語" would be absurd for someone
+ * with 7 words — so small counts are returned exactly, and the caller drops
+ * the "約". `isApproximate` tells it which case it is.
+ */
+export const APPROX_WORDS_FLOOR = 10;
+
+export function approximateWordCount(n: number): { value: number; isApproximate: boolean } {
+  const safe = Math.max(0, Math.floor(n));
+  if (safe < APPROX_WORDS_FLOOR) return { value: safe, isApproximate: false };
+  return { value: Math.floor(safe / 10) * 10, isApproximate: true };
+}
+
 /** Research coverage curve control points (mastered-word count → % of everyday
  * conversation understood). Interpolated linearly between points; clamped to the
  * last point above 3000 (scope is capped at 3000, §3). */

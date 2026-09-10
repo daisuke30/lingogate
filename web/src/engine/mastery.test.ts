@@ -4,6 +4,7 @@ import {
   masteryLevelLabel,
   masteredLemmaSet,
   masteryStats,
+  approximateWordCount,
   MASTERY_STABILITY_DAYS,
   MASTERY_TARGET_WORDS,
 } from "./mastery";
@@ -187,5 +188,38 @@ describe("masteryStats", () => {
     expect(stats.masteredCount).toBe(1);
     expect(stats.declaredCount).toBe(1);
     expect(stats.learnedCount).toBe(0);
+  });
+});
+
+// --- headline approximation (LINGO-046) -------------------------------------
+// "覚えた語 275" reads as a measurement; it isn't. The figure blends a
+// self-declared level check with FSRS stability crossing a threshold, so the
+// last digit carries no meaning worth showing.
+
+describe("approximateWordCount", () => {
+  it("rounds down to a round ten and flags the result as approximate", () => {
+    expect(approximateWordCount(275)).toEqual({ value: 270, isApproximate: true });
+    expect(approximateWordCount(270)).toEqual({ value: 270, isApproximate: true });
+    expect(approximateWordCount(279)).toEqual({ value: 270, isApproximate: true });
+    expect(approximateWordCount(1234)).toEqual({ value: 1230, isApproximate: true });
+  });
+
+  it("never rounds UP — the app must not claim more words than the learner has", () => {
+    for (const n of [10, 11, 19, 99, 101, 999, 2999]) {
+      expect(approximateWordCount(n).value).toBeLessThanOrEqual(n);
+    }
+  });
+
+  it("returns small counts exactly, so nobody is told they know '約0語'", () => {
+    expect(approximateWordCount(0)).toEqual({ value: 0, isApproximate: false });
+    expect(approximateWordCount(7)).toEqual({ value: 7, isApproximate: false });
+    expect(approximateWordCount(9)).toEqual({ value: 9, isApproximate: false });
+    // 10 is the first value where rounding says anything at all.
+    expect(approximateWordCount(10)).toEqual({ value: 10, isApproximate: true });
+  });
+
+  it("clamps nonsense input rather than propagating it to the screen", () => {
+    expect(approximateWordCount(-5)).toEqual({ value: 0, isApproximate: false });
+    expect(approximateWordCount(12.9)).toEqual({ value: 10, isApproximate: true });
   });
 });

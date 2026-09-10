@@ -14,7 +14,7 @@ import { evaluateBandPromotion, wordsToPromotion } from "../engine/bandPromotion
 import type { BandProgress } from "../engine/bandPromotion";
 import { BOOTSTRAP_DECK, DEFAULT_COURSE_ID, resolveCourse } from "../content/courses";
 import type { Lang } from "../content/courses";
-import { getActiveCourse, getFrontLang, getUnlockedBand, setUnlockedBand } from "./settings";
+import { getActiveCourse, getDailyGoal, getFrontLang, getUnlockedBand, setUnlockedBand } from "./settings";
 import {
   getAllReviewStates,
   putReviewStates,
@@ -232,6 +232,7 @@ export async function commitSession(
   const endedAt = Date.now();
   await persistGrades(runner);
 
+  const counts = runner.gradedCounts();
   await addGateSession(
     {
       appKey: opts.appKey,
@@ -241,6 +242,10 @@ export async function commitSession(
       correct: runner.firstTryCorrect,
       durationMs: endedAt - startedAt,
       unlocked: opts.unlocked,
+      // LINGO-046: equals questions here (a completed batch grades every card),
+      // recorded explicitly so the daily goal has one field to sum across both
+      // completed and abandoned sessions.
+      graded: counts.newCount + counts.reviewCount,
     },
     activeCourseId,
   );
@@ -265,6 +270,33 @@ export async function commitSession(
  * scaling, just the real graded count). */
 export async function commitPartialSession(session: StartedSession): Promise<SessionCommitResult> {
   await persistGrades(session.runner);
+
+  // LINGO-046: an abandoned batch now leaves a row too, so the cards the
+  // learner actually answered count toward today's goal. Before this, quitting
+  // at card 7 of 10 recorded nothing and "あと N 問" would not move — while the
+  // pet had already paid out food for those 7. `unlocked: false` because an
+  // incomplete batch never opens a gated app, and the row is written only when
+  // something was graded, so open-and-immediately-exit stays a non-event.
+  const { runner, startedAt } = session;
+  const counts = runner.gradedCounts();
+  const graded = counts.newCount + counts.reviewCount;
+  if (graded > 0) {
+    const endedAt = Date.now();
+    await addGateSession(
+      {
+        appKey: null,
+        startedAt,
+        endedAt,
+        questions: graded,
+        correct: runner.firstTryCorrect,
+        durationMs: endedAt - startedAt,
+        unlocked: false,
+        graded,
+      },
+      activeCourseId,
+    );
+  }
+
   const unlockedBand = await getUnlockedBand(activeCourseId);
   const [bandPromotion, petEarned] = await Promise.all([
     checkBandPromotion(unlockedBand),
@@ -283,8 +315,15 @@ export async function commitPartialSession(session: StartedSession): Promise<Ses
  * on screen collapses when a step is promoted.
  */
 export interface HomeStats {
-  /** Completed 10-card sessions today (shown only in the details sheet). */
+  /** Study sessions today, completed or abandoned-with-progress (shown only in
+   * the details sheet). LINGO-046 added the abandoned ones — a batch someone
+   * answered 7 cards of is a session they did. */
   todaySessions: number;
+  /** LINGO-046: cards graded today, across every session. The number the whole
+   * "今日 あとN問" card is built on. */
+  todayGraded: number;
+  /** LINGO-046: the learner's configured target for `todayGraded`. */
+  dailyGoal: number;
   /** LINGO-024: the course's currently unlocked band (1 = only band 1). */
   unlockedBand: number;
   /** LINGO-040: words the learner has been introduced to, cumulative over the
@@ -331,6 +370,10 @@ export async function homeStats(): Promise<HomeStats> {
   const sessions = await getAllGateSessions(activeCourseId);
   const today = sessions.filter((s) => isToday(s.startedAt, now));
   const todaySessions = today.length;
+  // `graded` is absent on pre-LINGO-046 rows; those were all completed batches,
+  // where every card was graded, so `questions` is the right stand-in.
+  const todayGraded = today.reduce((n, s) => n + (s.graded ?? s.questions), 0);
+  const dailyGoal = await getDailyGoal();
 
   const unlockedBand = await getUnlockedBand(activeCourseId);
 
@@ -378,6 +421,8 @@ export async function homeStats(): Promise<HomeStats> {
 
   return {
     todaySessions,
+    todayGraded,
+    dailyGoal,
     unlockedBand,
     introduced,
     retentionPct,

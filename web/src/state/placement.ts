@@ -10,7 +10,13 @@
 import { DECK, MAX_ACTIVE_BAND, activeCourse, activeFrontLanguage, checkBandPromotion, ensureCourse } from "./service";
 import { resolveCourse } from "../content/courses";
 import type { Lang, TargetLang } from "../content/courses";
-import { getPlacementDone, getTtsSettings, setPlacementDone } from "./settings";
+import {
+  getPlacementDeferred,
+  getPlacementDone,
+  getTtsSettings,
+  setPlacementDeferred,
+  setPlacementDone,
+} from "./settings";
 import type { TtsSettings } from "./settings";
 import { getAllReviewStates, getAllWordKnowledge, putReviewStates, putWordKnowledge } from "../db/idb";
 import { seedKnownReviewStatesForLemmas } from "../engine/calibration";
@@ -84,6 +90,24 @@ export function targetSentenceByLemma(): Map<string, Sentence> {
 export async function isPlacementDone(): Promise<boolean> {
   await ensureCourse();
   return getPlacementDone(activeCourse());
+}
+
+/** LINGO-046: has the learner taken the level check, or explicitly chosen to
+ * skip it? Either way Home stops leading with it — see setPlacementDeferred. */
+export async function isPlacementSettled(): Promise<boolean> {
+  await ensureCourse();
+  const courseId = activeCourse();
+  const [done, deferred] = await Promise.all([
+    getPlacementDone(courseId),
+    getPlacementDeferred(courseId),
+  ]);
+  return done || deferred;
+}
+
+/** Remember "あとで（すぐ始める）" for the active course. */
+export async function deferPlacement(): Promise<void> {
+  await ensureCourse();
+  await setPlacementDeferred(activeCourse(), true);
 }
 
 async function loadKnowledgeMap(courseId: string): Promise<KnowledgeMap> {

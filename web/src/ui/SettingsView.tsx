@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import {
+  DAILY_GOAL_CHOICES,
   UNLOCK_CHOICES,
   TTS_RATE_CHOICES,
   getUnlockMinutes,
   setUnlockMinutes,
+  getDailyGoal,
+  setDailyGoal,
   getQuizMode,
   getTtsEnabled,
   setTtsEnabled,
@@ -48,6 +51,7 @@ export function SettingsView({
 }) {
   const { lang: uiLang, setLang, t } = useI18n();
   const [minutes, setMinutes] = useState(10);
+  const [dailyGoal, setDailyGoalState] = useState(30); // LINGO-046
   const [quizMode, setQuizModeState] = useState<QuizMode>("flashcard");
   const [ttsOn, setTtsOn] = useState(true);
   const [ttsRate, setTtsRateState] = useState(1.0);
@@ -74,6 +78,7 @@ export function SettingsView({
 
   useEffect(() => {
     getUnlockMinutes().then(setMinutes);
+    getDailyGoal().then(setDailyGoalState);
     getQuizMode().then(setQuizModeState);
     getTtsEnabled().then(setTtsOn);
     getTtsRate().then(setTtsRateState);
@@ -94,6 +99,12 @@ export function SettingsView({
     });
     return unsub;
   }, []);
+
+  function pickDailyGoal(v: string) {
+    const n = Number(v);
+    setDailyGoalState(n);
+    void setDailyGoal(n);
+  }
 
   function pickMinutes(v: string) {
     const m = Number(v);
@@ -259,6 +270,24 @@ export function SettingsView({
           label={t(placementDone ? "settings.placement.redo" : "settings.placement.start")}
           sub={t("settings.placement.sub")}
           onClick={() => navigate({ name: "placement" })}
+        />
+      </div>
+
+      {/* LINGO-046: how much the learner is aiming for per day. Feeds Home's
+          "あと N 問" card — the only number on that card the app does not
+          derive on its own. */}
+      <div className="section-title">{t("settings.section.dailyGoal")}</div>
+      <div className="list">
+        <ListPicker
+          label={t("settings.dailyGoal.label")}
+          sub={t("settings.dailyGoal.sub")}
+          options={DAILY_GOAL_CHOICES.map((n) => ({
+            value: String(n),
+            label: t("settings.dailyGoal.questions", { n }),
+          }))}
+          selected={String(dailyGoal)}
+          onSelect={pickDailyGoal}
+          closeLabel={closeLabel}
         />
       </div>
 

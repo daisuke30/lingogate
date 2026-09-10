@@ -26,7 +26,8 @@ import { activeCourse, homeStats } from "../state/service";
 import type { HomeStats } from "../state/service";
 import { calibrationProgress } from "../state/calibration";
 import { CALIBRATION_FALLBACK_THRESHOLD } from "../engine/calibration";
-import { isPlacementDone } from "../state/placement";
+import { approximateWordCount } from "../engine/mastery";
+import { deferPlacement, isPlacementSettled } from "../state/placement";
 import { resolveCourse, selectableCourses } from "../content/courses";
 import { setActiveCourse } from "../state/settings";
 import { NATIVE_LANG_NAME, useI18n } from "../i18n/i18n";
@@ -77,8 +78,8 @@ export function HomeView({
         setCourseId(activeCourse());
       })
       .catch((err) => console.error("homeStats failed", err));
-    Promise.all([calibrationProgress(), isPlacementDone()])
-      .then(([c, done]) => setShowLevelCheck(!done && c.judged < CALIBRATION_FALLBACK_THRESHOLD))
+    Promise.all([calibrationProgress(), isPlacementSettled()])
+      .then(([c, settled]) => setShowLevelCheck(!settled && c.judged < CALIBRATION_FALLBACK_THRESHOLD))
       .catch((err) => {
         // 2026-08-26 bug report: an unhandled rejection here used to leave the
         // level-check entry point hidden forever on one device. Failing open is
@@ -147,28 +148,22 @@ export function HomeView({
           </button>
           <button
             className="btn ghost block"
-            onClick={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
+            onClick={() => {
+              // Remember the choice, or Home would ask again on every visit and
+              // the daily-goal card would never get its turn (LINGO-046).
+              void deferPlacement();
+              setShowLevelCheck(false);
+              navigate({ name: "quiz", returnApp: null, continuous: true });
+            }}
           >
             {t("home.calib.later")}
           </button>
         </div>
       ) : (
-        <div className="card home-hero">
-          <div className="hero-kicker">{t("home.today.title")}</div>
-          <div className="hero-line">
-            {stats == null
-              ? "…"
-              : stats.dueNow > 0
-                ? t("home.today.withReviews", { n: stats.dueNow })
-                : t("home.today.freshOnly")}
-          </div>
-          <button
-            className="btn primary block"
-            onClick={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
-          >
-            {t("home.today.start", { n: BATCH_SIZE })}
-          </button>
-        </div>
+        <TodayCard
+          stats={stats}
+          onStart={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
+        />
       )}
 
       {/* ---- Block 3: one progress bar, aimed at the next step ---- */}
@@ -176,7 +171,7 @@ export function HomeView({
         <div className="progress-head">
           <span className="progress-label">{t("home.progress.learned")}</span>
           <span className="progress-num">
-            {stats ? t("home.progress.words", { n: mastered.toLocaleString() }) : "–"}
+            {stats ? approxWords(mastered, t) : "–"}
           </span>
         </div>
         {/* LINGO-042: ONE bar, tracking the current step — the same thing the
@@ -231,6 +226,124 @@ export function HomeView({
         onClose={() => setDetailsOpen(false)}
       />
     </div>
+  );
+}
+
+/**
+ * The headline word count, rounded down to a round ten ("約270語") — LINGO-046.
+ * Small counts stay exact, because "約0語" is not a kindness. The details
+ * sheet keeps the precise figure for anyone who goes looking for it.
+ */
+function approxWords(n: number, t: TFn): string {
+  const { value, isApproximate } = approximateWordCount(n);
+  return t(isApproximate ? "home.progress.approxWords" : "home.progress.words", {
+    n: value.toLocaleString(),
+  });
+}
+
+/**
+ * Block 2 — "今日 あとN問" (LINGO-046).
+ *
+ * The card leads with the distance to a target the learner chose in Settings,
+ * because that is a thing a person can finish. What it replaced ("復習 8枚 ＋
+ * 新しい単語") described the app's queue rather than the learner's task, and
+ * had no end: eight reviews plus an unbounded supply of new words is not a
+ * goal, it is a treadmill.
+ *
+ * Passing the goal does not close the card down — the ring stays full, the
+ * count keeps rising as "目標＋N問", and the button still starts another batch.
+ * A daily target should be a floor to clear, never a ceiling that tells
+ * someone on a roll to stop.
+ */
+function TodayCard({ stats, onStart }: { stats: HomeStats | null; onStart: () => void }) {
+  const { t } = useI18n();
+  const goal = stats?.dailyGoal ?? 0;
+  const done = stats?.todayGraded ?? 0;
+  const remaining = Math.max(0, goal - done);
+  const achieved = stats != null && goal > 0 && done >= goal;
+  const pct = goal > 0 ? Math.min(100, (100 * done) / goal) : 0;
+
+  return (
+    <div className="card home-hero today-card">
+      <div className="hero-kicker">{t("home.today.title")}</div>
+
+      <div className="today-main">
+        <GoalRing pct={pct} achieved={achieved} />
+        <div className="today-figures">
+          <div className={"today-headline" + (achieved ? " done" : "")}>
+            {stats == null
+              ? "…"
+              : achieved
+                ? t("home.today.achieved")
+                : t("home.today.remaining", { n: remaining.toLocaleString() })}
+          </div>
+          {stats != null && (
+            <div className="today-sub">
+              {achieved && done > goal
+                ? t("home.today.beyond", { n: (done - goal).toLocaleString() })
+                : t("home.today.goal", { n: goal.toLocaleString() })}
+            </div>
+          )}
+          {stats != null && (
+            <div className="today-sub faint">
+              {stats.dueNow > 0
+                ? t("home.today.ofWhichReviews", { n: stats.dueNow.toLocaleString() })
+                : t("home.today.freshOnly")}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <button className="btn primary block" onClick={onStart}>
+        {achieved
+          ? t("home.today.continue", { n: BATCH_SIZE })
+          : t("home.today.start", { n: BATCH_SIZE })}
+      </button>
+    </div>
+  );
+}
+
+/** The daily-goal ring. A plain SVG arc — no chart library for one circle. */
+function GoalRing({ pct, achieved }: { pct: number; achieved: boolean }) {
+  const size = 92;
+  const stroke = 9;
+  const r = (size - stroke) / 2;
+  const circumference = 2 * Math.PI * r;
+  const filled = (Math.max(0, Math.min(100, pct)) / 100) * circumference;
+  return (
+    <svg className="goal-ring" width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        fill="none"
+        stroke="var(--bg-elev-2)"
+        strokeWidth={stroke}
+      />
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={r}
+        fill="none"
+        stroke={achieved ? "var(--good)" : "var(--indigo-bright)"}
+        strokeWidth={stroke}
+        strokeLinecap="round"
+        strokeDasharray={`${filled} ${circumference - filled}`}
+        // Start the arc at 12 o'clock rather than 3 o'clock.
+        transform={`rotate(-90 ${size / 2} ${size / 2})`}
+      />
+      {achieved && (
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="central"
+          fontSize="30"
+        >
+          🎉
+        </text>
+      )}
+    </svg>
   );
 }
 

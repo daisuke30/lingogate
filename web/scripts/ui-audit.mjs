@@ -75,6 +75,20 @@ function check(ok, message) {
 const browser = await engine.launch();
 const page = await browser.newPage({ ...devices["iPhone 13"], viewport: VIEWPORT });
 
+// LINGO-046: count every utterance the page starts, so the level check can be
+// held to "speaks only when the learner asks".
+await page.addInitScript(() => {
+  window.__speakCalls = [];
+  const s = window.speechSynthesis;
+  if (s && s.speak) {
+    const original = s.speak.bind(s);
+    s.speak = (u) => {
+      window.__speakCalls.push(String((u && u.text) || "").slice(0, 40));
+      return original(u);
+    };
+  }
+});
+
 const consoleErrors = [];
 page.on("console", (m) => {
   if (m.type() === "error") consoleErrors.push(m.text().slice(0, 300));
@@ -326,6 +340,25 @@ await assertBackgroundContinuity("home");
 const meterCount = await page.locator(".home-progress .meter").count();
 check(meterCount === 1, `home: expected exactly 1 progress bar, found ${meterCount}`);
 
+// LINGO-046: the daily-goal card. On a first run the level-check variant of
+// block 2 is shown instead, so these only apply once it is the real card.
+if (await page.locator(".today-card").count()) {
+  await assertReallyVisible(".today-card .goal-ring", "home: daily-goal ring", 60);
+  await assertReallyVisible(".today-card .today-headline", "home: 'あとN問' headline", 20);
+  await assertHasSideMargin(".today-card", "home: today card");
+  // The ring must actually render an arc, not a bare track — a zero-length
+  // dasharray would look identical to "no data" at a glance.
+  const ring = await page.evaluate(() => {
+    const arcs = document.querySelectorAll(".goal-ring circle");
+    return { circles: arcs.length, dash: arcs[1]?.getAttribute("stroke-dasharray") ?? null };
+  });
+  check(ring.circles === 2, `home: goal ring should be a track + an arc, found ${ring.circles} circles`);
+  check(ring.dash !== null, "home: goal ring arc has no stroke-dasharray");
+  // The headline must never read as a raw internal count.
+  const headline = await page.locator(".today-card .today-headline").innerText();
+  check(headline.trim().length > 0, "home: 'あとN問' headline is empty");
+}
+
 // ------------------------------------------------------- 2. Details sheet ---
 const details = page.locator(".progress-more").first();
 if (check(await details.count(), "home: 'くわしく' button missing")) {
@@ -436,6 +469,40 @@ await assertBackgroundContinuity("pet");
   );
   petRows.forEach((h, i) => check(h >= 40, `pet: care row #${i} only ${h}px tall`));
   await assertLastRowReachable(".row", "pet (scrolled)");
+}
+
+// ------------------------------------------ 4b. Level check: no auto-audio ---
+// LINGO-046 (勝田): the placement test asks "do you know this word at a
+// glance?". Reading the word aloud answers a different question — it turns a
+// recognition test into a listening one and slows the pace — so nothing may be
+// spoken unless the learner taps 🔊. The quiz's flip-to-speak is unaffected and
+// stays under its own setting.
+await page.goto(base + "/", { waitUntil: "networkidle" });
+await page.waitForTimeout(900);
+await dismissOnboarding();
+{
+  const cta = page.getByText("レベルチェック", { exact: false }).first();
+  if (await cta.count()) {
+    await cta.click();
+    await page.waitForTimeout(1600);
+    if (check(await page.locator(".flashcard.calib").count() > 0, "level check: did not open")) {
+      await page.evaluate(() => (window.__speakCalls = []));
+      for (let i = 0; i < 3; i++) {
+        const chip = page.locator(".legend .chip").last();
+        if (!(await chip.count())) break;
+        await chip.click().catch(() => {});
+        await page.waitForTimeout(600);
+      }
+      const spoken = await page.evaluate(() => window.__speakCalls ?? []);
+      check(
+        spoken.length === 0,
+        `level check: spoke without being asked — ${JSON.stringify(spoken)}`,
+      );
+      await shot("09-level-check");
+    }
+  } else {
+    notes.push("level check CTA not on Home (already taken or deferred) — audio check skipped");
+  }
 }
 
 // ---------------------------------------------------------------- 5. Gate ---
