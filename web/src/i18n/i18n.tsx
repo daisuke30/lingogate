@@ -759,6 +759,26 @@ const M: Record<string, Entry> = {
   },
   "settings.dailyGoal.questions": { ja: "{n}問", en: "{n} questions", ru: "{n} заданий" },
 
+  // -- on-device diagnostics (LINGO-047) ------------------------------------
+  // Intentionally untranslated VALUES (they are raw browser numbers), but the
+  // framing is localised so the screen is not a wall of English on a JA phone.
+  "settings.section.diagnostics": { ja: "診断", en: "Diagnostics", ru: "Диагностика" },
+  "settings.diagnostics.label": {
+    ja: "画面の実測値",
+    en: "Screen measurements",
+    ru: "Измерения экрана",
+  },
+  "settings.diagnostics.sub": {
+    ja: "表示の不具合を報告するときに、この画面のスクショを送ってください。",
+    en: "Screenshot this when reporting a display problem.",
+    ru: "Пришлите скриншот этого экрана, если что-то отображается неверно.",
+  },
+  "settings.diagnostics.hint": {
+    ja: "赤い行は、一致するはずの値がズレていることを示します。",
+    en: "A highlighted row means two values that should agree do not.",
+    ru: "Подсвеченная строка: значения, которые должны совпадать, различаются.",
+  },
+
   // -- app lock (LINGO-040): the automation guide, moved off Home. It needs
   // iOS Shortcuts knowledge to act on, so it belongs where someone goes
   // looking for it — not next to the one button a first-time user must press.

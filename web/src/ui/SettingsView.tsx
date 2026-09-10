@@ -32,6 +32,7 @@ import { currentStoragePersisted, formatBytes, storageEstimate } from "../state/
 import { isPlacementDone } from "../state/placement";
 import { NATIVE_LANG_NAME, UI_LANGS, useI18n } from "../i18n/i18n";
 import { ListPicker, ListRow } from "./ListPicker";
+import { DiagnosticsSheet } from "./DiagnosticsSheet";
 import type { Route } from "./App";
 
 function formatBuiltAt(iso: string): string {
@@ -72,6 +73,7 @@ export function SettingsView({
   const [replaceAll, setReplaceAll] = useState(false);
   const [importing, setImporting] = useState(false);
   const [importStatus, setImportStatus] = useState<string | null>(null);
+  const [diagOpen, setDiagOpen] = useState(false); // LINGO-047
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const course = resolveCourse(courseId);
@@ -272,6 +274,19 @@ export function SettingsView({
           onClick={() => navigate({ name: "placement" })}
         />
       </div>
+
+      {/* LINGO-047: read-only viewport instrumentation. Lives in the shipped
+          app on purpose — the layout bugs it diagnoses only happen on a real
+          iPhone, where no debugger is attached. */}
+      <div className="section-title">{t("settings.section.diagnostics")}</div>
+      <div className="list">
+        <ListRow
+          label={t("settings.diagnostics.label")}
+          sub={t("settings.diagnostics.sub")}
+          onClick={() => setDiagOpen(true)}
+        />
+      </div>
+      <DiagnosticsSheet open={diagOpen} onClose={() => setDiagOpen(false)} />
 
       {/* LINGO-046: how much the learner is aiming for per day. Feeds Home's
           "あと N 問" card — the only number on that card the app does not

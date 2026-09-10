@@ -62,10 +62,14 @@
  * `overscroll-behavior-y: contain` IS honoured by WebKit. Applies to every
  * route uniformly (all screens share this same html/body/#root shell), so
  * this one change covers Home, Pet, quiz, gate, settings, etc. together. */
+/* LINGO-047: html/body no longer size themselves from a viewport-height unit
+ * either. #root (position:fixed; inset:0) is what actually covers the screen;
+ * these two only need to be non-scrolling and to paint the page colour, which
+ * also propagates to the canvas so there is no unpainted area anywhere, at any
+ * viewport size, during any rubber-band. */
 html,
 body {
   height: 100%;
-  height: 100dvh;
   margin: 0;
   overflow: hidden; /* the outer frame itself never scrolls/bounces */
   background: var(--bg);
@@ -79,9 +83,25 @@ body {
   overscroll-behavior: none; /* backstop; #root below is the real scroller */
 }
 
+/* LINGO-047 — the shell no longer computes its own height.
+ *
+ * Three attempts at "a black space at the bottom" were spent adjusting height
+ * maths (100% → 100dvh → flex sizing), and Katsuta still reported that the tab
+ * bar was not reaching the physical bottom of his iPhone. So this stops
+ * guessing: `position: fixed` with all four insets at 0 pins the shell to the
+ * viewport's real edges. `bottom: 0` is bottom, whatever any viewport-height
+ * unit currently believes — there is no number left to be wrong.
+ *
+ * The fixed tab bar inside stays viewport-relative because nothing on the path
+ * to it establishes a containing block (no transform / filter / backdrop-filter
+ * / will-change / contain on html, body or #root — .tabbar's own translateX
+ * does not affect its own positioning context). Keep it that way. */
 #root {
-  height: 100%;
-  height: 100dvh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   /* The actual scroll container (see the fix comment above): WebKit DOES
    * respect overscroll-behavior here, unlike on html/body. */
   overflow-y: auto;
@@ -108,9 +128,10 @@ body {
   margin: 0 auto;
   padding: max(20px, env(safe-area-inset-top)) 20px calc(28px + env(safe-area-inset-bottom));
   /* Every screen using `.app` (Home, Pet, quiz, gate, settings, ...) fills at
-   * least the full viewport; taller content simply makes #root scroll. */
+   * least the full shell; taller content simply makes #root scroll. `100%`
+   * now resolves against #root's fixed inset:0 box — the real viewport — so
+   * no viewport-height unit is involved (LINGO-047). */
   min-height: 100%;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -1505,6 +1526,42 @@ button {
 .today-sub.faint {
   color: var(--ink-faint);
   font-size: 12px;
+}
+
+/* Diagnostics rows (LINGO-047) — dense, monospaced, meant to be screenshotted
+ * and read, not admired. */
+.diag-hint {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--ink-faint);
+  line-height: 1.5;
+}
+.diag-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.diag-row.bad {
+  color: var(--again);
+}
+.diag-row.bad .diag-val {
+  color: var(--again);
+}
+.diag-key {
+  color: var(--ink-dim);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.diag-row.bad .diag-key {
+  color: var(--again);
+}
+.diag-val {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  text-align: right;
 }
 
 /* Block 3 — the single progress bar. */

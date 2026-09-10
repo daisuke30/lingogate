@@ -255,6 +255,71 @@ async function assertBackgroundContinuity(label) {
     r.html === r.body && r.body === r.root,
     `${label}: page base colours differ — html ${r.html}, body ${r.body}, #root ${r.root}`,
   );
+
+  // LINGO-047: the layers the OS paints, not the page. In a standalone iOS PWA
+  // the area around the web view — including the strip under the home
+  // indicator, below the tab bar — comes from <meta theme-color> and the
+  // manifest's theme_color/background_color. LINGO-045 lifted the page palette
+  // and left all three on the old near-black, so the OS painted a darker band
+  // beneath the app: "フッターの下に黒い空白". These must track --bg forever.
+  const chrome = await page.evaluate(async () => {
+    const meta = document.querySelector('meta[name="theme-color"]')?.getAttribute("content") ?? null;
+    const href = document.querySelector('link[rel="manifest"]')?.getAttribute("href");
+    let manifest = null;
+    if (href) manifest = await fetch(href).then((r) => r.json()).catch(() => null);
+    const rootBg = getComputedStyle(document.querySelector("#root")).backgroundColor;
+    // Normalise "#111119" and "rgb(17, 17, 25)" to one comparable form.
+    const norm = (c) => {
+      if (!c) return null;
+      const m = /^#?([0-9a-f]{6})$/i.exec(c.trim());
+      if (m) {
+        const n = parseInt(m[1], 16);
+        return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+      }
+      const rgb = /rgba?\((\d+)[,\s]+(\d+)[,\s]+(\d+)/.exec(c);
+      return rgb ? `${rgb[1]},${rgb[2]},${rgb[3]}` : c;
+    };
+    return {
+      meta: norm(meta),
+      manifestTheme: norm(manifest?.theme_color),
+      manifestBg: norm(manifest?.background_color),
+      page: norm(rootBg),
+      raw: { meta, theme: manifest?.theme_color, bg: manifest?.background_color, rootBg },
+    };
+  });
+  check(
+    chrome.meta === chrome.page,
+    `${label}: <meta theme-color> (${chrome.raw.meta}) does not match the page background (${chrome.raw.rootBg})`,
+  );
+  check(
+    chrome.manifestTheme === chrome.page,
+    `${label}: manifest theme_color (${chrome.raw.theme}) does not match the page background (${chrome.raw.rootBg})`,
+  );
+  check(
+    chrome.manifestBg === chrome.page,
+    `${label}: manifest background_color (${chrome.raw.bg}) does not match the page background (${chrome.raw.rootBg})`,
+  );
+
+  // And the shell itself must reach the physical bottom, whatever any
+  // viewport-height unit believes (LINGO-047's fixed inset:0 structure).
+  const shell = await page.evaluate(() => {
+    const probe = document.createElement("div");
+    probe.style.cssText =
+      "position:fixed;left:0;bottom:0;width:1px;height:1px;visibility:hidden;pointer-events:none;";
+    document.body.appendChild(probe);
+    const probeBottom = Math.round(probe.getBoundingClientRect().bottom);
+    probe.remove();
+    const root = document.querySelector("#root").getBoundingClientRect();
+    return { probeBottom, rootBottom: Math.round(root.bottom), innerH: window.innerHeight };
+  });
+  check(
+    Math.abs(shell.probeBottom - shell.innerH) <= 1,
+    `${label}: a fixed bottom:0 element lands at ${shell.probeBottom}, viewport is ${shell.innerH}`,
+  );
+  check(
+    Math.abs(shell.rootBottom - shell.innerH) <= 1,
+    `${label}: #root ends at ${shell.rootBottom}, viewport is ${shell.innerH}`,
+  );
 }
 
 /** #root must be the only scroller: html/body never move (iOS bounce fix). */

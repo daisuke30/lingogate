@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#0b0b12" />
+    <!-- LINGO-047: MUST match --bg in src/ui/styles.css. In a standalone iOS
+         PWA the OS paints the area around the web view from these colours, so
+         a stale value here shows up as a darker band below the app's own
+         content — which is exactly what "フッターの下の黒い空白" was. -->
+    <meta name="theme-color" content="#111119" />
     <title>LingoGate</title>
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/png" href="/icons/icon-192.png" />
