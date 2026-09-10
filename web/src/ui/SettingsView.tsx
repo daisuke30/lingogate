@@ -16,7 +16,7 @@ import {
 } from "../state/settings";
 import type { QuizMode } from "../state/settings";
 import { voiceAvailable, subscribeVoices } from "../state/tts";
-import { COURSES, resolveCourse } from "../content/courses";
+import { resolveCourse, selectableCourses } from "../content/courses";
 import type { Lang } from "../content/courses";
 import { resetAll } from "../db/idb";
 // LINGO-010 follow-up: build-time stamp (git sha + timestamp) so Katsuta can
@@ -224,7 +224,7 @@ export function SettingsView({
         <ListPicker
           label={t("settings.section.course")}
           sub={t("settings.course.sub")}
-          options={COURSES.map((c) => ({
+          options={selectableCourses(uiLang, courseId).map((c) => ({
             value: c.courseId,
             label: NATIVE_LANG_NAME[c.targetLang],
             disabled: c.status !== "available",

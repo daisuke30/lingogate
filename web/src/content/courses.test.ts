@@ -1,5 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { COURSES, DEFAULT_COURSE_ID, courseById, frontLangFromUILang, resolveCourse } from "./courses";
+import {
+  COURSES,
+  DEFAULT_COURSE_ID,
+  courseById,
+  frontLangFromUILang,
+  resolveCourse,
+  selectableCourses,
+} from "./courses";
 import type { Lang } from "./courses";
 import { UI_LANGS } from "../i18n/i18n";
 
@@ -91,5 +98,63 @@ describe("frontLangFromUILang", () => {
   it("a ru-UI learner taking the Thai course gets its ja default, not a ru prompt", () => {
     const th = courseById("th")!;
     expect(frontLangFromUILang(th, "ru")).toBe("ja");
+  });
+});
+
+// LINGO-044: a learner is never offered their own language as a course.
+describe("selectableCourses", () => {
+  it("hides the course whose target language is the UI language", () => {
+    for (const ui of UI_LANGS) {
+      const offered = selectableCourses(ui);
+      expect(
+        offered.map((c) => c.targetLang),
+        `UI=${ui} was offered its own language as a course`,
+      ).not.toContain(ui);
+      // ...and hides exactly that one, nothing else
+      expect(offered.length).toBe(COURSES.length - 1);
+    }
+  });
+
+  it("keeps every course whose target the UI language is not", () => {
+    const offered = selectableCourses("en").map((c) => c.courseId);
+    expect(offered).toEqual(["ru", "th", "ja"]);
+    expect(selectableCourses("ja").map((c) => c.courseId)).toEqual(["ru", "en", "th"]);
+    expect(selectableCourses("ru").map((c) => c.courseId)).toEqual(["en", "th", "ja"]);
+  });
+
+  it("never hides a Thai course, since Thai is not a UI language", () => {
+    // TargetLang is wider than Lang, so no UI language can ever equal "th".
+    for (const ui of UI_LANGS) {
+      expect(selectableCourses(ui).map((c) => c.courseId)).toContain("th");
+    }
+  });
+
+  it("keeps the ACTIVE course listed even when the rule would hide it", () => {
+    // Start "learn Japanese" with an English UI, then switch the UI to
+    // Japanese: the course must not silently disappear from the picker, or the
+    // learner's progress looks lost.
+    expect(selectableCourses("ja").map((c) => c.courseId)).not.toContain("ja");
+    expect(selectableCourses("ja", "ja").map((c) => c.courseId)).toContain("ja");
+    // and it does not duplicate or reorder anything
+    expect(selectableCourses("ja", "ja").map((c) => c.courseId)).toEqual(
+      COURSES.map((c) => c.courseId),
+    );
+  });
+
+  it("agrees with the front-language rule: neither offers a learner their own language", () => {
+    // The two rules are the same principle at different levels — a course
+    // never offers its target as a prompt language, and is never offered at
+    // all to a speaker of that language.
+    for (const ui of UI_LANGS) {
+      for (const c of selectableCourses(ui)) {
+        expect(c.targetLang).not.toBe(ui);
+        expect(c.availableFrontLangs).not.toContain(c.targetLang);
+        // the prompt language a learner would actually be given is readable
+        // to them and is not the language they are trying to learn
+        const front = frontLangFromUILang(c, ui);
+        expect(c.availableFrontLangs).toContain(front);
+        expect(front).not.toBe(c.targetLang);
+      }
+    }
   });
 });

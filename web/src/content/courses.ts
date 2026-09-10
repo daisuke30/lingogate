@@ -103,6 +103,32 @@ export const COURSES: CourseMeta[] = [
  * asynchronously via its `load()`. */
 export const BOOTSTRAP_DECK = ruDeck as unknown as Deck;
 
+/**
+ * The courses to offer a learner whose UI language is `uiLang` (LINGO-044).
+ *
+ * A course whose target language IS the UI language is hidden: someone using
+ * the app in Japanese is a Japanese speaker, so listing "learn Japanese" is
+ * nonsense, and the same holds for every other pair. This is the course-level
+ * counterpart of the rule `availableFrontLangs` already enforces at the
+ * prompt-language level (a course never offers its own target as a front
+ * language) — both say the same thing: never offer someone their own language
+ * as the thing to learn or as a hint they don't need.
+ *
+ * The one exception is the course the learner is CURRENTLY studying. Someone
+ * can start "learn Japanese" with an English UI and later switch the UI to
+ * Japanese; dropping their active course out of the list at that point would
+ * look like their progress had vanished. It stays listed until they move off
+ * it themselves.
+ */
+export function selectableCourses(
+  uiLang: Lang,
+  activeCourseId?: string | null,
+): CourseMeta[] {
+  return COURSES.filter(
+    (c) => c.targetLang !== uiLang || c.courseId === activeCourseId,
+  );
+}
+
 export function courseById(courseId: string): CourseMeta | undefined {
   return COURSES.find((c) => c.courseId === courseId);
 }

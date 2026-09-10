@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { advanceOnboarding } from "../engine/onboarding";
-import { COURSES, frontLangFromUILang } from "../content/courses";
+import { COURSES, frontLangFromUILang, selectableCourses } from "../content/courses";
 import { completeOnboardingWithCourse, markOnboardingSeen } from "../state/onboarding";
 import { NATIVE_LANG_NAME, UI_LANGS, useI18n } from "../i18n/i18n";
 import type { Lang } from "../i18n/i18n";
@@ -96,7 +96,7 @@ export function OnboardingFlow({
           <div className="list" style={{ marginTop: 8 }}>
             <ListPicker
               label={t("onboard.course.title")}
-              options={COURSES.map((c) => ({
+              options={selectableCourses(lang).map((c) => ({
                 value: c.courseId,
                 label: NATIVE_LANG_NAME[c.targetLang],
                 disabled: c.status !== "available",

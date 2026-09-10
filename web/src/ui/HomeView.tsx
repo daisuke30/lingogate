@@ -27,7 +27,7 @@ import type { HomeStats } from "../state/service";
 import { calibrationProgress } from "../state/calibration";
 import { CALIBRATION_FALLBACK_THRESHOLD } from "../engine/calibration";
 import { isPlacementDone } from "../state/placement";
-import { COURSES, resolveCourse } from "../content/courses";
+import { resolveCourse, selectableCourses } from "../content/courses";
 import { setActiveCourse } from "../state/settings";
 import { NATIVE_LANG_NAME, useI18n } from "../i18n/i18n";
 import type { TFn } from "../i18n/i18n";
@@ -58,7 +58,7 @@ export function HomeView({
    * never disagree about the pet, and the pet is read once per visit. */
   petSnap: PetSnapshot | null;
 }) {
-  const { t } = useI18n();
+  const { lang: uiLang, t } = useI18n();
   const [stats, setStats] = useState<HomeStats | null>(null);
   const [courseId, setCourseId] = useState<string>(activeCourse());
   // LINGO-016: the placement test is a single short pass, not "judge every
@@ -213,7 +213,7 @@ export function HomeView({
       <BottomSheet
         open={coursePickerOpen}
         title={t("home.course.sheetTitle")}
-        options={COURSES.map((c) => ({
+        options={selectableCourses(uiLang, courseId).map((c) => ({
           value: c.courseId,
           label: NATIVE_LANG_NAME[c.targetLang],
           disabled: c.status !== "available",
