@@ -55,33 +55,85 @@ const M: Record<string, Entry> = {
   // sentences) but no catalog of its own. See TargetLang in content/courses.ts.
   "lang.name.th": { ja: "タイ語", en: "Thai", ru: "тайский" },
 
-  // -- home -----------------------------------------------------------------
-  "home.guide": { ja: "ガイド", en: "Guide", ru: "Гид" },
+  // -- home (LINGO-040) -----------------------------------------------------
+  // Three permanent blocks only — course + streak / what to do today / one
+  // progress bar. Everything that used to sit here (session tiles, vocabulary
+  // coverage, retention, the four-number promotion readout) either moved into
+  // the "くわしく" sheet or was deleted outright. The vocabulary is deliberately
+  // free of the app's internals: no band, no gate, no unlock, no coverage, no
+  // retention, no card counts as denominators (Fable ruling LINGO-040 §2/§3).
   "home.settings": { ja: "設定", en: "Settings", ru: "Настройки" },
-  "home.stat.gates": { ja: "今日のゲート", en: "Gates today", ru: "Проверок сегодня" },
-  "home.stat.unlocks": { ja: "解除", en: "Unlocks", ru: "Разблокировок" },
-  "home.stat.knownRate": { ja: "既知率", en: "Known rate", ru: "Знакомых" },
-  "home.mastery.title": {
-    ja: "会話頻出3000語マスター",
-    en: "Top 3000 conversation words",
-    ru: "3000 частотных слов",
+  // Block 1 — which language is being learned, and the streak.
+  "home.course.sheetTitle": { ja: "学ぶ言語", en: "Language you're learning", ru: "Язык, который учите" },
+  "home.course.switchConfirm": {
+    ja: "{lang}に切り替えますか？ いまのコースの進み具合はそのまま残ります。",
+    en: "Switch to {lang}? Your progress in the current course is kept.",
+    ru: "Переключиться на {lang}? Прогресс текущего курса сохранится.",
   },
-  "home.mastery.unit": { ja: "語 マスター", en: "mastered", ru: "освоено" },
-  "home.mastery.coverage": {
-    ja: "推定会話カバー率",
-    en: "Est. conversation coverage",
-    ru: "Оценка охвата речи",
+  "home.streak": { ja: "{n}日つづけて", en: "{n}-day streak", ru: "{n} дней подряд" },
+  // Block 2 — the single thing to do today.
+  "home.today.title": { ja: "今日やること", en: "Today", ru: "Сегодня" },
+  "home.today.withReviews": {
+    ja: "復習 {n}枚 ＋ 新しい単語",
+    en: "{n} reviews + new words",
+    ru: "Повторений: {n} + новые слова",
   },
-  "home.mastery.progress": { ja: "3000語 進捗", en: "Progress to 3000", ru: "Прогресс до 3000" },
+  "home.today.freshOnly": {
+    ja: "新しい単語からはじめます",
+    en: "Starting with new words",
+    ru: "Начнём с новых слов",
+  },
+  "home.today.start": { ja: "{n}問はじめる", en: "Start {n} questions", ru: "Начать: {n} заданий" },
+  // Block 3 — one bar, aimed at the next 500-word milestone.
+  "home.progress.learned": { ja: "覚えた語", en: "Words learned", ru: "Выучено слов" },
+  "home.progress.words": { ja: "{n}語", en: "{n} words", ru: "Слов: {n}" },
+  "home.progress.toMilestone": {
+    ja: "次の目標{goal}語まで あと{n}語",
+    en: "{n} more to reach {goal}",
+    ru: "До цели {goal}: ещё {n}",
+  },
+  "home.progress.frameDone": {
+    ja: "よく使う3,000語をひととおり覚えました",
+    en: "You've been through all 3,000 everyday words",
+    ru: "Вы прошли все 3 000 частотных слов",
+  },
+  // "ステップ" replaces band/語帯 everywhere a learner can see it. The word
+  // count is rounded and marked 約: the real per-step totals are 998/995/967
+  // on RU, and printing those raw was exactly the confusion this ticket fixes
+  // (the exact figures live in the details sheet).
+  "home.step.title": {
+    ja: "ステップ{step}（最初の約{n}語）",
+    en: "Step {step} — the first ~{n} words",
+    ru: "Этап {step} — первые ~{n} слов",
+  },
+  "home.step.toNext": {
+    ja: "次のステップまで あと{n}語",
+    en: "{n} more words to the next step",
+    ru: "До следующего этапа: ещё {n} слов",
+  },
+  "home.step.keepReviewing": {
+    ja: "復習を続けると次のステップへ",
+    en: "Keep reviewing to reach the next step",
+    ru: "Продолжайте повторять — и откроется следующий этап",
+  },
+  "home.step.last": {
+    ja: "いまが最後のステップです",
+    en: "This is the last step",
+    ru: "Это последний этап",
+  },
+  "home.details": { ja: "くわしく", en: "Details", ru: "Подробнее" },
+  // Block 2, first-run variant: before the level check there is nothing
+  // meaningful to review, so the level check IS the one thing to do today
+  // (it replaces the block rather than adding a fourth one).
   "home.calib.title": {
-    ja: "レベルチェック",
-    en: "Level check",
-    ru: "Проверка уровня",
+    ja: "はじめる前に",
+    en: "Before you start",
+    ru: "Перед началом",
   },
   "home.calib.desc": {
-    ja: "数問に答えるだけで、あなたの語彙レベルを推定します。知っている語を右、知らない語を左へ。",
-    en: "Answer a few questions and we'll estimate your vocabulary level. Swipe right for words you know, left for ones you don't.",
-    ru: "Ответьте на несколько вопросов — мы оценим ваш словарный запас. Знакомые слова — вправо, незнакомые — влево.",
+    ja: "知っている単語を教えてください。知っている語を右、知らない語を左へ。",
+    en: "Tell us which words you already know. Swipe right for the ones you know, left for the ones you don't.",
+    ru: "Отметьте слова, которые уже знаете. Знакомые — вправо, незнакомые — влево.",
   },
   // LINGO-016: adaptive placement test replaces the old fixed 1000-word triage
   // (home.calib.continue/start retired — the new test is a single short pass,
@@ -91,54 +143,49 @@ const M: Record<string, Entry> = {
     en: "Level check (~1–3 min)",
     ru: "Проверка уровня (~1–3 мин)",
   },
-  "home.placement.judgedCount": {
-    ja: "判定済み{n}語",
-    en: "{n} words assessed",
-    ru: "Оценено слов: {n}",
-  },
-  // LINGO-024: was a static "band1 の進み具合" — now shows the actual
-  // unlocked word range (1〜N語, N = unlockedBand*1000), since band
-  // promotion means this is no longer always band1.
-  "home.band.title": {
-    ja: "現在: 1〜{n}語帯の進み具合",
-    en: "Current: words 1–{n}",
-    ru: "Сейчас: слова 1–{n}",
-  },
-  "home.band.nextUnlock": {
-    ja: "次の解放まで カバー率{coverage}/90%・定着率{retention}/80%",
-    en: "Until next unlock: coverage {coverage}/90%, retention {retention}/80%",
-    ru: "До следующего открытия: охват {coverage}/90%, удержание {retention}/80%",
-  },
-  "home.band.coverage": { ja: "語彙カバー", en: "Vocabulary covered", ru: "Охват слов" },
-  // LINGO-026: was a hardcoded full-width （）paren template regardless of UI
-  // language — moved into the catalog with locale-appropriate punctuation.
-  "home.band.coverageValue": {
-    ja: "{covered}/{total}（{pct}%）",
-    en: "{covered}/{total} ({pct}%)",
-    ru: "{covered}/{total} ({pct}%)",
-  },
-  "home.band.retention": { ja: "定着率", en: "Retention", ru: "Удержание" },
-  "home.band.noData": { ja: "まだデータなし", en: "No data yet", ru: "Пока нет данных" },
-  "home.band.retentionValue": {
-    ja: "{pct}%（{cards}枚）",
-    en: "{pct}% ({cards} cards)",
-    ru: "{pct}% ({cards} карт.)",
-  },
-  "home.band.dueNow": {
-    ja: "復習の期限が来たカード: {n} 枚",
-    en: "Cards due for review: {n}",
-    ru: "Карточек к повторению: {n}",
-  },
-  "home.solve": { ja: "{lang}を解く", en: "Practise {lang}", ru: "Заниматься: {lang}" },
-  "home.setupAutomation": {
-    ja: "オートメーションを設定する",
-    en: "Set up automation",
-    ru: "Настроить автоматизацию",
+  "home.calib.later": {
+    ja: "あとで（すぐ始める）",
+    en: "Later — just start",
+    ru: "Позже — сразу начать",
   },
 
+  // -- home details sheet (LINGO-040) ---------------------------------------
+  // Everything precise lives here, because only someone who tapped "くわしく"
+  // is asking for precision. Exact denominators are allowed on this screen.
+  "detail.today": { ja: "今日の学習", en: "Today's study", ru: "Занятия сегодня" },
+  "detail.today.sessions": { ja: "{n}セッション", en: "{n} sessions", ru: "Подходов: {n}" },
+  "detail.learned.declared": {
+    ja: "レベルチェックで申告",
+    en: "Declared in the level check",
+    ru: "Отмечено на проверке уровня",
+  },
+  "detail.learned.studied": { ja: "学習で定着", en: "Learned through study", ru: "Закреплено занятиями" },
+  "detail.frame": { ja: "よく使う3,000語のうち", en: "Of the 3,000 everyday words", ru: "Из 3 000 частотных слов" },
+  "detail.speech": {
+    ja: "日常会話でよく出る語",
+    en: "Everyday speech covered",
+    ru: "Охват повседневной речи",
+  },
+  "detail.speech.value": { ja: "約{pct}%（目安）", en: "about {pct}% (estimate)", ru: "около {pct} % (оценка)" },
+  "detail.introduced": { ja: "学習を始めた語", en: "Words introduced", ru: "Начатые слова" },
+  "detail.introduced.value": {
+    ja: "{n}語 / {total}語",
+    en: "{n} of {total}",
+    ru: "{n} из {total}",
+  },
+  "detail.retention": { ja: "復習の成功率", en: "Review success", ru: "Успешных повторений" },
+  "detail.retention.noData": {
+    ja: "復習をはじめると出ます",
+    en: "Shows up after your first reviews",
+    ru: "Появится после первых повторений",
+  },
+  "detail.next": { ja: "次のステップまで", en: "To the next step", ru: "До следующего этапа" },
+
   // -- mastery level ladder --------------------------------------------------
+  // LINGO-040: "マスター" is gone from the product's vocabulary — it promised
+  // completion for words the learner had merely ticked in a 1–3 minute check.
   "mastery.level.beginner": { ja: "完全初心者", en: "Absolute beginner", ru: "Начинающий" },
-  "mastery.level.words": { ja: "{n}マスター", en: "{n} mastered", ru: "{n} освоено" },
+  "mastery.level.words": { ja: "およそ{n}語", en: "about {n} words", ru: "около {n} слов" },
 
   // -- settings -------------------------------------------------------------
   "settings.title": { ja: "設定", en: "Settings", ru: "Настройки" },
@@ -335,9 +382,9 @@ const M: Record<string, Entry> = {
   "quiz.undo": { ja: "↩ 直前を取り消す", en: "↩ Undo last", ru: "↩ Отменить" },
   "quiz.complete.title": { ja: "{n}問クリア", en: "{n} cleared", ru: "{n} пройдено" },
   "quiz.complete.unlockMsg": {
-    ja: "{min}分間ひらけます",
-    en: "Unlocked for {min} min",
-    ru: "Открыто на {min} мин",
+    ja: "これで{min}分間、アプリが使えます",
+    en: "The app stays open for {min} min",
+    ru: "Приложение открыто на {min} мин",
   },
   "quiz.complete.practiceMsg": {
     ja: "今日の{lang}、進みました",
@@ -347,10 +394,14 @@ const M: Record<string, Entry> = {
   // LINGO-024: shown on the complete screen when a session just crossed the
   // promotion threshold — {band} is the newly-unlocked band, {n} its word
   // count (band*1000).
+  // LINGO-040: "band{n}解放" was the app's internal name for a curriculum
+  // tier, printed verbatim at the single most celebratory moment in the
+  // product. The fake word count (band × 1000) is dropped too — the real
+  // per-step totals differ per course.
   "quiz.complete.bandPromoted": {
-    ja: "band{band}解放！次の{n}語へ",
-    en: "Band {band} unlocked! On to the next {n} words",
-    ru: "Открыт band {band}! Следующие {n} слов",
+    ja: "ステップ{band}が開きました！",
+    en: "Step {band} is open!",
+    ru: "Этап {band} открыт!",
   },
   "quiz.breakdown.of": { ja: "{n}枚中", en: "of {n} cards", ru: "из {n} карт." },
   "quiz.breakdown.good": { ja: "覚えていた", en: "Knew it", ru: "Помнил" },
@@ -369,11 +420,14 @@ const M: Record<string, Entry> = {
   "quiz.batch.exit": { ja: "終了してホームへ", en: "Finish and go home", ru: "Закончить" },
 
   // -- gate -----------------------------------------------------------------
-  "gate.unlockedTitle": { ja: "解除済み", en: "Already unlocked", ru: "Уже разблокировано" },
+  // LINGO-040 (ruling §4③): "解除ウィンドウ" told the learner nothing. The
+  // gate is explained in the only terms that matter at that moment — the app
+  // is open, and why.
+  "gate.unlockedTitle": { ja: "もう開いています", en: "Already open", ru: "Уже открыто" },
   "gate.unlockedMsg": {
-    ja: "まだ解除ウィンドウ内です。そのまま戻れます。",
-    en: "Still inside the unlock window — you can go straight back.",
-    ru: "Ещё в окне разблокировки — можно сразу вернуться.",
+    ja: "さっき学習したので、そのまま戻れます。",
+    en: "You studied a moment ago — go straight back.",
+    ru: "Вы только что занимались — можно сразу вернуться.",
   },
 
   // -- flashcard ------------------------------------------------------------
@@ -672,6 +726,25 @@ const M: Record<string, Entry> = {
     ru: "~1–3 мин. Обновляет оценку, не затрагивая историю обучения.",
   },
 
+  // -- app lock (LINGO-040): the automation guide, moved off Home. It needs
+  // iOS Shortcuts knowledge to act on, so it belongs where someone goes
+  // looking for it — not next to the one button a first-time user must press.
+  "settings.section.appLock": {
+    ja: "アプリのロック",
+    en: "App lock",
+    ru: "Блокировка приложений",
+  },
+  "settings.appLock.label": {
+    ja: "アプリのロックを設定",
+    en: "Set up app lock",
+    ru: "Настроить блокировку",
+  },
+  "settings.appLock.sub": {
+    ja: "SNSを開いたときに、先に学習を出すようにできます。",
+    en: "Make a quick study session appear before a social app opens.",
+    ru: "Короткое занятие перед открытием соцсети.",
+  },
+
   // -- bottom tab bar (LINGO-030) -------------------------------------------
   "tab.learn": { ja: "学習", en: "Learn", ru: "Учёба" },
   "tab.raise": { ja: "育成", en: "Raise", ru: "Питомец" },
@@ -773,9 +846,15 @@ const M: Record<string, Entry> = {
   },
 
   // -- Home mini pet status (LINGO-031) --------------------------------------
-  "home.pet.mini": { ja: "ペット", en: "Pet", ru: "Питомец" },
-  "home.pet.mini.hungryTitle": { ja: "お腹が空いています", en: "Getting hungry", ru: "Проголодался" },
-  "home.pet.mini.dirtyTitle": { ja: "うんこがたまっています", en: "Needs cleaning", ru: "Нужна уборка" },
+  // LINGO-040: the home mini-pet row is gone (it duplicated the 育成 tab that
+  // sat two centimetres below it). The neglect signal it carried survives as a
+  // dot on the tab itself — same information, no screen space, no second
+  // entry point to the same place.
+  "tab.raise.attention": {
+    ja: "お世話が必要です",
+    en: "Needs looking after",
+    ru: "Нужен уход",
+  },
 };
 
 /** Exposed for the completeness test only (every key must carry ja/en/ru). */

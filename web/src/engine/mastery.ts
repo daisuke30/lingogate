@@ -24,6 +24,26 @@ export const MASTERY_STABILITY_DAYS = 21;
  * currently ships (band2/3 generation can yield slightly fewer than 1000 each). */
 export const MASTERY_TARGET_WORDS = 3000;
 
+/** LINGO-040: the home progress bar's denominator is the NEXT 500-word
+ * milestone, not the 3000-word frame (Fable ruling §4②). A /3000 bar sits at
+ * single-digit % for months and, worse, is unreachable on today's content
+ * (RU ships 2,960 mastery-eligible lemmas, EN ~1,000 — QA-3), so it promised
+ * something the app cannot deliver. 3000 survives as the *signboard* number in
+ * onboarding and the details sheet, where it is framed as the scope, not as a
+ * bar the learner is expected to fill. */
+export const MASTERY_MILESTONE_STEP = 500;
+
+/** The next 500-word milestone above `masteredCount`, capped at the 3000-word
+ * frame; null once the frame itself is reached (nothing left to aim at). */
+export function nextMilestone(masteredCount: number): number | null {
+  const n = Math.max(0, masteredCount);
+  if (n >= MASTERY_TARGET_WORDS) return null;
+  return Math.min(
+    (Math.floor(n / MASTERY_MILESTONE_STEP) + 1) * MASTERY_MILESTONE_STEP,
+    MASTERY_TARGET_WORDS,
+  );
+}
+
 /** Research coverage curve control points (mastered-word count → % of everyday
  * conversation understood). Interpolated linearly between points; clamped to the
  * last point above 3000 (scope is capped at 3000, §3). */
@@ -111,7 +131,19 @@ export function masteredLemmaSet(
 export interface MasteryStats {
   /** Distinct mastered deck lemmas. */
   masteredCount: number;
-  /** The 3000-word frame target (progress-bar denominator). */
+  /** LINGO-040 (QA-7): of `masteredCount`, how many come from the learner's
+   * own level-check declaration (judged/assumed `known`) rather than from
+   * study. The two are shown separately in the details sheet — a single
+   * blended number let a 1–3 minute level check read as "800 words mastered",
+   * which the learner knows is not true and which cost the whole screen its
+   * credibility. `declaredCount + learnedCount === masteredCount`. */
+  declaredCount: number;
+  /** Of `masteredCount`, lemmas earned purely through study (review stability
+   * reached the threshold) and NOT already declared known. */
+  learnedCount: number;
+  /** The next 500-word milestone, or null at the 3000-word frame (LINGO-040). */
+  nextMilestone: number | null;
+  /** The 3000-word frame target (scope figure — no longer a bar denominator). */
   targetWords: number;
   /** Estimated conversation coverage %, 1 decimal. */
   coveragePct: number;
@@ -138,8 +170,19 @@ export function masteryStats(
     stabilityThresholdDays,
   );
   const masteredCount = mastered.size;
+  // LINGO-040: split the same set into "the learner told us" vs "the app saw
+  // it stick". Declared is the (a) branch of masteredLemmaSet; learned is
+  // whatever the (b) branch contributed on top, so the two always sum to
+  // masteredCount and neither can double-count a lemma earned both ways.
+  let declaredCount = 0;
+  for (const lemma of mastered) {
+    if (knowledge.get(lemma) === "known") declaredCount++;
+  }
   return {
     masteredCount,
+    declaredCount,
+    learnedCount: masteredCount - declaredCount,
+    nextMilestone: nextMilestone(masteredCount),
     targetWords: MASTERY_TARGET_WORDS,
     coveragePct: estimatedCoveragePct(masteredCount),
     level: masteryLevelLabel(masteredCount),

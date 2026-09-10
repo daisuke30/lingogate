@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { CATALOG, UI_LANGS, langName, translate } from "./i18n";
+import { CATALOG, NATIVE_LANG_NAME, UI_LANGS, langName, translate } from "./i18n";
+import { COURSES } from "../content/courses";
 
 describe("i18n catalog (LINGO-014)", () => {
   it("has a non-empty translation for all three UI languages on every key", () => {
@@ -29,13 +30,46 @@ describe("i18n catalog (LINGO-014)", () => {
   it("interpolates named params", () => {
     expect(translate("ja", "settings.unlock.minutes", { m: 10 })).toBe("10分");
     expect(translate("en", "settings.unlock.minutes", { m: 10 })).toBe("10 min");
-    expect(translate("en", "home.band.dueNow", { n: 3 })).toBe("Cards due for review: 3");
+    // LINGO-040: home.band.dueNow retired with the rest of the band card —
+    // the same interpolation path is now exercised through the home copy that
+    // replaced it ("復習の期限が来たカード" → "今日やること").
+    expect(translate("en", "home.today.withReviews", { n: 3 })).toBe("3 reviews + new words");
   });
 
   it("falls back to Japanese for an unknown language and to the raw key for an unknown key", () => {
     // @ts-expect-error — exercising the runtime fallback path with a bad lang.
     expect(translate("xx", "common.home")).toBe("ホーム");
     expect(translate("ja", "no.such.key")).toBe("no.such.key");
+  });
+
+  // LINGO-040: Home's course chip and its picker both render
+  // NATIVE_LANG_NAME[course.targetLang] — nothing else. A course whose target
+  // language is missing from that map shows a blank chip, and the learner
+  // cannot tell what they are studying. LINGO-039's Thai course is the first
+  // target language that is not also a UI language, which is precisely the
+  // case that can drift.
+  it("every course in the picker has a native name for its target language", () => {
+    for (const c of COURSES) {
+      const name = NATIVE_LANG_NAME[c.targetLang];
+      expect(name, `course '${c.courseId}' has no native name`).toBeTruthy();
+      expect(name.trim(), `course '${c.courseId}' has a blank native name`).not.toBe("");
+    }
+    // Spot-check the two that ship today plus Thai, in their own scripts.
+    expect(NATIVE_LANG_NAME.ru).toBe("Русский");
+    expect(NATIVE_LANG_NAME.th).toBe("ไทย");
+  });
+
+  it("every course target language is also nameable inside a sentence, in all three UI languages", () => {
+    // e.g. Settings' "{lang}を読み上げる". A missing lang.name.* key would fall
+    // through to the raw key and print "lang.name.th" at the learner.
+    for (const c of COURSES) {
+      for (const ui of UI_LANGS) {
+        const rendered = translate(ui, `lang.name.${c.targetLang}`);
+        expect(rendered, `lang.name.${c.targetLang} missing for UI=${ui}`).not.toBe(
+          `lang.name.${c.targetLang}`,
+        );
+      }
+    }
   });
 
   it("langName gives the language's name in the requested UI language", () => {

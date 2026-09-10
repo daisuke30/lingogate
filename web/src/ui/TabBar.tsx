@@ -38,7 +38,18 @@ function PawIcon() {
   );
 }
 
-export function TabBar({ routeName, navigate }: { routeName: string; navigate: (r: Route) => void }) {
+export function TabBar({
+  routeName,
+  navigate,
+  raiseAttention = false,
+}: {
+  routeName: string;
+  navigate: (r: Route) => void;
+  /** LINGO-040: the pet needs feeding or cleaning. Replaces Home's mini pet
+   * row — the row was a second entry point to the tab it sat above, so the
+   * only thing it added was the neglect signal, which fits on the tab icon. */
+  raiseAttention?: boolean;
+}) {
   const { t } = useI18n();
   const active = activeTab(routeName);
   return (
@@ -58,7 +69,12 @@ export function TabBar({ routeName, navigate }: { routeName: string; navigate: (
         aria-current={active === "raise" ? "page" : undefined}
         onClick={() => navigate({ name: "pet" })}
       >
-        <PawIcon />
+        <span className="tabbar-icon">
+          <PawIcon />
+          {raiseAttention && (
+            <span className="tabbar-dot" role="img" aria-label={t("tab.raise.attention")} />
+          )}
+        </span>
         <span>{t("tab.raise")}</span>
       </button>
     </nav>

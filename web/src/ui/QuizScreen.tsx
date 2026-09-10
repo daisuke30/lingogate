@@ -113,9 +113,14 @@ export function QuizScreen({
     const session = sessionRef.current;
     if (!session || committedRef.current) return;
     committedRef.current = true;
+    // LINGO-040 (QA-1): `unlocked` used to be hardcoded true, so every stored
+    // session claimed to have unlocked an app — including plain home practice,
+    // which unlocks nothing. The home tile that surfaced this was deleted, but
+    // the stored flag is fixed too so the history stays honest: a session only
+    // unlocks something when it was entered through /gate for a target app.
     const { bandPromotion: progress, petEarned: earned } = await commitSession(session, {
       appKey: returnApp,
-      unlocked: true,
+      unlocked: returnApp != null,
     });
     if (mountedRef.current) {
       setBandPromotion(progress);
@@ -273,17 +278,18 @@ function RatingBreakdown({ summary }: { summary: RatingSummary }) {
   );
 }
 
-/** "band2解放！次の1000語へ" (LINGO-024) — shown on a complete screen only
- * when `bandPromotion?.promoted` is true (a genuine, just-happened unlock;
- * see QuizScreen's bandPromotion state doc comment). `progress.band` is the
- * band that was just cleared, so the newly-unlocked band is band+1. */
+/** "ステップ2が開きました！" (LINGO-024, reworded in LINGO-040) — shown on a
+ * complete screen only when `bandPromotion?.promoted` is true (a genuine,
+ * just-happened unlock; see QuizScreen's bandPromotion state doc comment).
+ * `progress.band` is the band that was just cleared, so the newly-unlocked
+ * step is band+1. The old copy printed the internal name ("band2解放") and a
+ * word count derived as band × 1000, which no course actually ships. */
 function BandPromotionBanner({ bandPromotion }: { bandPromotion: BandProgress | null }) {
   const t = useT();
   if (!bandPromotion?.promoted) return null;
-  const newBand = bandPromotion.band + 1;
   return (
     <p className="band-promoted" style={{ margin: "8px 0 0", fontWeight: 600 }}>
-      {t("quiz.complete.bandPromoted", { band: newBand, n: newBand * 1000 })}
+      {t("quiz.complete.bandPromoted", { band: bandPromotion.band + 1 })}
     </p>
   );
 }

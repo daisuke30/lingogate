@@ -262,6 +262,18 @@ export function SettingsView({
         />
       </div>
 
+      {/* LINGO-040: the automation guide, moved off Home. Acting on it needs
+          iOS Shortcuts knowledge, so it belongs where someone goes looking
+          for it — not beside the one button a first-time user must press. */}
+      <div className="section-title">{t("settings.section.appLock")}</div>
+      <div className="list">
+        <ListRow
+          label={t("settings.appLock.label")}
+          sub={t("settings.appLock.sub")}
+          onClick={() => navigate({ name: "guide" })}
+        />
+      </div>
+
       <div className="section-title">{t("settings.section.unlock")}</div>
       <div className="list">
         <ListPicker

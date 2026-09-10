@@ -13,7 +13,14 @@ import { PetGallery } from "../pet/art/PetGallery";
 // LINGO-030: 育成 tab + bottom tab bar.
 import { PetView } from "./PetView";
 import { TabBar } from "./TabBar";
-import { showTabBar } from "../pet/petDisplay";
+import { petAttention, showTabBar } from "../pet/petDisplay";
+// LINGO-040: the pet read-model is owned here now, not by HomeView. Two
+// consumers need it (Home's streak chip and the 育成 tab's attention dot), and
+// reading it once at this level means they cannot disagree — and Home no
+// longer carries a mini pet row that duplicated the tab bar beneath it.
+import { peekPet } from "../state/pet";
+import { overdueReviewCount } from "../state/service";
+import type { PetSnapshot } from "../pet/engine";
 
 export type Route =
   | { name: "home" }
@@ -53,6 +60,7 @@ function routeFromLocation(): Route {
 
 export function App() {
   const [route, setRoute] = useState<Route>(routeFromLocation);
+  const [petSnap, setPetSnap] = useState<PetSnapshot | null>(null);
 
   // Keep in sync with browser back/forward.
   useEffect(() => {
@@ -79,6 +87,24 @@ export function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [route.name]);
 
+  // Re-read the pet whenever a tabbed screen comes into view (feeding on the
+  // 育成 tab must clear the dot as soon as the learner is back on 学習).
+  // peekPet never ticks, so this can't trigger a hatch/evolve/depart — only
+  // PetView's own tickPet does that.
+  useEffect(() => {
+    if (!showTabBar(route.name)) return;
+    let alive = true;
+    overdueReviewCount()
+      .then((overdue) => peekPet(overdue))
+      .then((s) => {
+        if (alive) setPetSnap(s);
+      })
+      .catch((err) => console.error("peekPet failed", err));
+    return () => {
+      alive = false;
+    };
+  }, [route.name]);
+
   function navigate(next: Route) {
     // Only the URL-addressable routes update the address bar; in-app views are
     // pushed as history entries pointing back at "/" so Back returns home.
@@ -102,7 +128,7 @@ export function App() {
   function renderRoute() {
     switch (route.name) {
       case "home":
-        return <HomeView navigate={navigate} />;
+        return <HomeView navigate={navigate} petSnap={petSnap} />;
       case "quiz":
         return (
           <QuizScreen
@@ -148,7 +174,15 @@ export function App() {
   return (
     <>
       {renderRoute()}
-      {showTabBar(route.name) && <TabBar routeName={route.name} navigate={navigate} />}
+      {showTabBar(route.name) && (
+        <TabBar
+          routeName={route.name}
+          navigate={navigate}
+          raiseAttention={
+            petSnap != null && (petAttention(petSnap).hungry || petAttention(petSnap).dirty)
+          }
+        />
+      )}
     </>
   );
 }

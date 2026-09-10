@@ -184,3 +184,103 @@ describe("ContentStore band-pool ceiling (LINGO-024 band promotion wiring)", () 
     expect(band2.studied).toBe(0); // s2 does not, even though band 1 < band 2
   });
 });
+
+// LINGO-040 (QA-5): the display aggregates. The promotion gate stays
+// band-exact (pinned by the test above); these are the figures Home reads, and
+// they must only ever move forward — the old band-exact display meant the
+// instant a learner was promoted from step 1 to step 2, "words introduced"
+// fell from >90% to ~0% and "review success" reverted to "no data yet".
+describe("cumulative display aggregates (LINGO-040)", () => {
+  function twoBandDeck(): Deck {
+    return {
+      code: "T",
+      name: "t",
+      targetLang: "ru",
+      sourceLang: "en",
+      bands: [1, 2],
+      words: [
+        { id: 1, lemma: "a", rank: 1, band: 1, pos: "noun" },
+        { id: 2, lemma: "b", rank: 2, band: 1, pos: "noun" },
+        { id: 3, lemma: "c", rank: 1001, band: 2, pos: "noun" },
+      ],
+      sentences: [
+        { ...sentence("s1", 1, 1), wordIds: [1] },
+        { ...sentence("s2", 2, 1), wordIds: [2] },
+        { ...sentence("s3", 1001, 2), wordIds: [3] },
+      ],
+    };
+  }
+
+  it("cumulativeVocabStats spans bands 1..band, so a promotion cannot shrink it", () => {
+    // A learner who finished band 1 (both its sentences studied) and has just
+    // been promoted to band 2.
+    const store = new ContentStore(twoBandDeck(), [
+      orphanState("s1", NOW - DAY),
+      orphanState("s2", NOW - DAY),
+    ]);
+
+    // Band-exact, as the promotion gate sees it: band 2 looks untouched.
+    expect(store.bandVocabStats(2)).toEqual({ total: 1, coverable: 1, studied: 0 });
+
+    // Cumulative, as the learner sees it: the two band-1 words are still there.
+    const shown = store.cumulativeVocabStats(2);
+    expect(shown.total).toBe(3);
+    expect(shown.studied).toBe(2);
+    // Never a regression across the promotion boundary.
+    expect(shown.studied).toBeGreaterThanOrEqual(store.cumulativeVocabStats(1).studied);
+  });
+
+  it("cumulativeRetention keeps band-1 review history visible from band 2", () => {
+    const store = new ContentStore(twoBandDeck(), [orphanState("s1", NOW - DAY)]);
+    // Band-exact band 2: nothing scheduled yet -> "no data yet" on the old UI.
+    expect(store.bandRetention(2)).toEqual({ reps: 0, lapses: 0, reviewCards: 0 });
+    // Cumulative: band 1's counters survive the promotion.
+    expect(store.cumulativeRetention(2)).toEqual({ reps: 2, lapses: 1, reviewCards: 1 });
+  });
+});
+
+// LINGO-040 (QA-4): a card graded Again moves to Relearning, and the old
+// `state !== Review` filter dropped it from the denominator — so the reported
+// success rate was systematically inflated, and a fresh lapse could briefly
+// RAISE it. Relearning cards now count; Learning/New still don't (a card in
+// its first-exposure steps has never been recalled at an interval, so it says
+// nothing about retention either way).
+describe("bandRetention counts Relearning cards (LINGO-040 / QA-4)", () => {
+  function stateIn(sentenceId: string, state: CardState, reps: number, lapses: number): ReviewState {
+    return { ...orphanState(sentenceId, NOW - DAY), state, reps, lapses };
+  }
+
+  const deck = () => makeDeck([sentence("ok"), sentence("failed"), sentence("fresh")]);
+
+  it("includes a just-lapsed card instead of hiding it", () => {
+    const store = new ContentStore(deck(), [
+      stateIn("ok", CardState.Review, 9, 0),
+      stateIn("failed", CardState.Relearning, 1, 3),
+    ]);
+    expect(store.bandRetention(1)).toEqual({ reps: 10, lapses: 3, reviewCards: 2 });
+  });
+
+  it("a lapse can no longer improve the reported rate", () => {
+    const before = new ContentStore(deck(), [
+      stateIn("ok", CardState.Review, 9, 0),
+      stateIn("failed", CardState.Review, 4, 1),
+    ]).bandRetention(1);
+    // Same learner a moment later: "failed" was graded Again — one more lapse,
+    // and FSRS moved it to Relearning.
+    const after = new ContentStore(deck(), [
+      stateIn("ok", CardState.Review, 9, 0),
+      stateIn("failed", CardState.Relearning, 4, 2),
+    ]).bandRetention(1);
+    const rate = (r: { reps: number; lapses: number }) => r.reps / (r.reps + r.lapses);
+    expect(rate(after)).toBeLessThan(rate(before));
+  });
+
+  it("still ignores New and Learning cards", () => {
+    const store = new ContentStore(deck(), [
+      stateIn("ok", CardState.Review, 5, 1),
+      stateIn("fresh", CardState.Learning, 2, 0),
+      stateIn("failed", CardState.New, 0, 0),
+    ]);
+    expect(store.bandRetention(1)).toEqual({ reps: 5, lapses: 1, reviewCards: 1 });
+  });
+});

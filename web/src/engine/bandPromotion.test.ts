@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { evaluateBandPromotion } from "./bandPromotion";
+import { evaluateBandPromotion, wordsToPromotion } from "./bandPromotion";
 
 // Ported 1:1 from ios/QuizEngine/Tests/QuizEngineTests/BandPromotionTests.swift
 // (LINGO-004) — same cases, same expected results, so this engine's behaviour
@@ -88,5 +88,40 @@ describe("evaluateBandPromotion (LINGO-024: coverage>=90% AND retention>=80%)", 
     expect(p.coverage).toBeCloseTo(0.5, 9);
     expect(p.retention).toBeCloseTo(0.5, 9);
     expect(p.promoted).toBe(true); // would fail the 0.9/0.8 defaults
+  });
+});
+
+// LINGO-040: the one number Home now shows about the next step, replacing
+// "次の解放まで カバー率28/90%・定着率79/80%" — four numbers and two
+// thresholds that only their author could read.
+describe("wordsToPromotion (LINGO-040)", () => {
+  const progress = (seenWords: number, coverageDenominator: number) => ({
+    seenWords,
+    coverageDenominator,
+  });
+
+  it("reports the remaining distance to the 90% coverage gate", () => {
+    // 998 coverable words -> the gate opens at ceil(0.9 * 998) = 899.
+    expect(wordsToPromotion(progress(284, 998))).toBe(615);
+    expect(wordsToPromotion(progress(898, 998))).toBe(1);
+  });
+
+  it("ceils, so 89.9% never reads as '0 more words'", () => {
+    // 89 of 100 = 89% — still short, and must say so.
+    expect(wordsToPromotion(progress(89, 100))).toBe(1);
+  });
+
+  it("is 0 once the coverage half of the gate is satisfied (Home then switches to the review line)", () => {
+    expect(wordsToPromotion(progress(90, 100))).toBe(0);
+    expect(wordsToPromotion(progress(100, 100))).toBe(0);
+  });
+
+  it("never goes negative, and handles an empty band", () => {
+    expect(wordsToPromotion(progress(120, 100))).toBe(0);
+    expect(wordsToPromotion(progress(0, 0))).toBe(0);
+  });
+
+  it("honours a custom coverage threshold", () => {
+    expect(wordsToPromotion(progress(40, 100), 0.5)).toBe(10);
   });
 });

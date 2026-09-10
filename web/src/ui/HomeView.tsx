@@ -1,78 +1,111 @@
+// Home (学習 tab) — rebuilt in LINGO-040 per the Fable ruling
+// (ai-org/Ideas/20260910-home-ux-ruling.md).
+//
+// The screen shows exactly three things, in the order a first-time user needs
+// them: which language they are learning, the one thing to do today, and how
+// far along they are. Nothing else is permanent. Everything precise — session
+// counts, words introduced, review success, the next step's condition,
+// estimated speech coverage — lives behind "くわしく", because only someone
+// who taps it is asking for precision.
+//
+// What was deleted outright, and why (ruling §2): the 「解除」tile (its value
+// was provably always identical to the session count beside it), the 「既知率」
+// tile (the completion screen had already retired that percentage in favour of
+// a 覚えていた/曖昧/覚えていない breakdown — it had simply survived here under
+// another name), the 「（255枚）」card-count denominator, the level badge (the
+// same figure as the big number next to it), 「判定済み0語」, and the mini pet
+// row (a duplicate entry point to the 育成 tab two centimetres below it — the
+// neglect signal it carried now sits on the tab itself as a dot).
+//
+// The rule the copy follows: no raw denominator, no percentage, and no word
+// from the app's internals (band / gate / unlock / coverage / retention /
+// FSRS) on the permanent screen.
+
 import { useEffect, useState } from "react";
-import { DECK, PRIMARY_BAND, activeCourse, homeStats } from "../state/service";
+import { activeCourse, homeStats } from "../state/service";
 import type { HomeStats } from "../state/service";
 import { calibrationProgress } from "../state/calibration";
-import type { CalibrationProgress } from "../state/calibration";
 import { CALIBRATION_FALLBACK_THRESHOLD } from "../engine/calibration";
 import { isPlacementDone } from "../state/placement";
-import { resolveCourse } from "../content/courses";
-import { langName, useI18n } from "../i18n/i18n";
-import type { TargetLang } from "../i18n/i18n";
+import { COURSES, resolveCourse } from "../content/courses";
+import { setActiveCourse } from "../state/settings";
+import { NATIVE_LANG_NAME, useI18n } from "../i18n/i18n";
+import type { TFn } from "../i18n/i18n";
+import { BottomSheet, SheetShell } from "./ListPicker";
 import type { Route } from "./App";
-// LINGO-031: mini pet status row (face + attention marks) so neglect is
-// visible from Home, not just inside the 育成 tab.
-import { peekPet } from "../state/pet";
 import type { PetSnapshot } from "../pet/engine";
-import { PetSprite } from "../pet/art/sprite";
-import { EggSprite } from "../pet/art/props";
-import { chooseExpression, petAttention } from "../pet/petDisplay";
 
-// Fallback shown if calibrationProgress() rejects (e.g. a transient IndexedDB
-// hiccup) — bug report 2026-08-26: the card silently never showed on one
-// device because an unhandled rejection here just left `calib` at null
-// forever. Better to show the entry point with a "0 judged" state than hide
-// the feature outright; tapping through will surface the real error if the DB
-// is genuinely broken, instead of the feature just vanishing with no trace.
-function fallbackCalibProgress(): CalibrationProgress {
-  const total = DECK.words.filter((w) => w.band === PRIMARY_BAND).length;
-  return { total, judged: 0, known: 0, unknown: 0, done: total === 0 };
+/** The one batch the start button commits the learner to. Mirrors
+ * QuizScreen's BATCH_SIZE — the label names the number so "start" is a
+ * bounded promise ("10 questions"), not an open-ended loop. */
+const BATCH_SIZE = 10;
+
+/** Round a real step word count (998 / 1993 / 2960 on RU) to the nearest
+ * hundred for display. The label always carries 約/~ so the rounding is
+ * stated, never implied: the exact figure is in the details sheet, where a
+ * precise denominator is what the reader came for. */
+function roundedStepWords(n: number): number {
+  return Math.max(0, Math.round(n / 100) * 100);
 }
 
-export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
-  const { lang, t } = useI18n();
+export function HomeView({
+  navigate,
+  petSnap,
+}: {
+  navigate: (r: Route) => void;
+  /** Owned by App (it also feeds the tab-bar dot) so Home and the tab bar can
+   * never disagree about the pet, and the pet is read once per visit. */
+  petSnap: PetSnapshot | null;
+}) {
+  const { t } = useI18n();
   const [stats, setStats] = useState<HomeStats | null>(null);
-  const [calib, setCalib] = useState<CalibrationProgress | null>(null);
-  const [targetLang, setTargetLang] = useState<TargetLang>("ru");
+  const [courseId, setCourseId] = useState<string>(activeCourse());
   // LINGO-016: the placement test is a single short pass, not "judge every
-  // word" — show the CTA only while the learner hasn't run it AND hasn't
-  // already substantially self-calibrated via the old linear flow (e.g.
-  // Katsuta's existing RU judgements), so nobody gets re-nagged for a test
-  // their existing data already makes redundant.
+  // word" — show it only while the learner hasn't run it AND hasn't already
+  // substantially self-calibrated via the old linear flow (e.g. Katsuta's
+  // existing RU judgements), so nobody gets re-nagged for a test their
+  // existing data already makes redundant.
   const [showLevelCheck, setShowLevelCheck] = useState(false);
-  const [petSnap, setPetSnap] = useState<PetSnapshot | null>(null);
+  const [coursePickerOpen, setCoursePickerOpen] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   useEffect(() => {
     homeStats()
       .then((s) => {
         setStats(s);
-        setTargetLang(resolveCourse(activeCourse()).targetLang);
-        // Reuse homeStats' own dueNow (= dueReviews(unlockedBand).length) as
-        // the pet's overdue count instead of a second ContentStore pass —
-        // same figure the 育成 tab injects (see state/service.overdueReviewCount).
-        // Read-only (peekPet never ticks) so opening Home can't trigger a
-        // hatch/evolve/depart — only the 育成 tab does that.
-        peekPet(s.dueNow)
-          .then(setPetSnap)
-          .catch((err) => console.error("peekPet failed", err));
+        setCourseId(activeCourse());
       })
       .catch((err) => console.error("homeStats failed", err));
     Promise.all([calibrationProgress(), isPlacementDone()])
-      .then(([c, done]) => {
-        setCalib(c);
-        setShowLevelCheck(!done && c.judged < CALIBRATION_FALLBACK_THRESHOLD);
-      })
+      .then(([c, done]) => setShowLevelCheck(!done && c.judged < CALIBRATION_FALLBACK_THRESHOLD))
       .catch((err) => {
+        // 2026-08-26 bug report: an unhandled rejection here used to leave the
+        // level-check entry point hidden forever on one device. Failing open is
+        // the safe direction — offering the test to someone who has already
+        // done it costs a tap; hiding it from someone who hasn't costs them the
+        // whole calibration.
         console.error("calibrationProgress/isPlacementDone failed", err);
-        const c = fallbackCalibProgress();
-        setCalib(c);
         setShowLevelCheck(true);
       });
   }, []);
 
-  const masteryLevel = (threshold: number | null): string =>
-    threshold == null
-      ? t("mastery.level.beginner")
-      : t("mastery.level.words", { n: threshold.toLocaleString() });
+  const course = resolveCourse(courseId);
+
+  /** Switching the course swaps the content pack AND the progress namespace,
+   * then reloads. Reachable in one tap from Home now, so it always asks first
+   * and says the thing a learner actually fears — that switching wipes what
+   * they have done. It does not: progress is stored per course. */
+  async function pickCourse(id: string) {
+    if (id === courseId) return;
+    const label = NATIVE_LANG_NAME[resolveCourse(id).targetLang];
+    if (!confirm(t("home.course.switchConfirm", { lang: label }))) return;
+    await setActiveCourse(id);
+    location.reload();
+  }
+
+  const mastered = stats?.mastery.masteredCount ?? 0;
+  const milestone = stats?.mastery.nextMilestone ?? null;
+  const milestonePct = milestone && milestone > 0 ? Math.min(100, (100 * mastered) / milestone) : 100;
 
   return (
     <div className="app">
@@ -82,9 +115,6 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
           LingoGate
         </div>
         <div className="actions">
-          <button className="iconbtn" onClick={() => navigate({ name: "guide" })} aria-label={t("home.guide")}>
-            ？
-          </button>
           <button
             className="iconbtn"
             onClick={() => navigate({ name: "settings" })}
@@ -95,166 +125,235 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
         </div>
       </div>
 
-      {petSnap && (
-        <button type="button" className="pet-mini-row" onClick={() => navigate({ name: "pet" })}>
-          <span className="pet-mini-icon">
-            {petSnap.stage === "egg" ? (
-              <EggSprite size={28} />
-            ) : (
-              <PetSprite speciesId={petSnap.speciesId} expr={chooseExpression(petSnap)} size={28} />
-            )}
-          </span>
-          <span className="pet-mini-label">{t("home.pet.mini")}</span>
-          <span className="pet-mini-marks">
-            {petAttention(petSnap).hungry && (
-              <span className="pet-mini-mark" role="img" aria-label={t("home.pet.mini.hungryTitle")}>
-                🍖
-              </span>
-            )}
-            {petAttention(petSnap).dirty && (
-              <span className="pet-mini-mark" role="img" aria-label={t("home.pet.mini.dirtyTitle")}>
-                💩
-              </span>
-            )}
-          </span>
+      {/* ---- Block 1: which language, and the streak ---- */}
+      <div className="home-course-row">
+        <button type="button" className="course-chip" onClick={() => setCoursePickerOpen(true)}>
+          {NATIVE_LANG_NAME[course.targetLang]}
           <span className="chevron" aria-hidden="true">
-            ›
+            ▾
           </span>
         </button>
+        {petSnap && petSnap.studyStreak > 0 && (
+          <span className="streak-chip">🔥 {t("home.streak", { n: petSnap.studyStreak })}</span>
+        )}
+      </div>
+
+      {/* ---- Block 2: the one thing to do today ---- */}
+      {showLevelCheck ? (
+        <div className="card home-hero">
+          <div className="hero-kicker">{t("home.calib.title")}</div>
+          <p className="hero-lead">{t("home.calib.desc")}</p>
+          <button className="btn primary block" onClick={() => navigate({ name: "placement" })}>
+            {t("home.placement.cta")}
+          </button>
+          <button
+            className="btn ghost block"
+            onClick={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
+          >
+            {t("home.calib.later")}
+          </button>
+        </div>
+      ) : (
+        <div className="card home-hero">
+          <div className="hero-kicker">{t("home.today.title")}</div>
+          <div className="hero-line">
+            {stats == null
+              ? "…"
+              : stats.dueNow > 0
+                ? t("home.today.withReviews", { n: stats.dueNow })
+                : t("home.today.freshOnly")}
+          </div>
+          <button
+            className="btn primary block"
+            onClick={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
+          >
+            {t("home.today.start", { n: BATCH_SIZE })}
+          </button>
+        </div>
       )}
 
-      <div className="stats">
-        <div className="stat">
-          <div className="val">{stats?.todayGates ?? "–"}</div>
-          <div className="lbl">{t("home.stat.gates")}</div>
-        </div>
-        <div className="stat">
-          <div className="val">{stats?.todayUnlocks ?? "–"}</div>
-          <div className="lbl">{t("home.stat.unlocks")}</div>
-        </div>
-        <div className="stat">
-          <div className="val">{stats && stats.knownRatePct != null ? `${stats.knownRatePct}%` : "–"}</div>
-          <div className="lbl">{t("home.stat.knownRate")}</div>
-        </div>
-      </div>
-
-      <div className="section-title">{t("home.mastery.title")}</div>
-      <div className="card mastery-card">
-        <div className="mastery-head">
-          <div>
-            <div className="mastery-num">
-              {stats ? stats.mastery.masteredCount.toLocaleString() : "–"}
-              <span className="mastery-unit">{t("home.mastery.unit")}</span>
-            </div>
-            <div className="mastery-sub">
-              {t("home.mastery.coverage")}{" "}
-              <strong>{stats ? `${stats.mastery.coveragePct}%` : "–"}</strong>
-            </div>
-          </div>
-          <div className="mastery-level">{stats ? masteryLevel(stats.mastery.levelThreshold) : "–"}</div>
+      {/* ---- Block 3: one progress bar, aimed at the next 500-word goal ---- */}
+      <div className="card home-progress">
+        <div className="progress-head">
+          <span className="progress-label">{t("home.progress.learned")}</span>
+          <span className="progress-num">
+            {stats ? t("home.progress.words", { n: mastered.toLocaleString() }) : "–"}
+          </span>
         </div>
         <div className="meter">
-          <div className="head">
-            <span>{t("home.mastery.progress")}</span>
-            <span>
-              {stats ? stats.mastery.masteredCount.toLocaleString() : "–"}/
-              {(stats?.mastery.targetWords ?? 3000).toLocaleString()}
-            </span>
-          </div>
           <div className="track">
-            <div
-              className="fill"
-              style={{
-                width: `${
-                  stats
-                    ? Math.min(100, (100 * stats.mastery.masteredCount) / stats.mastery.targetWords)
-                    : 0
-                }%`,
-              }}
-            />
+            <div className="fill" style={{ width: `${stats ? milestonePct : 0}%` }} />
           </div>
         </div>
+        <div className="progress-goal">
+          {stats == null
+            ? ""
+            : milestone == null
+              ? t("home.progress.frameDone")
+              : t("home.progress.toMilestone", {
+                  goal: milestone.toLocaleString(),
+                  n: (milestone - mastered).toLocaleString(),
+                })}
+        </div>
+        <button type="button" className="progress-more" onClick={() => setDetailsOpen(true)}>
+          <span>{stepLine(stats, t)}</span>
+          <span className="details-link">
+            {t("home.details")}
+            <span className="chevron" aria-hidden="true">
+              ›
+            </span>
+          </span>
+        </button>
       </div>
 
-      {showLevelCheck && (
-        <>
-          <div className="section-title">{t("home.calib.title")}</div>
-          <button className="card calib-cta" onClick={() => navigate({ name: "placement" })}>
-            <div className="row" style={{ padding: 0, background: "transparent" }}>
-              <div>
-                <div className="label">{t("home.placement.cta")}</div>
-                <div className="sub">{t("home.placement.judgedCount", { n: calib?.judged ?? 0 })}</div>
+      <BottomSheet
+        open={coursePickerOpen}
+        title={t("home.course.sheetTitle")}
+        options={COURSES.map((c) => ({
+          value: c.courseId,
+          label: NATIVE_LANG_NAME[c.targetLang],
+          disabled: c.status !== "available",
+          badge: c.status === "available" ? undefined : t("badge.comingSoon"),
+        }))}
+        selected={courseId}
+        onSelect={(id) => void pickCourse(id)}
+        onClose={() => setCoursePickerOpen(false)}
+        closeLabel={t("common.close")}
+      />
+
+      <DetailsSheet
+        open={detailsOpen}
+        stats={stats}
+        onClose={() => setDetailsOpen(false)}
+      />
+    </div>
+  );
+}
+
+/** "ステップ1（最初の約1,000語）" plus, on the same tap target, the one figure
+ * the ruling kept about the next step. Three cases, in order of what the
+ * learner can act on:
+ *   - words still to go        → "次のステップまで あとN語"
+ *   - words done, reviews not  → "復習を続けると次のステップへ" (never "あと0語",
+ *     which would sit there promising a promotion that cannot fire)
+ *   - no next step at all      → "いまが最後のステップです" (EN today: the course
+ *     ships no band-2 sentences, so the old screen said nothing whatsoever)
+ */
+function stepLine(stats: HomeStats | null, t: TFn): string {
+  if (!stats) return "";
+  const title = t("home.step.title", {
+    step: stats.unlockedBand,
+    n: roundedStepWords(stats.stepWords).toLocaleString(),
+  });
+  if (stats.wordsToNextStep == null) return `${title} · ${t("home.step.last")}`;
+  if (stats.wordsToNextStep > 0) {
+    return `${title} · ${t("home.step.toNext", { n: stats.wordsToNextStep.toLocaleString() })}`;
+  }
+  return `${title} · ${t("home.step.keepReviewing")}`;
+}
+
+/**
+ * "くわしく" — the only place exact figures appear, and the only place the
+ * 3,000-word frame is still quoted (as the scope of the course, never as a bar
+ * the learner is expected to fill: RU ships 2,960 eligible lemmas and EN about
+ * 1,000, so a /3000 bar could not be honoured — QA-3).
+ *
+ * The 覚えた語 breakdown is the point of this sheet: a level check can declare
+ * several hundred words known in 1–3 minutes, and blending those into one
+ * "mastered" figure is what made the old home screen unbelievable. Here the
+ * learner can see which half is their own claim and which half the app watched
+ * stick.
+ */
+function DetailsSheet({
+  open,
+  stats,
+  onClose,
+}: {
+  open: boolean;
+  stats: HomeStats | null;
+  onClose: () => void;
+}) {
+  const { t } = useI18n();
+  return (
+    <SheetShell open={open} title={t("home.details")} onClose={onClose} closeLabel={t("common.close")}>
+      {stats && (
+        <div className="detail-body">
+          <div className="detail-row">
+            <span>{t("detail.today")}</span>
+            <strong>{t("detail.today.sessions", { n: stats.todaySessions })}</strong>
+          </div>
+
+          <div className="detail-group-title">{t("home.progress.learned")}</div>
+          <div className="detail-row">
+            <span>{t("detail.learned.declared")}</span>
+            <strong>
+              {t("home.progress.words", { n: stats.mastery.declaredCount.toLocaleString() })}
+            </strong>
+          </div>
+          <div className="detail-row">
+            <span>{t("detail.learned.studied")}</span>
+            <strong>
+              {t("home.progress.words", { n: stats.mastery.learnedCount.toLocaleString() })}
+            </strong>
+          </div>
+          <div className="detail-row">
+            <span>{t("detail.frame")}</span>
+            <strong>
+              {t("home.progress.words", { n: stats.mastery.masteredCount.toLocaleString() })}
+            </strong>
+          </div>
+          <div className="detail-row">
+            <span>{t("detail.speech")}</span>
+            <strong>
+              {t("detail.speech.value", { pct: Math.round(stats.mastery.coveragePct) })}
+            </strong>
+          </div>
+
+          <div className="detail-group-title">
+            {t("home.step.title", {
+              step: stats.unlockedBand,
+              n: roundedStepWords(stats.stepWords).toLocaleString(),
+            })}
+          </div>
+          <div className="detail-row">
+            <span>{t("detail.introduced")}</span>
+            <strong>
+              {t("detail.introduced.value", {
+                n: stats.introduced.covered.toLocaleString(),
+                total: stats.introduced.total.toLocaleString(),
+              })}
+            </strong>
+          </div>
+          <div className="meter">
+            <div className="track">
+              <div className="fill" style={{ width: `${stats.introduced.pct}%` }} />
+            </div>
+          </div>
+          <div className="detail-row">
+            <span>{t("detail.retention")}</span>
+            <strong>
+              {stats.retentionPct != null ? `${stats.retentionPct}%` : t("detail.retention.noData")}
+            </strong>
+          </div>
+          {stats.retentionPct != null && (
+            <div className="meter">
+              <div className="track">
+                <div className="fill green" style={{ width: `${stats.retentionPct}%` }} />
               </div>
             </div>
-            <p className="muted" style={{ margin: "12px 0 0" }}>
-              {t("home.calib.desc")}
-            </p>
-          </button>
-        </>
+          )}
+          {stats.wordsToNextStep != null && (
+            <div className="detail-row">
+              <span>{t("detail.next")}</span>
+              <strong>
+                {stats.wordsToNextStep > 0
+                  ? t("home.step.toNext", { n: stats.wordsToNextStep.toLocaleString() })
+                  : t("home.step.keepReviewing")}
+              </strong>
+            </div>
+          )}
+        </div>
       )}
-
-      <div className="section-title">
-        {t("home.band.title", { n: ((stats?.unlockedBand ?? 1) * 1000).toLocaleString() })}
-      </div>
-      <div className="card">
-        <div className="meter">
-          <div className="head">
-            <span>{t("home.band.coverage")}</span>
-            <span>
-              {stats
-                ? t("home.band.coverageValue", {
-                    covered: stats.coverage.covered,
-                    total: stats.coverage.total,
-                    pct: stats.coverage.pct,
-                  })
-                : "–"}
-            </span>
-          </div>
-          <div className="track">
-            <div className="fill" style={{ width: `${stats?.coverage.pct ?? 0}%` }} />
-          </div>
-        </div>
-        <div className="meter">
-          <div className="head">
-            <span>{t("home.band.retention")}</span>
-            <span>
-              {stats && stats.retentionPct != null
-                ? t("home.band.retentionValue", { pct: stats.retentionPct, cards: stats.reviewCards })
-                : t("home.band.noData")}
-            </span>
-          </div>
-          <div className="track">
-            <div className="fill green" style={{ width: `${stats?.retentionPct ?? 0}%` }} />
-          </div>
-        </div>
-        {stats && stats.dueNow > 0 && (
-          <p className="muted" style={{ marginTop: 12, marginBottom: 0 }}>
-            {t("home.band.dueNow", { n: stats.dueNow })}
-          </p>
-        )}
-        {stats?.bandPromotion && (
-          <p className="muted" style={{ marginTop: 12, marginBottom: 0 }}>
-            {t("home.band.nextUnlock", {
-              coverage: Math.round(stats.bandPromotion.coverage * 100),
-              retention: Math.round(stats.bandPromotion.retention * 100),
-            })}
-          </p>
-        )}
-      </div>
-
-      <div className="spacer" />
-
-      <div className="stack">
-        <button
-          className="btn primary block"
-          onClick={() => navigate({ name: "quiz", returnApp: null, continuous: true })}
-        >
-          {t("home.solve", { lang: langName(lang, targetLang) })}
-        </button>
-        <button className="btn ghost block" onClick={() => navigate({ name: "guide" })}>
-          {t("home.setupAutomation")}
-        </button>
-      </div>
-    </div>
+    </SheetShell>
   );
 }

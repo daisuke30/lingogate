@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ReactNode } from "react";
 import { canSelectOption } from "../engine/listPicker";
 
 /**
@@ -57,6 +58,43 @@ export function ListRow({
   );
 }
 
+/**
+ * The bare sheet chrome — backdrop, panel, handle, title, close row — with an
+ * arbitrary body. Renders nothing when `open` is false.
+ *
+ * Extracted in LINGO-040 so Home's "くわしく" sheet is the same object as
+ * every settings picker (same slide-up panel, same dismiss-by-backdrop, same
+ * close row) instead of a second, subtly different sheet implementation.
+ * BottomSheet below is now just this shell with a radio list inside it.
+ */
+export function SheetShell({
+  open,
+  title,
+  onClose,
+  closeLabel,
+  children,
+}: {
+  open: boolean;
+  title: string;
+  onClose: () => void;
+  closeLabel: string;
+  children: ReactNode;
+}) {
+  if (!open) return null;
+  return (
+    <div className="sheet-backdrop" onClick={onClose}>
+      <div className="sheet" role="dialog" aria-label={title} onClick={(e) => e.stopPropagation()}>
+        <div className="sheet-handle" />
+        <div className="sheet-title">{title}</div>
+        {children}
+        <button type="button" className="sheet-cancel" onClick={onClose}>
+          {closeLabel}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 /** The bottom sheet itself: a radio list of options + a close row. Renders
  * nothing when `open` is false. */
 export function BottomSheet<T extends string>({
@@ -76,54 +114,41 @@ export function BottomSheet<T extends string>({
   onClose: () => void;
   closeLabel: string;
 }) {
-  if (!open) return null;
   return (
-    <div className="sheet-backdrop" onClick={onClose}>
-      <div
-        className="sheet"
-        role="dialog"
-        aria-label={title}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="sheet-handle" />
-        <div className="sheet-title">{title}</div>
-        <div className="sheet-options">
-          {options.map((opt) => {
-            const isSelected = opt.value === selected;
-            return (
-              <button
-                key={opt.value}
-                type="button"
-                className={"sheet-option" + (isSelected ? " on" : "")}
-                disabled={opt.disabled}
-                aria-pressed={isSelected}
-                onClick={() => {
-                  if (!canSelectOption(options, opt.value)) return;
-                  onSelect(opt.value);
-                  onClose();
-                }}
-              >
-                <div>
-                  <div className="label">
-                    {opt.label}
-                    {opt.badge && <span className="badge">{opt.badge}</span>}
-                  </div>
-                  {opt.sub && <div className="sub">{opt.sub}</div>}
+    <SheetShell open={open} title={title} onClose={onClose} closeLabel={closeLabel}>
+      <div className="sheet-options">
+        {options.map((opt) => {
+          const isSelected = opt.value === selected;
+          return (
+            <button
+              key={opt.value}
+              type="button"
+              className={"sheet-option" + (isSelected ? " on" : "")}
+              disabled={opt.disabled}
+              aria-pressed={isSelected}
+              onClick={() => {
+                if (!canSelectOption(options, opt.value)) return;
+                onSelect(opt.value);
+                onClose();
+              }}
+            >
+              <div>
+                <div className="label">
+                  {opt.label}
+                  {opt.badge && <span className="badge">{opt.badge}</span>}
                 </div>
-                {isSelected && (
-                  <span className="sheet-check" aria-hidden="true">
-                    ✓
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </div>
-        <button type="button" className="sheet-cancel" onClick={onClose}>
-          {closeLabel}
-        </button>
+                {opt.sub && <div className="sub">{opt.sub}</div>}
+              </div>
+              {isSelected && (
+                <span className="sheet-check" aria-hidden="true">
+                  ✓
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
-    </div>
+    </SheetShell>
   );
 }
 

@@ -245,26 +245,55 @@ export class ContentStore {
   // MARK: band coverage / retention stats (home screen)
 
   /** total band words, coverable (in ≥1 band sentence), studied (covered by a
-   * sentence that has a ReviewState). Mirrors ContentStore.bandVocabStats. */
+   * sentence that has a ReviewState). Mirrors ContentStore.bandVocabStats.
+   *
+   * EXACT-band: measures one band's own promotion readiness (the input
+   * evaluateBandPromotion gates on), NOT the unlocked pool — see the
+   * pool-ceiling note on dueReviews. For the *display* figure that must not
+   * collapse the moment a band promotes, use cumulativeVocabStats. */
   bandVocabStats(band: number): { total: number; coverable: number; studied: number } {
-    const bandWords = this.deck.words.filter((w) => w.band === band);
-    const total = bandWords.length;
+    return this.vocabStats((b) => b === band);
+  }
+
+  /**
+   * LINGO-040 (QA-5): the same vocab figures over the whole unlocked pool
+   * (bands 1..band), for HOME DISPLAY only.
+   *
+   * Why this exists: `bandVocabStats` is band-EXACT, so at the exact moment a
+   * learner is promoted from step 1 to step 2 the home meter fell from >90%
+   * back to ~0% and the retention readout reverted to "no data yet" — the
+   * single most rewarding moment in the app looked like a data wipe. The
+   * promotion GATE stays band-exact (unchanged thresholds, unchanged
+   * BandPromotionTests parity); only what the learner reads is cumulative, so
+   * progress only ever moves forward.
+   */
+  cumulativeVocabStats(band: number): { total: number; coverable: number; studied: number } {
+    return this.vocabStats((b) => b <= band);
+  }
+
+  private vocabStats(match: (band: number) => boolean): {
+    total: number;
+    coverable: number;
+    studied: number;
+  } {
+    const scopeWords = this.deck.words.filter((w) => match(w.band));
+    const total = scopeWords.length;
     const coverableIds = new Set<number>();
     const studiedIds = new Set<number>();
     for (const s of this.deck.sentences) {
-      if (s.band !== band) continue;
+      if (!match(s.band)) continue;
       const studied = this.states.has(s.id);
       for (const wid of s.wordIds) {
         coverableIds.add(wid);
         if (studied) studiedIds.add(wid);
       }
     }
-    // Restrict to band words only.
-    const bandIds = new Set(bandWords.map((w) => w.id));
+    // Restrict to in-scope words only.
+    const scopeIds = new Set(scopeWords.map((w) => w.id));
     let coverable = 0;
     let studied = 0;
-    coverableIds.forEach((id) => bandIds.has(id) && coverable++);
-    studiedIds.forEach((id) => bandIds.has(id) && studied++);
+    coverableIds.forEach((id) => scopeIds.has(id) && coverable++);
+    studiedIds.forEach((id) => scopeIds.has(id) && studied++);
     return { total, coverable, studied };
   }
 
@@ -294,15 +323,41 @@ export class ContentStore {
     );
   }
 
-  /** Retention proxy over band cards in the Review state: reps / (reps+lapses). */
+  /** Retention proxy over scheduled band cards: reps / (reps+lapses).
+   *
+   * EXACT-band (promotion gating) — see bandVocabStats' note; the cumulative
+   * display counterpart is cumulativeRetention.
+   *
+   * LINGO-040 (QA-4): the scope is Review **and Relearning**, not Review
+   * alone. FSRS moves a card to Relearning the moment it is graded Again
+   * (fsrs.ts), so the old `state !== Review` filter dropped exactly the cards
+   * the learner had just failed out of the denominator — the readout was
+   * systematically inflated (a lapse briefly *raised* the reported rate).
+   * Learning/New are still excluded: a card in its first-exposure steps has
+   * never been recalled from memory at an interval, so it says nothing about
+   * retention either way. */
   bandRetention(band: number): { reps: number; lapses: number; reviewCards: number } {
+    return this.retention((b) => b === band);
+  }
+
+  /** LINGO-040 (QA-5): retention over the whole unlocked pool (bands 1..band),
+   * for HOME DISPLAY only — see cumulativeVocabStats for why. */
+  cumulativeRetention(band: number): { reps: number; lapses: number; reviewCards: number } {
+    return this.retention((b) => b <= band);
+  }
+
+  private retention(match: (band: number) => boolean): {
+    reps: number;
+    lapses: number;
+    reviewCards: number;
+  } {
     let reps = 0;
     let lapses = 0;
     let reviewCards = 0;
     for (const st of this.states.values()) {
-      if (st.state !== CardState.Review) continue;
+      if (st.state !== CardState.Review && st.state !== CardState.Relearning) continue;
       const s = this.byId.get(st.sentenceId);
-      if (!s || s.band !== band) continue;
+      if (!s || !match(s.band)) continue;
       reps += st.reps;
       lapses += st.lapses;
       reviewCards++;

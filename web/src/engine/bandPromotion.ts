@@ -80,3 +80,24 @@ export function evaluateBandPromotion(
     promoted: coverageOK && retentionOK,
   };
 }
+
+/**
+ * LINGO-040: how many more words the learner must start studying before the
+ * coverage half of the promotion gate is satisfied. 0 once it already is.
+ *
+ * This is the one figure the home screen shows about the next step ("次のス
+ * テップまで あとN語"), replacing the old four-number readout
+ * ("カバー率28/90%・定着率79/80%"). A raw threshold pair is only readable to
+ * whoever wrote it; the remaining distance is readable to everyone.
+ *
+ * Ceil, not round: at 89.9% coverage the answer must still be "1 more word",
+ * never "0 more" — a screen that says 0 and does not promote is worse than
+ * one that says nothing.
+ */
+export function wordsToPromotion(
+  progress: Pick<BandProgress, "seenWords" | "coverageDenominator">,
+  coverageThreshold: number = DEFAULT_COVERAGE_THRESHOLD,
+): number {
+  const needed = Math.ceil(coverageThreshold * progress.coverageDenominator);
+  return Math.max(0, needed - progress.seenWords);
+}

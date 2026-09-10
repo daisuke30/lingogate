@@ -4,6 +4,8 @@ import {
   masteryLevelLabel,
   masteredLemmaSet,
   masteryStats,
+  nextMilestone,
+  MASTERY_MILESTONE_STEP,
   MASTERY_STABILITY_DAYS,
   MASTERY_TARGET_WORDS,
 } from "./mastery";
@@ -153,5 +155,74 @@ describe("masteryStats", () => {
     expect(stats.targetWords).toBe(MASTERY_TARGET_WORDS);
     expect(stats.coveragePct).toBe(estimatedCoveragePct(3));
     expect(stats.level).toBe("完全初心者");
+  });
+
+  // LINGO-040 (QA-7): a 1–3 minute level check can declare several hundred
+  // words known, and the old screen folded those into a single "N語マスター".
+  // The split is what lets the details sheet say which half is the learner's
+  // own claim and which half the app watched stick.
+  it("splits the count into declared (level check) and learned (study)", () => {
+    const knowledge: KnowledgeMap = new Map([
+      ["дом", "known"],
+      ["рука", "known"],
+    ]);
+    const stats = masteryStats(
+      [target("T1", "город")],
+      knowledge,
+      [stateWithStability("T1", 30)],
+      DECK_LEMMAS,
+    );
+    expect(stats.declaredCount).toBe(2); // дом, рука
+    expect(stats.learnedCount).toBe(1); // город
+    expect(stats.declaredCount + stats.learnedCount).toBe(stats.masteredCount);
+  });
+
+  it("counts a lemma earned BOTH ways as declared only, never twice", () => {
+    // город was ticked in the level check AND has since become stable.
+    const knowledge: KnowledgeMap = new Map([["город", "known"]]);
+    const stats = masteryStats(
+      [target("T1", "город")],
+      knowledge,
+      [stateWithStability("T1", 30)],
+      DECK_LEMMAS,
+    );
+    expect(stats.masteredCount).toBe(1);
+    expect(stats.declaredCount).toBe(1);
+    expect(stats.learnedCount).toBe(0);
+  });
+});
+
+// --- 500-word milestones (LINGO-040) ----------------------------------------
+// The home bar's denominator. A /3000 bar sat in single digits for months and
+// was unreachable on today's content (RU ships 2,960 eligible lemmas, EN
+// ~1,000 — QA-3); the next 500 is a denominator the learner can actually fill.
+
+describe("nextMilestone", () => {
+  it("aims at the next 500 above the current count", () => {
+    expect(nextMilestone(0)).toBe(500);
+    expect(nextMilestone(1)).toBe(500);
+    expect(nextMilestone(247)).toBe(500);
+    expect(nextMilestone(499)).toBe(500);
+    expect(nextMilestone(500)).toBe(1000); // reaching one moves the goal on
+    expect(nextMilestone(1499)).toBe(1500);
+    expect(nextMilestone(2999)).toBe(3000);
+  });
+
+  it("returns null at the 3000-word frame (nothing left to aim at)", () => {
+    expect(nextMilestone(MASTERY_TARGET_WORDS)).toBeNull();
+    expect(nextMilestone(4000)).toBeNull();
+  });
+
+  it("never exceeds the frame, and never returns a goal already reached", () => {
+    for (let n = 0; n < MASTERY_TARGET_WORDS; n += 37) {
+      const goal = nextMilestone(n)!;
+      expect(goal).toBeGreaterThan(n);
+      expect(goal).toBeLessThanOrEqual(MASTERY_TARGET_WORDS);
+      expect(goal % MASTERY_MILESTONE_STEP).toBe(0);
+    }
+  });
+
+  it("treats a negative count as zero rather than returning a negative goal", () => {
+    expect(nextMilestone(-5)).toBe(500);
   });
 });

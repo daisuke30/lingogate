@@ -10,7 +10,7 @@ import { FSRS } from "../engine/fsrs";
 import { buildGateSession, GateSessionRunner } from "../engine/session";
 import { SeededRNG } from "../engine/rng";
 import { knowledgeUpdatesFromOutcomes } from "../engine/calibration";
-import { evaluateBandPromotion } from "../engine/bandPromotion";
+import { evaluateBandPromotion, wordsToPromotion } from "../engine/bandPromotion";
 import type { BandProgress } from "../engine/bandPromotion";
 import { BOOTSTRAP_DECK, DEFAULT_COURSE_ID, resolveCourse } from "../content/courses";
 import type { Lang } from "../content/courses";
@@ -273,23 +273,43 @@ export async function commitPartialSession(session: StartedSession): Promise<Ses
   return { bandPromotion, petEarned };
 }
 
+/**
+ * Home-screen figures. LINGO-040 reshaped this: `todayUnlocks` and
+ * `knownRatePct` are gone (the tiles that showed them were deleted — the
+ * unlock count was provably always equal to the session count, and the
+ * "known rate" was the very percentage the completion screen had already
+ * retired in favour of a 覚えていた/曖昧/覚えていない breakdown), and the
+ * band-exact display aggregates were replaced by cumulative ones so nothing
+ * on screen collapses when a step is promoted.
+ */
 export interface HomeStats {
-  todayGates: number;
-  todayUnlocks: number;
-  knownRatePct: number | null; // over today's answered questions
+  /** Completed 10-card sessions today (shown only in the details sheet). */
+  todaySessions: number;
   /** LINGO-024: the course's currently unlocked band (1 = only band 1). */
   unlockedBand: number;
-  coverage: { covered: number; total: number; pct: number };
+  /** LINGO-040: words the learner has been introduced to, cumulative over the
+   * unlocked pool (bands 1..unlockedBand) — see
+   * ContentStore.cumulativeVocabStats on why this is not band-exact. */
+  introduced: { covered: number; total: number; pct: number };
+  /** LINGO-040: review success over the same cumulative pool, now including
+   * Relearning cards (QA-4). null until any card has been scheduled. */
   retentionPct: number | null;
   reviewCards: number;
   dueNow: number;
-  mastery: MasteryStats; // "会話頻出3000語マスター" (LINGO-013)
+  mastery: MasteryStats; // 覚えた語 (LINGO-013, renamed from "マスター" in LINGO-040)
+  /** LINGO-040 (QA-2): real cumulative word count of the unlocked steps —
+   * replaces the old `unlockedBand * 1000` guess, which printed "1〜1,000語"
+   * next to a meter reading "/998" on the RU deck. */
+  stepWords: number;
+  /** LINGO-040: words still to be introduced before the next step's coverage
+   * gate opens; null when there is no next step (already at MAX_ACTIVE_BAND,
+   * or the course ships no band+1 content — e.g. EN today). */
+  wordsToNextStep: number | null;
   /** LINGO-024: progress toward promoting PAST `unlockedBand` — the actual
-   * coverage/retention ratios BandPromotion gates on (coverable-word
-   * denominator), distinct from `coverage` above (which uses a total-word
-   * denominator for the general vocab-progress meter — a different, older
-   * metric kept as-is). null once there's no next band to promote to (already
-   * at MAX_ACTIVE_BAND, or the course has no band+1 content yet — e.g. EN). */
+   * coverage/retention ratios BandPromotion gates on (band-EXACT,
+   * coverable-word denominator), deliberately distinct from `introduced`
+   * above, which is the cumulative *display* figure. null once there's no
+   * next band to promote to. */
   bandPromotion: BandProgress | null;
 }
 
@@ -308,23 +328,20 @@ export async function homeStats(): Promise<HomeStats> {
   const store = await loadStore(); // also ensures the active course is loaded
   const sessions = await getAllGateSessions(activeCourseId);
   const today = sessions.filter((s) => isToday(s.startedAt, now));
-  const todayGates = today.length;
-  const todayUnlocks = today.filter((s) => s.unlocked).length;
-  const q = today.reduce((a, s) => a + s.questions, 0);
-  const c = today.reduce((a, s) => a + s.correct, 0);
-  const knownRatePct = q > 0 ? Math.round((100 * c) / q) : null;
+  const todaySessions = today.length;
 
   const unlockedBand = await getUnlockedBand(activeCourseId);
 
-  const vocab = store.bandVocabStats(unlockedBand);
-  const coverage = {
-    covered: vocab.studied,
-    total: vocab.total,
-    pct: vocab.total > 0 ? Math.round((100 * vocab.studied) / vocab.total) : 0,
+  // Display figures: cumulative over the unlocked pool (LINGO-040 / QA-5).
+  const cumVocab = store.cumulativeVocabStats(unlockedBand);
+  const introduced = {
+    covered: cumVocab.studied,
+    total: cumVocab.total,
+    pct: cumVocab.total > 0 ? Math.round((100 * cumVocab.studied) / cumVocab.total) : 0,
   };
-  const ret = store.bandRetention(unlockedBand);
-  const retDenom = ret.reps + ret.lapses;
-  const retentionPct = retDenom > 0 ? Math.round((100 * ret.reps) / retDenom) : null;
+  const cumRet = store.cumulativeRetention(unlockedBand);
+  const cumRetDenom = cumRet.reps + cumRet.lapses;
+  const retentionPct = cumRetDenom > 0 ? Math.round((100 * cumRet.reps) / cumRetDenom) : null;
 
   const dueNow = store.dueReviews(unlockedBand, now, 9999).length;
 
@@ -332,7 +349,11 @@ export async function homeStats(): Promise<HomeStats> {
 
   // LINGO-024: read-only progress readout toward promoting past
   // `unlockedBand` — never writes/promotes here, Home only reports status.
-  // null once there's no next band left to promote into.
+  // null once there's no next band left to promote into. Gating inputs stay
+  // band-EXACT (unchanged thresholds) even though the display figures above
+  // are cumulative.
+  const vocab = store.bandVocabStats(unlockedBand);
+  const ret = store.bandRetention(unlockedBand);
   const nextBand = unlockedBand + 1;
   const bandPromotion =
     nextBand <= MAX_ACTIVE_BAND && DECK.bands.includes(nextBand)
@@ -347,16 +368,23 @@ export async function homeStats(): Promise<HomeStats> {
         })
       : null;
 
+  // LINGO-040: the one figure Home shows about the next step. 0 means the word
+  // half of the gate is already satisfied and only review success is
+  // outstanding — Home renders that as "復習を続けると次のステップへ" rather
+  // than "あと0語", which would promise a promotion that cannot fire yet.
+  const wordsToNextStep = bandPromotion ? wordsToPromotion(bandPromotion) : null;
+
   return {
-    todayGates,
-    todayUnlocks,
-    knownRatePct,
+    todaySessions,
     unlockedBand,
-    coverage,
+    introduced,
     retentionPct,
-    reviewCards: ret.reviewCards,
+    reviewCards: cumRet.reviewCards,
     dueNow,
     mastery,
+    // QA-2: the honest cumulative word count of the unlocked steps.
+    stepWords: cumVocab.total,
+    wordsToNextStep,
     bandPromotion,
   };
 }
