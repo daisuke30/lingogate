@@ -95,7 +95,21 @@ export function pronunciationReadable(
   kana: string,
   frontLang: NoteLang,
   uiLang: NoteLang,
+  targetLang?: string,
 ): boolean {
+  // LINGO-044: a transcription written in the script of the language being
+  // LEARNED is not a leak — it is the material. The Japanese course puts
+  // furigana here (たべます / tabemasu) for English and Russian speakers, and
+  // suppressing it as "Japanese text they didn't ask for" would delete the
+  // single most useful line on the card: a beginner cannot read the kanji, so
+  // the reading is how they get at the word at all. They did ask for Japanese
+  // — it is their course.
+  //
+  // The rule is therefore "text in a language the learner did not choose",
+  // and choosing to LEARN Japanese counts just as much as choosing it for the
+  // UI or prompts. RU's katakana aid is unaffected: its target is Russian, so
+  // Japanese script there still requires a Japanese reader.
+  if (targetLang === "ja") return true;
   return !hasJapaneseScript(kana) || readsJapanese(frontLang, uiLang);
 }
 

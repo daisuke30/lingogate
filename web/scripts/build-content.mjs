@@ -91,7 +91,24 @@ export const TH_DECK = {
   grammarMeta: "classifier",
 };
 
-const DECKS = [RU_DECK, EN_DECK, TH_DECK];
+// LINGO-044: Japanese course, for en/ru speakers. grammarMeta is "conjugation":
+// unlike Thai (which has none at all) Japanese inflects, and the thing a
+// learner needs told is a verb's group and its polite ます-form — prose, so it
+// lives in the sentence note rather than in a structured column.
+export const JA_DECK = {
+  dataDir: join(PIPELINE, "courses", "ja"),
+  outFile: join(CONTENT_DIR, "deck.ja.json"),
+  code: "JA-from-EN-RU",
+  name: "Japanese (spoken-frequency bands)",
+  courseId: "ja",
+  targetLang: "ja",
+  sourceLang: "en",
+  availableFrontLangs: ["en", "ru"],
+  defaultFrontLang: "en",
+  grammarMeta: "conjugation",
+};
+
+const DECKS = [RU_DECK, EN_DECK, TH_DECK, JA_DECK];
 
 function loadJsonl(path) {
   const rows = [];
@@ -143,7 +160,11 @@ function tokenizeCount(text) {
 // (deduped, resolved lemmas only) still means exactly "words that did not
 // link to a deck entry".
 function sentenceTokenCount(s, targetLang) {
-  if (targetLang === "th") return (s.lemmas ?? []).length;
+  // LINGO-044: Japanese has the same problem as Thai — no spaces between
+  // words, so tokenizeCount() sees 私は毎朝コーヒーを飲みます as one letter run.
+  // Its `lemmas` are produced by a morphological analyser (UniDic) rather than
+  // written by hand, so they are the authoritative segmentation here too.
+  if (targetLang === "th" || targetLang === "ja") return (s.lemmas ?? []).length;
   return tokenizeCount(s[targetLang]);
 }
 

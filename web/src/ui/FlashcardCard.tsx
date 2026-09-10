@@ -249,7 +249,7 @@ export function FlashcardCard({
                 romanization in the same slot — universally readable, and the
                 one line a Thai learner cannot do without. See
                 pronunciationReadable(). */}
-            {sentence.kana && pronunciationReadable(sentence.kana, frontLang, uiLang) && (
+            {sentence.kana && pronunciationReadable(sentence.kana, frontLang, uiLang, targetLangTyped) && (
               <div className="kana">{sentence.kana}</div>
             )}
             {/* The back also shows the ja-field translation as a bonus reference
@@ -271,7 +271,12 @@ export function FlashcardCard({
                 word-breakdown's pairNote below. */}
             {resolvedNote && <div className="note">{resolvedNote}</div>}
             {breakdown.length > 0 && (
-              <WordBreakdownList entries={breakdown} frontLang={frontLang} uiLang={uiLang} />
+              <WordBreakdownList
+                entries={breakdown}
+                frontLang={frontLang}
+                uiLang={uiLang}
+                targetLang={targetLangTyped}
+              />
             )}
             {showOverlay && <RateOverlay color={overlayColor} text={overlayText} />}
             {!canEval && <div className="hint">…</div>}
@@ -358,12 +363,16 @@ function WordBreakdownList({
   entries,
   frontLang,
   uiLang,
+  targetLang,
 }: {
   entries: WordBreakdownEntry[];
   frontLang: Lang;
   /** LINGO-026: needed to resolve each entry's pairNote (free-text nuance
    * note) via the front→UI→en→ja chain — see resolveLocalizedText(). */
   uiLang: Lang;
+  /** LINGO-044: needed to decide whether a per-word transcription is
+   * target-language material or foreign script — see pronunciationReadable(). */
+  targetLang: TargetLang;
 }) {
   const { t } = useI18n();
   // Structural labels (part of speech, verb aspect) follow the UI language, not
@@ -426,7 +435,7 @@ function WordBreakdownList({
                   breakdown is unusable without it — this is the whole reason
                   DeckWord carries `kana`. Null on RU/EN, so nothing changes
                   for those courses. */}
-              {w.kana && pronunciationReadable(w.kana, frontLang, uiLang) && (
+              {w.kana && pronunciationReadable(w.kana, frontLang, uiLang, targetLang) && (
                 <span className="wb-kana">{w.kana}</span>
               )}
               <span className="wb-pos">{posText === posKey ? w.posLabel : posText}</span>
