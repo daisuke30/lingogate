@@ -104,8 +104,6 @@ export function HomeView({
   }
 
   const mastered = stats?.mastery.masteredCount ?? 0;
-  const milestone = stats?.mastery.nextMilestone ?? null;
-  const milestonePct = milestone && milestone > 0 ? Math.min(100, (100 * mastered) / milestone) : 100;
 
   return (
     <div className="app">
@@ -172,7 +170,7 @@ export function HomeView({
         </div>
       )}
 
-      {/* ---- Block 3: one progress bar, aimed at the next 500-word goal ---- */}
+      {/* ---- Block 3: one progress bar, aimed at the next step ---- */}
       <div className="card home-progress">
         <div className="progress-head">
           <span className="progress-label">{t("home.progress.learned")}</span>
@@ -180,20 +178,25 @@ export function HomeView({
             {stats ? t("home.progress.words", { n: mastered.toLocaleString() }) : "–"}
           </span>
         </div>
+        {/* LINGO-042: ONE bar, tracking the current step — the same thing the
+            line beneath it names. It used to track a 500-word milestone while
+            the line named the step, so two unrelated goals sat stacked on top
+            of each other ("次の目標500語まで あと500語" / "次のステップまで
+            あと899語") and neither meant anything. */}
         <div className="meter">
-          <div className="track">
-            <div className="fill" style={{ width: `${stats ? milestonePct : 0}%` }} />
+          <div
+            className="track"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={stats ? Math.round(stepProgressPct(stats)) : 0}
+            aria-label={t("home.step.title", {
+              step: stats?.unlockedBand ?? 1,
+              n: roundedStepWords(stats?.stepWords ?? 0).toLocaleString(),
+            })}
+          >
+            <div className="fill" style={{ width: `${stats ? stepProgressPct(stats) : 0}%` }} />
           </div>
-        </div>
-        <div className="progress-goal">
-          {stats == null
-            ? ""
-            : milestone == null
-              ? t("home.progress.frameDone")
-              : t("home.progress.toMilestone", {
-                  goal: milestone.toLocaleString(),
-                  n: (milestone - mastered).toLocaleString(),
-                })}
         </div>
         <button type="button" className="progress-more" onClick={() => setDetailsOpen(true)}>
           <span>{stepLine(stats, t)}</span>
@@ -228,6 +231,21 @@ export function HomeView({
       />
     </div>
   );
+}
+
+/**
+ * How full the home bar is: progress toward the next step, on exactly the same
+ * basis as the "次のステップまで あとN語" line below it (LINGO-042 — one goal,
+ * one measure). 100% when there is no next step to reach, so the last step
+ * reads as complete rather than as a permanently half-empty bar.
+ */
+function stepProgressPct(stats: HomeStats): number {
+  const remaining = stats.wordsToNextStep;
+  if (remaining == null) return 100;
+  const seen = stats.bandPromotion?.seenWords ?? 0;
+  const goal = seen + remaining;
+  if (goal <= 0) return 100;
+  return Math.max(0, Math.min(100, (100 * seen) / goal));
 }
 
 /** "ステップ1（最初の約1,000語）" plus, on the same tap target, the one figure
@@ -318,10 +336,7 @@ function DetailsSheet({
           <div className="detail-row">
             <span>{t("detail.introduced")}</span>
             <strong>
-              {t("detail.introduced.value", {
-                n: stats.introduced.covered.toLocaleString(),
-                total: stats.introduced.total.toLocaleString(),
-              })}
+              {t("detail.introduced.value", { n: stats.introduced.covered.toLocaleString() })}
             </strong>
           </div>
           <div className="meter">
@@ -347,7 +362,7 @@ function DetailsSheet({
               <span>{t("detail.next")}</span>
               <strong>
                 {stats.wordsToNextStep > 0
-                  ? t("home.step.toNext", { n: stats.wordsToNextStep.toLocaleString() })
+                  ? t("detail.next.value", { n: stats.wordsToNextStep.toLocaleString() })
                   : t("home.step.keepReviewing")}
               </strong>
             </div>

@@ -87,16 +87,10 @@ const M: Record<string, Entry> = {
   // Block 3 — one bar, aimed at the next 500-word milestone.
   "home.progress.learned": { ja: "覚えた語", en: "Words learned", ru: "Выучено слов" },
   "home.progress.words": { ja: "{n}語", en: "{n} words", ru: "Слов: {n}" },
-  "home.progress.toMilestone": {
-    ja: "次の目標{goal}語まで あと{n}語",
-    en: "{n} more to reach {goal}",
-    ru: "До цели {goal}: ещё {n}",
-  },
-  "home.progress.frameDone": {
-    ja: "よく使う3,000語をひととおり覚えました",
-    en: "You've been through all 3,000 everyday words",
-    ru: "Вы прошли все 3 000 частотных слов",
-  },
+  // LINGO-042 (勝田指示): the 500-word milestone line is gone. It sat directly
+  // above "次のステップまで あとN語" and the two goals competed — the whole
+  // point of LINGO-040 was to leave exactly one thing to aim at. The bar now
+  // tracks the current step, and the step line is the only goal on screen.
   // "ステップ" replaces band/語帯 everywhere a learner can see it. The word
   // count is rounded and marked 約: the real per-step totals are 998/995/967
   // on RU, and printing those raw was exactly the confusion this ticket fixes
@@ -168,11 +162,11 @@ const M: Record<string, Entry> = {
   },
   "detail.speech.value": { ja: "約{pct}%（目安）", en: "about {pct}% (estimate)", ru: "около {pct} % (оценка)" },
   "detail.introduced": { ja: "学習を始めた語", en: "Words introduced", ru: "Начатые слова" },
-  "detail.introduced.value": {
-    ja: "{n}語 / {total}語",
-    en: "{n} of {total}",
-    ru: "{n} из {total}",
-  },
+  // LINGO-042: was "{n}語 / {total}語", which put the raw 998 back on screen —
+  // the exact internal denominator this whole redesign exists to hide (ruling
+  // §3). The bar underneath already shows the proportion; the number only ever
+  // needs to say how far the learner has come.
+  "detail.introduced.value": { ja: "{n}語", en: "{n} words", ru: "Слов: {n}" },
   "detail.retention": { ja: "復習の成功率", en: "Review success", ru: "Успешных повторений" },
   "detail.retention.noData": {
     ja: "復習をはじめると出ます",
@@ -180,6 +174,11 @@ const M: Record<string, Entry> = {
     ru: "Появится после первых повторений",
   },
   "detail.next": { ja: "次のステップまで", en: "To the next step", ru: "До следующего этапа" },
+  // LINGO-042: the value used to reuse home.step.toNext, which already begins
+  // with "次のステップまで" — so the row read "次のステップまで / 次のステップ
+  // まで あと899語". The sheet needs the bare remainder, the label supplies the
+  // rest.
+  "detail.next.value": { ja: "あと{n}語", en: "{n} more words", ru: "ещё {n} слов" },
 
   // -- mastery level ladder --------------------------------------------------
   // LINGO-040: "マスター" is gone from the product's vocabulary — it promised

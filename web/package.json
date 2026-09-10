@@ -14,7 +14,8 @@
     "build": "tsc -b && vite build",
     "postbuild": "node scripts/patch-sw-version.mjs",
     "preview": "vite preview --port 4173",
-    "test": "vitest run"
+    "test": "vitest run",
+    "ui-audit": "node scripts/ui-audit.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -24,6 +25,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "playwright": "^1.63.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
     "vitest": "^2.1.8"

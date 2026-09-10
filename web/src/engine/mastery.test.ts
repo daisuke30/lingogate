@@ -4,8 +4,6 @@ import {
   masteryLevelLabel,
   masteredLemmaSet,
   masteryStats,
-  nextMilestone,
-  MASTERY_MILESTONE_STEP,
   MASTERY_STABILITY_DAYS,
   MASTERY_TARGET_WORDS,
 } from "./mastery";
@@ -189,40 +187,5 @@ describe("masteryStats", () => {
     expect(stats.masteredCount).toBe(1);
     expect(stats.declaredCount).toBe(1);
     expect(stats.learnedCount).toBe(0);
-  });
-});
-
-// --- 500-word milestones (LINGO-040) ----------------------------------------
-// The home bar's denominator. A /3000 bar sat in single digits for months and
-// was unreachable on today's content (RU ships 2,960 eligible lemmas, EN
-// ~1,000 — QA-3); the next 500 is a denominator the learner can actually fill.
-
-describe("nextMilestone", () => {
-  it("aims at the next 500 above the current count", () => {
-    expect(nextMilestone(0)).toBe(500);
-    expect(nextMilestone(1)).toBe(500);
-    expect(nextMilestone(247)).toBe(500);
-    expect(nextMilestone(499)).toBe(500);
-    expect(nextMilestone(500)).toBe(1000); // reaching one moves the goal on
-    expect(nextMilestone(1499)).toBe(1500);
-    expect(nextMilestone(2999)).toBe(3000);
-  });
-
-  it("returns null at the 3000-word frame (nothing left to aim at)", () => {
-    expect(nextMilestone(MASTERY_TARGET_WORDS)).toBeNull();
-    expect(nextMilestone(4000)).toBeNull();
-  });
-
-  it("never exceeds the frame, and never returns a goal already reached", () => {
-    for (let n = 0; n < MASTERY_TARGET_WORDS; n += 37) {
-      const goal = nextMilestone(n)!;
-      expect(goal).toBeGreaterThan(n);
-      expect(goal).toBeLessThanOrEqual(MASTERY_TARGET_WORDS);
-      expect(goal % MASTERY_MILESTONE_STEP).toBe(0);
-    }
-  });
-
-  it("treats a negative count as zero rather than returning a negative goal", () => {
-    expect(nextMilestone(-5)).toBe(500);
   });
 });

@@ -68,8 +68,6 @@ body {
 #root {
   height: 100%;
   height: 100dvh;
-  display: flex;
-  flex-direction: column;
   /* The actual scroll container (see the fix comment above): WebKit DOES
    * respect overscroll-behavior here, unlike on html/body. */
   overflow-y: auto;
@@ -83,13 +81,10 @@ body {
   max-width: 480px;
   margin: 0 auto;
   padding: max(20px, env(safe-area-inset-top)) 20px calc(28px + env(safe-area-inset-bottom));
-  /* Explicit floor in addition to flex:1 (belt-and-suspenders, per the fix's
-   * "container min-height 100dvh" requirement) — every screen using `.app`
-   * (Home, Pet, quiz, gate, settings, ...) fills at least the full viewport
-   * even before flex layout resolves, and #root scrolls if content is taller. */
+  /* Every screen using `.app` (Home, Pet, quiz, gate, settings, ...) fills at
+   * least the full viewport; taller content simply makes #root scroll. */
   min-height: 100%;
   min-height: 100dvh;
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -657,6 +652,21 @@ button {
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--line);
+  /* LINGO-042 — this one line is the difference between a working settings
+   * screen and a blank one, so it is worth explaining.
+   *
+   * `.list` is a flex item of `.app` (a flex column) AND sets `overflow:
+   * hidden` for its rounded corners. `overflow: hidden` removes a flex item's
+   * automatic minimum size, so `.list` is the one child that flexbox is free
+   * to shrink all the way to nothing — which is exactly what happened when
+   * `.app` was height-constrained: it collapsed from 93px to 2px and every
+   * settings row disappeared while the DOM stayed perfectly correct (right
+   * height, right colour, no console error, Vitest green). The 育成 tab was
+   * unaffected only because its rows are not wrapped in a `.list`.
+   *
+   * The height constraint itself is gone (see #root / .app above), so this is
+   * belt-and-braces: rows must never be silently clipped again. */
+  flex-shrink: 0;
 }
 .row {
   background: var(--bg-elev);
@@ -1442,11 +1452,6 @@ button {
   font-weight: 800;
   letter-spacing: -0.6px;
 }
-.progress-goal {
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--ink-dim);
-}
 .progress-more {
   display: flex;
   align-items: center;
@@ -1475,8 +1480,12 @@ button {
 
 /* The "くわしく" sheet body (SheetShell + these rows). This is the one screen
  * where exact denominators are welcome — the reader tapped through for them. */
+/* LINGO-042: .sheet itself carries no horizontal padding — every child supplies
+ * its own `… 20px` (see .sheet-title / .sheet-option / .sheet-cancel). This
+ * body was the one child that didn't, so its rows sat flush against both
+ * screen edges and long values were cut off. */
 .detail-body {
-  padding: 4px 0 8px;
+  padding: 4px 20px 8px;
 }
 .detail-group-title {
   font-size: 11px;
@@ -1490,7 +1499,11 @@ button {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 14px;
+  /* LINGO-042: a long value ("復習をはじめると出ます") used to be squeezed
+   * against the label and break mid-word. Wrapping puts it on its own line
+   * instead, still right-aligned. */
+  flex-wrap: wrap;
+  gap: 4px 14px;
   padding: 7px 0;
   font-size: 14px;
   color: var(--ink-dim);
@@ -1499,6 +1512,7 @@ button {
   color: var(--ink);
   font-weight: 700;
   text-align: right;
+  margin-left: auto;
 }
 .detail-body .meter {
   margin-top: 2px;
