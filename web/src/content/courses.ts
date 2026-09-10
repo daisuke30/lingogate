@@ -88,12 +88,15 @@ export const COURSES: CourseMeta[] = [
     load: () => import("./deck.th.json").then((m) => m.default as unknown as Deck),
   },
   {
+    // LINGO-044: Japanese course for en/ru speakers, band1 core deck (3000
+    // words + 1000 target sentences). Never offered to a ja-UI learner — see
+    // selectableCourses() below.
     courseId: "ja",
     targetLang: "ja",
     availableFrontLangs: ["en", "ru"],
     defaultFrontLang: "en",
-    status: "coming-soon",
-    load: null,
+    status: "available",
+    load: () => import("./deck.ja.json").then((m) => m.default as unknown as Deck),
   },
 ];
 

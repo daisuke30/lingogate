@@ -22,6 +22,7 @@ import { describe, it, expect } from "vitest";
 import ruDeck from "../content/deck.ru.json";
 import enDeck from "../content/deck.en.json";
 import thDeck from "../content/deck.th.json";
+import jaDeck from "../content/deck.ja.json";
 import { resolveLocalizedText, readsJapanese, pronunciationReadable } from "./localizedText";
 import { formatAspectLine, formatGenderLine, formatCaseLine, punctFor } from "./wordBreakdown";
 import { translate, CATALOG, UI_LANGS } from "../i18n/i18n";
@@ -41,10 +42,10 @@ interface Pattern {
   name: string;
   ui: Lang;
   front: Lang;
-  course: "ru" | "en" | "th";
+  course: "ru" | "en" | "th" | "ja";
 }
 
-const DECKS = { ru: ruDeck, en: enDeck, th: thDeck } as const;
+const DECKS = { ru: ruDeck, en: enDeck, th: thDeck, ja: jaDeck } as const;
 
 /** The 18 valid (UI, front, course) combinations — LINGO-039 took this from
  * 12 to 18 by adding the Thai course (2 front options × 3 UI languages). */
@@ -53,9 +54,14 @@ for (const [course, fronts] of [
   ["ru", ["en", "ja"]],
   ["en", ["ja", "ru"]],
   ["th", ["ja", "en"]],
+  ["ja", ["en", "ru"]],
 ] as const) {
   for (const front of fronts) {
     for (const ui of UI_LANGS) {
+      // LINGO-044: a course is never offered to a speaker of its own target
+      // language (selectableCourses), so these combinations are unreachable
+      // and must not be audited as if a learner could land on them.
+      if (ui === course) continue;
       PATTERNS.push({ name: `UI=${ui}/front=${front}/back=${course}`, ui, front, course });
     }
   }
@@ -96,7 +102,7 @@ function cardStrings(p: Pattern): { label: string; text: string }[] {
     // LINGO-039: the kana slot's gate is now "can this learner read THIS
     // transcription" rather than "does this learner read Japanese" — the RU
     // pack puts katakana here, the TH pack puts Paiboon romanization.
-    if (s.kana && pronunciationReadable(s.kana as string, p.front, p.ui))
+    if (s.kana && pronunciationReadable(s.kana as string, p.front, p.ui, p.course))
       out.push({ label: `kana ${s.id}`, text: s.kana as string });
     // (the card also skips this when targetLang is ja; no shipped course is ja yet)
     if (showJaAid && p.front !== "ja" && s.ja)
@@ -123,12 +129,18 @@ function cardStrings(p: Pattern): { label: string; text: string }[] {
 
 // -- 1. no Japanese for learners who did not choose Japanese ---------------
 describe("LINGO-037: no Japanese reaches a learner who chose neither ja UI nor ja prompts", () => {
-  const jaFree = PATTERNS.filter((p) => p.ui !== "ja" && p.front !== "ja");
-  // 6 of the 18 (was 4 of 12 before LINGO-039 added the Thai course):
-  // back=ru front=en × UI en/ru, back=en front=ru × UI en/ru,
-  // back=th front=en × UI en/ru.
+  // The Japanese COURSE is excluded on purpose: its learners did choose
+  // Japanese — it is what they are studying — so Japanese on the card is the
+  // material, not a leak. They are covered by their own block below, which
+  // asserts the opposite direction (the furigana must actually reach them).
+  const jaFree = PATTERNS.filter(
+    (p) => p.ui !== "ja" && p.front !== "ja" && p.course !== "ja",
+  );
+  // 4: back=ru front=en UI=en, back=en front=ru UI=ru, back=th front=en ×
+  // UI en/ru. (Fewer than before LINGO-044 only because a course is no longer
+  // offered to a speaker of its own language, so those pairings are gone.)
   it("covers every ja-free pattern", () => {
-    expect(jaFree.map((p) => p.name)).toHaveLength(6);
+    expect(jaFree.map((p) => p.name)).toHaveLength(4);
   });
 
   for (const p of jaFree) {
@@ -241,6 +253,48 @@ describe("LINGO-039: Thai pronunciation reaches every Thai learner", () => {
     expect(pronunciationReadable("ウディヴィーチェリナ", "en", "ja")).toBe(true);
     expect(pronunciationReadable("sà-wàt-dii", "en", "en")).toBe(true);
     expect(pronunciationReadable("sà-wàt-dii", "ru", "ru")).toBe(true);
+  });
+});
+
+// -- 2c. the Japanese course's own material must reach its learners ---------
+// The mirror of the block above, and the reason `pronunciationReadable` takes
+// the target language. A Japanese course for English and Russian speakers is
+// nothing but Japanese text; the furigana is the single line that makes a
+// kanji word pronounceable for a beginner. Applying "suppress Japanese the
+// learner didn't choose" literally would delete it and gut the course.
+describe("LINGO-044: the Japanese course shows Japanese to its own learners", () => {
+  const jaPatterns = PATTERNS.filter((p) => p.course === "ja");
+
+  it("covers all 4 reachable Japanese-course patterns", () => {
+    // fronts en/ru × UI en/ru; UI=ja is unreachable (selectableCourses).
+    expect(jaPatterns).toHaveLength(4);
+  });
+
+  for (const p of jaPatterns) {
+    it(`${p.name}: every sentence shows its reading`, () => {
+      const shown = cardStrings(p).filter((s) => s.label.startsWith("kana "));
+      expect(shown.length).toBe((jaDeck.sentences as unknown[]).length);
+    });
+  }
+
+  it("still hides the RU pack's katakana from a learner who cannot read it", () => {
+    // The LINGO-037 behaviour must survive: the exemption is for the course
+    // being Japanese, not for Japanese script in general.
+    expect(pronunciationReadable("ウディヴィーチェリナ", "en", "en", "ru")).toBe(false);
+    expect(pronunciationReadable("ウディヴィーチェリナ", "en", "en", "ja")).toBe(true);
+    expect(pronunciationReadable("sà-wàt-dii", "ru", "ru", "th")).toBe(true);
+  });
+
+  it("gives en/ru learners glosses in their own language, never Japanese", () => {
+    for (const p of jaPatterns) {
+      // Glosses only. A grammar NOTE on a Japanese course legitimately quotes
+      // Japanese ("付く is a godan verb; its ます-form is 付きます") — that is the
+      // explanation, not a leak. A gloss is a translation and must not.
+      const bad = cardStrings(p)
+        .filter((s) => s.label.startsWith("gloss "))
+        .filter((s) => hasJapanese(s.text));
+      expect(bad.slice(0, 3), `${p.name}: Japanese in a gloss`).toEqual([]);
+    }
   });
 });
 

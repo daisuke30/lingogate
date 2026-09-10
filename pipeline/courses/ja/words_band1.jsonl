@@ -494,7 +494,7 @@
 {"lemma": "出す", "reading": "だす", "romaji": "dasu", "pos": "verb", "source": "frequency", "rank": 494, "band": 1, "kana": "だす / dasu", "en_gloss": "to take out; to submit", "ru_gloss": "выставлять; подавать"}
 {"lemma": "見せる", "reading": "みせる", "romaji": "miseru", "pos": "verb", "source": "frequency", "rank": 495, "band": 1, "kana": "みせる / miseru", "en_gloss": "to show", "ru_gloss": "показывать"}
 {"lemma": "戻る", "reading": "もどる", "romaji": "modoru", "pos": "verb", "source": "frequency", "rank": 496, "band": 1, "kana": "もどる / modoru", "en_gloss": "to return; to go back", "ru_gloss": "возвращаться"}
-{"lemma": "エロ", "reading": "えろ", "romaji": "ero", "pos": "noun", "source": "frequency", "rank": 497, "band": 1, "kana": "えろ / ero", "en_gloss": "erotic; porn", "ru_gloss": "эротика; порно"}
+{"lemma": "主人", "reading": "しゅじん", "romaji": "shujin", "pos": "noun", "source": "frequency", "rank": 497, "band": 1, "kana": "しゅじん / shujin", "en_gloss": "husband; master; host", "ru_gloss": "муж; хозяин"}
 {"lemma": "シリーズ", "reading": "しりーず", "romaji": "shiriizu", "pos": "noun", "source": "frequency", "rank": 498, "band": 1, "kana": "しりーず / shiriizu", "en_gloss": "series", "ru_gloss": "серия; сериал"}
 {"lemma": "ライブ", "reading": "らいぶ", "romaji": "raibu", "pos": "noun", "source": "frequency", "rank": 499, "band": 1, "kana": "らいぶ / raibu", "en_gloss": "live (performance); concert", "ru_gloss": "живое выступление; концерт"}
 {"lemma": "以下", "reading": "いか", "romaji": "ika", "pos": "noun", "source": "frequency", "rank": 500, "band": 1, "kana": "いか / ika", "en_gloss": "below; less than; the following", "ru_gloss": "ниже; менее; следующее"}
@@ -682,7 +682,7 @@
 {"lemma": "施設", "reading": "しせつ", "romaji": "shisetsu", "pos": "noun", "source": "frequency", "rank": 682, "band": 1, "kana": "しせつ / shisetsu", "en_gloss": "facility; institution", "ru_gloss": "учреждение; объект"}
 {"lemma": "最も", "reading": "もっとも", "romaji": "mottomo", "pos": "adv", "source": "frequency", "rank": 683, "band": 1, "kana": "もっとも / mottomo", "en_gloss": "most; -est", "ru_gloss": "самый; наиболее"}
 {"lemma": "秒", "reading": "びょう", "romaji": "byou", "pos": "noun", "source": "frequency", "rank": 684, "band": 1, "kana": "びょう / byou", "en_gloss": "second (time unit)", "ru_gloss": "секунда"}
-{"lemma": "笑", "reading": "わらい", "romaji": "warai", "pos": "noun", "source": "frequency", "rank": 685, "band": 1, "kana": "わらい / warai", "en_gloss": "laughter; laugh (usually written 笑い)", "ru_gloss": "смех (обычно пишется 笑い)"}
+{"lemma": "笑", "reading": "わらい", "romaji": "warai", "pos": "noun", "source": "frequency", "rank": 685, "band": 1, "kana": "わらい / warai", "en_gloss": "laughter; laugh (abbreviated form)", "ru_gloss": "смех (сокращённая запись)"}
 {"lemma": "能力", "reading": "のうりょく", "romaji": "nouryoku", "pos": "noun", "source": "frequency", "rank": 686, "band": 1, "kana": "のうりょく / nouryoku", "en_gloss": "ability; capability", "ru_gloss": "способность"}
 {"lemma": "訳", "reading": "わけ", "romaji": "wake", "pos": "noun", "source": "frequency", "rank": 687, "band": 1, "kana": "わけ / wake", "en_gloss": "reason; meaning; translation", "ru_gloss": "причина; смысл; перевод"}
 {"lemma": "誕生", "reading": "たんじょう", "romaji": "tanjou", "pos": "noun", "source": "frequency", "rank": 688, "band": 1, "kana": "たんじょう / tanjou", "en_gloss": "birth", "ru_gloss": "рождение"}
@@ -902,7 +902,7 @@
 {"lemma": "逃げる", "reading": "にげる", "romaji": "nigeru", "pos": "verb", "source": "frequency", "rank": 902, "band": 1, "kana": "にげる / nigeru", "en_gloss": "to flee; to run away", "ru_gloss": "убегать; бежать"}
 {"lemma": "やれ", "reading": "やれ", "romaji": "yare", "pos": "intj", "source": "frequency", "rank": 903, "band": 1, "kana": "yare", "en_gloss": "do it! (imperative)", "ru_gloss": "делай! (повелит.)"}
 {"lemma": "アイドル", "reading": "あいどる", "romaji": "aidoru", "pos": "noun", "source": "frequency", "rank": 904, "band": 1, "kana": "あいどる / aidoru", "en_gloss": "idol (celebrity)", "ru_gloss": "айдол; кумир (знаменитость)"}
-{"lemma": "セックス", "reading": "せっくす", "romaji": "sekkusu", "pos": "noun", "source": "frequency", "rank": 905, "band": 1, "kana": "せっくす / sekkusu", "en_gloss": "sex (intercourse)", "ru_gloss": "секс"}
+{"lemma": "作れる", "reading": "つくれる", "romaji": "tsukureru", "pos": "verb", "source": "frequency", "rank": 905, "band": 1, "kana": "つくれる / tsukureru", "en_gloss": "to be able to make", "ru_gloss": "мочь сделать; уметь готовить"}
 {"lemma": "ホテル", "reading": "ほてる", "romaji": "hoteru", "pos": "noun", "source": "frequency", "rank": 906, "band": 1, "kana": "ほてる / hoteru", "en_gloss": "hotel", "ru_gloss": "отель"}
 {"lemma": "ロシア", "reading": "ろしあ", "romaji": "roshia", "pos": "noun", "source": "frequency", "rank": 907, "band": 1, "kana": "ろしあ / roshia", "en_gloss": "Russia", "ru_gloss": "Россия"}
 {"lemma": "作業", "reading": "さぎょう", "romaji": "sagyou", "pos": "noun", "source": "frequency", "rank": 908, "band": 1, "kana": "さぎょう / sagyou", "en_gloss": "work; task; operation", "ru_gloss": "работа; операция"}
@@ -925,7 +925,7 @@
 {"lemma": "見れる", "reading": "みれる", "romaji": "mireru", "pos": "verb", "source": "frequency", "rank": 925, "band": 1, "kana": "みれる / mireru", "en_gloss": "to be able to see/watch", "ru_gloss": "мочь смотреть/видеть"}
 {"lemma": "優しい", "reading": "やさしい", "romaji": "yasashii", "pos": "adj", "source": "frequency", "rank": 926, "band": 1, "kana": "やさしい / yasashii", "en_gloss": "kind; gentle", "ru_gloss": "добрый; нежный"}
 {"lemma": "つく", "reading": "つく", "romaji": "tsuku", "pos": "verb", "source": "frequency", "rank": 927, "band": 1, "kana": "tsuku", "en_gloss": "to attach; to stick; to arrive", "ru_gloss": "прикрепляться; прибывать"}
-{"lemma": "おっぱい", "reading": "おっぱい", "romaji": "oppai", "pos": "noun", "source": "frequency", "rank": 928, "band": 1, "kana": "oppai", "en_gloss": "breasts (informal/childish)", "ru_gloss": "грудь (разг., детское)"}
+{"lemma": "古代", "reading": "こだい", "romaji": "kodai", "pos": "noun", "source": "frequency", "rank": 928, "band": 1, "kana": "こだい / kodai", "en_gloss": "ancient times; antiquity", "ru_gloss": "древность; античность"}
 {"lemma": "たぶん", "reading": "たぶん", "romaji": "tabun", "pos": "adv", "source": "frequency", "rank": 929, "band": 1, "kana": "tabun", "en_gloss": "probably; maybe", "ru_gloss": "наверное; возможно"}
 {"lemma": "ほんと", "reading": "ほんと", "romaji": "honto", "pos": "noun", "source": "frequency", "rank": 930, "band": 1, "kana": "honto", "en_gloss": "really; truly (colloquial)", "ru_gloss": "правда; действительно (разг.)"}
 {"lemma": "スタッフ", "reading": "すたっふ", "romaji": "sutaffu", "pos": "noun", "source": "frequency", "rank": 931, "band": 1, "kana": "すたっふ / sutaffu", "en_gloss": "staff", "ru_gloss": "персонал; штат"}

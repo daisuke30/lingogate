@@ -33,15 +33,20 @@ describe("course catalog", () => {
     expect(coursefront * UI_LANGS.length).toBe(24);
   });
 
-  it("ships RU, EN and TH as selectable courses; JA is still coming-soon", () => {
-    for (const id of ["ru", "en", "th"]) {
-      const c = courseById(id)!;
-      expect(c.status).toBe("available");
-      expect(c.load).not.toBeNull();
+  it("ships all four courses as selectable (LINGO-044 released JA)", () => {
+    for (const c of COURSES) {
+      expect(c.status, `${c.courseId} is not available`).toBe("available");
+      expect(c.load, `${c.courseId} has no pack`).not.toBeNull();
     }
+    expect(COURSES.map((c) => c.courseId)).toEqual(["ru", "en", "th", "ja"]);
+  });
+
+  it("the Japanese course targets ja, prompts in en/ru, and never offers ja", () => {
     const ja = courseById("ja")!;
-    expect(ja.status).toBe("coming-soon");
-    expect(ja.load).toBeNull(); // no pack referenced -> Vite build can't break
+    expect(ja.targetLang).toBe("ja");
+    expect(ja.availableFrontLangs).toEqual(["en", "ru"]);
+    expect(ja.defaultFrontLang).toBe("en");
+    expect(ja.availableFrontLangs).not.toContain("ja");
   });
 
   it("only offers front languages the app actually has a UI catalog for", () => {
