@@ -32,7 +32,7 @@ const PAIBOON =
  * a drop means a generation block was lost, which is exactly the regression
  * worth failing on. The band1 words that DO have a sentence are checked
  * exhaustively below (unique target, id number == target rank). */
-const SHIPPED_SENTENCES = 600;
+const SHIPPED_SENTENCES = 1000;
 
 describe("TH course content build", () => {
   const deck = buildDeck(TH_DECK.dataDir, TH_DECK);
