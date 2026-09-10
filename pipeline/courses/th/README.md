@@ -221,16 +221,32 @@ Weighted toward **travel and daily life** (ordering food, taxis, markets,
 prices, hotels, greetings, directions, illness) and written for a **male
 speaker** (ผม, and ครับ where a polite utterance is natural).
 
-**Coverage is partial and grows by rank block.** Sentences were generated in
-blocks of 200 target words; the shipped count is pinned in
-`build.th.test.ts`'s `SHIPPED_SENTENCES` so a lost block fails the build rather
-than silently shrinking the deck. Band1 words without a sentence simply have no
-sentence card yet — their word card, gloss and transcription all work, and the
-mastery metric counts them normally. The blocks were run lowest-rank-first
-because band1 rank is teaching order, so the covered words are the ones a
-traveller reaches first; `build.th.test.ts` additionally asserts by name that
-the travel-critical set (สวัสดี, ครับ, ขอบคุณ, ขอโทษ, ผม, ขอ, ไม่, ได้,
-เท่าไหร่, แพง, อร่อย, เผ็ด, ข้าว, น้ำ, กิน) is covered.
+**All 1000 band1 words are covered** — one sentence each, generated in five
+blocks of 200 target words. The shipped count is pinned in `build.th.test.ts`'s
+`SHIPPED_SENTENCES` so a lost block fails the build rather than silently
+shrinking the deck, and the test additionally asserts by name that the
+travel-critical set (สวัสดี, ครับ, ขอบคุณ, ขอโทษ, ผม, ขอ, ไม่, ได้, เท่าไหร่,
+แพง, อร่อย, เผ็ด, ข้าว, น้ำ, กิน) is covered.
+
+**164 sentences carry a three-language note** (classifier choice, a tone
+contrast, word order differing from Japanese/English, politeness-particle
+nuance) — ~1 in 6, all ja+en+ru complete.
+
+**Wrap-rule compliance: 72.0%** (280 sentences contain a support word ranked
+below their target), against 97.5% on the EN course. The gap is structural, not
+sloppiness: a Thai sentence needs particles, classifiers and the politeness
+ending ครับ to be well-formed at all, and those are not always ranked above the
+target. Inside band1 every word is being learned anyway, so the practical cost
+is small; a band2/3 sentence pass can restrict support words to band1 and
+should score much higher.
+
+**Cross-block duplicates.** Blocks cannot see each other's output, and three
+times two blocks independently produced the same sentence from a shared word
+pair (e.g. `คุณชื่ออะไรครับ` for both คุณ and ชื่อ). The assembler rejects
+duplicate Thai text outright; the version targeting the LOWER-ranked word (the
+one taught first) was kept and the other rewritten. One of the rewrites turned
+แก้ว into a number+classifier example (`ผมเอาน้ำสองแก้วครับ`), which teaches
+more than the duplicate did.
 
 ### The Thai text and its transcription are computed, not generated
 
