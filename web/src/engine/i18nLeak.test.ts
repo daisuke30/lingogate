@@ -21,7 +21,8 @@
 import { describe, it, expect } from "vitest";
 import ruDeck from "../content/deck.ru.json";
 import enDeck from "../content/deck.en.json";
-import { resolveLocalizedText, readsJapanese } from "./localizedText";
+import thDeck from "../content/deck.th.json";
+import { resolveLocalizedText, readsJapanese, pronunciationReadable } from "./localizedText";
 import { formatAspectLine, formatGenderLine, formatCaseLine, punctFor } from "./wordBreakdown";
 import { translate, CATALOG, UI_LANGS } from "../i18n/i18n";
 import type { Lang } from "../content/courses";
@@ -40,16 +41,18 @@ interface Pattern {
   name: string;
   ui: Lang;
   front: Lang;
-  course: "ru" | "en";
+  course: "ru" | "en" | "th";
 }
 
-const DECKS = { ru: ruDeck, en: enDeck } as const;
+const DECKS = { ru: ruDeck, en: enDeck, th: thDeck } as const;
 
-/** The 12 valid (UI, front, course) combinations. */
+/** The 18 valid (UI, front, course) combinations — LINGO-039 took this from
+ * 12 to 18 by adding the Thai course (2 front options × 3 UI languages). */
 const PATTERNS: Pattern[] = [];
 for (const [course, fronts] of [
   ["ru", ["en", "ja"]],
   ["en", ["ja", "ru"]],
+  ["th", ["ja", "en"]],
 ] as const) {
   for (const front of fronts) {
     for (const ui of UI_LANGS) {
@@ -90,7 +93,11 @@ function cardStrings(p: Pattern): { label: string; text: string }[] {
       showJaAid,
     );
     if (note) out.push({ label: `note ${s.id}`, text: note });
-    if (showJaAid && s.kana) out.push({ label: `kana ${s.id}`, text: s.kana as string });
+    // LINGO-039: the kana slot's gate is now "can this learner read THIS
+    // transcription" rather than "does this learner read Japanese" — the RU
+    // pack puts katakana here, the TH pack puts Paiboon romanization.
+    if (s.kana && pronunciationReadable(s.kana as string, p.front, p.ui))
+      out.push({ label: `kana ${s.id}`, text: s.kana as string });
     // (the card also skips this when targetLang is ja; no shipped course is ja yet)
     if (showJaAid && p.front !== "ja" && s.ja)
       out.push({ label: `ja-line ${s.id}`, text: s.ja as string });
@@ -117,9 +124,11 @@ function cardStrings(p: Pattern): { label: string; text: string }[] {
 // -- 1. no Japanese for learners who did not choose Japanese ---------------
 describe("LINGO-037: no Japanese reaches a learner who chose neither ja UI nor ja prompts", () => {
   const jaFree = PATTERNS.filter((p) => p.ui !== "ja" && p.front !== "ja");
-  // 4 of the 12: UI=en/front=en/ru, UI=ru/front=en/ru, UI=en/front=ru/en, UI=ru/front=ru/en
+  // 6 of the 18 (was 4 of 12 before LINGO-039 added the Thai course):
+  // back=ru front=en × UI en/ru, back=en front=ru × UI en/ru,
+  // back=th front=en × UI en/ru.
   it("covers every ja-free pattern", () => {
-    expect(jaFree.map((p) => p.name)).toHaveLength(4);
+    expect(jaFree.map((p) => p.name)).toHaveLength(6);
   });
 
   for (const p of jaFree) {
@@ -182,6 +191,57 @@ describe("LINGO-037: the four target personas", () => {
     const bad = cardStrings(p).filter((s) => hasJapanese(s.text));
     expect(bad.slice(0, 5)).toEqual([]);
   });
+
+  it("JP traveller to Thailand (UI=ja/front=ja/back=th) sees Japanese glosses and the transcription", () => {
+    const p: Pattern = { name: "jp-th", ui: "ja", front: "ja", course: "th" };
+    const w = (thDeck.words as Record<string, unknown>[])[0];
+    expect(gloss(w, p)).toBe(w.jaGloss);
+    expect(CYRILLIC.test(gloss(w, p))).toBe(false);
+    const kana = cardStrings(p).filter((s) => s.label.startsWith("kana "));
+    expect(kana.length).toBeGreaterThan(0);
+  });
+
+  it("EN learner of Thai (UI=en/front=en/back=th) sees no Japanese anywhere", () => {
+    const p: Pattern = { name: "en-th", ui: "en", front: "en", course: "th" };
+    const bad = cardStrings(p).filter((s) => hasJapanese(s.text));
+    expect(bad.slice(0, 5)).toEqual([]);
+  });
+});
+
+// -- 2b. the Thai transcription must REACH the learners who need it ---------
+// The mirror image of every other test in this file. LINGO-037's rule was
+// "suppress anything in a language the learner didn't choose"; applied
+// literally to the kana slot it would have hidden the Paiboon transcription
+// from every ja-free learner — silently gutting the Thai course, since Thai
+// spelling does not tell a beginner the tone. A leak test that only ever
+// checks for over-showing cannot catch under-showing, so this asserts the
+// positive direction explicitly.
+describe("LINGO-039: Thai pronunciation reaches every Thai learner", () => {
+  const thPatterns = PATTERNS.filter((p) => p.course === "th");
+
+  it("covers all 6 Thai patterns", () => {
+    expect(thPatterns).toHaveLength(6);
+  });
+
+  for (const p of thPatterns) {
+    it(`${p.name}: every sentence shows its transcription`, () => {
+      const shown = cardStrings(p).filter((s) => s.label.startsWith("kana "));
+      expect(shown.length).toBe((thDeck.sentences as unknown[]).length);
+      // ...and it is Latin/Paiboon, never Japanese or Thai script
+      for (const s of shown.slice(0, 50)) {
+        expect(hasJapanese(s.text), `Japanese in a Thai transcription: ${s.text}`).toBe(false);
+        expect(/[฀-๿]/.test(s.text), `Thai script in a transcription: ${s.text}`).toBe(false);
+      }
+    });
+  }
+
+  it("still hides the RU pack's katakana from a learner who cannot read it", () => {
+    // The behaviour LINGO-037 introduced must survive the LINGO-039 change.
+    expect(pronunciationReadable("ウディヴィーチェリナ", "en", "en")).toBe(false);
+    expect(pronunciationReadable("ウディヴィーチェリナ", "en", "ja")).toBe(true);
+    expect(pronunciationReadable("sà-wàt-dii", "en", "en")).toBe(true);
+    expect(pronunciationReadable("sà-wàt-dii", "ru", "ru")).toBe(true);
+  });
 });
 
 // -- 3. structural labels follow the UI language ---------------------------
@@ -202,9 +262,9 @@ describe("LINGO-037: structural labels follow the UI language", () => {
     });
   }
 
-  it("every pos code present in either deck has an i18n key (no hardcoded ja posLabel fallback)", () => {
+  it("every pos code present in any deck has an i18n key (no hardcoded ja posLabel fallback)", () => {
     const posCodes = new Set<string>();
-    for (const d of [ruDeck, enDeck])
+    for (const d of [ruDeck, enDeck, thDeck])
       for (const w of d.words as Record<string, unknown>[]) posCodes.add(w.pos as string);
     for (const pos of posCodes) {
       expect(Object.keys(CATALOG), `pos '${pos}' has no i18n key`).toContain(`pos.${pos}`);

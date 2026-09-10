@@ -9,7 +9,7 @@
 
 import { DECK, MAX_ACTIVE_BAND, activeCourse, activeFrontLanguage, checkBandPromotion, ensureCourse } from "./service";
 import { resolveCourse } from "../content/courses";
-import type { Lang } from "../content/courses";
+import type { Lang, TargetLang } from "../content/courses";
 import { getPlacementDone, getTtsSettings, setPlacementDone } from "./settings";
 import type { TtsSettings } from "./settings";
 import { getAllReviewStates, getAllWordKnowledge, putReviewStates, putWordKnowledge } from "../db/idb";
@@ -29,7 +29,7 @@ export interface PlacementContext {
    * Ascending rank, one entry per lemma. */
   words: RankedWord[];
   maxRank: number;
-  targetLang: Lang;
+  targetLang: TargetLang;
   frontLang: Lang;
   tts: TtsSettings;
   /** Full DeckWord (gloss fields etc.) by lemma, for the placement card's

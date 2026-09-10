@@ -33,6 +33,11 @@ const POS_LABELS: Record<string, string> = {
   // LINGO-026: was missing entirely (no i18n key either) — 38 RU words
   // (спасибо, привет, пожалуйста...) fell through to the raw "intj" string.
   intj: "感動詞",
+  // LINGO-039: Thai noun classifier (類別詞). Deliberately NOT added to
+  // FUNCTION_POS below — a classifier carries real information a learner needs
+  // (which one a given noun takes), unlike the particles/prepositions that
+  // list exists to suppress.
+  classifier: "類別詞",
 };
 
 /** Parts of speech dropped from a *sentence* card's breakdown, unless the
@@ -294,6 +299,11 @@ export interface WordBreakdownEntry {
   enGloss: string | null;
   jaGloss: string | null;
   ruGloss: string | null;
+  /** LINGO-039: pronunciation transcription of this headword (Paiboon
+   * romanization on the TH pack; null on RU/EN). Gate rendering through
+   * engine/localizedText.ts's pronunciationReadable(), same as
+   * Sentence.kana — the script is the course's choice. */
+  kana: string | null;
   /** This is the sentence's target_lemma (LINGO-011) — the new element the
    * card exists to teach. Always included and always sorted first. */
   isTarget: boolean;
@@ -339,6 +349,7 @@ export function buildWordBreakdown(
       enGloss: w.enGloss ?? null,
       jaGloss: w.jaGloss ?? null,
       ruGloss: w.ruGloss ?? null,
+      kana: w.kana ?? null,
       isTarget,
     });
   }

@@ -62,6 +62,43 @@ export function readsJapanese(frontLang: NoteLang, uiLang: NoteLang): boolean {
   return frontLang === "ja" || uiLang === "ja";
 }
 
+/** Kana or kanji anywhere in the string. Mirrors i18nLeak.test.ts's detectors. */
+const JA_SCRIPT = /[぀-ヿ㐀-䶿一-鿿]/;
+
+export function hasJapaneseScript(s: string): boolean {
+  return JA_SCRIPT.test(s);
+}
+
+/**
+ * Whether a `kana` pronunciation aid can be shown to this learner.
+ *
+ * LINGO-039: `kana` is the pronunciation-transcription slot, but the script it
+ * holds is the course's choice, so a single fixed rule cannot be right for
+ * both packs:
+ *
+ *   RU pack — katakana ("ウディヴィーチェリナ"). Meaningless to anyone who
+ *     doesn't read Japanese, which is why LINGO-037 gated it behind
+ *     readsJapanese() (finding #3: a UI=en learner was being shown it).
+ *   TH pack — Paiboon romanization ("sà-wàt-dii"). Latin letters plus tone
+ *     diacritics, readable by every learner, and the single most important
+ *     field on a Thai card: Thai script encodes tone only through rules a
+ *     beginner has not learned, so without this line the learner cannot say
+ *     the word at all.
+ *
+ * Applying LINGO-037's rule unchanged would therefore have silently hidden
+ * the transcription from exactly the ja-free learners a Thai course most needs
+ * to serve. Gating on what the string ACTUALLY IS keeps LINGO-037's fix intact
+ * for the RU pack (katakana still requires a Japanese reader) while letting a
+ * romanized transcription through, and neither pack can regress the other.
+ */
+export function pronunciationReadable(
+  kana: string,
+  frontLang: NoteLang,
+  uiLang: NoteLang,
+): boolean {
+  return !hasJapaneseScript(kana) || readsJapanese(frontLang, uiLang);
+}
+
 function pick(v: string | null | undefined): string | null {
   return v && v.trim() !== "" ? v : null;
 }

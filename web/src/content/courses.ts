@@ -20,13 +20,27 @@ import type { Deck } from "../engine/content";
 // (it is the only pack in the initial bundle; future packs are dynamic chunks).
 import ruDeck from "./deck.ru.json";
 
+/** A language the app itself speaks: it has a full i18n catalog (so it can be
+ * the UI language) and packs offer it as a prompt/gloss language. Adding one
+ * here obliges you to translate every catalog key — see i18n/i18n.tsx's
+ * `Entry`, which is keyed by exactly this type. */
 export type Lang = "ja" | "en" | "ru";
+
+/** A language you can LEARN — i.e. one that can appear on the card back.
+ * Deliberately wider than `Lang`: LINGO-039 added Thai as a course target
+ * without adding a Thai UI, and this split is what makes that safe. Because
+ * `Lang` stays narrow, the type system now guarantees "th" can never be
+ * passed where a UI or prompt language is expected (there is no Thai catalog
+ * to serve it, and no pack offers Thai glosses), while `targetLang` and the
+ * course picker accept it. */
+export type TargetLang = Lang | "th";
+
 export type CourseStatus = "available" | "coming-soon";
 
 export interface CourseMeta {
   courseId: string;
   /** Language on the card back (the language being learned). == courseId. */
-  targetLang: Lang;
+  targetLang: TargetLang;
   /** Front (prompt/gloss) languages this course offers; never includes targetLang. */
   availableFrontLangs: Lang[];
   defaultFrontLang: Lang;
@@ -57,6 +71,21 @@ export const COURSES: CourseMeta[] = [
     defaultFrontLang: "ja",
     status: "available",
     load: () => import("./deck.en.json").then((m) => m.default as unknown as Deck),
+  },
+  {
+    // LINGO-039: Thai course, band1 core deck (3000 words + 1000 target
+    // sentences, band1 only). Prompted in ja/en — deliberately NOT ru: the
+    // pack ships no Russian glosses, and offering a front language the data
+    // can't serve is the leak LINGO-037 spent a whole task closing. A UI=ru
+    // learner can still take this course; frontLangFromUILang falls them back
+    // to the ja default (they pick en in settings), and every note ships
+    // ja/en/ru so nothing untranslated reaches them.
+    courseId: "th",
+    targetLang: "th",
+    availableFrontLangs: ["ja", "en"],
+    defaultFrontLang: "ja",
+    status: "available",
+    load: () => import("./deck.th.json").then((m) => m.default as unknown as Deck),
   },
   {
     courseId: "ja",

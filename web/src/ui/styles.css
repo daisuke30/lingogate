@@ -435,6 +435,15 @@ button {
   font-size: 14px;
   color: var(--ink);
 }
+/* LINGO-039: per-word pronunciation (Paiboon romanization on the Thai
+   course), between the headword and its part of speech. Latin script next to
+   a Thai headword, so it needs to read as an annotation rather than as part
+   of the word itself. */
+.wb-kana {
+  font-size: 12px;
+  color: var(--indigo-bright);
+  font-variant-numeric: tabular-nums;
+}
 .wb-pos {
   font-size: 11px;
   color: var(--ink-faint);

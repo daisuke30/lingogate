@@ -10,11 +10,15 @@ import {
 } from "../engine/wordBreakdown";
 import type { WordBreakdownEntry } from "../engine/wordBreakdown";
 import { applyFlipToggle, canGradeNow, ratingForDirection } from "../engine/grading";
-import { resolveLocalizedText, readsJapanese } from "../engine/localizedText";
+import {
+  resolveLocalizedText,
+  readsJapanese,
+  pronunciationReadable,
+} from "../engine/localizedText";
 import { WORD_BY_ID } from "../state/service";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useI18n } from "../i18n/i18n";
-import type { Lang } from "../i18n/i18n";
+import type { Lang, TargetLang } from "../i18n/i18n";
 
 type Dir = "again" | "hard" | "good" | null;
 
@@ -31,9 +35,12 @@ export interface TtsProps {
  * LINGO-015: previously the back face and TTS hardcoded `sentence.ru` — fine
  * while RU was the only course, but wrong for any other course's target text.
  */
-function sentenceLangText(sentence: Sentence, lang: Lang): string {
+function sentenceLangText(sentence: Sentence, lang: TargetLang): string {
   if (lang === "ja") return sentence.ja ?? sentence.en;
   if (lang === "ru") return sentence.ru;
+  // LINGO-039: `th` is only ever a TARGET language (no pack offers Thai
+  // prompts), so this branch is reached for the back face, never the front.
+  if (lang === "th") return sentence.th ?? sentence.en;
   return sentence.en;
 }
 
@@ -88,7 +95,7 @@ export function FlashcardCard({
 
   useEffect(() => subscribeVoices(() => setHasVoice(voiceAvailable(targetLang))), [targetLang]);
 
-  const targetLangTyped: Lang = (targetLang as Lang) ?? "ru";
+  const targetLangTyped: TargetLang = (targetLang as TargetLang) ?? "ru";
   const back = sentenceLangText(sentence, targetLangTyped);
 
   // Speak the target-language back on flip — the flip tap is the user gesture
@@ -214,7 +221,7 @@ export function FlashcardCard({
             {showOverlay && <RateOverlay color={overlayColor} text={overlayText} />}
           </div>
           <div className="face back">
-            <span className="kicker">{NATIVE_LANG_NAME[(targetLang as Lang) ?? "ru"]}</span>
+            <span className="kicker">{NATIVE_LANG_NAME[targetLangTyped]}</span>
             {hasVoice && tts?.enabled && (
               <button
                 className="iconbtn speaker"
@@ -234,11 +241,17 @@ export function FlashcardCard({
                 shows/speaks its own target text instead of the RU field. */}
             <div className="ru">{back}</div>
             {/* LINGO-037: `kana` is a katakana pronunciation aid for the 85
-                word-cards — written FOR a Japanese reader, and previously
+                RU word-cards — written FOR a Japanese reader, and previously
                 rendered with no language condition at all, so a UI=en learner
-                got "ウディヴィーチェリナ" under Удивительно. Gated on the same
-                "reads Japanese" test as the ja line below. */}
-            {showJaAid && sentence.kana && <div className="kana">{sentence.kana}</div>}
+                got "ウディヴィーチェリナ" under Удивительно.
+                LINGO-039: the gate moved from "reads Japanese" to "can read
+                THIS transcription", because the TH pack puts Paiboon
+                romanization in the same slot — universally readable, and the
+                one line a Thai learner cannot do without. See
+                pronunciationReadable(). */}
+            {sentence.kana && pronunciationReadable(sentence.kana, frontLang, uiLang) && (
+              <div className="kana">{sentence.kana}</div>
+            )}
             {/* The back also shows the ja-field translation as a bonus reference
                 line (Katsuta reads Japanese natively) — skipped when it would
                 duplicate either the front prompt or the back target text
@@ -408,6 +421,14 @@ function WordBreakdownList({
           <div key={w.lemma} className={"wb-row" + (w.isTarget ? " target" : "")}>
             <div className="wb-head">
               <span className="wb-lemma">{w.lemma}</span>
+              {/* LINGO-039: per-word pronunciation, immediately after the
+                  headword. Thai spelling gives a beginner no tone, so the
+                  breakdown is unusable without it — this is the whole reason
+                  DeckWord carries `kana`. Null on RU/EN, so nothing changes
+                  for those courses. */}
+              {w.kana && pronunciationReadable(w.kana, frontLang, uiLang) && (
+                <span className="wb-kana">{w.kana}</span>
+              )}
               <span className="wb-pos">{posText === posKey ? w.posLabel : posText}</span>
             </div>
             {aspectLine && <div className="wb-aspect">{aspectLine}</div>}

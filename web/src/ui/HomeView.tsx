@@ -7,7 +7,7 @@ import { CALIBRATION_FALLBACK_THRESHOLD } from "../engine/calibration";
 import { isPlacementDone } from "../state/placement";
 import { resolveCourse } from "../content/courses";
 import { langName, useI18n } from "../i18n/i18n";
-import type { Lang } from "../i18n/i18n";
+import type { TargetLang } from "../i18n/i18n";
 import type { Route } from "./App";
 // LINGO-031: mini pet status row (face + attention marks) so neglect is
 // visible from Home, not just inside the 育成 tab.
@@ -32,7 +32,7 @@ export function HomeView({ navigate }: { navigate: (r: Route) => void }) {
   const { lang, t } = useI18n();
   const [stats, setStats] = useState<HomeStats | null>(null);
   const [calib, setCalib] = useState<CalibrationProgress | null>(null);
-  const [targetLang, setTargetLang] = useState<Lang>("ru");
+  const [targetLang, setTargetLang] = useState<TargetLang>("ru");
   // LINGO-016: the placement test is a single short pass, not "judge every
   // word" — show the CTA only while the learner hasn't run it AND hasn't
   // already substantially self-calibrated via the old linear flow (e.g.

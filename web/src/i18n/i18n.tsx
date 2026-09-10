@@ -10,19 +10,25 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { getAppLang, setAppLang } from "../state/settings";
-import type { Lang } from "../content/courses";
+import type { Lang, TargetLang } from "../content/courses";
 
-export type { Lang };
+export type { Lang, TargetLang };
 export const UI_LANGS: Lang[] = ["ja", "en", "ru"];
 
 /** Language display name in its OWN script (constant across UI languages) — for
- * language pickers and card kickers. */
-export const NATIVE_LANG_NAME: Record<Lang, string> = {
+ * language pickers and card kickers. Keyed by TargetLang, not Lang: a course's
+ * target language needs a name in the picker even when the app has no UI in it
+ * (LINGO-039's Thai). */
+export const NATIVE_LANG_NAME: Record<TargetLang, string> = {
   ja: "日本語",
   en: "English",
   ru: "Русский",
+  th: "ไทย",
 };
 
+/** One catalog row. Keyed by `Lang` (the languages the UI is translated into),
+ * so adding a *course* target language like Thai costs nothing here — only
+ * adding a UI language obliges 3-way translation of every key. */
 type Entry = Record<Lang, string>;
 
 // Note on placeholders: {n},{m},{pct},{app},{lang},{front},{back},{v},{cards},
@@ -44,6 +50,10 @@ const M: Record<string, Entry> = {
   "lang.name.ja": { ja: "日本語", en: "Japanese", ru: "японский" },
   "lang.name.en": { ja: "英語", en: "English", ru: "английский" },
   "lang.name.ru": { ja: "ロシア語", en: "Russian", ru: "русский" },
+  // LINGO-039: Thai is a course target language only — there is no Thai UI, so
+  // it needs a NAME in all three catalogs (course picker, "learn {lang}"
+  // sentences) but no catalog of its own. See TargetLang in content/courses.ts.
+  "lang.name.th": { ja: "タイ語", en: "Thai", ru: "тайский" },
 
   // -- home -----------------------------------------------------------------
   "home.guide": { ja: "ガイド", en: "Guide", ru: "Гид" },
@@ -418,6 +428,12 @@ const M: Record<string, Entry> = {
   // LINGO-026: was missing entirely (38 RU words — спасибо/привет/etc. — fell
   // through to the raw untranslated "intj" string in all 3 UI languages).
   "pos.intj": { ja: "感動詞", en: "interjection", ru: "межд." },
+  // LINGO-039: Thai-specific and unavoidable — you cannot count anything in
+  // Thai without the right classifier ("sɔ̌ɔng khon" = two people), so these
+  // are core band1 vocabulary rather than a curiosity, and they get a real POS
+  // instead of being flattened into `noun`. i18nLeak.test.ts asserts every pos
+  // code present in any shipped deck has a key here.
+  "pos.classifier": { ja: "類別詞", en: "classifier", ru: "классиф." },
 
   // -- calibration ----------------------------------------------------------
   "calib.exit": { ja: "やめる", en: "Quit", ru: "Выйти" },
@@ -783,8 +799,11 @@ export function translate(
   return interpolate(entry[lang] ?? entry.ja ?? key, params);
 }
 
-/** Localized name of a language for use inside a sentence (e.g. "Russian"). */
-export function langName(lang: Lang, of: Lang): string {
+/** Localized name of a language for use inside a sentence (e.g. "Russian").
+ * `of` is a TargetLang: the language being NAMED can be one the app has no UI
+ * for (Thai), while `lang` — the language doing the naming — must be a real UI
+ * language. Every TargetLang has a `lang.name.*` key in all three catalogs. */
+export function langName(lang: Lang, of: TargetLang): string {
   return translate(lang, `lang.name.${of}`);
 }
 

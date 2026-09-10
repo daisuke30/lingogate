@@ -69,7 +69,29 @@ export const EN_DECK = {
   grammarMeta: "irregular",
 };
 
-const DECKS = [RU_DECK, EN_DECK];
+// LINGO-039: Thai course. Data under pipeline/courses/th/ (same "current data
+// untouched" isolation as EN). grammarMeta is "classifier": Thai is an
+// isolating language with no conjugation, declension, grammatical gender or
+// verb aspect, so every one of the grammar slots this schema carries for RU
+// (aspect/aspectPair/pairKind) and the LINGO-022 gender slot stay null by
+// construction. What a Thai learner needs instead — the noun classifier to
+// use, the tone the spelling implies, and word-order/politeness particles —
+// is prose, so it lives in the sentence note (ja/en/ru) rather than in a new
+// structured column nothing else would ever populate.
+export const TH_DECK = {
+  dataDir: join(PIPELINE, "courses", "th"),
+  outFile: join(CONTENT_DIR, "deck.th.json"),
+  code: "TH-from-JA-EN",
+  name: "Thai (TNC frequency bands + travel core)",
+  courseId: "th",
+  targetLang: "th",
+  sourceLang: "ja",
+  availableFrontLangs: ["ja", "en"],
+  defaultFrontLang: "ja",
+  grammarMeta: "classifier",
+};
+
+const DECKS = [RU_DECK, EN_DECK, TH_DECK];
 
 function loadJsonl(path) {
   const rows = [];
@@ -102,6 +124,27 @@ function bandFromFilename(path) {
 function tokenizeCount(text) {
   const matches = String(text ?? "").match(/[\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)*/gu);
   return matches ? matches.length : 0;
+}
+
+// LINGO-039: Thai is written with no spaces between words (spaces appear only
+// at phrase/clause boundaries), so tokenizeCount's letter-run regex counts a
+// whole Thai clause as ONE token — "ผมขอข้าวครับ" is 4 words but 1 run. That
+// would silently break the two things tokenCount exists for: the
+// MAX_SENTENCE_TOKENS safety net (everything looks short enough) and, worse,
+// calibration's unlinked-word gap (tokenCount - wordIds.length would go
+// negative, i.e. "this sentence has no words the learner hasn't judged",
+// making every Thai sentence look maximally easy).
+//
+// For Thai the authoritative segmentation is the row's own `lemmas` array —
+// the generator records the word boundaries explicitly precisely because the
+// script does not (the displayed `th` text stays naturally unspaced). Using
+// its length keeps the invariant the field is defined by: it counts every
+// content word actually in the sentence, so the gap against wordIds.length
+// (deduped, resolved lemmas only) still means exactly "words that did not
+// link to a deck entry".
+function sentenceTokenCount(s, targetLang) {
+  if (targetLang === "th") return (s.lemmas ?? []).length;
+  return tokenizeCount(s[targetLang]);
 }
 
 // LINGO-010 follow-up (2026-08-26, explicit direction from Katsuta): a stale
@@ -165,6 +208,22 @@ function sentencePaths(dataDir) {
   return paths.sort();
 }
 
+/** The raw sentence rows a course's JSONL contains, before any linking or
+ * filtering. Exported for tests that need to assert something about the SOURCE
+ * data rather than the compiled deck — LINGO-039's Thai invariants ("the Thai
+ * text is exactly its lemmas concatenated", "the transcription is exactly its
+ * words' transcriptions joined") are properties of the source rows, and the
+ * compiled deck deliberately doesn't carry the `lemmas` array to assert them
+ * against. Reading the files here rather than in the test keeps `node:fs` out
+ * of the browser tsconfig, which has no node types. */
+export function sourceSentenceRows(dataDir) {
+  const out = [];
+  for (const path of sentencePaths(dataDir)) {
+    for (const [, s] of loadJsonl(path)) out.push(s);
+  }
+  return out;
+}
+
 export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
   const words = [];
   const lemmaToId = new Map();
@@ -188,6 +247,11 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
           enGloss: w.en_gloss ?? null,
           jaGloss: w.ja_gloss ?? null,
           ruGloss: w.ru_gloss ?? null,
+          // LINGO-039: per-headword pronunciation transcription. TH ships
+          // Paiboon romanization here (Thai spelling encodes tone only via
+          // rules a beginner hasn't learned, so the headword is unusable
+          // without it); null for RU/EN.
+          kana: w.kana ?? null,
           // LINGO-022: noun grammatical gender ('m'|'f'|'n'|'pl'|'mf'), null
           // for non-nouns and any course that doesn't carry it.
           gender: w.gender ?? null,
@@ -213,6 +277,7 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
         existing.enGloss = w.en_gloss ?? null;
         existing.jaGloss = w.ja_gloss ?? null;
         existing.ruGloss = w.ru_gloss ?? null;
+        existing.kana = w.kana ?? null;
         existing.gender = w.gender ?? null;
       }
     }
@@ -275,8 +340,9 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
 
       const kind = s.kind ?? "sentence";
       // LINGO-015: count words in THIS course's target-language field
-      // (s.ru for RU, s.en for EN), not always s.ru.
-      const tokenCount = tokenizeCount(s[deckConfig.targetLang]);
+      // (s.ru for RU, s.en for EN), not always s.ru. LINGO-039: Thai counts
+      // its `lemmas` instead — see sentenceTokenCount.
+      const tokenCount = sentenceTokenCount(s, deckConfig.targetLang);
       const isCore = s.target_lemma != null && String(s.target_lemma).trim() !== "";
 
       if (kind === "sentence") {
@@ -304,6 +370,16 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
         ru: s.ru,
         en: s.en,
         ja: s.ja ?? null,
+        // LINGO-039: fourth flat language slot, same convention as the three
+        // above. Emitted unconditionally (null for the RU/EN packs) to match
+        // how every other optional column in this schema is written —
+        // gender/aspect/pairKind/forms all ship as explicit nulls rather than
+        // absent keys. That does add ~28KB of `"th":null` to deck.ru.json;
+        // it gzips to nothing and no consumer's behaviour changes, so the
+        // design's "現行データ無干渉" invariant is verified semantically
+        // (RU/EN decks identical modulo the new always-null keys) rather than
+        // by a raw byte hash.
+        th: s.th ?? null,
         kana: s.kana ?? null,
         // Etymology/grammar note (RU) or irregular-verb principal parts in
         // "go-went-gone" form (EN, LINGO-015) — same free-text field, course

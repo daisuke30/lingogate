@@ -1,0 +1,1000 @@
+{"lemma": "ที่", "rank": 1, "band": 1, "pos": "prep", "kana": "thîi", "ja_gloss": "〜で・〜に・場所", "en_gloss": "at; in; on; place", "tnc_rank": 1, "travel_core": false}
+{"lemma": "การ", "rank": 2, "band": 1, "pos": "noun", "kana": "gaan", "ja_gloss": "こと・〜すること", "en_gloss": "work; matter; nominalizer", "tnc_rank": 2, "travel_core": false}
+{"lemma": "เป็น", "rank": 3, "band": 1, "pos": "verb", "kana": "bpen", "ja_gloss": "〜である・になる", "en_gloss": "to be", "tnc_rank": 3, "travel_core": false}
+{"lemma": "ใน", "rank": 4, "band": 1, "pos": "prep", "kana": "nai", "ja_gloss": "〜の中に・〜で", "en_gloss": "in; inside; within", "tnc_rank": 4, "travel_core": false}
+{"lemma": "ของ", "rank": 5, "band": 1, "pos": "prep", "kana": "khɔ̌ɔng", "ja_gloss": "〜の", "en_gloss": "of; belonging to", "tnc_rank": 5, "travel_core": false}
+{"lemma": "สวัสดี", "rank": 6, "band": 1, "pos": "intj", "kana": "sà-wàt-dii", "ja_gloss": "こんにちは", "en_gloss": "hello; greeting", "tnc_rank": 2831, "travel_core": true}
+{"lemma": "มี", "rank": 7, "band": 1, "pos": "verb", "kana": "mii", "ja_gloss": "持っている・ある", "en_gloss": "to have; there is/are", "tnc_rank": 6, "travel_core": true}
+{"lemma": "จะ", "rank": 8, "band": 1, "pos": "verb", "kana": "jà", "ja_gloss": "〜だろう（未来）", "en_gloss": "will; going to (future marker)", "tnc_rank": 7, "travel_core": false}
+{"lemma": "และ", "rank": 9, "band": 1, "pos": "conj", "kana": "lɛ́", "ja_gloss": "そして・と", "en_gloss": "and", "tnc_rank": 8, "travel_core": false}
+{"lemma": "ไม่", "rank": 10, "band": 1, "pos": "adv", "kana": "mâi", "ja_gloss": "〜ない・いいえ", "en_gloss": "no; not", "tnc_rank": 9, "travel_core": true}
+{"lemma": "ได้", "rank": 11, "band": 1, "pos": "verb", "kana": "dâai", "ja_gloss": "できる・得る", "en_gloss": "can; to be able to; to get", "tnc_rank": 10, "travel_core": true}
+{"lemma": "ครับ", "rank": 12, "band": 1, "pos": "part", "kana": "khráp", "ja_gloss": "（男性の丁寧語尾）", "en_gloss": "polite particle (male speaker)", "tnc_rank": 199, "travel_core": true}
+{"lemma": "ให้", "rank": 13, "band": 1, "pos": "verb", "kana": "hâi", "ja_gloss": "あげる・させる", "en_gloss": "to give; to let; for", "tnc_rank": 11, "travel_core": false}
+{"lemma": "ว่า", "rank": 14, "band": 1, "pos": "conj", "kana": "wâa", "ja_gloss": "〜と（言う）", "en_gloss": "that (introduces reported speech)", "tnc_rank": 12, "travel_core": false}
+{"lemma": "ไป", "rank": 15, "band": 1, "pos": "verb", "kana": "bpai", "ja_gloss": "行く", "en_gloss": "to go", "tnc_rank": 13, "travel_core": true}
+{"lemma": "มา", "rank": 16, "band": 1, "pos": "verb", "kana": "maa", "ja_gloss": "来る", "en_gloss": "to come", "tnc_rank": 14, "travel_core": true}
+{"lemma": "ก็", "rank": 17, "band": 1, "pos": "conj", "kana": "gɔ̂", "ja_gloss": "それで・も", "en_gloss": "so; then; also", "tnc_rank": 15, "travel_core": false}
+{"lemma": "ขอบคุณ", "rank": 18, "band": 1, "pos": "intj", "kana": "khɔ̀ɔp-khun", "ja_gloss": "ありがとう", "en_gloss": "thank you", "tnc_rank": 1294, "travel_core": true}
+{"lemma": "ความ", "rank": 19, "band": 1, "pos": "noun", "kana": "khwaam", "ja_gloss": "こと・〜さ（抽象名詞化）", "en_gloss": "matter; abstract noun prefix", "tnc_rank": 17, "travel_core": false}
+{"lemma": "คน", "rank": 20, "band": 1, "pos": "noun", "kana": "khon", "ja_gloss": "人", "en_gloss": "person; people", "tnc_rank": 18, "travel_core": true}
+{"lemma": "กับ", "rank": 21, "band": 1, "pos": "prep", "kana": "gàp", "ja_gloss": "〜と・一緒に", "en_gloss": "with; and", "tnc_rank": 19, "travel_core": false}
+{"lemma": "แล้ว", "rank": 22, "band": 1, "pos": "adv", "kana": "lɛ́ɛo", "ja_gloss": "もう・すでに", "en_gloss": "already; then", "tnc_rank": 20, "travel_core": false}
+{"lemma": "ขอโทษ", "rank": 23, "band": 1, "pos": "intj", "kana": "khɔ̌ɔ-thôot", "ja_gloss": "すみません", "en_gloss": "sorry; excuse me", "tnc_rank": 1678, "travel_core": true}
+{"lemma": "อยู่", "rank": 24, "band": 1, "pos": "verb", "kana": "yùu", "ja_gloss": "いる・住む", "en_gloss": "to be at; to live; to stay", "tnc_rank": 21, "travel_core": false}
+{"lemma": "หรือ", "rank": 25, "band": 1, "pos": "conj", "kana": "rʉ̌ʉ", "ja_gloss": "それとも・または", "en_gloss": "or", "tnc_rank": 22, "travel_core": false}
+{"lemma": "จาก", "rank": 26, "band": 1, "pos": "prep", "kana": "jàak", "ja_gloss": "〜から", "en_gloss": "from", "tnc_rank": 23, "travel_core": false}
+{"lemma": "กัน", "rank": 27, "band": 1, "pos": "adv", "kana": "gan", "ja_gloss": "お互いに・一緒に", "en_gloss": "together; each other", "tnc_rank": 24, "travel_core": false}
+{"lemma": "นี้", "rank": 28, "band": 1, "pos": "det", "kana": "níi", "ja_gloss": "この・これ", "en_gloss": "this; these", "tnc_rank": 25, "travel_core": false}
+{"lemma": "ไม่เป็นไร", "rank": 29, "band": 1, "pos": "intj", "kana": "mâi-bpen-rai", "ja_gloss": "大丈夫・気にしないで", "en_gloss": "never mind; no problem; it's okay", "tnc_rank": null, "travel_core": true}
+{"lemma": "แต่", "rank": 30, "band": 1, "pos": "conj", "kana": "dtɛ̀ɛ", "ja_gloss": "しかし・でも", "en_gloss": "but; however", "tnc_rank": 26, "travel_core": false}
+{"lemma": "อย่าง", "rank": 31, "band": 1, "pos": "noun", "kana": "yàang", "ja_gloss": "種類・〜のように", "en_gloss": "kind; sort; way; manner", "tnc_rank": 27, "travel_core": false}
+{"lemma": "ต้อง", "rank": 32, "band": 1, "pos": "verb", "kana": "dtɔ̂ng", "ja_gloss": "〜しなければならない", "en_gloss": "must; have to; need to", "tnc_rank": 28, "travel_core": true}
+{"lemma": "ด้วย", "rank": 33, "band": 1, "pos": "adv", "kana": "dûai", "ja_gloss": "も・〜も", "en_gloss": "also; too; as well", "tnc_rank": 29, "travel_core": false}
+{"lemma": "ขึ้น", "rank": 34, "band": 1, "pos": "verb", "kana": "khʉ̂n", "ja_gloss": "上がる・増える", "en_gloss": "to go up; to rise; to increase", "tnc_rank": 30, "travel_core": false}
+{"lemma": "สบาย", "rank": 35, "band": 1, "pos": "adv", "kana": "sà-baai", "ja_gloss": "気持ちいい・元気", "en_gloss": "comfortable; well; fine", "tnc_rank": 714, "travel_core": true}
+{"lemma": "เขา", "rank": 36, "band": 1, "pos": "pron", "kana": "khǎo", "ja_gloss": "彼・彼女・彼ら", "en_gloss": "he; she; they", "tnc_rank": 31, "travel_core": true}
+{"lemma": "นั้น", "rank": 37, "band": 1, "pos": "det", "kana": "nán", "ja_gloss": "その・あの", "en_gloss": "that; those", "tnc_rank": 32, "travel_core": false}
+{"lemma": "ผู้", "rank": 38, "band": 1, "pos": "noun", "kana": "phûu", "ja_gloss": "〜する人・者", "en_gloss": "person (prefix meaning one who)", "tnc_rank": 33, "travel_core": false}
+{"lemma": "ซึ่ง", "rank": 39, "band": 1, "pos": "pron", "kana": "sʉ̂ng", "ja_gloss": "〜という・〜するところの", "en_gloss": "which; that; who", "tnc_rank": 34, "travel_core": false}
+{"lemma": "ตาม", "rank": 40, "band": 1, "pos": "prep", "kana": "dtaam", "ja_gloss": "〜に従って・〜通りに", "en_gloss": "according to; along; following", "tnc_rank": 35, "travel_core": false}
+{"lemma": "ยินดี", "rank": 41, "band": 1, "pos": "adj", "kana": "yin-dii", "ja_gloss": "うれしい・喜んで", "en_gloss": "glad; pleased; delighted", "tnc_rank": 1467, "travel_core": true}
+{"lemma": "มาก", "rank": 42, "band": 1, "pos": "adv", "kana": "mâak", "ja_gloss": "とても・たくさん", "en_gloss": "very; a lot; much", "tnc_rank": 36, "travel_core": true}
+{"lemma": "โดย", "rank": 43, "band": 1, "pos": "prep", "kana": "dooi", "ja_gloss": "〜によって・〜で", "en_gloss": "by; via; by means of", "tnc_rank": 37, "travel_core": false}
+{"lemma": "ใช้", "rank": 44, "band": 1, "pos": "verb", "kana": "chái", "ja_gloss": "使う", "en_gloss": "to use", "tnc_rank": 38, "travel_core": false}
+{"lemma": "ทาง", "rank": 45, "band": 1, "pos": "noun", "kana": "thaang", "ja_gloss": "道・方法", "en_gloss": "way; route; path; method", "tnc_rank": 39, "travel_core": false}
+{"lemma": "เรื่อง", "rank": 46, "band": 1, "pos": "noun", "kana": "rʉ̂ʉang", "ja_gloss": "話・こと・件", "en_gloss": "story; matter; topic; subject", "tnc_rank": 40, "travel_core": false}
+{"lemma": "ใช่", "rank": 47, "band": 1, "pos": "intj", "kana": "châi", "ja_gloss": "はい・そうです", "en_gloss": "yes; right; correct", "tnc_rank": 133, "travel_core": true}
+{"lemma": "เรา", "rank": 48, "band": 1, "pos": "pron", "kana": "rao", "ja_gloss": "私たち・私", "en_gloss": "we; I", "tnc_rank": 41, "travel_core": true}
+{"lemma": "ยัง", "rank": 49, "band": 1, "pos": "adv", "kana": "yang", "ja_gloss": "まだ", "en_gloss": "still; yet; not yet", "tnc_rank": 42, "travel_core": false}
+{"lemma": "ทำ", "rank": 50, "band": 1, "pos": "verb", "kana": "tham", "ja_gloss": "する・作る", "en_gloss": "to do; to make", "tnc_rank": 43, "travel_core": false}
+{"lemma": "เพื่อ", "rank": 51, "band": 1, "pos": "prep", "kana": "phʉ̂ʉa", "ja_gloss": "〜のために", "en_gloss": "for; in order to", "tnc_rank": 44, "travel_core": false}
+{"lemma": "ผม", "rank": 52, "band": 1, "pos": "pron", "kana": "phǒm", "ja_gloss": "私（男性）", "en_gloss": "I (male speaker)", "tnc_rank": 45, "travel_core": true}
+{"lemma": "อีก", "rank": 53, "band": 1, "pos": "adv", "kana": "ìik", "ja_gloss": "もっと・また", "en_gloss": "more; again; another", "tnc_rank": 46, "travel_core": false}
+{"lemma": "หนึ่ง", "rank": 54, "band": 1, "pos": "num", "kana": "nʉ̀ng", "ja_gloss": "1・一つ", "en_gloss": "one; 1", "tnc_rank": 47, "travel_core": true}
+{"lemma": "เมื่อ", "rank": 55, "band": 1, "pos": "conj", "kana": "mʉ̂ʉa", "ja_gloss": "〜のとき", "en_gloss": "when", "tnc_rank": 48, "travel_core": false}
+{"lemma": "ถึง", "rank": 56, "band": 1, "pos": "prep", "kana": "thʉ̌ng", "ja_gloss": "〜まで・〜に着く", "en_gloss": "to; until; to arrive at", "tnc_rank": 49, "travel_core": false}
+{"lemma": "เข้า", "rank": 57, "band": 1, "pos": "verb", "kana": "khâo", "ja_gloss": "入る", "en_gloss": "to enter; to go in", "tnc_rank": 50, "travel_core": false}
+{"lemma": "เพราะ", "rank": 58, "band": 1, "pos": "conj", "kana": "phrɔ́", "ja_gloss": "なぜなら・〜だから", "en_gloss": "because", "tnc_rank": 51, "travel_core": false}
+{"lemma": "ดี", "rank": 59, "band": 1, "pos": "adj", "kana": "dii", "ja_gloss": "良い・いい", "en_gloss": "good; nice", "tnc_rank": 52, "travel_core": true}
+{"lemma": "ออก", "rank": 60, "band": 1, "pos": "verb", "kana": "ɔ̀ɔk", "ja_gloss": "出る・出発する", "en_gloss": "to go out; to exit; to leave", "tnc_rank": 53, "travel_core": false}
+{"lemma": "ฉัน", "rank": 61, "band": 1, "pos": "pron", "kana": "chǎn", "ja_gloss": "私（親しい間柄）", "en_gloss": "I (informal)", "tnc_rank": 54, "travel_core": false}
+{"lemma": "เกิด", "rank": 62, "band": 1, "pos": "verb", "kana": "gə̀ət", "ja_gloss": "生まれる・起こる", "en_gloss": "to be born; to happen; to occur", "tnc_rank": 55, "travel_core": false}
+{"lemma": "คือ", "rank": 63, "band": 1, "pos": "verb", "kana": "khʉʉ", "ja_gloss": "〜である・つまり", "en_gloss": "to be; that is; namely", "tnc_rank": 56, "travel_core": false}
+{"lemma": "เห็น", "rank": 64, "band": 1, "pos": "verb", "kana": "hěn", "ja_gloss": "見る・思う", "en_gloss": "to see; to think", "tnc_rank": 57, "travel_core": false}
+{"lemma": "จึง", "rank": 65, "band": 1, "pos": "conj", "kana": "jʉng", "ja_gloss": "だから・そこで", "en_gloss": "so; therefore; thus", "tnc_rank": 58, "travel_core": false}
+{"lemma": "ทำให้", "rank": 66, "band": 1, "pos": "verb", "kana": "tham-hâi", "ja_gloss": "〜させる・引き起こす", "en_gloss": "to cause; to make (something happen)", "tnc_rank": 59, "travel_core": false}
+{"lemma": "กว่า", "rank": 67, "band": 1, "pos": "prep", "kana": "gwàa", "ja_gloss": "〜より・〜以上", "en_gloss": "more than; than", "tnc_rank": 60, "travel_core": false}
+{"lemma": "เอา", "rank": 68, "band": 1, "pos": "verb", "kana": "ao", "ja_gloss": "取る・欲しい", "en_gloss": "to take; to want; to bring", "tnc_rank": 89, "travel_core": true}
+{"lemma": "ไทย", "rank": 69, "band": 1, "pos": "noun", "kana": "thai", "ja_gloss": "タイ（人・タイ語）", "en_gloss": "Thai (person, language, nationality)", "tnc_rank": 61, "travel_core": true}
+{"lemma": "ไว้", "rank": 70, "band": 1, "pos": "verb", "kana": "wái", "ja_gloss": "とっておく・置いておく", "en_gloss": "to keep; to reserve (for later)", "tnc_rank": 62, "travel_core": false}
+{"lemma": "ตัว", "rank": 71, "band": 1, "pos": "noun", "kana": "dtuua", "ja_gloss": "体・自分", "en_gloss": "body; self; oneself", "tnc_rank": 63, "travel_core": true}
+{"lemma": "ปี", "rank": 72, "band": 1, "pos": "noun", "kana": "bpii", "ja_gloss": "年", "en_gloss": "year", "tnc_rank": 64, "travel_core": false}
+{"lemma": "เธอ", "rank": 73, "band": 1, "pos": "pron", "kana": "thəə", "ja_gloss": "彼女・あなた（親しい間柄）", "en_gloss": "she; you (informal)", "tnc_rank": 65, "travel_core": false}
+{"lemma": "ชอบ", "rank": 74, "band": 1, "pos": "verb", "kana": "chɔ̂ɔp", "ja_gloss": "好き・気に入る", "en_gloss": "to like", "tnc_rank": 226, "travel_core": true}
+{"lemma": "คุณ", "rank": 75, "band": 1, "pos": "pron", "kana": "khun", "ja_gloss": "あなた・〜さん", "en_gloss": "you (polite); Mr./Ms.", "tnc_rank": 66, "travel_core": true}
+{"lemma": "ต่อ", "rank": 76, "band": 1, "pos": "verb", "kana": "dtɔ̀ɔ", "ja_gloss": "続ける・つなぐ", "en_gloss": "to continue; to connect; to extend", "tnc_rank": 67, "travel_core": false}
+{"lemma": "ทั้ง", "rank": 77, "band": 1, "pos": "adj", "kana": "tháng", "ja_gloss": "すべて・両方", "en_gloss": "all; both; entire", "tnc_rank": 68, "travel_core": false}
+{"lemma": "มัน", "rank": 78, "band": 1, "pos": "pron", "kana": "man", "ja_gloss": "それ・あれ", "en_gloss": "it; he; she (informal)", "tnc_rank": 69, "travel_core": false}
+{"lemma": "เลย", "rank": 79, "band": 1, "pos": "adv", "kana": "ləəi", "ja_gloss": "全然・すっかり・だから", "en_gloss": "completely; at all; therefore", "tnc_rank": 70, "travel_core": false}
+{"lemma": "อยาก", "rank": 80, "band": 1, "pos": "verb", "kana": "yàak", "ja_gloss": "〜したい", "en_gloss": "to want (to)", "tnc_rank": 123, "travel_core": true}
+{"lemma": "ถ้า", "rank": 81, "band": 1, "pos": "conj", "kana": "thâa", "ja_gloss": "もし〜なら", "en_gloss": "if", "tnc_rank": 71, "travel_core": false}
+{"lemma": "อะไร", "rank": 82, "band": 1, "pos": "pron", "kana": "à-rai", "ja_gloss": "何・なに", "en_gloss": "what?", "tnc_rank": 72, "travel_core": true}
+{"lemma": "เวลา", "rank": 83, "band": 1, "pos": "noun", "kana": "wee-laa", "ja_gloss": "時間", "en_gloss": "time", "tnc_rank": 73, "travel_core": false}
+{"lemma": "ลง", "rank": 84, "band": 1, "pos": "verb", "kana": "long", "ja_gloss": "下がる・降りる", "en_gloss": "to go down; to descend; to get off", "tnc_rank": 74, "travel_core": false}
+{"lemma": "ต่าง", "rank": 85, "band": 1, "pos": "adj", "kana": "dtàang", "ja_gloss": "違う・さまざま", "en_gloss": "different; various", "tnc_rank": 75, "travel_core": false}
+{"lemma": "ส่วน", "rank": 86, "band": 1, "pos": "noun", "kana": "sùuan", "ja_gloss": "部分・一部", "en_gloss": "part; portion; section", "tnc_rank": 76, "travel_core": false}
+{"lemma": "ประเทศ", "rank": 87, "band": 1, "pos": "noun", "kana": "bprà-thêet", "ja_gloss": "国", "en_gloss": "country; nation", "tnc_rank": 77, "travel_core": false}
+{"lemma": "อาจ", "rank": 88, "band": 1, "pos": "verb", "kana": "àat", "ja_gloss": "〜かもしれない", "en_gloss": "may; might; possibly", "tnc_rank": 78, "travel_core": false}
+{"lemma": "แบบ", "rank": 89, "band": 1, "pos": "noun", "kana": "bɛ̀ɛp", "ja_gloss": "型・スタイル", "en_gloss": "style; type; form; pattern", "tnc_rank": 79, "travel_core": false}
+{"lemma": "ถูก", "rank": 90, "band": 1, "pos": "adj", "kana": "thùuk", "ja_gloss": "安い・正しい", "en_gloss": "cheap; correct", "tnc_rank": 80, "travel_core": true}
+{"lemma": "ช่วย", "rank": 91, "band": 1, "pos": "verb", "kana": "chûai", "ja_gloss": "手伝う・助ける", "en_gloss": "to help", "tnc_rank": 140, "travel_core": true}
+{"lemma": "ทุก", "rank": 92, "band": 1, "pos": "adj", "kana": "thúk", "ja_gloss": "すべての・毎", "en_gloss": "every; each", "tnc_rank": 81, "travel_core": false}
+{"lemma": "วัน", "rank": 93, "band": 1, "pos": "noun", "kana": "wan", "ja_gloss": "日", "en_gloss": "day", "tnc_rank": 82, "travel_core": true}
+{"lemma": "ก่อน", "rank": 94, "band": 1, "pos": "adv", "kana": "gɔ̀ɔn", "ja_gloss": "前に・まず", "en_gloss": "before; first; earlier", "tnc_rank": 83, "travel_core": false}
+{"lemma": "เช่น", "rank": 95, "band": 1, "pos": "conj", "kana": "chên", "ja_gloss": "例えば・〜のような", "en_gloss": "such as; for example; like", "tnc_rank": 84, "travel_core": false}
+{"lemma": "อื่น", "rank": 96, "band": 1, "pos": "adj", "kana": "ʉ̀ʉn", "ja_gloss": "他の", "en_gloss": "other", "tnc_rank": 85, "travel_core": false}
+{"lemma": "ขอ", "rank": 97, "band": 1, "pos": "verb", "kana": "khɔ̌ɔ", "ja_gloss": "お願いします・ください", "en_gloss": "to ask for; may I (request)", "tnc_rank": 143, "travel_core": true}
+{"lemma": "ดู", "rank": 98, "band": 1, "pos": "verb", "kana": "duu", "ja_gloss": "見る", "en_gloss": "to look; to watch; to see", "tnc_rank": 86, "travel_core": false}
+{"lemma": "ครั้ง", "rank": 99, "band": 1, "pos": "classifier", "kana": "khráng", "ja_gloss": "類別詞：〜回", "en_gloss": "classifier for occurrences/times", "tnc_rank": 87, "travel_core": false}
+{"lemma": "รู้", "rank": 100, "band": 1, "pos": "verb", "kana": "rúu", "ja_gloss": "知る・知っている", "en_gloss": "to know", "tnc_rank": 88, "travel_core": true}
+{"lemma": "สอง", "rank": 101, "band": 1, "pos": "num", "kana": "sɔ̌ɔng", "ja_gloss": "2・二つ", "en_gloss": "two; 2", "tnc_rank": 90, "travel_core": true}
+{"lemma": "นำ", "rank": 102, "band": 1, "pos": "verb", "kana": "nam", "ja_gloss": "導く・持ってくる", "en_gloss": "to lead; to bring", "tnc_rank": 91, "travel_core": false}
+{"lemma": "งาน", "rank": 103, "band": 1, "pos": "noun", "kana": "ngaan", "ja_gloss": "仕事・行事", "en_gloss": "work; job; event", "tnc_rank": 92, "travel_core": false}
+{"lemma": "สามารถ", "rank": 104, "band": 1, "pos": "verb", "kana": "sǎa-mâat", "ja_gloss": "できる", "en_gloss": "can; to be able to", "tnc_rank": 93, "travel_core": false}
+{"lemma": "นาย", "rank": 105, "band": 1, "pos": "noun", "kana": "naai", "ja_gloss": "〜氏・上司", "en_gloss": "Mr.; master; boss", "tnc_rank": 94, "travel_core": false}
+{"lemma": "นะ", "rank": 106, "band": 1, "pos": "part", "kana": "ná", "ja_gloss": "〜ね・〜よ（語尾）", "en_gloss": "softening/persuasive sentence particle", "tnc_rank": 95, "travel_core": false}
+{"lemma": "ที่ไหน", "rank": 107, "band": 1, "pos": "pron", "kana": "thîi-nǎi", "ja_gloss": "どこ", "en_gloss": "where?", "tnc_rank": 962, "travel_core": true}
+{"lemma": "หน้า", "rank": 108, "band": 1, "pos": "noun", "kana": "nâa", "ja_gloss": "顔・ページ・前", "en_gloss": "face; page; front", "tnc_rank": 96, "travel_core": false}
+{"lemma": "บอก", "rank": 109, "band": 1, "pos": "verb", "kana": "bɔ̀ɔk", "ja_gloss": "話す・伝える", "en_gloss": "to tell", "tnc_rank": 97, "travel_core": false}
+{"lemma": "กลับ", "rank": 110, "band": 1, "pos": "verb", "kana": "glàp", "ja_gloss": "帰る・戻る", "en_gloss": "to return; to go back", "tnc_rank": 98, "travel_core": false}
+{"lemma": "แห่ง", "rank": 111, "band": 1, "pos": "classifier", "kana": "hɛ̀ng", "ja_gloss": "類別詞：場所", "en_gloss": "classifier for places", "tnc_rank": 99, "travel_core": false}
+{"lemma": "บาง", "rank": 112, "band": 1, "pos": "adj", "kana": "baang", "ja_gloss": "いくつかの・ある", "en_gloss": "some; certain; a few", "tnc_rank": 100, "travel_core": false}
+{"lemma": "เมื่อไหร่", "rank": 113, "band": 1, "pos": "adv", "kana": "mʉ̂ʉa-rài", "ja_gloss": "いつ", "en_gloss": "when?", "tnc_rank": 1854, "travel_core": true}
+{"lemma": "ได้รับ", "rank": 114, "band": 1, "pos": "verb", "kana": "dâi-ráp", "ja_gloss": "受け取る", "en_gloss": "to receive; to get", "tnc_rank": 101, "travel_core": false}
+{"lemma": "จน", "rank": 115, "band": 1, "pos": "conj", "kana": "jon", "ja_gloss": "〜まで", "en_gloss": "until; so that", "tnc_rank": 102, "travel_core": false}
+{"lemma": "ด้าน", "rank": 116, "band": 1, "pos": "noun", "kana": "dâan", "ja_gloss": "側面・分野", "en_gloss": "side; aspect; field", "tnc_rank": 103, "travel_core": false}
+{"lemma": "คิด", "rank": 117, "band": 1, "pos": "verb", "kana": "khít", "ja_gloss": "考える・思う", "en_gloss": "to think", "tnc_rank": 104, "travel_core": false}
+{"lemma": "เด็ก", "rank": 118, "band": 1, "pos": "noun", "kana": "dèk", "ja_gloss": "子供", "en_gloss": "child; kid", "tnc_rank": 105, "travel_core": false}
+{"lemma": "ทำไม", "rank": 119, "band": 1, "pos": "pron", "kana": "tham-mai", "ja_gloss": "なぜ・どうして", "en_gloss": "why?", "tnc_rank": 311, "travel_core": true}
+{"lemma": "ชีวิต", "rank": 120, "band": 1, "pos": "noun", "kana": "chii-wít", "ja_gloss": "人生・生活", "en_gloss": "life", "tnc_rank": 106, "travel_core": false}
+{"lemma": "สิ่ง", "rank": 121, "band": 1, "pos": "noun", "kana": "sìng", "ja_gloss": "もの・こと", "en_gloss": "thing", "tnc_rank": 107, "travel_core": false}
+{"lemma": "พระ", "rank": 122, "band": 1, "pos": "noun", "kana": "phrá", "ja_gloss": "僧・仏・（敬称）", "en_gloss": "monk; deity; honorific for the sacred", "tnc_rank": 108, "travel_core": false}
+{"lemma": "เหมือน", "rank": 123, "band": 1, "pos": "conj", "kana": "mʉ̌ʉan", "ja_gloss": "〜のように・似ている", "en_gloss": "like; similar to; as if", "tnc_rank": 109, "travel_core": false}
+{"lemma": "รับ", "rank": 124, "band": 1, "pos": "verb", "kana": "ráp", "ja_gloss": "受け取る・迎える", "en_gloss": "to receive; to accept; to pick up", "tnc_rank": 110, "travel_core": false}
+{"lemma": "ใคร", "rank": 125, "band": 1, "pos": "pron", "kana": "khrai", "ja_gloss": "誰", "en_gloss": "who?", "tnc_rank": 120, "travel_core": true}
+{"lemma": "หลาย", "rank": 126, "band": 1, "pos": "adj", "kana": "lǎai", "ja_gloss": "たくさんの・いくつもの", "en_gloss": "many; several", "tnc_rank": 111, "travel_core": false}
+{"lemma": "พูด", "rank": 127, "band": 1, "pos": "verb", "kana": "phûut", "ja_gloss": "話す", "en_gloss": "to speak; to talk", "tnc_rank": 112, "travel_core": true}
+{"lemma": "บ้าน", "rank": 128, "band": 1, "pos": "noun", "kana": "bâan", "ja_gloss": "家", "en_gloss": "house; home", "tnc_rank": 113, "travel_core": false}
+{"lemma": "ใหม่", "rank": 129, "band": 1, "pos": "adj", "kana": "mài", "ja_gloss": "新しい", "en_gloss": "new", "tnc_rank": 114, "travel_core": true}
+{"lemma": "เคย", "rank": 130, "band": 1, "pos": "adv", "kana": "khəəi", "ja_gloss": "〜したことがある", "en_gloss": "ever; used to (have done)", "tnc_rank": 115, "travel_core": false}
+{"lemma": "เท่าไหร่", "rank": 131, "band": 1, "pos": "pron", "kana": "thâo-rài", "ja_gloss": "いくら・どのくらい", "en_gloss": "how much?; how many?", "tnc_rank": 1416, "travel_core": true}
+{"lemma": "นี่", "rank": 132, "band": 1, "pos": "pron", "kana": "nîi", "ja_gloss": "これ", "en_gloss": "this", "tnc_rank": 116, "travel_core": false}
+{"lemma": "กลุ่ม", "rank": 133, "band": 1, "pos": "noun", "kana": "glùm", "ja_gloss": "グループ・集団", "en_gloss": "group", "tnc_rank": 117, "travel_core": false}
+{"lemma": "ปัญหา", "rank": 134, "band": 1, "pos": "noun", "kana": "bpan-hǎa", "ja_gloss": "問題", "en_gloss": "problem; issue", "tnc_rank": 118, "travel_core": false}
+{"lemma": "สังคม", "rank": 135, "band": 1, "pos": "noun", "kana": "sǎng-khom", "ja_gloss": "社会", "en_gloss": "society; community", "tnc_rank": 119, "travel_core": false}
+{"lemma": "กี่", "rank": 136, "band": 1, "pos": "pron", "kana": "gìi", "ja_gloss": "いくつ・何〜", "en_gloss": "how many?", "tnc_rank": 793, "travel_core": true}
+{"lemma": "หา", "rank": 137, "band": 1, "pos": "verb", "kana": "hǎa", "ja_gloss": "探す", "en_gloss": "to look for; to search; to find", "tnc_rank": 121, "travel_core": false}
+{"lemma": "คำ", "rank": 138, "band": 1, "pos": "noun", "kana": "kham", "ja_gloss": "言葉・単語", "en_gloss": "word", "tnc_rank": 122, "travel_core": false}
+{"lemma": "ใด", "rank": 139, "band": 1, "pos": "pron", "kana": "dai", "ja_gloss": "どの・どんな", "en_gloss": "which; any", "tnc_rank": 124, "travel_core": false}
+{"lemma": "เสียง", "rank": 140, "band": 1, "pos": "noun", "kana": "sǐiang", "ja_gloss": "音・声", "en_gloss": "sound; voice", "tnc_rank": 125, "travel_core": false}
+{"lemma": "ไหม", "rank": 141, "band": 1, "pos": "part", "kana": "mǎi", "ja_gloss": "〜ですか（疑問）", "en_gloss": "question particle (yes/no)", "tnc_rank": 383, "travel_core": true}
+{"lemma": "คง", "rank": 142, "band": 1, "pos": "adv", "kana": "khong", "ja_gloss": "たぶん・きっと", "en_gloss": "probably; surely", "tnc_rank": 126, "travel_core": false}
+{"lemma": "มอง", "rank": 143, "band": 1, "pos": "verb", "kana": "mɔɔng", "ja_gloss": "見る・眺める", "en_gloss": "to look; to watch", "tnc_rank": 127, "travel_core": false}
+{"lemma": "ระหว่าง", "rank": 144, "band": 1, "pos": "prep", "kana": "rá-wàang", "ja_gloss": "〜の間に・〜中に", "en_gloss": "between; during", "tnc_rank": 128, "travel_core": false}
+{"lemma": "สำหรับ", "rank": 145, "band": 1, "pos": "prep", "kana": "sǎm-ràp", "ja_gloss": "〜のために", "en_gloss": "for; intended for", "tnc_rank": 129, "travel_core": false}
+{"lemma": "น้ำ", "rank": 146, "band": 1, "pos": "noun", "kana": "náam", "ja_gloss": "水", "en_gloss": "water", "tnc_rank": 130, "travel_core": true}
+{"lemma": "ผล", "rank": 147, "band": 1, "pos": "noun", "kana": "phǒn", "ja_gloss": "結果・果物", "en_gloss": "result; effect; fruit", "tnc_rank": 131, "travel_core": false}
+{"lemma": "แสดง", "rank": 148, "band": 1, "pos": "verb", "kana": "sà-dɛɛng", "ja_gloss": "見せる・表す", "en_gloss": "to show; to display; to perform", "tnc_rank": 134, "travel_core": false}
+{"lemma": "กำลัง", "rank": 149, "band": 1, "pos": "verb", "kana": "gam-lang", "ja_gloss": "〜している（進行形）", "en_gloss": "-ing (progressive marker); strength", "tnc_rank": 135, "travel_core": false}
+{"lemma": "สร้าง", "rank": 150, "band": 1, "pos": "verb", "kana": "sâang", "ja_gloss": "作る・建てる", "en_gloss": "to build; to create", "tnc_rank": 136, "travel_core": false}
+{"lemma": "ท่าน", "rank": 151, "band": 1, "pos": "pron", "kana": "thâan", "ja_gloss": "あなた・その方（敬称）", "en_gloss": "you; he/she (respectful)", "tnc_rank": 137, "travel_core": false}
+{"lemma": "เงิน", "rank": 152, "band": 1, "pos": "noun", "kana": "ngən", "ja_gloss": "お金・銀", "en_gloss": "money; silver", "tnc_rank": 138, "travel_core": true}
+{"lemma": "โลก", "rank": 153, "band": 1, "pos": "noun", "kana": "lôok", "ja_gloss": "世界・地球", "en_gloss": "world; earth", "tnc_rank": 139, "travel_core": false}
+{"lemma": "สาม", "rank": 154, "band": 1, "pos": "num", "kana": "sǎam", "ja_gloss": "3・三つ", "en_gloss": "three; 3", "tnc_rank": 264, "travel_core": true}
+{"lemma": "กำหนด", "rank": 155, "band": 1, "pos": "verb", "kana": "gam-nòt", "ja_gloss": "決める・定める", "en_gloss": "to set; to determine; to fix", "tnc_rank": 141, "travel_core": false}
+{"lemma": "จริง", "rank": 156, "band": 1, "pos": "adj", "kana": "jing", "ja_gloss": "本当の・本物の", "en_gloss": "real; true", "tnc_rank": 142, "travel_core": false}
+{"lemma": "ทำงาน", "rank": 157, "band": 1, "pos": "verb", "kana": "tham-ngaan", "ja_gloss": "働く・仕事をする", "en_gloss": "to work", "tnc_rank": 144, "travel_core": false}
+{"lemma": "ระบบ", "rank": 158, "band": 1, "pos": "noun", "kana": "rá-bòp", "ja_gloss": "システム・制度", "en_gloss": "system", "tnc_rank": 145, "travel_core": false}
+{"lemma": "สี่", "rank": 159, "band": 1, "pos": "num", "kana": "sìi", "ja_gloss": "4・四つ", "en_gloss": "four; 4", "tnc_rank": 564, "travel_core": true}
+{"lemma": "ใหญ่", "rank": 160, "band": 1, "pos": "adj", "kana": "yài", "ja_gloss": "大きい", "en_gloss": "big; large", "tnc_rank": 146, "travel_core": true}
+{"lemma": "ลูก", "rank": 161, "band": 1, "pos": "noun", "kana": "lûuk", "ja_gloss": "子供・ボール", "en_gloss": "child; son/daughter; ball", "tnc_rank": 147, "travel_core": false}
+{"lemma": "เอง", "rank": 162, "band": 1, "pos": "pron", "kana": "eeng", "ja_gloss": "自分自身で・〜自体", "en_gloss": "oneself; by oneself", "tnc_rank": 148, "travel_core": false}
+{"lemma": "อัน", "rank": 163, "band": 1, "pos": "classifier", "kana": "an", "ja_gloss": "類別詞：物（一般）", "en_gloss": "classifier for small objects (general)", "tnc_rank": 149, "travel_core": true}
+{"lemma": "พอ", "rank": 164, "band": 1, "pos": "adv", "kana": "phɔɔ", "ja_gloss": "十分・足りる", "en_gloss": "enough; sufficient", "tnc_rank": 150, "travel_core": false}
+{"lemma": "ห้า", "rank": 165, "band": 1, "pos": "num", "kana": "hâa", "ja_gloss": "5・五つ", "en_gloss": "five; 5", "tnc_rank": 605, "travel_core": true}
+{"lemma": "ที่สุด", "rank": 166, "band": 1, "pos": "adv", "kana": "thîi-sùt", "ja_gloss": "最も・一番", "en_gloss": "the most", "tnc_rank": 151, "travel_core": false}
+{"lemma": "แม่", "rank": 167, "band": 1, "pos": "noun", "kana": "mɛ̂ɛ", "ja_gloss": "母", "en_gloss": "mother", "tnc_rank": 152, "travel_core": false}
+{"lemma": "พบ", "rank": 168, "band": 1, "pos": "verb", "kana": "phóp", "ja_gloss": "会う・見つける", "en_gloss": "to meet; to find", "tnc_rank": 153, "travel_core": false}
+{"lemma": "บน", "rank": 169, "band": 1, "pos": "prep", "kana": "bon", "ja_gloss": "〜の上に", "en_gloss": "on; above; upon", "tnc_rank": 154, "travel_core": false}
+{"lemma": "เสีย", "rank": 170, "band": 1, "pos": "verb", "kana": "sǐia", "ja_gloss": "壊れる・だめになる", "en_gloss": "to break down; to spoil; to lose", "tnc_rank": 155, "travel_core": false}
+{"lemma": "หก", "rank": 171, "band": 1, "pos": "num", "kana": "hòk", "ja_gloss": "6・六つ", "en_gloss": "six; 6", "tnc_rank": 1161, "travel_core": true}
+{"lemma": "แก่", "rank": 172, "band": 1, "pos": "adj", "kana": "gɛ̀ɛ", "ja_gloss": "年をとった・老いた", "en_gloss": "old; aged", "tnc_rank": 156, "travel_core": false}
+{"lemma": "ควร", "rank": 173, "band": 1, "pos": "verb", "kana": "khuuan", "ja_gloss": "〜すべきだ", "en_gloss": "should; ought to", "tnc_rank": 157, "travel_core": false}
+{"lemma": "เมือง", "rank": 174, "band": 1, "pos": "noun", "kana": "mʉʉang", "ja_gloss": "町・都市", "en_gloss": "city; town; country", "tnc_rank": 158, "travel_core": false}
+{"lemma": "น้อย", "rank": 175, "band": 1, "pos": "adj", "kana": "nɔ́ɔi", "ja_gloss": "少ない・小さい", "en_gloss": "little; few; small", "tnc_rank": 159, "travel_core": true}
+{"lemma": "เดิน", "rank": 176, "band": 1, "pos": "verb", "kana": "dəən", "ja_gloss": "歩く", "en_gloss": "to walk", "tnc_rank": 160, "travel_core": false}
+{"lemma": "เจ็ด", "rank": 177, "band": 1, "pos": "num", "kana": "jèt", "ja_gloss": "7・七つ", "en_gloss": "seven; 7", "tnc_rank": 1651, "travel_core": true}
+{"lemma": "สี", "rank": 178, "band": 1, "pos": "noun", "kana": "sǐi", "ja_gloss": "色", "en_gloss": "color", "tnc_rank": 161, "travel_core": false}
+{"lemma": "น่า", "rank": 179, "band": 1, "pos": "part", "kana": "nâa", "ja_gloss": "〜したくなる（接頭辞）", "en_gloss": "particle forming 'worthy of' adjectives", "tnc_rank": 162, "travel_core": false}
+{"lemma": "พี่", "rank": 180, "band": 1, "pos": "noun", "kana": "phîi", "ja_gloss": "兄・姉・年上の人", "en_gloss": "older sibling; older person", "tnc_rank": 163, "travel_core": false}
+{"lemma": "ร่วม", "rank": 181, "band": 1, "pos": "verb", "kana": "rûuam", "ja_gloss": "参加する・共にする", "en_gloss": "to join; to participate", "tnc_rank": 164, "travel_core": false}
+{"lemma": "พัฒนา", "rank": 182, "band": 1, "pos": "verb", "kana": "phát-thá-naa", "ja_gloss": "発展する・開発する", "en_gloss": "to develop", "tnc_rank": 165, "travel_core": false}
+{"lemma": "แปด", "rank": 183, "band": 1, "pos": "num", "kana": "bpɛ̀ɛt", "ja_gloss": "8・八つ", "en_gloss": "eight; 8", "tnc_rank": 1627, "travel_core": true}
+{"lemma": "ใจ", "rank": 184, "band": 1, "pos": "noun", "kana": "jai", "ja_gloss": "心", "en_gloss": "heart; mind", "tnc_rank": 166, "travel_core": false}
+{"lemma": "หาก", "rank": 185, "band": 1, "pos": "conj", "kana": "hàak", "ja_gloss": "もし〜なら", "en_gloss": "if", "tnc_rank": 167, "travel_core": false}
+{"lemma": "มาตรา", "rank": 186, "band": 1, "pos": "noun", "kana": "mâat-dtraa", "ja_gloss": "条項・項目", "en_gloss": "section; article (of law)", "tnc_rank": 168, "travel_core": false}
+{"lemma": "สูง", "rank": 187, "band": 1, "pos": "adj", "kana": "sǔung", "ja_gloss": "高い", "en_gloss": "tall; high", "tnc_rank": 169, "travel_core": false}
+{"lemma": "กิน", "rank": 188, "band": 1, "pos": "verb", "kana": "gin", "ja_gloss": "食べる", "en_gloss": "to eat", "tnc_rank": 170, "travel_core": true}
+{"lemma": "เก้า", "rank": 189, "band": 1, "pos": "num", "kana": "gâao", "ja_gloss": "9・九つ", "en_gloss": "nine; 9", "tnc_rank": 2195, "travel_core": true}
+{"lemma": "ส่ง", "rank": 190, "band": 1, "pos": "verb", "kana": "sòng", "ja_gloss": "送る", "en_gloss": "to send; to deliver", "tnc_rank": 171, "travel_core": false}
+{"lemma": "เดียว", "rank": 191, "band": 1, "pos": "adj", "kana": "diao", "ja_gloss": "唯一の・〜だけ", "en_gloss": "only; single; alone", "tnc_rank": 172, "travel_core": false}
+{"lemma": "แรก", "rank": 192, "band": 1, "pos": "adj", "kana": "rɛ̂ɛk", "ja_gloss": "最初の", "en_gloss": "first", "tnc_rank": 173, "travel_core": false}
+{"lemma": "กรณี", "rank": 193, "band": 1, "pos": "noun", "kana": "gɔɔ-rá-nii", "ja_gloss": "場合・ケース", "en_gloss": "case; instance", "tnc_rank": 174, "travel_core": false}
+{"lemma": "ระดับ", "rank": 194, "band": 1, "pos": "noun", "kana": "rá-dàp", "ja_gloss": "レベル・段階", "en_gloss": "level; degree; rank", "tnc_rank": 175, "travel_core": false}
+{"lemma": "สิบ", "rank": 195, "band": 1, "pos": "num", "kana": "sìp", "ja_gloss": "10・十", "en_gloss": "ten; 10", "tnc_rank": 441, "travel_core": true}
+{"lemma": "ตัวเอง", "rank": 196, "band": 1, "pos": "pron", "kana": "dtuua-eeng", "ja_gloss": "自分自身", "en_gloss": "oneself", "tnc_rank": 176, "travel_core": false}
+{"lemma": "กฎหมาย", "rank": 197, "band": 1, "pos": "noun", "kana": "gòt-mǎai", "ja_gloss": "法律", "en_gloss": "law", "tnc_rank": 177, "travel_core": false}
+{"lemma": "กล่าว", "rank": 198, "band": 1, "pos": "verb", "kana": "glàao", "ja_gloss": "述べる・言う", "en_gloss": "to say; to state", "tnc_rank": 178, "travel_core": false}
+{"lemma": "อาหาร", "rank": 199, "band": 1, "pos": "noun", "kana": "aa-hǎan", "ja_gloss": "食べ物・料理", "en_gloss": "food; meal", "tnc_rank": 179, "travel_core": true}
+{"lemma": "เกี่ยวกับ", "rank": 200, "band": 1, "pos": "prep", "kana": "gìao-gàp", "ja_gloss": "〜について", "en_gloss": "about; regarding; concerning", "tnc_rank": 180, "travel_core": false}
+{"lemma": "ร้อย", "rank": 201, "band": 1, "pos": "num", "kana": "rɔ́ɔi", "ja_gloss": "100・百", "en_gloss": "hundred; 100", "tnc_rank": 627, "travel_core": true}
+{"lemma": "ดังกล่าว", "rank": 202, "band": 1, "pos": "adj", "kana": "dang-glàao", "ja_gloss": "前述の・上記の", "en_gloss": "aforementioned; said; mentioned", "tnc_rank": 181, "travel_core": false}
+{"lemma": "นัก", "rank": 203, "band": 1, "pos": "noun", "kana": "nák", "ja_gloss": "〜する人（接頭辞）", "en_gloss": "prefix meaning 'one who does' (-er)", "tnc_rank": 182, "travel_core": false}
+{"lemma": "จัด", "rank": 204, "band": 1, "pos": "verb", "kana": "jàt", "ja_gloss": "整理する・開催する", "en_gloss": "to arrange; to organize", "tnc_rank": 183, "travel_core": false}
+{"lemma": "ช่วง", "rank": 205, "band": 1, "pos": "noun", "kana": "chûuang", "ja_gloss": "期間・区間", "en_gloss": "period; section; range", "tnc_rank": 184, "travel_core": false}
+{"lemma": "ฝ่าย", "rank": 206, "band": 1, "pos": "noun", "kana": "fàai", "ja_gloss": "側・派", "en_gloss": "side; faction; party", "tnc_rank": 185, "travel_core": false}
+{"lemma": "พัน", "rank": 207, "band": 1, "pos": "num", "kana": "phan", "ja_gloss": "1000・千", "en_gloss": "thousand; 1000", "tnc_rank": 747, "travel_core": true}
+{"lemma": "เพียง", "rank": 208, "band": 1, "pos": "adv", "kana": "phiiang", "ja_gloss": "〜だけ・〜のみ", "en_gloss": "only; just; merely", "tnc_rank": 186, "travel_core": false}
+{"lemma": "ลักษณะ", "rank": 209, "band": 1, "pos": "noun", "kana": "lák-sà-nà", "ja_gloss": "特徴・性質", "en_gloss": "characteristic; feature", "tnc_rank": 187, "travel_core": false}
+{"lemma": "หลัง", "rank": 210, "band": 1, "pos": "prep", "kana": "lǎng", "ja_gloss": "〜の後・後ろ", "en_gloss": "after; behind", "tnc_rank": 188, "travel_core": false}
+{"lemma": "จำนวน", "rank": 211, "band": 1, "pos": "noun", "kana": "jam-nuuan", "ja_gloss": "数・量", "en_gloss": "amount; number; quantity", "tnc_rank": 189, "travel_core": false}
+{"lemma": "ข้อ", "rank": 212, "band": 1, "pos": "noun", "kana": "khɔ̂ɔ", "ja_gloss": "項目・点", "en_gloss": "item; point; joint", "tnc_rank": 190, "travel_core": false}
+{"lemma": "บาท", "rank": 213, "band": 1, "pos": "noun", "kana": "bàat", "ja_gloss": "バーツ（タイ通貨）", "en_gloss": "baht (Thai currency)", "tnc_rank": 260, "travel_core": true}
+{"lemma": "พวก", "rank": 214, "band": 1, "pos": "noun", "kana": "phûuak", "ja_gloss": "グループ・仲間", "en_gloss": "group; party (of people)", "tnc_rank": 191, "travel_core": false}
+{"lemma": "ตน", "rank": 215, "band": 1, "pos": "noun", "kana": "dton", "ja_gloss": "自分・自己", "en_gloss": "self; oneself", "tnc_rank": 192, "travel_core": false}
+{"lemma": "รวม", "rank": 216, "band": 1, "pos": "verb", "kana": "ruuam", "ja_gloss": "含む・合計する", "en_gloss": "to include; to total; to combine", "tnc_rank": 193, "travel_core": false}
+{"lemma": "เริ่ม", "rank": 217, "band": 1, "pos": "verb", "kana": "rə̂əm", "ja_gloss": "始める", "en_gloss": "to begin; to start", "tnc_rank": 194, "travel_core": false}
+{"lemma": "สาว", "rank": 218, "band": 1, "pos": "noun", "kana": "sǎao", "ja_gloss": "若い女性・娘", "en_gloss": "young woman; girl", "tnc_rank": 195, "travel_core": false}
+{"lemma": "เพื่อน", "rank": 219, "band": 1, "pos": "noun", "kana": "phʉ̂ʉan", "ja_gloss": "友達", "en_gloss": "friend", "tnc_rank": 196, "travel_core": true}
+{"lemma": "บุคคล", "rank": 220, "band": 1, "pos": "noun", "kana": "bùk-khon", "ja_gloss": "個人・人", "en_gloss": "person; individual", "tnc_rank": 197, "travel_core": false}
+{"lemma": "ถาม", "rank": 221, "band": 1, "pos": "verb", "kana": "thǎam", "ja_gloss": "尋ねる・質問する", "en_gloss": "to ask", "tnc_rank": 198, "travel_core": false}
+{"lemma": "บ้าง", "rank": 222, "band": 1, "pos": "adv", "kana": "bâng", "ja_gloss": "いくらか・少し", "en_gloss": "some; somewhat", "tnc_rank": 200, "travel_core": false}
+{"lemma": "ราคา", "rank": 223, "band": 1, "pos": "noun", "kana": "raa-khaa", "ja_gloss": "値段・価格", "en_gloss": "price; cost", "tnc_rank": 291, "travel_core": true}
+{"lemma": "พิจารณา", "rank": 224, "band": 1, "pos": "verb", "kana": "phí-jaa-rá-naa", "ja_gloss": "検討する・考慮する", "en_gloss": "to consider; to examine", "tnc_rank": 201, "travel_core": false}
+{"lemma": "อำนาจ", "rank": 225, "band": 1, "pos": "noun", "kana": "am-nâat", "ja_gloss": "権力・権限", "en_gloss": "power; authority", "tnc_rank": 202, "travel_core": false}
+{"lemma": "รัก", "rank": 226, "band": 1, "pos": "verb", "kana": "rák", "ja_gloss": "愛する", "en_gloss": "to love", "tnc_rank": 203, "travel_core": false}
+{"lemma": "วันที่", "rank": 227, "band": 1, "pos": "noun", "kana": "wan-thîi", "ja_gloss": "日付", "en_gloss": "date (calendar)", "tnc_rank": 204, "travel_core": false}
+{"lemma": "ภาพ", "rank": 228, "band": 1, "pos": "noun", "kana": "phâap", "ja_gloss": "絵・画像", "en_gloss": "picture; image", "tnc_rank": 205, "travel_core": false}
+{"lemma": "แพง", "rank": 229, "band": 1, "pos": "adj", "kana": "phɛɛng", "ja_gloss": "高い（値段）", "en_gloss": "expensive", "tnc_rank": 1368, "travel_core": true}
+{"lemma": "ตา", "rank": 230, "band": 1, "pos": "noun", "kana": "dtaa", "ja_gloss": "目", "en_gloss": "eye", "tnc_rank": 206, "travel_core": false}
+{"lemma": "ค่า", "rank": 231, "band": 1, "pos": "noun", "kana": "khâa", "ja_gloss": "料金・価値", "en_gloss": "price; value; fee", "tnc_rank": 207, "travel_core": false}
+{"lemma": "ผ่าน", "rank": 232, "band": 1, "pos": "verb", "kana": "phàan", "ja_gloss": "通る・通過する", "en_gloss": "to pass; to go through", "tnc_rank": 208, "travel_core": false}
+{"lemma": "ห้อง", "rank": 233, "band": 1, "pos": "noun", "kana": "hɔ̂ng", "ja_gloss": "部屋", "en_gloss": "room", "tnc_rank": 209, "travel_core": true}
+{"lemma": "หนังสือ", "rank": 234, "band": 1, "pos": "noun", "kana": "nǎng-sʉ̌ʉ", "ja_gloss": "本・書類", "en_gloss": "book; letter; document", "tnc_rank": 210, "travel_core": false}
+{"lemma": "ข้อมูล", "rank": 235, "band": 1, "pos": "noun", "kana": "khɔ̂ɔ-muun", "ja_gloss": "データ・情報", "en_gloss": "data; information", "tnc_rank": 211, "travel_core": false}
+{"lemma": "ยิ่ง", "rank": 236, "band": 1, "pos": "adv", "kana": "yîng", "ja_gloss": "ますます・いっそう", "en_gloss": "increasingly; even more", "tnc_rank": 212, "travel_core": false}
+{"lemma": "ดัง", "rank": 237, "band": 1, "pos": "adj", "kana": "dang", "ja_gloss": "うるさい・有名な", "en_gloss": "loud; famous", "tnc_rank": 213, "travel_core": false}
+{"lemma": "เพิ่ม", "rank": 238, "band": 1, "pos": "verb", "kana": "phə̂əm", "ja_gloss": "増やす・加える", "en_gloss": "to add; to increase", "tnc_rank": 214, "travel_core": false}
+{"lemma": "ทรง", "rank": 239, "band": 1, "pos": "noun", "kana": "song", "ja_gloss": "形・スタイル", "en_gloss": "shape; form", "tnc_rank": 215, "travel_core": false}
+{"lemma": "ลด", "rank": 240, "band": 1, "pos": "verb", "kana": "lót", "ja_gloss": "減らす・値引きする", "en_gloss": "to reduce; to lower; to discount", "tnc_rank": 265, "travel_core": true}
+{"lemma": "ตั้งแต่", "rank": 241, "band": 1, "pos": "prep", "kana": "dtâng-dtɛ̀ɛ", "ja_gloss": "〜から（時間）", "en_gloss": "since; from", "tnc_rank": 216, "travel_core": false}
+{"lemma": "พ่อ", "rank": 242, "band": 1, "pos": "noun", "kana": "phɔ̂ɔ", "ja_gloss": "父", "en_gloss": "father", "tnc_rank": 217, "travel_core": false}
+{"lemma": "ต่อไป", "rank": 243, "band": 1, "pos": "adv", "kana": "dtɔ̀ɔ-bpai", "ja_gloss": "次に・今後", "en_gloss": "next; continuing; from now on", "tnc_rank": 218, "travel_core": false}
+{"lemma": "สำคัญ", "rank": 244, "band": 1, "pos": "adj", "kana": "sǎm-khan", "ja_gloss": "重要な・大切な", "en_gloss": "important", "tnc_rank": 219, "travel_core": false}
+{"lemma": "เปิด", "rank": 245, "band": 1, "pos": "verb", "kana": "bpə̀ət", "ja_gloss": "開ける・つける", "en_gloss": "to open; to turn on", "tnc_rank": 220, "travel_core": false}
+{"lemma": "จ่าย", "rank": 246, "band": 1, "pos": "verb", "kana": "jàai", "ja_gloss": "支払う", "en_gloss": "to pay", "tnc_rank": 583, "travel_core": true}
+{"lemma": "เศรษฐกิจ", "rank": 247, "band": 1, "pos": "noun", "kana": "sèet-thà-gìt", "ja_gloss": "経済", "en_gloss": "economy", "tnc_rank": 221, "travel_core": false}
+{"lemma": "ไหน", "rank": 248, "band": 1, "pos": "pron", "kana": "nǎi", "ja_gloss": "どの・どこ", "en_gloss": "which?; where?", "tnc_rank": 222, "travel_core": false}
+{"lemma": "กระทำ", "rank": 249, "band": 1, "pos": "verb", "kana": "grà-tham", "ja_gloss": "行う・する", "en_gloss": "to do; to act; to perform", "tnc_rank": 223, "travel_core": false}
+{"lemma": "ตั้ง", "rank": 250, "band": 1, "pos": "verb", "kana": "dtâng", "ja_gloss": "設立する・置く", "en_gloss": "to set up; to establish; to place", "tnc_rank": 224, "travel_core": false}
+{"lemma": "เข้าใจ", "rank": 251, "band": 1, "pos": "verb", "kana": "khâo-jai", "ja_gloss": "理解する・分かる", "en_gloss": "to understand", "tnc_rank": 225, "travel_core": true}
+{"lemma": "ซื้อ", "rank": 252, "band": 1, "pos": "verb", "kana": "sʉ́ʉ", "ja_gloss": "買う", "en_gloss": "to buy", "tnc_rank": 268, "travel_core": true}
+{"lemma": "ภาษา", "rank": 253, "band": 1, "pos": "noun", "kana": "phaa-sǎa", "ja_gloss": "言語・言葉", "en_gloss": "language", "tnc_rank": 227, "travel_core": true}
+{"lemma": "ตรง", "rank": 254, "band": 1, "pos": "adj", "kana": "dtrong", "ja_gloss": "まっすぐな・正直な", "en_gloss": "straight; direct", "tnc_rank": 228, "travel_core": true}
+{"lemma": "เรียน", "rank": 255, "band": 1, "pos": "verb", "kana": "riian", "ja_gloss": "学ぶ・勉強する", "en_gloss": "to study; to learn", "tnc_rank": 229, "travel_core": false}
+{"lemma": "ตอน", "rank": 256, "band": 1, "pos": "noun", "kana": "dtɔɔn", "ja_gloss": "とき・時間帯・部分", "en_gloss": "time; period; part", "tnc_rank": 230, "travel_core": false}
+{"lemma": "ขาย", "rank": 257, "band": 1, "pos": "verb", "kana": "khǎai", "ja_gloss": "売る", "en_gloss": "to sell", "tnc_rank": 271, "travel_core": true}
+{"lemma": "รัฐ", "rank": 258, "band": 1, "pos": "noun", "kana": "rát", "ja_gloss": "州・国家", "en_gloss": "state (polity); government", "tnc_rank": 232, "travel_core": false}
+{"lemma": "การศึกษา", "rank": 259, "band": 1, "pos": "noun", "kana": "gaan-sʉ̀k-sǎa", "ja_gloss": "教育", "en_gloss": "education", "tnc_rank": 233, "travel_core": false}
+{"lemma": "ก็ได้", "rank": 260, "band": 1, "pos": "intj", "kana": "gɔ̂ɔ-dâai", "ja_gloss": "それでもいい・オーケー", "en_gloss": "okay; all right; fine", "tnc_rank": 234, "travel_core": false}
+{"lemma": "รู้สึก", "rank": 261, "band": 1, "pos": "verb", "kana": "rúu-sʉ̀k", "ja_gloss": "感じる", "en_gloss": "to feel", "tnc_rank": 235, "travel_core": false}
+{"lemma": "ทอน", "rank": 262, "band": 1, "pos": "verb", "kana": "thɔɔn", "ja_gloss": "おつりを渡す", "en_gloss": "to give change (money)", "tnc_rank": 4870, "travel_core": true}
+{"lemma": "ขนาด", "rank": 263, "band": 1, "pos": "noun", "kana": "khà-nàat", "ja_gloss": "サイズ・大きさ", "en_gloss": "size; dimension", "tnc_rank": 236, "travel_core": false}
+{"lemma": "เท่านั้น", "rank": 264, "band": 1, "pos": "adv", "kana": "thâo-nán", "ja_gloss": "〜だけ・のみ", "en_gloss": "only; just", "tnc_rank": 237, "travel_core": false}
+{"lemma": "นั่ง", "rank": 265, "band": 1, "pos": "verb", "kana": "nâng", "ja_gloss": "座る", "en_gloss": "to sit", "tnc_rank": 238, "travel_core": false}
+{"lemma": "ชื่อ", "rank": 266, "band": 1, "pos": "noun", "kana": "chʉ̂ʉ", "ja_gloss": "名前", "en_gloss": "name", "tnc_rank": 239, "travel_core": true}
+{"lemma": "เดือน", "rank": 267, "band": 1, "pos": "noun", "kana": "dʉʉan", "ja_gloss": "月（暦）", "en_gloss": "month", "tnc_rank": 240, "travel_core": false}
+{"lemma": "ชาติ", "rank": 268, "band": 1, "pos": "noun", "kana": "châat", "ja_gloss": "国家・生まれ", "en_gloss": "nation; birth; race", "tnc_rank": 241, "travel_core": false}
+{"lemma": "ผิด", "rank": 269, "band": 1, "pos": "adj", "kana": "phìt", "ja_gloss": "間違った", "en_gloss": "wrong; incorrect", "tnc_rank": 242, "travel_core": false}
+{"lemma": "รัฐบาล", "rank": 270, "band": 1, "pos": "noun", "kana": "rát-thà-baan", "ja_gloss": "政府", "en_gloss": "government", "tnc_rank": 243, "travel_core": false}
+{"lemma": "หลัก", "rank": 271, "band": 1, "pos": "noun", "kana": "làk", "ja_gloss": "原則・柱", "en_gloss": "principle; main point; pillar", "tnc_rank": 244, "travel_core": false}
+{"lemma": "นาน", "rank": 272, "band": 1, "pos": "adj", "kana": "naan", "ja_gloss": "長い（時間）", "en_gloss": "long (duration)", "tnc_rank": 245, "travel_core": false}
+{"lemma": "ข้าว", "rank": 273, "band": 1, "pos": "noun", "kana": "khâao", "ja_gloss": "米・ご飯", "en_gloss": "rice; food", "tnc_rank": 404, "travel_core": true}
+{"lemma": "รถ", "rank": 274, "band": 1, "pos": "noun", "kana": "rót", "ja_gloss": "車", "en_gloss": "car; vehicle", "tnc_rank": 246, "travel_core": true}
+{"lemma": "จีน", "rank": 275, "band": 1, "pos": "noun", "kana": "jiin", "ja_gloss": "中国・中国語", "en_gloss": "China; Chinese (person/language)", "tnc_rank": 248, "travel_core": false}
+{"lemma": "ฟัง", "rank": 276, "band": 1, "pos": "verb", "kana": "fang", "ja_gloss": "聞く", "en_gloss": "to listen; to hear", "tnc_rank": 249, "travel_core": false}
+{"lemma": "เล็ก", "rank": 277, "band": 1, "pos": "adj", "kana": "lék", "ja_gloss": "小さい", "en_gloss": "small", "tnc_rank": 250, "travel_core": true}
+{"lemma": "ภายใน", "rank": 278, "band": 1, "pos": "prep", "kana": "phaai-nai", "ja_gloss": "〜以内に・中に", "en_gloss": "within; inside", "tnc_rank": 251, "travel_core": false}
+{"lemma": "แต่ละ", "rank": 279, "band": 1, "pos": "adj", "kana": "dtɛ̀ɛ-lá", "ja_gloss": "それぞれの・各", "en_gloss": "each; every", "tnc_rank": 252, "travel_core": false}
+{"lemma": "ละ", "rank": 280, "band": 1, "pos": "part", "kana": "lá", "ja_gloss": "〜ごとに・〜につき", "en_gloss": "each; per", "tnc_rank": 253, "travel_core": false}
+{"lemma": "ต้องการ", "rank": 281, "band": 1, "pos": "verb", "kana": "dtɔ̂ng-gaan", "ja_gloss": "必要とする・欲しい", "en_gloss": "to need; to want", "tnc_rank": 254, "travel_core": false}
+{"lemma": "ตาย", "rank": 282, "band": 1, "pos": "verb", "kana": "dtaai", "ja_gloss": "死ぬ", "en_gloss": "to die", "tnc_rank": 255, "travel_core": false}
+{"lemma": "มือ", "rank": 283, "band": 1, "pos": "noun", "kana": "mʉʉ", "ja_gloss": "手", "en_gloss": "hand", "tnc_rank": 256, "travel_core": false}
+{"lemma": "หญิง", "rank": 284, "band": 1, "pos": "noun", "kana": "yǐng", "ja_gloss": "女性", "en_gloss": "woman; female", "tnc_rank": 257, "travel_core": false}
+{"lemma": "เรียก", "rank": 285, "band": 1, "pos": "verb", "kana": "rîiak", "ja_gloss": "呼ぶ", "en_gloss": "to call (name/summon)", "tnc_rank": 258, "travel_core": false}
+{"lemma": "รูป", "rank": 286, "band": 1, "pos": "noun", "kana": "rûup", "ja_gloss": "写真・形", "en_gloss": "picture; shape; form", "tnc_rank": 259, "travel_core": false}
+{"lemma": "ดื่ม", "rank": 287, "band": 1, "pos": "verb", "kana": "dʉ̀ʉm", "ja_gloss": "飲む", "en_gloss": "to drink", "tnc_rank": 1230, "travel_core": true}
+{"lemma": "ประชาชน", "rank": 288, "band": 1, "pos": "noun", "kana": "bprà-chaa-chon", "ja_gloss": "国民・人々", "en_gloss": "people; citizens; the public", "tnc_rank": 261, "travel_core": false}
+{"lemma": "ยา", "rank": 289, "band": 1, "pos": "noun", "kana": "yaa", "ja_gloss": "薬", "en_gloss": "medicine; drug", "tnc_rank": 262, "travel_core": true}
+{"lemma": "มนุษย์", "rank": 290, "band": 1, "pos": "noun", "kana": "má-nút", "ja_gloss": "人間", "en_gloss": "human being; person", "tnc_rank": 263, "travel_core": false}
+{"lemma": "เผ็ด", "rank": 291, "band": 1, "pos": "adj", "kana": "phèt", "ja_gloss": "辛い", "en_gloss": "spicy; hot", "tnc_rank": 4884, "travel_core": true}
+{"lemma": "ผลิต", "rank": 292, "band": 1, "pos": "verb", "kana": "phà-lìt", "ja_gloss": "生産する・製造する", "en_gloss": "to produce; to manufacture", "tnc_rank": 266, "travel_core": false}
+{"lemma": "เล่น", "rank": 293, "band": 1, "pos": "verb", "kana": "lên", "ja_gloss": "遊ぶ", "en_gloss": "to play", "tnc_rank": 267, "travel_core": false}
+{"lemma": "หมด", "rank": 294, "band": 1, "pos": "verb", "kana": "mòt", "ja_gloss": "なくなる・使い果たす", "en_gloss": "to run out; to be all gone", "tnc_rank": 269, "travel_core": false}
+{"lemma": "การเมือง", "rank": 295, "band": 1, "pos": "noun", "kana": "gaan-mʉʉang", "ja_gloss": "政治", "en_gloss": "politics", "tnc_rank": 270, "travel_core": false}
+{"lemma": "อร่อย", "rank": 296, "band": 1, "pos": "adj", "kana": "à-rɔ̀i", "ja_gloss": "おいしい", "en_gloss": "delicious; tasty", "tnc_rank": 1509, "travel_core": true}
+{"lemma": "เสนอ", "rank": 297, "band": 1, "pos": "verb", "kana": "sà-nə̌ə", "ja_gloss": "提案する・提供する", "en_gloss": "to propose; to offer", "tnc_rank": 272, "travel_core": false}
+{"lemma": "ปฏิบัติ", "rank": 298, "band": 1, "pos": "verb", "kana": "bpà-dtì-bàt", "ja_gloss": "実行する・実践する", "en_gloss": "to carry out; to practice; to act", "tnc_rank": 273, "travel_core": false}
+{"lemma": "ชาว", "rank": 299, "band": 1, "pos": "noun", "kana": "chaao", "ja_gloss": "〜人（住民を表す接頭辞）", "en_gloss": "people (of a place); -ese/-an (prefix)", "tnc_rank": 274, "travel_core": false}
+{"lemma": "พร้อม", "rank": 300, "band": 1, "pos": "adj", "kana": "phrɔ́ɔm", "ja_gloss": "準備ができた", "en_gloss": "ready; prepared", "tnc_rank": 275, "travel_core": false}
+{"lemma": "หวาน", "rank": 301, "band": 1, "pos": "adj", "kana": "wǎan", "ja_gloss": "甘い", "en_gloss": "sweet", "tnc_rank": 1005, "travel_core": true}
+{"lemma": "มัก", "rank": 302, "band": 1, "pos": "adv", "kana": "mák", "ja_gloss": "よく・たいてい", "en_gloss": "often; usually", "tnc_rank": 276, "travel_core": false}
+{"lemma": "รักษา", "rank": 303, "band": 1, "pos": "verb", "kana": "rák-sǎa", "ja_gloss": "治療する・保つ", "en_gloss": "to treat; to heal; to maintain", "tnc_rank": 277, "travel_core": false}
+{"lemma": "เลือก", "rank": 304, "band": 1, "pos": "verb", "kana": "lʉ̂ʉak", "ja_gloss": "選ぶ", "en_gloss": "to choose; to select", "tnc_rank": 278, "travel_core": false}
+{"lemma": "อ่าน", "rank": 305, "band": 1, "pos": "verb", "kana": "àan", "ja_gloss": "読む", "en_gloss": "to read", "tnc_rank": 279, "travel_core": false}
+{"lemma": "อย่างไร", "rank": 306, "band": 1, "pos": "pron", "kana": "yàang-rai", "ja_gloss": "どのように・どう", "en_gloss": "how?", "tnc_rank": 280, "travel_core": false}
+{"lemma": "เค็ม", "rank": 307, "band": 1, "pos": "adj", "kana": "khem", "ja_gloss": "塩辛い", "en_gloss": "salty", "tnc_rank": 4445, "travel_core": true}
+{"lemma": "เขียน", "rank": 308, "band": 1, "pos": "verb", "kana": "khǐian", "ja_gloss": "書く", "en_gloss": "to write", "tnc_rank": 281, "travel_core": false}
+{"lemma": "ล่ะ", "rank": 309, "band": 1, "pos": "part", "kana": "lâ", "ja_gloss": "〜は？・じゃあ（問いかけの助詞）", "en_gloss": "question particle: what about ~?; then", "tnc_rank": 283, "travel_core": false}
+{"lemma": "ระยะ", "rank": 310, "band": 1, "pos": "noun", "kana": "rá-yá", "ja_gloss": "距離・期間", "en_gloss": "distance; period; interval", "tnc_rank": 284, "travel_core": false}
+{"lemma": "ค่ะ", "rank": 311, "band": 1, "pos": "part", "kana": "khâ", "ja_gloss": "（女性の丁寧語尾）", "en_gloss": "polite particle (female speaker)", "tnc_rank": 285, "travel_core": false}
+{"lemma": "ไข่", "rank": 312, "band": 1, "pos": "noun", "kana": "khài", "ja_gloss": "卵", "en_gloss": "egg", "tnc_rank": 1551, "travel_core": true}
+{"lemma": "ตลอด", "rank": 313, "band": 1, "pos": "prep", "kana": "dtà-lɔ̀ɔt", "ja_gloss": "〜を通して・ずっと", "en_gloss": "throughout; through", "tnc_rank": 286, "travel_core": false}
+{"lemma": "สู่", "rank": 314, "band": 1, "pos": "prep", "kana": "sùu", "ja_gloss": "〜へ", "en_gloss": "to; towards", "tnc_rank": 287, "travel_core": false}
+{"lemma": "ความคิด", "rank": 315, "band": 1, "pos": "noun", "kana": "khwaam-khít", "ja_gloss": "考え・アイデア", "en_gloss": "thought; idea", "tnc_rank": 288, "travel_core": false}
+{"lemma": "หน้าที่", "rank": 316, "band": 1, "pos": "noun", "kana": "nâa-thîi", "ja_gloss": "義務・役目", "en_gloss": "duty; function; responsibility", "tnc_rank": 290, "travel_core": false}
+{"lemma": "ไก่", "rank": 317, "band": 1, "pos": "noun", "kana": "gài", "ja_gloss": "鶏・鶏肉", "en_gloss": "chicken; fowl", "tnc_rank": 1349, "travel_core": true}
+{"lemma": "ประชุม", "rank": 318, "band": 1, "pos": "verb", "kana": "bprà-chum", "ja_gloss": "会議をする・集まる", "en_gloss": "to have a meeting; to assemble", "tnc_rank": 292, "travel_core": false}
+{"lemma": "ผู้หญิง", "rank": 319, "band": 1, "pos": "noun", "kana": "phûu-yǐng", "ja_gloss": "女性", "en_gloss": "woman; female", "tnc_rank": 293, "travel_core": false}
+{"lemma": "ติด", "rank": 320, "band": 1, "pos": "verb", "kana": "dtìt", "ja_gloss": "くっつく・貼る", "en_gloss": "to attach; to stick; to be stuck", "tnc_rank": 294, "travel_core": false}
+{"lemma": "ใส่", "rank": 321, "band": 1, "pos": "verb", "kana": "sài", "ja_gloss": "着る・入れる", "en_gloss": "to wear; to put in; to add", "tnc_rank": 295, "travel_core": false}
+{"lemma": "หมู", "rank": 322, "band": 1, "pos": "noun", "kana": "mǔu", "ja_gloss": "豚・豚肉", "en_gloss": "pig; pork", "tnc_rank": 1553, "travel_core": true}
+{"lemma": "ศึกษา", "rank": 323, "band": 1, "pos": "verb", "kana": "sʉ̀k-sǎa", "ja_gloss": "学ぶ・研究する", "en_gloss": "to study; to learn", "tnc_rank": 296, "travel_core": false}
+{"lemma": "เก็บ", "rank": 324, "band": 1, "pos": "verb", "kana": "gèp", "ja_gloss": "集める・しまう・拾う", "en_gloss": "to keep; to collect; to pick up", "tnc_rank": 297, "travel_core": false}
+{"lemma": "ชั้น", "rank": 325, "band": 1, "pos": "noun", "kana": "chán", "ja_gloss": "階・レベル・クラス", "en_gloss": "floor; level; class", "tnc_rank": 298, "travel_core": false}
+{"lemma": "เดียวกัน", "rank": 326, "band": 1, "pos": "adj", "kana": "diao-gan", "ja_gloss": "同じ", "en_gloss": "same; identical", "tnc_rank": 299, "travel_core": false}
+{"lemma": "สิทธิ", "rank": 327, "band": 1, "pos": "noun", "kana": "sìt-thí", "ja_gloss": "権利", "en_gloss": "right; entitlement", "tnc_rank": 300, "travel_core": false}
+{"lemma": "เนื้อ", "rank": 328, "band": 1, "pos": "noun", "kana": "nʉ́ʉa", "ja_gloss": "肉", "en_gloss": "meat; flesh", "tnc_rank": 718, "travel_core": true}
+{"lemma": "ประโยชน์", "rank": 329, "band": 1, "pos": "noun", "kana": "bprà-yòot", "ja_gloss": "利益・役立つこと", "en_gloss": "benefit; advantage; use", "tnc_rank": 301, "travel_core": false}
+{"lemma": "คณะกรรมการ", "rank": 330, "band": 1, "pos": "noun", "kana": "khá-ná-gam-má-gaan", "ja_gloss": "委員会", "en_gloss": "committee; board", "tnc_rank": 302, "travel_core": false}
+{"lemma": "แค่", "rank": 331, "band": 1, "pos": "adv", "kana": "khɛ̂ɛ", "ja_gloss": "〜だけ", "en_gloss": "only; just; merely", "tnc_rank": 303, "travel_core": false}
+{"lemma": "เปลี่ยน", "rank": 332, "band": 1, "pos": "verb", "kana": "bplìian", "ja_gloss": "変える・変わる", "en_gloss": "to change", "tnc_rank": 304, "travel_core": false}
+{"lemma": "ปัจจุบัน", "rank": 333, "band": 1, "pos": "adj", "kana": "bpàt-jù-ban", "ja_gloss": "現在の", "en_gloss": "present; current", "tnc_rank": 305, "travel_core": false}
+{"lemma": "ปลา", "rank": 334, "band": 1, "pos": "noun", "kana": "bplaa", "ja_gloss": "魚", "en_gloss": "fish", "tnc_rank": 517, "travel_core": true}
+{"lemma": "เจ้า", "rank": 335, "band": 1, "pos": "noun", "kana": "jâao", "ja_gloss": "主・持ち主", "en_gloss": "lord; master; owner", "tnc_rank": 306, "travel_core": false}
+{"lemma": "พื้นที่", "rank": 336, "band": 1, "pos": "noun", "kana": "phʉ́ʉn-thîi", "ja_gloss": "地域・面積", "en_gloss": "area", "tnc_rank": 307, "travel_core": false}
+{"lemma": "คะ", "rank": 337, "band": 1, "pos": "part", "kana": "khá", "ja_gloss": "（女性の丁寧な疑問語尾）", "en_gloss": "polite question particle (female speaker)", "tnc_rank": 308, "travel_core": false}
+{"lemma": "วิธี", "rank": 338, "band": 1, "pos": "noun", "kana": "wí-thii", "ja_gloss": "方法", "en_gloss": "method; way", "tnc_rank": 309, "travel_core": false}
+{"lemma": "ตำแหน่ง", "rank": 339, "band": 1, "pos": "noun", "kana": "dtam-nɛ̀ng", "ja_gloss": "位置・地位", "en_gloss": "position; location; post", "tnc_rank": 310, "travel_core": false}
+{"lemma": "กุ้ง", "rank": 340, "band": 1, "pos": "noun", "kana": "gûng", "ja_gloss": "エビ", "en_gloss": "shrimp; prawn", "tnc_rank": 1423, "travel_core": true}
+{"lemma": "ประจำ", "rank": 341, "band": 1, "pos": "adj", "kana": "bprà-jam", "ja_gloss": "定期的な・常時の", "en_gloss": "regular; permanent; usual", "tnc_rank": 312, "travel_core": false}
+{"lemma": "พยายาม", "rank": 342, "band": 1, "pos": "verb", "kana": "phá-yaa-yaam", "ja_gloss": "努力する・頑張る", "en_gloss": "to try; to make an effort", "tnc_rank": 313, "travel_core": false}
+{"lemma": "เนื่องจาก", "rank": 343, "band": 1, "pos": "conj", "kana": "nʉ̂ʉang-jàak", "ja_gloss": "〜のために・〜のせいで", "en_gloss": "because; due to; owing to", "tnc_rank": 314, "travel_core": false}
+{"lemma": "โอกาส", "rank": 344, "band": 1, "pos": "noun", "kana": "oo-gàat", "ja_gloss": "機会・チャンス", "en_gloss": "opportunity; chance", "tnc_rank": 315, "travel_core": false}
+{"lemma": "ผัก", "rank": 345, "band": 1, "pos": "noun", "kana": "phàk", "ja_gloss": "野菜", "en_gloss": "vegetable", "tnc_rank": 1159, "travel_core": true}
+{"lemma": "แม้", "rank": 346, "band": 1, "pos": "conj", "kana": "mɛ́ɛ", "ja_gloss": "〜でも・たとえ〜でも", "en_gloss": "although; even if", "tnc_rank": 316, "travel_core": false}
+{"lemma": "สมัย", "rank": 347, "band": 1, "pos": "noun", "kana": "sà-mǎi", "ja_gloss": "時代", "en_gloss": "era; time; period", "tnc_rank": 317, "travel_core": false}
+{"lemma": "อย่า", "rank": 348, "band": 1, "pos": "adv", "kana": "yàa", "ja_gloss": "〜しないで", "en_gloss": "don't; do not", "tnc_rank": 318, "travel_core": false}
+{"lemma": "สัมพันธ์", "rank": 349, "band": 1, "pos": "verb", "kana": "sǎm-phan", "ja_gloss": "関係する", "en_gloss": "to relate; to be related (to)", "tnc_rank": 319, "travel_core": false}
+{"lemma": "ประเภท", "rank": 350, "band": 1, "pos": "noun", "kana": "bprà-phêet", "ja_gloss": "種類・カテゴリー", "en_gloss": "category; type; kind", "tnc_rank": 320, "travel_core": false}
+{"lemma": "ผลไม้", "rank": 351, "band": 1, "pos": "noun", "kana": "phǒn-lá-máai", "ja_gloss": "果物", "en_gloss": "fruit", "tnc_rank": 1701, "travel_core": true}
+{"lemma": "เหตุ", "rank": 352, "band": 1, "pos": "noun", "kana": "hèet", "ja_gloss": "原因・理由", "en_gloss": "cause; reason", "tnc_rank": 321, "travel_core": false}
+{"lemma": "ตอบ", "rank": 353, "band": 1, "pos": "verb", "kana": "dtɔ̀ɔp", "ja_gloss": "答える", "en_gloss": "to answer; to reply", "tnc_rank": 322, "travel_core": false}
+{"lemma": "วัฒนธรรม", "rank": 354, "band": 1, "pos": "noun", "kana": "wát-thá-ná-tham", "ja_gloss": "文化", "en_gloss": "culture", "tnc_rank": 323, "travel_core": false}
+{"lemma": "ตนเอง", "rank": 355, "band": 1, "pos": "pron", "kana": "dton-eeng", "ja_gloss": "自分自身", "en_gloss": "oneself", "tnc_rank": 324, "travel_core": false}
+{"lemma": "นั่น", "rank": 356, "band": 1, "pos": "pron", "kana": "nân", "ja_gloss": "それ・あれ", "en_gloss": "that; those", "tnc_rank": 325, "travel_core": false}
+{"lemma": "ผัด", "rank": 357, "band": 1, "pos": "verb", "kana": "phàt", "ja_gloss": "炒める", "en_gloss": "to stir-fry", "tnc_rank": 2564, "travel_core": true}
+{"lemma": "สัก", "rank": 358, "band": 1, "pos": "adv", "kana": "sàk", "ja_gloss": "だいたい・〜くらい", "en_gloss": "about; just; approximately", "tnc_rank": 326, "travel_core": false}
+{"lemma": "สินค้า", "rank": 359, "band": 1, "pos": "noun", "kana": "sǐn-kháa", "ja_gloss": "商品", "en_gloss": "goods; product; merchandise", "tnc_rank": 327, "travel_core": false}
+{"lemma": "เดิม", "rank": 360, "band": 1, "pos": "adj", "kana": "dəəm", "ja_gloss": "元の・以前の", "en_gloss": "original; former", "tnc_rank": 328, "travel_core": false}
+{"lemma": "จำเป็น", "rank": 361, "band": 1, "pos": "adj", "kana": "jam-bpen", "ja_gloss": "必要な", "en_gloss": "necessary; essential", "tnc_rank": 329, "travel_core": false}
+{"lemma": "เปลี่ยนแปลง", "rank": 362, "band": 1, "pos": "verb", "kana": "bplìian-bplɛɛng", "ja_gloss": "変化する・変える", "en_gloss": "to change", "tnc_rank": 330, "travel_core": false}
+{"lemma": "ต้ม", "rank": 363, "band": 1, "pos": "verb", "kana": "dtôm", "ja_gloss": "煮る・茹でる", "en_gloss": "to boil", "tnc_rank": 2127, "travel_core": true}
+{"lemma": "ถือ", "rank": 364, "band": 1, "pos": "verb", "kana": "thʉ̌ʉ", "ja_gloss": "持つ・とらえる", "en_gloss": "to hold; to carry; to consider", "tnc_rank": 331, "travel_core": false}
+{"lemma": "เล่า", "rank": 365, "band": 1, "pos": "verb", "kana": "lâo", "ja_gloss": "話す・語る", "en_gloss": "to tell; to narrate", "tnc_rank": 332, "travel_core": false}
+{"lemma": "ประกอบ", "rank": 366, "band": 1, "pos": "verb", "kana": "bprà-gɔ̀ɔp", "ja_gloss": "組み立てる・構成する", "en_gloss": "to assemble; to consist of", "tnc_rank": 333, "travel_core": false}
+{"lemma": "ชนิด", "rank": 367, "band": 1, "pos": "noun", "kana": "chá-nít", "ja_gloss": "種類", "en_gloss": "type; kind; species", "tnc_rank": 334, "travel_core": false}
+{"lemma": "กระทรวง", "rank": 368, "band": 1, "pos": "noun", "kana": "grà-suuang", "ja_gloss": "省（役所）", "en_gloss": "ministry (government)", "tnc_rank": 335, "travel_core": false}
+{"lemma": "ย่าง", "rank": 369, "band": 1, "pos": "verb", "kana": "yâang", "ja_gloss": "焼く", "en_gloss": "to grill; to roast", "tnc_rank": 1951, "travel_core": true}
+{"lemma": "ปรากฏ", "rank": 370, "band": 1, "pos": "verb", "kana": "bpraa-gòt", "ja_gloss": "現れる", "en_gloss": "to appear; to occur", "tnc_rank": 336, "travel_core": false}
+{"lemma": "แล้วก็", "rank": 371, "band": 1, "pos": "conj", "kana": "lɛ́ɛo-gɔ̂ɔ", "ja_gloss": "それから", "en_gloss": "and then; then", "tnc_rank": 337, "travel_core": false}
+{"lemma": "ชาย", "rank": 372, "band": 1, "pos": "noun", "kana": "chaai", "ja_gloss": "男性", "en_gloss": "man; male", "tnc_rank": 338, "travel_core": false}
+{"lemma": "ดำเนินการ", "rank": 373, "band": 1, "pos": "verb", "kana": "dam-nəən-gaan", "ja_gloss": "実施する・進める", "en_gloss": "to carry out; to operate; to proceed", "tnc_rank": 339, "travel_core": false}
+{"lemma": "รอบ", "rank": 374, "band": 1, "pos": "noun", "kana": "rɔ̂ɔp", "ja_gloss": "回・周", "en_gloss": "round; cycle; time", "tnc_rank": 340, "travel_core": false}
+{"lemma": "จาน", "rank": 375, "band": 1, "pos": "noun", "kana": "jaan", "ja_gloss": "皿", "en_gloss": "plate; dish", "tnc_rank": 1508, "travel_core": true}
+{"lemma": "บริษัท", "rank": 376, "band": 1, "pos": "noun", "kana": "bɔɔ-rí-sàt", "ja_gloss": "会社", "en_gloss": "company; firm", "tnc_rank": 341, "travel_core": false}
+{"lemma": "จังหวัด", "rank": 377, "band": 1, "pos": "noun", "kana": "jang-wàt", "ja_gloss": "県・州（タイの行政区）", "en_gloss": "province", "tnc_rank": 342, "travel_core": false}
+{"lemma": "ใบ", "rank": 378, "band": 1, "pos": "classifier", "kana": "bai", "ja_gloss": "類別詞：葉・紙・チケットなど", "en_gloss": "classifier for flat/hollow objects (leaves, sheets, tickets)", "tnc_rank": 343, "travel_core": true}
+{"lemma": "นอน", "rank": 379, "band": 1, "pos": "verb", "kana": "nɔɔn", "ja_gloss": "寝る・横になる", "en_gloss": "to sleep; to lie down", "tnc_rank": 344, "travel_core": true}
+{"lemma": "ทั้งหมด", "rank": 380, "band": 1, "pos": "pron", "kana": "tháng-mòt", "ja_gloss": "全部・すべて", "en_gloss": "all; entirely", "tnc_rank": 345, "travel_core": false}
+{"lemma": "ช้อน", "rank": 381, "band": 1, "pos": "noun", "kana": "chɔ́ɔn", "ja_gloss": "スプーン", "en_gloss": "spoon", "tnc_rank": 2115, "travel_core": true}
+{"lemma": "เกิน", "rank": 382, "band": 1, "pos": "verb", "kana": "gəən", "ja_gloss": "超える・〜すぎる", "en_gloss": "to exceed; too much", "tnc_rank": 346, "travel_core": false}
+{"lemma": "สุข", "rank": 383, "band": 1, "pos": "noun", "kana": "sùk", "ja_gloss": "幸せ・喜び", "en_gloss": "happiness; joy", "tnc_rank": 347, "travel_core": false}
+{"lemma": "รู้จัก", "rank": 384, "band": 1, "pos": "verb", "kana": "rúu-jàk", "ja_gloss": "知り合いである・知っている", "en_gloss": "to know (a person); to be acquainted with", "tnc_rank": 348, "travel_core": false}
+{"lemma": "ครู", "rank": 385, "band": 1, "pos": "noun", "kana": "khruu", "ja_gloss": "先生・教師", "en_gloss": "teacher", "tnc_rank": 349, "travel_core": false}
+{"lemma": "โดยเฉพาะ", "rank": 386, "band": 1, "pos": "adv", "kana": "dooi-chà-phɔ́", "ja_gloss": "特に", "en_gloss": "especially; particularly", "tnc_rank": 350, "travel_core": false}
+{"lemma": "แก้ว", "rank": 387, "band": 1, "pos": "noun", "kana": "gɛ̂ɛo", "ja_gloss": "グラス・ガラス", "en_gloss": "glass (for drinking); crystal", "tnc_rank": 631, "travel_core": true}
+{"lemma": "ดังนั้น", "rank": 388, "band": 1, "pos": "adv", "kana": "dang-nán", "ja_gloss": "したがって・だから", "en_gloss": "therefore; thus", "tnc_rank": 351, "travel_core": false}
+{"lemma": "ร้าน", "rank": 389, "band": 1, "pos": "noun", "kana": "ráan", "ja_gloss": "店", "en_gloss": "shop; store", "tnc_rank": 352, "travel_core": true}
+{"lemma": "บริการ", "rank": 390, "band": 1, "pos": "noun", "kana": "bɔɔ-rí-gaan", "ja_gloss": "サービス", "en_gloss": "service", "tnc_rank": 353, "travel_core": false}
+{"lemma": "ทราบ", "rank": 391, "band": 1, "pos": "verb", "kana": "sâap", "ja_gloss": "存じる・知る（丁寧）", "en_gloss": "to know (polite/formal)", "tnc_rank": 354, "travel_core": false}
+{"lemma": "ประมาณ", "rank": 392, "band": 1, "pos": "adv", "kana": "bprà-maan", "ja_gloss": "だいたい・約", "en_gloss": "approximately; about", "tnc_rank": 355, "travel_core": false}
+{"lemma": "ขวด", "rank": 393, "band": 1, "pos": "noun", "kana": "khùuat", "ja_gloss": "瓶・ボトル", "en_gloss": "bottle", "tnc_rank": 1943, "travel_core": true}
+{"lemma": "จุด", "rank": 394, "band": 1, "pos": "noun", "kana": "jùt", "ja_gloss": "点・場所", "en_gloss": "point; dot; spot", "tnc_rank": 356, "travel_core": false}
+{"lemma": "ง่าย", "rank": 395, "band": 1, "pos": "adj", "kana": "ngâai", "ja_gloss": "簡単な・易しい", "en_gloss": "easy; simple", "tnc_rank": 357, "travel_core": false}
+{"lemma": "โครงการ", "rank": 396, "band": 1, "pos": "noun", "kana": "khroong-gaan", "ja_gloss": "プロジェクト・計画", "en_gloss": "project; plan", "tnc_rank": 358, "travel_core": false}
+{"lemma": "ตัวอย่าง", "rank": 397, "band": 1, "pos": "noun", "kana": "dtuua-yàang", "ja_gloss": "例・サンプル", "en_gloss": "example; sample", "tnc_rank": 359, "travel_core": false}
+{"lemma": "ข้าง", "rank": 398, "band": 1, "pos": "noun", "kana": "khâang", "ja_gloss": "側・横", "en_gloss": "side", "tnc_rank": 360, "travel_core": false}
+{"lemma": "กาแฟ", "rank": 399, "band": 1, "pos": "noun", "kana": "gaa-fɛɛ", "ja_gloss": "コーヒー", "en_gloss": "coffee", "tnc_rank": 1965, "travel_core": true}
+{"lemma": "ภาค", "rank": 400, "band": 1, "pos": "noun", "kana": "phâak", "ja_gloss": "地域・部", "en_gloss": "part; region; section", "tnc_rank": 361, "travel_core": false}
+{"lemma": "เรียกว่า", "rank": 401, "band": 1, "pos": "verb", "kana": "rîiak-wâa", "ja_gloss": "〜と呼ばれる", "en_gloss": "to be called; to be known as", "tnc_rank": 362, "travel_core": false}
+{"lemma": "คืน", "rank": 402, "band": 1, "pos": "noun", "kana": "khʉʉn", "ja_gloss": "夜・晩", "en_gloss": "night", "tnc_rank": 363, "travel_core": true}
+{"lemma": "หรอก", "rank": 403, "band": 1, "pos": "part", "kana": "rɔ̀k", "ja_gloss": "（否定を和らげる語尾）", "en_gloss": "emphasizing/softening particle (with negation)", "tnc_rank": 364, "travel_core": false}
+{"lemma": "โรค", "rank": 404, "band": 1, "pos": "noun", "kana": "rôok", "ja_gloss": "病気", "en_gloss": "disease; illness", "tnc_rank": 365, "travel_core": false}
+{"lemma": "ชา", "rank": 405, "band": 1, "pos": "noun", "kana": "chaa", "ja_gloss": "お茶", "en_gloss": "tea", "tnc_rank": 699, "travel_core": true}
+{"lemma": "อาการ", "rank": 406, "band": 1, "pos": "noun", "kana": "aa-gaan", "ja_gloss": "症状・容体", "en_gloss": "symptom; condition", "tnc_rank": 366, "travel_core": false}
+{"lemma": "อายุ", "rank": 407, "band": 1, "pos": "noun", "kana": "aa-yú", "ja_gloss": "年齢", "en_gloss": "age", "tnc_rank": 367, "travel_core": false}
+{"lemma": "เหล่านี้", "rank": 408, "band": 1, "pos": "pron", "kana": "lào-níi", "ja_gloss": "これら", "en_gloss": "these", "tnc_rank": 368, "travel_core": false}
+{"lemma": "พา", "rank": 409, "band": 1, "pos": "verb", "kana": "phaa", "ja_gloss": "連れて行く", "en_gloss": "to take; to bring (a person along)", "tnc_rank": 369, "travel_core": false}
+{"lemma": "แก", "rank": 410, "band": 1, "pos": "pron", "kana": "gɛɛ", "ja_gloss": "お前・あんた（親しい間柄）", "en_gloss": "you (informal, familiar)", "tnc_rank": 370, "travel_core": false}
+{"lemma": "เบียร์", "rank": 411, "band": 1, "pos": "noun", "kana": "biia", "ja_gloss": "ビール", "en_gloss": "beer", "tnc_rank": 3636, "travel_core": true}
+{"lemma": "แตกต่าง", "rank": 412, "band": 1, "pos": "verb", "kana": "dtɛ̀ɛk-dtàang", "ja_gloss": "異なる・違う", "en_gloss": "to differ; to be different", "tnc_rank": 371, "travel_core": false}
+{"lemma": "วิธีการ", "rank": 413, "band": 1, "pos": "noun", "kana": "wí-thii-gaan", "ja_gloss": "方法・手法", "en_gloss": "method; methodology", "tnc_rank": 372, "travel_core": false}
+{"lemma": "น้อง", "rank": 414, "band": 1, "pos": "noun", "kana": "nɔ́ɔng", "ja_gloss": "弟・妹・年下の人", "en_gloss": "younger sibling; younger person", "tnc_rank": 373, "travel_core": false}
+{"lemma": "หมอ", "rank": 415, "band": 1, "pos": "noun", "kana": "mɔ̌ɔ", "ja_gloss": "医者", "en_gloss": "doctor; physician", "tnc_rank": 374, "travel_core": true}
+{"lemma": "ความรู้สึก", "rank": 416, "band": 1, "pos": "noun", "kana": "khwaam-rúu-sʉ̀k", "ja_gloss": "気持ち・感情", "en_gloss": "feeling; emotion", "tnc_rank": 375, "travel_core": false}
+{"lemma": "นม", "rank": 417, "band": 1, "pos": "noun", "kana": "nom", "ja_gloss": "牛乳・ミルク", "en_gloss": "milk", "tnc_rank": 1858, "travel_core": true}
+{"lemma": "แทน", "rank": 418, "band": 1, "pos": "verb", "kana": "thɛɛn", "ja_gloss": "代わりに・代わる", "en_gloss": "to replace; instead of", "tnc_rank": 376, "travel_core": false}
+{"lemma": "ที่อยู่", "rank": 419, "band": 1, "pos": "noun", "kana": "thîi-yùu", "ja_gloss": "住所", "en_gloss": "address", "tnc_rank": 377, "travel_core": false}
+{"lemma": "เชื่อ", "rank": 420, "band": 1, "pos": "verb", "kana": "chʉ̂ʉa", "ja_gloss": "信じる", "en_gloss": "to believe; to trust", "tnc_rank": 378, "travel_core": false}
+{"lemma": "ล้าน", "rank": 421, "band": 1, "pos": "num", "kana": "láan", "ja_gloss": "100万", "en_gloss": "million", "tnc_rank": 379, "travel_core": false}
+{"lemma": "ยาว", "rank": 422, "band": 1, "pos": "adj", "kana": "yaao", "ja_gloss": "長い", "en_gloss": "long", "tnc_rank": 380, "travel_core": false}
+{"lemma": "ราชการ", "rank": 423, "band": 1, "pos": "noun", "kana": "râat-chá-gaan", "ja_gloss": "官公庁・公務", "en_gloss": "government service; public affairs", "tnc_rank": 381, "travel_core": false}
+{"lemma": "ครอบครัว", "rank": 424, "band": 1, "pos": "noun", "kana": "khrɔ̂ɔp-khruua", "ja_gloss": "家族", "en_gloss": "family", "tnc_rank": 382, "travel_core": false}
+{"lemma": "เดินทาง", "rank": 425, "band": 1, "pos": "verb", "kana": "dəən-thaang", "ja_gloss": "旅行する・移動する", "en_gloss": "to travel", "tnc_rank": 384, "travel_core": false}
+{"lemma": "นา", "rank": 426, "band": 1, "pos": "noun", "kana": "naa", "ja_gloss": "田んぼ", "en_gloss": "rice field; paddy field", "tnc_rank": 385, "travel_core": false}
+{"lemma": "โรงเรียน", "rank": 427, "band": 1, "pos": "noun", "kana": "roong-riian", "ja_gloss": "学校", "en_gloss": "school", "tnc_rank": 386, "travel_core": false}
+{"lemma": "คณะ", "rank": 428, "band": 1, "pos": "noun", "kana": "khá-ná", "ja_gloss": "グループ・学部", "en_gloss": "group; faculty; department", "tnc_rank": 387, "travel_core": false}
+{"lemma": "สภา", "rank": 429, "band": 1, "pos": "noun", "kana": "sà-phaa", "ja_gloss": "議会・評議会", "en_gloss": "council; assembly; congress", "tnc_rank": 388, "travel_core": false}
+{"lemma": "สภาพ", "rank": 430, "band": 1, "pos": "noun", "kana": "sà-phâap", "ja_gloss": "状態", "en_gloss": "state; condition", "tnc_rank": 389, "travel_core": false}
+{"lemma": "ที", "rank": 431, "band": 1, "pos": "classifier", "kana": "thii", "ja_gloss": "類別詞：〜回・〜度", "en_gloss": "classifier for times/occasions", "tnc_rank": 390, "travel_core": false}
+{"lemma": "พรรค", "rank": 432, "band": 1, "pos": "noun", "kana": "phák", "ja_gloss": "政党", "en_gloss": "(political) party", "tnc_rank": 391, "travel_core": false}
+{"lemma": "วัด", "rank": 433, "band": 1, "pos": "noun", "kana": "wát", "ja_gloss": "寺", "en_gloss": "temple (Buddhist)", "tnc_rank": 392, "travel_core": false}
+{"lemma": "ประกาศ", "rank": 434, "band": 1, "pos": "verb", "kana": "bprà-gàat", "ja_gloss": "発表する・知らせる", "en_gloss": "to announce; to declare", "tnc_rank": 393, "travel_core": false}
+{"lemma": "นาง", "rank": 435, "band": 1, "pos": "noun", "kana": "naang", "ja_gloss": "女性・〜夫人", "en_gloss": "woman; Mrs. (title)", "tnc_rank": 394, "travel_core": false}
+{"lemma": "หัว", "rank": 436, "band": 1, "pos": "noun", "kana": "hǔua", "ja_gloss": "頭", "en_gloss": "head", "tnc_rank": 395, "travel_core": false}
+{"lemma": "ตั๋ว", "rank": 437, "band": 1, "pos": "noun", "kana": "dtǔua", "ja_gloss": "切符・チケット", "en_gloss": "ticket", "tnc_rank": 3312, "travel_core": true}
+{"lemma": "กลาง", "rank": 438, "band": 1, "pos": "noun", "kana": "glaang", "ja_gloss": "中央・真ん中", "en_gloss": "middle; center", "tnc_rank": 396, "travel_core": false}
+{"lemma": "แรง", "rank": 439, "band": 1, "pos": "noun", "kana": "rɛɛng", "ja_gloss": "力", "en_gloss": "force; strength; power", "tnc_rank": 397, "travel_core": false}
+{"lemma": "คู่", "rank": 440, "band": 1, "pos": "noun", "kana": "khûu", "ja_gloss": "ペア・カップル", "en_gloss": "pair; couple", "tnc_rank": 398, "travel_core": false}
+{"lemma": "ตลาด", "rank": 441, "band": 1, "pos": "noun", "kana": "dtà-làat", "ja_gloss": "市場", "en_gloss": "market", "tnc_rank": 399, "travel_core": true}
+{"lemma": "กลายเป็น", "rank": 442, "band": 1, "pos": "verb", "kana": "glaai-bpen", "ja_gloss": "〜になる", "en_gloss": "to become", "tnc_rank": 400, "travel_core": false}
+{"lemma": "สถานี", "rank": 443, "band": 1, "pos": "noun", "kana": "sà-thǎa-nii", "ja_gloss": "駅", "en_gloss": "station", "tnc_rank": 1162, "travel_core": true}
+{"lemma": "จับ", "rank": 444, "band": 1, "pos": "verb", "kana": "jàp", "ja_gloss": "つかむ・捕まえる", "en_gloss": "to catch; to hold; to grab", "tnc_rank": 401, "travel_core": false}
+{"lemma": "วิจัย", "rank": 445, "band": 1, "pos": "noun", "kana": "wí-jai", "ja_gloss": "研究", "en_gloss": "research", "tnc_rank": 402, "travel_core": false}
+{"lemma": "แนว", "rank": 446, "band": 1, "pos": "noun", "kana": "nɛɛo", "ja_gloss": "列・線・スタイル", "en_gloss": "row; line; style", "tnc_rank": 403, "travel_core": false}
+{"lemma": "หัน", "rank": 447, "band": 1, "pos": "verb", "kana": "hǎn", "ja_gloss": "向きを変える・振り向く", "en_gloss": "to turn (around)", "tnc_rank": 405, "travel_core": false}
+{"lemma": "สนามบิน", "rank": 448, "band": 1, "pos": "noun", "kana": "sà-nǎam-bin", "ja_gloss": "空港", "en_gloss": "airport", "tnc_rank": 2494, "travel_core": true}
+{"lemma": "ไม่ว่า", "rank": 449, "band": 1, "pos": "conj", "kana": "mâi-wâa", "ja_gloss": "〜であろうと・〜にかかわらず", "en_gloss": "regardless of; no matter", "tnc_rank": 406, "travel_core": false}
+{"lemma": "เฉพาะ", "rank": 450, "band": 1, "pos": "adj", "kana": "chà-phɔ́", "ja_gloss": "特定の", "en_gloss": "specific; particular", "tnc_rank": 407, "travel_core": false}
+{"lemma": "ยก", "rank": 451, "band": 1, "pos": "verb", "kana": "yók", "ja_gloss": "持ち上げる", "en_gloss": "to lift; to raise", "tnc_rank": 408, "travel_core": false}
+{"lemma": "อาศัย", "rank": 452, "band": 1, "pos": "verb", "kana": "aa-sǎi", "ja_gloss": "住む・居住する", "en_gloss": "to live; to reside", "tnc_rank": 409, "travel_core": false}
+{"lemma": "ย่อม", "rank": 453, "band": 1, "pos": "adv", "kana": "yɔ̂m", "ja_gloss": "当然・自然に", "en_gloss": "naturally; certainly (as expected)", "tnc_rank": 410, "travel_core": false}
+{"lemma": "ชุด", "rank": 454, "band": 1, "pos": "noun", "kana": "chút", "ja_gloss": "セット・服一式", "en_gloss": "set; outfit; series", "tnc_rank": 411, "travel_core": false}
+{"lemma": "หนู", "rank": 455, "band": 1, "pos": "noun", "kana": "nǔu", "ja_gloss": "ネズミ", "en_gloss": "mouse; rat", "tnc_rank": 412, "travel_core": false}
+{"lemma": "นโยบาย", "rank": 456, "band": 1, "pos": "noun", "kana": "ná-yoo-baai", "ja_gloss": "政策", "en_gloss": "policy", "tnc_rank": 413, "travel_core": false}
+{"lemma": "น่ะ", "rank": 457, "band": 1, "pos": "part", "kana": "nâ", "ja_gloss": "〜ね・〜よ（語尾）", "en_gloss": "softening/topic-marking sentence particle", "tnc_rank": 414, "travel_core": false}
+{"lemma": "เท่า", "rank": 458, "band": 1, "pos": "prep", "kana": "thâo", "ja_gloss": "〜と同じくらい・〜倍", "en_gloss": "equal to; as much as", "tnc_rank": 415, "travel_core": false}
+{"lemma": "เลี้ยว", "rank": 459, "band": 1, "pos": "verb", "kana": "líao", "ja_gloss": "曲がる", "en_gloss": "to turn (direction)", "tnc_rank": 3242, "travel_core": true}
+{"lemma": "ความรู้", "rank": 460, "band": 1, "pos": "noun", "kana": "khwaam-rúu", "ja_gloss": "知識", "en_gloss": "knowledge", "tnc_rank": 416, "travel_core": false}
+{"lemma": "ยอม", "rank": 461, "band": 1, "pos": "verb", "kana": "yɔɔm", "ja_gloss": "譲る・認める", "en_gloss": "to yield; to agree; to allow", "tnc_rank": 417, "travel_core": false}
+{"lemma": "ราย", "rank": 462, "band": 1, "pos": "noun", "kana": "raai", "ja_gloss": "件・ケース", "en_gloss": "case; instance; item", "tnc_rank": 418, "travel_core": false}
+{"lemma": "ควบคุม", "rank": 463, "band": 1, "pos": "verb", "kana": "khûuap-khum", "ja_gloss": "管理する・制御する", "en_gloss": "to control; to regulate", "tnc_rank": 419, "travel_core": false}
+{"lemma": "ธรรมชาติ", "rank": 464, "band": 1, "pos": "noun", "kana": "tham-má-châat", "ja_gloss": "自然", "en_gloss": "nature", "tnc_rank": 420, "travel_core": false}
+{"lemma": "ซ้าย", "rank": 465, "band": 1, "pos": "noun", "kana": "sáai", "ja_gloss": "左", "en_gloss": "left (side)", "tnc_rank": 1252, "travel_core": true}
+{"lemma": "วาง", "rank": 466, "band": 1, "pos": "verb", "kana": "waang", "ja_gloss": "置く", "en_gloss": "to put; to place; to lay down", "tnc_rank": 421, "travel_core": false}
+{"lemma": "ปกติ", "rank": 467, "band": 1, "pos": "adj", "kana": "bpà-gà-dtì", "ja_gloss": "普通の・いつもの", "en_gloss": "normal; usual", "tnc_rank": 423, "travel_core": false}
+{"lemma": "ยืน", "rank": 468, "band": 1, "pos": "verb", "kana": "yʉʉn", "ja_gloss": "立つ", "en_gloss": "to stand", "tnc_rank": 424, "travel_core": false}
+{"lemma": "ประการ", "rank": 469, "band": 1, "pos": "noun", "kana": "bprà-gaan", "ja_gloss": "方法・点", "en_gloss": "way; manner; kind", "tnc_rank": 425, "travel_core": false}
+{"lemma": "ขวา", "rank": 470, "band": 1, "pos": "noun", "kana": "khwǎa", "ja_gloss": "右", "en_gloss": "right (side)", "tnc_rank": 1538, "travel_core": true}
+{"lemma": "บริหาร", "rank": 471, "band": 1, "pos": "verb", "kana": "bɔɔ-rí-hǎan", "ja_gloss": "経営する・管理する", "en_gloss": "to manage; to administer", "tnc_rank": 426, "travel_core": false}
+{"lemma": "สัญญา", "rank": 472, "band": 1, "pos": "noun", "kana": "sǎn-yaa", "ja_gloss": "約束・契約", "en_gloss": "promise; contract; agreement", "tnc_rank": 427, "travel_core": false}
+{"lemma": "สมาชิก", "rank": 473, "band": 1, "pos": "noun", "kana": "sà-maa-chík", "ja_gloss": "会員・メンバー", "en_gloss": "member", "tnc_rank": 428, "travel_core": false}
+{"lemma": "นิยม", "rank": 474, "band": 1, "pos": "verb", "kana": "ní-yom", "ja_gloss": "人気がある・好む", "en_gloss": "to be popular; to favor", "tnc_rank": 429, "travel_core": false}
+{"lemma": "รอ", "rank": 475, "band": 1, "pos": "verb", "kana": "rɔɔ", "ja_gloss": "待つ", "en_gloss": "to wait", "tnc_rank": 430, "travel_core": false}
+{"lemma": "หยุด", "rank": 476, "band": 1, "pos": "verb", "kana": "yùt", "ja_gloss": "止まる・止める", "en_gloss": "to stop", "tnc_rank": 535, "travel_core": true}
+{"lemma": "หลังจาก", "rank": 477, "band": 1, "pos": "conj", "kana": "lǎng-jàak", "ja_gloss": "〜の後に", "en_gloss": "after", "tnc_rank": 431, "travel_core": false}
+{"lemma": "ต้น", "rank": 478, "band": 1, "pos": "noun", "kana": "dtôn", "ja_gloss": "木・始め", "en_gloss": "tree; beginning; stem", "tnc_rank": 432, "travel_core": false}
+{"lemma": "สิ", "rank": 479, "band": 1, "pos": "part", "kana": "sì", "ja_gloss": "〜しなさい・〜してよ（語尾）", "en_gloss": "emphasis/imperative particle", "tnc_rank": 433, "travel_core": false}
+{"lemma": "อนุญาต", "rank": 480, "band": 1, "pos": "verb", "kana": "à-nú-yâat", "ja_gloss": "許可する", "en_gloss": "to permit; to allow", "tnc_rank": 434, "travel_core": false}
+{"lemma": "ร่าง", "rank": 481, "band": 1, "pos": "noun", "kana": "râang", "ja_gloss": "草案・体の形", "en_gloss": "draft; outline; shape", "tnc_rank": 435, "travel_core": false}
+{"lemma": "ใกล้", "rank": 482, "band": 1, "pos": "adj", "kana": "glâi", "ja_gloss": "近い", "en_gloss": "near; close", "tnc_rank": 440, "travel_core": true}
+{"lemma": "สอน", "rank": 483, "band": 1, "pos": "verb", "kana": "sɔ̌ɔn", "ja_gloss": "教える", "en_gloss": "to teach", "tnc_rank": 436, "travel_core": false}
+{"lemma": "ทางการ", "rank": 484, "band": 1, "pos": "adj", "kana": "thaang-gaan", "ja_gloss": "公式の・正式な", "en_gloss": "official; formal", "tnc_rank": 438, "travel_core": false}
+{"lemma": "เปล่า", "rank": 485, "band": 1, "pos": "adj", "kana": "bplàao", "ja_gloss": "空の・何もない", "en_gloss": "empty; blank", "tnc_rank": 439, "travel_core": false}
+{"lemma": "ไกล", "rank": 486, "band": 1, "pos": "adj", "kana": "glai", "ja_gloss": "遠い", "en_gloss": "far; distant", "tnc_rank": 670, "travel_core": true}
+{"lemma": "แก้ไข", "rank": 487, "band": 1, "pos": "verb", "kana": "gɛ̂ɛ-khǎi", "ja_gloss": "直す・修正する", "en_gloss": "to fix; to correct; to edit", "tnc_rank": 442, "travel_core": false}
+{"lemma": "เพลง", "rank": 488, "band": 1, "pos": "noun", "kana": "phleeng", "ja_gloss": "歌・音楽", "en_gloss": "song; music", "tnc_rank": 443, "travel_core": false}
+{"lemma": "พิเศษ", "rank": 489, "band": 1, "pos": "adj", "kana": "phí-sèet", "ja_gloss": "特別な", "en_gloss": "special", "tnc_rank": 444, "travel_core": false}
+{"lemma": "จัดการ", "rank": 490, "band": 1, "pos": "verb", "kana": "jàt-gaan", "ja_gloss": "処理する・管理する", "en_gloss": "to manage; to handle", "tnc_rank": 445, "travel_core": false}
+{"lemma": "ถนน", "rank": 491, "band": 1, "pos": "noun", "kana": "thà-nǒn", "ja_gloss": "道路", "en_gloss": "road; street", "tnc_rank": 566, "travel_core": true}
+{"lemma": "ปาก", "rank": 492, "band": 1, "pos": "noun", "kana": "bpàak", "ja_gloss": "口", "en_gloss": "mouth", "tnc_rank": 446, "travel_core": false}
+{"lemma": "ความหมาย", "rank": 493, "band": 1, "pos": "noun", "kana": "khwaam-mǎai", "ja_gloss": "意味", "en_gloss": "meaning", "tnc_rank": 448, "travel_core": false}
+{"lemma": "บริเวณ", "rank": 494, "band": 1, "pos": "noun", "kana": "bɔɔ-rí-ween", "ja_gloss": "周辺・区域", "en_gloss": "area; vicinity", "tnc_rank": 449, "travel_core": false}
+{"lemma": "ยิ้ม", "rank": 495, "band": 1, "pos": "verb", "kana": "yím", "ja_gloss": "笑う（微笑む）", "en_gloss": "to smile", "tnc_rank": 450, "travel_core": false}
+{"lemma": "ซอย", "rank": 496, "band": 1, "pos": "noun", "kana": "sɔɔi", "ja_gloss": "路地・横道", "en_gloss": "alley; side street (soi)", "tnc_rank": 1684, "travel_core": true}
+{"lemma": "ทั้งนี้", "rank": 497, "band": 1, "pos": "conj", "kana": "tháng-níi", "ja_gloss": "とはいえ・それでも", "en_gloss": "however; notwithstanding this", "tnc_rank": 451, "travel_core": false}
+{"lemma": "ยุค", "rank": 498, "band": 1, "pos": "noun", "kana": "yúk", "ja_gloss": "時代", "en_gloss": "era; age", "tnc_rank": 452, "travel_core": false}
+{"lemma": "สัตว์", "rank": 499, "band": 1, "pos": "noun", "kana": "sàt", "ja_gloss": "動物", "en_gloss": "animal", "tnc_rank": 453, "travel_core": false}
+{"lemma": "บท", "rank": 500, "band": 1, "pos": "noun", "kana": "bòt", "ja_gloss": "章・課", "en_gloss": "chapter; lesson", "tnc_rank": 454, "travel_core": false}
+{"lemma": "แผนที่", "rank": 501, "band": 1, "pos": "noun", "kana": "phɛ̌ɛn-thîi", "ja_gloss": "地図", "en_gloss": "map", "tnc_rank": 1316, "travel_core": true}
+{"lemma": "เขต", "rank": 502, "band": 1, "pos": "noun", "kana": "khèet", "ja_gloss": "地域・区域", "en_gloss": "area; zone; district", "tnc_rank": 456, "travel_core": false}
+{"lemma": "ดูแล", "rank": 503, "band": 1, "pos": "verb", "kana": "duu-lɛɛ", "ja_gloss": "世話をする・面倒を見る", "en_gloss": "to look after; to take care of", "tnc_rank": 457, "travel_core": false}
+{"lemma": "หาย", "rank": 504, "band": 1, "pos": "verb", "kana": "hǎai", "ja_gloss": "消える・なくなる・治る", "en_gloss": "to disappear; to be lost; to recover (from illness)", "tnc_rank": 458, "travel_core": false}
+{"lemma": "นอก", "rank": 505, "band": 1, "pos": "adv", "kana": "nɔ̂ɔk", "ja_gloss": "外", "en_gloss": "outside; out", "tnc_rank": 459, "travel_core": false}
+{"lemma": "ไม้", "rank": 506, "band": 1, "pos": "noun", "kana": "máai", "ja_gloss": "木・木材", "en_gloss": "wood; tree; stick", "tnc_rank": 460, "travel_core": false}
+{"lemma": "โรงแรม", "rank": 507, "band": 1, "pos": "noun", "kana": "roong-rɛɛm", "ja_gloss": "ホテル", "en_gloss": "hotel", "tnc_rank": 1022, "travel_core": true}
+{"lemma": "บังคับ", "rank": 508, "band": 1, "pos": "verb", "kana": "bang-kháp", "ja_gloss": "強制する・命令する", "en_gloss": "to force; to compel; to command", "tnc_rank": 461, "travel_core": false}
+{"lemma": "ยาก", "rank": 509, "band": 1, "pos": "adj", "kana": "yâak", "ja_gloss": "難しい", "en_gloss": "difficult; hard", "tnc_rank": 462, "travel_core": false}
+{"lemma": "สาย", "rank": 510, "band": 1, "pos": "adj", "kana": "sǎai", "ja_gloss": "遅い・遅れた", "en_gloss": "late; delayed", "tnc_rank": 463, "travel_core": false}
+{"lemma": "อัตรา", "rank": 511, "band": 1, "pos": "noun", "kana": "àt-dtraa", "ja_gloss": "率・割合", "en_gloss": "rate; ratio", "tnc_rank": 464, "travel_core": false}
+{"lemma": "ได้แก่", "rank": 512, "band": 1, "pos": "conj", "kana": "dâai-gɛ̀ɛ", "ja_gloss": "すなわち・つまり", "en_gloss": "namely; that is; i.e.", "tnc_rank": 465, "travel_core": false}
+{"lemma": "เชิง", "rank": 513, "band": 1, "pos": "noun", "kana": "chəəng", "ja_gloss": "方法・様式・面", "en_gloss": "manner; way; aspect", "tnc_rank": 466, "travel_core": false}
+{"lemma": "ตรวจ", "rank": 514, "band": 1, "pos": "verb", "kana": "dtrùuat", "ja_gloss": "検査する・調べる", "en_gloss": "to examine; to inspect; to check", "tnc_rank": 467, "travel_core": false}
+{"lemma": "วันนี้", "rank": 515, "band": 1, "pos": "noun", "kana": "wan-níi", "ja_gloss": "今日", "en_gloss": "today", "tnc_rank": 468, "travel_core": false}
+{"lemma": "สำนักงาน", "rank": 516, "band": 1, "pos": "noun", "kana": "sǎm-nák-ngaan", "ja_gloss": "事務所・オフィス", "en_gloss": "office; bureau", "tnc_rank": 469, "travel_core": false}
+{"lemma": "จบ", "rank": 517, "band": 1, "pos": "verb", "kana": "jòp", "ja_gloss": "終わる・卒業する", "en_gloss": "to end; to finish; to graduate", "tnc_rank": 470, "travel_core": false}
+{"lemma": "ห้องน้ำ", "rank": 518, "band": 1, "pos": "noun", "kana": "hɔ̂ng-náam", "ja_gloss": "トイレ・お手洗い", "en_gloss": "bathroom; toilet", "tnc_rank": 1925, "travel_core": true}
+{"lemma": "สัมภาษณ์", "rank": 519, "band": 1, "pos": "noun", "kana": "sǎm-phâat", "ja_gloss": "インタビュー", "en_gloss": "interview", "tnc_rank": 471, "travel_core": false}
+{"lemma": "ทันที", "rank": 520, "band": 1, "pos": "adv", "kana": "than-thii", "ja_gloss": "すぐに・直ちに", "en_gloss": "immediately; instantly", "tnc_rank": 472, "travel_core": false}
+{"lemma": "เจอ", "rank": 521, "band": 1, "pos": "verb", "kana": "jəə", "ja_gloss": "会う・見つける", "en_gloss": "to meet; to find", "tnc_rank": 473, "travel_core": false}
+{"lemma": "ยอมรับ", "rank": 522, "band": 1, "pos": "verb", "kana": "yɔɔm-ráp", "ja_gloss": "認める・受け入れる", "en_gloss": "to accept; to admit", "tnc_rank": 474, "travel_core": false}
+{"lemma": "เจ้าของ", "rank": 523, "band": 1, "pos": "noun", "kana": "jâo-khɔ̌ɔng", "ja_gloss": "持ち主・所有者", "en_gloss": "owner", "tnc_rank": 475, "travel_core": false}
+{"lemma": "กุญแจ", "rank": 524, "band": 1, "pos": "noun", "kana": "gun-jɛɛ", "ja_gloss": "鍵", "en_gloss": "key; lock", "tnc_rank": 2409, "travel_core": true}
+{"lemma": "ผู้ชาย", "rank": 525, "band": 1, "pos": "noun", "kana": "phûu-chaai", "ja_gloss": "男性・男の人", "en_gloss": "man", "tnc_rank": 476, "travel_core": false}
+{"lemma": "นอกจาก", "rank": 526, "band": 1, "pos": "prep", "kana": "nɔ̂ɔk-jàak", "ja_gloss": "〜のほかに・〜を除いて", "en_gloss": "other than; except; besides", "tnc_rank": 477, "travel_core": false}
+{"lemma": "ชุมชน", "rank": 527, "band": 1, "pos": "noun", "kana": "chum-chon", "ja_gloss": "コミュニティ・共同体", "en_gloss": "community", "tnc_rank": 478, "travel_core": false}
+{"lemma": "ทั่ว", "rank": 528, "band": 1, "pos": "adj", "kana": "thûua", "ja_gloss": "全体に・くまなく", "en_gloss": "all over; throughout", "tnc_rank": 479, "travel_core": false}
+{"lemma": "ขาด", "rank": 529, "band": 1, "pos": "verb", "kana": "khàat", "ja_gloss": "不足する・切れる・足りない", "en_gloss": "to lack; to be missing; to be torn", "tnc_rank": 480, "travel_core": false}
+{"lemma": "ยังไง", "rank": 530, "band": 1, "pos": "adv", "kana": "yang-ngai", "ja_gloss": "どうやって・どう", "en_gloss": "how; what way", "tnc_rank": 481, "travel_core": false}
+{"lemma": "อา", "rank": 531, "band": 1, "pos": "noun", "kana": "aa", "ja_gloss": "叔父・叔母(父の弟妹)", "en_gloss": "uncle/aunt (father's younger sibling)", "tnc_rank": 482, "travel_core": false}
+{"lemma": "ไง", "rank": 532, "band": 1, "pos": "pron", "kana": "ngai", "ja_gloss": "どう・どうやって", "en_gloss": "how; what way", "tnc_rank": 483, "travel_core": false}
+{"lemma": "สวย", "rank": 533, "band": 1, "pos": "adj", "kana": "sǔai", "ja_gloss": "美しい・きれい", "en_gloss": "beautiful", "tnc_rank": 484, "travel_core": true}
+{"lemma": "เจ้าหน้าที่", "rank": 534, "band": 1, "pos": "noun", "kana": "jâao-nâa-thîi", "ja_gloss": "職員・係員", "en_gloss": "official; officer; staff", "tnc_rank": 485, "travel_core": false}
+{"lemma": "รายงาน", "rank": 535, "band": 1, "pos": "noun", "kana": "raai-ngaan", "ja_gloss": "報告・レポート", "en_gloss": "report", "tnc_rank": 486, "travel_core": false}
+{"lemma": "ข่าว", "rank": 536, "band": 1, "pos": "noun", "kana": "khàao", "ja_gloss": "ニュース", "en_gloss": "news", "tnc_rank": 487, "travel_core": false}
+{"lemma": "ฉบับ", "rank": 537, "band": 1, "pos": "classifier", "kana": "chà-bàp", "ja_gloss": "類別詞:書類・手紙", "en_gloss": "classifier for letters/documents/newspapers", "tnc_rank": 488, "travel_core": false}
+{"lemma": "ฐานะ", "rank": 538, "band": 1, "pos": "noun", "kana": "thǎa-ná", "ja_gloss": "地位・身分・状況", "en_gloss": "status; position; financial condition", "tnc_rank": 489, "travel_core": false}
+{"lemma": "มิ", "rank": 539, "band": 1, "pos": "adv", "kana": "mí", "ja_gloss": "〜ない(否定・文語)", "en_gloss": "not (negation, literary)", "tnc_rank": 490, "travel_core": false}
+{"lemma": "สถาบัน", "rank": 540, "band": 1, "pos": "noun", "kana": "sà-thǎa-ban", "ja_gloss": "機関・研究所", "en_gloss": "institute; institution", "tnc_rank": 491, "travel_core": false}
+{"lemma": "ประธาน", "rank": 541, "band": 1, "pos": "noun", "kana": "bprà-thaan", "ja_gloss": "議長・会長・代表", "en_gloss": "chairperson; president; head", "tnc_rank": 492, "travel_core": false}
+{"lemma": "ปรับ", "rank": 542, "band": 1, "pos": "verb", "kana": "bpràp", "ja_gloss": "罰金を科す・調整する", "en_gloss": "to fine; to adjust; to adapt", "tnc_rank": 493, "travel_core": false}
+{"lemma": "สนับสนุน", "rank": 543, "band": 1, "pos": "verb", "kana": "sà-nàp-sà-nǔn", "ja_gloss": "支援する・支持する", "en_gloss": "to support", "tnc_rank": 494, "travel_core": false}
+{"lemma": "โต", "rank": 544, "band": 1, "pos": "adj", "kana": "dtoo", "ja_gloss": "大きい", "en_gloss": "big; large", "tnc_rank": 495, "travel_core": false}
+{"lemma": "เกี่ยวข้อง", "rank": 545, "band": 1, "pos": "verb", "kana": "gìao-khɔ̂ng", "ja_gloss": "関係する・関連する", "en_gloss": "to be related; to be concerned (with)", "tnc_rank": 496, "travel_core": false}
+{"lemma": "แพทย์", "rank": 546, "band": 1, "pos": "noun", "kana": "phɛ̂ɛt", "ja_gloss": "医者", "en_gloss": "doctor; physician", "tnc_rank": 497, "travel_core": false}
+{"lemma": "เสมอ", "rank": 547, "band": 1, "pos": "adv", "kana": "sà-mə̌ə", "ja_gloss": "いつも・常に", "en_gloss": "always; constantly", "tnc_rank": 499, "travel_core": false}
+{"lemma": "หล่อน", "rank": 548, "band": 1, "pos": "pron", "kana": "lɔ̀n", "ja_gloss": "彼女(三人称代名詞)", "en_gloss": "she; her", "tnc_rank": 500, "travel_core": false}
+{"lemma": "โรงพยาบาล", "rank": 549, "band": 1, "pos": "noun", "kana": "roong-phá-yaa-baan", "ja_gloss": "病院", "en_gloss": "hospital", "tnc_rank": 937, "travel_core": true}
+{"lemma": "ตอนนี้", "rank": 550, "band": 1, "pos": "adv", "kana": "dtɔɔn-níi", "ja_gloss": "今", "en_gloss": "now; at the moment", "tnc_rank": 501, "travel_core": false}
+{"lemma": "เครื่อง", "rank": 551, "band": 1, "pos": "noun", "kana": "khrʉ̂ʉang", "ja_gloss": "機械・器具", "en_gloss": "machine; device; appliance", "tnc_rank": 502, "travel_core": false}
+{"lemma": "แก้", "rank": 552, "band": 1, "pos": "verb", "kana": "gɛ̂ɛ", "ja_gloss": "直す・解決する", "en_gloss": "to fix; to correct; to solve", "tnc_rank": 503, "travel_core": false}
+{"lemma": "ทหาร", "rank": 553, "band": 1, "pos": "noun", "kana": "thá-hǎan", "ja_gloss": "兵士・軍人", "en_gloss": "soldier; military", "tnc_rank": 504, "travel_core": false}
+{"lemma": "เหลือ", "rank": 554, "band": 1, "pos": "verb", "kana": "lʉ̌ʉa", "ja_gloss": "残る", "en_gloss": "to remain; to be left", "tnc_rank": 505, "travel_core": false}
+{"lemma": "ระเบียบ", "rank": 555, "band": 1, "pos": "noun", "kana": "rá-bìiap", "ja_gloss": "規則・秩序", "en_gloss": "rule; regulation; order", "tnc_rank": 506, "travel_core": false}
+{"lemma": "วิเคราะห์", "rank": 556, "band": 1, "pos": "verb", "kana": "wí-khrɔ́", "ja_gloss": "分析する", "en_gloss": "to analyze", "tnc_rank": 507, "travel_core": false}
+{"lemma": "แดง", "rank": 557, "band": 1, "pos": "adj", "kana": "dɛɛng", "ja_gloss": "赤い", "en_gloss": "red", "tnc_rank": 508, "travel_core": false}
+{"lemma": "อารมณ์", "rank": 558, "band": 1, "pos": "noun", "kana": "aa-rom", "ja_gloss": "気分・感情", "en_gloss": "mood; emotion", "tnc_rank": 509, "travel_core": false}
+{"lemma": "จิต", "rank": 559, "band": 1, "pos": "noun", "kana": "jìt", "ja_gloss": "心・精神", "en_gloss": "mind; heart; spirit", "tnc_rank": 510, "travel_core": false}
+{"lemma": "เจ็บ", "rank": 560, "band": 1, "pos": "verb", "kana": "jèp", "ja_gloss": "痛い・けがをする", "en_gloss": "to hurt; to be in pain", "tnc_rank": 1069, "travel_core": true}
+{"lemma": "ช่วยเหลือ", "rank": 561, "band": 1, "pos": "verb", "kana": "chûai-lʉ̌ʉa", "ja_gloss": "助ける・援助する", "en_gloss": "to help; to assist", "tnc_rank": 511, "travel_core": false}
+{"lemma": "ยังคง", "rank": 562, "band": 1, "pos": "adv", "kana": "yang-khong", "ja_gloss": "まだ・依然として", "en_gloss": "still; yet", "tnc_rank": 512, "travel_core": false}
+{"lemma": "รีบ", "rank": 563, "band": 1, "pos": "verb", "kana": "rîip", "ja_gloss": "急ぐ", "en_gloss": "to hurry; to rush", "tnc_rank": 513, "travel_core": false}
+{"lemma": "ปล่อย", "rank": 564, "band": 1, "pos": "verb", "kana": "bplɔ̀i", "ja_gloss": "放す・解放する", "en_gloss": "to release; to let go", "tnc_rank": 514, "travel_core": false}
+{"lemma": "ขาว", "rank": 565, "band": 1, "pos": "adj", "kana": "khǎao", "ja_gloss": "白い", "en_gloss": "white", "tnc_rank": 515, "travel_core": false}
+{"lemma": "ปวด", "rank": 566, "band": 1, "pos": "verb", "kana": "bpùuat", "ja_gloss": "痛む", "en_gloss": "to ache; to be in pain", "tnc_rank": 1434, "travel_core": true}
+{"lemma": "เหตุผล", "rank": 567, "band": 1, "pos": "noun", "kana": "hèet-phǒn", "ja_gloss": "理由", "en_gloss": "reason", "tnc_rank": 516, "travel_core": false}
+{"lemma": "ต่างประเทศ", "rank": 568, "band": 1, "pos": "noun", "kana": "dtàang-bprà-thêet", "ja_gloss": "外国", "en_gloss": "foreign country; abroad", "tnc_rank": 518, "travel_core": false}
+{"lemma": "สั่ง", "rank": 569, "band": 1, "pos": "verb", "kana": "sàng", "ja_gloss": "注文する・命令する", "en_gloss": "to order; to command; to instruct", "tnc_rank": 519, "travel_core": false}
+{"lemma": "ป่วย", "rank": 570, "band": 1, "pos": "verb", "kana": "bpùai", "ja_gloss": "病気になる", "en_gloss": "to be sick; to fall ill", "tnc_rank": 1628, "travel_core": true}
+{"lemma": "ร้อน", "rank": 571, "band": 1, "pos": "adj", "kana": "rɔ́ɔn", "ja_gloss": "暑い・熱い", "en_gloss": "hot", "tnc_rank": 521, "travel_core": true}
+{"lemma": "ณ", "rank": 572, "band": 1, "pos": "prep", "kana": "ná", "ja_gloss": "〜において(文語)", "en_gloss": "at; in; on", "tnc_rank": 522, "travel_core": false}
+{"lemma": "แบ่ง", "rank": 573, "band": 1, "pos": "verb", "kana": "bɛ̀ng", "ja_gloss": "分ける", "en_gloss": "to divide; to share", "tnc_rank": 523, "travel_core": false}
+{"lemma": "ปกครอง", "rank": 574, "band": 1, "pos": "verb", "kana": "bpòk-khrɔɔng", "ja_gloss": "統治する・管理する", "en_gloss": "to govern; to administer", "tnc_rank": 524, "travel_core": false}
+{"lemma": "เน้น", "rank": 575, "band": 1, "pos": "verb", "kana": "nén", "ja_gloss": "強調する", "en_gloss": "to emphasize; to stress", "tnc_rank": 525, "travel_core": false}
+{"lemma": "ตำรวจ", "rank": 576, "band": 1, "pos": "noun", "kana": "dtam-rùuat", "ja_gloss": "警察", "en_gloss": "police; police officer", "tnc_rank": 610, "travel_core": true}
+{"lemma": "ประตู", "rank": 577, "band": 1, "pos": "noun", "kana": "bprà-dtuu", "ja_gloss": "ドア・門", "en_gloss": "door; gate", "tnc_rank": 527, "travel_core": false}
+{"lemma": "รูปแบบ", "rank": 578, "band": 1, "pos": "noun", "kana": "rûup-bɛ̀ɛp", "ja_gloss": "形式・パターン", "en_gloss": "form; pattern; style", "tnc_rank": 528, "travel_core": false}
+{"lemma": "ความสำคัญ", "rank": 579, "band": 1, "pos": "noun", "kana": "khwaam-sǎm-khan", "ja_gloss": "重要性", "en_gloss": "importance", "tnc_rank": 529, "travel_core": false}
+{"lemma": "เรือ", "rank": 580, "band": 1, "pos": "noun", "kana": "rʉʉa", "ja_gloss": "船", "en_gloss": "boat; ship", "tnc_rank": 530, "travel_core": false}
+{"lemma": "เต็ม", "rank": 581, "band": 1, "pos": "adj", "kana": "dtem", "ja_gloss": "いっぱい・満ちた", "en_gloss": "full", "tnc_rank": 532, "travel_core": false}
+{"lemma": "ธุรกิจ", "rank": 582, "band": 1, "pos": "noun", "kana": "thú-rá-gìt", "ja_gloss": "ビジネス・事業", "en_gloss": "business", "tnc_rank": 533, "travel_core": false}
+{"lemma": "ชัดเจน", "rank": 583, "band": 1, "pos": "adj", "kana": "chát-jeen", "ja_gloss": "明確な・はっきりした", "en_gloss": "clear; obvious", "tnc_rank": 534, "travel_core": false}
+{"lemma": "เย็น", "rank": 584, "band": 1, "pos": "adj", "kana": "yen", "ja_gloss": "涼しい・冷たい", "en_gloss": "cool; cold", "tnc_rank": 593, "travel_core": true}
+{"lemma": "นับ", "rank": 585, "band": 1, "pos": "verb", "kana": "náp", "ja_gloss": "数える", "en_gloss": "to count", "tnc_rank": 536, "travel_core": false}
+{"lemma": "อังกฤษ", "rank": 586, "band": 1, "pos": "noun", "kana": "ang-grìt", "ja_gloss": "英語・イギリス", "en_gloss": "English; British; England", "tnc_rank": 537, "travel_core": false}
+{"lemma": "โอ", "rank": 587, "band": 1, "pos": "intj", "kana": "oo", "ja_gloss": "おお・ああ（感嘆）", "en_gloss": "oh (exclamation)", "tnc_rank": 538, "travel_core": false}
+{"lemma": "แยก", "rank": 588, "band": 1, "pos": "verb", "kana": "yɛ̂ɛk", "ja_gloss": "分ける・分かれる", "en_gloss": "to separate; to split; to divide", "tnc_rank": 539, "travel_core": false}
+{"lemma": "ร่างกาย", "rank": 589, "band": 1, "pos": "noun", "kana": "râang-gaai", "ja_gloss": "体・身体", "en_gloss": "body", "tnc_rank": 540, "travel_core": false}
+{"lemma": "หัวใจ", "rank": 590, "band": 1, "pos": "noun", "kana": "hǔua-jai", "ja_gloss": "心臓・心", "en_gloss": "heart", "tnc_rank": 541, "travel_core": false}
+{"lemma": "สนใจ", "rank": 591, "band": 1, "pos": "verb", "kana": "sǒn-jai", "ja_gloss": "興味がある", "en_gloss": "to be interested", "tnc_rank": 542, "travel_core": false}
+{"lemma": "อาจารย์", "rank": 592, "band": 1, "pos": "noun", "kana": "aa-jaan", "ja_gloss": "先生・教授", "en_gloss": "teacher; professor", "tnc_rank": 543, "travel_core": false}
+{"lemma": "ทั่วไป", "rank": 593, "band": 1, "pos": "adj", "kana": "thûua-bpai", "ja_gloss": "一般的な", "en_gloss": "general; common", "tnc_rank": 544, "travel_core": false}
+{"lemma": "คุย", "rank": 594, "band": 1, "pos": "verb", "kana": "khui", "ja_gloss": "おしゃべりする・話す", "en_gloss": "to chat; to talk", "tnc_rank": 545, "travel_core": false}
+{"lemma": "พรุ่งนี้", "rank": 595, "band": 1, "pos": "noun", "kana": "phrûng-níi", "ja_gloss": "明日", "en_gloss": "tomorrow", "tnc_rank": 1870, "travel_core": true}
+{"lemma": "ศาล", "rank": 596, "band": 1, "pos": "noun", "kana": "sǎan", "ja_gloss": "裁判所", "en_gloss": "court", "tnc_rank": 546, "travel_core": false}
+{"lemma": "ต่ำ", "rank": 597, "band": 1, "pos": "adj", "kana": "dtàm", "ja_gloss": "低い", "en_gloss": "low", "tnc_rank": 547, "travel_core": false}
+{"lemma": "ความผิด", "rank": 598, "band": 1, "pos": "noun", "kana": "khwaam-phìt", "ja_gloss": "間違い・過失", "en_gloss": "mistake; fault; guilt", "tnc_rank": 548, "travel_core": false}
+{"lemma": "มหาวิทยาลัย", "rank": 599, "band": 1, "pos": "noun", "kana": "má-hǎa-wít-thá-yaa-lai", "ja_gloss": "大学", "en_gloss": "university", "tnc_rank": 549, "travel_core": false}
+{"lemma": "พัก", "rank": 600, "band": 1, "pos": "verb", "kana": "phák", "ja_gloss": "休む・滞在する", "en_gloss": "to rest; to stay", "tnc_rank": 550, "travel_core": false}
+{"lemma": "เช้า", "rank": 601, "band": 1, "pos": "noun", "kana": "cháao", "ja_gloss": "朝", "en_gloss": "morning", "tnc_rank": 783, "travel_core": true}
+{"lemma": "ดิฉัน", "rank": 602, "band": 1, "pos": "pron", "kana": "dì-chǎn", "ja_gloss": "私(女性の丁寧な一人称)", "en_gloss": "I (female, polite)", "tnc_rank": 551, "travel_core": false}
+{"lemma": "ปิด", "rank": 603, "band": 1, "pos": "verb", "kana": "bpìt", "ja_gloss": "閉める", "en_gloss": "to close", "tnc_rank": 552, "travel_core": false}
+{"lemma": "สุดท้าย", "rank": 604, "band": 1, "pos": "adj", "kana": "sùt-tháai", "ja_gloss": "最後の", "en_gloss": "final; last", "tnc_rank": 553, "travel_core": false}
+{"lemma": "จำ", "rank": 605, "band": 1, "pos": "verb", "kana": "jam", "ja_gloss": "覚える・記憶する", "en_gloss": "to remember", "tnc_rank": 555, "travel_core": false}
+{"lemma": "บ่าย", "rank": 606, "band": 1, "pos": "noun", "kana": "bàai", "ja_gloss": "午後", "en_gloss": "afternoon", "tnc_rank": 1808, "travel_core": true}
+{"lemma": "มากมาย", "rank": 607, "band": 1, "pos": "adj", "kana": "mâak-maai", "ja_gloss": "多くの・たくさんの", "en_gloss": "much; many; a lot", "tnc_rank": 556, "travel_core": false}
+{"lemma": "สาร", "rank": 608, "band": 1, "pos": "noun", "kana": "sǎan", "ja_gloss": "物質・情報", "en_gloss": "substance; matter; information", "tnc_rank": 557, "travel_core": false}
+{"lemma": "แรงงาน", "rank": 609, "band": 1, "pos": "noun", "kana": "rɛɛng-ngaan", "ja_gloss": "労働・労働力", "en_gloss": "labor; workforce", "tnc_rank": 558, "travel_core": false}
+{"lemma": "กลัว", "rank": 610, "band": 1, "pos": "verb", "kana": "gluua", "ja_gloss": "怖がる・恐れる", "en_gloss": "to fear; to be afraid", "tnc_rank": 559, "travel_core": false}
+{"lemma": "ดำ", "rank": 611, "band": 1, "pos": "adj", "kana": "dam", "ja_gloss": "黒い", "en_gloss": "black", "tnc_rank": 560, "travel_core": false}
+{"lemma": "เหนือ", "rank": 612, "band": 1, "pos": "noun", "kana": "nʉ̌ʉa", "ja_gloss": "北", "en_gloss": "north", "tnc_rank": 561, "travel_core": false}
+{"lemma": "ใต้", "rank": 613, "band": 1, "pos": "noun", "kana": "dtâai", "ja_gloss": "南", "en_gloss": "south", "tnc_rank": 562, "travel_core": false}
+{"lemma": "เหตุการณ์", "rank": 614, "band": 1, "pos": "noun", "kana": "hèet-gaan", "ja_gloss": "出来事・事件", "en_gloss": "event; incident", "tnc_rank": 563, "travel_core": false}
+{"lemma": "รายได้", "rank": 615, "band": 1, "pos": "noun", "kana": "raai-dâai", "ja_gloss": "収入", "en_gloss": "income", "tnc_rank": 565, "travel_core": false}
+{"lemma": "ชั่วโมง", "rank": 616, "band": 1, "pos": "noun", "kana": "chûua-moong", "ja_gloss": "時間(〜時間)", "en_gloss": "hour", "tnc_rank": 831, "travel_core": true}
+{"lemma": "วิ่ง", "rank": 617, "band": 1, "pos": "verb", "kana": "wîng", "ja_gloss": "走る", "en_gloss": "to run", "tnc_rank": 567, "travel_core": false}
+{"lemma": "ไอ้", "rank": 618, "band": 1, "pos": "noun", "kana": "âi", "ja_gloss": "野郎・やつ(くだけた表現)", "en_gloss": "guy; that (informal, often rude term of address)", "tnc_rank": 568, "travel_core": false}
+{"lemma": "กระบวนการ", "rank": 619, "band": 1, "pos": "noun", "kana": "grà-buuan-gaan", "ja_gloss": "プロセス・過程", "en_gloss": "process", "tnc_rank": 569, "travel_core": false}
+{"lemma": "ได้ยิน", "rank": 620, "band": 1, "pos": "verb", "kana": "dâi-yin", "ja_gloss": "聞こえる", "en_gloss": "to hear", "tnc_rank": 570, "travel_core": false}
+{"lemma": "นาที", "rank": 621, "band": 1, "pos": "noun", "kana": "naa-thii", "ja_gloss": "分(時間)", "en_gloss": "minute", "tnc_rank": 917, "travel_core": true}
+{"lemma": "อธิบาย", "rank": 622, "band": 1, "pos": "verb", "kana": "à-thí-baai", "ja_gloss": "説明する", "en_gloss": "to explain", "tnc_rank": 571, "travel_core": false}
+{"lemma": "ตก", "rank": 623, "band": 1, "pos": "verb", "kana": "dtòk", "ja_gloss": "落ちる", "en_gloss": "to fall; to drop", "tnc_rank": 572, "travel_core": false}
+{"lemma": "วัย", "rank": 624, "band": 1, "pos": "noun", "kana": "wai", "ja_gloss": "年齢・年代", "en_gloss": "age; stage of life", "tnc_rank": 573, "travel_core": false}
+{"lemma": "ทอง", "rank": 625, "band": 1, "pos": "noun", "kana": "thɔɔng", "ja_gloss": "金", "en_gloss": "gold", "tnc_rank": 574, "travel_core": false}
+{"lemma": "นึก", "rank": 626, "band": 1, "pos": "verb", "kana": "nʉ́k", "ja_gloss": "思う・思いつく", "en_gloss": "to think of; to imagine", "tnc_rank": 575, "travel_core": false}
+{"lemma": "โมง", "rank": 627, "band": 1, "pos": "noun", "kana": "moong", "ja_gloss": "〜時(タイ式時刻)", "en_gloss": "o'clock (Thai time unit)", "tnc_rank": 1756, "travel_core": true}
+{"lemma": "แจ้ง", "rank": 628, "band": 1, "pos": "verb", "kana": "jɛ̂ɛng", "ja_gloss": "知らせる・通知する", "en_gloss": "to inform; to notify", "tnc_rank": 577, "travel_core": false}
+{"lemma": "เหมาะสม", "rank": 629, "band": 1, "pos": "adj", "kana": "mɔ̀-sǒm", "ja_gloss": "適切な・ふさわしい", "en_gloss": "suitable; appropriate", "tnc_rank": 578, "travel_core": false}
+{"lemma": "ดาว", "rank": 630, "band": 1, "pos": "noun", "kana": "daao", "ja_gloss": "星", "en_gloss": "star", "tnc_rank": 579, "travel_core": false}
+{"lemma": "เส้น", "rank": 631, "band": 1, "pos": "noun", "kana": "sên", "ja_gloss": "線・糸", "en_gloss": "line; thread; string", "tnc_rank": 581, "travel_core": false}
+{"lemma": "ธรรม", "rank": 632, "band": 1, "pos": "noun", "kana": "tham", "ja_gloss": "徳・法(ダルマ)", "en_gloss": "dharma; virtue; morality", "tnc_rank": 582, "travel_core": false}
+{"lemma": "ป่า", "rank": 633, "band": 1, "pos": "noun", "kana": "bpàa", "ja_gloss": "森・ジャングル", "en_gloss": "forest; jungle", "tnc_rank": 584, "travel_core": false}
+{"lemma": "แน่", "rank": 634, "band": 1, "pos": "adj", "kana": "nɛ̂ɛ", "ja_gloss": "確かな", "en_gloss": "sure; certain", "tnc_rank": 585, "travel_core": false}
+{"lemma": "ร้อง", "rank": 635, "band": 1, "pos": "verb", "kana": "rɔ́ɔng", "ja_gloss": "叫ぶ・泣く・歌う", "en_gloss": "to cry out; to weep; to sing", "tnc_rank": 586, "travel_core": false}
+{"lemma": "ป้องกัน", "rank": 636, "band": 1, "pos": "verb", "kana": "bpɔ̂ng-gan", "ja_gloss": "守る・予防する", "en_gloss": "to protect; to prevent", "tnc_rank": 587, "travel_core": false}
+{"lemma": "เหรอ", "rank": 637, "band": 1, "pos": "part", "kana": "rə̌ə", "ja_gloss": "〜の?・本当に?(疑問の終助詞)", "en_gloss": "really?; is that so? (question tag)", "tnc_rank": 588, "travel_core": false}
+{"lemma": "สุด", "rank": 638, "band": 1, "pos": "adv", "kana": "sùt", "ja_gloss": "最も・とても", "en_gloss": "very; extremely; most", "tnc_rank": 589, "travel_core": false}
+{"lemma": "กรรมการ", "rank": 639, "band": 1, "pos": "noun", "kana": "gam-má-gaan", "ja_gloss": "委員・審判", "en_gloss": "committee member; judge", "tnc_rank": 590, "travel_core": false}
+{"lemma": "ปัจจัย", "rank": 640, "band": 1, "pos": "noun", "kana": "bpàt-jai", "ja_gloss": "要因・要素", "en_gloss": "factor", "tnc_rank": 591, "travel_core": false}
+{"lemma": "ตัดสินใจ", "rank": 641, "band": 1, "pos": "verb", "kana": "dtàt-sǐn-jai", "ja_gloss": "決める・決断する", "en_gloss": "to decide", "tnc_rank": 594, "travel_core": false}
+{"lemma": "อุตสาหกรรม", "rank": 642, "band": 1, "pos": "noun", "kana": "ùt-sǎa-hà-gam", "ja_gloss": "産業・工業", "en_gloss": "industry", "tnc_rank": 595, "travel_core": false}
+{"lemma": "คดี", "rank": 643, "band": 1, "pos": "noun", "kana": "khá-dii", "ja_gloss": "事件・訴訟", "en_gloss": "legal case", "tnc_rank": 596, "travel_core": false}
+{"lemma": "สายตา", "rank": 644, "band": 1, "pos": "noun", "kana": "sǎai-dtaa", "ja_gloss": "視力・視線", "en_gloss": "eyesight; vision", "tnc_rank": 597, "travel_core": false}
+{"lemma": "เร็ว", "rank": 645, "band": 1, "pos": "adj", "kana": "reo", "ja_gloss": "速い", "en_gloss": "fast; quick", "tnc_rank": 598, "travel_core": false}
+{"lemma": "คำถาม", "rank": 646, "band": 1, "pos": "noun", "kana": "kham-thǎam", "ja_gloss": "質問", "en_gloss": "question", "tnc_rank": 599, "travel_core": false}
+{"lemma": "ชน", "rank": 647, "band": 1, "pos": "verb", "kana": "chon", "ja_gloss": "衝突する・ぶつかる", "en_gloss": "to collide; to crash into", "tnc_rank": 600, "travel_core": false}
+{"lemma": "ค้า", "rank": 648, "band": 1, "pos": "verb", "kana": "kháa", "ja_gloss": "商う・取引する", "en_gloss": "to trade; to sell", "tnc_rank": 601, "travel_core": false}
+{"lemma": "หัวเราะ", "rank": 649, "band": 1, "pos": "verb", "kana": "hǔua-rɔ́", "ja_gloss": "笑う", "en_gloss": "to laugh", "tnc_rank": 602, "travel_core": false}
+{"lemma": "ทะเล", "rank": 650, "band": 1, "pos": "noun", "kana": "thá-lee", "ja_gloss": "海", "en_gloss": "sea", "tnc_rank": 604, "travel_core": false}
+{"lemma": "พระราชบัญญัติ", "rank": 651, "band": 1, "pos": "noun", "kana": "phrá-râat-chá-ban-yàt", "ja_gloss": "法律(議会制定法)", "en_gloss": "act (of parliament); law", "tnc_rank": 606, "travel_core": false}
+{"lemma": "ศรี", "rank": 652, "band": 1, "pos": "noun", "kana": "sǐi", "ja_gloss": "栄光・美(接頭辞)", "en_gloss": "glory; splendor (honorific)", "tnc_rank": 607, "travel_core": false}
+{"lemma": "ที่ดิน", "rank": 653, "band": 1, "pos": "noun", "kana": "thîi-din", "ja_gloss": "土地", "en_gloss": "land (real estate)", "tnc_rank": 608, "travel_core": false}
+{"lemma": "รุ่น", "rank": 654, "band": 1, "pos": "noun", "kana": "rûn", "ja_gloss": "世代・型", "en_gloss": "generation; model; batch", "tnc_rank": 609, "travel_core": false}
+{"lemma": "ซี", "rank": 655, "band": 1, "pos": "part", "kana": "sii", "ja_gloss": "強調の終助詞", "en_gloss": "emphasis particle", "tnc_rank": 611, "travel_core": false}
+{"lemma": "จนถึง", "rank": 656, "band": 1, "pos": "conj", "kana": "jon-thʉ̌ng", "ja_gloss": "〜まで", "en_gloss": "until; up to", "tnc_rank": 612, "travel_core": false}
+{"lemma": "พฤติกรรม", "rank": 657, "band": 1, "pos": "noun", "kana": "phrʉ́t-dtì-gam", "ja_gloss": "行動・振る舞い", "en_gloss": "behavior", "tnc_rank": 614, "travel_core": false}
+{"lemma": "กรม", "rank": 658, "band": 1, "pos": "noun", "kana": "grom", "ja_gloss": "局・省庁の部局", "en_gloss": "department (government)", "tnc_rank": 615, "travel_core": false}
+{"lemma": "ทิ้ง", "rank": 659, "band": 1, "pos": "verb", "kana": "thíng", "ja_gloss": "捨てる", "en_gloss": "to throw away; to discard", "tnc_rank": 616, "travel_core": false}
+{"lemma": "โครงสร้าง", "rank": 660, "band": 1, "pos": "noun", "kana": "khroong-sâang", "ja_gloss": "構造", "en_gloss": "structure", "tnc_rank": 617, "travel_core": false}
+{"lemma": "แหล่ง", "rank": 661, "band": 1, "pos": "noun", "kana": "lɛ̀ng", "ja_gloss": "源・情報源", "en_gloss": "source", "tnc_rank": 618, "travel_core": false}
+{"lemma": "เสร็จ", "rank": 662, "band": 1, "pos": "verb", "kana": "sèt", "ja_gloss": "終わる・完了する", "en_gloss": "to be finished; done", "tnc_rank": 620, "travel_core": false}
+{"lemma": "เลี้ยง", "rank": 663, "band": 1, "pos": "verb", "kana": "líiang", "ja_gloss": "育てる・飼う・おごる", "en_gloss": "to raise; to feed; to treat (to a meal)", "tnc_rank": 621, "travel_core": false}
+{"lemma": "เก่า", "rank": 664, "band": 1, "pos": "adj", "kana": "gào", "ja_gloss": "古い", "en_gloss": "old", "tnc_rank": 622, "travel_core": true}
+{"lemma": "เพิ่ง", "rank": 665, "band": 1, "pos": "adv", "kana": "phə̂ng", "ja_gloss": "〜したばかり", "en_gloss": "just; just now", "tnc_rank": 623, "travel_core": false}
+{"lemma": "ที่มา", "rank": 666, "band": 1, "pos": "noun", "kana": "thîi-maa", "ja_gloss": "由来・出所", "en_gloss": "origin; source", "tnc_rank": 624, "travel_core": false}
+{"lemma": "ตรวจสอบ", "rank": 667, "band": 1, "pos": "verb", "kana": "dtrùuat-sɔ̀ɔp", "ja_gloss": "確認する・検証する", "en_gloss": "to check; to verify", "tnc_rank": 625, "travel_core": false}
+{"lemma": "ไม่ค่อย", "rank": 668, "band": 1, "pos": "adv", "kana": "mâi-khɔ̂i", "ja_gloss": "あまり〜ない", "en_gloss": "not very; hardly", "tnc_rank": 626, "travel_core": false}
+{"lemma": "ราช", "rank": 669, "band": 1, "pos": "noun", "kana": "râat", "ja_gloss": "王・王の(接頭辞)", "en_gloss": "king; royal", "tnc_rank": 628, "travel_core": false}
+{"lemma": "ค่อย", "rank": 670, "band": 1, "pos": "adv", "kana": "khɔ̂i", "ja_gloss": "徐々に・そっと", "en_gloss": "gradually; gently", "tnc_rank": 629, "travel_core": false}
+{"lemma": "ระบุ", "rank": 671, "band": 1, "pos": "verb", "kana": "rá-bù", "ja_gloss": "明記する・特定する", "en_gloss": "to specify; to identify", "tnc_rank": 630, "travel_core": false}
+{"lemma": "เลิก", "rank": 672, "band": 1, "pos": "verb", "kana": "lə̂ək", "ja_gloss": "やめる・終える", "en_gloss": "to quit; to stop; to end", "tnc_rank": 632, "travel_core": false}
+{"lemma": "รายการ", "rank": 673, "band": 1, "pos": "noun", "kana": "raai-gaan", "ja_gloss": "リスト・番組", "en_gloss": "list; program; item", "tnc_rank": 633, "travel_core": false}
+{"lemma": "ผู้นำ", "rank": 674, "band": 1, "pos": "noun", "kana": "phûu-nam", "ja_gloss": "リーダー・指導者", "en_gloss": "leader", "tnc_rank": 634, "travel_core": false}
+{"lemma": "คุณภาพ", "rank": 675, "band": 1, "pos": "noun", "kana": "khun-ná-phâap", "ja_gloss": "品質", "en_gloss": "quality", "tnc_rank": 635, "travel_core": false}
+{"lemma": "ความจริง", "rank": 676, "band": 1, "pos": "noun", "kana": "khwaam-jing", "ja_gloss": "真実", "en_gloss": "truth", "tnc_rank": 636, "travel_core": false}
+{"lemma": "ศาสนา", "rank": 677, "band": 1, "pos": "noun", "kana": "sàat-sà-nǎa", "ja_gloss": "宗教", "en_gloss": "religion", "tnc_rank": 637, "travel_core": false}
+{"lemma": "กิจกรรม", "rank": 678, "band": 1, "pos": "noun", "kana": "gìt-jà-gam", "ja_gloss": "活動", "en_gloss": "activity", "tnc_rank": 638, "travel_core": false}
+{"lemma": "ร้อยละ", "rank": 679, "band": 1, "pos": "noun", "kana": "rɔ́ɔi-lá", "ja_gloss": "パーセント", "en_gloss": "percent", "tnc_rank": 639, "travel_core": false}
+{"lemma": "อดีต", "rank": 680, "band": 1, "pos": "noun", "kana": "à-dìit", "ja_gloss": "過去", "en_gloss": "past", "tnc_rank": 640, "travel_core": false}
+{"lemma": "หนุ่ม", "rank": 681, "band": 1, "pos": "noun", "kana": "nùm", "ja_gloss": "若い男性", "en_gloss": "young man", "tnc_rank": 642, "travel_core": false}
+{"lemma": "ส่งเสริม", "rank": 682, "band": 1, "pos": "verb", "kana": "sòng-sə̌əm", "ja_gloss": "促進する・支援する", "en_gloss": "to promote; to support", "tnc_rank": 643, "travel_core": false}
+{"lemma": "กิจการ", "rank": 683, "band": 1, "pos": "noun", "kana": "gìt-jà-gaan", "ja_gloss": "事業", "en_gloss": "business; enterprise", "tnc_rank": 644, "travel_core": false}
+{"lemma": "แน่นอน", "rank": 684, "band": 1, "pos": "adv", "kana": "nɛ̂ɛ-nɔɔn", "ja_gloss": "確かに・もちろん", "en_gloss": "surely; certainly", "tnc_rank": 645, "travel_core": false}
+{"lemma": "ขั้น", "rank": 685, "band": 1, "pos": "noun", "kana": "khân", "ja_gloss": "段階・レベル", "en_gloss": "step; stage; level", "tnc_rank": 646, "travel_core": false}
+{"lemma": "อาชีพ", "rank": 686, "band": 1, "pos": "noun", "kana": "aa-chîip", "ja_gloss": "職業", "en_gloss": "occupation; profession", "tnc_rank": 647, "travel_core": false}
+{"lemma": "ข้าพเจ้า", "rank": 687, "band": 1, "pos": "pron", "kana": "khâa-phá-jâao", "ja_gloss": "私(かしこまった一人称)", "en_gloss": "I (formal)", "tnc_rank": 648, "travel_core": false}
+{"lemma": "ตัด", "rank": 688, "band": 1, "pos": "verb", "kana": "dtàt", "ja_gloss": "切る", "en_gloss": "to cut", "tnc_rank": 649, "travel_core": false}
+{"lemma": "หน่วยงาน", "rank": 689, "band": 1, "pos": "noun", "kana": "nùai-ngaan", "ja_gloss": "機関・部署", "en_gloss": "agency; organization", "tnc_rank": 650, "travel_core": false}
+{"lemma": "ผ้า", "rank": 690, "band": 1, "pos": "noun", "kana": "phâa", "ja_gloss": "布", "en_gloss": "cloth; fabric", "tnc_rank": 651, "travel_core": false}
+{"lemma": "เกือบ", "rank": 691, "band": 1, "pos": "adv", "kana": "gʉ̀ʉap", "ja_gloss": "ほとんど・もう少しで", "en_gloss": "almost; nearly", "tnc_rank": 653, "travel_core": false}
+{"lemma": "ก็ตาม", "rank": 692, "band": 1, "pos": "part", "kana": "gɔ̀-dtaam", "ja_gloss": "〜であろうと(譲歩)", "en_gloss": "no matter; regardless", "tnc_rank": 654, "travel_core": false}
+{"lemma": "บทบาท", "rank": 693, "band": 1, "pos": "noun", "kana": "bòt-bàat", "ja_gloss": "役割", "en_gloss": "role", "tnc_rank": 655, "travel_core": false}
+{"lemma": "สถานที่", "rank": 694, "band": 1, "pos": "noun", "kana": "sà-thǎan-thîi", "ja_gloss": "場所", "en_gloss": "place; location", "tnc_rank": 656, "travel_core": false}
+{"lemma": "ชาวบ้าน", "rank": 695, "band": 1, "pos": "noun", "kana": "chaao-bâan", "ja_gloss": "村人・一般の人々", "en_gloss": "villager; ordinary people", "tnc_rank": 657, "travel_core": false}
+{"lemma": "หนัง", "rank": 696, "band": 1, "pos": "noun", "kana": "nǎng", "ja_gloss": "映画", "en_gloss": "movie; film", "tnc_rank": 658, "travel_core": false}
+{"lemma": "หน่อย", "rank": 697, "band": 1, "pos": "adv", "kana": "nɔ̀i", "ja_gloss": "少し・ちょっと", "en_gloss": "a little; a bit", "tnc_rank": 659, "travel_core": false}
+{"lemma": "เพศ", "rank": 698, "band": 1, "pos": "noun", "kana": "phêet", "ja_gloss": "性・性別", "en_gloss": "sex; gender", "tnc_rank": 660, "travel_core": false}
+{"lemma": "พระองค์", "rank": 699, "band": 1, "pos": "pron", "kana": "phrá-ong", "ja_gloss": "彼・彼女(王族を指す代名詞)", "en_gloss": "he/she/him/her (referring to royalty)", "tnc_rank": 661, "travel_core": false}
+{"lemma": "ความสามารถ", "rank": 700, "band": 1, "pos": "noun", "kana": "khwaam-sǎa-mâat", "ja_gloss": "能力", "en_gloss": "ability", "tnc_rank": 662, "travel_core": false}
+{"lemma": "ทฤษฎี", "rank": 701, "band": 1, "pos": "noun", "kana": "thrít-sà-dii", "ja_gloss": "理論", "en_gloss": "theory", "tnc_rank": 663, "travel_core": false}
+{"lemma": "พวกเขา", "rank": 702, "band": 1, "pos": "pron", "kana": "phûuak-khǎo", "ja_gloss": "彼ら", "en_gloss": "they; them", "tnc_rank": 665, "travel_core": false}
+{"lemma": "เกษตร", "rank": 703, "band": 1, "pos": "noun", "kana": "gà-sèet", "ja_gloss": "農業", "en_gloss": "agriculture; farming", "tnc_rank": 666, "travel_core": false}
+{"lemma": "ภาษี", "rank": 704, "band": 1, "pos": "noun", "kana": "phaa-sǐi", "ja_gloss": "税金", "en_gloss": "tax", "tnc_rank": 667, "travel_core": false}
+{"lemma": "นักเรียน", "rank": 705, "band": 1, "pos": "noun", "kana": "nák-riian", "ja_gloss": "生徒", "en_gloss": "student", "tnc_rank": 668, "travel_core": false}
+{"lemma": "โทษ", "rank": 706, "band": 1, "pos": "noun", "kana": "thôot", "ja_gloss": "罰・過失", "en_gloss": "punishment; fault; blame", "tnc_rank": 669, "travel_core": false}
+{"lemma": "ตกลง", "rank": 707, "band": 1, "pos": "verb", "kana": "dtòk-long", "ja_gloss": "同意する・OK", "en_gloss": "to agree", "tnc_rank": 671, "travel_core": false}
+{"lemma": "ถูกต้อง", "rank": 708, "band": 1, "pos": "adj", "kana": "thùuk-dtɔ̂ng", "ja_gloss": "正しい", "en_gloss": "correct; right", "tnc_rank": 672, "travel_core": false}
+{"lemma": "รอง", "rank": 709, "band": 1, "pos": "noun", "kana": "rɔɔng", "ja_gloss": "副〜・次席", "en_gloss": "deputy; vice-; second", "tnc_rank": 673, "travel_core": false}
+{"lemma": "แทบ", "rank": 710, "band": 1, "pos": "adv", "kana": "thɛ̂ɛp", "ja_gloss": "ほとんど", "en_gloss": "almost; nearly", "tnc_rank": 674, "travel_core": false}
+{"lemma": "หมู่บ้าน", "rank": 711, "band": 1, "pos": "noun", "kana": "mùu-bâan", "ja_gloss": "村", "en_gloss": "village", "tnc_rank": 675, "travel_core": false}
+{"lemma": "ปลาย", "rank": 712, "band": 1, "pos": "noun", "kana": "bplaai", "ja_gloss": "先端・末", "en_gloss": "tip; end", "tnc_rank": 676, "travel_core": false}
+{"lemma": "หน่วย", "rank": 713, "band": 1, "pos": "noun", "kana": "nùai", "ja_gloss": "単位", "en_gloss": "unit", "tnc_rank": 677, "travel_core": false}
+{"lemma": "ไฟ", "rank": 714, "band": 1, "pos": "noun", "kana": "fai", "ja_gloss": "火・電気", "en_gloss": "fire; light; electricity", "tnc_rank": 678, "travel_core": false}
+{"lemma": "ยื่น", "rank": 715, "band": 1, "pos": "verb", "kana": "yʉ̂ʉn", "ja_gloss": "提出する・差し出す", "en_gloss": "to submit; to hand over", "tnc_rank": 679, "travel_core": false}
+{"lemma": "เตรียม", "rank": 716, "band": 1, "pos": "verb", "kana": "dtriiam", "ja_gloss": "準備する", "en_gloss": "to prepare", "tnc_rank": 680, "travel_core": false}
+{"lemma": "ประเด็น", "rank": 717, "band": 1, "pos": "noun", "kana": "bprà-den", "ja_gloss": "論点・問題", "en_gloss": "issue; point", "tnc_rank": 681, "travel_core": false}
+{"lemma": "คำสั่ง", "rank": 718, "band": 1, "pos": "noun", "kana": "kham-sàng", "ja_gloss": "命令・指示", "en_gloss": "order; command", "tnc_rank": 682, "travel_core": false}
+{"lemma": "หนี", "rank": 719, "band": 1, "pos": "verb", "kana": "nǐi", "ja_gloss": "逃げる", "en_gloss": "to flee; to escape", "tnc_rank": 683, "travel_core": false}
+{"lemma": "มาตรฐาน", "rank": 720, "band": 1, "pos": "noun", "kana": "mâat-dtrà-thǎan", "ja_gloss": "基準・標準", "en_gloss": "standard", "tnc_rank": 684, "travel_core": false}
+{"lemma": "ติดต่อ", "rank": 721, "band": 1, "pos": "verb", "kana": "dtìt-dtɔ̀ɔ", "ja_gloss": "連絡する", "en_gloss": "to contact", "tnc_rank": 685, "travel_core": false}
+{"lemma": "เจริญ", "rank": 722, "band": 1, "pos": "verb", "kana": "jà-rəən", "ja_gloss": "成長する・繁栄する", "en_gloss": "to grow; to prosper", "tnc_rank": 686, "travel_core": false}
+{"lemma": "สังเกต", "rank": 723, "band": 1, "pos": "verb", "kana": "sǎng-gèet", "ja_gloss": "気づく・観察する", "en_gloss": "to notice; to observe", "tnc_rank": 687, "travel_core": false}
+{"lemma": "วิชา", "rank": 724, "band": 1, "pos": "noun", "kana": "wí-chaa", "ja_gloss": "科目・学問", "en_gloss": "subject (of study)", "tnc_rank": 688, "travel_core": false}
+{"lemma": "หนัก", "rank": 725, "band": 1, "pos": "adj", "kana": "nàk", "ja_gloss": "重い", "en_gloss": "heavy", "tnc_rank": 689, "travel_core": false}
+{"lemma": "จิตใจ", "rank": 726, "band": 1, "pos": "noun", "kana": "jìt-jai", "ja_gloss": "心・気持ち", "en_gloss": "heart (mind); feelings", "tnc_rank": 690, "travel_core": false}
+{"lemma": "สำนัก", "rank": 727, "band": 1, "pos": "noun", "kana": "sǎm-nák", "ja_gloss": "事務局・本部", "en_gloss": "office; bureau", "tnc_rank": 691, "travel_core": false}
+{"lemma": "อากาศ", "rank": 728, "band": 1, "pos": "noun", "kana": "aa-gàat", "ja_gloss": "空気・天気", "en_gloss": "air; weather", "tnc_rank": 693, "travel_core": false}
+{"lemma": "ประสบ", "rank": 729, "band": 1, "pos": "verb", "kana": "bprà-sòp", "ja_gloss": "経験する・遭遇する", "en_gloss": "to encounter; to experience", "tnc_rank": 694, "travel_core": false}
+{"lemma": "เจตนา", "rank": 730, "band": 1, "pos": "noun", "kana": "jèet-dtà-naa", "ja_gloss": "意図", "en_gloss": "intention", "tnc_rank": 695, "travel_core": false}
+{"lemma": "โทรศัพท์", "rank": 731, "band": 1, "pos": "noun", "kana": "thoo-rá-sàp", "ja_gloss": "電話", "en_gloss": "telephone", "tnc_rank": 888, "travel_core": true}
+{"lemma": "เรื่อย", "rank": 732, "band": 1, "pos": "adv", "kana": "rʉ̂ai", "ja_gloss": "絶えず・いつも", "en_gloss": "continuously; usually", "tnc_rank": 696, "travel_core": false}
+{"lemma": "เลือด", "rank": 733, "band": 1, "pos": "noun", "kana": "lʉ̂ʉat", "ja_gloss": "血", "en_gloss": "blood", "tnc_rank": 697, "travel_core": false}
+{"lemma": "องค์กร", "rank": 734, "band": 1, "pos": "noun", "kana": "ong-gɔɔn", "ja_gloss": "組織", "en_gloss": "organization", "tnc_rank": 698, "travel_core": false}
+{"lemma": "ดำเนิน", "rank": 735, "band": 1, "pos": "verb", "kana": "dam-nəən", "ja_gloss": "進める・実施する", "en_gloss": "to carry out; to conduct; to proceed", "tnc_rank": 700, "travel_core": false}
+{"lemma": "แสน", "rank": 736, "band": 1, "pos": "num", "kana": "sɛ̌ɛn", "ja_gloss": "十万", "en_gloss": "hundred thousand", "tnc_rank": 701, "travel_core": false}
+{"lemma": "คอย", "rank": 737, "band": 1, "pos": "verb", "kana": "khɔɔi", "ja_gloss": "待つ", "en_gloss": "to wait", "tnc_rank": 702, "travel_core": false}
+{"lemma": "ข้าราชการ", "rank": 738, "band": 1, "pos": "noun", "kana": "khâa-râat-chá-gaan", "ja_gloss": "公務員", "en_gloss": "civil servant", "tnc_rank": 704, "travel_core": false}
+{"lemma": "ขยาย", "rank": 739, "band": 1, "pos": "verb", "kana": "khà-yǎai", "ja_gloss": "拡大する", "en_gloss": "to expand; to enlarge", "tnc_rank": 705, "travel_core": false}
+{"lemma": "สรุป", "rank": 740, "band": 1, "pos": "verb", "kana": "sà-rùp", "ja_gloss": "まとめる・結論づける", "en_gloss": "to summarize; to conclude", "tnc_rank": 706, "travel_core": false}
+{"lemma": "ลอง", "rank": 741, "band": 1, "pos": "verb", "kana": "lɔɔng", "ja_gloss": "試す", "en_gloss": "to try", "tnc_rank": 707, "travel_core": false}
+{"lemma": "เสื้อ", "rank": 742, "band": 1, "pos": "noun", "kana": "sʉ̂ʉa", "ja_gloss": "シャツ", "en_gloss": "shirt", "tnc_rank": 708, "travel_core": false}
+{"lemma": "น้ำมัน", "rank": 743, "band": 1, "pos": "noun", "kana": "nám-man", "ja_gloss": "油・ガソリン", "en_gloss": "oil; gasoline", "tnc_rank": 709, "travel_core": false}
+{"lemma": "แข่งขัน", "rank": 744, "band": 1, "pos": "verb", "kana": "khɛ̀ng-khǎn", "ja_gloss": "競争する", "en_gloss": "to compete", "tnc_rank": 710, "travel_core": false}
+{"lemma": "หมายความ", "rank": 745, "band": 1, "pos": "verb", "kana": "mǎai-khwaam", "ja_gloss": "意味する", "en_gloss": "to mean", "tnc_rank": 711, "travel_core": false}
+{"lemma": "ห้าม", "rank": 746, "band": 1, "pos": "verb", "kana": "hâam", "ja_gloss": "禁止する", "en_gloss": "to forbid; to prohibit", "tnc_rank": 712, "travel_core": false}
+{"lemma": "มั้ย", "rank": 747, "band": 1, "pos": "part", "kana": "mái", "ja_gloss": "〜ですか?(疑問の終助詞)", "en_gloss": "question particle: or not?", "tnc_rank": 713, "travel_core": false}
+{"lemma": "งบประมาณ", "rank": 748, "band": 1, "pos": "noun", "kana": "ngóp-bprà-maan", "ja_gloss": "予算", "en_gloss": "budget", "tnc_rank": 715, "travel_core": false}
+{"lemma": "สื่อสาร", "rank": 749, "band": 1, "pos": "verb", "kana": "sʉ̀ʉ-sǎan", "ja_gloss": "コミュニケーションする・伝達する", "en_gloss": "to communicate", "tnc_rank": 716, "travel_core": false}
+{"lemma": "ช่าง", "rank": 750, "band": 1, "pos": "noun", "kana": "châang", "ja_gloss": "職人・技術者", "en_gloss": "craftsman; technician; mechanic", "tnc_rank": 717, "travel_core": false}
+{"lemma": "ในขณะที่", "rank": 751, "band": 1, "pos": "conj", "kana": "nai-khà-nà-thîi", "ja_gloss": "〜している間に", "en_gloss": "while", "tnc_rank": 719, "travel_core": false}
+{"lemma": "สา", "rank": 752, "band": 1, "pos": "noun", "kana": "sǎa", "ja_gloss": "犬(詩的・方言表現)", "en_gloss": "dog (poetic/dialectal term)", "tnc_rank": 720, "travel_core": false}
+{"lemma": "ทีม", "rank": 753, "band": 1, "pos": "noun", "kana": "thiim", "ja_gloss": "チーム", "en_gloss": "team", "tnc_rank": 721, "travel_core": false}
+{"lemma": "คล้าย", "rank": 754, "band": 1, "pos": "verb", "kana": "khláai", "ja_gloss": "似ている", "en_gloss": "to resemble; to be similar", "tnc_rank": 722, "travel_core": false}
+{"lemma": "ขา", "rank": 755, "band": 1, "pos": "noun", "kana": "khǎa", "ja_gloss": "脚・足", "en_gloss": "leg", "tnc_rank": 723, "travel_core": false}
+{"lemma": "ทรัพย์สิน", "rank": 756, "band": 1, "pos": "noun", "kana": "sáp-sǐn", "ja_gloss": "財産", "en_gloss": "property; assets", "tnc_rank": 724, "travel_core": false}
+{"lemma": "ภาวะ", "rank": 757, "band": 1, "pos": "noun", "kana": "phaa-wá", "ja_gloss": "状態", "en_gloss": "condition; state", "tnc_rank": 725, "travel_core": false}
+{"lemma": "วรรค", "rank": 758, "band": 1, "pos": "noun", "kana": "wák", "ja_gloss": "段落・節", "en_gloss": "paragraph; section", "tnc_rank": 726, "travel_core": false}
+{"lemma": "เอ", "rank": 759, "band": 1, "pos": "noun", "kana": "ee", "ja_gloss": "アルファベットのA", "en_gloss": "the letter A", "tnc_rank": 727, "travel_core": false}
+{"lemma": "ดิน", "rank": 760, "band": 1, "pos": "noun", "kana": "din", "ja_gloss": "土", "en_gloss": "soil; earth; ground", "tnc_rank": 728, "travel_core": false}
+{"lemma": "สวน", "rank": 761, "band": 1, "pos": "noun", "kana": "sǔuan", "ja_gloss": "庭・公園", "en_gloss": "garden; park; orchard", "tnc_rank": 729, "travel_core": false}
+{"lemma": "ยาย", "rank": 762, "band": 1, "pos": "noun", "kana": "yaai", "ja_gloss": "祖母(母方)", "en_gloss": "grandmother (maternal)", "tnc_rank": 730, "travel_core": false}
+{"lemma": "มุม", "rank": 763, "band": 1, "pos": "noun", "kana": "mum", "ja_gloss": "角・隅", "en_gloss": "corner; angle", "tnc_rank": 731, "travel_core": false}
+{"lemma": "ฟ้า", "rank": 764, "band": 1, "pos": "noun", "kana": "fáa", "ja_gloss": "空", "en_gloss": "sky", "tnc_rank": 732, "travel_core": false}
+{"lemma": "สงสัย", "rank": 765, "band": 1, "pos": "verb", "kana": "sǒng-sǎi", "ja_gloss": "疑う・不思議に思う", "en_gloss": "to wonder; to suspect; to doubt", "tnc_rank": 733, "travel_core": false}
+{"lemma": "ลา", "rank": 766, "band": 1, "pos": "verb", "kana": "laa", "ja_gloss": "別れを告げる・休暇を取る", "en_gloss": "to take leave; to say goodbye", "tnc_rank": 734, "travel_core": false}
+{"lemma": "ผิว", "rank": 767, "band": 1, "pos": "noun", "kana": "phǐu", "ja_gloss": "肌・表面", "en_gloss": "skin; surface", "tnc_rank": 735, "travel_core": false}
+{"lemma": "กว้าง", "rank": 768, "band": 1, "pos": "adj", "kana": "gwâang", "ja_gloss": "広い", "en_gloss": "wide; broad", "tnc_rank": 736, "travel_core": false}
+{"lemma": "เบา", "rank": 769, "band": 1, "pos": "adj", "kana": "bao", "ja_gloss": "軽い・静かな", "en_gloss": "light (weight); soft; quiet", "tnc_rank": 737, "travel_core": false}
+{"lemma": "สงบ", "rank": 770, "band": 1, "pos": "adj", "kana": "sà-ngòp", "ja_gloss": "穏やかな・平和な", "en_gloss": "calm; peaceful", "tnc_rank": 738, "travel_core": false}
+{"lemma": "สั้น", "rank": 771, "band": 1, "pos": "adj", "kana": "sân", "ja_gloss": "短い", "en_gloss": "short", "tnc_rank": 739, "travel_core": false}
+{"lemma": "สื่อ", "rank": 772, "band": 1, "pos": "noun", "kana": "sʉ̀ʉ", "ja_gloss": "メディア・媒体", "en_gloss": "media", "tnc_rank": 740, "travel_core": false}
+{"lemma": "บ้า", "rank": 773, "band": 1, "pos": "adj", "kana": "bâa", "ja_gloss": "気が狂った・クレイジー", "en_gloss": "crazy; mad", "tnc_rank": 741, "travel_core": false}
+{"lemma": "เล่ม", "rank": 774, "band": 1, "pos": "classifier", "kana": "lêm", "ja_gloss": "類別詞:本・冊", "en_gloss": "classifier for books", "tnc_rank": 742, "travel_core": false}
+{"lemma": "หลักฐาน", "rank": 775, "band": 1, "pos": "noun", "kana": "làk-thǎan", "ja_gloss": "証拠", "en_gloss": "evidence", "tnc_rank": 743, "travel_core": false}
+{"lemma": "ชม", "rank": 776, "band": 1, "pos": "verb", "kana": "chom", "ja_gloss": "褒める・鑑賞する", "en_gloss": "to praise; to admire", "tnc_rank": 744, "travel_core": false}
+{"lemma": "แปลก", "rank": 777, "band": 1, "pos": "adj", "kana": "bplɛ̀ɛk", "ja_gloss": "変な・奇妙な", "en_gloss": "strange; unusual", "tnc_rank": 745, "travel_core": false}
+{"lemma": "ทุกข์", "rank": 778, "band": 1, "pos": "noun", "kana": "thúk", "ja_gloss": "苦しみ", "en_gloss": "suffering; sorrow", "tnc_rank": 746, "travel_core": false}
+{"lemma": "จำกัด", "rank": 779, "band": 1, "pos": "verb", "kana": "jam-gàt", "ja_gloss": "制限する", "en_gloss": "to limit; to restrict", "tnc_rank": 748, "travel_core": false}
+{"lemma": "สาเหตุ", "rank": 780, "band": 1, "pos": "noun", "kana": "sǎa-hèet", "ja_gloss": "原因", "en_gloss": "cause; reason", "tnc_rank": 749, "travel_core": false}
+{"lemma": "รา", "rank": 781, "band": 1, "pos": "noun", "kana": "raa", "ja_gloss": "カビ", "en_gloss": "mold; fungus", "tnc_rank": 750, "travel_core": false}
+{"lemma": "นิติกรรม", "rank": 782, "band": 1, "pos": "noun", "kana": "ní-dtì-gam", "ja_gloss": "法律行為", "en_gloss": "juristic act", "tnc_rank": 751, "travel_core": false}
+{"lemma": "กล้า", "rank": 783, "band": 1, "pos": "verb", "kana": "glâa", "ja_gloss": "勇敢である・あえて〜する", "en_gloss": "to be brave; to dare", "tnc_rank": 752, "travel_core": false}
+{"lemma": "ลำดับ", "rank": 784, "band": 1, "pos": "noun", "kana": "lam-dàp", "ja_gloss": "順序", "en_gloss": "order; sequence", "tnc_rank": 753, "travel_core": false}
+{"lemma": "แนวทาง", "rank": 785, "band": 1, "pos": "noun", "kana": "nɛɛo-thaang", "ja_gloss": "方針・指針", "en_gloss": "guideline; direction", "tnc_rank": 754, "travel_core": false}
+{"lemma": "ชวน", "rank": 786, "band": 1, "pos": "verb", "kana": "chuuan", "ja_gloss": "誘う", "en_gloss": "to invite; to persuade", "tnc_rank": 755, "travel_core": false}
+{"lemma": "ศพ", "rank": 787, "band": 1, "pos": "noun", "kana": "sòp", "ja_gloss": "死体", "en_gloss": "corpse", "tnc_rank": 756, "travel_core": false}
+{"lemma": "บ่อย", "rank": 788, "band": 1, "pos": "adv", "kana": "bɔ̀i", "ja_gloss": "よく・頻繁に", "en_gloss": "often", "tnc_rank": 758, "travel_core": false}
+{"lemma": "พลัง", "rank": 789, "band": 1, "pos": "noun", "kana": "phá-lang", "ja_gloss": "力・エネルギー", "en_gloss": "power; energy", "tnc_rank": 759, "travel_core": false}
+{"lemma": "ลืม", "rank": 790, "band": 1, "pos": "verb", "kana": "lʉʉm", "ja_gloss": "忘れる", "en_gloss": "to forget", "tnc_rank": 760, "travel_core": false}
+{"lemma": "บัญชี", "rank": 791, "band": 1, "pos": "noun", "kana": "ban-chii", "ja_gloss": "口座・帳簿", "en_gloss": "account; list", "tnc_rank": 761, "travel_core": false}
+{"lemma": "ธรรมดา", "rank": 792, "band": 1, "pos": "adj", "kana": "tham-má-daa", "ja_gloss": "普通の", "en_gloss": "ordinary; normal", "tnc_rank": 762, "travel_core": false}
+{"lemma": "แม้แต่", "rank": 793, "band": 1, "pos": "conj", "kana": "mɛ́ɛ-dtɛ̀ɛ", "ja_gloss": "〜でさえ", "en_gloss": "even", "tnc_rank": 763, "travel_core": false}
+{"lemma": "ยอด", "rank": 794, "band": 1, "pos": "noun", "kana": "yɔ̂ɔt", "ja_gloss": "頂上・トップ", "en_gloss": "top; peak", "tnc_rank": 764, "travel_core": false}
+{"lemma": "ทั้งหลาย", "rank": 795, "band": 1, "pos": "adj", "kana": "tháng-lǎai", "ja_gloss": "すべての", "en_gloss": "all (of them)", "tnc_rank": 765, "travel_core": false}
+{"lemma": "นายกรัฐมนตรี", "rank": 796, "band": 1, "pos": "noun", "kana": "naa-yók-rát-thà-mon-dtrii", "ja_gloss": "首相", "en_gloss": "prime minister", "tnc_rank": 766, "travel_core": false}
+{"lemma": "เกินไป", "rank": 797, "band": 1, "pos": "adv", "kana": "gəən-bpai", "ja_gloss": "〜すぎる", "en_gloss": "too much; excessively", "tnc_rank": 768, "travel_core": false}
+{"lemma": "ย้าย", "rank": 798, "band": 1, "pos": "verb", "kana": "yáai", "ja_gloss": "移動する・引っ越す", "en_gloss": "to move; to relocate", "tnc_rank": 769, "travel_core": false}
+{"lemma": "เอกสาร", "rank": 799, "band": 1, "pos": "noun", "kana": "èek-gà-sǎan", "ja_gloss": "書類", "en_gloss": "document", "tnc_rank": 770, "travel_core": false}
+{"lemma": "บันทึก", "rank": 800, "band": 1, "pos": "verb", "kana": "ban-thʉ́k", "ja_gloss": "記録する・メモする", "en_gloss": "to record; to note; to save", "tnc_rank": 772, "travel_core": false}
+{"lemma": "คราว", "rank": 801, "band": 1, "pos": "noun", "kana": "khraao", "ja_gloss": "回・時", "en_gloss": "time; occasion", "tnc_rank": 773, "travel_core": false}
+{"lemma": "พื้น", "rank": 802, "band": 1, "pos": "noun", "kana": "phʉ́ʉn", "ja_gloss": "床・地面", "en_gloss": "floor; ground", "tnc_rank": 774, "travel_core": false}
+{"lemma": "เอกชน", "rank": 803, "band": 1, "pos": "noun", "kana": "èek-gà-chon", "ja_gloss": "民間・個人", "en_gloss": "private (sector); individual", "tnc_rank": 775, "travel_core": false}
+{"lemma": "ดำรง", "rank": 804, "band": 1, "pos": "verb", "kana": "dam-rong", "ja_gloss": "維持する・務める", "en_gloss": "to maintain; to hold (a position)", "tnc_rank": 776, "travel_core": false}
+{"lemma": "ปริมาณ", "rank": 805, "band": 1, "pos": "noun", "kana": "bpà-rí-maan", "ja_gloss": "量", "en_gloss": "quantity; amount", "tnc_rank": 778, "travel_core": false}
+{"lemma": "เที่ยว", "rank": 806, "band": 1, "pos": "verb", "kana": "thîao", "ja_gloss": "旅行する・遊びに行く", "en_gloss": "to travel; to go out; to visit", "tnc_rank": 779, "travel_core": false}
+{"lemma": "แนวคิด", "rank": 807, "band": 1, "pos": "noun", "kana": "nɛɛo-khít", "ja_gloss": "考え方・概念", "en_gloss": "concept; idea", "tnc_rank": 780, "travel_core": false}
+{"lemma": "กรรม", "rank": 808, "band": 1, "pos": "noun", "kana": "gam", "ja_gloss": "業・行い", "en_gloss": "karma; action; deed", "tnc_rank": 781, "travel_core": false}
+{"lemma": "ไหล", "rank": 809, "band": 1, "pos": "verb", "kana": "lǎi", "ja_gloss": "流れる", "en_gloss": "to flow", "tnc_rank": 782, "travel_core": false}
+{"lemma": "โดน", "rank": 810, "band": 1, "pos": "verb", "kana": "doon", "ja_gloss": "〜される(受身)・当たる", "en_gloss": "to be hit by; passive marker", "tnc_rank": 784, "travel_core": false}
+{"lemma": "นก", "rank": 811, "band": 1, "pos": "noun", "kana": "nók", "ja_gloss": "鳥", "en_gloss": "bird", "tnc_rank": 785, "travel_core": false}
+{"lemma": "หนี้", "rank": 812, "band": 1, "pos": "noun", "kana": "nîi", "ja_gloss": "借金", "en_gloss": "debt", "tnc_rank": 786, "travel_core": false}
+{"lemma": "โต๊ะ", "rank": 813, "band": 1, "pos": "noun", "kana": "dtó", "ja_gloss": "テーブル・机", "en_gloss": "table; desk", "tnc_rank": 787, "travel_core": false}
+{"lemma": "ทุน", "rank": 814, "band": 1, "pos": "noun", "kana": "thun", "ja_gloss": "資金・資本", "en_gloss": "capital; fund", "tnc_rank": 788, "travel_core": false}
+{"lemma": "พ่อแม่", "rank": 815, "band": 1, "pos": "noun", "kana": "phɔ̂ɔ-mɛ̂ɛ", "ja_gloss": "両親", "en_gloss": "parents", "tnc_rank": 789, "travel_core": false}
+{"lemma": "ศูนย์", "rank": 816, "band": 1, "pos": "noun", "kana": "sǔun", "ja_gloss": "センター・ゼロ", "en_gloss": "center; zero", "tnc_rank": 790, "travel_core": false}
+{"lemma": "กา", "rank": 817, "band": 1, "pos": "noun", "kana": "gaa", "ja_gloss": "やかん", "en_gloss": "kettle; teapot", "tnc_rank": 791, "travel_core": false}
+{"lemma": "ช้า", "rank": 818, "band": 1, "pos": "adj", "kana": "cháa", "ja_gloss": "遅い", "en_gloss": "slow", "tnc_rank": 792, "travel_core": false}
+{"lemma": "หวัง", "rank": 819, "band": 1, "pos": "verb", "kana": "wǎng", "ja_gloss": "望む・願う", "en_gloss": "to hope", "tnc_rank": 794, "travel_core": false}
+{"lemma": "เรียบร้อย", "rank": 820, "band": 1, "pos": "adj", "kana": "rîiap-rɔ́ɔi", "ja_gloss": "きちんとした・整った", "en_gloss": "neat; tidy; orderly", "tnc_rank": 795, "travel_core": false}
+{"lemma": "ไร้", "rank": 821, "band": 1, "pos": "prep", "kana": "rái", "ja_gloss": "〜のない", "en_gloss": "without; lacking", "tnc_rank": 796, "travel_core": false}
+{"lemma": "ลุก", "rank": 822, "band": 1, "pos": "verb", "kana": "lúk", "ja_gloss": "立ち上がる", "en_gloss": "to stand up; to get up", "tnc_rank": 797, "travel_core": false}
+{"lemma": "สถาน", "rank": 823, "band": 1, "pos": "noun", "kana": "sà-thǎan", "ja_gloss": "場所", "en_gloss": "place; location", "tnc_rank": 799, "travel_core": false}
+{"lemma": "องค์", "rank": 824, "band": 1, "pos": "classifier", "kana": "ong", "ja_gloss": "類別詞:神仏・王族", "en_gloss": "classifier for gods/royalty/priests", "tnc_rank": 800, "travel_core": false}
+{"lemma": "รายละเอียด", "rank": 825, "band": 1, "pos": "noun", "kana": "raai-lá-ìiat", "ja_gloss": "詳細", "en_gloss": "detail", "tnc_rank": 801, "travel_core": false}
+{"lemma": "เดี๋ยว", "rank": 826, "band": 1, "pos": "noun", "kana": "dǐao", "ja_gloss": "ちょっと・すぐに", "en_gloss": "a moment; a while", "tnc_rank": 802, "travel_core": false}
+{"lemma": "เรียนรู้", "rank": 827, "band": 1, "pos": "verb", "kana": "riian-rúu", "ja_gloss": "学ぶ", "en_gloss": "to learn", "tnc_rank": 803, "travel_core": false}
+{"lemma": "ชิ้น", "rank": 828, "band": 1, "pos": "classifier", "kana": "chín", "ja_gloss": "類別詞:個・切れ", "en_gloss": "classifier for pieces", "tnc_rank": 804, "travel_core": false}
+{"lemma": "สถานการณ์", "rank": 829, "band": 1, "pos": "noun", "kana": "sà-thǎa-ná-gaan", "ja_gloss": "状況", "en_gloss": "situation", "tnc_rank": 805, "travel_core": false}
+{"lemma": "รัฐธรรมนูญ", "rank": 830, "band": 1, "pos": "noun", "kana": "rát-thà-tham-má-nuun", "ja_gloss": "憲法", "en_gloss": "constitution", "tnc_rank": 806, "travel_core": false}
+{"lemma": "คำตอบ", "rank": 831, "band": 1, "pos": "noun", "kana": "kham-dtɔ̀ɔp", "ja_gloss": "答え", "en_gloss": "answer", "tnc_rank": 807, "travel_core": false}
+{"lemma": "ค่อนข้าง", "rank": 832, "band": 1, "pos": "adv", "kana": "khɔ̂n-khâang", "ja_gloss": "かなり・わりと", "en_gloss": "rather; fairly", "tnc_rank": 808, "travel_core": false}
+{"lemma": "งาม", "rank": 833, "band": 1, "pos": "adj", "kana": "ngaam", "ja_gloss": "美しい", "en_gloss": "beautiful", "tnc_rank": 809, "travel_core": false}
+{"lemma": "อันตราย", "rank": 834, "band": 1, "pos": "noun", "kana": "an-dtà-raai", "ja_gloss": "危険", "en_gloss": "danger", "tnc_rank": 810, "travel_core": false}
+{"lemma": "วง", "rank": 835, "band": 1, "pos": "noun", "kana": "wong", "ja_gloss": "輪・グループ", "en_gloss": "circle; group; band", "tnc_rank": 813, "travel_core": false}
+{"lemma": "พิมพ์", "rank": 836, "band": 1, "pos": "verb", "kana": "phim", "ja_gloss": "印刷する・タイプする", "en_gloss": "to print; to type", "tnc_rank": 814, "travel_core": false}
+{"lemma": "พื้นฐาน", "rank": 837, "band": 1, "pos": "noun", "kana": "phʉ́ʉn-thǎan", "ja_gloss": "基本・基礎", "en_gloss": "basic knowledge; foundation", "tnc_rank": 815, "travel_core": false}
+{"lemma": "อ่อน", "rank": 838, "band": 1, "pos": "adj", "kana": "ɔ̀ɔn", "ja_gloss": "柔らかい・弱い", "en_gloss": "soft; young; weak", "tnc_rank": 816, "travel_core": false}
+{"lemma": "เทคโนโลยี", "rank": 839, "band": 1, "pos": "noun", "kana": "thék-noo-loo-yii", "ja_gloss": "テクノロジー", "en_gloss": "technology", "tnc_rank": 818, "travel_core": false}
+{"lemma": "สม", "rank": 840, "band": 1, "pos": "verb", "kana": "sǒm", "ja_gloss": "ふさわしい・似合う", "en_gloss": "to suit; to be fitting", "tnc_rank": 819, "travel_core": false}
+{"lemma": "กอง", "rank": 841, "band": 1, "pos": "noun", "kana": "gɔɔng", "ja_gloss": "山・部隊", "en_gloss": "pile; heap; troop", "tnc_rank": 820, "travel_core": false}
+{"lemma": "ป้า", "rank": 842, "band": 1, "pos": "noun", "kana": "bpâa", "ja_gloss": "おばさん(親の姉)", "en_gloss": "aunt (older than parent)", "tnc_rank": 821, "travel_core": false}
+{"lemma": "ดวง", "rank": 843, "band": 1, "pos": "classifier", "kana": "duuang", "ja_gloss": "類別詞:丸い物(星・印など)", "en_gloss": "classifier for round things (stars, stamps, etc.)", "tnc_rank": 822, "travel_core": false}
+{"lemma": "มั่นคง", "rank": 844, "band": 1, "pos": "adj", "kana": "mân-khong", "ja_gloss": "安定した", "en_gloss": "stable; secure", "tnc_rank": 823, "travel_core": false}
+{"lemma": "เท่ากับ", "rank": 845, "band": 1, "pos": "verb", "kana": "thâo-gàp", "ja_gloss": "等しい・イコール", "en_gloss": "to equal", "tnc_rank": 824, "travel_core": false}
+{"lemma": "ฝน", "rank": 846, "band": 1, "pos": "noun", "kana": "fǒn", "ja_gloss": "雨", "en_gloss": "rain", "tnc_rank": 825, "travel_core": false}
+{"lemma": "ตะวันตก", "rank": 847, "band": 1, "pos": "noun", "kana": "dtà-wan-dtòk", "ja_gloss": "西", "en_gloss": "west", "tnc_rank": 826, "travel_core": false}
+{"lemma": "ความต้องการ", "rank": 848, "band": 1, "pos": "noun", "kana": "khwaam-dtɔ̂ng-gaan", "ja_gloss": "需要・要求", "en_gloss": "need; demand", "tnc_rank": 827, "travel_core": false}
+{"lemma": "นคร", "rank": 849, "band": 1, "pos": "noun", "kana": "ná-khɔɔn", "ja_gloss": "都市", "en_gloss": "city", "tnc_rank": 828, "travel_core": false}
+{"lemma": "ซ้ำ", "rank": 850, "band": 1, "pos": "verb", "kana": "sám", "ja_gloss": "繰り返す", "en_gloss": "to repeat", "tnc_rank": 829, "travel_core": false}
+{"lemma": "หลวง", "rank": 851, "band": 1, "pos": "adj", "kana": "lǔuang", "ja_gloss": "王室の・国立の", "en_gloss": "royal; grand; public (state)", "tnc_rank": 830, "travel_core": false}
+{"lemma": "ฆ่า", "rank": 852, "band": 1, "pos": "verb", "kana": "khâa", "ja_gloss": "殺す", "en_gloss": "to kill", "tnc_rank": 832, "travel_core": false}
+{"lemma": "สามี", "rank": 853, "band": 1, "pos": "noun", "kana": "sǎa-mii", "ja_gloss": "夫", "en_gloss": "husband", "tnc_rank": 833, "travel_core": false}
+{"lemma": "อิทธิพล", "rank": 854, "band": 1, "pos": "noun", "kana": "ìt-thí-phon", "ja_gloss": "影響力", "en_gloss": "influence", "tnc_rank": 834, "travel_core": false}
+{"lemma": "ประสบการณ์", "rank": 855, "band": 1, "pos": "noun", "kana": "bprà-sòp-gaan", "ja_gloss": "経験", "en_gloss": "experience", "tnc_rank": 836, "travel_core": false}
+{"lemma": "ภายใต้", "rank": 856, "band": 1, "pos": "prep", "kana": "phaai-dtâai", "ja_gloss": "〜の下で", "en_gloss": "under", "tnc_rank": 837, "travel_core": false}
+{"lemma": "ลึก", "rank": 857, "band": 1, "pos": "adj", "kana": "lʉ́k", "ja_gloss": "深い", "en_gloss": "deep", "tnc_rank": 838, "travel_core": false}
+{"lemma": "ยาม", "rank": 858, "band": 1, "pos": "noun", "kana": "yaam", "ja_gloss": "警備員・見張り", "en_gloss": "guard; watchman; time period", "tnc_rank": 839, "travel_core": false}
+{"lemma": "ครึ่ง", "rank": 859, "band": 1, "pos": "noun", "kana": "khrʉ̂ng", "ja_gloss": "半分", "en_gloss": "half", "tnc_rank": 840, "travel_core": false}
+{"lemma": "ศิลปะ", "rank": 860, "band": 1, "pos": "noun", "kana": "sǐn-lá-bpà", "ja_gloss": "芸術", "en_gloss": "art", "tnc_rank": 841, "travel_core": false}
+{"lemma": "สิ่งแวดล้อม", "rank": 861, "band": 1, "pos": "noun", "kana": "sìng-wɛ̂ɛt-lɔ́ɔm", "ja_gloss": "環境", "en_gloss": "environment", "tnc_rank": 842, "travel_core": false}
+{"lemma": "งั้น", "rank": 862, "band": 1, "pos": "adv", "kana": "ngán", "ja_gloss": "それなら・じゃあ", "en_gloss": "then; in that case", "tnc_rank": 843, "travel_core": false}
+{"lemma": "เป้าหมาย", "rank": 863, "band": 1, "pos": "noun", "kana": "bpâo-mǎai", "ja_gloss": "目標", "en_gloss": "goal; target", "tnc_rank": 844, "travel_core": false}
+{"lemma": "กาย", "rank": 864, "band": 1, "pos": "noun", "kana": "gaai", "ja_gloss": "体", "en_gloss": "body", "tnc_rank": 845, "travel_core": false}
+{"lemma": "สุขภาพ", "rank": 865, "band": 1, "pos": "noun", "kana": "sùk-khà-phâap", "ja_gloss": "健康", "en_gloss": "health", "tnc_rank": 846, "travel_core": false}
+{"lemma": "นิ่ง", "rank": 866, "band": 1, "pos": "adj", "kana": "nîng", "ja_gloss": "静止した・黙っている", "en_gloss": "still; motionless; quiet", "tnc_rank": 847, "travel_core": false}
+{"lemma": "แฟน", "rank": 867, "band": 1, "pos": "noun", "kana": "fɛɛn", "ja_gloss": "恋人・ファン", "en_gloss": "boyfriend; girlfriend; fan", "tnc_rank": 848, "travel_core": false}
+{"lemma": "อี", "rank": 868, "band": 1, "pos": "noun", "kana": "ii", "ja_gloss": "女性への侮蔑的な呼称（下品）", "en_gloss": "vulgar/derogatory term of address for a woman", "tnc_rank": 850, "travel_core": false}
+{"lemma": "ชี้", "rank": 869, "band": 1, "pos": "verb", "kana": "chíi", "ja_gloss": "指す・指摘する", "en_gloss": "to point; to indicate", "tnc_rank": 851, "travel_core": false}
+{"lemma": "ครบ", "rank": 870, "band": 1, "pos": "adj", "kana": "khróp", "ja_gloss": "揃った・完全な", "en_gloss": "complete; full", "tnc_rank": 852, "travel_core": false}
+{"lemma": "พระเจ้า", "rank": 871, "band": 1, "pos": "noun", "kana": "phrá-jâao", "ja_gloss": "神", "en_gloss": "God; deity", "tnc_rank": 854, "travel_core": false}
+{"lemma": "ผู้ใหญ่", "rank": 872, "band": 1, "pos": "noun", "kana": "phûu-yài", "ja_gloss": "大人・年長者", "en_gloss": "adult; elder", "tnc_rank": 855, "travel_core": false}
+{"lemma": "ตั้งใจ", "rank": 873, "band": 1, "pos": "verb", "kana": "dtâng-jai", "ja_gloss": "意図する・集中する", "en_gloss": "to intend; to pay attention", "tnc_rank": 857, "travel_core": false}
+{"lemma": "แผน", "rank": 874, "band": 1, "pos": "noun", "kana": "phɛ̌ɛn", "ja_gloss": "計画", "en_gloss": "plan", "tnc_rank": 858, "travel_core": false}
+{"lemma": "แต่ง", "rank": 875, "band": 1, "pos": "verb", "kana": "dtɛ̀ng", "ja_gloss": "作る・飾る・着る", "en_gloss": "to compose; to decorate; to dress", "tnc_rank": 859, "travel_core": false}
+{"lemma": "เกาะ", "rank": 876, "band": 1, "pos": "noun", "kana": "gɔ̀", "ja_gloss": "島", "en_gloss": "island", "tnc_rank": 861, "travel_core": false}
+{"lemma": "เงื่อนไข", "rank": 877, "band": 1, "pos": "noun", "kana": "ngʉ̂ʉan-khǎi", "ja_gloss": "条件", "en_gloss": "condition", "tnc_rank": 862, "travel_core": false}
+{"lemma": "ปลอดภัย", "rank": 878, "band": 1, "pos": "adj", "kana": "bplɔ̀ɔt-phai", "ja_gloss": "安全な", "en_gloss": "safe", "tnc_rank": 863, "travel_core": false}
+{"lemma": "มหา", "rank": 879, "band": 1, "pos": "noun", "kana": "má-hǎa", "ja_gloss": "(仏教の)学識僧の称号「マハー」", "en_gloss": "title for a learned Buddhist monk", "tnc_rank": 864, "travel_core": false}
+{"lemma": "แท้จริง", "rank": 880, "band": 1, "pos": "adj", "kana": "thɛ́ɛ-jing", "ja_gloss": "本当の・真実の", "en_gloss": "real; genuine; true", "tnc_rank": 865, "travel_core": false}
+{"lemma": "อนาคต", "rank": 881, "band": 1, "pos": "noun", "kana": "à-naa-khót", "ja_gloss": "未来", "en_gloss": "future", "tnc_rank": 866, "travel_core": false}
+{"lemma": "แต่งตั้ง", "rank": 882, "band": 1, "pos": "verb", "kana": "dtɛ̀ng-dtâng", "ja_gloss": "任命する", "en_gloss": "to appoint", "tnc_rank": 867, "travel_core": false}
+{"lemma": "ประสิทธิภาพ", "rank": 883, "band": 1, "pos": "noun", "kana": "bprà-sìt-thí-phâap", "ja_gloss": "効率", "en_gloss": "efficiency", "tnc_rank": 868, "travel_core": false}
+{"lemma": "เปิดเผย", "rank": 884, "band": 1, "pos": "verb", "kana": "bpə̀ət-phə̌əi", "ja_gloss": "暴露する・明らかにする", "en_gloss": "to reveal; to expose", "tnc_rank": 869, "travel_core": false}
+{"lemma": "สมบูรณ์", "rank": 885, "band": 1, "pos": "adj", "kana": "sǒm-buun", "ja_gloss": "完全な", "en_gloss": "complete; perfect", "tnc_rank": 870, "travel_core": false}
+{"lemma": "ประวัติศาสตร์", "rank": 886, "band": 1, "pos": "noun", "kana": "bprà-wàt-dtì-sàat", "ja_gloss": "歴史", "en_gloss": "history", "tnc_rank": 871, "travel_core": false}
+{"lemma": "เปรียบเทียบ", "rank": 887, "band": 1, "pos": "verb", "kana": "bprìiap-thîiap", "ja_gloss": "比較する", "en_gloss": "to compare", "tnc_rank": 872, "travel_core": false}
+{"lemma": "สาขา", "rank": 888, "band": 1, "pos": "noun", "kana": "sǎa-khǎa", "ja_gloss": "支店・分野", "en_gloss": "branch", "tnc_rank": 873, "travel_core": false}
+{"lemma": "ชัย", "rank": 889, "band": 1, "pos": "noun", "kana": "chai", "ja_gloss": "勝利", "en_gloss": "victory", "tnc_rank": 874, "travel_core": false}
+{"lemma": "พ้น", "rank": 890, "band": 1, "pos": "verb", "kana": "phón", "ja_gloss": "逃れる・免れる", "en_gloss": "to escape; to be free from", "tnc_rank": 875, "travel_core": false}
+{"lemma": "เงียบ", "rank": 891, "band": 1, "pos": "adj", "kana": "ngîiap", "ja_gloss": "静かな", "en_gloss": "quiet; silent", "tnc_rank": 876, "travel_core": false}
+{"lemma": "ผู้คน", "rank": 892, "band": 1, "pos": "noun", "kana": "phûu-khon", "ja_gloss": "人々", "en_gloss": "people", "tnc_rank": 877, "travel_core": false}
+{"lemma": "แต่งงาน", "rank": 893, "band": 1, "pos": "verb", "kana": "dtɛ̀ng-ngaan", "ja_gloss": "結婚する", "en_gloss": "to marry", "tnc_rank": 878, "travel_core": false}
+{"lemma": "เยอะ", "rank": 894, "band": 1, "pos": "adv", "kana": "yə́", "ja_gloss": "たくさん", "en_gloss": "a lot; many", "tnc_rank": 879, "travel_core": false}
+{"lemma": "อะ", "rank": 895, "band": 1, "pos": "intj", "kana": "à", "ja_gloss": "はい・どうぞ(口語)", "en_gloss": "here you go; okay (colloquial)", "tnc_rank": 880, "travel_core": false}
+{"lemma": "ฝัน", "rank": 896, "band": 1, "pos": "noun", "kana": "fǎn", "ja_gloss": "夢", "en_gloss": "dream", "tnc_rank": 881, "travel_core": false}
+{"lemma": "กรุง", "rank": 897, "band": 1, "pos": "noun", "kana": "grung", "ja_gloss": "首都", "en_gloss": "capital city", "tnc_rank": 882, "travel_core": false}
+{"lemma": "ปลูก", "rank": 898, "band": 1, "pos": "verb", "kana": "bplùuk", "ja_gloss": "植える", "en_gloss": "to plant; to grow", "tnc_rank": 883, "travel_core": false}
+{"lemma": "ลม", "rank": 899, "band": 1, "pos": "noun", "kana": "lom", "ja_gloss": "風", "en_gloss": "wind", "tnc_rank": 884, "travel_core": false}
+{"lemma": "ฐาน", "rank": 900, "band": 1, "pos": "noun", "kana": "thǎan", "ja_gloss": "基盤・土台", "en_gloss": "base; foundation", "tnc_rank": 885, "travel_core": false}
+{"lemma": "ซะ", "rank": 901, "band": 1, "pos": "part", "kana": "sá", "ja_gloss": "〜してしまう(強調の終助詞)", "en_gloss": "emphatic particle (completive)", "tnc_rank": 886, "travel_core": false}
+{"lemma": "มติ", "rank": 902, "band": 1, "pos": "noun", "kana": "má-dtì", "ja_gloss": "決議・意見", "en_gloss": "resolution; opinion", "tnc_rank": 887, "travel_core": false}
+{"lemma": "ฝึก", "rank": 903, "band": 1, "pos": "verb", "kana": "fʉ̀k", "ja_gloss": "練習する・訓練する", "en_gloss": "to practice; to train", "tnc_rank": 889, "travel_core": false}
+{"lemma": "ละคร", "rank": 904, "band": 1, "pos": "noun", "kana": "lá-khɔɔn", "ja_gloss": "ドラマ・芝居", "en_gloss": "drama; play", "tnc_rank": 890, "travel_core": false}
+{"lemma": "ก้าว", "rank": 905, "band": 1, "pos": "noun", "kana": "gâao", "ja_gloss": "一歩", "en_gloss": "step", "tnc_rank": 891, "travel_core": false}
+{"lemma": "ภายนอก", "rank": 906, "band": 1, "pos": "adj", "kana": "phaai-nɔ̂ɔk", "ja_gloss": "外部の・外側", "en_gloss": "external; outside", "tnc_rank": 892, "travel_core": false}
+{"lemma": "ภาพยนตร์", "rank": 907, "band": 1, "pos": "noun", "kana": "phâap-phá-yon", "ja_gloss": "映画", "en_gloss": "movie; film", "tnc_rank": 893, "travel_core": false}
+{"lemma": "แม้ว่า", "rank": 908, "band": 1, "pos": "conj", "kana": "mɛ́ɛ-wâa", "ja_gloss": "〜であっても", "en_gloss": "even though; although", "tnc_rank": 894, "travel_core": false}
+{"lemma": "แปล", "rank": 909, "band": 1, "pos": "verb", "kana": "bplɛɛ", "ja_gloss": "翻訳する", "en_gloss": "to translate", "tnc_rank": 895, "travel_core": false}
+{"lemma": "พลังงาน", "rank": 910, "band": 1, "pos": "noun", "kana": "phá-lang-ngaan", "ja_gloss": "エネルギー", "en_gloss": "energy", "tnc_rank": 896, "travel_core": false}
+{"lemma": "นั่นเอง", "rank": 911, "band": 1, "pos": "part", "kana": "nân-eeng", "ja_gloss": "まさに・それこそ", "en_gloss": "that's it; exactly", "tnc_rank": 897, "travel_core": false}
+{"lemma": "ผลงาน", "rank": 912, "band": 1, "pos": "noun", "kana": "phǒn-ngaan", "ja_gloss": "成果・作品", "en_gloss": "achievement; work; output", "tnc_rank": 898, "travel_core": false}
+{"lemma": "สูงสุด", "rank": 913, "band": 1, "pos": "adj", "kana": "sǔung-sùt", "ja_gloss": "最高の", "en_gloss": "highest; maximum", "tnc_rank": 899, "travel_core": false}
+{"lemma": "ผลกระทบ", "rank": 914, "band": 1, "pos": "noun", "kana": "phǒn-grà-thóp", "ja_gloss": "影響", "en_gloss": "effect; impact", "tnc_rank": 900, "travel_core": false}
+{"lemma": "ท้องถิ่น", "rank": 915, "band": 1, "pos": "noun", "kana": "thɔ́ɔng-thìn", "ja_gloss": "地元・地域", "en_gloss": "local area; locality", "tnc_rank": 901, "travel_core": false}
+{"lemma": "ต่อเนื่อง", "rank": 916, "band": 1, "pos": "adv", "kana": "dtɔ̀ɔ-nʉ̂ʉang", "ja_gloss": "継続的に・連続して", "en_gloss": "continuously", "tnc_rank": 902, "travel_core": false}
+{"lemma": "ขณะ", "rank": 917, "band": 1, "pos": "noun", "kana": "khà-nà", "ja_gloss": "瞬間・〜の間", "en_gloss": "moment; while", "tnc_rank": 903, "travel_core": false}
+{"lemma": "อาคาร", "rank": 918, "band": 1, "pos": "noun", "kana": "aa-khaan", "ja_gloss": "建物", "en_gloss": "building", "tnc_rank": 904, "travel_core": false}
+{"lemma": "ชัด", "rank": 919, "band": 1, "pos": "adj", "kana": "chát", "ja_gloss": "はっきりした", "en_gloss": "clear; sharp", "tnc_rank": 905, "travel_core": false}
+{"lemma": "พอใจ", "rank": 920, "band": 1, "pos": "adj", "kana": "phɔɔ-jai", "ja_gloss": "満足した", "en_gloss": "satisfied", "tnc_rank": 906, "travel_core": false}
+{"lemma": "ญาติ", "rank": 921, "band": 1, "pos": "noun", "kana": "yâat", "ja_gloss": "親戚", "en_gloss": "relative", "tnc_rank": 908, "travel_core": false}
+{"lemma": "ส่วนตัว", "rank": 922, "band": 1, "pos": "adj", "kana": "sùuan-dtuua", "ja_gloss": "個人的な", "en_gloss": "private; personal", "tnc_rank": 909, "travel_core": false}
+{"lemma": "ข้าม", "rank": 923, "band": 1, "pos": "verb", "kana": "khâam", "ja_gloss": "渡る", "en_gloss": "to cross", "tnc_rank": 910, "travel_core": false}
+{"lemma": "ตี", "rank": 924, "band": 1, "pos": "verb", "kana": "dtii", "ja_gloss": "打つ・叩く", "en_gloss": "to hit; to strike", "tnc_rank": 911, "travel_core": false}
+{"lemma": "รวดเร็ว", "rank": 925, "band": 1, "pos": "adj", "kana": "rûuat-reo", "ja_gloss": "速い・迅速な", "en_gloss": "fast; quick", "tnc_rank": 912, "travel_core": false}
+{"lemma": "ท่า", "rank": 926, "band": 1, "pos": "noun", "kana": "thâa", "ja_gloss": "姿勢・ポーズ", "en_gloss": "posture; pose", "tnc_rank": 913, "travel_core": false}
+{"lemma": "สมเด็จ", "rank": 927, "band": 1, "pos": "noun", "kana": "sǒm-dèt", "ja_gloss": "(王族・高僧への)尊称", "en_gloss": "honorific title for royalty/high priests", "tnc_rank": 915, "travel_core": false}
+{"lemma": "สอบ", "rank": 928, "band": 1, "pos": "noun", "kana": "sɔ̀ɔp", "ja_gloss": "試験", "en_gloss": "examination; test", "tnc_rank": 916, "travel_core": false}
+{"lemma": "ให้การ", "rank": 929, "band": 1, "pos": "verb", "kana": "hâi-gaan", "ja_gloss": "証言する", "en_gloss": "to testify; to give evidence", "tnc_rank": 918, "travel_core": false}
+{"lemma": "อ้าง", "rank": 930, "band": 1, "pos": "verb", "kana": "âang", "ja_gloss": "主張する・引用する", "en_gloss": "to claim; to cite", "tnc_rank": 919, "travel_core": false}
+{"lemma": "รับรู้", "rank": 931, "band": 1, "pos": "verb", "kana": "ráp-rúu", "ja_gloss": "認識する・知る", "en_gloss": "to acknowledge; to perceive", "tnc_rank": 920, "travel_core": false}
+{"lemma": "ข้า", "rank": 932, "band": 1, "pos": "pron", "kana": "khâa", "ja_gloss": "私(目下・対等な相手に使う一人称)", "en_gloss": "I (addressing equal/lower status)", "tnc_rank": 921, "travel_core": false}
+{"lemma": "บุญ", "rank": 933, "band": 1, "pos": "noun", "kana": "bun", "ja_gloss": "徳・功徳", "en_gloss": "merit (Buddhist); good deed", "tnc_rank": 922, "travel_core": false}
+{"lemma": "ปรับปรุง", "rank": 934, "band": 1, "pos": "verb", "kana": "bpràp-bprung", "ja_gloss": "改善する", "en_gloss": "to improve", "tnc_rank": 923, "travel_core": false}
+{"lemma": "ซา", "rank": 935, "band": 1, "pos": "verb", "kana": "saa", "ja_gloss": "静まる・弱まる", "en_gloss": "to subside; to diminish", "tnc_rank": 924, "travel_core": false}
+{"lemma": "โรง", "rank": 936, "band": 1, "pos": "noun", "kana": "roong", "ja_gloss": "建物・ホール", "en_gloss": "building; hall", "tnc_rank": 925, "travel_core": false}
+{"lemma": "ข้อความ", "rank": 937, "band": 1, "pos": "noun", "kana": "khɔ̂ɔ-khwaam", "ja_gloss": "メッセージ・文章", "en_gloss": "message; text", "tnc_rank": 926, "travel_core": false}
+{"lemma": "ทำลาย", "rank": 938, "band": 1, "pos": "verb", "kana": "tham-laai", "ja_gloss": "破壊する", "en_gloss": "to destroy", "tnc_rank": 927, "travel_core": false}
+{"lemma": "สนิท", "rank": 939, "band": 1, "pos": "adj", "kana": "sà-nìt", "ja_gloss": "親しい", "en_gloss": "close; intimate", "tnc_rank": 928, "travel_core": false}
+{"lemma": "แถว", "rank": 940, "band": 1, "pos": "noun", "kana": "thɛ̌o", "ja_gloss": "近く・列", "en_gloss": "area; row; line", "tnc_rank": 929, "travel_core": false}
+{"lemma": "เรื่องราว", "rank": 941, "band": 1, "pos": "noun", "kana": "rʉ̂ʉang-raao", "ja_gloss": "物語", "en_gloss": "story", "tnc_rank": 930, "travel_core": false}
+{"lemma": "กระจาย", "rank": 942, "band": 1, "pos": "verb", "kana": "grà-jaai", "ja_gloss": "広がる・分散する", "en_gloss": "to spread; to distribute", "tnc_rank": 932, "travel_core": false}
+{"lemma": "เถอะ", "rank": 943, "band": 1, "pos": "part", "kana": "thə̀", "ja_gloss": "〜しよう(勧誘の終助詞)", "en_gloss": "suggestion particle (let's...)", "tnc_rank": 933, "travel_core": false}
+{"lemma": "พวกเรา", "rank": 944, "band": 1, "pos": "pron", "kana": "phûuak-rao", "ja_gloss": "私たち", "en_gloss": "we; us", "tnc_rank": 934, "travel_core": false}
+{"lemma": "เพชร", "rank": 945, "band": 1, "pos": "noun", "kana": "phét", "ja_gloss": "ダイヤモンド", "en_gloss": "diamond", "tnc_rank": 935, "travel_core": false}
+{"lemma": "ดอก", "rank": 946, "band": 1, "pos": "classifier", "kana": "dɔ̀ɔk", "ja_gloss": "類別詞:花", "en_gloss": "classifier for flowers", "tnc_rank": 936, "travel_core": false}
+{"lemma": "ความสำเร็จ", "rank": 947, "band": 1, "pos": "noun", "kana": "khwaam-sǎm-rèt", "ja_gloss": "成功", "en_gloss": "success", "tnc_rank": 938, "travel_core": false}
+{"lemma": "ประโยค", "rank": 948, "band": 1, "pos": "noun", "kana": "bprà-yòok", "ja_gloss": "文", "en_gloss": "sentence", "tnc_rank": 939, "travel_core": false}
+{"lemma": "ความเชื่อ", "rank": 949, "band": 1, "pos": "noun", "kana": "khwaam-chʉ̂ʉa", "ja_gloss": "信念", "en_gloss": "belief", "tnc_rank": 940, "travel_core": false}
+{"lemma": "กลิ่น", "rank": 950, "band": 1, "pos": "noun", "kana": "glìn", "ja_gloss": "におい", "en_gloss": "smell; scent", "tnc_rank": 941, "travel_core": false}
+{"lemma": "พืช", "rank": 951, "band": 1, "pos": "noun", "kana": "phʉ̂ʉt", "ja_gloss": "植物", "en_gloss": "plant; vegetation", "tnc_rank": 942, "travel_core": false}
+{"lemma": "นักศึกษา", "rank": 952, "band": 1, "pos": "noun", "kana": "nák-sʉ̀k-sǎa", "ja_gloss": "大学生", "en_gloss": "(university) student", "tnc_rank": 944, "travel_core": false}
+{"lemma": "ห่าง", "rank": 953, "band": 1, "pos": "adj", "kana": "hàang", "ja_gloss": "遠い", "en_gloss": "far; distant", "tnc_rank": 945, "travel_core": false}
+{"lemma": "ดา", "rank": 954, "band": 1, "pos": "adv", "kana": "daa", "ja_gloss": "多く散らばった", "en_gloss": "many; scattered", "tnc_rank": 946, "travel_core": false}
+{"lemma": "แนะนำ", "rank": 955, "band": 1, "pos": "verb", "kana": "nɛ́-nam", "ja_gloss": "勧める・紹介する", "en_gloss": "to recommend; to introduce", "tnc_rank": 947, "travel_core": false}
+{"lemma": "ระ", "rank": 956, "band": 1, "pos": "verb", "kana": "rá", "ja_gloss": "こする・かすめる", "en_gloss": "to scrape; to brush against", "tnc_rank": 950, "travel_core": false}
+{"lemma": "บัญญัติ", "rank": 957, "band": 1, "pos": "verb", "kana": "ban-yàt", "ja_gloss": "制定する・定める", "en_gloss": "to enact; to legislate; to prescribe", "tnc_rank": 951, "travel_core": false}
+{"lemma": "แถม", "rank": 958, "band": 1, "pos": "verb", "kana": "thɛ̌ɛm", "ja_gloss": "おまけする・追加する", "en_gloss": "to add extra; to give as a bonus", "tnc_rank": 952, "travel_core": false}
+{"lemma": "หลักการ", "rank": 959, "band": 1, "pos": "noun", "kana": "làk-gaan", "ja_gloss": "原則", "en_gloss": "principle", "tnc_rank": 953, "travel_core": false}
+{"lemma": "เท้า", "rank": 960, "band": 1, "pos": "noun", "kana": "tháao", "ja_gloss": "足", "en_gloss": "foot", "tnc_rank": 954, "travel_core": false}
+{"lemma": "ล้วน", "rank": 961, "band": 1, "pos": "adv", "kana": "lúuan", "ja_gloss": "すべて・もっぱら", "en_gloss": "all; entirely; purely", "tnc_rank": 955, "travel_core": false}
+{"lemma": "แผ่นดิน", "rank": 962, "band": 1, "pos": "noun", "kana": "phɛ̀n-din", "ja_gloss": "大地・国土", "en_gloss": "land; earth; country", "tnc_rank": 956, "travel_core": false}
+{"lemma": "ประ", "rank": 963, "band": 1, "pos": "verb", "kana": "bprà", "ja_gloss": "触れる・点をつける", "en_gloss": "to touch; to dot; to sprinkle", "tnc_rank": 957, "travel_core": false}
+{"lemma": "ภัย", "rank": 964, "band": 1, "pos": "noun", "kana": "phai", "ja_gloss": "危険", "en_gloss": "danger; peril", "tnc_rank": 959, "travel_core": false}
+{"lemma": "สัมผัส", "rank": 965, "band": 1, "pos": "verb", "kana": "sǎm-phàt", "ja_gloss": "触れる・感じる", "en_gloss": "to touch; to feel", "tnc_rank": 960, "travel_core": false}
+{"lemma": "วิชาชีพ", "rank": 966, "band": 1, "pos": "noun", "kana": "wí-chaa-chîip", "ja_gloss": "専門職", "en_gloss": "profession", "tnc_rank": 961, "travel_core": false}
+{"lemma": "วัตถุ", "rank": 967, "band": 1, "pos": "noun", "kana": "wát-thù", "ja_gloss": "物・物質", "en_gloss": "object; matter", "tnc_rank": 963, "travel_core": false}
+{"lemma": "แง่", "rank": 968, "band": 1, "pos": "noun", "kana": "ngɛ̂ɛ", "ja_gloss": "観点・側面", "en_gloss": "angle; point of view; aspect", "tnc_rank": 964, "travel_core": false}
+{"lemma": "ยัย", "rank": 969, "band": 1, "pos": "noun", "kana": "yai", "ja_gloss": "(くだけた)女の子への呼びかけ", "en_gloss": "term of address for a young woman (informal)", "tnc_rank": 965, "travel_core": false}
+{"lemma": "หู", "rank": 970, "band": 1, "pos": "noun", "kana": "hǔu", "ja_gloss": "耳", "en_gloss": "ear", "tnc_rank": 966, "travel_core": false}
+{"lemma": "สมอง", "rank": 971, "band": 1, "pos": "noun", "kana": "sà-mɔ̌ɔng", "ja_gloss": "脳", "en_gloss": "brain", "tnc_rank": 967, "travel_core": false}
+{"lemma": "แขน", "rank": 972, "band": 1, "pos": "noun", "kana": "khɛ̌ɛn", "ja_gloss": "腕", "en_gloss": "arm", "tnc_rank": 968, "travel_core": false}
+{"lemma": "เติบโต", "rank": 973, "band": 1, "pos": "verb", "kana": "dtə̀əp-dtoo", "ja_gloss": "成長する", "en_gloss": "to grow", "tnc_rank": 969, "travel_core": false}
+{"lemma": "ธนาคาร", "rank": 974, "band": 1, "pos": "noun", "kana": "thá-naa-khaan", "ja_gloss": "銀行", "en_gloss": "bank", "tnc_rank": 970, "travel_core": false}
+{"lemma": "หัวหน้า", "rank": 975, "band": 1, "pos": "noun", "kana": "hǔua-nâa", "ja_gloss": "リーダー・上司", "en_gloss": "boss; leader; chief", "tnc_rank": 971, "travel_core": false}
+{"lemma": "ดนตรี", "rank": 976, "band": 1, "pos": "noun", "kana": "don-dtrii", "ja_gloss": "音楽", "en_gloss": "music", "tnc_rank": 973, "travel_core": false}
+{"lemma": "เก่ง", "rank": 977, "band": 1, "pos": "adj", "kana": "gèng", "ja_gloss": "上手な・得意な", "en_gloss": "skilled; good at", "tnc_rank": 974, "travel_core": false}
+{"lemma": "โบราณ", "rank": 978, "band": 1, "pos": "adj", "kana": "boo-raan", "ja_gloss": "古代の・昔の", "en_gloss": "ancient; old", "tnc_rank": 975, "travel_core": false}
+{"lemma": "ลูกค้า", "rank": 979, "band": 1, "pos": "noun", "kana": "lûuk-kháa", "ja_gloss": "顧客", "en_gloss": "customer", "tnc_rank": 976, "travel_core": false}
+{"lemma": "ทำนอง", "rank": 980, "band": 1, "pos": "noun", "kana": "tham-nɔɔng", "ja_gloss": "旋律・様子", "en_gloss": "melody; manner", "tnc_rank": 977, "travel_core": false}
+{"lemma": "หิน", "rank": 981, "band": 1, "pos": "noun", "kana": "hǐn", "ja_gloss": "石", "en_gloss": "stone; rock", "tnc_rank": 978, "travel_core": false}
+{"lemma": "ไอ", "rank": 982, "band": 1, "pos": "verb", "kana": "ai", "ja_gloss": "咳をする", "en_gloss": "to cough", "tnc_rank": 979, "travel_core": false}
+{"lemma": "หลับ", "rank": 983, "band": 1, "pos": "verb", "kana": "làp", "ja_gloss": "眠る", "en_gloss": "to sleep; to close eyes", "tnc_rank": 980, "travel_core": false}
+{"lemma": "ต่อสู้", "rank": 984, "band": 1, "pos": "verb", "kana": "dtɔ̀ɔ-sûu", "ja_gloss": "戦う", "en_gloss": "to fight; to struggle", "tnc_rank": 981, "travel_core": false}
+{"lemma": "หมู่", "rank": 985, "band": 1, "pos": "noun", "kana": "mùu", "ja_gloss": "集団・グループ", "en_gloss": "group; cluster", "tnc_rank": 982, "travel_core": false}
+{"lemma": "สะดวก", "rank": 986, "band": 1, "pos": "adj", "kana": "sà-dùuak", "ja_gloss": "便利な", "en_gloss": "convenient", "tnc_rank": 984, "travel_core": false}
+{"lemma": "พนักงาน", "rank": 987, "band": 1, "pos": "noun", "kana": "phá-nák-ngaan", "ja_gloss": "従業員・社員", "en_gloss": "employee; staff", "tnc_rank": 985, "travel_core": false}
+{"lemma": "แสง", "rank": 988, "band": 1, "pos": "noun", "kana": "sɛ̌ɛng", "ja_gloss": "光", "en_gloss": "light", "tnc_rank": 986, "travel_core": false}
+{"lemma": "เอ่ย", "rank": 989, "band": 1, "pos": "verb", "kana": "ə̀əi", "ja_gloss": "口に出す・言う", "en_gloss": "to utter; to mention", "tnc_rank": 987, "travel_core": false}
+{"lemma": "กระแส", "rank": 990, "band": 1, "pos": "noun", "kana": "grà-sɛ̌ɛ", "ja_gloss": "流れ・トレンド", "en_gloss": "current; trend; flow", "tnc_rank": 988, "travel_core": false}
+{"lemma": "ยืนยัน", "rank": 991, "band": 1, "pos": "verb", "kana": "yʉʉn-yan", "ja_gloss": "確認する・確約する", "en_gloss": "to confirm", "tnc_rank": 989, "travel_core": false}
+{"lemma": "ออกแบบ", "rank": 992, "band": 1, "pos": "verb", "kana": "ɔ̀ɔk-bɛ̀ɛp", "ja_gloss": "デザインする・設計する", "en_gloss": "to design", "tnc_rank": 990, "travel_core": false}
+{"lemma": "สำเร็จ", "rank": 993, "band": 1, "pos": "verb", "kana": "sǎm-rèt", "ja_gloss": "成功する・完成する", "en_gloss": "to succeed; to be completed", "tnc_rank": 991, "travel_core": false}
+{"lemma": "ลูกจ้าง", "rank": 994, "band": 1, "pos": "noun", "kana": "lûuk-jâang", "ja_gloss": "従業員", "en_gloss": "employee", "tnc_rank": 992, "travel_core": false}
+{"lemma": "เนี่ย", "rank": 995, "band": 1, "pos": "part", "kana": "nîia", "ja_gloss": "これ(強調)・ほら", "en_gloss": "this (emphasis)", "tnc_rank": 993, "travel_core": false}
+{"lemma": "บางที", "rank": 996, "band": 1, "pos": "adv", "kana": "baang-thii", "ja_gloss": "時々・たぶん", "en_gloss": "sometimes; perhaps", "tnc_rank": 994, "travel_core": false}
+{"lemma": "บรรดา", "rank": 997, "band": 1, "pos": "adj", "kana": "ban-daa", "ja_gloss": "すべての", "en_gloss": "all; every", "tnc_rank": 995, "travel_core": false}
+{"lemma": "รุนแรง", "rank": 998, "band": 1, "pos": "adj", "kana": "run-rɛɛng", "ja_gloss": "激しい・深刻な", "en_gloss": "severe; violent", "tnc_rank": 996, "travel_core": false}
+{"lemma": "ก่อ", "rank": 999, "band": 1, "pos": "verb", "kana": "gɔ̀ɔ", "ja_gloss": "起こす・築く", "en_gloss": "to cause; to create; to build", "tnc_rank": 997, "travel_core": false}
+{"lemma": "คาด", "rank": 1000, "band": 1, "pos": "verb", "kana": "khâat", "ja_gloss": "予想する・見込む", "en_gloss": "to expect; to anticipate", "tnc_rank": 999, "travel_core": false}

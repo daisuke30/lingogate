@@ -1,5 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { COURSES, DEFAULT_COURSE_ID, courseById, frontLangFromUILang, resolveCourse } from "./courses";
+import type { Lang } from "./courses";
+import { UI_LANGS } from "../i18n/i18n";
 
 // LINGO-014 language-axis invariants (design §1 + §3's "有効18パターン").
 describe("course catalog", () => {
@@ -16,16 +18,16 @@ describe("course catalog", () => {
     }
   });
 
-  it("yields the design's 18 valid combinations (3 courses × front options × 3 UI langs)", () => {
+  it("yields 24 valid combinations (4 courses × front options × 3 UI langs)", () => {
     // Sum of (front options per course) = number of (course, front) pairs.
+    // LINGO-039 added the TH course, taking 18 -> 24.
     const coursefront = COURSES.reduce((n, c) => n + c.availableFrontLangs.length, 0);
-    expect(coursefront).toBe(6); // ru:2 + en:2 + ja:2
-    const UI_LANGS = 3;
-    expect(coursefront * UI_LANGS).toBe(18);
+    expect(coursefront).toBe(8); // ru:2 + en:2 + th:2 + ja:2
+    expect(coursefront * UI_LANGS.length).toBe(24);
   });
 
-  it("ships RU and EN as selectable courses (LINGO-015); JA is still coming-soon", () => {
-    for (const id of ["ru", "en"]) {
+  it("ships RU, EN and TH as selectable courses; JA is still coming-soon", () => {
+    for (const id of ["ru", "en", "th"]) {
       const c = courseById(id)!;
       expect(c.status).toBe("available");
       expect(c.load).not.toBeNull();
@@ -33,6 +35,27 @@ describe("course catalog", () => {
     const ja = courseById("ja")!;
     expect(ja.status).toBe("coming-soon");
     expect(ja.load).toBeNull(); // no pack referenced -> Vite build can't break
+  });
+
+  it("only offers front languages the app actually has a UI catalog for", () => {
+    // LINGO-039 split Lang (UI/prompt languages) from TargetLang (learnable
+    // languages). A course may TARGET a language the app has no UI for — Thai
+    // — but must never OFFER one as a prompt language, since its glosses and
+    // notes would have nothing to be written in.
+    for (const c of COURSES) {
+      for (const f of c.availableFrontLangs) expect(UI_LANGS).toContain(f);
+    }
+  });
+
+  it("the Thai course targets th, prompts in ja/en, and never offers ru", () => {
+    const th = courseById("th")!;
+    expect(th.targetLang).toBe("th");
+    expect(th.availableFrontLangs).toEqual(["ja", "en"]);
+    expect(th.defaultFrontLang).toBe("ja");
+    // A ru-UI learner is legitimate here; they simply get the ja default and
+    // pick en in settings. What must not happen is the pack claiming to
+    // offer Russian glosses it does not ship.
+    expect(th.availableFrontLangs).not.toContain("ru");
   });
 
   it("resolveCourse falls back to the default RU course for unknown/removed ids", () => {
@@ -56,8 +79,17 @@ describe("frontLangFromUILang", () => {
   });
 
   it("every course's own target language always falls back (never a valid front option)", () => {
+    // Only meaningful for a target language that COULD be a UI language;
+    // "th" is not one by construction (see the TargetLang split), so the
+    // question cannot arise for the Thai course.
     for (const c of COURSES) {
-      expect(frontLangFromUILang(c, c.targetLang)).toBe(c.defaultFrontLang);
+      if (!(UI_LANGS as string[]).includes(c.targetLang)) continue;
+      expect(frontLangFromUILang(c, c.targetLang as Lang)).toBe(c.defaultFrontLang);
     }
+  });
+
+  it("a ru-UI learner taking the Thai course gets its ja default, not a ru prompt", () => {
+    const th = courseById("th")!;
+    expect(frontLangFromUILang(th, "ru")).toBe("ja");
   });
 });

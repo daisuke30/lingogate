@@ -21,6 +21,20 @@ export interface Sentence {
   ru: string;
   en: string;
   ja: string | null;
+  /** LINGO-039: Thai target text. One flat language slot per language, the
+   * same convention as ru/en/ja above (see build-content.mjs's note on why
+   * these are parallel fields rather than a nested map). Only the TH pack
+   * populates it; the RU/EN packs carry it as an explicit null, matching how
+   * every other optional column in this schema is emitted. */
+  th?: string | null;
+  /** Pronunciation transcription of the target text. Which script it is in is
+   * the COURSE's choice, not a fixed one: the RU pack writes katakana (a
+   * reading aid for a Japanese reader — the reason LINGO-037 gated it behind
+   * "reads Japanese"), the TH pack writes Paiboon romanization (Latin letters
+   * + tone diacritics, readable by every learner and the single most important
+   * field on a Thai card, since Thai script gives no tone information to a
+   * beginner). Render via engine/localizedText.ts's `pronunciationReadable()`
+   * rather than gating on the learner's languages directly. */
   kana: string | null;
   /** ja text (LINGO-026: kept as the bare `note` field for back-compat —
    * effectively "noteJa"). Resolve via engine/localizedText.ts's
@@ -79,6 +93,11 @@ export interface DeckWord {
   enGloss?: string | null;
   jaGloss?: string | null;
   ruGloss?: string | null;
+  /** LINGO-039: pronunciation transcription of the HEADWORD (the per-word
+   * counterpart of Sentence.kana — same "the course decides the script"
+   * rule). Populated by the TH pack with Paiboon romanization; null for RU/EN,
+   * whose headwords a learner can already sound out from the spelling. */
+  kana?: string | null;
   /** Verb aspect (LINGO-012): "pf" (perfective) | "impf" (imperfective) |
    * "both" (LINGO-025: genuinely biaspectual, same infinitive serves as
    * both) | null for non-verbs. */

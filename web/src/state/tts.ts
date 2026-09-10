@@ -27,6 +27,10 @@ const LANG_DEFAULTS: Record<string, { locale: string; prefer?: RegExp }> = {
   ru: { locale: "ru-RU", prefer: /milena/i },
   en: { locale: "en-US" },
   ja: { locale: "ja-JP", prefer: /kyoko|o-ren/i },
+  // LINGO-039: iOS/macOS ship "Kanya" for Thai; most desktops have no Thai
+  // voice at all, in which case voiceAvailable("th") is false and the UI hides
+  // the speaker button rather than falling back to a wrong-language voice.
+  th: { locale: "th-TH", prefer: /kanya/i },
 };
 
 /** Best voice for `lang`: a preferred named voice (e.g. Milena for ru) first,

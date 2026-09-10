@@ -15,7 +15,7 @@ import { masteryLevelThreshold } from "../engine/mastery";
 import type { DeckWord, Sentence } from "../engine/content";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useT } from "../i18n/i18n";
-import type { Lang } from "../i18n/i18n";
+import type { Lang, TargetLang } from "../i18n/i18n";
 
 type Phase = "loading" | "block" | "interstitial" | "finalizing" | "done" | "beginner";
 
@@ -23,9 +23,10 @@ type Phase = "loading" | "block" | "interstitial" | "finalizing" | "done" | "beg
  * the (now-retired) CalibrationScreen use; duplicated here in miniature
  * rather than imported to keep this screen's dependency footprint small (it's
  * a 3-line pure function, not worth a shared module for). */
-function sentenceLangText(s: Sentence, lang: Lang): string {
+function sentenceLangText(s: Sentence, lang: TargetLang): string {
   if (lang === "ja") return s.ja ?? s.en;
   if (lang === "ru") return s.ru;
+  if (lang === "th") return s.th ?? s.en; // LINGO-039
   return s.en;
 }
 
@@ -300,7 +301,7 @@ function PlacementCard({
   meaning: string | null;
   gloss: Sentence | null;
   hasVoice: boolean;
-  targetLang: Lang;
+  targetLang: TargetLang;
   onSpeak: () => void;
   onJudge: (known: boolean) => void;
 }) {
