@@ -11,12 +11,20 @@ import {
   getAllGateSessions,
   getAllReviewStates,
   getAllWordKnowledge,
+  getMeta,
+  getPetCollection,
+  getPetState,
+  putPetCollection,
+  putPetState,
   putReviewStates,
   putWordKnowledge,
   resetAll,
+  setMeta,
 } from "../db/idb";
+import type { PetCollectionEntry, PetState } from "../pet/engine";
 import type { GateSessionRow } from "../db/idb";
 import { buildBackupFile, mergeBackups, newGateSessions, validateBackupFile } from "../engine/backup";
+import type { BackupPet } from "../engine/backup";
 import type {
   BackupCourseData,
   BackupFile,
@@ -111,10 +119,55 @@ async function collectSettings(): Promise<BackupSettings> {
   };
 }
 
+/**
+ * LINGO-048: the 育成 pet. Until now a backup protected every word the learner
+ * had studied but not the creature they had been feeding for weeks — the one
+ * piece of state that is purely theirs and utterly unrecoverable.
+ *
+ * Names live in `meta` under `pet.name.<generation>`, one key per generation,
+ * so they are collected by walking the generations the pet/図鑑 actually know
+ * about rather than scanning the whole meta store.
+ */
+async function collectPet(): Promise<BackupPet> {
+  const [state, collection] = await Promise.all([getPetState(), getPetCollection()]);
+  const generations = new Set<number>();
+  if (state) generations.add(state.generation);
+  for (const e of collection) generations.add(e.generation);
+
+  const namesByGeneration: Record<string, string> = {};
+  await Promise.all(
+    [...generations].map(async (g) => {
+      const name = await getMeta<string | null>(`pet.name.${g}`, null);
+      if (name) namesByGeneration[String(g)] = name;
+    }),
+  );
+  return {
+    state: (state as unknown as Record<string, unknown>) ?? null,
+    collection: collection as unknown as Record<string, unknown>[],
+    namesByGeneration,
+  };
+}
+
+/** Write a chosen pet back. Only ever called with a whole pet (see
+ * chooseBackupPet) — never a splice of two. */
+async function applyPet(pet: BackupPet): Promise<void> {
+  if (pet.state) await putPetState(pet.state as unknown as PetState);
+  if (pet.collection.length) {
+    await putPetCollection(pet.collection as unknown as PetCollectionEntry[]);
+  }
+  for (const [generation, name] of Object.entries(pet.namesByGeneration)) {
+    await setMeta(`pet.name.${generation}`, name);
+  }
+}
+
 /** Gather every course's learning state + all settings into one backup file. */
 export async function exportBackup(): Promise<BackupFile> {
-  const [courses, settings] = await Promise.all([collectAllCourses(), collectSettings()]);
-  return buildBackupFile(courses, settings, Date.now(), versionInfo.version);
+  const [courses, settings, pet] = await Promise.all([
+    collectAllCourses(),
+    collectSettings(),
+    collectPet(),
+  ]);
+  return buildBackupFile(courses, settings, Date.now(), versionInfo.version, pet);
 }
 
 /**
@@ -194,6 +247,10 @@ export async function importBackupText(text: string, replaceAll: boolean): Promi
       for (const g of data.gateSessions) await addGateSession(g, courseId);
     }
     await applySettings(incoming.settings);
+    // A v1 backup carries no pet; leaving the freshly-reset device without one
+    // is correct there (resetAll already cleared it), and a v2 file restores
+    // the pet it captured.
+    if (incoming.pet) await applyPet(incoming.pet);
     return { ok: true };
   }
 
@@ -209,6 +266,7 @@ export async function importBackupText(text: string, replaceAll: boolean): Promi
   const current: CurrentBackupData = {
     courses: await collectAllCourses(),
     settings: await collectSettings(),
+    pet: await collectPet(),
   };
   const merged = mergeBackups(current, incoming, false);
   for (const [courseId, data] of Object.entries(merged.courses)) {
@@ -222,6 +280,8 @@ export async function importBackupText(text: string, replaceAll: boolean): Promi
       await addGateSession(g, courseId);
     }
   }
+  // null = keep the pet already on this device (see chooseBackupPet).
+  if (merged.petToApply) await applyPet(merged.petToApply);
   return { ok: true };
 }
 

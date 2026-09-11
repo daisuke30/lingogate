@@ -13,8 +13,13 @@ import type { WordKnowledge } from "./calibration";
  * validateBackupFile() rejects any schemaVersion greater than this (a backup
  * from a NEWER app than the one importing it) but accepts anything <= this
  * (older backups degrade gracefully via the same missing-field defaults used
- * for partial data — see validateBackupFile). */
-export const BACKUP_SCHEMA_VERSION = 1;
+ * for partial data — see validateBackupFile).
+ *
+ * v2 (LINGO-048): adds `pet`. A v1 file simply has no pet block and imports
+ * exactly as it did before — the learner's current pet is left untouched
+ * rather than wiped, because "restore an old backup" must never cost someone
+ * a pet they raised since. */
+export const BACKUP_SCHEMA_VERSION = 2;
 
 /** gateSessions row shape as it appears in a backup file. Structurally
  * compatible with db/idb.ts's GateSessionRow (minus the DB's own
@@ -58,12 +63,34 @@ export interface BackupSettings {
   placementDoneByCourse: Record<string, boolean>;
 }
 
+/**
+ * LINGO-048: the 育成 pet, which until now was the one piece of real progress
+ * a backup did NOT protect. Losing IndexedDB (Safari eviction, "clear website
+ * data") wiped a pet the learner had fed for weeks with no way back — the
+ * exact scenario this whole file exists to prevent.
+ *
+ * `state` and `collection` are stored as opaque records: this module must not
+ * import pet/engine.ts (it deliberately knows only plain data), and the pet
+ * engine is free to evolve its own shape. Only the few fields the merge rule
+ * below reads are treated as known.
+ */
+export interface BackupPet {
+  /** PetState as persisted. Opaque here; pet/engine.ts owns its shape. */
+  state: Record<string, unknown> | null;
+  /** 図鑑 entries. */
+  collection: Record<string, unknown>[];
+  /** Pet names by generation — meta keys `pet.name.<generation>`. */
+  namesByGeneration: Record<string, string>;
+}
+
 export interface BackupFile {
   schemaVersion: number;
   exportedAt: number;
   appVersion: string;
   courses: Record<string, BackupCourseData>;
   settings: BackupSettings;
+  /** Absent in v1 files. */
+  pet?: BackupPet;
 }
 
 /** Build a backup file from already-collected data. `now`/`appVersion` are
@@ -74,8 +101,16 @@ export function buildBackupFile(
   settings: BackupSettings,
   now: number,
   appVersion: string,
+  pet?: BackupPet,
 ): BackupFile {
-  return { schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: now, appVersion, courses, settings };
+  return {
+    schemaVersion: BACKUP_SCHEMA_VERSION,
+    exportedAt: now,
+    appVersion,
+    courses,
+    settings,
+    ...(pet ? { pet } : {}),
+  };
 }
 
 export interface ValidationResult {
@@ -136,6 +171,27 @@ export function validateBackupFile(data: unknown): ValidationResult {
     }
   }
 
+  // LINGO-048 (v2): the pet block. Absent in v1 files and left undefined —
+  // downstream that means "this backup says nothing about a pet", which is
+  // different from "this backup says there is no pet".
+  let pet: BackupPet | undefined;
+  if (isPlainObject(data.pet)) {
+    const p = data.pet;
+    pet = {
+      state: isPlainObject(p.state) ? (p.state as Record<string, unknown>) : null,
+      collection: Array.isArray(p.collection)
+        ? (p.collection.filter(isPlainObject) as Record<string, unknown>[])
+        : [],
+      namesByGeneration: isPlainObject(p.namesByGeneration)
+        ? (Object.fromEntries(
+            Object.entries(p.namesByGeneration).filter(
+              (e): e is [string, string] => typeof e[1] === "string",
+            ),
+          ) as Record<string, string>)
+        : {},
+    };
+  }
+
   const s = isPlainObject(data.settings) ? data.settings : {};
   const settings: BackupSettings = {
     appLang: typeof s.appLang === "string" ? s.appLang : DEFAULT_SETTINGS.appLang,
@@ -156,7 +212,10 @@ export function validateBackupFile(data: unknown): ValidationResult {
   const exportedAt = typeof data.exportedAt === "number" ? data.exportedAt : Date.now();
   const appVersion = typeof data.appVersion === "string" ? data.appVersion : "";
 
-  return { ok: true, file: { schemaVersion, exportedAt, appVersion, courses, settings } };
+  return {
+    ok: true,
+    file: { schemaVersion, exportedAt, appVersion, courses, settings, ...(pet ? { pet } : {}) },
+  };
 }
 
 /** Merge wordKnowledge rows: newer `updatedAt` wins per lemma. An exact tie
@@ -226,6 +285,8 @@ export function mergeGateSessions(
 export interface CurrentBackupData {
   courses: Record<string, BackupCourseData>;
   settings: BackupSettings;
+  /** Absent in v1 files. */
+  pet?: BackupPet;
 }
 
 export interface MergeResult {
@@ -240,6 +301,51 @@ export interface MergeResult {
    * backup is an unambiguous full restore, so its settings apply verbatim.
    */
   settingsToApply: BackupSettings | null;
+  /**
+   * LINGO-048: the pet to keep, or null to leave the device's pet alone.
+   * Never partially merged — a pet is one coherent creature, and splicing two
+   * of them would produce a state neither device ever had.
+   */
+  petToApply: BackupPet | null;
+}
+
+/**
+ * Which of two pets to keep (LINGO-048).
+ *
+ * A pet is a single object, so this is a choice, not a merge. The rule, in
+ * order:
+ *   1. A later `generation` wins. Generations only ever increase (each 旅立ち
+ *      starts the next one), so the higher number is strictly the further-along
+ *      learner history.
+ *   2. Within the same generation, the one whose care log reaches furthest in
+ *      time wins — that is the device that was actually used most recently.
+ *   3. If neither is comparable, keep what is already on the device. Restoring
+ *      a backup should never silently replace a pet with an older stranger.
+ */
+export function chooseBackupPet(
+  current: BackupPet | undefined,
+  incoming: BackupPet | undefined,
+): BackupPet | null {
+  const inc = incoming?.state ? incoming : null;
+  const cur = current?.state ? current : null;
+  if (!inc) return null; // nothing offered → leave the device's pet untouched
+  if (!cur) return inc;
+
+  const gen = (p: BackupPet) => numberField(p.state, "generation") ?? 0;
+  if (gen(inc) !== gen(cur)) return gen(inc) > gen(cur) ? inc : null;
+
+  const reach = (p: BackupPet) =>
+    Math.max(
+      numberField(p.state, "poopAccruedAt") ?? 0,
+      numberField(p.state, "lastFedAt") ?? 0,
+      numberField(p.state, "bornAt") ?? 0,
+    );
+  return reach(inc) > reach(cur) ? inc : null;
+}
+
+function numberField(o: Record<string, unknown> | null, key: string): number | null {
+  const v = o?.[key];
+  return typeof v === "number" && Number.isFinite(v) ? v : null;
 }
 
 /** Merge an entire imported backup into the current device's data.
@@ -253,7 +359,13 @@ export function mergeBackups(
   replaceAll: boolean,
 ): MergeResult {
   if (replaceAll) {
-    return { courses: incoming.courses, settingsToApply: incoming.settings };
+    return {
+      courses: incoming.courses,
+      settingsToApply: incoming.settings,
+      // A full restore applies the backup's pet verbatim — but a v1 file has
+      // none, and that must not be read as "delete the pet".
+      petToApply: incoming.pet ?? null,
+    };
   }
   const courseIds = new Set([...Object.keys(current.courses), ...Object.keys(incoming.courses)]);
   const emptyCourse: BackupCourseData = { wordKnowledge: [], reviewStates: [], gateSessions: [] };
@@ -267,5 +379,5 @@ export function mergeBackups(
       gateSessions: mergeGateSessions(cur.gateSessions, inc.gateSessions),
     };
   }
-  return { courses, settingsToApply: null };
+  return { courses, settingsToApply: null, petToApply: chooseBackupPet(current.pet, incoming.pet) };
 }

@@ -219,6 +219,28 @@ async function assertNoBottomBand(label) {
  *  - html / body / #root must all paint the same base colour, so no ancestor
  *    can show a different shade through any gap.
  */
+/** Last colour stop of a `linear-gradient(...)`, or null if there isn't one. */
+function lastGradientColor(image) {
+  if (!image || image === "none") return null;
+  const colors = image.match(/(rgba?\([^)]*\)|#[0-9a-f]{3,8})/gi);
+  return colors && colors.length ? colors[colors.length - 1] : null;
+}
+
+/** Compare colours written in different notations (#07070c vs rgb(7, 7, 12)). */
+function sameColor(a, b) {
+  const norm = (c) => {
+    if (!c) return null;
+    const hex = /^#([0-9a-f]{6})$/i.exec(c.trim());
+    if (hex) {
+      const n = parseInt(hex[1], 16);
+      return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+    }
+    const rgb = /rgba?\((\d+)[,\s]+(\d+)[,\s]+(\d+)/.exec(c);
+    return rgb ? `${rgb[1]},${rgb[2]},${rgb[3]}` : c.trim();
+  };
+  return norm(a) === norm(b);
+}
+
 async function assertBackgroundContinuity(label) {
   const r = await page.evaluate(() => {
     const tabbar = document.querySelector(".tabbar");
@@ -229,6 +251,7 @@ async function assertBackgroundContinuity(label) {
       root: bg(document.querySelector("#root")),
       tabbar: tabbar ? bg(tabbar) : null,
       tabbarAfter: tabbar ? bg(tabbar, "::after") : null,
+      tabbarImage: tabbar ? getComputedStyle(tabbar).backgroundImage : null,
       tabbarRaw: tabbar ? getComputedStyle(tabbar).background : null,
     };
   });
@@ -247,9 +270,15 @@ async function assertBackgroundContinuity(label) {
     alpha(r.tabbar) === 1,
     `${label}: tab bar is translucent (${r.tabbar}) — content scrolls visibly through it`,
   );
+  // LINGO-048: the bar is now a gradient (page colour at its top edge, almost
+  // black at its bottom) so that on Katsuta's installed PWA it merges with the
+  // strip iOS paints below the web view. The invariant is therefore no longer
+  // "one flat colour" but "the colour the bar ENDS on is the colour of the
+  // strip beneath it" — that boundary is where a seam would show.
+  const barEnd = lastGradientColor(r.tabbarImage) ?? r.tabbar;
   check(
-    r.tabbar === r.tabbarAfter,
-    `${label}: tab bar (${r.tabbar}) and the strip beneath it (${r.tabbarAfter}) are different colours — a seam appears wherever the safe-area inset is non-zero`,
+    sameColor(barEnd, r.tabbarAfter),
+    `${label}: the tab bar ends on ${barEnd} but the strip beneath it is ${r.tabbarAfter} — that boundary is a visible seam wherever the safe-area inset is non-zero`,
   );
   check(
     r.html === r.body && r.body === r.root,

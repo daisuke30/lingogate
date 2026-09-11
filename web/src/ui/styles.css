@@ -17,6 +17,15 @@
   --bg-elev: #1b1b28;
   --bg-elev-2: #24243a;
   --line: #32324a;
+  /* LINGO-048: the footer's own, deliberately darker surface. This is the
+   * pre-LINGO-045 page colour — see the .tabbar comment for why the bottom of
+   * the app is painted in the OLD black while the page keeps the new one. */
+  --footer-bg: #0b0b12;
+  /* The colour the footer ends on, and therefore the colour of the safety
+   * strip below it. Keeping these one token means the bar, the strip and
+   * whatever the OS paints under them form one continuous descent. */
+  --footer-bg-end: #07070c;
+  --footer-line: #26263a;
   --ink: #f2f2f7;
   --ink-dim: #a2a2b8;
   --ink-faint: #6c6c85;
@@ -1026,7 +1035,27 @@ button {
   max-width: 480px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* LINGO-045 — the bar is now an opaque surface, for three reasons:
+  /* LINGO-048 — the bar is deliberately DARKER than the page.
+   *
+   * Katsuta's decisive observation: the black strip appeared at the moment of
+   * the colour change, and the footer used to look pinned to the bottom. So
+   * the strip was always there — a region at the very bottom that the web view
+   * does not paint (OS chrome / the installed app's own backdrop) — and it was
+   * simply invisible while the whole app was the same near-black.
+   *
+   * iOS snapshots the manifest at install time, so fixing background_color on
+   * the server never reaches an already-installed app, and we are not asking
+   * him to reinstall. What we CAN control is the colour the app paints at its
+   * own bottom edge: make the tab bar the old near-black, and the OS strip
+   * stops being a separate band and reads as the continuation of the footer.
+   *
+   * On a healthy device this is simply "a tab bar darker than the page", which
+   * is an ordinary way to ground a bottom bar — so the fix costs nothing where
+   * the problem does not exist. The page body keeps the lifted palette from
+   * LINGO-045, which is what made the empty half of a short screen readable.
+   *
+   * --footer-bg is intentionally the pre-LINGO-045 --bg value. */
+  /* LINGO-045 — the bar is an opaque surface, for three reasons:
    *
    * 1. It was `color-mix(... 92%, transparent)` over a near-black page, so it
    *    rendered ≈#131320 — barely distinguishable from the page. It did not
@@ -1043,8 +1072,9 @@ button {
    * Opaque removes all three at once, and drops the backdrop-filter — a known
    * source of compositing-edge artifacts on iOS — since there is nothing left
    * to blur. */
-  background: var(--bg-elev);
-  border-top: 1px solid var(--line);
+  background-color: var(--footer-bg);
+  background-image: linear-gradient(180deg, var(--footer-bg) 0%, var(--footer-bg-end) 100%);
+  border-top: 1px solid var(--footer-line);
   padding-bottom: max(env(safe-area-inset-bottom), 0px);
   z-index: 50;
 }
@@ -1062,7 +1092,7 @@ button {
   right: 0;
   top: 100%;
   height: 48px;
-  background: var(--bg-elev);
+  background: var(--footer-bg-end);
 }
 .tabbar-item {
   display: flex;

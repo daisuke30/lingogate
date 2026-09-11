@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   BACKUP_SCHEMA_VERSION,
   buildBackupFile,
+  chooseBackupPet,
   mergeBackups,
   mergeGateSessions,
   mergeReviewStates,
@@ -9,7 +10,13 @@ import {
   newGateSessions,
   validateBackupFile,
 } from "./backup";
-import type { BackupCourseData, BackupFile, BackupGateSession, BackupSettings } from "./backup";
+import type {
+  BackupCourseData,
+  BackupFile,
+  BackupGateSession,
+  BackupPet,
+  BackupSettings,
+} from "./backup";
 import { CardState, newReviewState } from "./fsrs";
 import type { ReviewState } from "./fsrs";
 import type { WordKnowledge } from "./calibration";
@@ -273,5 +280,110 @@ describe("mergeBackups", () => {
     const result = mergeBackups(current, incomingFile, true);
     expect(result.courses).toEqual(incomingFile.courses); // ru is gone entirely — not merged
     expect(result.settingsToApply).toEqual(incomingFile.settings);
+  });
+});
+
+// --- pet in backups (LINGO-048) ---------------------------------------------
+// The pet was the one piece of real progress a backup did not protect: a
+// Safari eviction wiped weeks of feeding with no way back. These pin the two
+// things that must never break — old files still import, and restoring a
+// backup never costs the learner a pet.
+
+function petOf(generation: number, reach = 0, name?: string): BackupPet {
+  return {
+    state: { generation, speciesId: "mochi", bornAt: reach, lastFedAt: reach, poopAccruedAt: reach },
+    collection: [{ speciesId: "mochi", generation, reachedAt: reach }],
+    namesByGeneration: name ? { [String(generation)]: name } : {},
+  };
+}
+
+describe("backup schema v2: pet", () => {
+  it("round-trips a pet through build + validate", () => {
+    const pet = petOf(3, 1_700_000_000_000, "モチモ");
+    const file = buildBackupFile({}, emptySettings, 123, "test", pet);
+    expect(file.schemaVersion).toBe(2);
+    const res = validateBackupFile(JSON.parse(JSON.stringify(file)));
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.file.pet?.state).toMatchObject({ generation: 3 });
+    expect(res.file.pet?.collection).toHaveLength(1);
+    expect(res.file.pet?.namesByGeneration).toEqual({ "3": "モチモ" });
+  });
+
+  it("still reads a v1 file, and reports no pet rather than an empty one", () => {
+    const v1 = {
+      schemaVersion: 1,
+      exportedAt: 1,
+      appVersion: "old",
+      courses: {},
+      settings: {},
+    };
+    const res = validateBackupFile(v1);
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.file.pet).toBeUndefined();
+  });
+
+  it("omits the pet block entirely when there is nothing to save", () => {
+    const file = buildBackupFile({}, emptySettings, 1, "test");
+    expect("pet" in file).toBe(false);
+  });
+
+  it("rejects a file from a newer schema than this build understands", () => {
+    const res = validateBackupFile({ schemaVersion: 99, courses: {}, settings: {} });
+    expect(res.ok).toBe(false);
+  });
+});
+
+describe("chooseBackupPet", () => {
+  it("prefers the later generation — generations only ever move forward", () => {
+    expect(chooseBackupPet(petOf(1), petOf(2))).toMatchObject({ state: { generation: 2 } });
+  });
+
+  it("keeps the device's pet when the incoming one is from an earlier generation", () => {
+    expect(chooseBackupPet(petOf(5), petOf(2))).toBeNull();
+  });
+
+  it("within one generation, the more recently cared-for pet wins", () => {
+    const older = petOf(3, 1000);
+    const newer = petOf(3, 9000);
+    expect(chooseBackupPet(older, newer)).toBe(newer);
+    expect(chooseBackupPet(newer, older)).toBeNull();
+  });
+
+  it("takes the incoming pet when the device has none", () => {
+    expect(chooseBackupPet(undefined, petOf(1))).toMatchObject({ state: { generation: 1 } });
+  });
+
+  it("never wipes a pet just because the backup has none (a v1 restore)", () => {
+    expect(chooseBackupPet(petOf(4), undefined)).toBeNull();
+    expect(chooseBackupPet(petOf(4), { state: null, collection: [], namesByGeneration: {} })).toBeNull();
+  });
+});
+
+describe("mergeBackups: pet", () => {
+  const base = { courses: {}, settings: emptySettings };
+
+  it("merge mode applies the chosen pet", () => {
+    const incoming = buildBackupFile({}, emptySettings, 1, "t", petOf(7, 50));
+    const res = mergeBackups({ ...base, pet: petOf(2, 10) }, incoming, false);
+    expect(res.petToApply).toMatchObject({ state: { generation: 7 } });
+  });
+
+  it("merge mode leaves the device's pet alone when it is further along", () => {
+    const incoming = buildBackupFile({}, emptySettings, 1, "t", petOf(2, 10));
+    const res = mergeBackups({ ...base, pet: petOf(7, 50) }, incoming, false);
+    expect(res.petToApply).toBeNull();
+  });
+
+  it("replace-all applies the backup's pet verbatim", () => {
+    const incoming = buildBackupFile({}, emptySettings, 1, "t", petOf(2, 10));
+    const res = mergeBackups({ ...base, pet: petOf(7, 50) }, incoming, true);
+    expect(res.petToApply).toMatchObject({ state: { generation: 2 } });
+  });
+
+  it("replace-all from a v1 file reports no pet (not a deletion of one)", () => {
+    const incoming = buildBackupFile({}, emptySettings, 1, "t");
+    expect(mergeBackups({ ...base, pet: petOf(7) }, incoming, true).petToApply).toBeNull();
   });
 });
