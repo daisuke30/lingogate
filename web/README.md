@@ -143,3 +143,21 @@ web/
 - ブラウザ操作の自動テストは範囲外（フリップ / フリックの操作感は実機・実ブラウザで確認）。
 - LAN の素の http では iOS の Service Worker 登録がスキップされることがある（上記 A の注）。
 - デプロイ（外部公開）はしていない。公開は勝田の承認が必要。
+
+### 実機/シミュレータ計測用の隠しURL（LINGO-049）
+
+```
+https://lingogate.pages.dev/diag              診断パネルを即座に開く（タップ不要）
+https://lingogate.pages.dev/?diag=1           同上（クエリ版）
+https://lingogate.pages.dev/?skipOnboarding=1 5画面の導入を飛ばしてホームへ
+```
+
+`/diag` は**ホームの上に**パネルを重ねる（タブバーが画面に居る状態で測るため）。
+`window.innerHeight` / `visualViewport` / `screen.height` / `#root` の bottom・height /
+**fixed bottom:0 要素の着地点** / **tabbar の bottom・height・背景色** / safe-area 4辺 /
+standalone判定 / ページ背景色 / meta theme-color が1枚のスクショに収まる。
+一致すべき値がズレている行は赤く表示される。
+
+下端の表示問題（黒帯など）は**iOSシミュレータ（本物のWebKit・本物のsafe-area）で
+このURLを開いて計測する**こと。ヘッドレスでは `env(safe-area-inset-*)` が常に0で、
+実機で起きる問題が再現しない。勝田にスクショを依頼する前に、まず自分で測る。
