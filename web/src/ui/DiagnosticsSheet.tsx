@@ -96,6 +96,25 @@ function collect(): Reading[] {
       value: `${fixedBottom}`,
       bad: !near(fixedBottom, innerH),
     },
+    ...(() => {
+      // LINGO-049: the tab bar's own geometry and colour — the thing the
+      // "black band below the footer" reports are actually about. Present
+      // whenever the panel is opened over a tabbed screen (including /diag,
+      // which deliberately renders over Home for exactly this reason).
+      const tb = document.querySelector(".tabbar");
+      if (!tb) return [] as Reading[];
+      const r = tb.getBoundingClientRect();
+      const cs = getComputedStyle(tb);
+      return [
+        {
+          label: "tabbar bottom",
+          value: `${Math.round(r.bottom)}`,
+          bad: !near(Math.round(r.bottom), innerH),
+        },
+        { label: "tabbar height", value: `${Math.round(r.height)}` },
+        { label: "tabbar background", value: cs.backgroundColor },
+      ] as Reading[];
+    })(),
     { label: "safe-area top", value: `${insets.top}px` },
     { label: "safe-area bottom", value: `${insets.bottom}px` },
     { label: "safe-area left / right", value: `${insets.left} / ${insets.right}px` },

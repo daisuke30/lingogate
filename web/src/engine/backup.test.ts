@@ -304,10 +304,9 @@ describe("backup schema v2: pet", () => {
     expect(file.schemaVersion).toBe(2);
     const res = validateBackupFile(JSON.parse(JSON.stringify(file)));
     expect(res.ok).toBe(true);
-    if (!res.ok) return;
-    expect(res.file.pet?.state).toMatchObject({ generation: 3 });
-    expect(res.file.pet?.collection).toHaveLength(1);
-    expect(res.file.pet?.namesByGeneration).toEqual({ "3": "モチモ" });
+    expect(res.file?.pet?.state).toMatchObject({ generation: 3 });
+    expect(res.file?.pet?.collection).toHaveLength(1);
+    expect(res.file?.pet?.namesByGeneration).toEqual({ "3": "モチモ" });
   });
 
   it("still reads a v1 file, and reports no pet rather than an empty one", () => {
@@ -320,8 +319,8 @@ describe("backup schema v2: pet", () => {
     };
     const res = validateBackupFile(v1);
     expect(res.ok).toBe(true);
-    if (!res.ok) return;
-    expect(res.file.pet).toBeUndefined();
+    expect(res.file).toBeDefined();
+    expect(res.file?.pet).toBeUndefined();
   });
 
   it("omits the pet block entirely when there is nothing to save", () => {

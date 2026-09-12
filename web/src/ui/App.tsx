@@ -12,6 +12,9 @@ import { shouldShowOnboarding } from "../state/onboarding";
 import { PetGallery } from "../pet/art/PetGallery";
 // LINGO-030: 育成 tab + bottom tab bar.
 import { PetView } from "./PetView";
+// LINGO-049: reachable straight from a URL so the diagnostics panel can be
+// screenshotted on a simulator/device without any tapping.
+import { DiagnosticsSheet } from "./DiagnosticsSheet";
 import { TabBar } from "./TabBar";
 import { petAttention, showTabBar } from "../pet/petDisplay";
 // LINGO-040: the pet read-model is owned here now, not by HomeView. Two
@@ -43,9 +46,38 @@ export type Route =
   // LINGO-030: 育成 tab (the pet screen), reached from the bottom tab bar.
   | { name: "pet" };
 
+/**
+ * LINGO-049 — URL switches for measuring the app on a real device.
+ *
+ * The bottom-of-screen bug has only ever been observable on Katsuta's iPhone,
+ * and asking him for a screenshot each round is both slow and his job to
+ * refuse. These let whoever is debugging drive an iOS Simulator (real WebKit,
+ * real safe-area insets) straight to the state they need to photograph:
+ *
+ *   /?diag=1  or  /diag            open the diagnostics panel immediately
+ *   /?skipOnboarding=1             go straight to Home, no 5-screen intro
+ *
+ * Query-only and undocumented in the UI, so no ordinary user meets them; they
+ * change nothing about what the app does, only which screen it opens on.
+ */
+export function debugFlags(): { diag: boolean; skipOnboarding: boolean } {
+  const path = window.location.pathname;
+  const params = new URLSearchParams(window.location.search);
+  // Either spelling of "show me the diagnostics" also implies "and don't put
+  // the intro in front of it" — otherwise /diag lands on screen 1 of 5 with
+  // the panel behind it, which is what the flag exists to avoid.
+  const diag = path.startsWith("/diag") || params.get("diag") === "1";
+  return { diag, skipOnboarding: diag || params.get("skipOnboarding") === "1" };
+}
+
 function routeFromLocation(): Route {
   const path = window.location.pathname;
   const params = new URLSearchParams(window.location.search);
+  // /diag renders Home (so the tab bar and the real shell are on screen and
+  // therefore measurable) with the panel open over it.
+  if (path.startsWith("/diag")) {
+    return { name: "home" };
+  }
   if (path.startsWith("/gate")) {
     return { name: "gate", returnApp: params.get("return") };
   }
@@ -61,6 +93,7 @@ function routeFromLocation(): Route {
 export function App() {
   const [route, setRoute] = useState<Route>(routeFromLocation);
   const [petSnap, setPetSnap] = useState<PetSnapshot | null>(null);
+  const [diagOpen, setDiagOpen] = useState(() => debugFlags().diag);
 
   // Keep in sync with browser back/forward.
   useEffect(() => {
@@ -77,6 +110,9 @@ export function App() {
   // very first check.
   useEffect(() => {
     if (route.name !== "home") return;
+    // LINGO-049: the debug switches win over the intro, so a simulator lands on
+    // the screen being measured instead of on screen 1 of 5.
+    if (debugFlags().skipOnboarding) return;
     let alive = true;
     shouldShowOnboarding().then((show) => {
       if (alive && show) navigate({ name: "onboarding", origin: "firstRun" });
@@ -174,6 +210,7 @@ export function App() {
   return (
     <>
       {renderRoute()}
+      <DiagnosticsSheet open={diagOpen} onClose={() => setDiagOpen(false)} />
       {showTabBar(route.name) && (
         <TabBar
           routeName={route.name}
