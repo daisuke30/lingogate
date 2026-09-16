@@ -1,0 +1,614 @@
+[
+ {
+  "lemma": "администратор",
+  "en_gloss": "administrator",
+  "ja_gloss": "管理者",
+  "gender": "m"
+ },
+ {
+  "lemma": "активист",
+  "en_gloss": "activist",
+  "ja_gloss": "活動家",
+  "gender": "m"
+ },
+ {
+  "lemma": "аренда",
+  "en_gloss": "rent",
+  "ja_gloss": "賃貸",
+  "gender": "f"
+ },
+ {
+  "lemma": "архитектор",
+  "en_gloss": "architect",
+  "ja_gloss": "建築家",
+  "gender": "m"
+ },
+ {
+  "lemma": "банкнот",
+  "en_gloss": "banknote",
+  "ja_gloss": "紙幣",
+  "gender": "m"
+ },
+ {
+  "lemma": "банкомат",
+  "en_gloss": "ATM",
+  "ja_gloss": "ATM",
+  "gender": "m"
+ },
+ {
+  "lemma": "безработный",
+  "en_gloss": "unemployed person",
+  "ja_gloss": "失業者",
+  "gender": "m"
+ },
+ {
+  "lemma": "белорус",
+  "en_gloss": "Belarusian",
+  "ja_gloss": "ベラルーシ人",
+  "gender": "m"
+ },
+ {
+  "lemma": "беспорядок",
+  "en_gloss": "mess",
+  "ja_gloss": "散らかった状態",
+  "gender": "m"
+ },
+ {
+  "lemma": "блокнот",
+  "en_gloss": "notebook",
+  "ja_gloss": "メモ帳",
+  "gender": "m"
+ },
+ {
+  "lemma": "борщ",
+  "en_gloss": "borscht",
+  "ja_gloss": "ボルシチ",
+  "gender": "m"
+ },
+ {
+  "lemma": "бронирование",
+  "en_gloss": "reservation",
+  "ja_gloss": "予約",
+  "gender": "n"
+ },
+ {
+  "lemma": "бронь",
+  "en_gloss": "reservation",
+  "ja_gloss": "予約",
+  "gender": "f"
+ },
+ {
+  "lemma": "будильник",
+  "en_gloss": "alarm clock",
+  "ja_gloss": "目覚まし時計",
+  "gender": "m"
+ },
+ {
+  "lemma": "букинг",
+  "en_gloss": "booking",
+  "ja_gloss": "予約",
+  "gender": "m"
+ },
+ {
+  "lemma": "бухгалтер",
+  "en_gloss": "accountant",
+  "ja_gloss": "会計士",
+  "gender": "m"
+ },
+ {
+  "lemma": "валюта",
+  "en_gloss": "currency",
+  "ja_gloss": "通貨",
+  "gender": "f"
+ },
+ {
+  "lemma": "вундеркинд",
+  "en_gloss": "child prodigy",
+  "ja_gloss": "神童",
+  "gender": "m"
+ },
+ {
+  "lemma": "вылет",
+  "en_gloss": "departure",
+  "ja_gloss": "出発",
+  "gender": "m"
+ },
+ {
+  "lemma": "грамматика",
+  "en_gloss": "grammar",
+  "ja_gloss": "文法",
+  "gender": "f"
+ },
+ {
+  "lemma": "депозит",
+  "en_gloss": "deposit",
+  "ja_gloss": "預金",
+  "gender": "m"
+ },
+ {
+  "lemma": "доброволец",
+  "en_gloss": "volunteer",
+  "ja_gloss": "志願者",
+  "gender": "m"
+ },
+ {
+  "lemma": "достопримечательность",
+  "en_gloss": "tourist attraction",
+  "ja_gloss": "観光名所",
+  "gender": "f"
+ },
+ {
+  "lemma": "жар",
+  "en_gloss": "fever",
+  "ja_gloss": "熱",
+  "gender": "m"
+ },
+ {
+  "lemma": "залог",
+  "en_gloss": "deposit",
+  "ja_gloss": "保証金",
+  "gender": "m"
+ },
+ {
+  "lemma": "замешательство",
+  "en_gloss": "confusion",
+  "ja_gloss": "困惑",
+  "gender": "n"
+ },
+ {
+  "lemma": "зарядка",
+  "en_gloss": "charging",
+  "ja_gloss": "充電",
+  "gender": "f"
+ },
+ {
+  "lemma": "зонт",
+  "en_gloss": "umbrella",
+  "ja_gloss": "傘",
+  "gender": "m"
+ },
+ {
+  "lemma": "зуд",
+  "en_gloss": "itch",
+  "ja_gloss": "かゆみ",
+  "gender": "m"
+ },
+ {
+  "lemma": "иностранец",
+  "en_gloss": "foreigner",
+  "ja_gloss": "外国人",
+  "gender": "m"
+ },
+ {
+  "lemma": "караоке",
+  "en_gloss": "karaoke",
+  "ja_gloss": "カラオケ",
+  "gender": "n"
+ },
+ {
+  "lemma": "карри",
+  "en_gloss": "curry",
+  "ja_gloss": "カレー",
+  "gender": "n"
+ },
+ {
+  "lemma": "квитанция",
+  "en_gloss": "receipt",
+  "ja_gloss": "領収書",
+  "gender": "f"
+ },
+ {
+  "lemma": "китаец",
+  "en_gloss": "Chinese person",
+  "ja_gloss": "中国人",
+  "gender": "m"
+ },
+ {
+  "lemma": "кошелек",
+  "en_gloss": "wallet",
+  "ja_gloss": "財布",
+  "gender": "m"
+ },
+ {
+  "lemma": "купюра",
+  "en_gloss": "banknote",
+  "ja_gloss": "紙幣",
+  "gender": "f"
+ },
+ {
+  "lemma": "курение",
+  "en_gloss": "smoking",
+  "ja_gloss": "喫煙",
+  "gender": "n"
+ },
+ {
+  "lemma": "курорт",
+  "en_gloss": "resort",
+  "ja_gloss": "リゾート地",
+  "gender": "m"
+ },
+ {
+  "lemma": "микрофон",
+  "en_gloss": "microphone",
+  "ja_gloss": "マイク",
+  "gender": "m"
+ },
+ {
+  "lemma": "миксер",
+  "en_gloss": "mixer",
+  "ja_gloss": "ミキサー",
+  "gender": "m"
+ },
+ {
+  "lemma": "мобильник",
+  "en_gloss": "mobile phone",
+  "ja_gloss": "携帯電話",
+  "gender": "m"
+ },
+ {
+  "lemma": "монета",
+  "en_gloss": "coin",
+  "ja_gloss": "硬貨",
+  "gender": "f"
+ },
+ {
+  "lemma": "мощь",
+  "en_gloss": "might",
+  "ja_gloss": "威力",
+  "gender": "f"
+ },
+ {
+  "lemma": "набережная",
+  "en_gloss": "embankment",
+  "ja_gloss": "川岸通り",
+  "gender": "f"
+ },
+ {
+  "lemma": "наличные",
+  "en_gloss": "cash",
+  "ja_gloss": "現金",
+  "gender": "pl"
+ },
+ {
+  "lemma": "наушник",
+  "en_gloss": "earphone",
+  "ja_gloss": "イヤホン",
+  "gender": "m"
+ },
+ {
+  "lemma": "национальность",
+  "en_gloss": "nationality",
+  "ja_gloss": "国籍",
+  "gender": "f"
+ },
+ {
+  "lemma": "незнакомец",
+  "en_gloss": "male stranger",
+  "ja_gloss": "見知らぬ男性",
+  "gender": "m"
+ },
+ {
+  "lemma": "незнакомка",
+  "en_gloss": "female stranger",
+  "ja_gloss": "見知らぬ女性",
+  "gender": "f"
+ },
+ {
+  "lemma": "нетерпение",
+  "en_gloss": "impatience",
+  "ja_gloss": "待ちきれない気持ち",
+  "gender": "n"
+ },
+ {
+  "lemma": "окрестность",
+  "en_gloss": "surrounding area",
+  "ja_gloss": "周辺",
+  "gender": "f"
+ },
+ {
+  "lemma": "оптик",
+  "en_gloss": "optician",
+  "ja_gloss": "眼鏡技師",
+  "gender": "m"
+ },
+ {
+  "lemma": "отправление",
+  "en_gloss": "departure",
+  "ja_gloss": "出発",
+  "gender": "n"
+ },
+ {
+  "lemma": "официант",
+  "en_gloss": "waiter",
+  "ja_gloss": "ウェイター",
+  "gender": "m"
+ },
+ {
+  "lemma": "пение",
+  "en_gloss": "singing",
+  "ja_gloss": "歌声",
+  "gender": "n"
+ },
+ {
+  "lemma": "переводчица",
+  "en_gloss": "female translator",
+  "ja_gloss": "女性翻訳者",
+  "gender": "f"
+ },
+ {
+  "lemma": "переезд",
+  "en_gloss": "move",
+  "ja_gloss": "引っ越し",
+  "gender": "m"
+ },
+ {
+  "lemma": "пианино",
+  "en_gloss": "piano",
+  "ja_gloss": "ピアノ",
+  "gender": "n"
+ },
+ {
+  "lemma": "пирамида",
+  "en_gloss": "pyramid",
+  "ja_gloss": "ピラミッド",
+  "gender": "f"
+ },
+ {
+  "lemma": "платок",
+  "en_gloss": "scarf",
+  "ja_gloss": "スカーフ",
+  "gender": "m"
+ },
+ {
+  "lemma": "подсчет",
+  "en_gloss": "count",
+  "ja_gloss": "集計",
+  "gender": "m"
+ },
+ {
+  "lemma": "полуночь",
+  "en_gloss": "midnight",
+  "ja_gloss": "真夜中",
+  "gender": "f"
+ },
+ {
+  "lemma": "пометка",
+  "en_gloss": "note",
+  "ja_gloss": "メモ",
+  "gender": "f"
+ },
+ {
+  "lemma": "посудомойка",
+  "en_gloss": "dishwasher",
+  "ja_gloss": "食器洗い機",
+  "gender": "f"
+ },
+ {
+  "lemma": "пот",
+  "en_gloss": "sweat",
+  "ja_gloss": "汗",
+  "gender": "m"
+ },
+ {
+  "lemma": "пребывание",
+  "en_gloss": "stay",
+  "ja_gloss": "滞在",
+  "gender": "n"
+ },
+ {
+  "lemma": "прибытие",
+  "en_gloss": "arrival",
+  "ja_gloss": "到着",
+  "gender": "n"
+ },
+ {
+  "lemma": "приезд",
+  "en_gloss": "arrival",
+  "ja_gloss": "到着",
+  "gender": "m"
+ },
+ {
+  "lemma": "пробка",
+  "en_gloss": "traffic jam",
+  "ja_gloss": "交通渋滞",
+  "gender": "f"
+ },
+ {
+  "lemma": "произношение",
+  "en_gloss": "pronunciation",
+  "ja_gloss": "発音",
+  "gender": "n"
+ },
+ {
+  "lemma": "путешественник",
+  "en_gloss": "male traveler",
+  "ja_gloss": "男性旅行者",
+  "gender": "m"
+ },
+ {
+  "lemma": "путешественница",
+  "en_gloss": "female traveler",
+  "ja_gloss": "女性旅行者",
+  "gender": "f"
+ },
+ {
+  "lemma": "разлука",
+  "en_gloss": "separation",
+  "ja_gloss": "別離",
+  "gender": "f"
+ },
+ {
+  "lemma": "ресепшен",
+  "en_gloss": "reception desk",
+  "ja_gloss": "受付",
+  "gender": "m"
+ },
+ {
+  "lemma": "салфетка",
+  "en_gloss": "napkin",
+  "ja_gloss": "ナプキン",
+  "gender": "f"
+ },
+ {
+  "lemma": "скрипка",
+  "en_gloss": "violin",
+  "ja_gloss": "バイオリン",
+  "gender": "f"
+ },
+ {
+  "lemma": "слон",
+  "en_gloss": "elephant",
+  "ja_gloss": "象",
+  "gender": "m"
+ },
+ {
+  "lemma": "специальность",
+  "en_gloss": "specialty",
+  "ja_gloss": "専門",
+  "gender": "f"
+ },
+ {
+  "lemma": "статистика",
+  "en_gloss": "statistics",
+  "ja_gloss": "統計",
+  "gender": "f"
+ },
+ {
+  "lemma": "страхование",
+  "en_gloss": "insurance",
+  "ja_gloss": "保険",
+  "gender": "n"
+ },
+ {
+  "lemma": "супермаркет",
+  "en_gloss": "supermarket",
+  "ja_gloss": "スーパーマーケット",
+  "gender": "m"
+ },
+ {
+  "lemma": "таксист",
+  "en_gloss": "taxi driver",
+  "ja_gloss": "タクシー運転手",
+  "gender": "m"
+ },
+ {
+  "lemma": "талон",
+  "en_gloss": "ticket",
+  "ja_gloss": "券",
+  "gender": "m"
+ },
+ {
+  "lemma": "техно-фестиваль",
+  "en_gloss": "techno festival",
+  "ja_gloss": "テクノフェスティバル",
+  "gender": "m"
+ },
+ {
+  "lemma": "турист",
+  "en_gloss": "tourist",
+  "ja_gloss": "観光客",
+  "gender": "m"
+ },
+ {
+  "lemma": "туча",
+  "en_gloss": "storm cloud",
+  "ja_gloss": "雨雲",
+  "gender": "f"
+ },
+ {
+  "lemma": "удостоверение",
+  "en_gloss": "identification",
+  "ja_gloss": "証明書",
+  "gender": "n"
+ },
+ {
+  "lemma": "ученый-физиолог",
+  "en_gloss": "physiologist",
+  "ja_gloss": "生理学者",
+  "gender": "m"
+ },
+ {
+  "lemma": "фантастика",
+  "en_gloss": "science fiction",
+  "ja_gloss": "SF",
+  "gender": "f"
+ },
+ {
+  "lemma": "философ",
+  "en_gloss": "philosopher",
+  "ja_gloss": "哲学者",
+  "gender": "m"
+ },
+ {
+  "lemma": "хобби",
+  "en_gloss": "hobby",
+  "ja_gloss": "趣味",
+  "gender": "n"
+ },
+ {
+  "lemma": "ходьба",
+  "en_gloss": "walking",
+  "ja_gloss": "徒歩",
+  "gender": "f"
+ },
+ {
+  "lemma": "художница",
+  "en_gloss": "female artist",
+  "ja_gloss": "女性画家",
+  "gender": "f"
+ },
+ {
+  "lemma": "цирк",
+  "en_gloss": "circus",
+  "ja_gloss": "サーカス",
+  "gender": "m"
+ },
+ {
+  "lemma": "чайник",
+  "en_gloss": "kettle",
+  "ja_gloss": "やかん",
+  "gender": "m"
+ },
+ {
+  "lemma": "честность",
+  "en_gloss": "honesty",
+  "ja_gloss": "正直さ",
+  "gender": "f"
+ },
+ {
+  "lemma": "четверть",
+  "en_gloss": "quarter",
+  "ja_gloss": "15分",
+  "gender": "f"
+ },
+ {
+  "lemma": "экономка",
+  "en_gloss": "housekeeper",
+  "ja_gloss": "家政婦",
+  "gender": "f"
+ },
+ {
+  "lemma": "экскурсия",
+  "en_gloss": "guided tour",
+  "ja_gloss": "見学ツアー",
+  "gender": "f"
+ },
+ {
+  "lemma": "экскурсовод",
+  "en_gloss": "tour guide",
+  "ja_gloss": "観光ガイド",
+  "gender": "m"
+ },
+ {
+  "lemma": "якут",
+  "en_gloss": "Yakut person",
+  "ja_gloss": "ヤクート人",
+  "gender": "m"
+ },
+ {
+  "lemma": "японец",
+  "en_gloss": "Japanese person",
+  "ja_gloss": "日本人",
+  "gender": "m"
+ }
+]

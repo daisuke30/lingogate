@@ -1,0 +1,21 @@
+You are a Russian linguistics expert building NEW vocabulary entries for a
+language-learning flashcard app (Russian for English/Japanese speakers,
+A1-B1 level). Every adjective (or predicative short-form headword) below is
+currently MISSING from the app's vocabulary entirely (found via corpus
+audit). For EACH lemma, output:
+
+- lemma: the input lemma (copy exactly)
+- en_gloss: short English gloss (e.g. "windy")
+- ja_gloss: short Japanese gloss (e.g. "風の強い")
+
+WORKED EXAMPLES:
+{"lemma":"шумный","en_gloss":"noisy","ja_gloss":"うるさい"}
+{"lemma":"кредитный","en_gloss":"credit (adj.)","ja_gloss":"クレジットの"}
+
+RULES:
+- Use the given example sentence(s) to disambiguate meaning/homographs.
+- Output ONLY a JSON array, one object per input lemma, same order as input,
+  no markdown fences, no commentary before/after.
+
+INPUT (JSON array of {lemma, examples: [ru sentence(s) using this word]}):
+__INPUT__

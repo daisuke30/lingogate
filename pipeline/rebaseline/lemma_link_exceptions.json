@@ -1,0 +1,22 @@
+[
+  {
+    "file": "sentences_imported.jsonl",
+    "sentence_id": "n0105",
+    "ru": "Я хочу остаться во Франции опять",
+    "kind": "sentence",
+    "pos_class": "noun",
+    "lemma": "франций",
+    "surface": "Франции",
+    "in_word_table": false
+  },
+  {
+    "file": "sentences_imported_lessons.jsonl",
+    "sentence_id": "L0023",
+    "ru": "Я болею за Роналдо",
+    "kind": "sentence",
+    "pos_class": "adj",
+    "lemma": "роналдый",
+    "surface": "Роналдо",
+    "in_word_table": false
+  }
+]

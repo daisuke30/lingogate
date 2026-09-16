@@ -1,0 +1,50 @@
+You are a Russian linguistics expert building NEW vocabulary entries for a
+language-learning flashcard app (Russian for English/Japanese speakers,
+A1-B1 level). Every verb below is currently MISSING from the app's
+vocabulary entirely (found via corpus audit — real sentences use it but it
+has no Word entry yet). For EACH verb lemma, output a complete entry.
+
+FIELDS per verb:
+- lemma: the input lemma (copy exactly)
+- en_gloss: short English gloss (infinitive form, e.g. "to cook")
+- ja_gloss: short Japanese gloss (dictionary style, e.g. "料理する")
+- aspect: "pf" (perfective) | "impf" (imperfective) | "both" (genuinely
+  biaspectual — same infinitive form used as both aspects)
+- aspect_pair: the lemma (infinitive, dictionary form) of its aspectual
+  partner verb, or null if aspect="both" or truly no relation exists
+- pair_kind: one of:
+    "pair"    — a clean, standard textbook aspectual pair (same core meaning,
+                only aspect differs). e.g. делать/сделать, купить/покупать.
+    "related" — a genuinely related but NOT a strict aspectual pair: either
+                (a) a state verb whose "pair" is really a delimitative
+                (по-X = "do X for a while") or inchoative/derived verb with a
+                shifted meaning, or (b) a multidirectional motion verb whose
+                partner is the corresponding unidirectional imperfective —
+                NOT a true perfective (do not use "pair" for these).
+    "none"    — no meaningful related verb worth showing; pure state/
+                relational verb, or a delimitative-only relation (see the
+                лежать/полежать worked example below — delimitatives go in
+                "none" with a bonus mention, NOT "related").
+- pair_note / pair_note_en / pair_note_ru: a short nuance note in each of
+  the 3 languages, ONLY when pair_kind is "related" or "none" — explain why
+  it's not a strict pair, or what the shown related verb means. null for
+  all three when pair_kind="pair" (self-evident) unless there's a genuine
+  gotcha worth flagging. Keep each under ~40 characters in its own script.
+
+WORKED EXAMPLES (follow this exact style and the лежать precedent — a
+delimitative-only relation is "none", never "related"):
+{"lemma":"сделать","en_gloss":"to do, to make","ja_gloss":"する","aspect":"pf","aspect_pair":"делать","pair_kind":"pair","pair_note":null,"pair_note_en":null,"pair_note_ru":null}
+{"lemma":"лежать","en_gloss":"to lie (be lying down)","ja_gloss":"横たわっている","aspect":"impf","aspect_pair":"полежать","pair_kind":"none","pair_note":"しばらく横になる／参考: ложиться–лечь（動作）","pair_note_en":"полежать = to lie down for a while (delimitative); ложиться–лечь = the act of lying down","pair_note_ru":"полежать = полежать немного (ограничительный вид); ложиться–лечь = само действие"}
+{"lemma":"узнать","en_gloss":"to find out, get to know","ja_gloss":"知るようになる","aspect":"pf","aspect_pair":"знать","pair_kind":"related","pair_note":"знать=「知っている」（状態）で厳密な対ではない","pair_note_en":"знать = 'to know' (a state), not a strict pair","pair_note_ru":"знать = «знать» (состояние), не строгая пара"}
+{"lemma":"организовать","en_gloss":"to organize","ja_gloss":"組織する","aspect":"both","aspect_pair":null,"pair_kind":"none","pair_note":"両体動詞（-оватьの外来語動詞）","pair_note_en":"biaspectual (a loanword verb in -овать)","pair_note_ru":"двувидовой глагол (заимствование на -овать)"}
+
+RULES:
+- aspect_pair must be a real, correctly-spelled Russian infinitive.
+- aspect_pair must never equal the head lemma itself.
+- Use the given example sentence(s) to disambiguate meaning/homographs.
+- Prefer "pair" whenever a genuine standard aspectual partner exists.
+- Output ONLY a JSON array, one object per input verb, same order as input,
+  no markdown fences, no commentary before/after.
+
+INPUT (JSON array of {lemma, examples: [ru sentence(s) using this word]}):
+__INPUT__

@@ -26,11 +26,19 @@ describe("content build", () => {
     // by the LINGO-020 rebaseline, kept — not deleted — so existing learner
     // ReviewState/wordKnowledge still resolves) shrank by the 40 words
     // recovered into band3: 859 -> 819.
+    // LINGO-049: a full-corpus pymorphy audit found 267 content-word tokens
+    // (verb/noun/adj) present in RU sentence text but missing from their
+    // sentence's own `lemmas` array (the exact bug class behind Katsuta's
+    // "to spend time"/"to make money" report). Most were fixed by relinking
+    // to existing Word rows; 65 verbs + 102 nouns + 40 adjectives (41
+    // generated minus 1 duplicate of the already-registered "каков") were
+    // genuinely new vocabulary, appended to words_band4.jsonl (band:4, no
+    // rank, same retirement-pool convention): 819 + 207 = 1026.
     expect(byBand[1]).toBe(1000);
     expect(byBand[2]).toBe(1000);
     expect(byBand[3]).toBe(1000);
-    expect(byBand[4]).toBe(819);
-    expect(deck.words.length).toBe(1000 + 1000 + 1000 + 819);
+    expect(byBand[4]).toBe(1026);
+    expect(deck.words.length).toBe(1000 + 1000 + 1000 + 1026);
     // Every band1-3 lemma is unique across the whole deck (no band4 collision).
     const seen = new Set<string>();
     for (const w of deck.words) {

@@ -1,0 +1,28 @@
+You are a Russian linguistics expert building NEW vocabulary entries for a
+language-learning flashcard app (Russian for English/Japanese speakers,
+A1-B1 level). Every noun below is currently MISSING from the app's
+vocabulary entirely (found via corpus audit). For EACH noun lemma, output:
+
+- lemma: the input lemma (copy exactly)
+- en_gloss: short English gloss (e.g. "wallet")
+- ja_gloss: short Japanese gloss (e.g. "財布")
+- gender: one of:
+    "m"  — masculine
+    "f"  — feminine
+    "n"  — neuter
+    "pl" — pluralia tantum (plural-only noun, no singular — e.g. деньги)
+    "mf" — common gender (masc-or-femn by referent, e.g. коллега)
+
+WORKED EXAMPLES:
+{"lemma":"кошелек","en_gloss":"wallet","ja_gloss":"財布","gender":"m"}
+{"lemma":"квитанция","en_gloss":"receipt","ja_gloss":"領収書","gender":"f"}
+{"lemma":"пианино","en_gloss":"piano","ja_gloss":"ピアノ","gender":"n"}
+
+RULES:
+- Use the given example sentence(s) to disambiguate meaning/homographs.
+- Compound/hyphenated lemmas (e.g. техно-фестиваль) keep the exact spelling.
+- Output ONLY a JSON array, one object per input noun, same order as input,
+  no markdown fences, no commentary before/after.
+
+INPUT (JSON array of {lemma, examples: [ru sentence(s) using this word]}):
+__INPUT__

@@ -995,3 +995,68 @@
 {"lemma": "кивнуть", "aspect": "pf", "aspect_pair": "кивать", "pair_kind": "pair", "pair_note": null}
 {"lemma": "осуществляться", "aspect": "impf", "aspect_pair": "осуществиться", "pair_kind": "pair", "pair_note": null}
 {"lemma": "воскликнуть", "aspect": "pf", "aspect_pair": "восклицать", "pair_kind": "pair", "pair_note": null}
+{"lemma": "варить", "aspect": "impf", "aspect_pair": "сварить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "вестись", "aspect": "impf", "aspect_pair": "провести", "pair_kind": "related", "pair_note": "провестиは能動形「実施する」", "pair_note_en": "провести is active: to carry out", "pair_note_ru": "провести — активное «осуществить»"}
+{"lemma": "выехать", "aspect": "pf", "aspect_pair": "выезжать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "вылечить", "aspect": "pf", "aspect_pair": "лечить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "вытереть", "aspect": "pf", "aspect_pair": "вытирать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "выучить", "aspect": "pf", "aspect_pair": "учить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "выучиться", "aspect": "pf", "aspect_pair": "учиться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "добираться", "aspect": "impf", "aspect_pair": "добраться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "дорожать", "aspect": "impf", "aspect_pair": "подорожать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "заблудиться", "aspect": "pf", "aspect_pair": "блуждать", "pair_kind": "related", "pair_note": "блуждатьは「さまよう」", "pair_note_en": "блуждать means to wander", "pair_note_ru": "блуждать значит «скитаться»"}
+{"lemma": "забронировать", "aspect": "pf", "aspect_pair": "бронировать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "завтракать", "aspect": "impf", "aspect_pair": "позавтракать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "закрыться", "aspect": "pf", "aspect_pair": "закрываться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "заплакать", "aspect": "pf", "aspect_pair": "плакать", "pair_kind": "related", "pair_note": "плакатьは「泣いている」", "pair_note_en": "плакать is to cry; this means start", "pair_note_ru": "плакать — процесс; здесь начало"}
+{"lemma": "запутаться", "aspect": "pf", "aspect_pair": "запутываться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "извлечь", "aspect": "pf", "aspect_pair": "извлекать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "инвестировать", "aspect": "both", "aspect_pair": null, "pair_kind": "none", "pair_note": "文脈により完了体・不完了体", "pair_note_en": "biaspectual; aspect depends on context", "pair_note_ru": "двувидовой; вид зависит от контекста"}
+{"lemma": "испортиться", "aspect": "pf", "aspect_pair": "портиться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "исправиться", "aspect": "pf", "aspect_pair": "исправляться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "кончаться", "aspect": "impf", "aspect_pair": "кончиться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "ломаться", "aspect": "impf", "aspect_pair": "сломаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "наесться", "aspect": "pf", "aspect_pair": "наедаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "насчитать", "aspect": "pf", "aspect_pair": "насчитывать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "обойти", "aspect": "pf", "aspect_pair": "обходить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "обучить", "aspect": "pf", "aspect_pair": "обучать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "ориентироваться", "aspect": "impf", "aspect_pair": "сориентироваться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "освоить", "aspect": "pf", "aspect_pair": "осваивать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "осмелиться", "aspect": "pf", "aspect_pair": "осмеливаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "отказывать", "aspect": "impf", "aspect_pair": "отказать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "отмерить", "aspect": "pf", "aspect_pair": "отмерять", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "перебивать", "aspect": "impf", "aspect_pair": "перебить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "погулять", "aspect": "pf", "aspect_pair": "гулять", "pair_kind": "none", "pair_note": "гулятьを一定時間行う限定動詞", "pair_note_en": "delimitative: гулять for some time", "pair_note_ru": "ограничительное: гулять некоторое время"}
+{"lemma": "подружиться", "aspect": "pf", "aspect_pair": "дружить", "pair_kind": "related", "pair_note": "дружитьは「友達である」状態", "pair_note_en": "дружить means to be friends", "pair_note_ru": "дружить — быть друзьями"}
+{"lemma": "подсказать", "aspect": "pf", "aspect_pair": "подсказывать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "пожаловаться", "aspect": "pf", "aspect_pair": "жаловаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "пожить", "aspect": "pf", "aspect_pair": "жить", "pair_kind": "none", "pair_note": "житьを一定期間行う限定動詞", "pair_note_en": "delimitative: жить for some time", "pair_note_ru": "ограничительное: жить некоторое время"}
+{"lemma": "полагаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "この非人称用法には完了体の対がない", "pair_note_en": "this impersonal sense has no perfective", "pair_note_ru": "у безличного значения нет пары"}
+{"lemma": "полететь", "aspect": "pf", "aspect_pair": "лететь", "pair_kind": "related", "pair_note": "лететьは移動中、полететьは開始", "pair_note_en": "лететь is motion; полететь marks setting off", "pair_note_ru": "лететь — движение; полететь — начало"}
+{"lemma": "помыть", "aspect": "pf", "aspect_pair": "мыть", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "пообедать", "aspect": "pf", "aspect_pair": "обедать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "пописать", "aspect": "pf", "aspect_pair": "писать", "pair_kind": "pair", "pair_note": "ここでは口語の「排尿する」", "pair_note_en": "here писать colloquially means to urinate", "pair_note_ru": "здесь писать — разговорное «мочиться»"}
+{"lemma": "поспешить", "aspect": "pf", "aspect_pair": "спешить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "потеряться", "aspect": "pf", "aspect_pair": "теряться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "почистить", "aspect": "pf", "aspect_pair": "чистить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "практиковать", "aspect": "impf", "aspect_pair": "попрактиковать", "pair_kind": "none", "pair_note": "попрактиковатьは一定時間の練習", "pair_note_en": "попрактиковать is delimitative", "pair_note_ru": "попрактиковать — ограничительное"}
+{"lemma": "представиться", "aspect": "pf", "aspect_pair": "представляться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "преподавать", "aspect": "impf", "aspect_pair": "преподать", "pair_kind": "related", "pair_note": "преподатьは授業・知識を一度与える", "pair_note_en": "преподать means to impart once", "pair_note_ru": "преподать — разово дать урок или знание"}
+{"lemma": "привыкать", "aspect": "impf", "aspect_pair": "привыкнуть", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "припарковать", "aspect": "pf", "aspect_pair": "парковать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "простудиться", "aspect": "pf", "aspect_pair": "простужаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "простужаться", "aspect": "impf", "aspect_pair": "простудиться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "расстроиться", "aspect": "pf", "aspect_pair": "расстраиваться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "стемнеть", "aspect": "pf", "aspect_pair": "темнеть", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "тренироваться", "aspect": "impf", "aspect_pair": "потренироваться", "pair_kind": "none", "pair_note": "потренироватьсяは一定時間の運動", "pair_note_en": "потренироваться is delimitative", "pair_note_ru": "потренироваться — ограничительное"}
+{"lemma": "увольняться", "aspect": "impf", "aspect_pair": "уволиться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "уложить", "aspect": "pf", "aspect_pair": "укладывать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "улучшить", "aspect": "pf", "aspect_pair": "улучшать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "улучшиться", "aspect": "pf", "aspect_pair": "улучшаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "умудриться", "aspect": "pf", "aspect_pair": "умудряться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "упомнить", "aspect": "pf", "aspect_pair": "помнить", "pair_kind": "related", "pair_note": "помнитьは状態、упомнитьは覚えきる", "pair_note_en": "помнить is a state; упомнить is exhaustive", "pair_note_ru": "помнить — состояние; упомнить — охватить"}
+{"lemma": "успевать", "aspect": "impf", "aspect_pair": "успеть", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "устроиться", "aspect": "pf", "aspect_pair": "устраиваться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "фокусироваться", "aspect": "impf", "aspect_pair": "сфокусироваться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "фотографировать", "aspect": "impf", "aspect_pair": "сфотографировать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "чесаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞。почесатьсяは「体をかく」", "pair_note_en": "a state; почесаться means to scratch oneself", "pair_note_ru": "состояние; почесаться — почесать себя"}

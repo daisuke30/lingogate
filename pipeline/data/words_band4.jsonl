@@ -817,3 +817,210 @@
 {"lemma": "идеология", "band": 4, "pos": "noun", "en_gloss": "ideology", "ja_gloss": "イデオロギー", "gender": "f"}
 {"lemma": "зарубежный", "band": 4, "pos": "adj", "en_gloss": "foreign", "ja_gloss": "外国の"}
 {"lemma": "сетевой", "band": 4, "pos": "adj", "en_gloss": "network (adj)", "ja_gloss": "ネットワークの"}
+{"lemma": "варить", "band": 4, "pos": "verb", "en_gloss": "to brew, to boil", "ja_gloss": "煮る、沸かす"}
+{"lemma": "вестись", "band": 4, "pos": "verb", "en_gloss": "to be conducted, be kept", "ja_gloss": "行われる、記録される"}
+{"lemma": "выехать", "band": 4, "pos": "verb", "en_gloss": "to leave by vehicle", "ja_gloss": "乗り物で出発する"}
+{"lemma": "вылечить", "band": 4, "pos": "verb", "en_gloss": "to cure", "ja_gloss": "治す"}
+{"lemma": "вытереть", "band": 4, "pos": "verb", "en_gloss": "to wipe, dry", "ja_gloss": "拭く"}
+{"lemma": "выучить", "band": 4, "pos": "verb", "en_gloss": "to learn, memorize", "ja_gloss": "習得する、暗記する"}
+{"lemma": "выучиться", "band": 4, "pos": "verb", "en_gloss": "to train, qualify", "ja_gloss": "学んで資格を得る"}
+{"lemma": "добираться", "band": 4, "pos": "verb", "en_gloss": "to get to, make one's way", "ja_gloss": "たどり着く、通う"}
+{"lemma": "дорожать", "band": 4, "pos": "verb", "en_gloss": "to become more expensive", "ja_gloss": "値上がりする"}
+{"lemma": "заблудиться", "band": 4, "pos": "verb", "en_gloss": "to get lost", "ja_gloss": "道に迷う"}
+{"lemma": "забронировать", "band": 4, "pos": "verb", "en_gloss": "to book, reserve", "ja_gloss": "予約する"}
+{"lemma": "завтракать", "band": 4, "pos": "verb", "en_gloss": "to have breakfast", "ja_gloss": "朝食を取る"}
+{"lemma": "закрыться", "band": 4, "pos": "verb", "en_gloss": "to close, shut", "ja_gloss": "閉まる、閉店する"}
+{"lemma": "заплакать", "band": 4, "pos": "verb", "en_gloss": "to start crying", "ja_gloss": "泣き出す"}
+{"lemma": "запутаться", "band": 4, "pos": "verb", "en_gloss": "to get confused, tangled", "ja_gloss": "混乱する、絡まる"}
+{"lemma": "извлечь", "band": 4, "pos": "verb", "en_gloss": "to extract, derive", "ja_gloss": "取り出す、引き出す"}
+{"lemma": "инвестировать", "band": 4, "pos": "verb", "en_gloss": "to invest", "ja_gloss": "投資する"}
+{"lemma": "испортиться", "band": 4, "pos": "verb", "en_gloss": "to go bad, deteriorate", "ja_gloss": "悪くなる、傷む"}
+{"lemma": "исправиться", "band": 4, "pos": "verb", "en_gloss": "to improve, mend one's ways", "ja_gloss": "改心する、改善する"}
+{"lemma": "кончаться", "band": 4, "pos": "verb", "en_gloss": "to end, run out", "ja_gloss": "終わる、なくなる"}
+{"lemma": "ломаться", "band": 4, "pos": "verb", "en_gloss": "to break, malfunction", "ja_gloss": "壊れる"}
+{"lemma": "наесться", "band": 4, "pos": "verb", "en_gloss": "to eat one's fill", "ja_gloss": "満腹になる"}
+{"lemma": "насчитать", "band": 4, "pos": "verb", "en_gloss": "to count, total", "ja_gloss": "数えて合計する"}
+{"lemma": "обойти", "band": 4, "pos": "verb", "en_gloss": "to go around, cover", "ja_gloss": "回る、歩き回る"}
+{"lemma": "обучить", "band": 4, "pos": "verb", "en_gloss": "to teach, train", "ja_gloss": "教育する、訓練する"}
+{"lemma": "ориентироваться", "band": 4, "pos": "verb", "en_gloss": "to find one's way, navigate", "ja_gloss": "方向を把握する"}
+{"lemma": "освоить", "band": 4, "pos": "verb", "en_gloss": "to master", "ja_gloss": "習得する"}
+{"lemma": "осмелиться", "band": 4, "pos": "verb", "en_gloss": "to dare", "ja_gloss": "思い切ってする"}
+{"lemma": "отказывать", "band": 4, "pos": "verb", "en_gloss": "to refuse, deny", "ja_gloss": "断る、拒否する"}
+{"lemma": "отмерить", "band": 4, "pos": "verb", "en_gloss": "to measure out", "ja_gloss": "量って分ける"}
+{"lemma": "перебивать", "band": 4, "pos": "verb", "en_gloss": "to interrupt", "ja_gloss": "話を遮る"}
+{"lemma": "погулять", "band": 4, "pos": "verb", "en_gloss": "to take a walk, hang out", "ja_gloss": "しばらく散歩する"}
+{"lemma": "подружиться", "band": 4, "pos": "verb", "en_gloss": "to become friends", "ja_gloss": "友達になる"}
+{"lemma": "подсказать", "band": 4, "pos": "verb", "en_gloss": "to tell, give a hint", "ja_gloss": "教える、ヒントを与える"}
+{"lemma": "пожаловаться", "band": 4, "pos": "verb", "en_gloss": "to complain", "ja_gloss": "苦情を言う"}
+{"lemma": "пожить", "band": 4, "pos": "verb", "en_gloss": "to live for a while", "ja_gloss": "しばらく暮らす"}
+{"lemma": "полагаться", "band": 4, "pos": "verb", "en_gloss": "to be required, be expected", "ja_gloss": "することになっている"}
+{"lemma": "полететь", "band": 4, "pos": "verb", "en_gloss": "to set off by air, fly", "ja_gloss": "飛び立つ、飛行機で向かう"}
+{"lemma": "помыть", "band": 4, "pos": "verb", "en_gloss": "to wash", "ja_gloss": "洗う"}
+{"lemma": "пообедать", "band": 4, "pos": "verb", "en_gloss": "to have lunch", "ja_gloss": "昼食を取る"}
+{"lemma": "пописать", "band": 4, "pos": "verb", "en_gloss": "to pee", "ja_gloss": "おしっこをする"}
+{"lemma": "поспешить", "band": 4, "pos": "verb", "en_gloss": "to hurry", "ja_gloss": "急ぐ"}
+{"lemma": "потеряться", "band": 4, "pos": "verb", "en_gloss": "to get lost", "ja_gloss": "迷子になる、なくなる"}
+{"lemma": "почистить", "band": 4, "pos": "verb", "en_gloss": "to clean, brush", "ja_gloss": "きれいにする、磨く"}
+{"lemma": "практиковать", "band": 4, "pos": "verb", "en_gloss": "to practice", "ja_gloss": "練習する、実践する"}
+{"lemma": "представиться", "band": 4, "pos": "verb", "en_gloss": "to introduce oneself", "ja_gloss": "自己紹介する"}
+{"lemma": "преподавать", "band": 4, "pos": "verb", "en_gloss": "to teach", "ja_gloss": "教える"}
+{"lemma": "привыкать", "band": 4, "pos": "verb", "en_gloss": "to get used to", "ja_gloss": "慣れる"}
+{"lemma": "припарковать", "band": 4, "pos": "verb", "en_gloss": "to park", "ja_gloss": "駐車する"}
+{"lemma": "простудиться", "band": 4, "pos": "verb", "en_gloss": "to catch a cold", "ja_gloss": "風邪を引く"}
+{"lemma": "простужаться", "band": 4, "pos": "verb", "en_gloss": "to catch colds", "ja_gloss": "風邪を引く"}
+{"lemma": "расстроиться", "band": 4, "pos": "verb", "en_gloss": "to get upset", "ja_gloss": "落ち込む、動揺する"}
+{"lemma": "стемнеть", "band": 4, "pos": "verb", "en_gloss": "to get dark", "ja_gloss": "暗くなる"}
+{"lemma": "тренироваться", "band": 4, "pos": "verb", "en_gloss": "to train, work out", "ja_gloss": "トレーニングする"}
+{"lemma": "увольняться", "band": 4, "pos": "verb", "en_gloss": "to quit, leave a job", "ja_gloss": "退職する"}
+{"lemma": "уложить", "band": 4, "pos": "verb", "en_gloss": "to put to bed, lay down", "ja_gloss": "寝かせる、横たえる"}
+{"lemma": "улучшить", "band": 4, "pos": "verb", "en_gloss": "to improve", "ja_gloss": "改善する"}
+{"lemma": "улучшиться", "band": 4, "pos": "verb", "en_gloss": "to improve, get better", "ja_gloss": "改善する、良くなる"}
+{"lemma": "умудриться", "band": 4, "pos": "verb", "en_gloss": "to manage to", "ja_gloss": "どうにかして～する"}
+{"lemma": "упомнить", "band": 4, "pos": "verb", "en_gloss": "to remember, keep track of", "ja_gloss": "すべて覚えておく"}
+{"lemma": "успевать", "band": 4, "pos": "verb", "en_gloss": "to manage, have time", "ja_gloss": "間に合う、時間内にできる"}
+{"lemma": "устроиться", "band": 4, "pos": "verb", "en_gloss": "to get a job, settle in", "ja_gloss": "就職する、落ち着く"}
+{"lemma": "фокусироваться", "band": 4, "pos": "verb", "en_gloss": "to focus", "ja_gloss": "集中する"}
+{"lemma": "фотографировать", "band": 4, "pos": "verb", "en_gloss": "to photograph, take pictures", "ja_gloss": "写真を撮る"}
+{"lemma": "чесаться", "band": 4, "pos": "verb", "en_gloss": "to itch", "ja_gloss": "かゆい"}
+{"lemma": "администратор", "band": 4, "pos": "noun", "en_gloss": "administrator", "ja_gloss": "管理者", "gender": "m"}
+{"lemma": "активист", "band": 4, "pos": "noun", "en_gloss": "activist", "ja_gloss": "活動家", "gender": "m"}
+{"lemma": "аренда", "band": 4, "pos": "noun", "en_gloss": "rent", "ja_gloss": "賃貸", "gender": "f"}
+{"lemma": "архитектор", "band": 4, "pos": "noun", "en_gloss": "architect", "ja_gloss": "建築家", "gender": "m"}
+{"lemma": "банкнот", "band": 4, "pos": "noun", "en_gloss": "banknote", "ja_gloss": "紙幣", "gender": "m"}
+{"lemma": "банкомат", "band": 4, "pos": "noun", "en_gloss": "ATM", "ja_gloss": "ATM", "gender": "m"}
+{"lemma": "безработный", "band": 4, "pos": "noun", "en_gloss": "unemployed person", "ja_gloss": "失業者", "gender": "m"}
+{"lemma": "белорус", "band": 4, "pos": "noun", "en_gloss": "Belarusian", "ja_gloss": "ベラルーシ人", "gender": "m"}
+{"lemma": "беспорядок", "band": 4, "pos": "noun", "en_gloss": "mess", "ja_gloss": "散らかった状態", "gender": "m"}
+{"lemma": "блокнот", "band": 4, "pos": "noun", "en_gloss": "notebook", "ja_gloss": "メモ帳", "gender": "m"}
+{"lemma": "борщ", "band": 4, "pos": "noun", "en_gloss": "borscht", "ja_gloss": "ボルシチ", "gender": "m"}
+{"lemma": "бронирование", "band": 4, "pos": "noun", "en_gloss": "reservation", "ja_gloss": "予約", "gender": "n"}
+{"lemma": "бронь", "band": 4, "pos": "noun", "en_gloss": "reservation", "ja_gloss": "予約", "gender": "f"}
+{"lemma": "будильник", "band": 4, "pos": "noun", "en_gloss": "alarm clock", "ja_gloss": "目覚まし時計", "gender": "m"}
+{"lemma": "букинг", "band": 4, "pos": "noun", "en_gloss": "booking", "ja_gloss": "予約", "gender": "m"}
+{"lemma": "бухгалтер", "band": 4, "pos": "noun", "en_gloss": "accountant", "ja_gloss": "会計士", "gender": "m"}
+{"lemma": "валюта", "band": 4, "pos": "noun", "en_gloss": "currency", "ja_gloss": "通貨", "gender": "f"}
+{"lemma": "вундеркинд", "band": 4, "pos": "noun", "en_gloss": "child prodigy", "ja_gloss": "神童", "gender": "m"}
+{"lemma": "вылет", "band": 4, "pos": "noun", "en_gloss": "departure", "ja_gloss": "出発", "gender": "m"}
+{"lemma": "грамматика", "band": 4, "pos": "noun", "en_gloss": "grammar", "ja_gloss": "文法", "gender": "f"}
+{"lemma": "депозит", "band": 4, "pos": "noun", "en_gloss": "deposit", "ja_gloss": "預金", "gender": "m"}
+{"lemma": "доброволец", "band": 4, "pos": "noun", "en_gloss": "volunteer", "ja_gloss": "志願者", "gender": "m"}
+{"lemma": "достопримечательность", "band": 4, "pos": "noun", "en_gloss": "tourist attraction", "ja_gloss": "観光名所", "gender": "f"}
+{"lemma": "жар", "band": 4, "pos": "noun", "en_gloss": "fever", "ja_gloss": "熱", "gender": "m"}
+{"lemma": "залог", "band": 4, "pos": "noun", "en_gloss": "deposit", "ja_gloss": "保証金", "gender": "m"}
+{"lemma": "замешательство", "band": 4, "pos": "noun", "en_gloss": "confusion", "ja_gloss": "困惑", "gender": "n"}
+{"lemma": "зарядка", "band": 4, "pos": "noun", "en_gloss": "charging", "ja_gloss": "充電", "gender": "f"}
+{"lemma": "зонт", "band": 4, "pos": "noun", "en_gloss": "umbrella", "ja_gloss": "傘", "gender": "m"}
+{"lemma": "зуд", "band": 4, "pos": "noun", "en_gloss": "itch", "ja_gloss": "かゆみ", "gender": "m"}
+{"lemma": "иностранец", "band": 4, "pos": "noun", "en_gloss": "foreigner", "ja_gloss": "外国人", "gender": "m"}
+{"lemma": "караоке", "band": 4, "pos": "noun", "en_gloss": "karaoke", "ja_gloss": "カラオケ", "gender": "n"}
+{"lemma": "карри", "band": 4, "pos": "noun", "en_gloss": "curry", "ja_gloss": "カレー", "gender": "n"}
+{"lemma": "квитанция", "band": 4, "pos": "noun", "en_gloss": "receipt", "ja_gloss": "領収書", "gender": "f"}
+{"lemma": "китаец", "band": 4, "pos": "noun", "en_gloss": "Chinese person", "ja_gloss": "中国人", "gender": "m"}
+{"lemma": "кошелек", "band": 4, "pos": "noun", "en_gloss": "wallet", "ja_gloss": "財布", "gender": "m"}
+{"lemma": "купюра", "band": 4, "pos": "noun", "en_gloss": "banknote", "ja_gloss": "紙幣", "gender": "f"}
+{"lemma": "курение", "band": 4, "pos": "noun", "en_gloss": "smoking", "ja_gloss": "喫煙", "gender": "n"}
+{"lemma": "курорт", "band": 4, "pos": "noun", "en_gloss": "resort", "ja_gloss": "リゾート地", "gender": "m"}
+{"lemma": "микрофон", "band": 4, "pos": "noun", "en_gloss": "microphone", "ja_gloss": "マイク", "gender": "m"}
+{"lemma": "миксер", "band": 4, "pos": "noun", "en_gloss": "mixer", "ja_gloss": "ミキサー", "gender": "m"}
+{"lemma": "мобильник", "band": 4, "pos": "noun", "en_gloss": "mobile phone", "ja_gloss": "携帯電話", "gender": "m"}
+{"lemma": "монета", "band": 4, "pos": "noun", "en_gloss": "coin", "ja_gloss": "硬貨", "gender": "f"}
+{"lemma": "мощь", "band": 4, "pos": "noun", "en_gloss": "might", "ja_gloss": "威力", "gender": "f"}
+{"lemma": "набережная", "band": 4, "pos": "noun", "en_gloss": "embankment", "ja_gloss": "川岸通り", "gender": "f"}
+{"lemma": "наличные", "band": 4, "pos": "noun", "en_gloss": "cash", "ja_gloss": "現金", "gender": "pl"}
+{"lemma": "наушник", "band": 4, "pos": "noun", "en_gloss": "earphone", "ja_gloss": "イヤホン", "gender": "m"}
+{"lemma": "национальность", "band": 4, "pos": "noun", "en_gloss": "nationality", "ja_gloss": "国籍", "gender": "f"}
+{"lemma": "незнакомец", "band": 4, "pos": "noun", "en_gloss": "male stranger", "ja_gloss": "見知らぬ男性", "gender": "m"}
+{"lemma": "незнакомка", "band": 4, "pos": "noun", "en_gloss": "female stranger", "ja_gloss": "見知らぬ女性", "gender": "f"}
+{"lemma": "нетерпение", "band": 4, "pos": "noun", "en_gloss": "impatience", "ja_gloss": "待ちきれない気持ち", "gender": "n"}
+{"lemma": "окрестность", "band": 4, "pos": "noun", "en_gloss": "surrounding area", "ja_gloss": "周辺", "gender": "f"}
+{"lemma": "оптик", "band": 4, "pos": "noun", "en_gloss": "optician", "ja_gloss": "眼鏡技師", "gender": "m"}
+{"lemma": "отправление", "band": 4, "pos": "noun", "en_gloss": "departure", "ja_gloss": "出発", "gender": "n"}
+{"lemma": "официант", "band": 4, "pos": "noun", "en_gloss": "waiter", "ja_gloss": "ウェイター", "gender": "m"}
+{"lemma": "пение", "band": 4, "pos": "noun", "en_gloss": "singing", "ja_gloss": "歌声", "gender": "n"}
+{"lemma": "переводчица", "band": 4, "pos": "noun", "en_gloss": "female translator", "ja_gloss": "女性翻訳者", "gender": "f"}
+{"lemma": "переезд", "band": 4, "pos": "noun", "en_gloss": "move", "ja_gloss": "引っ越し", "gender": "m"}
+{"lemma": "пианино", "band": 4, "pos": "noun", "en_gloss": "piano", "ja_gloss": "ピアノ", "gender": "n"}
+{"lemma": "пирамида", "band": 4, "pos": "noun", "en_gloss": "pyramid", "ja_gloss": "ピラミッド", "gender": "f"}
+{"lemma": "платок", "band": 4, "pos": "noun", "en_gloss": "scarf", "ja_gloss": "スカーフ", "gender": "m"}
+{"lemma": "подсчет", "band": 4, "pos": "noun", "en_gloss": "count", "ja_gloss": "集計", "gender": "m"}
+{"lemma": "полуночь", "band": 4, "pos": "noun", "en_gloss": "midnight", "ja_gloss": "真夜中", "gender": "f"}
+{"lemma": "пометка", "band": 4, "pos": "noun", "en_gloss": "note", "ja_gloss": "メモ", "gender": "f"}
+{"lemma": "посудомойка", "band": 4, "pos": "noun", "en_gloss": "dishwasher", "ja_gloss": "食器洗い機", "gender": "f"}
+{"lemma": "пот", "band": 4, "pos": "noun", "en_gloss": "sweat", "ja_gloss": "汗", "gender": "m"}
+{"lemma": "пребывание", "band": 4, "pos": "noun", "en_gloss": "stay", "ja_gloss": "滞在", "gender": "n"}
+{"lemma": "прибытие", "band": 4, "pos": "noun", "en_gloss": "arrival", "ja_gloss": "到着", "gender": "n"}
+{"lemma": "приезд", "band": 4, "pos": "noun", "en_gloss": "arrival", "ja_gloss": "到着", "gender": "m"}
+{"lemma": "пробка", "band": 4, "pos": "noun", "en_gloss": "traffic jam", "ja_gloss": "交通渋滞", "gender": "f"}
+{"lemma": "произношение", "band": 4, "pos": "noun", "en_gloss": "pronunciation", "ja_gloss": "発音", "gender": "n"}
+{"lemma": "путешественник", "band": 4, "pos": "noun", "en_gloss": "male traveler", "ja_gloss": "男性旅行者", "gender": "m"}
+{"lemma": "путешественница", "band": 4, "pos": "noun", "en_gloss": "female traveler", "ja_gloss": "女性旅行者", "gender": "f"}
+{"lemma": "разлука", "band": 4, "pos": "noun", "en_gloss": "separation", "ja_gloss": "別離", "gender": "f"}
+{"lemma": "ресепшен", "band": 4, "pos": "noun", "en_gloss": "reception desk", "ja_gloss": "受付", "gender": "m"}
+{"lemma": "салфетка", "band": 4, "pos": "noun", "en_gloss": "napkin", "ja_gloss": "ナプキン", "gender": "f"}
+{"lemma": "скрипка", "band": 4, "pos": "noun", "en_gloss": "violin", "ja_gloss": "バイオリン", "gender": "f"}
+{"lemma": "слон", "band": 4, "pos": "noun", "en_gloss": "elephant", "ja_gloss": "象", "gender": "m"}
+{"lemma": "специальность", "band": 4, "pos": "noun", "en_gloss": "specialty", "ja_gloss": "専門", "gender": "f"}
+{"lemma": "статистика", "band": 4, "pos": "noun", "en_gloss": "statistics", "ja_gloss": "統計", "gender": "f"}
+{"lemma": "страхование", "band": 4, "pos": "noun", "en_gloss": "insurance", "ja_gloss": "保険", "gender": "n"}
+{"lemma": "супермаркет", "band": 4, "pos": "noun", "en_gloss": "supermarket", "ja_gloss": "スーパーマーケット", "gender": "m"}
+{"lemma": "таксист", "band": 4, "pos": "noun", "en_gloss": "taxi driver", "ja_gloss": "タクシー運転手", "gender": "m"}
+{"lemma": "талон", "band": 4, "pos": "noun", "en_gloss": "ticket", "ja_gloss": "券", "gender": "m"}
+{"lemma": "техно-фестиваль", "band": 4, "pos": "noun", "en_gloss": "techno festival", "ja_gloss": "テクノフェスティバル", "gender": "m"}
+{"lemma": "турист", "band": 4, "pos": "noun", "en_gloss": "tourist", "ja_gloss": "観光客", "gender": "m"}
+{"lemma": "туча", "band": 4, "pos": "noun", "en_gloss": "storm cloud", "ja_gloss": "雨雲", "gender": "f"}
+{"lemma": "удостоверение", "band": 4, "pos": "noun", "en_gloss": "identification", "ja_gloss": "証明書", "gender": "n"}
+{"lemma": "ученый-физиолог", "band": 4, "pos": "noun", "en_gloss": "physiologist", "ja_gloss": "生理学者", "gender": "m"}
+{"lemma": "фантастика", "band": 4, "pos": "noun", "en_gloss": "science fiction", "ja_gloss": "SF", "gender": "f"}
+{"lemma": "философ", "band": 4, "pos": "noun", "en_gloss": "philosopher", "ja_gloss": "哲学者", "gender": "m"}
+{"lemma": "хобби", "band": 4, "pos": "noun", "en_gloss": "hobby", "ja_gloss": "趣味", "gender": "n"}
+{"lemma": "ходьба", "band": 4, "pos": "noun", "en_gloss": "walking", "ja_gloss": "徒歩", "gender": "f"}
+{"lemma": "художница", "band": 4, "pos": "noun", "en_gloss": "female artist", "ja_gloss": "女性画家", "gender": "f"}
+{"lemma": "цирк", "band": 4, "pos": "noun", "en_gloss": "circus", "ja_gloss": "サーカス", "gender": "m"}
+{"lemma": "чайник", "band": 4, "pos": "noun", "en_gloss": "kettle", "ja_gloss": "やかん", "gender": "m"}
+{"lemma": "честность", "band": 4, "pos": "noun", "en_gloss": "honesty", "ja_gloss": "正直さ", "gender": "f"}
+{"lemma": "четверть", "band": 4, "pos": "noun", "en_gloss": "quarter", "ja_gloss": "15分", "gender": "f"}
+{"lemma": "экономка", "band": 4, "pos": "noun", "en_gloss": "housekeeper", "ja_gloss": "家政婦", "gender": "f"}
+{"lemma": "экскурсия", "band": 4, "pos": "noun", "en_gloss": "guided tour", "ja_gloss": "見学ツアー", "gender": "f"}
+{"lemma": "экскурсовод", "band": 4, "pos": "noun", "en_gloss": "tour guide", "ja_gloss": "観光ガイド", "gender": "m"}
+{"lemma": "якут", "band": 4, "pos": "noun", "en_gloss": "Yakut person", "ja_gloss": "ヤクート人", "gender": "m"}
+{"lemma": "японец", "band": 4, "pos": "noun", "en_gloss": "Japanese person", "ja_gloss": "日本人", "gender": "m"}
+{"lemma": "банковский", "band": 4, "pos": "adj", "en_gloss": "bank (adj.)", "ja_gloss": "銀行の"}
+{"lemma": "банкоматный", "band": 4, "pos": "adj", "en_gloss": "ATM (adj.)", "ja_gloss": "ATM用の"}
+{"lemma": "баскетбольный", "band": 4, "pos": "adj", "en_gloss": "basketball (adj.)", "ja_gloss": "バスケットボールの"}
+{"lemma": "болтливый", "band": 4, "pos": "adj", "en_gloss": "talkative", "ja_gloss": "おしゃべりな"}
+{"lemma": "бухгалтерский", "band": 4, "pos": "adj", "en_gloss": "accounting (adj.)", "ja_gloss": "会計の"}
+{"lemma": "бытовой", "band": 4, "pos": "adj", "en_gloss": "household (adj.)", "ja_gloss": "家庭用の"}
+{"lemma": "вежливый", "band": 4, "pos": "adj", "en_gloss": "polite", "ja_gloss": "礼儀正しい"}
+{"lemma": "ветреный", "band": 4, "pos": "adj", "en_gloss": "windy", "ja_gloss": "風の強い"}
+{"lemma": "влажный", "band": 4, "pos": "adj", "en_gloss": "moist", "ja_gloss": "湿った"}
+{"lemma": "водительский", "band": 4, "pos": "adj", "en_gloss": "driver's", "ja_gloss": "運転者の"}
+{"lemma": "голландский", "band": 4, "pos": "adj", "en_gloss": "Dutch", "ja_gloss": "オランダの"}
+{"lemma": "головной", "band": 4, "pos": "adj", "en_gloss": "head (adj.)", "ja_gloss": "頭の"}
+{"lemma": "двадцатый", "band": 4, "pos": "adj", "en_gloss": "twentieth", "ja_gloss": "20番目の"}
+{"lemma": "десятый", "band": 4, "pos": "adj", "en_gloss": "tenth", "ja_gloss": "10番目の"}
+{"lemma": "древнегреческий", "band": 4, "pos": "adj", "en_gloss": "Ancient Greek", "ja_gloss": "古代ギリシャの"}
+{"lemma": "душный", "band": 4, "pos": "adj", "en_gloss": "stuffy", "ja_gloss": "蒸し暑い"}
+{"lemma": "заинтересованный", "band": 4, "pos": "adj", "en_gloss": "interested", "ja_gloss": "関心のある"}
+{"lemma": "запасный", "band": 4, "pos": "adj", "en_gloss": "spare", "ja_gloss": "予備の"}
+{"lemma": "заработный", "band": 4, "pos": "adj", "en_gloss": "wage (adj.)", "ja_gloss": "賃金の"}
+{"lemma": "испанский", "band": 4, "pos": "adj", "en_gloss": "Spanish", "ja_gloss": "スペインの"}
+{"lemma": "итальянский", "band": 4, "pos": "adj", "en_gloss": "Italian", "ja_gloss": "イタリアの"}
+{"lemma": "корейский", "band": 4, "pos": "adj", "en_gloss": "Korean", "ja_gloss": "韓国の"}
+{"lemma": "кредитный", "band": 4, "pos": "adj", "en_gloss": "credit (adj.)", "ja_gloss": "クレジットの"}
+{"lemma": "наличный", "band": 4, "pos": "adj", "en_gloss": "cash (adj.)", "ja_gloss": "現金の"}
+{"lemma": "недовольный", "band": 4, "pos": "adj", "en_gloss": "dissatisfied", "ja_gloss": "不満な"}
+{"lemma": "неофициальный", "band": 4, "pos": "adj", "en_gloss": "unofficial", "ja_gloss": "非公式の"}
+{"lemma": "неудивительный", "band": 4, "pos": "adj", "en_gloss": "unsurprising", "ja_gloss": "驚くべきことではない"}
+{"lemma": "островной", "band": 4, "pos": "adj", "en_gloss": "island (adj.)", "ja_gloss": "島の"}
+{"lemma": "папиросный", "band": 4, "pos": "adj", "en_gloss": "cigarette (adj.)", "ja_gloss": "巻きたばこ用の"}
+{"lemma": "порочный", "band": 4, "pos": "adj", "en_gloss": "vicious", "ja_gloss": "悪循環の"}
+{"lemma": "посадочный", "band": 4, "pos": "adj", "en_gloss": "boarding (adj.)", "ja_gloss": "搭乗用の"}
+{"lemma": "почтовый", "band": 4, "pos": "adj", "en_gloss": "postal", "ja_gloss": "郵便の"}
+{"lemma": "прохожий", "band": 4, "pos": "adj", "en_gloss": "passerby", "ja_gloss": "通行人"}
+{"lemma": "сотовый", "band": 4, "pos": "adj", "en_gloss": "cellular", "ja_gloss": "携帯電話の"}
+{"lemma": "стиральный", "band": 4, "pos": "adj", "en_gloss": "washing (adj.)", "ja_gloss": "洗濯用の"}
+{"lemma": "сушильный", "band": 4, "pos": "adj", "en_gloss": "drying (adj.)", "ja_gloss": "乾燥用の"}
+{"lemma": "талантливый", "band": 4, "pos": "adj", "en_gloss": "talented", "ja_gloss": "才能のある"}
+{"lemma": "холостой", "band": 4, "pos": "adj", "en_gloss": "unmarried", "ja_gloss": "独身の"}
+{"lemma": "шумный", "band": 4, "pos": "adj", "en_gloss": "noisy", "ja_gloss": "うるさい"}
+{"lemma": "языковой", "band": 4, "pos": "adj", "en_gloss": "language (adj.)", "ja_gloss": "言語の"}

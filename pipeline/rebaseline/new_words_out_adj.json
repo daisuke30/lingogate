@@ -1,0 +1,202 @@
+[
+  {
+    "lemma": "банковский",
+    "en_gloss": "bank (adj.)",
+    "ja_gloss": "銀行の"
+  },
+  {
+    "lemma": "банкоматный",
+    "en_gloss": "ATM (adj.)",
+    "ja_gloss": "ATM用の"
+  },
+  {
+    "lemma": "баскетбольный",
+    "en_gloss": "basketball (adj.)",
+    "ja_gloss": "バスケットボールの"
+  },
+  {
+    "lemma": "болтливый",
+    "en_gloss": "talkative",
+    "ja_gloss": "おしゃべりな"
+  },
+  {
+    "lemma": "бухгалтерский",
+    "en_gloss": "accounting (adj.)",
+    "ja_gloss": "会計の"
+  },
+  {
+    "lemma": "бытовой",
+    "en_gloss": "household (adj.)",
+    "ja_gloss": "家庭用の"
+  },
+  {
+    "lemma": "вежливый",
+    "en_gloss": "polite",
+    "ja_gloss": "礼儀正しい"
+  },
+  {
+    "lemma": "ветреный",
+    "en_gloss": "windy",
+    "ja_gloss": "風の強い"
+  },
+  {
+    "lemma": "влажный",
+    "en_gloss": "moist",
+    "ja_gloss": "湿った"
+  },
+  {
+    "lemma": "водительский",
+    "en_gloss": "driver's",
+    "ja_gloss": "運転者の"
+  },
+  {
+    "lemma": "голландский",
+    "en_gloss": "Dutch",
+    "ja_gloss": "オランダの"
+  },
+  {
+    "lemma": "головной",
+    "en_gloss": "head (adj.)",
+    "ja_gloss": "頭の"
+  },
+  {
+    "lemma": "двадцатый",
+    "en_gloss": "twentieth",
+    "ja_gloss": "20番目の"
+  },
+  {
+    "lemma": "десятый",
+    "en_gloss": "tenth",
+    "ja_gloss": "10番目の"
+  },
+  {
+    "lemma": "древнегреческий",
+    "en_gloss": "Ancient Greek",
+    "ja_gloss": "古代ギリシャの"
+  },
+  {
+    "lemma": "душный",
+    "en_gloss": "stuffy",
+    "ja_gloss": "蒸し暑い"
+  },
+  {
+    "lemma": "заинтересованный",
+    "en_gloss": "interested",
+    "ja_gloss": "関心のある"
+  },
+  {
+    "lemma": "запасный",
+    "en_gloss": "spare",
+    "ja_gloss": "予備の"
+  },
+  {
+    "lemma": "заработный",
+    "en_gloss": "wage (adj.)",
+    "ja_gloss": "賃金の"
+  },
+  {
+    "lemma": "испанский",
+    "en_gloss": "Spanish",
+    "ja_gloss": "スペインの"
+  },
+  {
+    "lemma": "итальянский",
+    "en_gloss": "Italian",
+    "ja_gloss": "イタリアの"
+  },
+  {
+    "lemma": "корейский",
+    "en_gloss": "Korean",
+    "ja_gloss": "韓国の"
+  },
+  {
+    "lemma": "кредитный",
+    "en_gloss": "credit (adj.)",
+    "ja_gloss": "クレジットの"
+  },
+  {
+    "lemma": "наличный",
+    "en_gloss": "cash (adj.)",
+    "ja_gloss": "現金の"
+  },
+  {
+    "lemma": "недовольный",
+    "en_gloss": "dissatisfied",
+    "ja_gloss": "不満な"
+  },
+  {
+    "lemma": "неофициальный",
+    "en_gloss": "unofficial",
+    "ja_gloss": "非公式の"
+  },
+  {
+    "lemma": "неудивительный",
+    "en_gloss": "unsurprising",
+    "ja_gloss": "驚くべきことではない"
+  },
+  {
+    "lemma": "островной",
+    "en_gloss": "island (adj.)",
+    "ja_gloss": "島の"
+  },
+  {
+    "lemma": "папиросный",
+    "en_gloss": "cigarette (adj.)",
+    "ja_gloss": "巻きたばこ用の"
+  },
+  {
+    "lemma": "порочный",
+    "en_gloss": "vicious",
+    "ja_gloss": "悪循環の"
+  },
+  {
+    "lemma": "посадочный",
+    "en_gloss": "boarding (adj.)",
+    "ja_gloss": "搭乗用の"
+  },
+  {
+    "lemma": "почтовый",
+    "en_gloss": "postal",
+    "ja_gloss": "郵便の"
+  },
+  {
+    "lemma": "прохожий",
+    "en_gloss": "passerby",
+    "ja_gloss": "通行人"
+  },
+  {
+    "lemma": "сотовый",
+    "en_gloss": "cellular",
+    "ja_gloss": "携帯電話の"
+  },
+  {
+    "lemma": "стиральный",
+    "en_gloss": "washing (adj.)",
+    "ja_gloss": "洗濯用の"
+  },
+  {
+    "lemma": "сушильный",
+    "en_gloss": "drying (adj.)",
+    "ja_gloss": "乾燥用の"
+  },
+  {
+    "lemma": "талантливый",
+    "en_gloss": "talented",
+    "ja_gloss": "才能のある"
+  },
+  {
+    "lemma": "холостой",
+    "en_gloss": "unmarried",
+    "ja_gloss": "独身の"
+  },
+  {
+    "lemma": "шумный",
+    "en_gloss": "noisy",
+    "ja_gloss": "うるさい"
+  },
+  {
+    "lemma": "языковой",
+    "en_gloss": "language (adj.)",
+    "ja_gloss": "言語の"
+  }
+]
