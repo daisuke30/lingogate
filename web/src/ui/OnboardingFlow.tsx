@@ -7,7 +7,8 @@ import type { Lang } from "../i18n/i18n";
 import { ListPicker } from "./ListPicker";
 
 /**
- * First-run onboarding (LINGO-017): 5 static screens explaining the app's
+ * First-run onboarding (LINGO-017, extended to 6 screens by LINGO-052):
+ * static screens explaining the app's
  * design (design §3.5, copy confirmed — used verbatim via i18n), followed by
  * a course-select step (§4) that hands off to the placement test. Every
  * screen (including course-select) has a skip/"choose later" escape hatch —
@@ -361,6 +362,67 @@ function GateIntroSVG() {
   );
 }
 
+/**
+ * LINGO-052 — three speech bubbles standing for the three things the deck is
+ * built to let you do: ask for something, suggest something, say how you feel.
+ * Wordless on purpose: the copy beside it is translated, and baking text into
+ * the drawing would leave one of the three languages reading the wrong one.
+ */
+function ConversationBubblesSVG() {
+  // x, y, w, h, tail-on-left, accent
+  const bubbles = [
+    { x: 10, y: 14, w: 104, h: 40, left: true, accent: false },
+    { x: 132, y: 58, w: 104, h: 40, left: false, accent: true },
+    { x: 26, y: 100, w: 104, h: 40, left: true, accent: false },
+  ];
+  // Two "text" strokes inside each bubble, so it reads as speech, not a box.
+  const lines = (b: (typeof bubbles)[number]) => [
+    { x: b.x + 14, y: b.y + 15, w: b.w - 40 },
+    { x: b.x + 14, y: b.y + 25, w: b.w - 56 },
+  ];
+  return (
+    <svg viewBox="0 0 250 154" aria-hidden="true">
+      {bubbles.map((b, i) => (
+        <g key={i}>
+          <rect
+            x={b.x}
+            y={b.y}
+            width={b.w}
+            height={b.h}
+            rx={12}
+            style={{
+              fill: b.accent ? "var(--indigo)" : "var(--bg-elev-2)",
+              stroke: "var(--line)",
+            }}
+            strokeWidth={1.5}
+          />
+          {/* tail */}
+          <path
+            d={
+              b.left
+                ? `M ${b.x + 16} ${b.y + b.h} l 0 10 l 12 -10 z`
+                : `M ${b.x + b.w - 16} ${b.y + b.h} l 0 10 l -12 -10 z`
+            }
+            style={{ fill: b.accent ? "var(--indigo)" : "var(--bg-elev-2)" }}
+          />
+          {lines(b).map((l, j) => (
+            <rect
+              key={j}
+              x={l.x}
+              y={l.y}
+              width={l.w}
+              height={4}
+              rx={2}
+              style={{ fill: b.accent ? "#fff" : "var(--ink-faint)" }}
+              opacity={b.accent ? 0.85 : 1}
+            />
+          ))}
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 interface OnboardScreen {
   titleKey: string;
   bodyKey: string;
@@ -372,5 +434,7 @@ const SCREENS: OnboardScreen[] = [
   { titleKey: "onboard.screen2.title", bodyKey: "onboard.screen2.body", Figure: KnownMapSVG },
   { titleKey: "onboard.screen3.title", bodyKey: "onboard.screen3.body", Figure: ForgettingCurveSVG },
   { titleKey: "onboard.screen4.title", bodyKey: "onboard.screen4.body", Figure: SentenceCardSVG },
-  { titleKey: "onboard.screen5.title", bodyKey: "onboard.screen5.body", Figure: GateIntroSVG },
+  // LINGO-052: screens 1-4 explain the method; this one explains the content.
+  { titleKey: "onboard.screen5.title", bodyKey: "onboard.screen5.body", Figure: ConversationBubblesSVG },
+  { titleKey: "onboard.screen6.title", bodyKey: "onboard.screen6.body", Figure: GateIntroSVG },
 ];

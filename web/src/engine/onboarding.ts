@@ -1,16 +1,18 @@
 // Pure step logic for the onboarding funnel (LINGO-017). Design ref:
-// ai-org/Ideas/20260827-lingogate-multilang-design.md §3.5 (5 static screens,
+// ai-org/Ideas/20260827-lingogate-multilang-design.md §3.5 (6 static screens,
 // copy confirmed) + §4 (course-select step after the intro). Kept separate
 // from the React layer (ui/OnboardingFlow.tsx) so the screen-advancing state
 // machine is unit-testable without a DOM.
 
-export const ONBOARDING_SCREEN_COUNT = 5;
+// LINGO-052: 6 since the "sentences you can actually say" screen was added
+// after the one-new-word-per-sentence screen.
+export const ONBOARDING_SCREEN_COUNT = 6;
 
 export type OnboardingAction = "next" | "back" | "skip";
 
 /** "skipped" = the learner bailed out early (any screen's skip link) — the
  * whole point of "いつでもスキップ可" is that this is a normal, expected exit,
- * not an error. "completed" = they went next through all 5 screens, which
+ * not an error. "completed" = they went next through every screen, which
  * hands off to the course-select step (§4), never straight to skipped's
  * behaviour (straight back to Home). A plain number is the next screen index. */
 export type OnboardingStepResult = number | "skipped" | "completed";

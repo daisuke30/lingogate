@@ -700,17 +700,40 @@ const M: Record<string, Entry> = {
     ru: "Предложение, полное незнакомых слов, не запомнится. Здесь вы увидите только предложения, которые почти полностью понятны, с одним новым словом (максимум два незнакомых). Контекст закрепляет новое слово в памяти.",
   },
 
+  // LINGO-052 — why the sentences look the way they do. Screens 1-4 explain
+  // the learning method; this one explains the CONTENT, which is the part
+  // Katsuta built by hand and the part a learner would otherwise never notice.
+  //
+  // Deliberately free of course-specific examples (no Можно…? / Давай… on the
+  // card): the intro runs BEFORE the course is chosen, so a learner heading
+  // for English or Thai must not be shown Russian constructions as if they
+  // were what they are about to study. The principle is the same in every
+  // course; the illustrations of it are not.
+  //
+  // No raw percentages either — "mixed in the proportions real conversation
+  // uses" is the claim, and a number would invite arithmetic nobody needs.
   "onboard.screen5.title": {
+    ja: "そのまま話せる文だけを集めた",
+    en: "Sentences you can actually say",
+    ru: "Фразы, которые вы сразу сможете сказать",
+  },
+  "onboard.screen5.body": {
+    ja: "例文は、カフェでの注文や友達との予定づくり、デートといった実際の会話の場面から逆算して作っています。「私」「あなた」が主語の文を中心に、注文やお誘いで使う主語のない言い方、気持ちを伝える言い回しまで、実際の会話に出てくる比率に合わせて配合しました。覚えた文は、今日そのまま使えます。",
+    en: "Every sentence is built backwards from a real moment — ordering a coffee, making plans with a friend, a first date. Mostly sentences with \u201cI\u201d and \u201cyou\u201d as the subject, plus the subject-less forms people use to ask for things and suggest them, and the phrasings for saying how you feel — mixed in the proportions real conversation actually uses. What you learn here, you can use today.",
+    ru: "Каждая фраза построена от реальной ситуации: заказать кофе, договориться с другом о встрече, первое свидание. В основном фразы, где подлежащее — «я» и «ты», а также безличные обороты для просьб и предложений и выражения, которыми говорят о своих чувствах, — в тех же пропорциях, в каких они встречаются в живой речи. То, что выучите здесь, сможете сказать уже сегодня.",
+  },
+
+  "onboard.screen6.title": {
     ja: "スマホの誘惑を、学習に変える",
     en: "Turn phone temptation into learning",
     ru: "Превратите тягу к телефону в учёбу",
   },
-  "onboard.screen5.body": {
+  "onboard.screen6.body": {
     ja: "SNSなどを開こうとしたタイミングでこのアプリが割り込み、数問答えるだけで元のアプリに戻れます（設定はあとからでも変更できます）。",
     en: "When you open apps like social media, this app can step in first — answer a few questions and you're back to what you were doing (you can set this up anytime later).",
     ru: "Когда вы открываете соцсети и подобные приложения, это приложение может ненадолго вмешаться — ответьте на несколько вопросов и вернётесь к своим делам (это можно настроить в любой момент позже).",
   },
-  "onboard.screen5.cta": {
+  "onboard.screen6.cta": {
     ja: "レベルチェックを始める",
     en: "Start the level check",
     ru: "Начать проверку уровня",
