@@ -8,6 +8,7 @@ import {
   commitPartialSession,
   commitSession,
   startSession,
+  startNotesSession,
 } from "../state/service";
 import type { StartedSession } from "../state/service";
 import { getUnlockMinutes, getTtsSettings, setSuppressUntil } from "../state/settings";
@@ -41,12 +42,15 @@ export function QuizScreen({
   returnApp,
   seed,
   continuous,
+  notes,
   onExit,
   onGoToPet,
 }: {
   returnApp: string | null;
   seed?: number;
   continuous?: boolean;
+  /** LINGO-050: draw from the マイノート pool instead of the core curriculum. */
+  notes?: boolean;
   onExit: () => void;
   /** LINGO-031: "育成タブへ" link on the completion/batch-summary screens.
    * Optional so existing call sites keep compiling; App.tsx wires it. */
@@ -89,7 +93,7 @@ export function QuizScreen({
     setBandPromotion(null);
     setPetEarned(NO_PET_EARNINGS);
     const [session, mins, ttsSettings] = await Promise.all([
-      startSession({ seed, continuous }),
+      notes ? startNotesSession() : startSession({ seed, continuous }),
       getUnlockMinutes(),
       getTtsSettings(),
     ]);

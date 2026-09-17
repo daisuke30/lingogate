@@ -25,7 +25,7 @@
 //     surfaces again at the front of the *next* batch's dueReviews queue —
 //     Anki-style short relearning steps, not an in-session hostage situation.
 
-import { FSRS, Rating, newReviewState } from "./fsrs";
+import { CardState, FSRS, Rating, newReviewState } from "./fsrs";
 import type { ReviewState } from "./fsrs";
 import type { ContentStore, Sentence } from "./content";
 import type { CardOutcome } from "./calibration";
@@ -47,6 +47,33 @@ export interface GateSessionPlan {
  * fill (frequency priority), 3) top up with soonest upcoming reviews. The RNG
  * lightly shuffles within the new-card fill so equal-priority cards vary between
  * seeds while a fixed seed stays reproducible. */
+/**
+ * LINGO-050 — a マイノート session: only the learner's own note/lesson imports.
+ *
+ * Deliberately a separate builder rather than a flag on buildGateSession: the
+ * main line's whole job is now to be the core curriculum and nothing else, and
+ * a "unless this option is set" branch inside it would be the same mixing the
+ * ticket exists to undo, one indirection further down.
+ *
+ * Scheduling is shared — these cards use the same FSRS states and earn pet
+ * rewards like any other — so studying here is real study, just chosen.
+ */
+export function buildNotesSession(
+  store: ContentStore,
+  opts: { now: number; size?: number },
+): GateSessionPlan {
+  const size = opts.size ?? 10;
+  const cards: PlannedCard[] = [];
+  for (const sentence of store.notesSession(opts.now, size)) {
+    const reviewState = store.reviewState(sentence.id) ?? newReviewState(sentence.id);
+    const isReview = reviewState.state !== CardState.New;
+    cards.push({ sentence, reviewState, isReview });
+  }
+  // band 1: notes carry no curriculum band of their own; this only labels the
+  // stored session row.
+  return { cards, direction: "en2ru", band: 1 };
+}
+
 export function buildGateSession(
   store: ContentStore,
   opts: { band: number; now: number; size?: number; direction?: string; rng: SeededRNG },

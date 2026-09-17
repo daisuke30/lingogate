@@ -1558,6 +1558,39 @@ button {
   font-size: 12px;
 }
 
+/* マイノート lane (LINGO-050) — quieter than a card on purpose: it is optional
+ * practice sitting below the main line, not a third pillar of the screen. */
+.notes-lane {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  text-align: left;
+}
+.notes-lane:active {
+  background: var(--bg-elev);
+}
+.notes-lane-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.notes-lane-label {
+  font-size: 15px;
+  font-weight: 700;
+}
+.notes-lane-sub {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
 /* Diagnostics rows (LINGO-047) — dense, monospaced, meant to be screenshotted
  * and read, not admired. */
 .diag-hint {

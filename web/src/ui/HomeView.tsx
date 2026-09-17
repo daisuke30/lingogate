@@ -205,6 +205,29 @@ export function HomeView({
         </button>
       </div>
 
+      {/* ---- マイノート: optional lane, below the main line (LINGO-050) ----
+          Placed at the bottom of Home on purpose: it is subordinate to the
+          core curriculum and must read that way, and it gives the empty lower
+          area of a short screen something to be. Absent entirely when the
+          course ships no notes — see HomeStats.notesCount. */}
+      {stats != null && stats.notesCount > 0 && (
+        <button
+          type="button"
+          className="notes-lane"
+          onClick={() => navigate({ name: "quiz", returnApp: null, continuous: false, notes: true })}
+        >
+          <span className="notes-lane-text">
+            <span className="notes-lane-label">{t("home.notes.label")}</span>
+            <span className="notes-lane-sub">
+              {t("home.notes.sub", { n: stats.notesCount.toLocaleString() })}
+            </span>
+          </span>
+          <span className="chevron" aria-hidden="true">
+            ›
+          </span>
+        </button>
+      )}
+
       <BottomSheet
         open={coursePickerOpen}
         title={t("home.course.sheetTitle")}

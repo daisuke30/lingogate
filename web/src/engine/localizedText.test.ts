@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { resolveLocalizedText } from "./localizedText";
+import { resolveLocalizedText, pronunciationReadable } from "./localizedText";
 import type { LocalizedText } from "./localizedText";
 
 const full: LocalizedText = { ja: "日本語ノート", en: "English note", ru: "Заметка" };
@@ -45,5 +45,25 @@ describe("resolveLocalizedText (LINGO-026: front→UI→en→ja fallback for fre
 
   it("front === uiLang is not a special case — same field just checked once effectively", () => {
     expect(resolveLocalizedText(full, "ru", "ru")).toBe("Заметка");
+  });
+});
+
+// LINGO-050: the RU course drops its katakana aid entirely (Katsuta,
+// 2026-09-18). Cyrillic can be sounded out in a day, so a katakana respelling
+// teaches a Japanese approximation instead of the actual word.
+describe("pronunciationReadable: per-course policy (LINGO-050)", () => {
+  it("never shows the katakana aid on the Russian course, even to a Japanese reader", () => {
+    expect(pronunciationReadable("ウディヴィーチェリナ", "ja", "ja", "ru")).toBe(false);
+    expect(pronunciationReadable("ウディヴィーチェリナ", "en", "ja", "ru")).toBe(false);
+  });
+
+  it("keeps Thai romanization — tone marks are not recoverable from Thai script", () => {
+    expect(pronunciationReadable("sà-wàt-dii", "ja", "ja", "th")).toBe(true);
+    expect(pronunciationReadable("sà-wàt-dii", "en", "en", "th")).toBe(true);
+  });
+
+  it("keeps Japanese furigana — a beginner cannot read the kanji without it", () => {
+    expect(pronunciationReadable("たべます", "en", "en", "ja")).toBe(true);
+    expect(pronunciationReadable("たべます", "ru", "ru", "ja")).toBe(true);
   });
 });

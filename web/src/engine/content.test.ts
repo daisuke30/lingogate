@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { ContentStore } from "./content";
+import { ContentStore, isStudyable, sentencePool } from "./content";
 import type { Deck, Sentence } from "./content";
 import { buildGateSession } from "./session";
 import { SeededRNG } from "./rng";
@@ -28,7 +28,10 @@ function sentence(id: string, minRank: number | null = 1, band = 1): Sentence {
     difficulty: 1,
     source: "generated",
     kind: "sentence",
-    targetLemma: null,
+    // LINGO-050: a core row by default — carrying a targetLemma is exactly what
+    // makes a sentence part of the curriculum, and these fixtures stand in for
+    // real deck rows. Tests that need a note/lesson import override it to null.
+    targetLemma: `lemma-${id}`,
     wordIds: [],
     minRank,
     tokenCount: 2,
@@ -282,5 +285,78 @@ describe("bandRetention counts Relearning cards (LINGO-040 / QA-4)", () => {
       stateIn("failed", CardState.New, 0, 0),
     ]);
     expect(store.bandRetention(1)).toEqual({ reps: 5, lapses: 1, reviewCards: 1 });
+  });
+});
+
+// --- LINGO-050: pool purification -------------------------------------------
+// The first thousand words had become a mixture of the designed curriculum and
+// whatever was in Katsuta's August notebook import. These pin the separation.
+
+function poolDeck(): Deck {
+  const core = { ...sentence("core1", 1, 1), targetLemma: "дом", kind: "sentence" as const };
+  const core2 = { ...sentence("core2", 2, 1), targetLemma: "рука", kind: "sentence" as const };
+  // A note/lesson import: a real sentence, but with no target lemma.
+  const note = { ...sentence("note1", 3, 1), targetLemma: null, kind: "sentence" as const };
+  // A bare vocabulary card: no sentence at all.
+  const word = { ...sentence("word1", 4, 1), targetLemma: null, kind: "word" as const };
+  return { code: "T", name: "t", targetLang: "ru", sourceLang: "en", bands: [1], words: [], sentences: [core, core2, note, word] };
+}
+
+describe("sentencePool / isStudyable", () => {
+  it("classifies by target lemma and kind", () => {
+    const [core, , note, word] = poolDeck().sentences;
+    expect(sentencePool(core)).toBe("core");
+    expect(sentencePool(note)).toBe("notes");
+    expect(sentencePool(word)).toBe("word");
+    expect(isStudyable(core)).toBe(true);
+    expect(isStudyable(note)).toBe(true);
+    expect(isStudyable(word)).toBe(false); // never quizzed, in any lane
+  });
+});
+
+describe("new cards come only from the core curriculum (LINGO-050)", () => {
+  it("offers core sentences and never notes or word cards", () => {
+    const store = new ContentStore(poolDeck());
+    const ids = store.newSentences(1, new Set(), 10).map((s) => s.id);
+    expect(ids).toEqual(["core1", "core2"]);
+  });
+});
+
+describe("existing review history is never discarded (LINGO-050)", () => {
+  it("keeps reviewing a note card the learner already started", () => {
+    const store = new ContentStore(poolDeck(), [orphanState("note1", NOW - DAY)]);
+    expect(store.dueReviews(1, NOW, 10).map((c) => c.sentence.id)).toEqual(["note1"]);
+  });
+
+  it("but never surfaces that card as new again", () => {
+    const store = new ContentStore(poolDeck(), [orphanState("note1", NOW - DAY)]);
+    expect(store.newSentences(1, new Set(), 10).map((s) => s.id)).not.toContain("note1");
+  });
+
+  it("drops a bare word card from reviews even if one somehow has state", () => {
+    const store = new ContentStore(poolDeck(), [orphanState("word1", NOW - DAY)]);
+    expect(store.dueReviews(1, NOW, 10)).toEqual([]);
+    expect(store.upcomingReviews(1, new Set(), 10)).toEqual([]);
+  });
+});
+
+describe("マイノート lane (LINGO-050)", () => {
+  it("contains only note/lesson sentences", () => {
+    const store = new ContentStore(poolDeck());
+    expect(store.notesSession(NOW, 10).map((s) => s.id)).toEqual(["note1"]);
+  });
+
+  it("puts overdue notes before unseen ones", () => {
+    const deck = poolDeck();
+    deck.sentences.push({ ...sentence("note2", 9, 1), targetLemma: null, kind: "sentence" });
+    const store = new ContentStore(deck, [orphanState("note2", NOW - DAY)]);
+    expect(store.notesSession(NOW, 10).map((s) => s.id)).toEqual(["note2", "note1"]);
+  });
+
+  it("reports how much material the lane has, so an empty lane can hide itself", () => {
+    expect(new ContentStore(poolDeck()).notesCount()).toBe(1);
+    const coreOnly = poolDeck();
+    coreOnly.sentences = coreOnly.sentences.filter((s) => s.targetLemma);
+    expect(new ContentStore(coreOnly).notesCount()).toBe(0);
   });
 });

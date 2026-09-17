@@ -23,7 +23,10 @@ function sentence(i: number, band = 1, minRank = i): Sentence {
     difficulty: 1,
     source: "generated",
     kind: "sentence",
-    targetLemma: null,
+    // LINGO-050: core rows carry a targetLemma — that is what makes a sentence
+    // part of the curriculum and therefore eligible as a NEW card. These
+    // fixtures stand in for real core deck rows.
+    targetLemma: `lemma-${i}`,
     wordIds: [i],
     minRank,
   };

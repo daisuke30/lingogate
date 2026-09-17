@@ -30,7 +30,10 @@ export type Route =
   // continuous: Home's "10問を解く" loops batch-after-batch until the learner
   // taps "終了" (LINGO-010 follow-up). /gate never sets this — gate stays a
   // single fixed 10-card toll.
-  | { name: "quiz"; returnApp: string | null; seed?: number; continuous?: boolean }
+  // LINGO-050: `notes: true` runs a マイノート session (the learner's own
+  // note/lesson imports) instead of the core curriculum. Same FSRS, same
+  // rewards — a different pool, chosen deliberately.
+  | { name: "quiz"; returnApp: string | null; seed?: number; continuous?: boolean; notes?: boolean }
   | { name: "gate"; returnApp: string | null }
   | { name: "settings" }
   | { name: "guide" }
@@ -171,6 +174,7 @@ export function App() {
             returnApp={route.returnApp}
             seed={route.seed}
             continuous={route.continuous}
+            notes={route.notes}
             onExit={goHome}
             onGoToPet={() => navigate({ name: "pet" })}
           />

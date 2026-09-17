@@ -143,6 +143,32 @@ export interface Deck {
   sentences: Sentence[];
 }
 
+/**
+ * LINGO-050 — which pool a sentence belongs to.
+ *
+ * "core" is the designed curriculum: one sentence built to teach one frequency
+ * -ranked lemma (it is exactly the rows that carry a `targetLemma`; no other
+ * source sets one). Everything else came from Katsuta's August note/lesson
+ * import — useful material, but it entered band 1 alongside the core deck and
+ * turned "the first 1000 words" into a mixture of the curriculum and whatever
+ * happened to be in a notebook.
+ *
+ * `kind: "word"` rows are a third thing again: bare vocabulary cards with no
+ * sentence at all. They are kept in the deck because the placement test reads
+ * them, but they are not study material and never enter a quiz.
+ */
+export type SentencePool = "core" | "notes" | "word";
+
+export function sentencePool(s: Sentence): SentencePool {
+  if (s.kind === "word") return "word";
+  return s.targetLemma ? "core" : "notes";
+}
+
+/** Study material: everything a quiz may ever show. Excludes bare word cards. */
+export function isStudyable(s: Sentence): boolean {
+  return sentencePool(s) !== "word";
+}
+
 export interface DueCard {
   state: ReviewState;
   sentence: Sentence;
@@ -186,6 +212,10 @@ export class ContentStore {
       if (st.due == null || st.due > now) continue;
       const s = this.byId.get(st.sentenceId);
       if (!s || s.band > band) continue;
+      // LINGO-050: a note/lesson card the learner has already started stays in
+      // rotation — dropping it would silently discard real review history. A
+      // bare word card never belongs in a quiz at all, in either direction.
+      if (!isStudyable(s)) continue;
       out.push({ state: st, sentence: s });
     }
     out.sort((a, b) => (a.state.due! - b.state.due!) || cmp(a.sentence.id, b.sentence.id));
@@ -202,8 +232,18 @@ export class ContentStore {
    * sort after band 1's this way (higher band = higher-rank/less-frequent
    * target words), no separate band-ordering logic needed. */
   newSentences(band: number, excluding: Set<string>, limit: number): Sentence[] {
+    // LINGO-050: new cards come from the core curriculum ONLY. Note/lesson
+    // imports and bare word cards are no longer introduced — they diluted the
+    // "first 1000 words" progression with material that was never ranked
+    // against it. Anything already being reviewed keeps its schedule (see
+    // dueReviews): the learner's history is never thrown away, those cards
+    // simply stop being handed out as new.
     const candidates = this.deck.sentences.filter(
-      (s) => s.band <= band && !this.states.has(s.id) && !excluding.has(s.id),
+      (s) =>
+        sentencePool(s) === "core" &&
+        s.band <= band &&
+        !this.states.has(s.id) &&
+        !excluding.has(s.id),
     );
 
     if (this.judged < CALIBRATION_FALLBACK_THRESHOLD) {
@@ -224,6 +264,42 @@ export class ContentStore {
     return scored.slice(0, limit).map((x) => x.s);
   }
 
+  /**
+   * LINGO-050 — the マイノート pool: sentences that came from Katsuta's own
+   * notes and lessons rather than the core curriculum.
+   *
+   * They are no longer mixed into the main line, but they are not deleted
+   * either: this is material he wrote down because he wanted it. The lane
+   * lets him study it deliberately, on the same FSRS schedule, instead of
+   * having it appear unannounced among the first thousand words.
+   *
+   * Returns due-first (most overdue first), then never-seen ones, so a session
+   * clears the backlog before introducing more.
+   */
+  notesSession(now: number, limit: number): Sentence[] {
+    const notes = this.deck.sentences.filter((s) => sentencePool(s) === "notes");
+    const due: { s: Sentence; due: number }[] = [];
+    const fresh: Sentence[] = [];
+    for (const s of notes) {
+      const st = this.states.get(s.id);
+      if (!st || st.state === CardState.New) {
+        fresh.push(s);
+      } else if (st.due != null && st.due <= now) {
+        due.push({ s, due: st.due });
+      }
+    }
+    due.sort((a, b) => a.due - b.due || cmp(a.s.id, b.s.id));
+    fresh.sort((a, b) => (a.minRank ?? Infinity) - (b.minRank ?? Infinity) || cmp(a.id, b.id));
+    return [...due.map((d) => d.s), ...fresh].slice(0, limit);
+  }
+
+  /** How many note/lesson sentences this course ships. 0 means the マイノート
+   * lane has nothing to show and its entry point must stay hidden — a button
+   * that opens an empty session is worse than no button. */
+  notesCount(): number {
+    return this.deck.sentences.reduce((n, s) => n + (sentencePool(s) === "notes" ? 1 : 0), 0);
+  }
+
   /** Not-yet-due review cards, earliest due first — only to top up a short
    * deck. Pool-ceiling `band` semantics, same as dueReviews/newSentences. */
   upcomingReviews(band: number, excluding: Set<string>, limit: number): DueCard[] {
@@ -232,6 +308,7 @@ export class ContentStore {
       if (st.state === CardState.New) continue;
       const s = this.byId.get(st.sentenceId);
       if (!s || s.band > band || excluding.has(s.id)) continue;
+      if (!isStudyable(s)) continue; // LINGO-050, as in dueReviews
       out.push({ state: st, sentence: s });
     }
     out.sort((a, b) => {

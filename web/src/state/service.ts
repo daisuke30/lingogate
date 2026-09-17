@@ -7,7 +7,7 @@ import type { DeckWord } from "../engine/content";
 import { ContentStore } from "../engine/content";
 import type { MasteryStats } from "../engine/mastery";
 import { FSRS } from "../engine/fsrs";
-import { buildGateSession, GateSessionRunner } from "../engine/session";
+import { buildGateSession, buildNotesSession, GateSessionRunner } from "../engine/session";
 import { SeededRNG } from "../engine/rng";
 import { knowledgeUpdatesFromOutcomes } from "../engine/calibration";
 import { evaluateBandPromotion, wordsToPromotion } from "../engine/bandPromotion";
@@ -176,6 +176,23 @@ export async function startSession(
   return { runner, startedAt: now };
 }
 
+/**
+ * LINGO-050 — start a マイノート session (the learner's own note/lesson
+ * imports, studied deliberately). Commits through exactly the same
+ * commitSession/commitPartialSession path as any other session, so FSRS
+ * scheduling, the daily goal and pet rewards all behave identically; the only
+ * difference is which pool the cards came from.
+ */
+export async function startNotesSession(): Promise<StartedSession> {
+  const store = await loadStore();
+  const now = Date.now();
+  const plan = buildNotesSession(store, { now });
+  // Continuous semantics (one grade resolves a card) — this is voluntary
+  // practice, never a toll.
+  const runner = new GateSessionRunner(plan, fsrs, { requeueAgain: false });
+  return { runner, startedAt: now };
+}
+
 /** Write buffered FSRS grades + word-knowledge feedback for whatever has been
  * graded so far (a full session or a partial/abandoned one — `drainPendingUpserts`
  * and `knowledgeOutcomes` both only ever reflect graded cards, so this is safe
@@ -326,6 +343,9 @@ export interface HomeStats {
   dailyGoal: number;
   /** LINGO-024: the course's currently unlocked band (1 = only band 1). */
   unlockedBand: number;
+  /** LINGO-050: how many note/lesson sentences this course ships. 0 hides the
+   * マイノート entry point entirely — no dead buttons. */
+  notesCount: number;
   /** LINGO-040: words the learner has been introduced to, cumulative over the
    * unlocked pool (bands 1..unlockedBand) — see
    * ContentStore.cumulativeVocabStats on why this is not band-exact. */
@@ -374,6 +394,7 @@ export async function homeStats(): Promise<HomeStats> {
   // where every card was graded, so `questions` is the right stand-in.
   const todayGraded = today.reduce((n, s) => n + (s.graded ?? s.questions), 0);
   const dailyGoal = await getDailyGoal();
+  const notesCount = store.notesCount();
 
   const unlockedBand = await getUnlockedBand(activeCourseId);
 
@@ -423,6 +444,7 @@ export async function homeStats(): Promise<HomeStats> {
     todaySessions,
     todayGraded,
     dailyGoal,
+    notesCount,
     unlockedBand,
     introduced,
     retentionPct,

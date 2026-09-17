@@ -20,7 +20,9 @@ function deck(n: number): Deck {
     difficulty: 1,
     source: "generated",
     kind: "sentence",
-    targetLemma: null,
+    // LINGO-050: a core row (see session.test.ts) — only core sentences are
+    // offered as new cards now.
+    targetLemma: `lemma-${k + 1}`,
     wordIds: [],
     minRank: k + 1,
   }));

@@ -110,6 +110,18 @@ export function pronunciationReadable(
   // UI or prompts. RU's katakana aid is unaffected: its target is Russian, so
   // Japanese script there still requires a Japanese reader.
   if (targetLang === "ja") return true;
+
+  // LINGO-050 (Katsuta, 2026-09-18): the Russian course no longer shows its
+  // katakana aid at all. Russian is written in an alphabet a learner can sound
+  // out within a day, so a katakana respelling stops being a way in and
+  // becomes a crutch — it teaches a Japanese approximation of the sound
+  // instead of the Cyrillic itself, and it was the last piece of "notebook"
+  // texture left on an otherwise clean card. Thai keeps its Paiboon
+  // romanization (tone marks a beginner cannot get from Thai script) and
+  // Japanese keeps furigana (handled above), because in both cases the
+  // transcription carries information the target script does not.
+  if (targetLang === "ru") return false;
+
   return !hasJapaneseScript(kana) || readsJapanese(frontLang, uiLang);
 }
 

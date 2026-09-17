@@ -137,6 +137,16 @@ const M: Record<string, Entry> = {
     ru: "Это последний этап",
   },
   "home.details": { ja: "くわしく", en: "Details", ru: "Подробнее" },
+  // LINGO-050: the マイノート lane. Katsuta's own note/lesson imports used to
+  // appear unannounced among the first thousand words; they now have their own
+  // door. Deliberately quiet — it is optional practice, not the main line —
+  // and hidden entirely on a course that ships no notes.
+  "home.notes.label": { ja: "マイノート", en: "My notes", ru: "Мои заметки" },
+  "home.notes.sub": {
+    ja: "取り込んだメモ・レッスンから{n}問",
+    en: "{n} cards from your imported notes and lessons",
+    ru: "{n} карточек из ваших заметок и уроков",
+  },
   // Block 2, first-run variant: before the level check there is nothing
   // meaningful to review, so the level check IS the one thing to do today
   // (it replaces the block rather than adding a fourth one).
