@@ -73,7 +73,19 @@ function check(ok, message) {
   return ok;
 }
 const browser = await engine.launch();
-const page = await browser.newPage({ ...devices["iPhone 13"], viewport: VIEWPORT });
+// `serviceWorkers: "block"` — the audit is about what the app renders, not
+// about the offline cache. Left enabled, the SW installs partway through a run
+// and then intercepts later navigations while it pre-caches ~1MB of deck
+// chunks, which stalled /gate and then / against the CDN. Blocking it makes
+// every run start from the same place and tests the code just deployed rather
+// than whatever a half-warmed cache happened to hold.
+const context = await browser.newContext({
+  ...devices["iPhone 13"],
+  viewport: VIEWPORT,
+  serviceWorkers: "block",
+});
+const page = await context.newPage();
+page.setDefaultNavigationTimeout(45_000);
 
 // LINGO-046: count every utterance the page starts, so the level check can be
 // held to "speaks only when the learner asks".
@@ -96,6 +108,26 @@ page.on("console", (m) => {
 page.on("pageerror", (e) => consoleErrors.push("pageerror: " + String(e).slice(0, 300)));
 
 const shot = (name) => page.screenshot({ path: `${outDir}/${engineName}-${name}.png`, fullPage: false });
+
+/**
+ * Navigate and wait for the app to have actually rendered.
+ *
+ * NOT `networkidle`: this is a service-worker PWA whose deck chunks are ~1MB,
+ * and against the CDN the "500ms with no connections" condition can simply
+ * never arrive — /gate timed out every time while serving a perfectly good
+ * 200. Waiting for the React root to have content is both faster and a
+ * stronger statement: the assertions that follow need a rendered page, which
+ * is exactly what this waits for.
+ */
+async function open(path) {
+  await page.goto(base + path, { waitUntil: "domcontentloaded" });
+  await page
+    .waitForFunction(() => {
+      const root = document.querySelector("#root");
+      return !!root && root.childElementCount > 0;
+    }, { timeout: 20000 })
+    .catch(() => check(false, `navigation: ${path} never rendered anything into #root`));
+}
 
 /** Geometry of the first match, as the user's screen sees it. */
 async function boxOf(selector) {
@@ -415,7 +447,7 @@ async function dismissOnboarding() {
 }
 
 // ---------------------------------------------------------------- 1. Home ---
-await page.goto(base + "/", { waitUntil: "networkidle" });
+await open("/");
 await page.waitForTimeout(1200);
 await dismissOnboarding();
 await page.waitForTimeout(400);
@@ -529,7 +561,7 @@ await assertLastRowReachable(".list .row", "settings (scrolled)");
 await assertNoHorizontalOverflow("settings (scrolled)");
 
 // ----------------------------------------------------------------- 4. Pet ---
-await page.goto(base + "/", { waitUntil: "networkidle" });
+await open("/");
 await page.waitForTimeout(900);
 await dismissOnboarding();
 const petTab = page.locator(".tabbar-item").nth(1);
@@ -571,7 +603,7 @@ await assertBackgroundContinuity("pet");
 // recognition test into a listening one and slows the pace — so nothing may be
 // spoken unless the learner taps 🔊. The quiz's flip-to-speak is unaffected and
 // stays under its own setting.
-await page.goto(base + "/", { waitUntil: "networkidle" });
+await open("/");
 await page.waitForTimeout(900);
 await dismissOnboarding();
 {
@@ -600,7 +632,7 @@ await dismissOnboarding();
 }
 
 // ---------------------------------------------------------------- 5. Gate ---
-await page.goto(base + "/gate?return=tiktok", { waitUntil: "networkidle" });
+await open("/gate?return=tiktok");
 await page.waitForTimeout(1500);
 await shot("08-gate");
 await assertNoHorizontalOverflow("gate");
@@ -615,14 +647,25 @@ check(
 // Russian copy overflows first. Layout only — the flows above already covered
 // behaviour.
 {
-  const narrow = await browser.newPage({ viewport: { width: 320, height: 568 }, deviceScaleFactor: 2 });
+  const narrowCtx = await browser.newContext({
+    viewport: { width: 320, height: 568 },
+    deviceScaleFactor: 2,
+    serviceWorkers: "block",
+  });
+  const narrow = await narrowCtx.newPage();
+  narrow.setDefaultNavigationTimeout(45_000);
   const narrowErrors = [];
   narrow.on("pageerror", (e) => narrowErrors.push(String(e).slice(0, 200)));
   for (const [name, path] of [
     ["09-narrow-home", "/"],
     ["10-narrow-gate", "/gate?return=tiktok"],
   ]) {
-    await narrow.goto(base + path, { waitUntil: "networkidle" });
+    await narrow.goto(base + path, { waitUntil: "domcontentloaded" });
+    await narrow
+      .waitForFunction(() => (document.querySelector("#root")?.childElementCount ?? 0) > 0, {
+        timeout: 20000,
+      })
+      .catch(() => check(false, `320px ${path}: never rendered anything into #root`));
     await narrow.waitForTimeout(1100);
     const onboard = narrow.locator(".onboard");
     if (await onboard.count()) {
@@ -640,7 +683,7 @@ check(
     check(over <= 1, `320px ${path}: horizontal overflow of ${over}px`);
   }
   check(narrowErrors.length === 0, `320px: page errors — ${narrowErrors.join(" | ")}`);
-  await narrow.close();
+  await narrowCtx.close();
 }
 
 // --------------------------------------------------------------- verdict ---
