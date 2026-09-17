@@ -1,0 +1,452 @@
+[
+  {
+    "id": "T0993",
+    "target_lemma": "легко",
+    "old_ru": "Это очень легко.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0995",
+    "target_lemma": "весело",
+    "old_ru": "Здесь очень весело.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1000",
+    "target_lemma": "ясно",
+    "old_ru": "Теперь всё ясно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1002",
+    "target_lemma": "из-за",
+    "old_ru": "Это из-за тебя.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1004",
+    "target_lemma": "тем",
+    "old_ru": "Тем лучше.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1005",
+    "target_lemma": "ж",
+    "old_ru": "Что ж, ладно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1007",
+    "target_lemma": "кто-нибудь",
+    "old_ru": "Кто-нибудь дома?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1009",
+    "target_lemma": "равно",
+    "old_ru": "Мне всё равно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1011",
+    "target_lemma": "нормально",
+    "old_ru": "Всё нормально.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1015",
+    "target_lemma": "здорово",
+    "old_ru": "Это здорово!",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1022",
+    "target_lemma": "здравствуйте",
+    "old_ru": "Здравствуйте, как дела?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1025",
+    "target_lemma": "дерьмо",
+    "old_ru": "Это полное дерьмо.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1027",
+    "target_lemma": "алло",
+    "old_ru": "Алло, кто это?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1035",
+    "target_lemma": "ужасно",
+    "old_ru": "Мне ужасно жаль.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1037",
+    "target_lemma": "как-то",
+    "old_ru": "Всё как-то не так.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1041",
+    "target_lemma": "круто",
+    "old_ru": "Это очень круто!",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1046",
+    "target_lemma": "минутка",
+    "old_ru": "Есть минутка?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1049",
+    "target_lemma": "мило",
+    "old_ru": "Это очень мило.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1053",
+    "target_lemma": "слушайте",
+    "old_ru": "Слушайте, это важно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1059",
+    "target_lemma": "мэм",
+    "old_ru": "Спасибо, мэм.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1064",
+    "target_lemma": "сработать",
+    "old_ru": "Это должно сработать.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1065",
+    "target_lemma": "смешно",
+    "old_ru": "Это не смешно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1067",
+    "target_lemma": "завтрак",
+    "old_ru": "Это мой завтрак.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1074",
+    "target_lemma": "спасибо",
+    "old_ru": "Спасибо тебе за помощь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1088",
+    "target_lemma": "всего",
+    "old_ru": "Это стоит всего рубль.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1106",
+    "target_lemma": "вещь",
+    "old_ru": "Это очень важная вещь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1107",
+    "target_lemma": "отлично",
+    "old_ru": "Всё прошло отлично.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1108",
+    "target_lemma": "похоже",
+    "old_ru": "Похоже, будет дождь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1109",
+    "target_lemma": "прийтись",
+    "old_ru": "Мне придётся уйти рано.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1118",
+    "target_lemma": "должно",
+    "old_ru": "Это должно быть просто.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1120",
+    "target_lemma": "ребята",
+    "old_ru": "Привет, ребята, как дела?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1121",
+    "target_lemma": "жаль",
+    "old_ru": "Мне очень жаль тебя.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1124",
+    "target_lemma": "хватить",
+    "old_ru": "Хватит об этом говорить.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1129",
+    "target_lemma": "произойти",
+    "old_ru": "Что здесь произошло?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1135",
+    "target_lemma": "более",
+    "old_ru": "Это более важный вопрос.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1138",
+    "target_lemma": "убийство",
+    "old_ru": "Это было ужасное убийство.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1140",
+    "target_lemma": "тело",
+    "old_ru": "Моё тело очень устало.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1141",
+    "target_lemma": "далекий",
+    "old_ru": "Это далёкая страна.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1146",
+    "target_lemma": "неё",
+    "old_ru": "У неё красивые глаза.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1149",
+    "target_lemma": "прошлый",
+    "old_ru": "Это было в прошлом году.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1154",
+    "target_lemma": "ужин",
+    "old_ru": "Ужин уже готов.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1157",
+    "target_lemma": "попасть",
+    "old_ru": "Как мне попасть в центр?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1162",
+    "target_lemma": "второй",
+    "old_ru": "Это мой второй дом.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1168",
+    "target_lemma": "остальной",
+    "old_ru": "Где остальные деньги?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1174",
+    "target_lemma": "отличный",
+    "old_ru": "Это отличная идея!",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1176",
+    "target_lemma": "прекрасный",
+    "old_ru": "Какой прекрасный день!",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1177",
+    "target_lemma": "оказаться",
+    "old_ru": "Это оказалось очень трудно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T1178",
+    "target_lemma": "важно",
+    "old_ru": "Это очень важно для меня.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1191",
+    "target_lemma": "связь",
+    "old_ru": "Здесь плохая связь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1194",
+    "target_lemma": "прекрасно",
+    "old_ru": "Всё прекрасно, спасибо.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  }
+]

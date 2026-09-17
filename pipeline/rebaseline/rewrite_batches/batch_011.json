@@ -1,0 +1,452 @@
+[
+  {
+    "id": "T0898",
+    "target_lemma": "планета",
+    "old_ru": "Это наша планета.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0902",
+    "target_lemma": "завод",
+    "old_ru": "Это большой завод.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0905",
+    "target_lemma": "флот",
+    "old_ru": "Это наш флот.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0906",
+    "target_lemma": "битва",
+    "old_ru": "Это была большая битва.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0907",
+    "target_lemma": "победа",
+    "old_ru": "Это наша победа.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0908",
+    "target_lemma": "поражение",
+    "old_ru": "Это было большое поражение.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0909",
+    "target_lemma": "договор",
+    "old_ru": "Это важный договор.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0911",
+    "target_lemma": "проект",
+    "old_ru": "Это мой новый проект.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0912",
+    "target_lemma": "программа",
+    "old_ru": "Это хорошая программа.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0913",
+    "target_lemma": "курс",
+    "old_ru": "Это трудный курс.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0914",
+    "target_lemma": "урок",
+    "old_ru": "Сегодня трудный урок.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0917",
+    "target_lemma": "знание",
+    "old_ru": "Это важное знание.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0919",
+    "target_lemma": "искусство",
+    "old_ru": "Это настоящее искусство.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0920",
+    "target_lemma": "картина",
+    "old_ru": "Это красивая картина.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0921",
+    "target_lemma": "рисунок",
+    "old_ru": "Это твой рисунок?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0922",
+    "target_lemma": "стих",
+    "old_ru": "Это красивый стих.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0924",
+    "target_lemma": "журнал",
+    "old_ru": "Это интересный журнал.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0926",
+    "target_lemma": "буква",
+    "old_ru": "Это первая буква.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0928",
+    "target_lemma": "предложение",
+    "old_ru": "Это трудное предложение.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0929",
+    "target_lemma": "перевод",
+    "old_ru": "Это хороший перевод.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0930",
+    "target_lemma": "речь",
+    "old_ru": "Это была хорошая речь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0932",
+    "target_lemma": "факт",
+    "old_ru": "Это интересный факт.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0933",
+    "target_lemma": "мнение",
+    "old_ru": "Это моё мнение.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0935",
+    "target_lemma": "мысль",
+    "old_ru": "Это хорошая мысль.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0936",
+    "target_lemma": "чувство",
+    "old_ru": "Это странное чувство.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0937",
+    "target_lemma": "желание",
+    "old_ru": "Это моё желание.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0941",
+    "target_lemma": "доверие",
+    "old_ru": "Между нами есть доверие.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0943",
+    "target_lemma": "вина",
+    "old_ru": "Это не моя вина.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0946",
+    "target_lemma": "ненависть",
+    "old_ru": "Это чистая ненависть.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0952",
+    "target_lemma": "способ",
+    "old_ru": "Есть другой способ.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0953",
+    "target_lemma": "шаг",
+    "old_ru": "Это первый шаг.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0954",
+    "target_lemma": "движение",
+    "old_ru": "На дороге большое движение.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0955",
+    "target_lemma": "позиция",
+    "old_ru": "Это твоя позиция?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0956",
+    "target_lemma": "пространство",
+    "old_ru": "Здесь много пространства.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0957",
+    "target_lemma": "линия",
+    "old_ru": "Это красная линия.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0958",
+    "target_lemma": "точка",
+    "old_ru": "Здесь нужна точка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0960",
+    "target_lemma": "угол",
+    "old_ru": "Магазин на углу.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0962",
+    "target_lemma": "середина",
+    "old_ru": "Стол в середине комнаты.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0964",
+    "target_lemma": "верх",
+    "old_ru": "Мой дом в самом верху.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0966",
+    "target_lemma": "внутри",
+    "old_ru": "Кто внутри дома?",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0968",
+    "target_lemma": "рядом",
+    "old_ru": "Мой дом совсем рядом.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0970",
+    "target_lemma": "справа",
+    "old_ru": "Магазин справа от тебя.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0971",
+    "target_lemma": "слева",
+    "old_ru": "Мой дом слева.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0972",
+    "target_lemma": "сверху",
+    "old_ru": "Свет идёт сверху.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0973",
+    "target_lemma": "снизу",
+    "old_ru": "Кто-то кричит снизу.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0975",
+    "target_lemma": "наверху",
+    "old_ru": "Моя комната наверху.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0976",
+    "target_lemma": "впереди",
+    "old_ru": "Твой дом впереди.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0977",
+    "target_lemma": "позади",
+    "old_ru": "Вся опасность уже позади.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0981",
+    "target_lemma": "вероятно",
+    "old_ru": "Это вероятно правда.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  },
+  {
+    "id": "T0982",
+    "target_lemma": "возможно",
+    "old_ru": "Возможно, завтра будет дождь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}"
+  }
+]

@@ -1,0 +1,56 @@
+[
+ {
+  "lemma": "бокс",
+  "en_gloss": "boxing",
+  "ja_gloss": "ボクシング",
+  "gender": "m"
+ },
+ {
+  "lemma": "десерт",
+  "en_gloss": "dessert",
+  "ja_gloss": "デザート",
+  "gender": "m"
+ },
+ {
+  "lemma": "закат",
+  "en_gloss": "sunset",
+  "ja_gloss": "夕日",
+  "gender": "m"
+ },
+ {
+  "lemma": "злодей",
+  "en_gloss": "villain",
+  "ja_gloss": "悪役",
+  "gender": "m"
+ },
+ {
+  "lemma": "корм",
+  "en_gloss": "pet food",
+  "ja_gloss": "ペットフード",
+  "gender": "m"
+ },
+ {
+  "lemma": "мишень",
+  "en_gloss": "target",
+  "ja_gloss": "標的",
+  "gender": "f"
+ },
+ {
+  "lemma": "проход",
+  "en_gloss": "passage",
+  "ja_gloss": "通路",
+  "gender": "m"
+ },
+ {
+  "lemma": "ритм",
+  "en_gloss": "rhythm",
+  "ja_gloss": "リズム",
+  "gender": "m"
+ },
+ {
+  "lemma": "свитер",
+  "en_gloss": "sweater",
+  "ja_gloss": "セーター",
+  "gender": "m"
+ }
+]

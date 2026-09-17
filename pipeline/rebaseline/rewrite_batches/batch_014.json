@@ -1,0 +1,128 @@
+[
+  {
+    "id": "T1350",
+    "target_lemma": "половина",
+    "old_ru": "Уже половина второго.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1352",
+    "target_lemma": "бизнес",
+    "old_ru": "Как идёт твой бизнес?",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1354",
+    "target_lemma": "отель",
+    "old_ru": "Наш отель очень хороший.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1356",
+    "target_lemma": "занять",
+    "old_ru": "Это займёт много времени.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1362",
+    "target_lemma": "служба",
+    "old_ru": "Спасибо за твою службу.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1369",
+    "target_lemma": "штат",
+    "old_ru": "Это большой штат.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1372",
+    "target_lemma": "собраться",
+    "old_ru": "Все собрались вместе.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1374",
+    "target_lemma": "слава",
+    "old_ru": "Слава богу, всё хорошо.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1377",
+    "target_lemma": "известно",
+    "old_ru": "Всем известно об этом.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1378",
+    "target_lemma": "роль",
+    "old_ru": "Это не играет роли.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1379",
+    "target_lemma": "нечего",
+    "old_ru": "Мне нечего сказать.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1383",
+    "target_lemma": "называться",
+    "old_ru": "Как называется этот город?",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1384",
+    "target_lemma": "приказ",
+    "old_ru": "Это приказ, не вопрос.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  },
+  {
+    "id": "T1387",
+    "target_lemma": "сложно",
+    "old_ru": "Это слишком сложно для меня.",
+    "old_lemmas_hint": null,
+    "new_bucket": "no_subject",
+    "construction_instruction": "Use ONE of: (a) an IMPERATIVE-mood verb with no subject pronoun at all (a request/command, e.g. \"Подожди минутку.\"), (b) \"Давай ...\" / \"Давайте ...\" as a suggestion opener, or (c) a standalone modal with NO dative pronoun attached (\"Можно ...?\", \"Нельзя ...\", \"Надо ...\" used impersonally, not \"Мне надо\"). Do NOT use я/ты/вы/он/она/мы/они anywhere in the sentence.",
+    "example": "{\"ru\": \"Можно взять твой номер?\", \"en\": \"Can I get your number?\", \"ja\": \"連絡先を聞いてもいい？\"}"
+  }
+]

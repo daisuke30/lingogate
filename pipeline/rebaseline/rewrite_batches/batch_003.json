@@ -1,0 +1,452 @@
+[
+  {
+    "id": "B3065",
+    "target_lemma": "кайло",
+    "old_ru": "Это старое кайло отца.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3067",
+    "target_lemma": "жара",
+    "old_ru": "Сегодня в городе жара.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3069",
+    "target_lemma": "бред",
+    "old_ru": "Это просто полный бред.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3080",
+    "target_lemma": "рай",
+    "old_ru": "Для меня это просто рай.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3082",
+    "target_lemma": "починить",
+    "old_ru": "Кто может починить эту машину?",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3086",
+    "target_lemma": "грёбаный",
+    "old_ru": "Где мой грёбаный телефон?",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3092",
+    "target_lemma": "сие",
+    "old_ru": "Сие есть правда.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3094",
+    "target_lemma": "репутация",
+    "old_ru": "У него хорошая репутация.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3095",
+    "target_lemma": "допрос",
+    "old_ru": "После этого был допрос.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3097",
+    "target_lemma": "настать",
+    "old_ru": "Скоро настанет новый день.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3104",
+    "target_lemma": "невероятный",
+    "old_ru": "Это невероятная история.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3106",
+    "target_lemma": "г-н",
+    "old_ru": "Г-н директор уже здесь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3107",
+    "target_lemma": "охотник",
+    "old_ru": "Мой отец был охотником.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3122",
+    "target_lemma": "студия",
+    "old_ru": "Это моя новая студия.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3125",
+    "target_lemma": "нелегко",
+    "old_ru": "Мне нелегко здесь жить.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3126",
+    "target_lemma": "хрень",
+    "old_ru": "Что это за хрень?",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3128",
+    "target_lemma": "клиника",
+    "old_ru": "Эта клиника рядом с домом.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3130",
+    "target_lemma": "волшебный",
+    "old_ru": "Это был волшебный вечер.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3136",
+    "target_lemma": "лампа",
+    "old_ru": "Эта лампа плохо работает.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3138",
+    "target_lemma": "частый",
+    "old_ru": "Это частый вопрос.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3139",
+    "target_lemma": "парка",
+    "old_ru": "Это моя новая парка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3140",
+    "target_lemma": "брюки",
+    "old_ru": "Эти брюки слишком большие.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3141",
+    "target_lemma": "бельё",
+    "old_ru": "Вот моё бельё.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3147",
+    "target_lemma": "туфля",
+    "old_ru": "Где моя туфля?",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3152",
+    "target_lemma": "жених",
+    "old_ru": "Это мой жених.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3154",
+    "target_lemma": "террорист",
+    "old_ru": "Полиция ищет террориста.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3159",
+    "target_lemma": "рейс",
+    "old_ru": "Наш рейс завтра утром.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3166",
+    "target_lemma": "ванна",
+    "old_ru": "Ванна уже полная.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3180",
+    "target_lemma": "фигня",
+    "old_ru": "Это всё полная фигня.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3189",
+    "target_lemma": "хуй",
+    "old_ru": "У него большой хуй.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3191",
+    "target_lemma": "церемония",
+    "old_ru": "Церемония начнётся завтра утром.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3192",
+    "target_lemma": "гараж",
+    "old_ru": "Машина стоит около гаража.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3198",
+    "target_lemma": "дитя",
+    "old_ru": "Это дитя уже спит.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3207",
+    "target_lemma": "удалить",
+    "old_ru": "Удали это сейчас.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3209",
+    "target_lemma": "херня",
+    "old_ru": "Это полная херня.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3210",
+    "target_lemma": "звёздный",
+    "old_ru": "Сегодня звёздная ночь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3211",
+    "target_lemma": "пожарный",
+    "old_ru": "Пожарный уже здесь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3214",
+    "target_lemma": "повреждение",
+    "old_ru": "Здесь есть серьёзное повреждение.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3229",
+    "target_lemma": "толк",
+    "old_ru": "В этом нет толка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3235",
+    "target_lemma": "страховка",
+    "old_ru": "У моей машины есть страховка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3239",
+    "target_lemma": "алиби",
+    "old_ru": "Это его алиби.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3248",
+    "target_lemma": "кукла",
+    "old_ru": "Это твоя новая кукла.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3250",
+    "target_lemma": "ай",
+    "old_ru": "Ай, мне очень больно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3251",
+    "target_lemma": "снимок",
+    "old_ru": "Это мой снимок.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3253",
+    "target_lemma": "жуткий",
+    "old_ru": "Это был жуткий день.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3254",
+    "target_lemma": "кто-либо",
+    "old_ru": "Тут есть кто-либо?",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3258",
+    "target_lemma": "сокровище",
+    "old_ru": "Это наше сокровище.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3260",
+    "target_lemma": "пригодиться",
+    "old_ru": "Это ещё пригодится нам.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3265",
+    "target_lemma": "отстой",
+    "old_ru": "Это просто отстой.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  },
+  {
+    "id": "B3267",
+    "target_lemma": "съёмка",
+    "old_ru": "Съёмка уже идёт.",
+    "old_lemmas_hint": null,
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}"
+  }
+]

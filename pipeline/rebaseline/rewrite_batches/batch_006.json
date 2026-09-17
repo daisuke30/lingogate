@@ -1,0 +1,452 @@
+[
+  {
+    "id": "T0167",
+    "target_lemma": "улица",
+    "old_ru": "На улице идёт дождь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0168",
+    "target_lemma": "комната",
+    "old_ru": "Это моя комната.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0170",
+    "target_lemma": "окно",
+    "old_ru": "Окно уже открыто.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0171",
+    "target_lemma": "стол",
+    "old_ru": "Кофе уже на столе.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0172",
+    "target_lemma": "стул",
+    "old_ru": "Это твой стул.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0174",
+    "target_lemma": "телефон",
+    "old_ru": "Где мой телефон?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0176",
+    "target_lemma": "еда",
+    "old_ru": "Здесь хорошая еда.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0192",
+    "target_lemma": "опять",
+    "old_ru": "Опять идёт дождь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0200",
+    "target_lemma": "далеко",
+    "old_ru": "Мой дом далеко.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0201",
+    "target_lemma": "близко",
+    "old_ru": "Магазин совсем близко.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0216",
+    "target_lemma": "зачем",
+    "old_ru": "Зачем тебе это?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0219",
+    "target_lemma": "сколько",
+    "old_ru": "Сколько это стоит?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0220",
+    "target_lemma": "какой",
+    "old_ru": "Какой сегодня хороший день!",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0221",
+    "target_lemma": "который",
+    "old_ru": "Который сейчас час?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0226",
+    "target_lemma": "какой-то",
+    "old_ru": "Это какой-то новый план.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0227",
+    "target_lemma": "кто-то",
+    "old_ru": "Тебя кто-то ждёт.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0229",
+    "target_lemma": "где-то",
+    "old_ru": "Мой ключ где-то здесь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0231",
+    "target_lemma": "никто",
+    "old_ru": "Меня никто не понимает.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0232",
+    "target_lemma": "ничто",
+    "old_ru": "Меня ничто не держит.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0236",
+    "target_lemma": "вот",
+    "old_ru": "Вот твой кофе.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0237",
+    "target_lemma": "вон",
+    "old_ru": "Вон мой дом.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0238",
+    "target_lemma": "ну",
+    "old_ru": "Ну, что делать?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0240",
+    "target_lemma": "уж",
+    "old_ru": "Ну уж нет!",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0252",
+    "target_lemma": "между",
+    "old_ru": "Это между нами.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0254",
+    "target_lemma": "над",
+    "old_ru": "Солнце над городом.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0258",
+    "target_lemma": "кроме",
+    "old_ru": "Здесь никого нет, кроме меня.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0263",
+    "target_lemma": "насчёт",
+    "old_ru": "Что насчёт кофе?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0265",
+    "target_lemma": "пока",
+    "old_ru": "Ну всё, пока!",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0271",
+    "target_lemma": "словно",
+    "old_ru": "Здесь тихо, словно ночью.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0272",
+    "target_lemma": "пока что",
+    "old_ru": "Пока что всё хорошо.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0273",
+    "target_lemma": "правда",
+    "old_ru": "Это правда или нет?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0274",
+    "target_lemma": "ложь",
+    "old_ru": "Всё это ложь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0277",
+    "target_lemma": "проблема",
+    "old_ru": "Это не моя проблема.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0281",
+    "target_lemma": "конец",
+    "old_ru": "Это ещё не конец.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0282",
+    "target_lemma": "начало",
+    "old_ru": "Это только начало.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0286",
+    "target_lemma": "путь",
+    "old_ru": "Счастливого тебе пути!",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0295",
+    "target_lemma": "земля",
+    "old_ru": "Снег лежит на земле.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0297",
+    "target_lemma": "огонь",
+    "old_ru": "В доме огонь!",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0301",
+    "target_lemma": "народ",
+    "old_ru": "Здесь много народа.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0302",
+    "target_lemma": "власть",
+    "old_ru": "Деньги — это власть.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0303",
+    "target_lemma": "закон",
+    "old_ru": "Это против закона.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0306",
+    "target_lemma": "суд",
+    "old_ru": "Это решит суд.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0311",
+    "target_lemma": "книга",
+    "old_ru": "Это интересная книга.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0312",
+    "target_lemma": "письмо",
+    "old_ru": "Это письмо для тебя.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0314",
+    "target_lemma": "фильм",
+    "old_ru": "Это хороший фильм.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0317",
+    "target_lemma": "игра",
+    "old_ru": "Это интересная игра.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0324",
+    "target_lemma": "станция",
+    "old_ru": "Где здесь станция?",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0325",
+    "target_lemma": "поезд",
+    "old_ru": "Поезд уже здесь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0326",
+    "target_lemma": "самолёт",
+    "old_ru": "Мой самолёт утром.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0327",
+    "target_lemma": "корабль",
+    "old_ru": "Это большой корабль.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  }
+]

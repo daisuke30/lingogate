@@ -367,17 +367,28 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
       const isCore = s.target_lemma != null && String(s.target_lemma).trim() !== "";
 
       if (kind === "sentence") {
-        // Only core sentences (target_lemma set) survive — every other
-        // sentence source (old RU band1 handwritten, imported notes,
-        // imported lessons) is dropped regardless of length.
-        if (!isCore) {
+        // LINGO-050/051 (Katsuta-approved purification plan, 純化プラン):
+        // non-core sentences from the imported notes/lessons sources
+        // (sentences_imported.jsonl / sentences_imported_lessons.jsonl —
+        // origin "notes"/"lessons") now ship as the マイノート lane's pool
+        // (engine/content.ts's sentencePool() already treats any kind=
+        // "sentence" row with no targetLemma as "notes" — it just never had
+        // rows to draw from because everything non-core was dropped here).
+        // The OLD handwritten band1 corpus (origin "generated", pre-LINGO-011
+        // free-form sentences this project moved away from) is NOT part of
+        // that plan and stays excluded — Katsuta's instruction named only
+        // "sentences_imported*.jsonl（ノート/レッスン文）".
+        const isNotesLaneOrigin = origin === "notes" || origin === "lessons";
+        if (!isCore && !isNotesLaneOrigin) {
           excluded.total += 1;
           excluded.byReason.nonCore += 1;
           excluded.byOrigin[origin] = (excluded.byOrigin[origin] ?? 0) + 1;
           continue;
         }
-        // Safety net: a core row should never exceed this by construction,
-        // but don't ship one to the app if it somehow does.
+        // Length cap applies to BOTH core and マイノート rows (LINGO-010's
+        // rule was never "core sentences only", it was "no long sentence
+        // ships" — the safety net just used to be redundant for non-core
+        // rows since they were dropped entirely before this check ran).
         if (tokenCount > MAX_SENTENCE_TOKENS) {
           excluded.total += 1;
           excluded.byReason.overLength += 1;

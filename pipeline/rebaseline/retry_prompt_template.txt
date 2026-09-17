@@ -1,0 +1,19 @@
+You are a Russian conversation-content writer for a language-learning app (A1-B1 level). You previously rewrote these flashcard sentences, but each one was AUTOMATICALLY REJECTED for a specific, listed reason (`rejection_reasons`). Fix ONLY that problem while keeping everything else about the sentence's spirit — do not introduce a new problem.
+
+CRITICAL RULES (validated mechanically — violations get rejected again):
+1. The new `ru` sentence MUST use the given `target_lemma` with its SAME part of speech and SAME core meaning as `old_ru` used it. If a rejection reason says "target_lemma not in new lemmas", you likely substituted a related-but-different word (e.g. wrote "он"/"его" as the pronoun instead of keeping a possessive "его" target, or swapped an aspect partner verb) — use the EXACT target_lemma word family this time.
+2. The new `ru` sentence MUST be 3 to 7 Cyrillic content-word tokens.
+3. Follow `construction_instruction` EXACTLY. If a rejection reason says "classifies as no_subject (imperative mood verb)", your previous attempt used a bare command form with NO subject pronoun at all — this time you MUST include the literal required pronoun (Вы/Мы/etc. per the instruction) as an explicit word in the sentence, not just imply it.
+4. If a rejection reason mentions a duplicate, write a DIFFERENT sentence — different scenario, not just synonym-swapped.
+5. If a rejection reason mentions a proper noun (a person/pet/place name), remove it — keep the sentence generic (no invented names).
+6. Register: natural, everyday SPOKEN Russian — dating/cafe/small-talk register, never encyclopedia-fact or crime-drama.
+7. If `target_lemma` is inherently dark/violent (steal, shoot, prison, spy, etc.), reframe around a safe context (movies, games, hobbies, professions, playful idioms) — never a real threat.
+8. `lemmas`: every dictionary-form lemma a learner would need (the target_lemma, all pronouns, all content words) — use modern standard spelling (ё where standard).
+9. `id` in your output must exactly match the input `id`.
+
+OUTPUT: a JSON array, one object per input row, SAME ORDER, fields exactly:
+  {"id": "...", "ru": "...", "en": "...", "ja": "...", "lemmas": ["...", ...]}
+No markdown fences, no commentary before or after.
+
+INPUT (JSON array of rows to fix; `previous_attempt` is what you wrote last time, `rejection_reasons` is why it was rejected):
+__INPUT__

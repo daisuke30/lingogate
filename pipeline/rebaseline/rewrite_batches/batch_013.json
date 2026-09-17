@@ -1,0 +1,452 @@
+[
+  {
+    "id": "T1196",
+    "target_lemma": "тысяча",
+    "old_ru": "Это стоит тысячу рублей.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1197",
+    "target_lemma": "обед",
+    "old_ru": "Что у нас на обед?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1203",
+    "target_lemma": "честь",
+    "old_ru": "Это большая честь для меня.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1206",
+    "target_lemma": "двое",
+    "old_ru": "Нас было двое.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1210",
+    "target_lemma": "довольно",
+    "old_ru": "Здесь довольно холодно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1212",
+    "target_lemma": "назвать",
+    "old_ru": "Как мне тебя назвать?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1214",
+    "target_lemma": "безопасность",
+    "old_ru": "Твоя безопасность важнее всего.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1220",
+    "target_lemma": "познакомиться",
+    "old_ru": "Приятно познакомиться с тобой.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1227",
+    "target_lemma": "странно",
+    "old_ru": "Это очень странно звучит.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1231",
+    "target_lemma": "ужасный",
+    "old_ru": "Сегодня ужасная погода.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1233",
+    "target_lemma": "другие",
+    "old_ru": "А где все другие?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1238",
+    "target_lemma": "звучать",
+    "old_ru": "Это звучит очень хорошо.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1244",
+    "target_lemma": "ситуация",
+    "old_ru": "Ситуация очень плохая.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1248",
+    "target_lemma": "кстати",
+    "old_ru": "Кстати, как твои дела?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1253",
+    "target_lemma": "простой",
+    "old_ru": "Это очень простой вопрос.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1254",
+    "target_lemma": "преступление",
+    "old_ru": "Это ужасное преступление.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1258",
+    "target_lemma": "закончиться",
+    "old_ru": "Урок скоро закончится.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1259",
+    "target_lemma": "устроить",
+    "old_ru": "Тебя это устроит?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1260",
+    "target_lemma": "добро",
+    "old_ru": "Спасибо за твоё добро.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1261",
+    "target_lemma": "любимый",
+    "old_ru": "Это моя любимая песня.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1264",
+    "target_lemma": "штука",
+    "old_ru": "Что это за штука?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1265",
+    "target_lemma": "понадобиться",
+    "old_ru": "Мне понадобится твоя помощь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1275",
+    "target_lemma": "поступить",
+    "old_ru": "Как мне правильно поступить?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1282",
+    "target_lemma": "шесть",
+    "old_ru": "Встреча в шесть часов.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1287",
+    "target_lemma": "уничтожить",
+    "old_ru": "Огонь может уничтожить всё.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1297",
+    "target_lemma": "фотография",
+    "old_ru": "Это старая фотография.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1299",
+    "target_lemma": "очевидный",
+    "old_ru": "Это очевидный ответ.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1302",
+    "target_lemma": "больно",
+    "old_ru": "Мне очень больно.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1306",
+    "target_lemma": "знакомый",
+    "old_ru": "Твоё лицо мне знакомо.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1311",
+    "target_lemma": "обычный",
+    "old_ru": "Это был обычный день.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1312",
+    "target_lemma": "третий",
+    "old_ru": "Это уже третий раз.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1313",
+    "target_lemma": "являться",
+    "old_ru": "Это является большой проблемой.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1314",
+    "target_lemma": "крайний",
+    "old_ru": "Это крайний случай.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1315",
+    "target_lemma": "означать",
+    "old_ru": "Что это означает?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1319",
+    "target_lemma": "хватать",
+    "old_ru": "Мне не хватает денег.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1320",
+    "target_lemma": "старший",
+    "old_ru": "Это мой старший брат.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1322",
+    "target_lemma": "погибнуть",
+    "old_ru": "Много людей погибло.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1326",
+    "target_lemma": "невозможно",
+    "old_ru": "Это невозможно сделать.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1329",
+    "target_lemma": "долгий",
+    "old_ru": "Это была долгая ночь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1330",
+    "target_lemma": "скорый",
+    "old_ru": "До скорой встречи!",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1333",
+    "target_lemma": "здоровье",
+    "old_ru": "Как твоё здоровье?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1334",
+    "target_lemma": "выход",
+    "old_ru": "Где здесь выход?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1336",
+    "target_lemma": "святой",
+    "old_ru": "Это святое место.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1337",
+    "target_lemma": "добраться",
+    "old_ru": "Как мне добраться до центра?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1339",
+    "target_lemma": "удаться",
+    "old_ru": "Мне удалось это сделать.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1340",
+    "target_lemma": "сделка",
+    "old_ru": "Это хорошая сделка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1343",
+    "target_lemma": "удар",
+    "old_ru": "Это был сильный удар.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1344",
+    "target_lemma": "настолько",
+    "old_ru": "Всё настолько плохо?",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1348",
+    "target_lemma": "шутка",
+    "old_ru": "Это была просто шутка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  },
+  {
+    "id": "T1349",
+    "target_lemma": "заставлять",
+    "old_ru": "Никто тебя не заставляет.",
+    "old_lemmas_hint": null,
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}"
+  }
+]

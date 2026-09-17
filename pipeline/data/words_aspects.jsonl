@@ -1060,3 +1060,26 @@
 {"lemma": "фокусироваться", "aspect": "impf", "aspect_pair": "сфокусироваться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
 {"lemma": "фотографировать", "aspect": "impf", "aspect_pair": "сфотографировать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
 {"lemma": "чесаться", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態動詞。почесатьсяは「体をかく」", "pair_note_en": "a state; почесаться means to scratch oneself", "pair_note_ru": "состояние; почесаться — почесать себя"}
+{"lemma": "высказывать", "aspect": "impf", "aspect_pair": "высказать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "выспаться", "aspect": "pf", "aspect_pair": "высыпаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "добавлять", "aspect": "impf", "aspect_pair": "добавить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "дорожить", "aspect": "impf", "aspect_pair": null, "pair_kind": "none", "pair_note": "状態・態度を表す動詞", "pair_note_en": "a state or attitude verb; no strict pair", "pair_note_ru": "глагол состояния или отношения"}
+{"lemma": "купаться", "aspect": "impf", "aspect_pair": "искупаться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "любоваться", "aspect": "impf", "aspect_pair": "полюбоваться", "pair_kind": "related", "pair_note": "полюбоваться = しばらく眺める", "pair_note_en": "полюбоваться = to admire for a while", "pair_note_ru": "полюбоваться = любоваться некоторое время"}
+{"lemma": "навещать", "aspect": "impf", "aspect_pair": "навестить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "нажимать", "aspect": "impf", "aspect_pair": "нажать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "накрыть", "aspect": "pf", "aspect_pair": "накрывать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "обменяться", "aspect": "pf", "aspect_pair": "обмениваться", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "обновлять", "aspect": "impf", "aspect_pair": "обновить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "оформить", "aspect": "pf", "aspect_pair": "оформлять", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "подвинуть", "aspect": "pf", "aspect_pair": "подвигать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "покрасить", "aspect": "pf", "aspect_pair": "красить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "постирать", "aspect": "pf", "aspect_pair": "стирать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "примерить", "aspect": "pf", "aspect_pair": "примерять", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "разделять", "aspect": "impf", "aspect_pair": "разделить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "разжечь", "aspect": "pf", "aspect_pair": "разжигать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "сдавать", "aspect": "impf", "aspect_pair": "сдать", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "тренировать", "aspect": "impf", "aspect_pair": "натренировать", "pair_kind": "related", "pair_note": "натренировать = 身につけさせる", "pair_note_en": "натренировать = to train up; shifted result", "pair_note_ru": "натренировать = натренировать, довести до навыка"}
+{"lemma": "чинить", "aspect": "impf", "aspect_pair": "починить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "экономить", "aspect": "impf", "aspect_pair": "сэкономить", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}
+{"lemma": "погибать", "aspect": "impf", "aspect_pair": "погибнуть", "pair_kind": "pair", "pair_note": null, "pair_note_en": null, "pair_note_ru": null}

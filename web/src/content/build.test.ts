@@ -34,11 +34,19 @@ describe("content build", () => {
     // generated minus 1 duplicate of the already-registered "каков") were
     // genuinely new vocabulary, appended to words_band4.jsonl (band:4, no
     // rank, same retirement-pool convention): 819 + 207 = 1026.
+    // LINGO-051: rebalancing the RU core sentences' subject-person
+    // distribution (я/ты/вы/он/она/мы/они/no-subject/dative-experiencer, per
+    // Katsuta's dating/cafe/small-talk conversation simulation) via 714
+    // sentence rewrites surfaced another 38 missing-vocabulary words the
+    // rewrites naturally reached for (verbs/nouns/adjectives/adverbs a real
+    // conversation needs — свитер, тренировать, дружелюбно, etc.), same
+    // Codex-generate + independently-verified + band4-append pipeline as
+    // LINGO-049: 1026 + 38 = 1064.
     expect(byBand[1]).toBe(1000);
     expect(byBand[2]).toBe(1000);
     expect(byBand[3]).toBe(1000);
-    expect(byBand[4]).toBe(1026);
-    expect(deck.words.length).toBe(1000 + 1000 + 1000 + 1026);
+    expect(byBand[4]).toBe(1064);
+    expect(deck.words.length).toBe(1000 + 1000 + 1000 + 1064);
     // Every band1-3 lemma is unique across the whole deck (no band4 collision).
     const seen = new Set<string>();
     for (const w of deck.words) {
@@ -111,32 +119,46 @@ describe("content build", () => {
   });
 
   // 2026-08-26: Katsuta's explicit direction — "頻出1000単語を元に作成したフレーズだけに
-  // フォーカス". Only LINGO-011 core sentences (target_lemma set, id T####) and bare
-  // word cards ship to the app; every other kind='sentence' source (the original
-  // band1 handwritten set, imported notes, imported lessons) is dropped even when
-  // short enough to have survived the length-only filter.
-  describe("core-only content restriction (LINGO-010 follow-up)", () => {
-    it("keeps only core sentences (T#### or B####) and word cards; drops every other sentence source", () => {
+  // フォーカス". Only LINGO-011 core sentences (target_lemma set, id T####/B####) and
+  // bare word cards shipped to the MAIN line; every other kind='sentence' source (the
+  // original band1 handwritten set, imported notes, imported lessons) was dropped
+  // entirely, even when short enough to have survived the length-only filter.
+  //
+  // LINGO-050/051 (2026-09-18, Katsuta-approved 純化プラン): that blanket drop was too
+  // broad — the imported notes/lessons sentences are real, useful material, just not
+  // part of the frequency-ranked core curriculum. They now ship as the optional
+  // マイノート (My Notes) lane's pool (engine/content.ts's sentencePool() already
+  // classifies any kind="sentence" row with no targetLemma as "notes"; this build
+  // script previously never gave it anything to draw from). The OLD handwritten band1
+  // corpus (origin "generated" — sentences_band1.jsonl, pre-LINGO-011 free-form
+  // sentences this project moved away from) is intentionally NOT included — only the
+  // "notes"/"lessons" origins (sentences_imported*.jsonl) count as マイノート material.
+  describe("core + マイノート content restriction (LINGO-010/050/051)", () => {
+    it("every kind='sentence' row is either a core T/B row (targetLemma set) or a マイノート notes/lessons row (targetLemma null); nothing else leaks through", () => {
       // LINGO-023: band2/3 inflow core sentences use B-prefixed ids
       // (B2001-B2286, B3001-B3462); the core identity is target_lemma != null,
       // carried by every T- and B- row and no other sentence source.
       const isCoreId = (id: string) => /^[TB]/.test(id);
       for (const s of deck.sentences) {
-        if (s.kind === "sentence") {
-          expect(isCoreId(s.id)).toBe(true);
+        if (s.kind !== "sentence") continue;
+        if (isCoreId(s.id)) {
           expect(s.targetLemma).not.toBeNull();
+        } else {
+          // マイノート row: came from sentences_imported*.jsonl, never carries
+          // a targetLemma (that's exactly what makes it "notes" not "core").
+          expect(s.targetLemma).toBeNull();
         }
       }
-      // The pre-restriction dataset has non-core sentence sources (old band1
-      // handwritten set "s...", imported notes "n...", imported lessons "L...");
-      // confirm none leaked through as kind='sentence'.
-      const leaked = deck.sentences.filter(
-        (s: any) => s.kind === "sentence" && !isCoreId(s.id),
+      // The old handwritten band1 corpus ("s..." ids, origin "generated") must
+      // never leak through even though it's also non-core — only "notes"/
+      // "lessons" origin non-core rows are allowed to ship.
+      const leakedGenerated = deck.sentences.filter(
+        (s: any) => s.kind === "sentence" && !isCoreId(s.id) && /^s\d/.test(s.id),
       );
-      expect(leaked).toEqual([]);
+      expect(leakedGenerated).toEqual([]);
     });
 
-    it("keeps exactly the core sentences (2135 post-LINGO-043) plus any word cards", () => {
+    it("keeps exactly the core sentences (2135 post-LINGO-043) + マイノート notes/lessons rows + word cards", () => {
       // LINGO-020: 1000 original T#### core sentences, retagged across bands
       // 1-4 by their target_lemma's new band (stage4a), plus 71 new T1001+
       // sentences for genuinely-new band1 words with no prior core sentence
@@ -151,16 +173,26 @@ describe("content build", () => {
       // sentence (retagged into sentences_band1_core.jsonl), сложно did not —
       // +1 new T1387 = 2135. These ship in the deck but stay dormant at
       // runtime while PRIMARY_BAND is fixed at 1 (band progression = LINGO-024).
-      const core = deck.sentences.filter((s: any) => s.kind === "sentence");
+      // LINGO-050/051: マイノート pool = sentences_imported.jsonl's + sentences_
+      // imported_lessons.jsonl's kind="sentence" rows with no target_lemma,
+      // minus the ones over MAX_SENTENCE_TOKENS(8) = 604.
+      const core = deck.sentences.filter((s: any) => s.kind === "sentence" && s.targetLemma != null);
+      const notes = deck.sentences.filter((s: any) => s.kind === "sentence" && s.targetLemma == null);
       const words = deck.sentences.filter((s: any) => s.kind === "word");
       expect(core.length).toBe(2135);
-      expect(deck.sentences.length).toBe(core.length + words.length);
+      expect(notes.length).toBe(604);
+      expect(deck.sentences.length).toBe(core.length + notes.length + words.length);
     });
 
-    it("logs a real, categorised exclusion count", () => {
+    it("logs a real, categorised exclusion count (the old band1 handwritten corpus + over-length rows from any origin)", () => {
       const m = deck._meta.excluded;
       expect(m.total).toBeGreaterThan(0);
       expect(m.byReason.nonCore).toBeGreaterThan(0);
+      // nonCore exclusions are now ONLY the old "generated"-origin handwritten
+      // corpus (sentences_band1.jsonl, 291 non-core rows) — notes/lessons
+      // non-core rows ship to the マイノート lane instead of being excluded.
+      expect(m.byOrigin.generated).toBe(291);
+      expect(m.byReason.nonCore).toBe(291);
       const originSum = m.byOrigin.generated + m.byOrigin.lessons + m.byOrigin.notes;
       expect(originSum).toBe(m.total);
     });

@@ -1,0 +1,374 @@
+[
+  {
+    "id": "B2050",
+    "target_lemma": "чертовый",
+    "old_ru": "Где этот чертовый документ?",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы нашли этот чертовый документ?",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B2052",
+    "target_lemma": "улика",
+    "old_ru": "У нас есть новая улика.",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы нашли улику?",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B2077",
+    "target_lemma": "классный",
+    "old_ru": "У тебя классная машина.",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы нашли классное кафе?",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B2112",
+    "target_lemma": "гей",
+    "old_ru": "Мой друг — гей.",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы гей?",
+    "rejection_reasons": [
+      "token count 2 out of [3,7]"
+    ]
+  },
+  {
+    "id": "B2119",
+    "target_lemma": "чёртов",
+    "old_ru": "Где мой чёртов телефон?",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы нашли мой чёртов телефон?",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B2169",
+    "target_lemma": "секретный",
+    "old_ru": "Это секретный документ.",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы нашли секретный вход?",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B2234",
+    "target_lemma": "стыдно",
+    "old_ru": "Мне стыдно за эту ошибку.",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы говорите, что вам стыдно?",
+    "rejection_reasons": [
+      "classifies as 'mne_type' (dative-experiencer predicative), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B2265",
+    "target_lemma": "холодно",
+    "old_ru": "Мне холодно даже дома.",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы говорите, что вам холодно?",
+    "rejection_reasons": [
+      "classifies as 'mne_type' (dative-experiencer predicative), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B3147",
+    "target_lemma": "туфля",
+    "old_ru": "Где моя туфля?",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы нашли туфлю?",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B3258",
+    "target_lemma": "сокровище",
+    "old_ru": "Это наше сокровище.",
+    "new_bucket": "вы",
+    "construction_instruction": "Include the literal word \"Вы\" (nominative \"you\", formal/plural) as the grammatical subject — a polite question or statement, as you'd say to a waiter, stranger, or someone you just met.",
+    "example": "{\"ru\": \"Вы не подскажете дорогу?\", \"en\": \"Could you point me to the way?\", \"ja\": \"道を教えていただけますか？\"}",
+    "previous_attempt": "Вы нашли своё сокровище?",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'вы'"
+    ]
+  },
+  {
+    "id": "B3307",
+    "target_lemma": "заканчиваться",
+    "old_ru": "Работа заканчивается через час.",
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}",
+    "previous_attempt": "Ты заканчиваешь работу вовремя?",
+    "rejection_reasons": [
+      "target_lemma 'заканчиваться' not in new lemmas ['ты', 'заканчивать', 'работа', 'вовремя']"
+    ]
+  },
+  {
+    "id": "T0039",
+    "target_lemma": "здесь",
+    "old_ru": "Кофе здесь дорогой.",
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}",
+    "previous_attempt": "Ты часто бываешь здесь?",
+    "rejection_reasons": [
+      "duplicates existing corpus sentence T1211"
+    ]
+  },
+  {
+    "id": "T0048",
+    "target_lemma": "его",
+    "old_ru": "Это его машина.",
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}",
+    "previous_attempt": "Ты видел его машину?",
+    "rejection_reasons": [
+      "target_lemma 'его' not in new lemmas ['ты', 'видеть', 'он', 'машина']"
+    ]
+  },
+  {
+    "id": "T0050",
+    "target_lemma": "их",
+    "old_ru": "Это их дом.",
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}",
+    "previous_attempt": "Ты знаешь их адрес?",
+    "rejection_reasons": [
+      "target_lemma 'их' not in new lemmas ['ты', 'знать', 'они', 'адрес']"
+    ]
+  },
+  {
+    "id": "T0554",
+    "target_lemma": "смысл",
+    "old_ru": "В чём смысл жизни?",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы нашли смысл в этом.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0575",
+    "target_lemma": "ключ",
+    "old_ru": "Где мои ключи?",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы нашли ключи вместе.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0589",
+    "target_lemma": "камень",
+    "old_ru": "Это большой камень.",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы нашли большой камень.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0606",
+    "target_lemma": "сумка",
+    "old_ru": "Это твоя сумка?",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы нашли твою сумку.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0613",
+    "target_lemma": "очки",
+    "old_ru": "Где мои очки?",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы нашли мои очки.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0683",
+    "target_lemma": "короткий",
+    "old_ru": "Это короткий путь.",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы нашли короткий путь.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0690",
+    "target_lemma": "тихий",
+    "old_ru": "Это тихая улица.",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы нашли тихое кафе.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0711",
+    "target_lemma": "местный",
+    "old_ru": "Это местный магазин.",
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}",
+    "previous_attempt": "Мы зашли в местный магазин.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'мы'"
+    ]
+  },
+  {
+    "id": "T0919",
+    "target_lemma": "искусство",
+    "old_ru": "Это настоящее искусство.",
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}",
+    "previous_attempt": "Я люблю современное искусство.",
+    "rejection_reasons": [
+      "duplicates another rewrite T0727"
+    ]
+  },
+  {
+    "id": "T1118",
+    "target_lemma": "должно",
+    "old_ru": "Это должно быть просто.",
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}",
+    "previous_attempt": "Она думает, что всё должно получиться.",
+    "rejection_reasons": [
+      "target_lemma 'должно' not in new lemmas ['она', 'думать', 'что', 'всё', 'должный', 'получиться']"
+    ]
+  },
+  {
+    "id": "T1146",
+    "target_lemma": "неё",
+    "old_ru": "У неё красивые глаза.",
+    "new_bucket": "она",
+    "construction_instruction": "Include the literal word \"Она\" (nominative \"she\") as the grammatical subject — a statement about a specific woman (a friend, date, colleague, family member).",
+    "example": "{\"ru\": \"Она обожает итальянскую кухню.\", \"en\": \"She loves Italian food.\", \"ja\": \"彼女はイタリア料理が大好きです。\"}",
+    "previous_attempt": "Она знает, что у неё красивые глаза.",
+    "rejection_reasons": [
+      "target_lemma 'неё' not in new lemmas ['она', 'знать', 'у', 'она', 'красивый', 'глаз']"
+    ]
+  },
+  {
+    "id": "T1233",
+    "target_lemma": "другие",
+    "old_ru": "А где все другие?",
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}",
+    "previous_attempt": "Они выбрали другие места.",
+    "rejection_reasons": [
+      "target_lemma 'другие' not in new lemmas ['они', 'выбрать', 'другой', 'место']"
+    ]
+  },
+  {
+    "id": "T1287",
+    "target_lemma": "уничтожить",
+    "old_ru": "Огонь может уничтожить всё.",
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}",
+    "previous_attempt": "Они уничтожают монстров в игре.",
+    "rejection_reasons": [
+      "target_lemma 'уничтожить' not in new lemmas ['они', 'уничтожать', 'монстр', 'игра']"
+    ]
+  },
+  {
+    "id": "T1297",
+    "target_lemma": "фотография",
+    "old_ru": "Это старая фотография.",
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}",
+    "previous_attempt": "Они нашли старую фотографию.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'они'"
+    ]
+  },
+  {
+    "id": "T1312",
+    "target_lemma": "третий",
+    "old_ru": "Это уже третий раз.",
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}",
+    "previous_attempt": "Они пришли в третий раз.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'они'"
+    ]
+  },
+  {
+    "id": "T1334",
+    "target_lemma": "выход",
+    "old_ru": "Где здесь выход?",
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}",
+    "previous_attempt": "Они нашли выход из метро.",
+    "rejection_reasons": [
+      "classifies as 'no_subject' (imperative mood verb), expected 'они'"
+    ]
+  },
+  {
+    "id": "T1212",
+    "target_lemma": "назвать",
+    "old_ru": "Как мне тебя назвать?",
+    "new_bucket": "они",
+    "construction_instruction": "Include the literal word \"Они\" (nominative \"they\") as the grammatical subject — a statement about other people (not you, not the listener).",
+    "example": "{\"ru\": \"Они часто гуляют вечером.\", \"en\": \"They often go for walks in the evening.\", \"ja\": \"彼らはよく夕方に散歩します。\"}",
+    "previous_attempt": "Они назвали кота Барсиком.",
+    "rejection_reasons": [
+      "used a proper noun (Барсик, a specific cat's name) as a vocabulary item — do not name people, pets, or places; keep the sentence generic"
+    ]
+  }
+]

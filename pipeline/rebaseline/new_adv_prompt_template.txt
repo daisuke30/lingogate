@@ -1,0 +1,20 @@
+You are a Russian linguistics expert building NEW vocabulary entries for a
+language-learning flashcard app (Russian for English/Japanese speakers,
+A1-B1 level). Every adverb below is currently MISSING from the app's
+vocabulary entirely (found via corpus audit). For EACH lemma, output:
+
+- lemma: the input lemma (copy exactly)
+- en_gloss: short English gloss (e.g. "barefoot")
+- ja_gloss: short Japanese gloss (e.g. "裸足で")
+
+WORKED EXAMPLES:
+{"lemma":"быстро","en_gloss":"quickly","ja_gloss":"すぐに"}
+{"lemma":"дружелюбно","en_gloss":"in a friendly way","ja_gloss":"友好的に"}
+
+RULES:
+- Use the given example sentence(s) to disambiguate meaning/homographs.
+- Output ONLY a JSON array, one object per input lemma, same order as input,
+  no markdown fences, no commentary before/after.
+
+INPUT (JSON array of {lemma, examples: [ru sentence(s) using this word]}):
+__INPUT__

@@ -1,0 +1,452 @@
+[
+  {
+    "id": "T0510",
+    "target_lemma": "коллега",
+    "old_ru": "Это мой новый коллега.",
+    "old_lemmas_hint": null,
+    "new_bucket": "ты",
+    "construction_instruction": "Include the literal word \"Ты\" (nominative \"you\", informal) as the grammatical subject — either a statement or a casual question to a friend/date.",
+    "example": "{\"ru\": \"Ты уже выбрал столик?\", \"en\": \"Have you already picked a table?\", \"ja\": \"もうテーブルは決めた？\"}"
+  },
+  {
+    "id": "T0522",
+    "target_lemma": "судья",
+    "old_ru": "Судья уже здесь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0524",
+    "target_lemma": "убийца",
+    "old_ru": "Кто здесь убийца?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0534",
+    "target_lemma": "подруга",
+    "old_ru": "Это моя старая подруга.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0537",
+    "target_lemma": "страх",
+    "old_ru": "Это мой главный страх.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0544",
+    "target_lemma": "план",
+    "old_ru": "Какой у тебя план?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0545",
+    "target_lemma": "цель",
+    "old_ru": "Какая у тебя цель?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0546",
+    "target_lemma": "причина",
+    "old_ru": "В чём причина?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0547",
+    "target_lemma": "правило",
+    "old_ru": "Это очень важное правило.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0549",
+    "target_lemma": "результат",
+    "old_ru": "Это плохой результат.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0550",
+    "target_lemma": "решение",
+    "old_ru": "Это моё решение.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0552",
+    "target_lemma": "ошибка",
+    "old_ru": "Это моя ошибка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0553",
+    "target_lemma": "секрет",
+    "old_ru": "Это наш секрет.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0554",
+    "target_lemma": "смысл",
+    "old_ru": "В чём смысл жизни?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0557",
+    "target_lemma": "номер",
+    "old_ru": "Какой твой номер?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0560",
+    "target_lemma": "вид",
+    "old_ru": "Здесь красивый вид.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0561",
+    "target_lemma": "форма",
+    "old_ru": "Какая странная форма!",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0562",
+    "target_lemma": "уровень",
+    "old_ru": "Это новый уровень.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0563",
+    "target_lemma": "тип",
+    "old_ru": "Это другой тип.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0567",
+    "target_lemma": "система",
+    "old_ru": "Это новая система.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0571",
+    "target_lemma": "список",
+    "old_ru": "Вот мой список.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0575",
+    "target_lemma": "ключ",
+    "old_ru": "Где мои ключи?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0579",
+    "target_lemma": "подарок",
+    "old_ru": "Это подарок для тебя.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0580",
+    "target_lemma": "цветок",
+    "old_ru": "Это красивый цветок.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0584",
+    "target_lemma": "лошадь",
+    "old_ru": "Это красивая лошадь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0586",
+    "target_lemma": "птица",
+    "old_ru": "Это красивая птица.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0587",
+    "target_lemma": "дерево",
+    "old_ru": "Это старое дерево.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0588",
+    "target_lemma": "трава",
+    "old_ru": "Трава уже зелёная.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0589",
+    "target_lemma": "камень",
+    "old_ru": "Это большой камень.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0590",
+    "target_lemma": "песок",
+    "old_ru": "Здесь белый песок.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0591",
+    "target_lemma": "остров",
+    "old_ru": "Это красивый остров.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0595",
+    "target_lemma": "двор",
+    "old_ru": "Дети во дворе.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0596",
+    "target_lemma": "здание",
+    "old_ru": "Это очень старое здание.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0599",
+    "target_lemma": "стена",
+    "old_ru": "Картина на стене.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0601",
+    "target_lemma": "потолок",
+    "old_ru": "Свет на потолке.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0602",
+    "target_lemma": "лестница",
+    "old_ru": "Где здесь лестница?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0604",
+    "target_lemma": "ванная",
+    "old_ru": "Где здесь ванная?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0605",
+    "target_lemma": "туалет",
+    "old_ru": "Где здесь туалет?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0606",
+    "target_lemma": "сумка",
+    "old_ru": "Это твоя сумка?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0609",
+    "target_lemma": "платье",
+    "old_ru": "Это красивое платье.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0610",
+    "target_lemma": "пальто",
+    "old_ru": "Где моё пальто?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0613",
+    "target_lemma": "очки",
+    "old_ru": "Где мои очки?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0615",
+    "target_lemma": "кольцо",
+    "old_ru": "Это красивое кольцо.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0627",
+    "target_lemma": "мозг",
+    "old_ru": "Это работа для мозга.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0628",
+    "target_lemma": "язык",
+    "old_ru": "Русский — трудный язык.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0630",
+    "target_lemma": "сон",
+    "old_ru": "Это был просто сон.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0631",
+    "target_lemma": "мечта",
+    "old_ru": "Это моя мечта.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0632",
+    "target_lemma": "вкус",
+    "old_ru": "У кофе горький вкус.",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0634",
+    "target_lemma": "размер",
+    "old_ru": "Какой у тебя размер?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  },
+  {
+    "id": "T0636",
+    "target_lemma": "цена",
+    "old_ru": "Какая здесь цена?",
+    "old_lemmas_hint": null,
+    "new_bucket": "мы",
+    "construction_instruction": "Include the literal word \"Мы\" (nominative \"we\") as the grammatical subject — a shared plan, activity, or observation about you and someone else together.",
+    "example": "{\"ru\": \"Мы можем встретиться в субботу.\", \"en\": \"We can meet on Saturday.\", \"ja\": \"土曜日に会えます。\"}"
+  }
+]

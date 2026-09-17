@@ -1024,3 +1024,41 @@
 {"lemma": "холостой", "band": 4, "pos": "adj", "en_gloss": "unmarried", "ja_gloss": "独身の"}
 {"lemma": "шумный", "band": 4, "pos": "adj", "en_gloss": "noisy", "ja_gloss": "うるさい"}
 {"lemma": "языковой", "band": 4, "pos": "adj", "en_gloss": "language (adj.)", "ja_gloss": "言語の"}
+{"lemma": "высказывать", "band": 4, "pos": "verb", "en_gloss": "to express, voice", "ja_gloss": "言い表す"}
+{"lemma": "выспаться", "band": 4, "pos": "verb", "en_gloss": "to get enough sleep", "ja_gloss": "十分に眠る"}
+{"lemma": "добавлять", "band": 4, "pos": "verb", "en_gloss": "to add", "ja_gloss": "加える"}
+{"lemma": "дорожить", "band": 4, "pos": "verb", "en_gloss": "to value, cherish", "ja_gloss": "大切にする"}
+{"lemma": "купаться", "band": 4, "pos": "verb", "en_gloss": "to swim, bathe", "ja_gloss": "泳ぐ、入浴する"}
+{"lemma": "любоваться", "band": 4, "pos": "verb", "en_gloss": "to admire, enjoy the view", "ja_gloss": "眺めを楽しむ"}
+{"lemma": "навещать", "band": 4, "pos": "verb", "en_gloss": "to visit", "ja_gloss": "訪ねる、見舞う"}
+{"lemma": "нажимать", "band": 4, "pos": "verb", "en_gloss": "to press, push", "ja_gloss": "押す"}
+{"lemma": "накрыть", "band": 4, "pos": "verb", "en_gloss": "to set, cover", "ja_gloss": "覆う、食卓を整える"}
+{"lemma": "обменяться", "band": 4, "pos": "verb", "en_gloss": "to exchange", "ja_gloss": "交換する"}
+{"lemma": "обновлять", "band": 4, "pos": "verb", "en_gloss": "to update, renew", "ja_gloss": "更新する"}
+{"lemma": "оформить", "band": 4, "pos": "verb", "en_gloss": "to arrange, process", "ja_gloss": "手続きする"}
+{"lemma": "подвинуть", "band": 4, "pos": "verb", "en_gloss": "to move, shift", "ja_gloss": "動かす、ずらす"}
+{"lemma": "покрасить", "band": 4, "pos": "verb", "en_gloss": "to paint", "ja_gloss": "塗る"}
+{"lemma": "постирать", "band": 4, "pos": "verb", "en_gloss": "to wash, do the laundry", "ja_gloss": "洗濯する"}
+{"lemma": "примерить", "band": 4, "pos": "verb", "en_gloss": "to try on", "ja_gloss": "試着する"}
+{"lemma": "разделять", "band": 4, "pos": "verb", "en_gloss": "to share", "ja_gloss": "共有する"}
+{"lemma": "разжечь", "band": 4, "pos": "verb", "en_gloss": "to light, kindle", "ja_gloss": "火を起こす"}
+{"lemma": "сдавать", "band": 4, "pos": "verb", "en_gloss": "to submit, donate", "ja_gloss": "提出する、提供する"}
+{"lemma": "тренировать", "band": 4, "pos": "verb", "en_gloss": "to train, exercise", "ja_gloss": "訓練する"}
+{"lemma": "чинить", "band": 4, "pos": "verb", "en_gloss": "to repair, fix", "ja_gloss": "修理する"}
+{"lemma": "экономить", "band": 4, "pos": "verb", "en_gloss": "to save, economize", "ja_gloss": "節約する"}
+{"lemma": "бокс", "band": 4, "pos": "noun", "en_gloss": "boxing", "ja_gloss": "ボクシング", "gender": "m"}
+{"lemma": "десерт", "band": 4, "pos": "noun", "en_gloss": "dessert", "ja_gloss": "デザート", "gender": "m"}
+{"lemma": "закат", "band": 4, "pos": "noun", "en_gloss": "sunset", "ja_gloss": "夕日", "gender": "m"}
+{"lemma": "злодей", "band": 4, "pos": "noun", "en_gloss": "villain", "ja_gloss": "悪役", "gender": "m"}
+{"lemma": "корм", "band": 4, "pos": "noun", "en_gloss": "pet food", "ja_gloss": "ペットフード", "gender": "m"}
+{"lemma": "мишень", "band": 4, "pos": "noun", "en_gloss": "target", "ja_gloss": "標的", "gender": "f"}
+{"lemma": "проход", "band": 4, "pos": "noun", "en_gloss": "passage", "ja_gloss": "通路", "gender": "m"}
+{"lemma": "ритм", "band": 4, "pos": "noun", "en_gloss": "rhythm", "ja_gloss": "リズム", "gender": "m"}
+{"lemma": "свитер", "band": 4, "pos": "noun", "en_gloss": "sweater", "ja_gloss": "セーター", "gender": "m"}
+{"lemma": "настольный", "band": 4, "pos": "adj", "en_gloss": "board-game", "ja_gloss": "ボードゲームの"}
+{"lemma": "усталый", "band": 4, "pos": "adj", "en_gloss": "tired", "ja_gloss": "疲れた"}
+{"lemma": "настроенный", "band": 4, "pos": "adj", "en_gloss": "disposed (to)", "ja_gloss": "〜する気のある"}
+{"lemma": "босиком", "band": 4, "pos": "adv", "en_gloss": "barefoot", "ja_gloss": "裸足で"}
+{"lemma": "дружелюбно", "band": 4, "pos": "adv", "en_gloss": "in a friendly way", "ja_gloss": "友好的に"}
+{"lemma": "уверенно", "band": 4, "pos": "adv", "en_gloss": "confidently", "ja_gloss": "自信を持って"}
+{"lemma": "погибать", "band": 4, "pos": "verb", "en_gloss": "to die, perish", "ja_gloss": "死ぬ、命を落とす"}

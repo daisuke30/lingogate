@@ -1,0 +1,452 @@
+[
+  {
+    "id": "T0720",
+    "target_lemma": "социальный",
+    "old_ru": "Это социальная проблема.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0721",
+    "target_lemma": "культурный",
+    "old_ru": "Это культурный центр.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0723",
+    "target_lemma": "юридический",
+    "old_ru": "Это юридический вопрос.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0725",
+    "target_lemma": "технический",
+    "old_ru": "Это техническая проблема.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0726",
+    "target_lemma": "научный",
+    "old_ru": "Это научный факт.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0727",
+    "target_lemma": "современный",
+    "old_ru": "Это современный город.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0728",
+    "target_lemma": "древний",
+    "old_ru": "Это древний город.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0729",
+    "target_lemma": "северный",
+    "old_ru": "Это северный город.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0730",
+    "target_lemma": "южный",
+    "old_ru": "Это южный остров.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0731",
+    "target_lemma": "западный",
+    "old_ru": "Это западный мир.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0732",
+    "target_lemma": "восточный",
+    "old_ru": "Это восточный город.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0733",
+    "target_lemma": "родной",
+    "old_ru": "Это мой родной город.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0734",
+    "target_lemma": "чужой",
+    "old_ru": "Это чужой телефон.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0757",
+    "target_lemma": "меняться",
+    "old_ru": "В мире всё меняется.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0765",
+    "target_lemma": "передавать",
+    "old_ru": "Радио передаёт новости.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0797",
+    "target_lemma": "подходить",
+    "old_ru": "Это мне не подходит.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0832",
+    "target_lemma": "пахнуть",
+    "old_ru": "Здесь хорошо пахнет.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0839",
+    "target_lemma": "родители",
+    "old_ru": "Мои родители дома.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0844",
+    "target_lemma": "дядя",
+    "old_ru": "Это мой дядя.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0845",
+    "target_lemma": "тётя",
+    "old_ru": "Это моя тётя.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0846",
+    "target_lemma": "племянник",
+    "old_ru": "Это мой племянник.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0847",
+    "target_lemma": "племянница",
+    "old_ru": "Это моя племянница.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0849",
+    "target_lemma": "возраст",
+    "old_ru": "Какой у тебя возраст?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0850",
+    "target_lemma": "рождение",
+    "old_ru": "Когда твой день рождения?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0851",
+    "target_lemma": "свадьба",
+    "old_ru": "Это была красивая свадьба.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0852",
+    "target_lemma": "развод",
+    "old_ru": "Это был трудный развод.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0853",
+    "target_lemma": "праздник",
+    "old_ru": "Сегодня большой праздник.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0856",
+    "target_lemma": "разговор",
+    "old_ru": "Это был серьёзный разговор.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0857",
+    "target_lemma": "звонок",
+    "old_ru": "Это важный звонок.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0862",
+    "target_lemma": "поцелуй",
+    "old_ru": "Это был первый поцелуй.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0864",
+    "target_lemma": "путешествие",
+    "old_ru": "Это было трудное путешествие.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0865",
+    "target_lemma": "поездка",
+    "old_ru": "Это была хорошая поездка.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0867",
+    "target_lemma": "гостиница",
+    "old_ru": "Где здесь гостиница?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0869",
+    "target_lemma": "порт",
+    "old_ru": "Корабль уже в порту.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0870",
+    "target_lemma": "метро",
+    "old_ru": "Где здесь метро?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0873",
+    "target_lemma": "остановка",
+    "old_ru": "Где моя остановка?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0874",
+    "target_lemma": "бензин",
+    "old_ru": "Здесь нет бензина.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0875",
+    "target_lemma": "скорость",
+    "old_ru": "Какая здесь скорость?",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0877",
+    "target_lemma": "поворот",
+    "old_ru": "После поворота — мой дом.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0883",
+    "target_lemma": "церковь",
+    "old_ru": "Это старая церковь.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0884",
+    "target_lemma": "республика",
+    "old_ru": "Это большая республика.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0886",
+    "target_lemma": "район",
+    "old_ru": "Это тихий район.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0888",
+    "target_lemma": "посёлок",
+    "old_ru": "Это маленький посёлок.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0889",
+    "target_lemma": "столица",
+    "old_ru": "Это наша столица.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0890",
+    "target_lemma": "север",
+    "old_ru": "Мой дом на севере.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0892",
+    "target_lemma": "запад",
+    "old_ru": "Мой город на западе.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0893",
+    "target_lemma": "восток",
+    "old_ru": "Наш дом на востоке.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0894",
+    "target_lemma": "погода",
+    "old_ru": "Сегодня плохая погода.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0896",
+    "target_lemma": "океан",
+    "old_ru": "Это большой океан.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  },
+  {
+    "id": "T0897",
+    "target_lemma": "озеро",
+    "old_ru": "Здесь красивое озеро.",
+    "old_lemmas_hint": null,
+    "new_bucket": "я",
+    "construction_instruction": "Start the sentence with the literal word \"Я\" as the grammatical subject (nominative \"I\"). Natural first-person statement about yourself — a preference, plan, feeling, or fact about you.",
+    "example": "{\"ru\": \"Я обычно заказываю капучино.\", \"en\": \"I usually order a cappuccino.\", \"ja\": \"私はいつもカプチーノを頼みます。\"}"
+  }
+]
