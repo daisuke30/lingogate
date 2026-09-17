@@ -12,7 +12,16 @@ import {
   poopIntervalMs,
   newPet as newPetWithSleep,
   migrateLegacyPet,
+  migrateCareLog,
   clampEconomy,
+  CARE_WEIGHT_STUDY,
+  CARE_WEIGHT_FEED,
+  CARE_WEIGHT_CLEAN,
+  CARE_FEED_RATIO_TARGET,
+  CARE_FEED_COUNT_TARGET,
+  CARE_CLEAN_GRACE_MS,
+  CARE_OK,
+  CARE_GOOD,
   satietyAt,
   resolveSleepWindow,
   isAsleep,
@@ -65,24 +74,35 @@ function newPet(...args: Parameters<typeof newPetWithSleep>): PetState {
 
 // --- helpers -------------------------------------------------------------
 
-/** CareDay fixture — `clean` is the desired cleanRatio (0..1), expressed as a
- * dirty/tracked ms split over a unit "day" so dailyCareScore's ratio math
- * comes out exactly as specified without needing real ms magnitudes. */
+/** CareDay fixture (LINGO-053 additive formula) — `fed`/`clean` are the
+ * DESIRED resulting feedScore/cleanScore (0..1) dailyCareScore should compute
+ * (via the ratio paths only — feedCount stays 0, so callers wanting to
+ * exercise the count-based OR-path pass it separately). Uses a real
+ * DAY_MS-scale trackedMs (not a unit "1") so CARE_CLEAN_GRACE_MS's absolute
+ * 4h grace window behaves meaningfully rather than being dwarfed or
+ * dominating a toy timescale. Backs out the exact starvingMs/dirtyMs that
+ * make dailyCareScore land on the requested fed/clean values:
+ *   notStarvingRatio = fed × CARE_FEED_RATIO_TARGET  ⇒ feedScore = fed
+ *   dirtyMs = GRACE + (1-clean) × trackedMs           ⇒ cleanScore = clean */
 function makeCareDay(
   date: string,
   stage: PetStage,
-  o: { studied: boolean; fed: number; clean: number; newCount?: number; reviewCount?: number },
+  o: { studied: boolean; fed: number; clean: number; newCount?: number; reviewCount?: number; feedCount?: number },
 ): CareDay {
+  const trackedMs = DAY_MS;
+  const notStarvingRatio = Math.max(0, Math.min(1, o.fed)) * CARE_FEED_RATIO_TARGET;
+  const starvingMs = Math.max(0, (1 - notStarvingRatio) * trackedMs);
+  const dirtyMs = CARE_CLEAN_GRACE_MS + Math.max(0, 1 - Math.max(0, Math.min(1, o.clean))) * trackedMs;
   return {
     date,
     stage,
     studied: o.studied,
     newCount: o.newCount ?? 0,
     reviewCount: o.reviewCount ?? 0,
-    fedSum: o.fed,
-    fedN: 1,
-    trackedMs: 1,
-    dirtyMs: 1 - o.clean,
+    feedCount: o.feedCount ?? 0,
+    trackedMs,
+    dirtyMs,
+    starvingMs,
   };
 }
 
@@ -685,53 +705,114 @@ describe("tick: poop stock accrual (design §1 v2, 2026-09-05)", () => {
 
 // --- care scoring --------------------------------------------------------
 
-describe("care scoring (design §1 v2, 2026-09-05: time-weighted cleanliness)", () => {
-  it("dailyCareScore = fedRatio × cleanRatio × studiedFlag", () => {
-    expect(dailyCareScore(makeCareDay("d", "baby", { studied: true, fed: 1, clean: 1 }))).toBe(1);
-    expect(dailyCareScore(makeCareDay("d", "baby", { studied: false, fed: 1, clean: 1 }))).toBe(0);
-    expect(dailyCareScore(makeCareDay("d", "baby", { studied: true, fed: 0.5, clean: 0.6 }))).toBeCloseTo(0.3, 9);
+describe("care scoring (LINGO-053, 2026-09-18: additive 学習+給餌充足+清潔充足)", () => {
+  it("dailyCareScore = CARE_WEIGHT_STUDY×studied + CARE_WEIGHT_FEED×feedScore + CARE_WEIGHT_CLEAN×cleanScore", () => {
+    expect(dailyCareScore(makeCareDay("d", "baby", { studied: true, fed: 1, clean: 1 }))).toBeCloseTo(1, 9);
+    expect(dailyCareScore(makeCareDay("d", "baby", { studied: false, fed: 1, clean: 1 }))).toBeCloseTo(
+      CARE_WEIGHT_FEED + CARE_WEIGHT_CLEAN,
+      9,
+    );
+    expect(dailyCareScore(makeCareDay("d", "baby", { studied: true, fed: 0.5, clean: 0.6 }))).toBeCloseTo(
+      CARE_WEIGHT_STUDY + CARE_WEIGHT_FEED * 0.5 + CARE_WEIGHT_CLEAN * 0.6,
+      9,
+    );
   });
-  it("cleanRatio = 1 - dirtyMs/trackedMs (fraction of the day NOT left dirty)", () => {
-    const mostlyClean: CareDay = {
+  it("a studied-only day (feed=clean=0) still lands BELOW CARE_OK — preserves the マオウガ 隠し条件's reachability", () => {
+    // If CARE_WEIGHT_STUDY alone were >= CARE_OK (0.4), a studied day could
+    // never score "neglect", making the demon-lord hidden path (which needs
+    // BOTH neglect tier AND studied-every-day) structurally unreachable —
+    // exactly why the weights are equal thirds, not e.g. 0.4/0.3/0.3.
+    const studiedOnly = makeCareDay("d", "perfect", { studied: true, fed: 0, clean: 0 });
+    expect(dailyCareScore(studiedOnly)).toBeLessThan(CARE_OK);
+    expect(careTier(dailyCareScore(studiedOnly))).toBe("neglect");
+  });
+  it("清潔充足 grace period: dirty time within CARE_CLEAN_GRACE_MS is free ('発生→次に開いた時に掃除、は無罪')", () => {
+    const promptlyCleaned: CareDay = {
       date: "d",
       stage: "child",
       studied: true,
       newCount: 0,
       reviewCount: 0,
-      fedSum: 1,
-      fedN: 1,
+      feedCount: 0,
       trackedMs: DAY_MS,
-      dirtyMs: DAY_MS * 0.1, // dirty for just 10% of the day
+      dirtyMs: CARE_CLEAN_GRACE_MS - 1, // dirty, but under the grace window
+      starvingMs: 0,
     };
-    expect(dailyCareScore(mostlyClean)).toBeCloseTo(0.9, 9);
+    // Full marks on the clean component despite nonzero dirty time.
+    expect(dailyCareScore(promptlyCleaned)).toBeCloseTo(CARE_WEIGHT_STUDY + CARE_WEIGHT_FEED + CARE_WEIGHT_CLEAN, 9);
   });
-  it("a day with no tracked time (never caught up) scores as neglected, not crashes", () => {
+  it("清潔充足: only the EXCESS beyond the grace window is penalized", () => {
+    const overGrace: CareDay = {
+      date: "d",
+      stage: "child",
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      feedCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: CARE_CLEAN_GRACE_MS + DAY_MS * 0.1, // 4h grace + 10% of the day excess
+      starvingMs: 0,
+    };
+    const expectedCleanScore = 1 - 0.1; // only the excess fraction counts
+    expect(dailyCareScore(overGrace)).toBeCloseTo(
+      CARE_WEIGHT_STUDY + CARE_WEIGHT_FEED + CARE_WEIGHT_CLEAN * expectedCleanScore,
+      9,
+    );
+  });
+  it("給餌充足 OR-logic: EITHER the ratio target OR the count target alone is full marks", () => {
+    // Ratio path: notStarvingRatio hits CARE_FEED_RATIO_TARGET exactly, zero feeds recorded.
+    const ratioOnly: CareDay = {
+      date: "d",
+      stage: "child",
+      studied: false,
+      newCount: 0,
+      reviewCount: 0,
+      feedCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: 0,
+      starvingMs: DAY_MS * (1 - CARE_FEED_RATIO_TARGET),
+    };
+    expect(dailyCareScore(ratioOnly)).toBeCloseTo(CARE_WEIGHT_FEED + CARE_WEIGHT_CLEAN, 9);
+
+    // Count path: fully starving all day (ratio=0) but fed CARE_FEED_COUNT_TARGET times.
+    const countOnly: CareDay = {
+      date: "d",
+      stage: "child",
+      studied: false,
+      newCount: 0,
+      reviewCount: 0,
+      feedCount: CARE_FEED_COUNT_TARGET,
+      trackedMs: DAY_MS,
+      dirtyMs: 0,
+      starvingMs: DAY_MS,
+    };
+    expect(dailyCareScore(countOnly)).toBeCloseTo(CARE_WEIGHT_FEED + CARE_WEIGHT_CLEAN, 9);
+  });
+  it("a day with no tracked time (never caught up) scores feed/clean as neglected (studied still counts)", () => {
     const untracked: CareDay = {
       date: "d",
       stage: "child",
       studied: true,
       newCount: 0,
       reviewCount: 0,
-      fedSum: 1,
-      fedN: 1,
+      feedCount: 0,
       trackedMs: 0,
       dirtyMs: 0,
+      starvingMs: 0,
     };
-    expect(dailyCareScore(untracked)).toBe(0);
+    expect(dailyCareScore(untracked)).toBeCloseTo(CARE_WEIGHT_STUDY, 9);
   });
-  it("defensively handles pre-v2 persisted rows missing dirtyMs/trackedMs", () => {
+  it("defensively handles rows missing starvingMs/feedCount/dirtyMs/trackedMs (pre-migration)", () => {
     const legacyRow = {
       date: "d",
       stage: "child" as PetStage,
       studied: true,
       newCount: 0,
       reviewCount: 0,
-      fedSum: 1,
-      fedN: 1,
-    } as CareDay; // simulates a pre-migration IndexedDB row (fields absent at runtime)
-    expect(dailyCareScore(legacyRow)).toBe(0);
+    } as CareDay; // simulates a pre-LINGO-053 row that somehow skipped migrateCareLog()
+    expect(dailyCareScore(legacyRow)).toBeCloseTo(CARE_WEIGHT_STUDY, 9);
   });
-  it("careTier: 良 ≥0.8 / 並 0.4–0.8 / 怠 <0.4", () => {
+  it("careTier: 良 ≥0.8 / 並 0.4–0.8 / 怠 <0.4 (thresholds unchanged by LINGO-053)", () => {
     expect(careTier(0.9)).toBe("good");
     expect(careTier(0.8)).toBe("good");
     expect(careTier(0.6)).toBe("ok");
@@ -739,9 +820,9 @@ describe("care scoring (design §1 v2, 2026-09-05: time-weighted cleanliness)", 
     expect(careTier(0.39)).toBe("neglect");
   });
   it("stageCareAvg penalizes missing days via the expected-days divisor", () => {
-    // child spans 2 expected days; one perfect day + one missing day → 0.5 avg.
+    // child spans 2 expected days; one perfect day + one missing day → half credit.
     const log = [makeCareDay("d2", "child", { studied: true, fed: 1, clean: 1 })];
-    expect(stageCareAvg(log, "child")).toBe(0.5);
+    expect(stageCareAvg(log, "child")).toBeCloseTo(0.5, 9);
   });
   it("learningTendency: N when new ≥ review, else R", () => {
     const log = [makeCareDay("d", "child", { studied: true, fed: 1, clean: 1, newCount: 5, reviewCount: 2 })];
@@ -750,9 +831,9 @@ describe("care scoring (design §1 v2, 2026-09-05: time-weighted cleanliness)", 
     expect(learningTendency(log2, "child")).toBe("R");
   });
   it("studiedEveryDayInStage gates the hidden 魔王 path", () => {
-    const perfect3 = ["p1", "p2", "p3"].map((d) => makeCareDay(d, "perfect", { studied: true, fed: 0.5, clean: 0.6 }));
+    const perfect3 = ["p1", "p2", "p3"].map((d) => makeCareDay(d, "perfect", { studied: true, fed: 0, clean: 0 }));
     expect(studiedEveryDayInStage(perfect3, "perfect")).toBe(true);
-    const perfect2 = ["p1", "p2"].map((d) => makeCareDay(d, "perfect", { studied: true, fed: 0.5, clean: 0.6 }));
+    const perfect2 = ["p1", "p2"].map((d) => makeCareDay(d, "perfect", { studied: true, fed: 0, clean: 0 }));
     expect(studiedEveryDayInStage(perfect2, "perfect")).toBe(false);
   });
 });
@@ -927,12 +1008,15 @@ describe("tick: early 旅立ち on 3-day abandonment (design §2)", () => {
 
 describe("tick: 怠 at 完全体 (design §3 hidden/stall split at 究極体)", () => {
   // Build a pet sitting at 完全体 (berserk) at age ~9, whose 完全体 days were all
-  // 怠 (low cleanRatio). Whether it reaches 魔王系 or 旅立ちs depends only on
+  // 怠 (fed=clean=0 — under the LINGO-053 additive formula, studied alone
+  // caps out at 1/3 < CARE_OK, so this is genuinely neglect tier even on the
+  // studied days — see "a studied-only day... preserves the マオウガ 隠し条件's
+  // reachability" above). Whether it reaches 魔王系 or 旅立ちs depends only on
   // whether the learner studied every 完全体 day ("維持した").
   function neglectedPerfect(studiedDays: string[]): PetState {
     const perfectDates = [localDateStr(at(6)), localDateStr(at(7)), localDateStr(at(8))];
     const careLog = perfectDates.map((d) =>
-      makeCareDay(d, "perfect", { studied: studiedDays.includes(d), fed: 0.5, clean: 0.6 }),
+      makeCareDay(d, "perfect", { studied: studiedDays.includes(d), fed: 0, clean: 0 }),
     );
     return {
       ...newPet(1, T0),
@@ -1011,6 +1095,107 @@ describe("migrateLegacyPet: additive-only poopCount/poopAccruedAt/poopProgressMs
     expect(migrated.poopCount).toBe(4); // preserved, NOT re-seeded from overdue=999
     expect(migrated.poopAccruedAt).toBe(at(2)); // preserved, NOT reset to `now`
     expect(migrated.poopProgressMs).toBe(0); // freshly backfilled
+  });
+});
+
+// LINGO-053 (2026-09-18): 「過去のcareLogは再解釈（新スコアで再計算できる形なら
+// 遡及）」— starvingMs/feedCount didn't exist before this task, but the OLD
+// per-visit fedSum/fedN samples (design §1 v2's sampling) are still present in
+// any pre-LINGO-053 row, so migrateCareLog() re-interprets them as an
+// approximate feed score under the NEW formula rather than discarding history
+// and starting the pet's care record over from today. dirtyMs/trackedMs need
+// no approximation at all — their meaning is unchanged, so 清潔充足 recomputes
+// EXACTLY under the new grace-period formula.
+describe("migrateCareLog: 遡及 — re-interprets old fedSum/fedN rows under the new formula", () => {
+  it("backfills starvingMs from the legacy per-visit fedRatio as an approximate proxy", () => {
+    const legacyRow = {
+      date: "2026-01-01",
+      stage: "baby" as PetStage,
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: 0,
+      fedSum: 0.8, // legacy: averaged 80% satiety across visit samples
+      fedN: 1,
+    } as unknown as CareDay;
+    const [migrated] = migrateCareLog([legacyRow]);
+    expect(migrated.starvingMs).toBeCloseTo((1 - 0.8) * DAY_MS, 9);
+    expect(migrated.feedCount).toBe(0); // no historical record of feed taps — honest default
+  });
+  it("a legacy row with fedRatio=1 (always fully fed when sampled) backfills to zero starving time", () => {
+    const legacyRow = {
+      date: "2026-01-01",
+      stage: "baby" as PetStage,
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: 0,
+      fedSum: 3,
+      fedN: 3, // ratio = 1
+    } as unknown as CareDay;
+    const [migrated] = migrateCareLog([legacyRow]);
+    expect(migrated.starvingMs).toBeCloseTo(0, 9);
+  });
+  it("dirtyMs/trackedMs pass through untouched — no approximation needed for 清潔充足", () => {
+    const legacyRow = {
+      date: "2026-01-01",
+      stage: "baby" as PetStage,
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: DAY_MS * 0.3,
+      fedSum: 1,
+      fedN: 1,
+    } as unknown as CareDay;
+    const [migrated] = migrateCareLog([legacyRow]);
+    expect(migrated.dirtyMs).toBe(DAY_MS * 0.3);
+    expect(migrated.trackedMs).toBe(DAY_MS);
+  });
+  it("is idempotent — a row already in the new shape passes through with the SAME array reference", () => {
+    const modernRow = makeCareDay("2026-01-01", "baby", { studied: true, fed: 1, clean: 1 });
+    const log = [modernRow];
+    expect(migrateCareLog(log)).toBe(log);
+  });
+  it("an empty careLog returns the same reference", () => {
+    const log: CareDay[] = [];
+    expect(migrateCareLog(log)).toBe(log);
+  });
+  it("a mixed log migrates only the legacy rows, leaving modern rows byte-identical", () => {
+    const modernRow = makeCareDay("2026-01-02", "baby", { studied: true, fed: 1, clean: 1 });
+    const legacyRow = {
+      date: "2026-01-01",
+      stage: "baby" as PetStage,
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: 0,
+      fedSum: 0.5,
+      fedN: 1,
+    } as unknown as CareDay;
+    const [migratedLegacy, migratedModern] = migrateCareLog([legacyRow, modernRow]);
+    expect(migratedLegacy.starvingMs).toBeCloseTo(0.5 * DAY_MS, 9);
+    expect(migratedModern).toEqual(modernRow);
+  });
+  it("migrateLegacyPet composes migrateCareLog automatically (careLog re-migrates even when poop fields are already current)", () => {
+    const legacyRow = {
+      date: "2026-01-01",
+      stage: "baby" as PetStage,
+      studied: true,
+      newCount: 0,
+      reviewCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: 0,
+      fedSum: 0.6,
+      fedN: 1,
+    } as unknown as CareDay;
+    const pet = { ...newPet(1, T0), careLog: [legacyRow] } as any; // poopCount/poopAccruedAt/poopProgressMs already current (from newPet)
+    const migrated = migrateLegacyPet(pet, at(1), 0);
+    expect(migrated.careLog[0].starvingMs).toBeCloseTo((1 - 0.6) * DAY_MS, 9);
+    expect(migrated.careLog[0].feedCount).toBe(0);
   });
 });
 
@@ -1095,3 +1280,124 @@ describe("calendarDayDiff helper", () => {
   });
 });
 
+
+// LINGO-053 (2026-09-18, Katsuta report): "毎日学習・世話しているのに
+// ヨゴレン→トゲロ→バーサ→マオウガと最底辺ルート固定". Root cause: the OLD
+// dailyCareScore = fedRatio × cleanRatio × studiedFlag PRODUCT (design §1 v2,
+// 2026-09-05 — superseded by this task, not carried forward as live code, same
+// as LINGO-032's "poop honesty" suite before it) meant realistic-but-imperfect
+// care on ANY ONE axis tanked the WHOLE day's score.
+//
+// Concrete reproduction against the pre-LINGO-053 engine (captured 2026-09-18,
+// before this task's changes — the exact per-visit-sample fedRatio/dirtyMs
+// mechanism this multiplied together no longer exists in the codebase to
+// re-run live, so this is the recorded evidence rather than a runnable test):
+// a persona opening the app 3×/day (09:00/14:00/21:00), feeding twice/day,
+// cleaning at every open, studying every day, default 23:00-08:00 sleep —
+// scored 0.663 → 0.319 → 0.089 → 0.007 → 0.006 across 5 consecutive days, with
+// stageCareAvg("child") = 0.048 (careTier: "neglect"). That's a learner doing
+// everything right, permanently parked in the 怠 branch.
+describe("care score realism (LINGO-053): old formula's fragility vs. the new one's resilience", () => {
+  it("old formula (documented, not live code): realistic imperfect care compounds toward neglect", () => {
+    const oldFormula = (fedRatio: number, cleanRatio: number, studied: boolean) =>
+      fedRatio * cleanRatio * (studied ? 1 : 0);
+    // A learner who's fed/cleaned well but not perfectly (85% each — a very
+    // reasonable real-world outcome for 2-3 visits/day) already misses "good":
+    expect(oldFormula(0.85, 0.85, true)).toBeLessThan(CARE_GOOD); // 0.7225 < 0.8
+    // A still-clearly-diligent-but-imperfect day (60% each — well within the
+    // range the 2026-09-18 reproduction's actual fedSum/dirtyMs samples fell
+    // to after a couple of days) drops all the way into neglect DESPITE
+    // studying:
+    expect(oldFormula(0.6, 0.6, true)).toBeLessThan(CARE_OK); // 0.36 < 0.4: neglect despite daily study
+  });
+  it("new formula: the SAME 60%/60% realistic-imperfect day scores comfortably above CARE_OK", () => {
+    const day = makeCareDay("d", "child", { studied: true, fed: 0.6, clean: 0.6 });
+    expect(dailyCareScore(day)).toBeGreaterThanOrEqual(CARE_OK);
+    // In fact it's already "good" — one imperfect axis no longer drags the
+    // other two down with it (CARE_WEIGHT_STUDY alone is 1/3 ≈ 0.333, plus
+    // 1/3 of 0.6 twice more ≈ 0.4, totalling 0.733 — see the exact-value test
+    // above in "care scoring" for the precise formula).
+  });
+});
+
+describe("care score realism (LINGO-053): persona simulations pinned to the target tiers", () => {
+  // 毎日型: opens the app 2-3×/day (09:00/14:00/21:00), feeds twice/day,
+  // cleans at every open, studies once/day, real default sleep window
+  // (23:00-08:00 — decay/accrual pause overnight per LINGO-035, so this
+  // persona is exercising the REAL production defaults end to end, not the
+  // sleep-disabled `newPet` shadow most other tests in this file use).
+  it("毎日型 (daily engagement) lands 良 (>=0.8) for both baby and child stages", () => {
+    let p = newPetWithSleep(1, T0);
+    const opens = [9 * H, 14 * H, 21 * H];
+    for (let day = 0; day < 6; day++) {
+      const dayStart = T0 + day * DAY_MS;
+      for (let i = 0; i < opens.length; i++) {
+        const now = dayStart + opens[i];
+        if (i === 0) p = applySession(p, { newCount: 8, reviewCount: 5 }, now).pet;
+        p = tick(p, { now, overdueCount: 2 }).pet;
+        if (i < 2) p = applyFeed(p, now); // 2 feeds/day
+        while (p.poopCount > 0 && p.cleanPoints > 0) p = applyClean(p);
+      }
+    }
+    expect(careTier(stageCareAvg(p.careLog, "baby"))).toBe("good");
+    expect(careTier(stageCareAvg(p.careLog, "child"))).toBe("good");
+  });
+
+  // 週2-3回型: opens/studies/feeds/cleans only every 2 days (~3-4×/week, the
+  // upper end of "2-3回" — any wider gap risks tripping the UNRELATED 3-day
+  // abandonment mechanism, which this persona deliberately stays under so
+  // there's an actual multi-day stage average left to grade). Lighter
+  // engagement per visit than 毎日型 (feeds twice but only once every 2 days,
+  // so satiety genuinely dips for a large fraction of the gap) — a real
+  // "checks in occasionally, doesn't fuss over it" pattern.
+  it("週2-3回型 (occasional engagement) lands 並 (0.4–0.8) for the child stage", () => {
+    let p = newPetWithSleep(1, T0);
+    for (let day = 0; day <= 5; day += 2) {
+      const dayStart = T0 + day * DAY_MS;
+      const now = dayStart + 12 * H;
+      p = applySession(p, { newCount: 8, reviewCount: 9 }, now).pet;
+      p = tick(p, { now, overdueCount: 2 }).pet;
+      p = applyFeed(p, now);
+      p = applyFeed(p, now);
+      while (p.poopCount > 0 && p.cleanPoints > 0) p = applyClean(p);
+    }
+    // child (design §2: age 1-3 days, expectedStageDays=2) is fully covered
+    // by this window's dates without crossing into a THIRD stage's boundary
+    // ambiguity (see mergeCareMs's "no per-historical-day stage tracking"
+    // doc comment — a date's stage tag reflects whichever tick call touched
+    // it, which can lag the exact age-based transition for dates spanned by
+    // an offline catch-up; child's 2 expected dates land cleanly here).
+    expect(careTier(stageCareAvg(p.careLog, "child"))).toBe("ok");
+  });
+
+  // 3日放置型: zero engagement for 3+ consecutive calendar days triggers the
+  // EXISTING early-abandonment mechanism (design §2, tested thoroughly in
+  // "tick: early 旅立ち on 3-day abandonment" above) — this persona's
+  // real-world consequence already IS "旅立ち", which is a stronger and more
+  // immediate signal than a mere neglect-tier stage average. This test pins
+  // that the two systems agree: the abandonment path fires (as already
+  // covered elsewhere), AND separately, dailyCareScore correctly reads a
+  // genuinely untouched day (no study, no feed, no clean — poop and hunger
+  // left to drift) as neglect, so if a future change ever let a pet survive
+  // 3 idle days some other way, the care-tier system would still catch it.
+  it("3日放置型 (abandon) — early departure fires, matching the existing 3-day rule (design §2)", () => {
+    const pet = newPetWithSleep(1, T0); // never studied, never opened again
+    const r = tick(pet, { now: T0 + 3 * DAY_MS, overdueCount: 5 });
+    const depart = r.events.find((e) => e.type === "depart");
+    expect(depart?.reason).toBe("early");
+  });
+  it("3日放置型 — a genuinely untouched day (no study/feed/clean) scores neglect", () => {
+    const untouched: CareDay = {
+      date: "d",
+      stage: "child",
+      studied: false,
+      newCount: 0,
+      reviewCount: 0,
+      feedCount: 0,
+      trackedMs: DAY_MS,
+      dirtyMs: DAY_MS, // never cleaned, poop present the whole day
+      starvingMs: DAY_MS, // never fed, satiety at 0 the whole day
+    };
+    expect(careTier(dailyCareScore(untouched))).toBe("neglect");
+  });
+});

@@ -143,10 +143,42 @@ export const ABANDON_DAYS = 3;
 /** Consecutive study-day streak that unlocks 天使系 (design §3: "連続学習7日"). */
 export const ANGEL_STREAK = 7;
 
-/** Care-score tiers (design §3): 良 ≥0.8 / 並 0.4–0.8 / 怠 <0.4. */
+/** Care-score tiers (design §3): 良 ≥0.8 / 並 0.4–0.8 / 怠 <0.4. Thresholds
+ * unchanged by LINGO-053 — only HOW dailyCareScore is computed changed. */
 export const CARE_GOOD = 0.8;
 export const CARE_OK = 0.4;
 export type CareTier = "good" | "ok" | "neglect"; // 良 / 並 / 怠
+
+// ケアスコア加点式 (LINGO-053, 2026-09-18 再設計): 実運用で「毎日学習している
+// のに最底辺ルート固定」というKatsuta報告の原因は、旧式
+// `fedRatio × cleanRatio × studiedFlag` の掛け算構造——3要素とも「常時ほぼ100%」
+// でない限り積が0.8を割り込み、現実的な世話（1日2〜3回起動・餌2回・都度掃除・
+// 毎日学習）でも0.05前後まで沈むことをペルソナシミュレーションで再現・実証
+// （engine.test.ts "care score realism (LINGO-053)" 参照）。
+// 加点式に変更: 学習 + 給餌充足 + 清潔充足の3要素を均等加重（各1/3）。各要素は
+// 独立に0..1で評価するため、1要素が完璧でなくても他要素が満点なら救われる
+// （旧式の「一つでも欠けると全滅」を解消）。均等加重を選んだ理由: 3要素合計
+// 0.4+0.3+0.3のような不均等配分だと、studied=trueだけでスコア下限が0.4
+// （＝CARE_OKちょうど）になり、「怠のまま完全体を維持した（学習だけは毎日した
+// が給餌・清潔は放置）」隠し到達＝マオウガ条件（怠タイア×studiedEveryDayInStage）
+// が構造的に到達不能になってしまう（studied=trueの日は必ずscore>=0.4=並以上に
+// なるため）。均等加重（1/3ずつ）なら学習のみの日はスコア1/3(<0.4)で怠タイアを
+// 維持でき、マオウガ・ルミナの隠し条件が従来どおり機能する。
+/** 日次スコアの「学習した」重み。 */
+export const CARE_WEIGHT_STUDY = 1 / 3;
+/** 日次スコアの「給餌充足」重み。 */
+export const CARE_WEIGHT_FEED = 1 / 3;
+/** 日次スコアの「清潔充足」重み。 */
+export const CARE_WEIGHT_CLEAN = 1 / 3;
+/** 給餌充足の判定基準1: 起床時間中、満腹度>0だった時間の割合がこれ以上で満点。 */
+export const CARE_FEED_RATIO_TARGET = 0.7;
+/** 給餌充足の判定基準2（OR）: その日の「あげる」回数がこれ以上で満点
+ * （比率条件を満たさなくても、実際に給餌行動を取っていれば救済）。 */
+export const CARE_FEED_COUNT_TARGET = 2;
+/** 清潔充足の猶予時間: うんこが発生してもこの時間内に掃除すれば無罪
+ * （「発生→次に開いた時に掃除、は無罪」）。この猶予を超えた放置時間だけが
+ * 減点対象になる。 */
+export const CARE_CLEAN_GRACE_MS = 4 * 60 * 60 * 1000;
 
 /** Age (in real-time days) at which each stage BEGINS, and the departure age.
  * Stages advance on real elapsed time; the daily study habit (streak, abandon)
@@ -168,25 +200,30 @@ export interface PetSettings {
   sleepEndHour: number;
 }
 
-/** One calendar day of care history. dailyCareScore = fedRatio × cleanRatio ×
- * studiedFlag (design §1). `studied` is set by a committed learning session
- * that day. fedRatio is still the MEAN of per-visit satiety samples (tick()
- * samples once per screen view); cleanRatio (v2, 2026-09-05) is now TIME-
- * WEIGHTED — trackedMs/dirtyMs accumulate real elapsed ms as advancePoop()
- * catches the poop stock up, so "放置していた時間割合" is measured directly
- * instead of sampled per visit. */
+/** One calendar day of care history. dailyCareScore (LINGO-053, 2026-09-18) is
+ * an ADDITIVE 学習 + 給餌充足 + 清潔充足, equally weighted (1/3 each) — see the
+ * CARE_WEIGHT_* / CARE_FEED_* / CARE_CLEAN_GRACE_MS constants. `studied` is set by
+ * a committed learning session that day. trackedMs/dirtyMs/starvingMs are all
+ * TIME-WEIGHTED over awake elapsed ms (design §1/§2 v3) — accumulated as
+ * advanceCare() catches the pet up on each tick(), not sampled per visit. */
 export interface CareDay {
   date: string; // local YYYY-MM-DD
   stage: PetStage; // stage the pet was in when this day was first recorded
   studied: boolean;
   newCount: number; // new cards graded that day (→ learning tendency N/R)
   reviewCount: number; // review cards graded that day
-  fedSum: number; // Σ satiety-fraction samples (0..1)
-  fedN: number;
-  /** ms of this day covered by an accrual pass (tick() catch-up spans). */
+  /** 餌をあげる taps recorded this date (LINGO-053: the count-based half of
+   * the "給餌充足" OR-test — see CARE_FEED_COUNT_TARGET). Incremented by
+   * applyFeed() directly (the only action outside tick() that writes careLog). */
+  feedCount: number;
+  /** ms of this day covered by an accrual pass (tick() catch-up spans) — the
+   * shared denominator for BOTH dirtyMs and starvingMs below. */
   trackedMs: number;
   /** Of trackedMs, how many ms had poopCount > 0 (the pet was "dirty"). */
   dirtyMs: number;
+  /** Of trackedMs, how many ms had satiety <= 0 (the pet was "starving") —
+   * LINGO-053: the ratio-based half of 給餌充足 is 1 − starvingMs/trackedMs. */
+  starvingMs: number;
 }
 
 export interface PetState {
@@ -449,39 +486,57 @@ function splitAwakeByLocalDate(sw: SleepWindow, startMs: number, endMs: number):
   return out;
 }
 
-interface PoopAdvance {
+interface CareAdvance {
   poopCount: number;
   poopAccruedAt: number;
   poopProgressMs: number;
   trackedByDate: Map<string, number>;
   dirtyByDate: Map<string, number>;
+  /** LINGO-053: per-date awake-ms with satiety<=0 — the time-weighted half of
+   * 給餌充足 (see CareDay.starvingMs). */
+  starvingByDate: Map<string, number>;
 }
 
-/** Catch the poop stock up to `now`.
+/** Catch the pet up to `now`: both the poop stock/dirty-time bookkeeping
+ * (unchanged since v3) AND — new in LINGO-053 — the hunger/starving-time
+ * bookkeeping that replaced the old per-visit fedSum/fedN sampling. Computed
+ * together because both are folded into the SAME trackedMs-denominated
+ * per-date buckets over the SAME [poopAccruedAt, now) span; `poopAccruedAt`
+ * (despite the poop-specific name — kept to avoid a mechanical rename across
+ * the whole file/tests) is really the general "care-log processing
+ * checkpoint" and always advances to `now`, so nothing here double-counts
+ * across visits (see PetState.poopAccruedAt's doc comment for the LINGO-035
+ * bug this already fixed for the poop side).
  *
- * Two checkpoints are tracked SEPARATELY on purpose (v3, 2026-09-08 fix — see
- * PetState.poopProgressMs's doc comment): `poopAccruedAt` is the care-log
- * processing checkpoint and ALWAYS advances to `now`, so trackedMs/dirtyMs
- * (both awake-ms only — design §1/§2 v3) are folded into careLog exactly
- * once per real elapsed span, never re-counted across visits. `poopProgressMs`
- * is the awake-ms accumulated toward the next spawn (at the CURRENT
- * overdueCount's rate — poopIntervalMs) and carries any sub-interval leftover
- * forward across calls — otherwise a learner who opens the app more often
- * than the spawn interval (any visit that finds no new poop) would either
- * lose that progress (undercounting future spawns) or, if the checkpoint
- * were naively reused for both purposes, cause the SAME already-recorded
- * time span to be folded into careLog again on every subsequent visit
- * (a real bug this fixes: it used to only advance the shared checkpoint by
- * whole intervals, so any call with zero NEW spawns left it stuck, and the
- * next call's [stuck, now) span re-included time already recorded).
- * While the stock is at MAX_POOP no further progress is banked — it resets
- * to 0 instead — so cleaning down from a full stock doesn't cause an
- * unearned instant refill from backlog. */
-function advancePoop(pet: PetState, now: number, overdueCount: number): PoopAdvance {
+ * Starving-time math mirrors the poop-dirty math exactly (a span that starts
+ * "fine" and, once a threshold is crossed, stays "bad" for the remainder):
+ * `satietyAt(pet, from)` gives the satiety AT the checkpoint using the pet's
+ * CURRENT hunger/lastFedAt curve — if a feed happened between the checkpoint
+ * and `from` (same-visit, negligible gap), `awakeMs(lastFedAt, from)` clamps
+ * to 0 and this reads as "fully fed at from", the same optimistic
+ * approximation the poop side's `oldPoop` snapshot already relies on for an
+ * identical reason. From there, satiety decays linearly and (if it will) hits
+ * 0 after `satietyAtFrom × HUNGER_DECAY_MS / 100` of awake time — the elapsed
+ * span beyond that point is "starving". */
+function advanceCare(pet: PetState, now: number, overdueCount: number): CareAdvance {
   const sw = resolveSleepWindow(pet.settings);
   const from = Math.min(pet.poopAccruedAt, now); // guard a clock that moved backward
   const trackedByDate = splitAwakeByLocalDate(sw, from, now);
   const elapsed = awakeMs(sw, from, now);
+
+  let starvingByDate = new Map<string, number>();
+  if (elapsed > 0) {
+    const satietyAtFrom = satietyAt(pet, from);
+    let starvingFrom: number | null = null;
+    if (satietyAtFrom <= 0) {
+      starvingFrom = from; // already starving for the whole span
+    } else {
+      const msToZero = (satietyAtFrom * HUNGER_DECAY_MS) / 100;
+      if (elapsed > msToZero) starvingFrom = advanceAwakeMs(sw, from, msToZero);
+    }
+    if (starvingFrom != null) starvingByDate = splitAwakeByLocalDate(sw, starvingFrom, now);
+  }
+
   if (elapsed <= 0) {
     return {
       poopCount: pet.poopCount,
@@ -489,6 +544,7 @@ function advancePoop(pet: PetState, now: number, overdueCount: number): PoopAdva
       poopProgressMs: pet.poopProgressMs,
       trackedByDate,
       dirtyByDate: new Map(),
+      starvingByDate,
     };
   }
 
@@ -512,30 +568,33 @@ function advancePoop(pet: PetState, now: number, overdueCount: number): PoopAdva
   const dirtyFrom = dirtyFromAwakeOffset == null ? null : advanceAwakeMs(sw, from, dirtyFromAwakeOffset);
   const dirtyByDate = dirtyFrom == null ? new Map<string, number>() : splitAwakeByLocalDate(sw, dirtyFrom, now);
 
-  return { poopCount, poopAccruedAt: now, poopProgressMs, trackedByDate, dirtyByDate };
+  return { poopCount, poopAccruedAt: now, poopProgressMs, trackedByDate, dirtyByDate, starvingByDate };
 }
 
-/** Merge a (possibly multi-day) tracked/dirty span into careLog — creating any
- * missing day rows (tagged with the CURRENT stage, same simplification the
- * fed sampling already makes: no per-historical-day stage tracking). */
+/** Merge a (possibly multi-day) tracked/dirty/starving span into careLog —
+ * creating any missing day rows (tagged with the CURRENT stage, same
+ * simplification the rest of the file already makes: no per-historical-day
+ * stage tracking). */
 function mergeCareMs(
   careLog: CareDay[],
   stage: PetStage,
   tracked: Map<string, number>,
   dirty: Map<string, number>,
+  starving: Map<string, number>,
 ): CareDay[] {
   if (tracked.size === 0) return careLog;
   const log = careLog.slice();
   for (const [date, ms] of tracked) {
     let i = log.findIndex((d) => d.date === date);
     if (i < 0) {
-      log.push({ date, stage, studied: false, newCount: 0, reviewCount: 0, fedSum: 0, fedN: 0, trackedMs: 0, dirtyMs: 0 });
+      log.push({ date, stage, studied: false, newCount: 0, reviewCount: 0, feedCount: 0, trackedMs: 0, dirtyMs: 0, starvingMs: 0 });
       i = log.length - 1;
     }
     log[i] = {
       ...log[i],
       trackedMs: log[i].trackedMs + ms,
       dirtyMs: log[i].dirtyMs + (dirty.get(date) ?? 0),
+      starvingMs: log[i].starvingMs + (starving.get(date) ?? 0),
     };
   }
   return log;
@@ -573,17 +632,48 @@ export function onSessionCommitted(
 
 // MARK: care scoring (design §1 & §3)
 
+/** Daily care score (LINGO-053, 2026-09-18 rebalance): ADDITIVE
+ * 学習(CARE_WEIGHT_STUDY) + 給餌充足(CARE_WEIGHT_FEED) + 清潔充足(CARE_WEIGHT_CLEAN),
+ * replacing the old fedRatio×cleanRatio×studiedFlag PRODUCT — see the
+ * CARE_WEIGHT_* / CARE_FEED_* / CARE_CLEAN_GRACE_MS constants' doc comments for
+ * why (a multiplicative score meant realistic-but-imperfect care on any ONE
+ * axis tanked the whole day's score; a persona simulation of daily study +
+ * twice-daily feeding + prompt cleaning still cratered to ~0.05, matching
+ * Katsuta's 2026-09-18 report of a permanently-neglect-tier pet despite daily
+ * engagement — engine.test.ts's "care score realism" suite reproduces this).
+ *
+ * - 給餌充足 = max(ratio-based, count-based), each capped at 1: the ratio path
+ *   rewards keeping satiety>0 for ≥CARE_FEED_RATIO_TARGET of the tracked time;
+ *   the count path independently rewards ≥CARE_FEED_COUNT_TARGET actual
+ *   「あげる」taps that day — either alone is full marks, so a day that's
+ *   fed twice but had an unlucky dip still scores well.
+ * - 清潔充足 = 1 − (dirtyMs beyond CARE_CLEAN_GRACE_MS) / trackedMs: the first
+ *   CARE_CLEAN_GRACE_MS of any dirty stretch is free ("発生→次に開いた時に掃除、
+ *   は無罪") — only prolonged neglect beyond the grace window is penalized.
+ *
+ * Defensive `?? 0` on every raw field: covers CareDay rows persisted before
+ * LINGO-053 (starvingMs/feedCount didn't exist yet) that somehow reach this
+ * function without going through migrateCareLog() first — same belt-and-
+ * suspenders convention trackedMs/dirtyMs already used for pre-v2 rows. The
+ * normal path is migrateCareLog() backfilling those fields once, on load. */
 export function dailyCareScore(day: CareDay): number {
-  const fedRatio = day.fedN > 0 ? day.fedSum / day.fedN : 0;
-  // v2 (2026-09-05): cleanRatio = fraction of the day's TRACKED time that was
-  // NOT dirty (poopCount > 0) — "放置していた時間割合" per the UX fix, not a
-  // per-visit sample average. Days with no tracked ms (defensive: covers
-  // pre-v2 persisted rows missing these fields too) score as neglected (0),
-  // same treatment expectedStageDays already gives to unopened days.
   const trackedMs = day.trackedMs ?? 0;
   const dirtyMs = day.dirtyMs ?? 0;
-  const cleanRatio = trackedMs > 0 ? Math.max(0, 1 - dirtyMs / trackedMs) : 0;
-  return fedRatio * cleanRatio * (day.studied ? 1 : 0);
+  const starvingMs = day.starvingMs ?? 0;
+  const feedCount = day.feedCount ?? 0;
+
+  const studyScore = day.studied ? 1 : 0;
+
+  const excessDirtyMs = Math.max(0, dirtyMs - CARE_CLEAN_GRACE_MS);
+  const cleanScore = trackedMs > 0 ? Math.max(0, 1 - excessDirtyMs / trackedMs) : 0;
+
+  const notStarvingRatio = trackedMs > 0 ? Math.max(0, 1 - starvingMs / trackedMs) : 0;
+  const feedScore = Math.max(
+    Math.min(1, notStarvingRatio / CARE_FEED_RATIO_TARGET),
+    Math.min(1, feedCount / CARE_FEED_COUNT_TARGET),
+  );
+
+  return CARE_WEIGHT_STUDY * studyScore + CARE_WEIGHT_FEED * feedScore + CARE_WEIGHT_CLEAN * cleanScore;
 }
 
 /** How many calendar days a stage is expected to last (its share of the 12-day
@@ -760,11 +850,13 @@ export function migrateLegacyPet(
   now: number,
   overdueCountForMigration: number,
 ): PetState {
-  if (
+  const migratedCareLog = migrateCareLog(existing.careLog);
+  const needsPoopMigration = !(
     typeof existing.poopCount === "number" &&
     typeof existing.poopAccruedAt === "number" &&
     typeof existing.poopProgressMs === "number"
-  ) {
+  );
+  if (!needsPoopMigration && migratedCareLog === existing.careLog) {
     return existing as PetState;
   }
   return {
@@ -772,7 +864,40 @@ export function migrateLegacyPet(
     poopCount: existing.poopCount ?? Math.min(MAX_POOP, Math.max(0, Math.floor(overdueCountForMigration))),
     poopAccruedAt: existing.poopAccruedAt ?? now,
     poopProgressMs: existing.poopProgressMs ?? 0,
+    careLog: migratedCareLog,
   };
+}
+
+/** Backfill starvingMs/feedCount (LINGO-053, 2026-09-18 care-score rebalance)
+ * on CareDay rows persisted before they existed. This is the "遡及" the task
+ * asked for: old careLog rows ARE re-interpreted under the new additive
+ * formula wherever the stored samples make that possible, not just started
+ * fresh from today. It's an APPROXIMATION, not an exact replay — a
+ * time-weighted starvingMs can't be exactly reconstructed from the OLD
+ * per-visit point-samples (fedSum/fedN), so the legacy per-visit satiety
+ * average stands in as a proxy for the new time-weighted not-starving ratio:
+ * `starvingMs ≈ (1 − legacyFedRatio) × trackedMs`. `feedCount` (how many
+ * times 餌をあげる was tapped) has no historical record at all and defaults
+ * to 0 — old days can only earn 給餌充足 credit via the ratio proxy, never
+ * the count path, until fresh post-migration data accrues. dirtyMs/trackedMs
+ * (清潔充足's inputs) are untouched by this function — their MEANING didn't
+ * change, so they recompute exactly under the new grace-period formula with
+ * no approximation needed. Idempotent: returns the SAME array reference when
+ * every row already has real starvingMs/feedCount. */
+export function migrateCareLog(careLog: CareDay[]): CareDay[] {
+  let changed = false;
+  const migrated = careLog.map((d) => {
+    const legacy = d as CareDay & { fedSum?: number; fedN?: number };
+    if (typeof legacy.starvingMs === "number" && typeof legacy.feedCount === "number") return d;
+    changed = true;
+    const trackedMs = legacy.trackedMs ?? 0;
+    const legacyFedRatio = (legacy.fedN ?? 0) > 0 ? (legacy.fedSum ?? 0) / legacy.fedN! : 0;
+    const starvingMs =
+      legacy.starvingMs ?? Math.max(0, Math.min(trackedMs, (1 - legacyFedRatio) * trackedMs));
+    const feedCount = legacy.feedCount ?? 0;
+    return { ...d, starvingMs, feedCount };
+  });
+  return changed ? migrated : careLog;
 }
 
 // MARK: economy caps (LINGO-034, 2026-09-07)
@@ -800,7 +925,7 @@ function ensureToday(careLog: CareDay[], now: number, stage: PetStage): { log: C
   const i = careLog.findIndex((d) => d.date === date);
   if (i >= 0) return { log: careLog.slice(), i };
   const log = careLog.slice();
-  log.push({ date, stage, studied: false, newCount: 0, reviewCount: 0, fedSum: 0, fedN: 0, trackedMs: 0, dirtyMs: 0 });
+  log.push({ date, stage, studied: false, newCount: 0, reviewCount: 0, feedCount: 0, trackedMs: 0, dirtyMs: 0, starvingMs: 0 });
   return { log, i: log.length - 1 };
 }
 
@@ -810,7 +935,14 @@ function ensureToday(careLog: CareDay[], now: number, stage: PetStage): { log: C
 export function applyFeed(pet: PetState, now: number): PetState {
   if (pet.foodCount <= 0) return pet;
   const restored = Math.min(100, satietyAt(pet, now) + FEED_RESTORE);
-  return { ...pet, hunger: restored, lastFedAt: now, foodCount: pet.foodCount - 1 };
+  // LINGO-053: record the feed into today's CareDay row — the count-based
+  // half of 給餌充足 (see dailyCareScore/CARE_FEED_COUNT_TARGET). applyFeed is
+  // the only action besides applySession that writes careLog directly (poop/
+  // hunger time-weighting is exclusively tick()'s concern via advanceCare()).
+  const stage = pet.stage === "egg" ? "baby" : pet.stage;
+  const { log, i } = ensureToday(pet.careLog, now, stage);
+  log[i] = { ...log[i], feedCount: log[i].feedCount + 1 };
+  return { ...pet, hunger: restored, lastFedAt: now, foodCount: pet.foodCount - 1, careLog: log };
 }
 
 /** 掃除する: 掃除P 1個 = うんこ在庫1個を確実に削除（design §1 v2, 2026-09-05）。
@@ -894,37 +1026,26 @@ export function tick(pet: PetState, ctx: { now: number; overdueCount: number }):
     }
   }
 
-  // 2. Catch the poop stock up to `now` (design §1 v2) — spawns since the last
-  // accrual checkpoint at the current overdueCount's rate, plus the
-  // time-weighted dirty/tracked ms this contributes to the care log.
+  // 2. Catch the pet up to `now` — poop stock (spawns since the last accrual
+  // checkpoint at the current overdueCount's rate) AND hunger/starving time
+  // (LINGO-053), both folded into the care log as time-weighted awake-ms.
   {
-    const adv = advancePoop(p, now, overdueCount);
+    const adv = advanceCare(p, now, overdueCount);
     p = {
       ...p,
       poopCount: adv.poopCount,
       poopAccruedAt: adv.poopAccruedAt,
       poopProgressMs: adv.poopProgressMs,
-      careLog: mergeCareMs(p.careLog, p.stage, adv.trackedByDate, adv.dirtyByDate),
+      careLog: mergeCareMs(p.careLog, p.stage, adv.trackedByDate, adv.dirtyByDate, adv.starvingByDate),
     };
   }
 
-  // 3. Sample today's satiety into the care log (once per visit — unchanged).
-  {
-    const { log, i } = ensureToday(p.careLog, now, p.stage);
-    log[i] = {
-      ...log[i],
-      fedSum: log[i].fedSum + satietyAt(p, now) / 100,
-      fedN: log[i].fedN + 1,
-    };
-    p = { ...p, careLog: log };
-  }
-
-  // 4. Early 旅立ち — 3+ consecutive calendar days without study (design §2).
+  // 3. Early 旅立ち — 3+ consecutive calendar days without study (design §2).
   if (daysSinceStudy(p, now) >= ABANDON_DAYS) {
     return depart(p, now, "early", events);
   }
 
-  // 5. Evolutions: step through every stage boundary the age has crossed.
+  // 4. Evolutions: step through every stage boundary the age has crossed.
   const target = stageForAgeDays(ageDays(p, now));
   const targetIndex = target === "depart" ? STAGE_ORDER.length : STAGE_ORDER.indexOf(target);
   while (STAGE_ORDER.indexOf(p.stage) < targetIndex && STAGE_ORDER.indexOf(p.stage) < STAGE_ORDER.length - 1) {
@@ -945,7 +1066,7 @@ export function tick(pet: PetState, ctx: { now: number; overdueCount: number }):
     events.push({ type: "evolve", speciesId: species, stage: toStage, generation: p.generation, at: now });
   }
 
-  // 6. Natural 旅立ち at day 12 (design §2).
+  // 5. Natural 旅立ち at day 12 (design §2).
   if (target === "depart") {
     return depart(p, now, "natural", events);
   }
