@@ -15,7 +15,8 @@
     "postbuild": "node scripts/patch-sw-version.mjs",
     "preview": "vite preview --port 4173",
     "test": "vitest run",
-    "ui-audit": "node scripts/ui-audit.mjs"
+    "ui-audit": "node scripts/ui-audit.mjs",
+    "audit:glosses": "node scripts/audit-glosses.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -343,7 +343,7 @@ export function FlashcardCard({
  * byte (front=en + UI=ja), collapses to one gloss when the two axes agree, and
  * falls back to en (then ja, only if they read it) when the pack happens to
  * have no gloss in either chosen language. */
-function orderedGloss(w: WordBreakdownEntry, frontLang: Lang, uiLang: Lang): string {
+export function orderedGloss(w: WordBreakdownEntry, frontLang: Lang, uiLang: Lang): string {
   const glossOf = (l: Lang) => (l === "ja" ? w.jaGloss : l === "ru" ? w.ruGloss : w.enGloss);
   const chosen: Lang[] = frontLang === uiLang ? [frontLang] : [frontLang, uiLang];
   const picked = chosen.map(glossOf).filter((g): g is string => !!g);

@@ -181,6 +181,52 @@ function sentenceTokenCount(s, targetLang) {
 // deck is restricted.
 const MAX_SENTENCE_TOKENS = 8; // safety net only now — core rows are always ≤8 by construction.
 
+// LINGO-054: field name for each selectable front/UI language's gloss slot.
+const GLOSS_FIELD = { en: "enGloss", ja: "jaGloss", ru: "ruGloss" };
+
+// Same "obviously not a real translation" placeholder set as
+// pipeline/rebaseline (and web/scripts/audit-glosses.mjs) — null/undefined,
+// empty/whitespace-only, or a bare placeholder token. Deliberately NOT
+// flagging short-but-legitimate glosses (digits for number words, acronyms
+// like "FBI"/"DNA" with no natural CJK/Cyrillic expansion) — see
+// audit-glosses.mjs's broader, allowlist-aware sibling check for that softer
+// "suspicious" class, run separately (not a build gate) via
+// `npm run audit:glosses`.
+const PLACEHOLDER_RE = /^(-+|\?+|n\/?a|todo|null|undefined|tbd|xxx+)$/i;
+
+function isMissingGloss(value) {
+  if (value == null) return true;
+  if (typeof value !== "string") return true;
+  const trimmed = value.trim();
+  if (trimmed === "") return true;
+  if (PLACEHOLDER_RE.test(trimmed)) return true;
+  return false;
+}
+
+/** Throws if any word is missing a gloss in a language its own course's
+ * front can be set to (deckConfig.availableFrontLangs) — see the call site
+ * in buildDeck() for why this exists (LINGO-054). Exported for direct
+ * testing (web/src/content/glossCompleteness.test.ts). */
+export function validateGlossCompleteness(words, deckConfig) {
+  const requiredFields = deckConfig.availableFrontLangs.map((l) => GLOSS_FIELD[l]);
+  const missing = [];
+  for (const w of words) {
+    for (const field of requiredFields) {
+      if (isMissingGloss(w[field])) {
+        missing.push(`${w.lemma} (id=${w.id}, band=${w.band}) missing ${field}`);
+      }
+    }
+  }
+  if (missing.length > 0) {
+    const shown = missing.slice(0, 20).join("\n  ");
+    const more = missing.length > 20 ? `\n  ...and ${missing.length - 20} more` : "";
+    throw new Error(
+      `[${deckConfig.courseId}] ${missing.length} word(s) missing a required gloss ` +
+        `(availableFrontLangs=${deckConfig.availableFrontLangs.join(",")}):\n  ${shown}${more}`,
+    );
+  }
+}
+
 // Categorises a source file for the build-log breakdown (notes / lessons /
 // generated) — cosmetic only, doesn't affect which sentences are kept.
 function originCategory(path) {
@@ -448,6 +494,21 @@ export function buildDeck(dataDir = RU_DECK.dataDir, deckConfig = RU_DECK) {
   }
 
   const bands = [...new Set(sentences.map((s) => s.band))].sort((a, b) => a - b);
+
+  // LINGO-054: Katsuta reported a card's word-breakdown showing no English/
+  // Japanese translation for продать. Root cause turned out to be neither
+  // (that lemma's data was complete and the rendering chain resolved it
+  // correctly — likely a stale cached PWA bundle on his device), but the
+  // audit that chased it down found the project had NO build-time guarantee
+  // that every word actually carries the gloss(es) its own course requires —
+  // a future data-entry gap (new words added without one of the two
+  // availableFrontLangs glosses) would ship silently and only surface as a
+  // blank line on a real device, exactly like this report. Fail the build
+  // instead: every word must carry a non-empty gloss in EVERY language the
+  // course's front can be set to (a learner can pick either), checked here
+  // unconditionally (not just under `npm test`) so `npm run gen:content`
+  // itself refuses to produce a deck with the gap.
+  validateGlossCompleteness(words, deckConfig);
 
   return {
     code: deckConfig.code,
