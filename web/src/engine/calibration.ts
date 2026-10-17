@@ -167,51 +167,45 @@ export function scoreSentence(
 
 // --- Review -> knowledge feedback -------------------------------------------
 
-function lowestNotKnownLemma(
-  s: Sentence,
-  wordById: Map<number, DeckWord>,
-  knowledge: KnowledgeMap,
-): string | null {
-  let best: DeckWord | null = null;
-  let fallback: DeckWord | null = null;
-  for (const wid of s.wordIds) {
-    const w = wordById.get(wid);
-    if (!w) continue;
-    if (fallback == null || rankOf(w) < rankOf(fallback)) fallback = w;
-    const st = knowledge.get(w.lemma) ?? "unset";
-    if (st !== "known" && (best == null || rankOf(w) < rankOf(best))) best = w;
-  }
-  return (best ?? fallback)?.lemma ?? null;
-}
-
 export interface CardOutcome {
   sentence: Sentence;
   /** True if the card was rated Again at any point this session. */
   again: boolean;
 }
 
-/** Derive knowledge updates from a finished session. Again -> mark the sentence's
- * target lemma (or, lacking one, its lowest-rank not-known word) unknown;
- * clean Good pass -> mark the target lemma known. Unknown wins collisions. */
-export function knowledgeUpdatesFromOutcomes(
-  outcomes: CardOutcome[],
-  wordById: Map<number, DeckWord>,
-  knowledge: KnowledgeMap,
-  now: number,
-): WordKnowledge[] {
+/** Derive knowledge updates from a finished session: Again -> mark the
+ * sentence's target lemma unknown; clean Good pass -> mark it known. Unknown
+ * wins collisions (if the same lemma appears as both a clean pass and an
+ * Again in one batch — e.g. two different target sentences for the same
+ * word — the Again is the more cautious/conservative signal).
+ *
+ * A sentence with NO target lemma (imported notes/lessons — design: a
+ * "sentence" row counts as "notes" exactly when it has no target_lemma, see
+ * scripts/build-content.mjs) produces NO update at all, for EITHER rating.
+ * This was NOT always true: before the LINGO-055 fix (2026-10-17), an Again
+ * on a targetless sentence used to fall back to "demote the lowest-rank
+ * NOT-YET-known word in the sentence" — and critically, when EVERY word in
+ * the sentence was already known (the fallback's "best" candidate search
+ * finds nothing, since it explicitly skips known words), it fell through to
+ * demoting the lowest-rank word regardless of status, silently flipping an
+ * already-known basic word (rank 1-ish — "я"/"ты"/"здесь"-class) back to
+ * unknown. Katsuta's 2026-10-17 report ("覚えた語が280→240に漸減、超基礎文が
+ * 再出題される", explicitly NOT a forgetting-check self-correction — he never
+ * marked those words unknown) traced to exactly this: every honest Again on
+ * a hard IMPORTED note sentence (which never carries a target_lemma) was
+ * collateral-demoting whichever basic word in it happened to have the lowest
+ * rank, both shrinking the known count and reopening that word's sentences
+ * as "new" cards. The fix: a word's status may ONLY be touched by a session
+ * outcome on THAT WORD'S OWN target sentence — symmetric with the Good/known
+ * branch, which already required this. No fallback, no collateral unset- or
+ * known-word demotion. See engine/calibration.test.ts's "LINGO-055" suite for
+ * the reproduction + regression coverage. */
+export function knowledgeUpdatesFromOutcomes(outcomes: CardOutcome[], now: number): WordKnowledge[] {
   const byLemma = new Map<string, WordKnowledge>();
   for (const { sentence, again } of outcomes) {
-    let lemma: string | null;
-    let status: KnowledgeStatus;
-    if (again) {
-      status = "unknown";
-      lemma = sentence.targetLemma ?? lowestNotKnownLemma(sentence, wordById, knowledge);
-    } else {
-      if (!sentence.targetLemma) continue;
-      lemma = sentence.targetLemma;
-      status = "known";
-    }
-    if (!lemma) continue;
+    if (!sentence.targetLemma) continue;
+    const lemma = sentence.targetLemma;
+    const status: KnowledgeStatus = again ? "unknown" : "known";
     const prev = byLemma.get(lemma);
     if (prev && prev.status === "unknown") continue; // unknown takes precedence
     byLemma.set(lemma, { lemma, status, updatedAt: now, source: "review" });
@@ -224,4 +218,70 @@ export function judgedCount(knowledge: KnowledgeMap): number {
   let n = 0;
   for (const st of knowledge.values()) if (st !== "unset") n += 1;
   return n;
+}
+
+// --- LINGO-055 repair: collateral known→unknown demotions from the removed
+// "no target lemma -> demote the lowest-rank word" fallback -----------------
+
+/** 直近1ヶ月 — only recently-touched rows are repair candidates (the
+ * coordinator's scoping: older corruption is harder to attribute confidently
+ * either way, and the bug was presumably always present, so "recent" isn't
+ * about when the bug shipped — it's about keeping the repair conservative). */
+export const REPAIR_RECENCY_MS = 30 * DAY_MS;
+/** "rank上位" — basic/common vocabulary. The fallback bug could only ever
+ * demote the LOWEST-rank word in whatever sentence was rated Again, which is
+ * — almost by construction — a common/basic word, not an obscure one. */
+export const REPAIR_RANK_THRESHOLD = 1000;
+
+/** Find wordKnowledge rows that are LIKELY collateral damage from the
+ * pre-LINGO-055 fallback (see knowledgeUpdatesFromOutcomes's doc comment)
+ * rather than a genuine Again on the word's own target sentence. A lemma is
+ * flagged when ALL of:
+ *  - its row has status "unknown" and source "review" (the only path the
+ *    fallback could have taken — calibration/placement judgements, and
+ *    anything already "known", are untouched);
+ *  - that row was updated within REPAIR_RECENCY_MS (直近1ヶ月);
+ *  - the word is "rank上位" (rank <= REPAIR_RANK_THRESHOLD);
+ *  - NO ReviewState for any of the word's OWN target sentences shows
+ *    lapses > 0 — i.e. there is no confirmable record of the learner ever
+ *    actually failing THIS word's own target card. (GateSession rows carry
+ *    only session-level aggregates — total questions/correct, no per-card or
+ *    per-lemma detail — so they cannot help confirm or rule out any specific
+ *    lemma; ReviewState.lapses, incremented on every Again, is the FSRS
+ *    engine's only per-sentence signal, and via targetLemma the only
+ *    per-lemma one.)
+ * Returns ONLY the lemma to flag — downgrading it is the caller's job
+ * (state/service.ts), and only ever to "unset", never back to "known": this
+ * function has no basis to conclude the word IS known, only that the
+ * "unknown" we currently have on file is unconfirmed. "unset" just means
+ * "re-judge me next time" (placement or a future review) — the safe default. */
+export function findCollateralDemotions(
+  knowledgeRows: WordKnowledge[],
+  reviewStates: ReviewState[],
+  sentences: Sentence[],
+  wordByLemma: Map<string, DeckWord>,
+  now: number,
+): string[] {
+  const targetLemmaBySentenceId = new Map<string, string>();
+  for (const s of sentences) {
+    if (s.targetLemma) targetLemmaBySentenceId.set(s.id, s.targetLemma);
+  }
+
+  const confirmedLemmas = new Set<string>();
+  for (const rs of reviewStates) {
+    if (rs.lapses <= 0) continue;
+    const lemma = targetLemmaBySentenceId.get(rs.sentenceId);
+    if (lemma) confirmedLemmas.add(lemma);
+  }
+
+  const out: string[] = [];
+  for (const row of knowledgeRows) {
+    if (row.status !== "unknown" || row.source !== "review") continue;
+    if (now - row.updatedAt > REPAIR_RECENCY_MS) continue;
+    const rank = wordByLemma.get(row.lemma)?.rank;
+    if (rank == null || rank > REPAIR_RANK_THRESHOLD) continue;
+    if (confirmedLemmas.has(row.lemma)) continue; // a real Again IS on file — leave it
+    out.push(row.lemma);
+  }
+  return out;
 }

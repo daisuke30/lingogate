@@ -9,7 +9,7 @@ import type { MasteryStats } from "../engine/mastery";
 import { FSRS } from "../engine/fsrs";
 import { buildGateSession, buildNotesSession, GateSessionRunner } from "../engine/session";
 import { SeededRNG } from "../engine/rng";
-import { knowledgeUpdatesFromOutcomes } from "../engine/calibration";
+import { knowledgeUpdatesFromOutcomes, findCollateralDemotions } from "../engine/calibration";
 import { evaluateBandPromotion, wordsToPromotion } from "../engine/bandPromotion";
 import type { BandProgress } from "../engine/bandPromotion";
 import { BOOTSTRAP_DECK, DEFAULT_COURSE_ID, resolveCourse } from "../content/courses";
@@ -22,6 +22,8 @@ import {
   getAllGateSessions,
   getAllWordKnowledge,
   putWordKnowledge,
+  getMeta,
+  setMeta,
 } from "../db/idb";
 // LINGO-031: a committed (or partially-committed) study session earns 育成
 // 餌/掃除P — see design §1's "餌: カードを評価するたびに獲得". Both the gate
@@ -75,10 +77,57 @@ export async function ensureCourse(): Promise<void> {
       }
       loadedCourseId = course.courseId;
     }
+    // Run the LINGO-055 repair exactly once per course, now that DECK reflects
+    // this course (needed for its word-rank lookups). Cheap no-op on every
+    // subsequent call via the meta flag inside runLingo055RepairOnce.
+    await runLingo055RepairOnce(activeCourseId);
   })().finally(() => {
     ensuring = null;
   });
   return ensuring;
+}
+
+// LINGO-055 repair (2026-10-17): one-time, per-course cleanup of wordKnowledge
+// rows collaterally demoted by the pre-fix fallback in
+// knowledgeUpdatesFromOutcomes (see that function's doc comment in
+// engine/calibration.ts for the full bug story). Resets flagged rows to
+// "unset" ONLY — never back to "known", since this repair has no positive
+// evidence the word IS known, only that the "unknown" on file is unconfirmed;
+// "unset" means "re-judge me correctly on next exposure/level-check", which is
+// the safe, non-overreaching correction. Gated by a per-course meta flag
+// (db/idb.ts getMeta/setMeta — the standard "run exactly once" pattern used
+// elsewhere in this codebase, e.g. placementDone/onboardingSeen) so it never
+// re-scans or re-touches rows the learner has judged again since the repair.
+function lingo055RepairMetaKey(courseId: string): string {
+  return `lingo055Repair:${courseId}`;
+}
+
+/** Runs the LINGO-055 repair for the given course if it hasn't run yet.
+ * Returns the number of lemmas reset (0 if already run or nothing to fix).
+ * Exported for the one-off admin/debug surface and for direct testing from
+ * the state layer; ensureCourse() below calls it automatically so normal app
+ * usage needs no extra wiring. */
+export async function runLingo055RepairOnce(courseId: string): Promise<number> {
+  const metaKey = lingo055RepairMetaKey(courseId);
+  const alreadyRan = await getMeta(metaKey, false);
+  if (alreadyRan) return 0;
+
+  const [knowledgeRows, reviewStates] = await Promise.all([
+    getAllWordKnowledge(courseId),
+    getAllReviewStates(courseId),
+  ]);
+  const wordByLemma = new Map(DECK.words.map((w) => [w.lemma, w]));
+  const flagged = findCollateralDemotions(knowledgeRows, reviewStates, DECK.sentences, wordByLemma, Date.now());
+
+  if (flagged.length) {
+    const now = Date.now();
+    await putWordKnowledge(
+      flagged.map((lemma) => ({ lemma, status: "unset" as const, updatedAt: now, source: "review" as const })),
+      courseId,
+    );
+  }
+  await setMeta(metaKey, true);
+  return flagged.length;
 }
 
 export function activeCourse(): string {
@@ -202,14 +251,12 @@ async function persistGrades(runner: GateSessionRunner): Promise<void> {
   await putReviewStates(runner.drainPendingUpserts(), activeCourseId);
 
   // Feed review results back into the word-knowledge map: Again -> unknown,
-  // clean Good pass on a target sentence -> known (source 'review').
-  const knowledge = await loadKnowledge();
-  const knowledgeUpdates = knowledgeUpdatesFromOutcomes(
-    runner.knowledgeOutcomes(),
-    WORD_BY_ID,
-    knowledge,
-    Date.now(),
-  );
+  // clean Good pass on a target sentence -> known (source 'review'). Both
+  // directions are target-sentence-only (LINGO-055, 2026-10-17) — a
+  // targetless (imported notes/lessons) sentence's outcome touches no word's
+  // status at all, so wordById/the current knowledge map are no longer
+  // needed here (the removed fallback was the only thing that read them).
+  const knowledgeUpdates = knowledgeUpdatesFromOutcomes(runner.knowledgeOutcomes(), Date.now());
   await putWordKnowledge(knowledgeUpdates, activeCourseId);
 }
 

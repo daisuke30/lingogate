@@ -7,11 +7,15 @@ import {
   seedKnownReviewState,
   seedKnownReviewStatesForLemmas,
   knowledgeUpdatesFromOutcomes,
+  findCollateralDemotions,
+  REPAIR_RECENCY_MS,
+  REPAIR_RANK_THRESHOLD,
   KNOWN_SEED_STABILITY_DAYS,
   MAX_UNKNOWN_FOR_NEW,
   UNLINKED_WEIGHT,
 } from "./calibration";
-import type { KnowledgeMap } from "./calibration";
+import type { KnowledgeMap, WordKnowledge } from "./calibration";
+import type { ReviewState } from "./fsrs";
 
 const fsrs = new FSRS();
 const NOW = 1_700_000_000_000;
@@ -175,33 +179,21 @@ describe("ContentStore.newSentences knowledge ordering", () => {
 });
 
 describe("knowledgeUpdatesFromOutcomes (review feedback)", () => {
-  const words = Array.from({ length: 110 }, (_, i) => word(i + 1));
-  const wordById = new Map(words.map((w) => [w.id, w]));
-
   it("marks target lemma known on a clean Good pass", () => {
     const s = sentence("S", [1, 50], "w50", 1);
-    const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: false }], wordById, new Map(), NOW);
+    const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: false }], NOW);
     expect(ups).toEqual([{ lemma: "w50", status: "known", updatedAt: NOW, source: "review" }]);
   });
 
   it("marks target lemma unknown on Again", () => {
     const s = sentence("S", [1, 50], "w50", 1);
-    const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: true }], wordById, new Map(), NOW);
+    const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: true }], NOW);
     expect(ups[0]).toMatchObject({ lemma: "w50", status: "unknown", source: "review" });
-  });
-
-  it("without a target lemma, Again marks the lowest-rank not-known word", () => {
-    const knowledge = knownThrough(0, { w5: "known" }); // w5 known, others unset
-    const s = sentence("S", [5, 8, 3], null, 3);
-    const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: true }], wordById, knowledge, NOW);
-    // w5 is known so skipped; lowest-rank of {w8,w3} is w3.
-    expect(ups[0].lemma).toBe("w3");
-    expect(ups[0].status).toBe("unknown");
   });
 
   it("does not update anything for a targetless clean Good pass", () => {
     const s = sentence("S", [1, 2], null, 1);
-    const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: false }], wordById, new Map(), NOW);
+    const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: false }], NOW);
     expect(ups).toEqual([]);
   });
 
@@ -213,11 +205,143 @@ describe("knowledgeUpdatesFromOutcomes (review feedback)", () => {
         { sentence: good, again: false },
         { sentence: bad, again: true },
       ],
-      wordById,
-      new Map(),
       NOW,
     );
     expect(ups).toHaveLength(1);
     expect(ups[0].status).toBe("unknown");
+  });
+
+  // --- LINGO-055 (2026-10-17): targetless (imported notes/lessons) Again/Good
+  // must NEVER touch wordKnowledge — no fallback, no collateral demotion.
+  // Katsuta's report ("覚えた語が280→240に漸減、超基礎文が再出題される", and he
+  // explicitly never marked those words unknown himself) traced to the old
+  // "no target lemma -> demote the lowest-rank not-yet-known word, or (when
+  // every word in the sentence is already known) the lowest-rank word
+  // regardless of status" fallback. The reproduction below is the exact
+  // shape of that bug: a targetless note sentence made ENTIRELY of
+  // already-known basic words ("I"/"you"/"here"-class, lowest rank).
+  describe("LINGO-055: a targetless sentence never changes ANY word's status", () => {
+    it("REPRODUCTION (documents the fixed bug): Again on a note sentence of all-known words used to demote the lowest-rank one — now it demotes nobody", () => {
+      const s = sentence("noteS", [1, 2, 3], null, null); // all known, no target — e.g. an imported/lessons note
+      const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: true }], NOW);
+      expect(ups).toEqual([]); // NOT [{ lemma: "w1", status: "unknown", ... }] (the pre-fix behaviour)
+    });
+    it("Again on a targetless sentence with some unset/unknown words still updates nothing", () => {
+      // Pre-fix, this specific shape (one already-known word, two
+      // never-judged) was the "intended" fallback case — it demoted the
+      // lowest-rank NOT-known word (w3). LINGO-055 removes that path too:
+      // only a word's OWN target sentence may ever touch its status.
+      const s = sentence("S", [5, 8, 3], null, 3);
+      const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: true }], NOW);
+      expect(ups).toEqual([]);
+    });
+    it("Good (clean pass) on a targetless sentence updates nothing (unchanged — this half was already correct)", () => {
+      const s = sentence("S", [1, 2, 3], null, null);
+      const ups = knowledgeUpdatesFromOutcomes([{ sentence: s, again: false }], NOW);
+      expect(ups).toEqual([]);
+    });
+    it("a mixed batch: the targetless sentence contributes nothing, the targeted one still updates normally", () => {
+      const targetless = sentence("Note", [1, 2, 3], null, null);
+      const targeted = sentence("Core", [50], "w50", 50);
+      const ups = knowledgeUpdatesFromOutcomes(
+        [
+          { sentence: targetless, again: true },
+          { sentence: targeted, again: false },
+        ],
+        NOW,
+      );
+      expect(ups).toEqual([{ lemma: "w50", status: "known", updatedAt: NOW, source: "review" }]);
+    });
+  });
+});
+
+// --- LINGO-055 repair migration -----------------------------------------
+
+function knowledgeRow(
+  lemma: string,
+  status: "known" | "unknown" | "unset",
+  updatedAt: number,
+  source: WordKnowledge["source"] = "review",
+): WordKnowledge {
+  return { lemma, status, updatedAt, source };
+}
+
+function reviewState(sentenceId: string, lapses: number): ReviewState {
+  return {
+    sentenceId,
+    direction: "en2ru",
+    stability: null,
+    difficulty: null,
+    due: null,
+    reps: 0,
+    lapses,
+    lastReview: null,
+    state: CardState.New,
+  };
+}
+
+describe("findCollateralDemotions (LINGO-055 repair)", () => {
+  // Common fixture: w1 is rank 1 (well under REPAIR_RANK_THRESHOLD), with one
+  // target sentence "T1". w9999 is an artificially huge rank, to exercise the
+  // rank cutoff.
+  const sentences = [sentence("T1", [1], "w1", 1), sentence("T2", [9999], "w9999", 9999)];
+  const wordByLemma = new Map([
+    ["w1", word(1)],
+    ["w9999", { ...word(9999), rank: 9999 }],
+  ]);
+
+  it("flags unknown/review, recent, low-rank, no-lapse-on-own-target-sentence rows", () => {
+    const rows = [knowledgeRow("w1", "unknown", NOW)];
+    const flagged = findCollateralDemotions(rows, [], sentences, wordByLemma, NOW);
+    expect(flagged).toEqual(["w1"]);
+  });
+
+  it("does NOT flag a row with a real lapse recorded on its own target sentence", () => {
+    const rows = [knowledgeRow("w1", "unknown", NOW)];
+    const states = [reviewState("T1", 1)]; // a genuine Again on w1's own target sentence
+    const flagged = findCollateralDemotions(rows, states, sentences, wordByLemma, NOW);
+    expect(flagged).toEqual([]);
+  });
+
+  it("does NOT flag a row older than the recency window (直近1ヶ月 outside)", () => {
+    const rows = [knowledgeRow("w1", "unknown", NOW - REPAIR_RECENCY_MS - 1)];
+    const flagged = findCollateralDemotions(rows, [], sentences, wordByLemma, NOW);
+    expect(flagged).toEqual([]);
+  });
+
+  it("does NOT flag a high-rank (rare) word", () => {
+    const rows = [knowledgeRow("w9999", "unknown", NOW)];
+    const flagged = findCollateralDemotions(rows, [], sentences, wordByLemma, NOW);
+    expect(flagged).toEqual([]);
+  });
+
+  it("does NOT flag a row that isn't status=unknown", () => {
+    const rows = [knowledgeRow("w1", "known", NOW)];
+    expect(findCollateralDemotions(rows, [], sentences, wordByLemma, NOW)).toEqual([]);
+  });
+
+  it("does NOT flag a row that isn't source=review (e.g. calibration/placement)", () => {
+    const rows = [knowledgeRow("w1", "unknown", NOW, "calibration")];
+    expect(findCollateralDemotions(rows, [], sentences, wordByLemma, NOW)).toEqual([]);
+  });
+
+  it("lapses on a DIFFERENT word's target sentence don't exonerate this one", () => {
+    const rows = [knowledgeRow("w1", "unknown", NOW)];
+    const states = [reviewState("T2", 5)]; // lapses, but on w9999's sentence, not w1's
+    const flagged = findCollateralDemotions(rows, states, sentences, wordByLemma, NOW);
+    expect(flagged).toEqual(["w1"]);
+  });
+
+  it("a row right at the recency boundary is still flagged (inclusive)", () => {
+    const rows = [knowledgeRow("w1", "unknown", NOW - REPAIR_RECENCY_MS)];
+    expect(findCollateralDemotions(rows, [], sentences, wordByLemma, NOW)).toEqual(["w1"]);
+  });
+
+  it("a row right at the rank boundary is still flagged (inclusive)", () => {
+    const boundaryWord = { ...word(500), rank: REPAIR_RANK_THRESHOLD };
+    const byLemma = new Map([["w500", boundaryWord]]);
+    const sents = [sentence("T500", [500], "w500", 500)];
+    const rows = [knowledgeRow("w500", "unknown", NOW)];
+    expect(findCollateralDemotions(rows, [], sents, byLemma, NOW)).toEqual(["w500"]);
   });
 });
