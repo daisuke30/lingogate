@@ -1,0 +1,15002 @@
+[
+ {
+  "lemma": "я",
+  "pos": "pron",
+  "rank": 1
+ },
+ {
+  "lemma": "не",
+  "pos": "part",
+  "rank": 2
+ },
+ {
+  "lemma": "ты",
+  "pos": "pron",
+  "rank": 3
+ },
+ {
+  "lemma": "что",
+  "pos": "conj",
+  "rank": 4
+ },
+ {
+  "lemma": "это",
+  "pos": "pron",
+  "rank": 5
+ },
+ {
+  "lemma": "в",
+  "pos": "prep",
+  "rank": 6
+ },
+ {
+  "lemma": "и",
+  "pos": "conj",
+  "rank": 7
+ },
+ {
+  "lemma": "он",
+  "pos": "pron",
+  "rank": 8
+ },
+ {
+  "lemma": "быть",
+  "pos": "verb",
+  "rank": 9
+ },
+ {
+  "lemma": "мы",
+  "pos": "pron",
+  "rank": 10
+ },
+ {
+  "lemma": "вы",
+  "pos": "pron",
+  "rank": 11
+ },
+ {
+  "lemma": "с",
+  "pos": "prep",
+  "rank": 12
+ },
+ {
+  "lemma": "на",
+  "pos": "prep",
+  "rank": 13
+ },
+ {
+  "lemma": "она",
+  "pos": "pron",
+  "rank": 14
+ },
+ {
+  "lemma": "как",
+  "pos": "adv",
+  "rank": 15
+ },
+ {
+  "lemma": "они",
+  "pos": "pron",
+  "rank": 16
+ },
+ {
+  "lemma": "мочь",
+  "pos": "verb",
+  "rank": 17
+ },
+ {
+  "lemma": "да",
+  "pos": "part",
+  "rank": 18
+ },
+ {
+  "lemma": "все",
+  "pos": "pron",
+  "rank": 19
+ },
+ {
+  "lemma": "всё",
+  "pos": "pron",
+  "rank": 20
+ },
+ {
+  "lemma": "у",
+  "pos": "prep",
+  "rank": 21
+ },
+ {
+  "lemma": "нет",
+  "pos": "predic",
+  "rank": 22
+ },
+ {
+  "lemma": "его",
+  "pos": "det",
+  "rank": 23
+ },
+ {
+  "lemma": "знать",
+  "pos": "verb",
+  "rank": 24
+ },
+ {
+  "lemma": "так",
+  "pos": "adv",
+  "rank": 25
+ },
+ {
+  "lemma": "но",
+  "pos": "conj",
+  "rank": 26
+ },
+ {
+  "lemma": "а",
+  "pos": "conj",
+  "rank": 27
+ },
+ {
+  "lemma": "о",
+  "pos": "prep",
+  "rank": 28
+ },
+ {
+  "lemma": "мой",
+  "pos": "det",
+  "rank": 29
+ },
+ {
+  "lemma": "хотеть",
+  "pos": "verb",
+  "rank": 30
+ },
+ {
+  "lemma": "этот",
+  "pos": "det",
+  "rank": 31
+ },
+ {
+  "lemma": "если",
+  "pos": "conj",
+  "rank": 32
+ },
+ {
+  "lemma": "сказать",
+  "pos": "verb",
+  "rank": 33
+ },
+ {
+  "lemma": "за",
+  "pos": "prep",
+  "rank": 34
+ },
+ {
+  "lemma": "бы",
+  "pos": "part",
+  "rank": 35
+ },
+ {
+  "lemma": "тот",
+  "pos": "det",
+  "rank": 36
+ },
+ {
+  "lemma": "думать",
+  "pos": "verb",
+  "rank": 37
+ },
+ {
+  "lemma": "к",
+  "pos": "prep",
+  "rank": 38
+ },
+ {
+  "lemma": "чтобы",
+  "pos": "conj",
+  "rank": 39
+ },
+ {
+  "lemma": "человек",
+  "pos": "noun",
+  "rank": 40
+ },
+ {
+  "lemma": "есть",
+  "pos": "verb",
+  "rank": 41
+ },
+ {
+  "lemma": "твой",
+  "pos": "det",
+  "rank": 42
+ },
+ {
+  "lemma": "же",
+  "pos": "part",
+  "rank": 43
+ },
+ {
+  "lemma": "свой",
+  "pos": "det",
+  "rank": 44
+ },
+ {
+  "lemma": "просто",
+  "pos": "adv",
+  "rank": 45
+ },
+ {
+  "lemma": "из",
+  "pos": "prep",
+  "rank": 46
+ },
+ {
+  "lemma": "ещё",
+  "pos": "adv",
+  "rank": 47
+ },
+ {
+  "lemma": "говорить",
+  "pos": "verb",
+  "rank": 48
+ },
+ {
+  "lemma": "весь",
+  "pos": "det",
+  "rank": 49
+ },
+ {
+  "lemma": "для",
+  "pos": "prep",
+  "rank": 50
+ },
+ {
+  "lemma": "сейчас",
+  "pos": "adv",
+  "rank": 51
+ },
+ {
+  "lemma": "ну",
+  "pos": "part",
+  "rank": 52
+ },
+ {
+  "lemma": "когда",
+  "pos": "conj",
+  "rank": 53
+ },
+ {
+  "lemma": "может",
+  "pos": "part",
+  "rank": 54
+ },
+ {
+  "lemma": "хорошо",
+  "pos": "adv",
+  "rank": 55
+ },
+ {
+  "lemma": "кто",
+  "pos": "pron",
+  "rank": 56
+ },
+ {
+  "lemma": "здесь",
+  "pos": "adv",
+  "rank": 57
+ },
+ {
+  "lemma": "такой",
+  "pos": "det",
+  "rank": 58
+ },
+ {
+  "lemma": "по",
+  "pos": "prep",
+  "rank": 59
+ },
+ {
+  "lemma": "друг",
+  "pos": "noun",
+  "rank": 60
+ },
+ {
+  "lemma": "который",
+  "pos": "det",
+  "rank": 61
+ },
+ {
+  "lemma": "год",
+  "pos": "noun",
+  "rank": 62
+ },
+ {
+  "lemma": "то",
+  "pos": "det",
+  "rank": 63
+ },
+ {
+  "lemma": "только",
+  "pos": "part",
+  "rank": 64
+ },
+ {
+  "lemma": "сделать",
+  "pos": "verb",
+  "rank": 65
+ },
+ {
+  "lemma": "их",
+  "pos": "det",
+  "rank": 66
+ },
+ {
+  "lemma": "один",
+  "pos": "num",
+  "rank": 67
+ },
+ {
+  "lemma": "хороший",
+  "pos": "adj",
+  "rank": 68
+ },
+ {
+  "lemma": "делать",
+  "pos": "verb",
+  "rank": 69
+ },
+ {
+  "lemma": "вот",
+  "pos": "part",
+  "rank": 70
+ },
+ {
+  "lemma": "от",
+  "pos": "prep",
+  "rank": 71
+ },
+ {
+  "lemma": "дом",
+  "pos": "noun",
+  "rank": 72
+ },
+ {
+  "lemma": "ваш",
+  "pos": "det",
+  "rank": 73
+ },
+ {
+  "lemma": "себя",
+  "pos": "pron",
+  "rank": 74
+ },
+ {
+  "lemma": "видеть",
+  "pos": "verb",
+  "rank": 75
+ },
+ {
+  "lemma": "ребёнок",
+  "pos": "noun",
+  "rank": 76
+ },
+ {
+  "lemma": "почему",
+  "pos": "adv",
+  "rank": 77
+ },
+ {
+  "lemma": "дело",
+  "pos": "noun",
+  "rank": 78
+ },
+ {
+  "lemma": "парень",
+  "pos": "noun",
+  "rank": 79
+ },
+ {
+  "lemma": "очень",
+  "pos": "adv",
+  "rank": 80
+ },
+ {
+  "lemma": "уже",
+  "pos": "adv",
+  "rank": 81
+ },
+ {
+  "lemma": "время",
+  "pos": "noun",
+  "rank": 82
+ },
+ {
+  "lemma": "наш",
+  "pos": "det",
+  "rank": 83
+ },
+ {
+  "lemma": "работа",
+  "pos": "noun",
+  "rank": 84
+ },
+ {
+  "lemma": "спасибо",
+  "pos": "intj",
+  "rank": 85
+ },
+ {
+  "lemma": "или",
+  "pos": "conj",
+  "rank": 86
+ },
+ {
+  "lemma": "большой",
+  "pos": "adj",
+  "rank": 87
+ },
+ {
+  "lemma": "отец",
+  "pos": "noun",
+  "rank": 88
+ },
+ {
+  "lemma": "давать",
+  "pos": "verb",
+  "rank": 89
+ },
+ {
+  "lemma": "мама",
+  "pos": "noun",
+  "rank": 90
+ },
+ {
+  "lemma": "ладно",
+  "pos": "part",
+  "rank": 91
+ },
+ {
+  "lemma": "там",
+  "pos": "adv",
+  "rank": 92
+ },
+ {
+  "lemma": "нужно",
+  "pos": "predic",
+  "rank": 93
+ },
+ {
+  "lemma": "идти",
+  "pos": "verb",
+  "rank": 94
+ },
+ {
+  "lemma": "сегодня",
+  "pos": "adv",
+  "rank": 95
+ },
+ {
+  "lemma": "где",
+  "pos": "adv",
+  "rank": 96
+ },
+ {
+  "lemma": "чем",
+  "pos": "conj",
+  "rank": 97
+ },
+ {
+  "lemma": "ничего",
+  "pos": "pron",
+  "rank": 98
+ },
+ {
+  "lemma": "больше",
+  "pos": "adv",
+  "rank": 99
+ },
+ {
+  "lemma": "до",
+  "pos": "prep",
+  "rank": 100
+ },
+ {
+  "lemma": "потому",
+  "pos": "adv",
+  "rank": 101
+ },
+ {
+  "lemma": "день",
+  "pos": "noun",
+  "rank": 102
+ },
+ {
+  "lemma": "со",
+  "pos": "prep",
+  "rank": 103
+ },
+ {
+  "lemma": "сам",
+  "pos": "pron",
+  "rank": 104
+ },
+ {
+  "lemma": "теперь",
+  "pos": "adv",
+  "rank": 105
+ },
+ {
+  "lemma": "какой",
+  "pos": "det",
+  "rank": 106
+ },
+ {
+  "lemma": "раз",
+  "pos": "noun",
+  "rank": 107
+ },
+ {
+  "lemma": "её",
+  "pos": "det",
+  "rank": 108
+ },
+ {
+  "lemma": "найти",
+  "pos": "verb",
+  "rank": 109
+ },
+ {
+  "lemma": "рука",
+  "pos": "noun",
+  "rank": 110
+ },
+ {
+  "lemma": "пойти",
+  "pos": "verb",
+  "rank": 111
+ },
+ {
+  "lemma": "жизнь",
+  "pos": "noun",
+  "rank": 112
+ },
+ {
+  "lemma": "надо",
+  "pos": "predic",
+  "rank": 113
+ },
+ {
+  "lemma": "правда",
+  "pos": "noun",
+  "rank": 114
+ },
+ {
+  "lemma": "должен",
+  "pos": "predic",
+  "rank": 115
+ },
+ {
+  "lemma": "что-то",
+  "pos": "pron",
+  "rank": 116
+ },
+ {
+  "lemma": "дать",
+  "pos": "verb",
+  "rank": 117
+ },
+ {
+  "lemma": "потом",
+  "pos": "adv",
+  "rank": 118
+ },
+ {
+  "lemma": "ли",
+  "pos": "part",
+  "rank": 119
+ },
+ {
+  "lemma": "машина",
+  "pos": "noun",
+  "rank": 120
+ },
+ {
+  "lemma": "давай",
+  "pos": "part",
+  "rank": 121
+ },
+ {
+  "lemma": "пока",
+  "pos": "conj",
+  "rank": 122
+ },
+ {
+  "lemma": "даже",
+  "pos": "part",
+  "rank": 123
+ },
+ {
+  "lemma": "привет",
+  "pos": "intj",
+  "rank": 124
+ },
+ {
+  "lemma": "женщина",
+  "pos": "noun",
+  "rank": 125
+ },
+ {
+  "lemma": "другой",
+  "pos": "det",
+  "rank": 126
+ },
+ {
+  "lemma": "тоже",
+  "pos": "adv",
+  "rank": 127
+ },
+ {
+  "lemma": "понимать",
+  "pos": "verb",
+  "rank": 128
+ },
+ {
+  "lemma": "бог",
+  "pos": "noun",
+  "rank": 129
+ },
+ {
+  "lemma": "помочь",
+  "pos": "verb",
+  "rank": 130
+ },
+ {
+  "lemma": "папа",
+  "pos": "noun",
+  "rank": 131
+ },
+ {
+  "lemma": "никогда",
+  "pos": "adv",
+  "rank": 132
+ },
+ {
+  "lemma": "эй",
+  "pos": "intj",
+  "rank": 133
+ },
+ {
+  "lemma": "об",
+  "pos": "prep",
+  "rank": 134
+ },
+ {
+  "lemma": "смочь",
+  "pos": "verb",
+  "rank": 135
+ },
+ {
+  "lemma": "тогда",
+  "pos": "adv",
+  "rank": 136
+ },
+ {
+  "lemma": "любить",
+  "pos": "verb",
+  "rank": 137
+ },
+ {
+  "lemma": "ни",
+  "pos": "part",
+  "rank": 138
+ },
+ {
+  "lemma": "тут",
+  "pos": "adv",
+  "rank": 139
+ },
+ {
+  "lemma": "конечно",
+  "pos": "part",
+  "rank": 140
+ },
+ {
+  "lemma": "лучше",
+  "pos": "adv",
+  "rank": 141
+ },
+ {
+  "lemma": "стать",
+  "pos": "verb",
+  "rank": 142
+ },
+ {
+  "lemma": "вопрос",
+  "pos": "noun",
+  "rank": 143
+ },
+ {
+  "lemma": "место",
+  "pos": "noun",
+  "rank": 144
+ },
+ {
+  "lemma": "нужный",
+  "pos": "adj",
+  "rank": 145
+ },
+ {
+  "lemma": "взять",
+  "pos": "verb",
+  "rank": 146
+ },
+ {
+  "lemma": "простить",
+  "pos": "verb",
+  "rank": 147
+ },
+ {
+  "lemma": "ночь",
+  "pos": "noun",
+  "rank": 148
+ },
+ {
+  "lemma": "семья",
+  "pos": "noun",
+  "rank": 149
+ },
+ {
+  "lemma": "час",
+  "pos": "noun",
+  "rank": 150
+ },
+ {
+  "lemma": "мать",
+  "pos": "noun",
+  "rank": 151
+ },
+ {
+  "lemma": "убить",
+  "pos": "verb",
+  "rank": 152
+ },
+ {
+  "lemma": "иметь",
+  "pos": "verb",
+  "rank": 153
+ },
+ {
+  "lemma": "сын",
+  "pos": "noun",
+  "rank": 154
+ },
+ {
+  "lemma": "пожалуйста",
+  "pos": "intj",
+  "rank": 155
+ },
+ {
+  "lemma": "минута",
+  "pos": "noun",
+  "rank": 156
+ },
+ {
+  "lemma": "вернуться",
+  "pos": "verb",
+  "rank": 157
+ },
+ {
+  "lemma": "работать",
+  "pos": "verb",
+  "rank": 158
+ },
+ {
+  "lemma": "жена",
+  "pos": "noun",
+  "rank": 159
+ },
+ {
+  "lemma": "два",
+  "pos": "num",
+  "rank": 160
+ },
+ {
+  "lemma": "порядок",
+  "pos": "noun",
+  "rank": 161
+ },
+ {
+  "lemma": "сюда",
+  "pos": "adv",
+  "rank": 162
+ },
+ {
+  "lemma": "стоить",
+  "pos": "verb",
+  "rank": 163
+ },
+ {
+  "lemma": "девушка",
+  "pos": "noun",
+  "rank": 164
+ },
+ {
+  "lemma": "понять",
+  "pos": "verb",
+  "rank": 165
+ },
+ {
+  "lemma": "чего",
+  "pos": "pron",
+  "rank": 166
+ },
+ {
+  "lemma": "значит",
+  "pos": "part",
+  "rank": 167
+ },
+ {
+  "lemma": "смотреть",
+  "pos": "verb",
+  "rank": 168
+ },
+ {
+  "lemma": "прийти",
+  "pos": "verb",
+  "rank": 169
+ },
+ {
+  "lemma": "брат",
+  "pos": "noun",
+  "rank": 170
+ },
+ {
+  "lemma": "никто",
+  "pos": "pron",
+  "rank": 171
+ },
+ {
+  "lemma": "всегда",
+  "pos": "adv",
+  "rank": 172
+ },
+ {
+  "lemma": "всего",
+  "pos": "adv",
+  "rank": 173
+ },
+ {
+  "lemma": "во",
+  "pos": "prep",
+  "rank": 174
+ },
+ {
+  "lemma": "можно",
+  "pos": "predic",
+  "rank": 175
+ },
+ {
+  "lemma": "неделя",
+  "pos": "noun",
+  "rank": 176
+ },
+ {
+  "lemma": "мистер",
+  "pos": "noun",
+  "rank": 177
+ },
+ {
+  "lemma": "без",
+  "pos": "prep",
+  "rank": 178
+ },
+ {
+  "lemma": "посмотреть",
+  "pos": "verb",
+  "rank": 179
+ },
+ {
+  "lemma": "слышать",
+  "pos": "verb",
+  "rank": 180
+ },
+ {
+  "lemma": "кто-то",
+  "pos": "pron",
+  "rank": 181
+ },
+ {
+  "lemma": "голова",
+  "pos": "noun",
+  "rank": 182
+ },
+ {
+  "lemma": "первый",
+  "pos": "adj",
+  "rank": 183
+ },
+ {
+  "lemma": "собираться",
+  "pos": "verb",
+  "rank": 184
+ },
+ {
+  "lemma": "нравиться",
+  "pos": "verb",
+  "rank": 185
+ },
+ {
+  "lemma": "много",
+  "pos": "adv",
+  "rank": 186
+ },
+ {
+  "lemma": "после",
+  "pos": "prep",
+  "rank": 187
+ },
+ {
+  "lemma": "случиться",
+  "pos": "verb",
+  "rank": 188
+ },
+ {
+  "lemma": "новый",
+  "pos": "adj",
+  "rank": 189
+ },
+ {
+  "lemma": "город",
+  "pos": "noun",
+  "rank": 190
+ },
+ {
+  "lemma": "глаз",
+  "pos": "noun",
+  "rank": 191
+ },
+ {
+  "lemma": "самый",
+  "pos": "det",
+  "rank": 192
+ },
+ {
+  "lemma": "жить",
+  "pos": "verb",
+  "rank": 193
+ },
+ {
+  "lemma": "пытаться",
+  "pos": "verb",
+  "rank": 194
+ },
+ {
+  "lemma": "получить",
+  "pos": "verb",
+  "rank": 195
+ },
+ {
+  "lemma": "дорога",
+  "pos": "noun",
+  "rank": 196
+ },
+ {
+  "lemma": "поговорить",
+  "pos": "verb",
+  "rank": 197
+ },
+ {
+  "lemma": "сэр",
+  "pos": "noun",
+  "rank": 198
+ },
+ {
+  "lemma": "каждый",
+  "pos": "det",
+  "rank": 199
+ },
+ {
+  "lemma": "ведь",
+  "pos": "part",
+  "rank": 200
+ },
+ {
+  "lemma": "просить",
+  "pos": "verb",
+  "rank": 201
+ },
+ {
+  "lemma": "завтра",
+  "pos": "adv",
+  "rank": 202
+ },
+ {
+  "lemma": "остаться",
+  "pos": "verb",
+  "rank": 203
+ },
+ {
+  "lemma": "мужчина",
+  "pos": "noun",
+  "rank": 204
+ },
+ {
+  "lemma": "слушать",
+  "pos": "verb",
+  "rank": 205
+ },
+ {
+  "lemma": "через",
+  "pos": "prep",
+  "rank": 206
+ },
+ {
+  "lemma": "проблема",
+  "pos": "noun",
+  "rank": 207
+ },
+ {
+  "lemma": "школа",
+  "pos": "noun",
+  "rank": 208
+ },
+ {
+  "lemma": "возможно",
+  "pos": "adv",
+  "rank": 209
+ },
+ {
+  "lemma": "немного",
+  "pos": "adv",
+  "rank": 210
+ },
+ {
+  "lemma": "узнать",
+  "pos": "verb",
+  "rank": 211
+ },
+ {
+  "lemma": "казаться",
+  "pos": "verb",
+  "rank": 212
+ },
+ {
+  "lemma": "увидеть",
+  "pos": "verb",
+  "rank": 213
+ },
+ {
+  "lemma": "слишком",
+  "pos": "adv",
+  "rank": 214
+ },
+ {
+  "lemma": "месяц",
+  "pos": "noun",
+  "rank": 215
+ },
+ {
+  "lemma": "последний",
+  "pos": "adj",
+  "rank": 216
+ },
+ {
+  "lemma": "заниматься",
+  "pos": "verb",
+  "rank": 217
+ },
+ {
+  "lemma": "зачем",
+  "pos": "adv",
+  "rank": 218
+ },
+ {
+  "lemma": "уйти",
+  "pos": "verb",
+  "rank": 219
+ },
+ {
+  "lemma": "дверь",
+  "pos": "noun",
+  "rank": 220
+ },
+ {
+  "lemma": "доктор",
+  "pos": "noun",
+  "rank": 221
+ },
+ {
+  "lemma": "лицо",
+  "pos": "noun",
+  "rank": 222
+ },
+ {
+  "lemma": "рассказать",
+  "pos": "verb",
+  "rank": 223
+ },
+ {
+  "lemma": "готовый",
+  "pos": "adj",
+  "rank": 224
+ },
+ {
+  "lemma": "пора",
+  "pos": "predic",
+  "rank": 225
+ },
+ {
+  "lemma": "ждать",
+  "pos": "verb",
+  "rank": 226
+ },
+ {
+  "lemma": "комната",
+  "pos": "noun",
+  "rank": 227
+ },
+ {
+  "lemma": "кажется",
+  "pos": "part",
+  "rank": 228
+ },
+ {
+  "lemma": "оставить",
+  "pos": "verb",
+  "rank": 229
+ },
+ {
+  "lemma": "извинить",
+  "pos": "verb",
+  "rank": 230
+ },
+ {
+  "lemma": "точно",
+  "pos": "adv",
+  "rank": 231
+ },
+ {
+  "lemma": "право",
+  "pos": "noun",
+  "rank": 232
+ },
+ {
+  "lemma": "под",
+  "pos": "prep",
+  "rank": 233
+ },
+ {
+  "lemma": "умереть",
+  "pos": "verb",
+  "rank": 234
+ },
+ {
+  "lemma": "назад",
+  "pos": "adv",
+  "rank": 235
+ },
+ {
+  "lemma": "мир",
+  "pos": "noun",
+  "rank": 236
+ },
+ {
+  "lemma": "из-за",
+  "pos": "prep",
+  "rank": 237
+ },
+ {
+  "lemma": "помнить",
+  "pos": "verb",
+  "rank": 238
+ },
+ {
+  "lemma": "имя",
+  "pos": "noun",
+  "rank": 239
+ },
+ {
+  "lemma": "вместе",
+  "pos": "adv",
+  "rank": 240
+ },
+ {
+  "lemma": "сестра",
+  "pos": "noun",
+  "rank": 241
+ },
+ {
+  "lemma": "куда",
+  "pos": "adv",
+  "rank": 242
+ },
+ {
+  "lemma": "маленький",
+  "pos": "adj",
+  "rank": 243
+ },
+ {
+  "lemma": "подождать",
+  "pos": "verb",
+  "rank": 244
+ },
+ {
+  "lemma": "слово",
+  "pos": "noun",
+  "rank": 245
+ },
+ {
+  "lemma": "муж",
+  "pos": "noun",
+  "rank": 246
+ },
+ {
+  "lemma": "сколько",
+  "pos": "adv",
+  "rank": 247
+ },
+ {
+  "lemma": "телефон",
+  "pos": "noun",
+  "rank": 248
+ },
+ {
+  "lemma": "поэтому",
+  "pos": "adv",
+  "rank": 249
+ },
+ {
+  "lemma": "сердце",
+  "pos": "noun",
+  "rank": 250
+ },
+ {
+  "lemma": "подумать",
+  "pos": "verb",
+  "rank": 251
+ },
+ {
+  "lemma": "чувствовать",
+  "pos": "verb",
+  "rank": 252
+ },
+ {
+  "lemma": "спать",
+  "pos": "verb",
+  "rank": 253
+ },
+ {
+  "lemma": "плохой",
+  "pos": "adj",
+  "rank": 254
+ },
+ {
+  "lemma": "снова",
+  "pos": "adv",
+  "rank": 255
+ },
+ {
+  "lemma": "утро",
+  "pos": "noun",
+  "rank": 256
+ },
+ {
+  "lemma": "черта",
+  "pos": "noun",
+  "rank": 257
+ },
+ {
+  "lemma": "начать",
+  "pos": "verb",
+  "rank": 258
+ },
+ {
+  "lemma": "дочь",
+  "pos": "noun",
+  "rank": 259
+ },
+ {
+  "lemma": "дома",
+  "pos": "adv",
+  "rank": 260
+ },
+ {
+  "lemma": "три",
+  "pos": "num",
+  "rank": 261
+ },
+ {
+  "lemma": "что-нибудь",
+  "pos": "pron",
+  "rank": 262
+ },
+ {
+  "lemma": "вещь",
+  "pos": "noun",
+  "rank": 263
+ },
+ {
+  "lemma": "забыть",
+  "pos": "verb",
+  "rank": 264
+ },
+ {
+  "lemma": "позволить",
+  "pos": "verb",
+  "rank": 265
+ },
+ {
+  "lemma": "выйти",
+  "pos": "verb",
+  "rank": 266
+ },
+ {
+  "lemma": "вода",
+  "pos": "noun",
+  "rank": 267
+ },
+ {
+  "lemma": "отлично",
+  "pos": "adv",
+  "rank": 268
+ },
+ {
+  "lemma": "похоже",
+  "pos": "predic",
+  "rank": 269
+ },
+ {
+  "lemma": "домой",
+  "pos": "adv",
+  "rank": 270
+ },
+ {
+  "lemma": "нога",
+  "pos": "noun",
+  "rank": 271
+ },
+ {
+  "lemma": "какой-то",
+  "pos": "det",
+  "rank": 272
+ },
+ {
+  "lemma": "конец",
+  "pos": "noun",
+  "rank": 273
+ },
+ {
+  "lemma": "надеяться",
+  "pos": "verb",
+  "rank": 274
+ },
+ {
+  "lemma": "никакой",
+  "pos": "det",
+  "rank": 275
+ },
+ {
+  "lemma": "прийтись",
+  "pos": "verb",
+  "rank": 276
+ },
+ {
+  "lemma": "вечер",
+  "pos": "noun",
+  "rank": 277
+ },
+ {
+  "lemma": "выглядеть",
+  "pos": "verb",
+  "rank": 278
+ },
+ {
+  "lemma": "вид",
+  "pos": "noun",
+  "rank": 279
+ },
+ {
+  "lemma": "послушать",
+  "pos": "verb",
+  "rank": 280
+ },
+ {
+  "lemma": "именно",
+  "pos": "part",
+  "rank": 281
+ },
+ {
+  "lemma": "искать",
+  "pos": "verb",
+  "rank": 282
+ },
+ {
+  "lemma": "прямо",
+  "pos": "adv",
+  "rank": 283
+ },
+ {
+  "lemma": "дорогой",
+  "pos": "adj",
+  "rank": 284
+ },
+ {
+  "lemma": "решить",
+  "pos": "verb",
+  "rank": 285
+ },
+ {
+  "lemma": "разве",
+  "pos": "part",
+  "rank": 286
+ },
+ {
+  "lemma": "послать",
+  "pos": "verb",
+  "rank": 287
+ },
+ {
+  "lemma": "лишь",
+  "pos": "part",
+  "rank": 288
+ },
+ {
+  "lemma": "давайте",
+  "pos": "part",
+  "rank": 289
+ },
+ {
+  "lemma": "несколько",
+  "pos": "det",
+  "rank": 290
+ },
+ {
+  "lemma": "ага",
+  "pos": "intj",
+  "rank": 291
+ },
+ {
+  "lemma": "бояться",
+  "pos": "verb",
+  "rank": 292
+ },
+ {
+  "lemma": "происходить",
+  "pos": "verb",
+  "rank": 293
+ },
+ {
+  "lemma": "позвонить",
+  "pos": "verb",
+  "rank": 294
+ },
+ {
+  "lemma": "добрый",
+  "pos": "adj",
+  "rank": 295
+ },
+ {
+  "lemma": "считать",
+  "pos": "verb",
+  "rank": 296
+ },
+ {
+  "lemma": "тем",
+  "pos": "conj",
+  "rank": 297
+ },
+ {
+  "lemma": "звать",
+  "pos": "verb",
+  "rank": 298
+ },
+ {
+  "lemma": "случай",
+  "pos": "noun",
+  "rank": 299
+ },
+ {
+  "lemma": "вчера",
+  "pos": "adv",
+  "rank": 300
+ },
+ {
+  "lemma": "книга",
+  "pos": "noun",
+  "rank": 301
+ },
+ {
+  "lemma": "пара",
+  "pos": "noun",
+  "rank": 302
+ },
+ {
+  "lemma": "верить",
+  "pos": "verb",
+  "rank": 303
+ },
+ {
+  "lemma": "пройти",
+  "pos": "verb",
+  "rank": 304
+ },
+ {
+  "lemma": "должно",
+  "pos": "predic",
+  "rank": 305
+ },
+ {
+  "lemma": "совсем",
+  "pos": "adv",
+  "rank": 306
+ },
+ {
+  "lemma": "смерть",
+  "pos": "noun",
+  "rank": 307
+ },
+ {
+  "lemma": "играть",
+  "pos": "verb",
+  "rank": 308
+ },
+ {
+  "lemma": "ж",
+  "pos": "part",
+  "rank": 309
+ },
+ {
+  "lemma": "уходить",
+  "pos": "verb",
+  "rank": 310
+ },
+ {
+  "lemma": "про",
+  "pos": "prep",
+  "rank": 311
+ },
+ {
+  "lemma": "уверенный",
+  "pos": "adj",
+  "rank": 312
+ },
+ {
+  "lemma": "ребята",
+  "pos": "noun",
+  "rank": 313
+ },
+ {
+  "lemma": "перед",
+  "pos": "prep",
+  "rank": 314
+ },
+ {
+  "lemma": "помощь",
+  "pos": "noun",
+  "rank": 315
+ },
+ {
+  "lemma": "жаль",
+  "pos": "predic",
+  "rank": 316
+ },
+ {
+  "lemma": "туда",
+  "pos": "adv",
+  "rank": 317
+ },
+ {
+  "lemma": "действительно",
+  "pos": "adv",
+  "rank": 318
+ },
+ {
+  "lemma": "держать",
+  "pos": "verb",
+  "rank": 319
+ },
+ {
+  "lemma": "любой",
+  "pos": "det",
+  "rank": 320
+ },
+ {
+  "lemma": "показать",
+  "pos": "verb",
+  "rank": 321
+ },
+ {
+  "lemma": "хватить",
+  "pos": "verb",
+  "rank": 322
+ },
+ {
+  "lemma": "еда",
+  "pos": "noun",
+  "rank": 323
+ },
+ {
+  "lemma": "оно",
+  "pos": "pron",
+  "rank": 324
+ },
+ {
+  "lemma": "следующий",
+  "pos": "adj",
+  "rank": 325
+ },
+ {
+  "lemma": "использовать",
+  "pos": "verb",
+  "rank": 326
+ },
+ {
+  "lemma": "секунда",
+  "pos": "noun",
+  "rank": 327
+ },
+ {
+  "lemma": "поехать",
+  "pos": "verb",
+  "rank": 328
+ },
+ {
+  "lemma": "полиция",
+  "pos": "noun",
+  "rank": 329
+ },
+ {
+  "lemma": "ранний",
+  "pos": "adj",
+  "rank": 330
+ },
+ {
+  "lemma": "больший",
+  "pos": "adj",
+  "rank": 331
+ },
+ {
+  "lemma": "улица",
+  "pos": "noun",
+  "rank": 332
+ },
+ {
+  "lemma": "милый",
+  "pos": "adj",
+  "rank": 333
+ },
+ {
+  "lemma": "отсюда",
+  "pos": "adv",
+  "rank": 334
+ },
+ {
+  "lemma": "сторона",
+  "pos": "noun",
+  "rank": 335
+ },
+ {
+  "lemma": "произойти",
+  "pos": "verb",
+  "rank": 336
+ },
+ {
+  "lemma": "настоящий",
+  "pos": "adj",
+  "rank": 337
+ },
+ {
+  "lemma": "история",
+  "pos": "noun",
+  "rank": 338
+ },
+ {
+  "lemma": "единственный",
+  "pos": "adj",
+  "rank": 339
+ },
+ {
+  "lemma": "верно",
+  "pos": "adv",
+  "rank": 340
+ },
+ {
+  "lemma": "раньше",
+  "pos": "adv",
+  "rank": 341
+ },
+ {
+  "lemma": "кое-что",
+  "pos": "pron",
+  "rank": 342
+ },
+ {
+  "lemma": "насчёт",
+  "pos": "prep",
+  "rank": 343
+ },
+ {
+  "lemma": "уж",
+  "pos": "part",
+  "rank": 344
+ },
+ {
+  "lemma": "часть",
+  "pos": "noun",
+  "rank": 345
+ },
+ {
+  "lemma": "против",
+  "pos": "prep",
+  "rank": 346
+ },
+ {
+  "lemma": "оба",
+  "pos": "num",
+  "rank": 347
+ },
+ {
+  "lemma": "любовь",
+  "pos": "noun",
+  "rank": 348
+ },
+ {
+  "lemma": "спросить",
+  "pos": "verb",
+  "rank": 349
+ },
+ {
+  "lemma": "господь",
+  "pos": "noun",
+  "rank": 350
+ },
+ {
+  "lemma": "ответ",
+  "pos": "noun",
+  "rank": 351
+ },
+ {
+  "lemma": "серьёзно",
+  "pos": "adv",
+  "rank": 352
+ },
+ {
+  "lemma": "более",
+  "pos": "adv",
+  "rank": 353
+ },
+ {
+  "lemma": "итак",
+  "pos": "conj",
+  "rank": 354
+ },
+ {
+  "lemma": "при",
+  "pos": "prep",
+  "rank": 355
+ },
+ {
+  "lemma": "вообще",
+  "pos": "adv",
+  "rank": 356
+ },
+ {
+  "lemma": "ко",
+  "pos": "prep",
+  "rank": 357
+ },
+ {
+  "lemma": "звонить",
+  "pos": "verb",
+  "rank": 358
+ },
+ {
+  "lemma": "убийство",
+  "pos": "noun",
+  "rank": 359
+ },
+ {
+  "lemma": "нельзя",
+  "pos": "predic",
+  "rank": 360
+ },
+ {
+  "lemma": "больница",
+  "pos": "noun",
+  "rank": 361
+ },
+ {
+  "lemma": "наверное",
+  "pos": "adv",
+  "rank": 362
+ },
+ {
+  "lemma": "забрать",
+  "pos": "verb",
+  "rank": 363
+ },
+ {
+  "lemma": "принять",
+  "pos": "verb",
+  "rank": 364
+ },
+ {
+  "lemma": "кровь",
+  "pos": "noun",
+  "rank": 365
+ },
+ {
+  "lemma": "вести",
+  "pos": "verb",
+  "rank": 366
+ },
+ {
+  "lemma": "ради",
+  "pos": "prep",
+  "rank": 367
+ },
+ {
+  "lemma": "смысл",
+  "pos": "noun",
+  "rank": 368
+ },
+ {
+  "lemma": "игра",
+  "pos": "noun",
+  "rank": 369
+ },
+ {
+  "lemma": "потерять",
+  "pos": "verb",
+  "rank": 370
+ },
+ {
+  "lemma": "принести",
+  "pos": "verb",
+  "rank": 371
+ },
+ {
+  "lemma": "купить",
+  "pos": "verb",
+  "rank": 372
+ },
+ {
+  "lemma": "вино",
+  "pos": "noun",
+  "rank": 373
+ },
+ {
+  "lemma": "номер",
+  "pos": "noun",
+  "rank": 374
+ },
+ {
+  "lemma": "сила",
+  "pos": "noun",
+  "rank": 375
+ },
+ {
+  "lemma": "кто-нибудь",
+  "pos": "pron",
+  "rank": 376
+ },
+ {
+  "lemma": "бросить",
+  "pos": "verb",
+  "rank": 377
+ },
+ {
+  "lemma": "хотя",
+  "pos": "conj",
+  "rank": 378
+ },
+ {
+  "lemma": "тело",
+  "pos": "noun",
+  "rank": 379
+ },
+ {
+  "lemma": "идея",
+  "pos": "noun",
+  "rank": 380
+ },
+ {
+  "lemma": "план",
+  "pos": "noun",
+  "rank": 381
+ },
+ {
+  "lemma": "уверить",
+  "pos": "verb",
+  "rank": 382
+ },
+ {
+  "lemma": "откуда",
+  "pos": "adv",
+  "rank": 383
+ },
+ {
+  "lemma": "приехать",
+  "pos": "verb",
+  "rank": 384
+ },
+ {
+  "lemma": "далекий",
+  "pos": "adj",
+  "rank": 385
+ },
+ {
+  "lemma": "ясно",
+  "pos": "adv",
+  "rank": 386
+ },
+ {
+  "lemma": "господин",
+  "pos": "noun",
+  "rank": 387
+ },
+ {
+  "lemma": "закончить",
+  "pos": "verb",
+  "rank": 388
+ },
+ {
+  "lemma": "момент",
+  "pos": "noun",
+  "rank": 389
+ },
+ {
+  "lemma": "девочка",
+  "pos": "noun",
+  "rank": 390
+ },
+ {
+  "lemma": "живой",
+  "pos": "adj",
+  "rank": 391
+ },
+ {
+  "lemma": "путь",
+  "pos": "noun",
+  "rank": 392
+ },
+ {
+  "lemma": "над",
+  "pos": "prep",
+  "rank": 393
+ },
+ {
+  "lemma": "черт",
+  "pos": "noun",
+  "rank": 394
+ },
+ {
+  "lemma": "мёртвый",
+  "pos": "adj",
+  "rank": 395
+ },
+ {
+  "lemma": "квартира",
+  "pos": "noun",
+  "rank": 396
+ },
+ {
+  "lemma": "равно",
+  "pos": "adv",
+  "rank": 397
+ },
+ {
+  "lemma": "мисс",
+  "pos": "noun",
+  "rank": 398
+ },
+ {
+  "lemma": "поздно",
+  "pos": "adv",
+  "rank": 399
+ },
+ {
+  "lemma": "ключ",
+  "pos": "noun",
+  "rank": 400
+ },
+ {
+  "lemma": "счастливый",
+  "pos": "adj",
+  "rank": 401
+ },
+ {
+  "lemma": "скоро",
+  "pos": "adv",
+  "rank": 402
+ },
+ {
+  "lemma": "будто",
+  "pos": "conj",
+  "rank": 403
+ },
+ {
+  "lemma": "неё",
+  "pos": "pron",
+  "rank": 404
+ },
+ {
+  "lemma": "старый",
+  "pos": "adj",
+  "rank": 405
+ },
+ {
+  "lemma": "оставаться",
+  "pos": "verb",
+  "rank": 406
+ },
+ {
+  "lemma": "сидеть",
+  "pos": "verb",
+  "rank": 407
+ },
+ {
+  "lemma": "господи",
+  "pos": "intj",
+  "rank": 408
+ },
+ {
+  "lemma": "земля",
+  "pos": "noun",
+  "rank": 409
+ },
+ {
+  "lemma": "между",
+  "pos": "prep",
+  "rank": 410
+ },
+ {
+  "lemma": "магазин",
+  "pos": "noun",
+  "rank": 411
+ },
+ {
+  "lemma": "боль",
+  "pos": "noun",
+  "rank": 412
+ },
+ {
+  "lemma": "мальчик",
+  "pos": "noun",
+  "rank": 413
+ },
+ {
+  "lemma": "спасти",
+  "pos": "verb",
+  "rank": 414
+ },
+ {
+  "lemma": "почти",
+  "pos": "adv",
+  "rank": 415
+ },
+ {
+  "lemma": "ходить",
+  "pos": "verb",
+  "rank": 416
+ },
+ {
+  "lemma": "написать",
+  "pos": "verb",
+  "rank": 417
+ },
+ {
+  "lemma": "причина",
+  "pos": "noun",
+  "rank": 418
+ },
+ {
+  "lemma": "прошлый",
+  "pos": "adj",
+  "rank": 419
+ },
+ {
+  "lemma": "нормально",
+  "pos": "adv",
+  "rank": 420
+ },
+ {
+  "lemma": "открыть",
+  "pos": "verb",
+  "rank": 421
+ },
+ {
+  "lemma": "кофе",
+  "pos": "noun",
+  "rank": 422
+ },
+ {
+  "lemma": "вернуть",
+  "pos": "verb",
+  "rank": 423
+ },
+ {
+  "lemma": "врач",
+  "pos": "noun",
+  "rank": 424
+ },
+ {
+  "lemma": "отношение",
+  "pos": "noun",
+  "rank": 425
+ },
+ {
+  "lemma": "поверить",
+  "pos": "verb",
+  "rank": 426
+ },
+ {
+  "lemma": "проверить",
+  "pos": "verb",
+  "rank": 427
+ },
+ {
+  "lemma": "полный",
+  "pos": "adj",
+  "rank": 428
+ },
+ {
+  "lemma": "хоть",
+  "pos": "part",
+  "rank": 429
+ },
+ {
+  "lemma": "быстрый",
+  "pos": "adj",
+  "rank": 430
+ },
+ {
+  "lemma": "ужин",
+  "pos": "noun",
+  "rank": 431
+ },
+ {
+  "lemma": "встреча",
+  "pos": "noun",
+  "rank": 432
+ },
+ {
+  "lemma": "достаточно",
+  "pos": "adv",
+  "rank": 433
+ },
+ {
+  "lemma": "быстро",
+  "pos": "adv",
+  "rank": 434
+ },
+ {
+  "lemma": "попробовать",
+  "pos": "verb",
+  "rank": 435
+ },
+ {
+  "lemma": "некоторый",
+  "pos": "det",
+  "rank": 436
+ },
+ {
+  "lemma": "попасть",
+  "pos": "verb",
+  "rank": 437
+ },
+ {
+  "lemma": "провести",
+  "pos": "verb",
+  "rank": 438
+ },
+ {
+  "lemma": "офис",
+  "pos": "noun",
+  "rank": 439
+ },
+ {
+  "lemma": "продолжать",
+  "pos": "verb",
+  "rank": 440
+ },
+ {
+  "lemma": "начинать",
+  "pos": "verb",
+  "rank": 441
+ },
+ {
+  "lemma": "приходить",
+  "pos": "verb",
+  "rank": 442
+ },
+ {
+  "lemma": "свободный",
+  "pos": "adj",
+  "rank": 443
+ },
+ {
+  "lemma": "шанс",
+  "pos": "noun",
+  "rank": 444
+ },
+ {
+  "lemma": "отдать",
+  "pos": "verb",
+  "rank": 445
+ },
+ {
+  "lemma": "пять",
+  "pos": "num",
+  "rank": 446
+ },
+ {
+  "lemma": "пусть",
+  "pos": "part",
+  "rank": 447
+ },
+ {
+  "lemma": "плохо",
+  "pos": "adv",
+  "rank": 448
+ },
+ {
+  "lemma": "попросить",
+  "pos": "verb",
+  "rank": 449
+ },
+ {
+  "lemma": "ехать",
+  "pos": "verb",
+  "rank": 450
+ },
+ {
+  "lemma": "волноваться",
+  "pos": "verb",
+  "rank": 451
+ },
+ {
+  "lemma": "стол",
+  "pos": "noun",
+  "rank": 452
+ },
+ {
+  "lemma": "свет",
+  "pos": "noun",
+  "rank": 453
+ },
+ {
+  "lemma": "важный",
+  "pos": "adj",
+  "rank": 454
+ },
+ {
+  "lemma": "обещать",
+  "pos": "verb",
+  "rank": 455
+ },
+ {
+  "lemma": "рад",
+  "pos": "predic",
+  "rank": 456
+ },
+ {
+  "lemma": "команда",
+  "pos": "noun",
+  "rank": 457
+ },
+ {
+  "lemma": "занятый",
+  "pos": "adj",
+  "rank": 458
+ },
+ {
+  "lemma": "брать",
+  "pos": "verb",
+  "rank": 459
+ },
+ {
+  "lemma": "миссис",
+  "pos": "noun",
+  "rank": 460
+ },
+ {
+  "lemma": "второй",
+  "pos": "adj",
+  "rank": 461
+ },
+ {
+  "lemma": "иногда",
+  "pos": "adv",
+  "rank": 462
+ },
+ {
+  "lemma": "подруга",
+  "pos": "noun",
+  "rank": 463
+ },
+ {
+  "lemma": "следовать",
+  "pos": "verb",
+  "rank": 464
+ },
+ {
+  "lemma": "вроде",
+  "pos": "prep",
+  "rank": 465
+ },
+ {
+  "lemma": "класс",
+  "pos": "noun",
+  "rank": 466
+ },
+ {
+  "lemma": "прислать",
+  "pos": "verb",
+  "rank": 467
+ },
+ {
+  "lemma": "рядом",
+  "pos": "adv",
+  "rank": 468
+ },
+ {
+  "lemma": "родитель",
+  "pos": "noun",
+  "rank": 469
+ },
+ {
+  "lemma": "встретиться",
+  "pos": "verb",
+  "rank": 470
+ },
+ {
+  "lemma": "платить",
+  "pos": "verb",
+  "rank": 471
+ },
+ {
+  "lemma": "капитан",
+  "pos": "noun",
+  "rank": 472
+ },
+ {
+  "lemma": "новость",
+  "pos": "noun",
+  "rank": 473
+ },
+ {
+  "lemma": "остальной",
+  "pos": "det",
+  "rank": 474
+ },
+ {
+  "lemma": "встречаться",
+  "pos": "verb",
+  "rank": 475
+ },
+ {
+  "lemma": "перестать",
+  "pos": "verb",
+  "rank": 476
+ },
+ {
+  "lemma": "заставить",
+  "pos": "verb",
+  "rank": 477
+ },
+ {
+  "lemma": "прекратить",
+  "pos": "verb",
+  "rank": 478
+ },
+ {
+  "lemma": "называть",
+  "pos": "verb",
+  "rank": 479
+ },
+ {
+  "lemma": "отличный",
+  "pos": "adj",
+  "rank": 480
+ },
+ {
+  "lemma": "ненавидеть",
+  "pos": "verb",
+  "rank": 481
+ },
+ {
+  "lemma": "оружие",
+  "pos": "noun",
+  "rank": 482
+ },
+ {
+  "lemma": "прекрасный",
+  "pos": "adj",
+  "rank": 483
+ },
+ {
+  "lemma": "правильно",
+  "pos": "adv",
+  "rank": 484
+ },
+ {
+  "lemma": "ум",
+  "pos": "noun",
+  "rank": 485
+ },
+ {
+  "lemma": "оказаться",
+  "pos": "verb",
+  "rank": 486
+ },
+ {
+  "lemma": "свидание",
+  "pos": "noun",
+  "rank": 487
+ },
+ {
+  "lemma": "стена",
+  "pos": "noun",
+  "rank": 488
+ },
+ {
+  "lemma": "долго",
+  "pos": "adv",
+  "rank": 489
+ },
+ {
+  "lemma": "красивый",
+  "pos": "adj",
+  "rank": 490
+ },
+ {
+  "lemma": "важно",
+  "pos": "predic",
+  "rank": 491
+ },
+ {
+  "lemma": "выходить",
+  "pos": "verb",
+  "rank": 492
+ },
+ {
+  "lemma": "начало",
+  "pos": "noun",
+  "rank": 493
+ },
+ {
+  "lemma": "палец",
+  "pos": "noun",
+  "rank": 494
+ },
+ {
+  "lemma": "кроме",
+  "pos": "prep",
+  "rank": 495
+ },
+ {
+  "lemma": "сильный",
+  "pos": "adj",
+  "rank": 496
+ },
+ {
+  "lemma": "здорово",
+  "pos": "adv",
+  "rank": 497
+ },
+ {
+  "lemma": "вперёд",
+  "pos": "adv",
+  "rank": 498
+ },
+ {
+  "lemma": "захотеть",
+  "pos": "verb",
+  "rank": 499
+ },
+ {
+  "lemma": "душа",
+  "pos": "noun",
+  "rank": 500
+ },
+ {
+  "lemma": "внимание",
+  "pos": "noun",
+  "rank": 501
+ },
+ {
+  "lemma": "учиться",
+  "pos": "verb",
+  "rank": 502
+ },
+ {
+  "lemma": "чувак",
+  "pos": "noun",
+  "rank": 503
+ },
+ {
+  "lemma": "компания",
+  "pos": "noun",
+  "rank": 504
+ },
+ {
+  "lemma": "чувство",
+  "pos": "noun",
+  "rank": 505
+ },
+ {
+  "lemma": "война",
+  "pos": "noun",
+  "rank": 506
+ },
+ {
+  "lemma": "счёт",
+  "pos": "noun",
+  "rank": 507
+ },
+ {
+  "lemma": "давно",
+  "pos": "adv",
+  "rank": 508
+ },
+ {
+  "lemma": "самолёт",
+  "pos": "noun",
+  "rank": 509
+ },
+ {
+  "lemma": "жертва",
+  "pos": "noun",
+  "rank": 510
+ },
+ {
+  "lemma": "убийца",
+  "pos": "noun",
+  "rank": 511
+ },
+ {
+  "lemma": "находиться",
+  "pos": "verb",
+  "rank": 512
+ },
+ {
+  "lemma": "больной",
+  "pos": "adj",
+  "rank": 513
+ },
+ {
+  "lemma": "привести",
+  "pos": "verb",
+  "rank": 514
+ },
+ {
+  "lemma": "также",
+  "pos": "adv",
+  "rank": 515
+ },
+ {
+  "lemma": "джон",
+  "pos": "noun",
+  "rank": 516
+ },
+ {
+  "lemma": "вечером",
+  "pos": "adv",
+  "rank": 517
+ },
+ {
+  "lemma": "опять",
+  "pos": "adv",
+  "rank": 518
+ },
+ {
+  "lemma": "вообще-то",
+  "pos": "adv",
+  "rank": 519
+ },
+ {
+  "lemma": "понравиться",
+  "pos": "verb",
+  "rank": 520
+ },
+ {
+  "lemma": "разговаривать",
+  "pos": "verb",
+  "rank": 521
+ },
+ {
+  "lemma": "выпить",
+  "pos": "verb",
+  "rank": 522
+ },
+ {
+  "lemma": "одежда",
+  "pos": "noun",
+  "rank": 523
+ },
+ {
+  "lemma": "убивать",
+  "pos": "verb",
+  "rank": 524
+ },
+ {
+  "lemma": "вечеринка",
+  "pos": "noun",
+  "rank": 525
+ },
+ {
+  "lemma": "возвращаться",
+  "pos": "verb",
+  "rank": 526
+ },
+ {
+  "lemma": "сначала",
+  "pos": "adv",
+  "rank": 527
+ },
+ {
+  "lemma": "спрашивать",
+  "pos": "verb",
+  "rank": 528
+ },
+ {
+  "lemma": "около",
+  "pos": "prep",
+  "rank": 529
+ },
+ {
+  "lemma": "уехать",
+  "pos": "verb",
+  "rank": 530
+ },
+ {
+  "lemma": "близкий",
+  "pos": "adj",
+  "rank": 531
+ },
+ {
+  "lemma": "увидеться",
+  "pos": "verb",
+  "rank": 532
+ },
+ {
+  "lemma": "полагать",
+  "pos": "verb",
+  "rank": 533
+ },
+ {
+  "lemma": "получиться",
+  "pos": "verb",
+  "rank": 534
+ },
+ {
+  "lemma": "остановить",
+  "pos": "verb",
+  "rank": 535
+ },
+ {
+  "lemma": "тип",
+  "pos": "noun",
+  "rank": 536
+ },
+ {
+  "lemma": "связь",
+  "pos": "noun",
+  "rank": 537
+ },
+ {
+  "lemma": "услышать",
+  "pos": "verb",
+  "rank": 538
+ },
+ {
+  "lemma": "ночью",
+  "pos": "adv",
+  "rank": 539
+ },
+ {
+  "lemma": "фильм",
+  "pos": "noun",
+  "rank": 540
+ },
+ {
+  "lemma": "сразу",
+  "pos": "adv",
+  "rank": 541
+ },
+ {
+  "lemma": "утром",
+  "pos": "adv",
+  "rank": 542
+ },
+ {
+  "lemma": "помогать",
+  "pos": "verb",
+  "rank": 543
+ },
+ {
+  "lemma": "страна",
+  "pos": "noun",
+  "rank": 544
+ },
+ {
+  "lemma": "тюрьма",
+  "pos": "noun",
+  "rank": 545
+ },
+ {
+  "lemma": "пить",
+  "pos": "verb",
+  "rank": 546
+ },
+ {
+  "lemma": "похожий",
+  "pos": "adj",
+  "rank": 547
+ },
+ {
+  "lemma": "бежать",
+  "pos": "verb",
+  "rank": 548
+ },
+ {
+  "lemma": "окно",
+  "pos": "noun",
+  "rank": 549
+ },
+ {
+  "lemma": "решение",
+  "pos": "noun",
+  "rank": 550
+ },
+ {
+  "lemma": "прекрасно",
+  "pos": "adv",
+  "rank": 551
+ },
+ {
+  "lemma": "агент",
+  "pos": "noun",
+  "rank": 552
+ },
+ {
+  "lemma": "тысяча",
+  "pos": "num",
+  "rank": 553
+ },
+ {
+  "lemma": "представлять",
+  "pos": "verb",
+  "rank": 554
+ },
+ {
+  "lemma": "обед",
+  "pos": "noun",
+  "rank": 555
+ },
+ {
+  "lemma": "ответить",
+  "pos": "verb",
+  "rank": 556
+ },
+ {
+  "lemma": "способ",
+  "pos": "noun",
+  "rank": 557
+ },
+ {
+  "lemma": "суд",
+  "pos": "noun",
+  "rank": 558
+ },
+ {
+  "lemma": "читать",
+  "pos": "verb",
+  "rank": 559
+ },
+ {
+  "lemma": "группа",
+  "pos": "noun",
+  "rank": 560
+ },
+ {
+  "lemma": "здравствуйте",
+  "pos": "intj",
+  "rank": 561
+ },
+ {
+  "lemma": "скорее",
+  "pos": "adv",
+  "rank": 562
+ },
+ {
+  "lemma": "ох",
+  "pos": "intj",
+  "rank": 563
+ },
+ {
+  "lemma": "отправить",
+  "pos": "verb",
+  "rank": 564
+ },
+ {
+  "lemma": "собственный",
+  "pos": "adj",
+  "rank": 565
+ },
+ {
+  "lemma": "молодой",
+  "pos": "adj",
+  "rank": 566
+ },
+ {
+  "lemma": "справиться",
+  "pos": "verb",
+  "rank": 567
+ },
+ {
+  "lemma": "писать",
+  "pos": "verb",
+  "rank": 568
+ },
+ {
+  "lemma": "чистый",
+  "pos": "adj",
+  "rank": 569
+ },
+ {
+  "lemma": "столько",
+  "pos": "adv",
+  "rank": 570
+ },
+ {
+  "lemma": "небо",
+  "pos": "noun",
+  "rank": 571
+ },
+ {
+  "lemma": "целый",
+  "pos": "adj",
+  "rank": 572
+ },
+ {
+  "lemma": "сильно",
+  "pos": "adv",
+  "rank": 573
+ },
+ {
+  "lemma": "появиться",
+  "pos": "verb",
+  "rank": 574
+ },
+ {
+  "lemma": "рот",
+  "pos": "noun",
+  "rank": 575
+ },
+ {
+  "lemma": "ошибка",
+  "pos": "noun",
+  "rank": 576
+ },
+ {
+  "lemma": "остановиться",
+  "pos": "verb",
+  "rank": 577
+ },
+ {
+  "lemma": "дерьмо",
+  "pos": "noun",
+  "rank": 578
+ },
+ {
+  "lemma": "поздний",
+  "pos": "adj",
+  "rank": 579
+ },
+ {
+  "lemma": "принимать",
+  "pos": "verb",
+  "rank": 580
+ },
+ {
+  "lemma": "чёрный",
+  "pos": "adj",
+  "rank": 581
+ },
+ {
+  "lemma": "президент",
+  "pos": "noun",
+  "rank": 582
+ },
+ {
+  "lemma": "честь",
+  "pos": "noun",
+  "rank": 583
+ },
+ {
+  "lemma": "беспокоиться",
+  "pos": "verb",
+  "rank": 584
+ },
+ {
+  "lemma": "отпустить",
+  "pos": "verb",
+  "rank": 585
+ },
+ {
+  "lemma": "секс",
+  "pos": "noun",
+  "rank": 586
+ },
+ {
+  "lemma": "корабль",
+  "pos": "noun",
+  "rank": 587
+ },
+ {
+  "lemma": "вставать",
+  "pos": "verb",
+  "rank": 588
+ },
+ {
+  "lemma": "двое",
+  "pos": "num",
+  "rank": 589
+ },
+ {
+  "lemma": "выбор",
+  "pos": "noun",
+  "rank": 590
+ },
+ {
+  "lemma": "бабушка",
+  "pos": "noun",
+  "rank": 591
+ },
+ {
+  "lemma": "ах",
+  "pos": "intj",
+  "rank": 592
+ },
+ {
+  "lemma": "понятно",
+  "pos": "predic",
+  "rank": 593
+ },
+ {
+  "lemma": "хотеться",
+  "pos": "verb",
+  "rank": 594
+ },
+ {
+  "lemma": "довольно",
+  "pos": "adv",
+  "rank": 595
+ },
+ {
+  "lemma": "бывать",
+  "pos": "verb",
+  "rank": 596
+ },
+ {
+  "lemma": "назвать",
+  "pos": "verb",
+  "rank": 597
+ },
+ {
+  "lemma": "замечательный",
+  "pos": "adj",
+  "rank": 598
+ },
+ {
+  "lemma": "безопасность",
+  "pos": "noun",
+  "rank": 599
+ },
+ {
+  "lemma": "выбрать",
+  "pos": "verb",
+  "rank": 600
+ },
+ {
+  "lemma": "готовить",
+  "pos": "verb",
+  "rank": 601
+ },
+ {
+  "lemma": "заметить",
+  "pos": "verb",
+  "rank": 602
+ },
+ {
+  "lemma": "четыре",
+  "pos": "num",
+  "rank": 603
+ },
+ {
+  "lemma": "прежде",
+  "pos": "adv",
+  "rank": 604
+ },
+ {
+  "lemma": "возможность",
+  "pos": "noun",
+  "rank": 605
+ },
+ {
+  "lemma": "обо",
+  "pos": "prep",
+  "rank": 606
+ },
+ {
+  "lemma": "информация",
+  "pos": "noun",
+  "rank": 607
+ },
+ {
+  "lemma": "интересный",
+  "pos": "adj",
+  "rank": 608
+ },
+ {
+  "lemma": "камера",
+  "pos": "noun",
+  "rank": 609
+ },
+ {
+  "lemma": "представить",
+  "pos": "verb",
+  "rank": 610
+ },
+ {
+  "lemma": "объяснить",
+  "pos": "verb",
+  "rank": 611
+ },
+ {
+  "lemma": "мера",
+  "pos": "noun",
+  "rank": 612
+ },
+ {
+  "lemma": "познакомиться",
+  "pos": "verb",
+  "rank": 613
+ },
+ {
+  "lemma": "передать",
+  "pos": "verb",
+  "rank": 614
+ },
+ {
+  "lemma": "интересно",
+  "pos": "predic",
+  "rank": 615
+ },
+ {
+  "lemma": "затем",
+  "pos": "adv",
+  "rank": 616
+ },
+ {
+  "lemma": "учитель",
+  "pos": "noun",
+  "rank": 617
+ },
+ {
+  "lemma": "рано",
+  "pos": "adv",
+  "rank": 618
+ },
+ {
+  "lemma": "пол",
+  "pos": "noun",
+  "rank": 619
+ },
+ {
+  "lemma": "рассказывать",
+  "pos": "verb",
+  "rank": 620
+ },
+ {
+  "lemma": "вон",
+  "pos": "part",
+  "rank": 621
+ },
+ {
+  "lemma": "спина",
+  "pos": "noun",
+  "rank": 622
+ },
+ {
+  "lemma": "сон",
+  "pos": "noun",
+  "rank": 623
+ },
+ {
+  "lemma": "гора",
+  "pos": "noun",
+  "rank": 624
+ },
+ {
+  "lemma": "чтоб",
+  "pos": "conj",
+  "rank": 625
+ },
+ {
+  "lemma": "заплатить",
+  "pos": "verb",
+  "rank": 626
+ },
+ {
+  "lemma": "держаться",
+  "pos": "verb",
+  "rank": 627
+ },
+ {
+  "lemma": "снять",
+  "pos": "verb",
+  "rank": 628
+ },
+ {
+  "lemma": "странно",
+  "pos": "adv",
+  "rank": 629
+ },
+ {
+  "lemma": "ой",
+  "pos": "intj",
+  "rank": 630
+ },
+ {
+  "lemma": "алло",
+  "pos": "intj",
+  "rank": 631
+ },
+ {
+  "lemma": "успокоиться",
+  "pos": "verb",
+  "rank": 632
+ },
+ {
+  "lemma": "общий",
+  "pos": "adj",
+  "rank": 633
+ },
+ {
+  "lemma": "однажды",
+  "pos": "adv",
+  "rank": 634
+ },
+ {
+  "lemma": "странный",
+  "pos": "adj",
+  "rank": 635
+ },
+ {
+  "lemma": "обычно",
+  "pos": "adv",
+  "rank": 636
+ },
+ {
+  "lemma": "ужасный",
+  "pos": "adj",
+  "rank": 637
+ },
+ {
+  "lemma": "миллион",
+  "pos": "num",
+  "rank": 638
+ },
+ {
+  "lemma": "поле",
+  "pos": "noun",
+  "rank": 639
+ },
+ {
+  "lemma": "поймать",
+  "pos": "verb",
+  "rank": 640
+ },
+ {
+  "lemma": "мысль",
+  "pos": "noun",
+  "rank": 641
+ },
+ {
+  "lemma": "адвокат",
+  "pos": "noun",
+  "rank": 642
+ },
+ {
+  "lemma": "другие",
+  "pos": "det",
+  "rank": 643
+ },
+ {
+  "lemma": "иначе",
+  "pos": "adv",
+  "rank": 644
+ },
+ {
+  "lemma": "заняться",
+  "pos": "verb",
+  "rank": 645
+ },
+ {
+  "lemma": "система",
+  "pos": "noun",
+  "rank": 646
+ },
+ {
+  "lemma": "согласный",
+  "pos": "adj",
+  "rank": 647
+ },
+ {
+  "lemma": "песня",
+  "pos": "noun",
+  "rank": 648
+ },
+ {
+  "lemma": "приятно",
+  "pos": "predic",
+  "rank": 649
+ },
+ {
+  "lemma": "дерево",
+  "pos": "noun",
+  "rank": 650
+ },
+ {
+  "lemma": "пиво",
+  "pos": "noun",
+  "rank": 651
+ },
+ {
+  "lemma": "сообщение",
+  "pos": "noun",
+  "rank": 652
+ },
+ {
+  "lemma": "звучать",
+  "pos": "verb",
+  "rank": 653
+ },
+ {
+  "lemma": "цель",
+  "pos": "noun",
+  "rank": 654
+ },
+ {
+  "lemma": "детектив",
+  "pos": "noun",
+  "rank": 655
+ },
+ {
+  "lemma": "курс",
+  "pos": "noun",
+  "rank": 656
+ },
+ {
+  "lemma": "мозг",
+  "pos": "noun",
+  "rank": 657
+ },
+ {
+  "lemma": "лекарство",
+  "pos": "noun",
+  "rank": 658
+ },
+ {
+  "lemma": "немой",
+  "pos": "adj",
+  "rank": 659
+ },
+ {
+  "lemma": "король",
+  "pos": "noun",
+  "rank": 660
+ },
+ {
+  "lemma": "обратно",
+  "pos": "adv",
+  "rank": 661
+ },
+ {
+  "lemma": "поставить",
+  "pos": "verb",
+  "rank": 662
+ },
+ {
+  "lemma": "зайти",
+  "pos": "verb",
+  "rank": 663
+ },
+ {
+  "lemma": "изменить",
+  "pos": "verb",
+  "rank": 664
+ },
+ {
+  "lemma": "правило",
+  "pos": "noun",
+  "rank": 665
+ },
+ {
+  "lemma": "приятель",
+  "pos": "noun",
+  "rank": 666
+ },
+ {
+  "lemma": "доверять",
+  "pos": "verb",
+  "rank": 667
+ },
+ {
+  "lemma": "отвечать",
+  "pos": "verb",
+  "rank": 668
+ },
+ {
+  "lemma": "насколько",
+  "pos": "adv",
+  "rank": 669
+ },
+ {
+  "lemma": "двигаться",
+  "pos": "verb",
+  "rank": 670
+ },
+ {
+  "lemma": "лёгкий",
+  "pos": "adj",
+  "rank": 671
+ },
+ {
+  "lemma": "письмо",
+  "pos": "noun",
+  "rank": 672
+ },
+ {
+  "lemma": "цена",
+  "pos": "noun",
+  "rank": 673
+ },
+ {
+  "lemma": "стрелять",
+  "pos": "verb",
+  "rank": 674
+ },
+ {
+  "lemma": "ситуация",
+  "pos": "noun",
+  "rank": 675
+ },
+ {
+  "lemma": "становиться",
+  "pos": "verb",
+  "rank": 676
+ },
+ {
+  "lemma": "собака",
+  "pos": "noun",
+  "rank": 677
+ },
+ {
+  "lemma": "белый",
+  "pos": "adj",
+  "rank": 678
+ },
+ {
+  "lemma": "стоять",
+  "pos": "verb",
+  "rank": 679
+ },
+ {
+  "lemma": "образ",
+  "pos": "noun",
+  "rank": 680
+ },
+ {
+  "lemma": "платье",
+  "pos": "noun",
+  "rank": 681
+ },
+ {
+  "lemma": "урок",
+  "pos": "noun",
+  "rank": 682
+ },
+ {
+  "lemma": "доллар",
+  "pos": "noun",
+  "rank": 683
+ },
+ {
+  "lemma": "клиент",
+  "pos": "noun",
+  "rank": 684
+ },
+ {
+  "lemma": "компьютер",
+  "pos": "noun",
+  "rank": 685
+ },
+ {
+  "lemma": "достать",
+  "pos": "verb",
+  "rank": 686
+ },
+ {
+  "lemma": "голос",
+  "pos": "noun",
+  "rank": 687
+ },
+ {
+  "lemma": "разговор",
+  "pos": "noun",
+  "rank": 688
+ },
+ {
+  "lemma": "кстати",
+  "pos": "adv",
+  "rank": 689
+ },
+ {
+  "lemma": "кровать",
+  "pos": "noun",
+  "rank": 690
+ },
+ {
+  "lemma": "заткнуться",
+  "pos": "verb",
+  "rank": 691
+ },
+ {
+  "lemma": "перевод",
+  "pos": "noun",
+  "rank": 692
+ },
+ {
+  "lemma": "разобраться",
+  "pos": "verb",
+  "rank": 693
+ },
+ {
+  "lemma": "нос",
+  "pos": "noun",
+  "rank": 694
+ },
+ {
+  "lemma": "проводить",
+  "pos": "verb",
+  "rank": 695
+ },
+ {
+  "lemma": "список",
+  "pos": "noun",
+  "rank": 696
+ },
+ {
+  "lemma": "шутить",
+  "pos": "verb",
+  "rank": 697
+ },
+ {
+  "lemma": "солнце",
+  "pos": "noun",
+  "rank": 698
+ },
+ {
+  "lemma": "когда-нибудь",
+  "pos": "adv",
+  "rank": 699
+ },
+ {
+  "lemma": "погодить",
+  "pos": "verb",
+  "rank": 700
+ },
+ {
+  "lemma": "бумага",
+  "pos": "noun",
+  "rank": 701
+ },
+ {
+  "lemma": "операция",
+  "pos": "noun",
+  "rank": 702
+ },
+ {
+  "lemma": "звонок",
+  "pos": "noun",
+  "rank": 703
+ },
+ {
+  "lemma": "яйцо",
+  "pos": "noun",
+  "rank": 704
+ },
+ {
+  "lemma": "продавать",
+  "pos": "verb",
+  "rank": 705
+ },
+ {
+  "lemma": "будущее",
+  "pos": "noun",
+  "rank": 706
+ },
+ {
+  "lemma": "войти",
+  "pos": "verb",
+  "rank": 707
+ },
+ {
+  "lemma": "некоторые",
+  "pos": "det",
+  "rank": 708
+ },
+ {
+  "lemma": "спокойный",
+  "pos": "adj",
+  "rank": 709
+ },
+ {
+  "lemma": "положить",
+  "pos": "verb",
+  "rank": 710
+ },
+ {
+  "lemma": "поезд",
+  "pos": "noun",
+  "rank": 711
+ },
+ {
+  "lemma": "проходить",
+  "pos": "verb",
+  "rank": 712
+ },
+ {
+  "lemma": "простой",
+  "pos": "adj",
+  "rank": 713
+ },
+ {
+  "lemma": "преступление",
+  "pos": "noun",
+  "rank": 714
+ },
+ {
+  "lemma": "лес",
+  "pos": "noun",
+  "rank": 715
+ },
+ {
+  "lemma": "уметь",
+  "pos": "verb",
+  "rank": 716
+ },
+ {
+  "lemma": "сей",
+  "pos": "det",
+  "rank": 717
+ },
+ {
+  "lemma": "рождение",
+  "pos": "noun",
+  "rank": 718
+ },
+ {
+  "lemma": "билет",
+  "pos": "noun",
+  "rank": 719
+ },
+ {
+  "lemma": "нож",
+  "pos": "noun",
+  "rank": 720
+ },
+ {
+  "lemma": "украсть",
+  "pos": "verb",
+  "rank": 721
+ },
+ {
+  "lemma": "главный",
+  "pos": "adj",
+  "rank": 722
+ },
+ {
+  "lemma": "подойти",
+  "pos": "verb",
+  "rank": 723
+ },
+ {
+  "lemma": "следить",
+  "pos": "verb",
+  "rank": 724
+ },
+ {
+  "lemma": "закончиться",
+  "pos": "verb",
+  "rank": 725
+ },
+ {
+  "lemma": "личный",
+  "pos": "adj",
+  "rank": 726
+ },
+ {
+  "lemma": "получать",
+  "pos": "verb",
+  "rank": 727
+ },
+ {
+  "lemma": "устроить",
+  "pos": "verb",
+  "rank": 728
+ },
+ {
+  "lemma": "добро",
+  "pos": "noun",
+  "rank": 729
+ },
+ {
+  "lemma": "любимый",
+  "pos": "adj",
+  "rank": 730
+ },
+ {
+  "lemma": "полицейский",
+  "pos": "noun",
+  "rank": 731
+ },
+ {
+  "lemma": "чай",
+  "pos": "noun",
+  "rank": 732
+ },
+ {
+  "lemma": "ужасно",
+  "pos": "adv",
+  "rank": 733
+ },
+ {
+  "lemma": "покупать",
+  "pos": "verb",
+  "rank": 734
+ },
+ {
+  "lemma": "подобный",
+  "pos": "adj",
+  "rank": 735
+ },
+ {
+  "lemma": "штука",
+  "pos": "noun",
+  "rank": 736
+ },
+ {
+  "lemma": "понадобиться",
+  "pos": "verb",
+  "rank": 737
+ },
+ {
+  "lemma": "совершенно",
+  "pos": "adv",
+  "rank": 738
+ },
+ {
+  "lemma": "сходить",
+  "pos": "verb",
+  "rank": 739
+ },
+ {
+  "lemma": "запись",
+  "pos": "noun",
+  "rank": 740
+ },
+ {
+  "lemma": "небольшой",
+  "pos": "adj",
+  "rank": 741
+ },
+ {
+  "lemma": "умирать",
+  "pos": "verb",
+  "rank": 742
+ },
+ {
+  "lemma": "туалет",
+  "pos": "noun",
+  "rank": 743
+ },
+ {
+  "lemma": "мужик",
+  "pos": "noun",
+  "rank": 744
+ },
+ {
+  "lemma": "где-то",
+  "pos": "adv",
+  "rank": 745
+ },
+ {
+  "lemma": "взглянуть",
+  "pos": "verb",
+  "rank": 746
+ },
+ {
+  "lemma": "огромный",
+  "pos": "adj",
+  "rank": 747
+ },
+ {
+  "lemma": "пропасть",
+  "pos": "verb",
+  "rank": 748
+ },
+ {
+  "lemma": "задница",
+  "pos": "noun",
+  "rank": 749
+ },
+ {
+  "lemma": "выяснить",
+  "pos": "verb",
+  "rank": 750
+ },
+ {
+  "lemma": "угодно",
+  "pos": "predic",
+  "rank": 751
+ },
+ {
+  "lemma": "поступить",
+  "pos": "verb",
+  "rank": 752
+ },
+ {
+  "lemma": "подарок",
+  "pos": "noun",
+  "rank": 753
+ },
+ {
+  "lemma": "вызвать",
+  "pos": "verb",
+  "rank": 754
+ },
+ {
+  "lemma": "закон",
+  "pos": "noun",
+  "rank": 755
+ },
+ {
+  "lemma": "зуб",
+  "pos": "noun",
+  "rank": 756
+ },
+ {
+  "lemma": "пригласить",
+  "pos": "verb",
+  "rank": 757
+ },
+ {
+  "lemma": "честно",
+  "pos": "adv",
+  "rank": 758
+ },
+ {
+  "lemma": "ухо",
+  "pos": "noun",
+  "rank": 759
+ },
+ {
+  "lemma": "как-то",
+  "pos": "adv",
+  "rank": 760
+ },
+ {
+  "lemma": "член",
+  "pos": "noun",
+  "rank": 761
+ },
+ {
+  "lemma": "выиграть",
+  "pos": "verb",
+  "rank": 762
+ },
+ {
+  "lemma": "прощение",
+  "pos": "noun",
+  "rank": 763
+ },
+ {
+  "lemma": "музыка",
+  "pos": "noun",
+  "rank": 764
+ },
+ {
+  "lemma": "состояние",
+  "pos": "noun",
+  "rank": 765
+ },
+ {
+  "lemma": "измениться",
+  "pos": "verb",
+  "rank": 766
+ },
+ {
+  "lemma": "шесть",
+  "pos": "num",
+  "rank": 767
+ },
+ {
+  "lemma": "грязный",
+  "pos": "adj",
+  "rank": 768
+ },
+ {
+  "lemma": "совет",
+  "pos": "noun",
+  "rank": 769
+ },
+ {
+  "lemma": "сбежать",
+  "pos": "verb",
+  "rank": 770
+ },
+ {
+  "lemma": "внутри",
+  "pos": "adv",
+  "rank": 771
+ },
+ {
+  "lemma": "свадьба",
+  "pos": "noun",
+  "rank": 772
+ },
+ {
+  "lemma": "убрать",
+  "pos": "verb",
+  "rank": 773
+ },
+ {
+  "lemma": "босс",
+  "pos": "noun",
+  "rank": 774
+ },
+ {
+  "lemma": "носить",
+  "pos": "verb",
+  "rank": 775
+ },
+ {
+  "lemma": "море",
+  "pos": "noun",
+  "rank": 776
+ },
+ {
+  "lemma": "связать",
+  "pos": "verb",
+  "rank": 777
+ },
+ {
+  "lemma": "начаться",
+  "pos": "verb",
+  "rank": 778
+ },
+ {
+  "lemma": "уничтожить",
+  "pos": "verb",
+  "rank": 779
+ },
+ {
+  "lemma": "сообщить",
+  "pos": "verb",
+  "rank": 780
+ },
+ {
+  "lemma": "садиться",
+  "pos": "verb",
+  "rank": 781
+ },
+ {
+  "lemma": "далеко",
+  "pos": "adv",
+  "rank": 782
+ },
+ {
+  "lemma": "сесть",
+  "pos": "verb",
+  "rank": 783
+ },
+ {
+  "lemma": "вокруг",
+  "pos": "adv",
+  "rank": 784
+ },
+ {
+  "lemma": "кухня",
+  "pos": "noun",
+  "rank": 785
+ },
+ {
+  "lemma": "придумать",
+  "pos": "verb",
+  "rank": 786
+ },
+ {
+  "lemma": "сосед",
+  "pos": "noun",
+  "rank": 787
+ },
+ {
+  "lemma": "предложить",
+  "pos": "verb",
+  "rank": 788
+ },
+ {
+  "lemma": "пистолет",
+  "pos": "noun",
+  "rank": 789
+ },
+ {
+  "lemma": "великий",
+  "pos": "adj",
+  "rank": 790
+ },
+ {
+  "lemma": "малыш",
+  "pos": "noun",
+  "rank": 791
+ },
+ {
+  "lemma": "заходить",
+  "pos": "verb",
+  "rank": 792
+ },
+ {
+  "lemma": "согласиться",
+  "pos": "verb",
+  "rank": 793
+ },
+ {
+  "lemma": "повод",
+  "pos": "noun",
+  "rank": 794
+ },
+ {
+  "lemma": "всякий",
+  "pos": "det",
+  "rank": 795
+ },
+ {
+  "lemma": "удача",
+  "pos": "noun",
+  "rank": 796
+ },
+ {
+  "lemma": "огонь",
+  "pos": "noun",
+  "rank": 797
+ },
+ {
+  "lemma": "встретить",
+  "pos": "verb",
+  "rank": 798
+ },
+ {
+  "lemma": "речь",
+  "pos": "noun",
+  "rank": 799
+ },
+ {
+  "lemma": "волос",
+  "pos": "noun",
+  "rank": 800
+ },
+ {
+  "lemma": "фотография",
+  "pos": "noun",
+  "rank": 801
+ },
+ {
+  "lemma": "неужели",
+  "pos": "part",
+  "rank": 802
+ },
+ {
+  "lemma": "очевидный",
+  "pos": "adj",
+  "rank": 803
+ },
+ {
+  "lemma": "круто",
+  "pos": "adv",
+  "rank": 804
+ },
+ {
+  "lemma": "умный",
+  "pos": "adj",
+  "rank": 805
+ },
+ {
+  "lemma": "скучать",
+  "pos": "verb",
+  "rank": 806
+ },
+ {
+  "lemma": "вдруг",
+  "pos": "adv",
+  "rank": 807
+ },
+ {
+  "lemma": "красный",
+  "pos": "adj",
+  "rank": 808
+ },
+ {
+  "lemma": "врать",
+  "pos": "verb",
+  "rank": 809
+ },
+ {
+  "lemma": "попытаться",
+  "pos": "verb",
+  "rank": 810
+ },
+ {
+  "lemma": "горячий",
+  "pos": "adj",
+  "rank": 811
+ },
+ {
+  "lemma": "осторожный",
+  "pos": "adj",
+  "rank": 812
+ },
+ {
+  "lemma": "болеть",
+  "pos": "verb",
+  "rank": 813
+ },
+ {
+  "lemma": "идиот",
+  "pos": "noun",
+  "rank": 814
+ },
+ {
+  "lemma": "повезти",
+  "pos": "verb",
+  "rank": 815
+ },
+ {
+  "lemma": "минутка",
+  "pos": "noun",
+  "rank": 816
+ },
+ {
+  "lemma": "подходить",
+  "pos": "verb",
+  "rank": 817
+ },
+ {
+  "lemma": "высокий",
+  "pos": "adj",
+  "rank": 818
+ },
+ {
+  "lemma": "шоу",
+  "pos": "noun",
+  "rank": 819
+ },
+ {
+  "lemma": "больно",
+  "pos": "predic",
+  "rank": 820
+ },
+ {
+  "lemma": "исчезнуть",
+  "pos": "verb",
+  "rank": 821
+ },
+ {
+  "lemma": "трудно",
+  "pos": "adv",
+  "rank": 822
+ },
+ {
+  "lemma": "создать",
+  "pos": "verb",
+  "rank": 823
+ },
+ {
+  "lemma": "правый",
+  "pos": "adj",
+  "rank": 824
+ },
+ {
+  "lemma": "предложение",
+  "pos": "noun",
+  "rank": 825
+ },
+ {
+  "lemma": "существовать",
+  "pos": "verb",
+  "rank": 826
+ },
+ {
+  "lemma": "болезнь",
+  "pos": "noun",
+  "rank": 827
+ },
+ {
+  "lemma": "бывший",
+  "pos": "adj",
+  "rank": 828
+ },
+ {
+  "lemma": "дядя",
+  "pos": "noun",
+  "rank": 829
+ },
+ {
+  "lemma": "постоянно",
+  "pos": "adv",
+  "rank": 830
+ },
+ {
+  "lemma": "лучший",
+  "pos": "adj",
+  "rank": 831
+ },
+ {
+  "lemma": "например",
+  "pos": "adv",
+  "rank": 832
+ },
+ {
+  "lemma": "знакомый",
+  "pos": "adj",
+  "rank": 833
+ },
+ {
+  "lemma": "подозревать",
+  "pos": "verb",
+  "rank": 834
+ },
+ {
+  "lemma": "народ",
+  "pos": "noun",
+  "rank": 835
+ },
+ {
+  "lemma": "дедушка",
+  "pos": "noun",
+  "rank": 836
+ },
+ {
+  "lemma": "ожидать",
+  "pos": "verb",
+  "rank": 837
+ },
+ {
+  "lemma": "желать",
+  "pos": "verb",
+  "rank": 838
+ },
+ {
+  "lemma": "карта",
+  "pos": "noun",
+  "rank": 839
+ },
+ {
+  "lemma": "след",
+  "pos": "noun",
+  "rank": 840
+ },
+ {
+  "lemma": "обычный",
+  "pos": "adj",
+  "rank": 841
+ },
+ {
+  "lemma": "автобус",
+  "pos": "noun",
+  "rank": 842
+ },
+ {
+  "lemma": "серьёзный",
+  "pos": "adj",
+  "rank": 843
+ },
+ {
+  "lemma": "третий",
+  "pos": "adj",
+  "rank": 844
+ },
+ {
+  "lemma": "являться",
+  "pos": "verb",
+  "rank": 845
+ },
+ {
+  "lemma": "крайний",
+  "pos": "adj",
+  "rank": 846
+ },
+ {
+  "lemma": "виноватый",
+  "pos": "adj",
+  "rank": 847
+ },
+ {
+  "lemma": "означать",
+  "pos": "verb",
+  "rank": 848
+ },
+ {
+  "lemma": "продать",
+  "pos": "verb",
+  "rank": 849
+ },
+ {
+  "lemma": "часто",
+  "pos": "adv",
+  "rank": 850
+ },
+ {
+  "lemma": "десять",
+  "pos": "num",
+  "rank": 851
+ },
+ {
+  "lemma": "мило",
+  "pos": "adv",
+  "rank": 852
+ },
+ {
+  "lemma": "какой-нибудь",
+  "pos": "det",
+  "rank": 853
+ },
+ {
+  "lemma": "встать",
+  "pos": "verb",
+  "rank": 854
+ },
+ {
+  "lemma": "центр",
+  "pos": "noun",
+  "rank": 855
+ },
+ {
+  "lemma": "арестовать",
+  "pos": "verb",
+  "rank": 856
+ },
+ {
+  "lemma": "полностью",
+  "pos": "adv",
+  "rank": 857
+ },
+ {
+  "lemma": "стараться",
+  "pos": "verb",
+  "rank": 858
+ },
+ {
+  "lemma": "леди",
+  "pos": "noun",
+  "rank": 859
+ },
+ {
+  "lemma": "хватать",
+  "pos": "verb",
+  "rank": 860
+ },
+ {
+  "lemma": "результат",
+  "pos": "noun",
+  "rank": 861
+ },
+ {
+  "lemma": "вспомнить",
+  "pos": "verb",
+  "rank": 862
+ },
+ {
+  "lemma": "закрыть",
+  "pos": "verb",
+  "rank": 863
+ },
+ {
+  "lemma": "старший",
+  "pos": "adj",
+  "rank": 864
+ },
+ {
+  "lemma": "здоровый",
+  "pos": "adj",
+  "rank": 865
+ },
+ {
+  "lemma": "неплохо",
+  "pos": "adv",
+  "rank": 866
+ },
+ {
+  "lemma": "погибнуть",
+  "pos": "verb",
+  "rank": 867
+ },
+ {
+  "lemma": "клуб",
+  "pos": "noun",
+  "rank": 868
+ },
+ {
+  "lemma": "чуть",
+  "pos": "adv",
+  "rank": 869
+ },
+ {
+  "lemma": "дух",
+  "pos": "noun",
+  "rank": 870
+ },
+ {
+  "lemma": "невозможно",
+  "pos": "predic",
+  "rank": 871
+ },
+ {
+  "lemma": "устать",
+  "pos": "verb",
+  "rank": 872
+ },
+ {
+  "lemma": "понятие",
+  "pos": "noun",
+  "rank": 873
+ },
+ {
+  "lemma": "слушайте",
+  "pos": "intj",
+  "rank": 874
+ },
+ {
+  "lemma": "долгий",
+  "pos": "adj",
+  "rank": 875
+ },
+ {
+  "lemma": "скорый",
+  "pos": "adj",
+  "rank": 876
+ },
+ {
+  "lemma": "позаботиться",
+  "pos": "verb",
+  "rank": 877
+ },
+ {
+  "lemma": "питер",
+  "pos": "noun",
+  "rank": 878
+ },
+ {
+  "lemma": "отказаться",
+  "pos": "verb",
+  "rank": 879
+ },
+ {
+  "lemma": "секрет",
+  "pos": "noun",
+  "rank": 880
+ },
+ {
+  "lemma": "пропустить",
+  "pos": "verb",
+  "rank": 881
+ },
+ {
+  "lemma": "здоровье",
+  "pos": "noun",
+  "rank": 882
+ },
+ {
+  "lemma": "выход",
+  "pos": "noun",
+  "rank": 883
+ },
+ {
+  "lemma": "смеяться",
+  "pos": "verb",
+  "rank": 884
+ },
+ {
+  "lemma": "банк",
+  "pos": "noun",
+  "rank": 885
+ },
+ {
+  "lemma": "детка",
+  "pos": "noun",
+  "rank": 886
+ },
+ {
+  "lemma": "сойти",
+  "pos": "verb",
+  "rank": 887
+ },
+ {
+  "lemma": "легко",
+  "pos": "adv",
+  "rank": 888
+ },
+ {
+  "lemma": "офицер",
+  "pos": "noun",
+  "rank": 889
+ },
+ {
+  "lemma": "свидетель",
+  "pos": "noun",
+  "rank": 890
+ },
+ {
+  "lemma": "святой",
+  "pos": "adj",
+  "rank": 891
+ },
+ {
+  "lemma": "добраться",
+  "pos": "verb",
+  "rank": 892
+ },
+ {
+  "lemma": "обнаружить",
+  "pos": "verb",
+  "rank": 893
+ },
+ {
+  "lemma": "мало",
+  "pos": "adv",
+  "rank": 894
+ },
+ {
+  "lemma": "удаться",
+  "pos": "verb",
+  "rank": 895
+ },
+ {
+  "lemma": "сделка",
+  "pos": "noun",
+  "rank": 896
+ },
+ {
+  "lemma": "благодарить",
+  "pos": "verb",
+  "rank": 897
+ },
+ {
+  "lemma": "разный",
+  "pos": "adj",
+  "rank": 898
+ },
+ {
+  "lemma": "вместо",
+  "pos": "prep",
+  "rank": 899
+ },
+ {
+  "lemma": "удар",
+  "pos": "noun",
+  "rank": 900
+ },
+ {
+  "lemma": "настолько",
+  "pos": "adv",
+  "rank": 901
+ },
+ {
+  "lemma": "пожаловать",
+  "pos": "verb",
+  "rank": 902
+ },
+ {
+  "lemma": "поднять",
+  "pos": "verb",
+  "rank": 903
+ },
+ {
+  "lemma": "повторять",
+  "pos": "verb",
+  "rank": 904
+ },
+ {
+  "lemma": "здание",
+  "pos": "noun",
+  "rank": 905
+ },
+ {
+  "lemma": "клясться",
+  "pos": "verb",
+  "rank": 906
+ },
+ {
+  "lemma": "мэм",
+  "pos": "noun",
+  "rank": 907
+ },
+ {
+  "lemma": "глупый",
+  "pos": "adj",
+  "rank": 908
+ },
+ {
+  "lemma": "переводчик",
+  "pos": "noun",
+  "rank": 909
+ },
+ {
+  "lemma": "либо",
+  "pos": "conj",
+  "rank": 910
+ },
+ {
+  "lemma": "пациент",
+  "pos": "noun",
+  "rank": 911
+ },
+ {
+  "lemma": "особенно",
+  "pos": "adv",
+  "rank": 912
+ },
+ {
+  "lemma": "очевидно",
+  "pos": "adv",
+  "rank": 913
+ },
+ {
+  "lemma": "рыба",
+  "pos": "noun",
+  "rank": 914
+ },
+ {
+  "lemma": "куча",
+  "pos": "noun",
+  "rank": 915
+ },
+ {
+  "lemma": "шутка",
+  "pos": "noun",
+  "rank": 916
+ },
+ {
+  "lemma": "заставлять",
+  "pos": "verb",
+  "rank": 917
+ },
+ {
+  "lemma": "доказать",
+  "pos": "verb",
+  "rank": 918
+ },
+ {
+  "lemma": "эм",
+  "pos": "intj",
+  "rank": 919
+ },
+ {
+  "lemma": "защитить",
+  "pos": "verb",
+  "rank": 920
+ },
+ {
+  "lemma": "половина",
+  "pos": "noun",
+  "rank": 921
+ },
+ {
+  "lemma": "доказательство",
+  "pos": "noun",
+  "rank": 922
+ },
+ {
+  "lemma": "бизнес",
+  "pos": "noun",
+  "rank": 923
+ },
+ {
+  "lemma": "язык",
+  "pos": "noun",
+  "rank": 924
+ },
+ {
+  "lemma": "обязательно",
+  "pos": "adv",
+  "rank": 925
+ },
+ {
+  "lemma": "отель",
+  "pos": "noun",
+  "rank": 926
+ },
+ {
+  "lemma": "дама",
+  "pos": "noun",
+  "rank": 927
+ },
+ {
+  "lemma": "форма",
+  "pos": "noun",
+  "rank": 928
+ },
+ {
+  "lemma": "звезда",
+  "pos": "noun",
+  "rank": 929
+ },
+ {
+  "lemma": "плакать",
+  "pos": "verb",
+  "rank": 930
+ },
+ {
+  "lemma": "гость",
+  "pos": "noun",
+  "rank": 931
+ },
+ {
+  "lemma": "шаг",
+  "pos": "noun",
+  "rank": 932
+ },
+ {
+  "lemma": "занять",
+  "pos": "verb",
+  "rank": 933
+ },
+ {
+  "lemma": "б",
+  "pos": "part",
+  "rank": 934
+ },
+ {
+  "lemma": "снимать",
+  "pos": "verb",
+  "rank": 935
+ },
+ {
+  "lemma": "мадам",
+  "pos": "noun",
+  "rank": 936
+ },
+ {
+  "lemma": "дождь",
+  "pos": "noun",
+  "rank": 937
+ },
+ {
+  "lemma": "немедленно",
+  "pos": "adv",
+  "rank": 938
+ },
+ {
+  "lemma": "наркотик",
+  "pos": "noun",
+  "rank": 939
+ },
+ {
+  "lemma": "отправиться",
+  "pos": "verb",
+  "rank": 940
+ },
+ {
+  "lemma": "лежать",
+  "pos": "verb",
+  "rank": 941
+ },
+ {
+  "lemma": "сработать",
+  "pos": "verb",
+  "rank": 942
+ },
+ {
+  "lemma": "защищать",
+  "pos": "verb",
+  "rank": 943
+ },
+ {
+  "lemma": "удовольствие",
+  "pos": "noun",
+  "rank": 944
+ },
+ {
+  "lemma": "способный",
+  "pos": "adj",
+  "rank": 945
+ },
+ {
+  "lemma": "начальник",
+  "pos": "noun",
+  "rank": 946
+ },
+ {
+  "lemma": "служба",
+  "pos": "noun",
+  "rank": 947
+ },
+ {
+  "lemma": "вытащить",
+  "pos": "verb",
+  "rank": 948
+ },
+ {
+  "lemma": "наконец",
+  "pos": "adv",
+  "rank": 949
+ },
+ {
+  "lemma": "победить",
+  "pos": "verb",
+  "rank": 950
+ },
+ {
+  "lemma": "уезжать",
+  "pos": "verb",
+  "rank": 951
+ },
+ {
+  "lemma": "девчонка",
+  "pos": "noun",
+  "rank": 952
+ },
+ {
+  "lemma": "защита",
+  "pos": "noun",
+  "rank": 953
+ },
+ {
+  "lemma": "река",
+  "pos": "noun",
+  "rank": 954
+ },
+ {
+  "lemma": "упасть",
+  "pos": "verb",
+  "rank": 955
+ },
+ {
+  "lemma": "бар",
+  "pos": "noun",
+  "rank": 956
+ },
+ {
+  "lemma": "штат",
+  "pos": "noun",
+  "rank": 957
+ },
+ {
+  "lemma": "цветок",
+  "pos": "noun",
+  "rank": 958
+ },
+ {
+  "lemma": "ничто",
+  "pos": "pron",
+  "rank": 959
+ },
+ {
+  "lemma": "документ",
+  "pos": "noun",
+  "rank": 960
+ },
+ {
+  "lemma": "смешно",
+  "pos": "adv",
+  "rank": 961
+ },
+ {
+  "lemma": "таблетка",
+  "pos": "noun",
+  "rank": 962
+ },
+ {
+  "lemma": "абсолютно",
+  "pos": "adv",
+  "rank": 963
+ },
+ {
+  "lemma": "предлагать",
+  "pos": "verb",
+  "rank": 964
+ },
+ {
+  "lemma": "действовать",
+  "pos": "verb",
+  "rank": 965
+ },
+ {
+  "lemma": "враг",
+  "pos": "noun",
+  "rank": 966
+ },
+ {
+  "lemma": "завтрак",
+  "pos": "noun",
+  "rank": 967
+ },
+ {
+  "lemma": "собраться",
+  "pos": "verb",
+  "rank": 968
+ },
+ {
+  "lemma": "приезжать",
+  "pos": "verb",
+  "rank": 969
+ },
+ {
+  "lemma": "слава",
+  "pos": "noun",
+  "rank": 970
+ },
+ {
+  "lemma": "молодец",
+  "pos": "noun",
+  "rank": 971
+ },
+ {
+  "lemma": "желание",
+  "pos": "noun",
+  "rank": 972
+ },
+ {
+  "lemma": "переживать",
+  "pos": "verb",
+  "rank": 973
+ },
+ {
+  "lemma": "жениться",
+  "pos": "verb",
+  "rank": 974
+ },
+ {
+  "lemma": "отвезти",
+  "pos": "verb",
+  "rank": 975
+ },
+ {
+  "lemma": "расследование",
+  "pos": "noun",
+  "rank": 976
+ },
+ {
+  "lemma": "лето",
+  "pos": "noun",
+  "rank": 977
+ },
+ {
+  "lemma": "известно",
+  "pos": "predic",
+  "rank": 978
+ },
+ {
+  "lemma": "роль",
+  "pos": "noun",
+  "rank": 979
+ },
+ {
+  "lemma": "нечего",
+  "pos": "predic",
+  "rank": 980
+ },
+ {
+  "lemma": "уровень",
+  "pos": "noun",
+  "rank": 981
+ },
+ {
+  "lemma": "окей",
+  "pos": "part",
+  "rank": 982
+ },
+ {
+  "lemma": "мнение",
+  "pos": "noun",
+  "rank": 983
+ },
+ {
+  "lemma": "власть",
+  "pos": "noun",
+  "rank": 984
+ },
+ {
+  "lemma": "поиск",
+  "pos": "noun",
+  "rank": 985
+ },
+ {
+  "lemma": "покой",
+  "pos": "noun",
+  "rank": 986
+ },
+ {
+  "lemma": "директор",
+  "pos": "noun",
+  "rank": 987
+ },
+ {
+  "lemma": "ветер",
+  "pos": "noun",
+  "rank": 988
+ },
+ {
+  "lemma": "съесть",
+  "pos": "verb",
+  "rank": 989
+ },
+ {
+  "lemma": "станция",
+  "pos": "noun",
+  "rank": 990
+ },
+ {
+  "lemma": "называться",
+  "pos": "verb",
+  "rank": 991
+ },
+ {
+  "lemma": "тихо",
+  "pos": "adv",
+  "rank": 992
+ },
+ {
+  "lemma": "петь",
+  "pos": "verb",
+  "rank": 993
+ },
+ {
+  "lemma": "приказ",
+  "pos": "noun",
+  "rank": 994
+ },
+ {
+  "lemma": "такси",
+  "pos": "noun",
+  "rank": 995
+ },
+ {
+  "lemma": "сомневаться",
+  "pos": "verb",
+  "rank": 996
+ },
+ {
+  "lemma": "факт",
+  "pos": "noun",
+  "rank": 997
+ },
+ {
+  "lemma": "многое",
+  "pos": "pron",
+  "rank": 998
+ },
+ {
+  "lemma": "сложно",
+  "pos": "predic",
+  "rank": 999
+ },
+ {
+  "lemma": "животное",
+  "pos": "noun",
+  "rank": 1000
+ },
+ {
+  "lemma": "блин",
+  "pos": "intj",
+  "rank": 1001
+ },
+ {
+  "lemma": "свобода",
+  "pos": "noun",
+  "rank": 1002
+ },
+ {
+  "lemma": "заботиться",
+  "pos": "verb",
+  "rank": 1003
+ },
+ {
+  "lemma": "костюм",
+  "pos": "noun",
+  "rank": 1004
+ },
+ {
+  "lemma": "очередь",
+  "pos": "noun",
+  "rank": 1005
+ },
+ {
+  "lemma": "лгать",
+  "pos": "verb",
+  "rank": 1006
+ },
+ {
+  "lemma": "знак",
+  "pos": "noun",
+  "rank": 1007
+ },
+ {
+  "lemma": "словно",
+  "pos": "conj",
+  "rank": 1008
+ },
+ {
+  "lemma": "опасный",
+  "pos": "adj",
+  "rank": 1009
+ },
+ {
+  "lemma": "узнавать",
+  "pos": "verb",
+  "rank": 1010
+ },
+ {
+  "lemma": "спокойно",
+  "pos": "adv",
+  "rank": 1011
+ },
+ {
+  "lemma": "убираться",
+  "pos": "verb",
+  "rank": 1012
+ },
+ {
+  "lemma": "крутой",
+  "pos": "adj",
+  "rank": 1013
+ },
+ {
+  "lemma": "спасть",
+  "pos": "verb",
+  "rank": 1014
+ },
+ {
+  "lemma": "постараться",
+  "pos": "verb",
+  "rank": 1015
+ },
+ {
+  "lemma": "сумасшедший",
+  "pos": "adj",
+  "rank": 1016
+ },
+ {
+  "lemma": "трогать",
+  "pos": "verb",
+  "rank": 1017
+ },
+ {
+  "lemma": "прошлое",
+  "pos": "noun",
+  "rank": 1018
+ },
+ {
+  "lemma": "тихий",
+  "pos": "adj",
+  "rank": 1019
+ },
+ {
+  "lemma": "разница",
+  "pos": "noun",
+  "rank": 1020
+ },
+ {
+  "lemma": "договориться",
+  "pos": "verb",
+  "rank": 1021
+ },
+ {
+  "lemma": "контроль",
+  "pos": "noun",
+  "rank": 1022
+ },
+ {
+  "lemma": "серия",
+  "pos": "noun",
+  "rank": 1023
+ },
+ {
+  "lemma": "мечта",
+  "pos": "noun",
+  "rank": 1024
+ },
+ {
+  "lemma": "планета",
+  "pos": "noun",
+  "rank": 1025
+ },
+ {
+  "lemma": "шеф",
+  "pos": "noun",
+  "rank": 1026
+ },
+ {
+  "lemma": "университет",
+  "pos": "noun",
+  "rank": 1027
+ },
+ {
+  "lemma": "терять",
+  "pos": "verb",
+  "rank": 1028
+ },
+ {
+  "lemma": "входить",
+  "pos": "verb",
+  "rank": 1029
+ },
+ {
+  "lemma": "ввиду",
+  "pos": "prep",
+  "rank": 1030
+ },
+ {
+  "lemma": "главное",
+  "pos": "noun",
+  "rank": 1031
+ },
+ {
+  "lemma": "по-моему",
+  "pos": "adv",
+  "rank": 1032
+ },
+ {
+  "lemma": "принадлежать",
+  "pos": "verb",
+  "rank": 1033
+ },
+ {
+  "lemma": "кричать",
+  "pos": "verb",
+  "rank": 1034
+ },
+ {
+  "lemma": "связаться",
+  "pos": "verb",
+  "rank": 1035
+ },
+ {
+  "lemma": "показывать",
+  "pos": "verb",
+  "rank": 1036
+ },
+ {
+  "lemma": "судья",
+  "pos": "noun",
+  "rank": 1037
+ },
+ {
+  "lemma": "америка",
+  "pos": "noun",
+  "rank": 1038
+ },
+ {
+  "lemma": "оставлять",
+  "pos": "verb",
+  "rank": 1039
+ },
+ {
+  "lemma": "обвинение",
+  "pos": "noun",
+  "rank": 1040
+ },
+ {
+  "lemma": "программа",
+  "pos": "noun",
+  "rank": 1041
+ },
+ {
+  "lemma": "страшный",
+  "pos": "adj",
+  "rank": 1042
+ },
+ {
+  "lemma": "точка",
+  "pos": "noun",
+  "rank": 1043
+ },
+ {
+  "lemma": "ударить",
+  "pos": "verb",
+  "rank": 1044
+ },
+ {
+  "lemma": "намного",
+  "pos": "adv",
+  "rank": 1045
+ },
+ {
+  "lemma": "герой",
+  "pos": "noun",
+  "rank": 1046
+ },
+ {
+  "lemma": "тяжело",
+  "pos": "adv",
+  "rank": 1047
+ },
+ {
+  "lemma": "воздух",
+  "pos": "noun",
+  "rank": 1048
+ },
+ {
+  "lemma": "пятница",
+  "pos": "noun",
+  "rank": 1049
+ },
+ {
+  "lemma": "ух",
+  "pos": "intj",
+  "rank": 1050
+ },
+ {
+  "lemma": "собрать",
+  "pos": "verb",
+  "rank": 1051
+ },
+ {
+  "lemma": "течение",
+  "pos": "noun",
+  "rank": 1052
+ },
+ {
+  "lemma": "судьба",
+  "pos": "noun",
+  "rank": 1053
+ },
+ {
+  "lemma": "бить",
+  "pos": "verb",
+  "rank": 1054
+ },
+ {
+  "lemma": "выжить",
+  "pos": "verb",
+  "rank": 1055
+ },
+ {
+  "lemma": "семь",
+  "pos": "num",
+  "rank": 1056
+ },
+ {
+  "lemma": "долг",
+  "pos": "noun",
+  "rank": 1057
+ },
+ {
+  "lemma": "бедный",
+  "pos": "adj",
+  "rank": 1058
+ },
+ {
+  "lemma": "отдел",
+  "pos": "noun",
+  "rank": 1059
+ },
+ {
+  "lemma": "армия",
+  "pos": "noun",
+  "rank": 1060
+ },
+ {
+  "lemma": "отойти",
+  "pos": "verb",
+  "rank": 1061
+ },
+ {
+  "lemma": "свежий",
+  "pos": "adj",
+  "rank": 1062
+ },
+ {
+  "lemma": "тяжелый",
+  "pos": "adj",
+  "rank": 1063
+ },
+ {
+  "lemma": "среди",
+  "pos": "prep",
+  "rank": 1064
+ },
+ {
+  "lemma": "церковь",
+  "pos": "noun",
+  "rank": 1065
+ },
+ {
+  "lemma": "уволить",
+  "pos": "verb",
+  "rank": 1066
+ },
+ {
+  "lemma": "брак",
+  "pos": "noun",
+  "rank": 1067
+ },
+ {
+  "lemma": "нести",
+  "pos": "verb",
+  "rank": 1068
+ },
+ {
+  "lemma": "выходной",
+  "pos": "noun",
+  "rank": 1069
+ },
+ {
+  "lemma": "успеть",
+  "pos": "verb",
+  "rank": 1070
+ },
+ {
+  "lemma": "вероятно",
+  "pos": "adv",
+  "rank": 1071
+ },
+ {
+  "lemma": "постоять",
+  "pos": "verb",
+  "rank": 1072
+ },
+ {
+  "lemma": "надеть",
+  "pos": "verb",
+  "rank": 1073
+ },
+ {
+  "lemma": "память",
+  "pos": "noun",
+  "rank": 1074
+ },
+ {
+  "lemma": "веселый",
+  "pos": "adj",
+  "rank": 1075
+ },
+ {
+  "lemma": "избавиться",
+  "pos": "verb",
+  "rank": 1076
+ },
+ {
+  "lemma": "рождество",
+  "pos": "noun",
+  "rank": 1077
+ },
+ {
+  "lemma": "известный",
+  "pos": "adj",
+  "rank": 1078
+ },
+ {
+  "lemma": "адрес",
+  "pos": "noun",
+  "rank": 1079
+ },
+ {
+  "lemma": "родиться",
+  "pos": "verb",
+  "rank": 1080
+ },
+ {
+  "lemma": "блядь",
+  "pos": "intj",
+  "rank": 1081
+ },
+ {
+  "lemma": "наконец-то",
+  "pos": "adv",
+  "rank": 1082
+ },
+ {
+  "lemma": "танцевать",
+  "pos": "verb",
+  "rank": 1083
+ },
+ {
+  "lemma": "неважно",
+  "pos": "adv",
+  "rank": 1084
+ },
+ {
+  "lemma": "действие",
+  "pos": "noun",
+  "rank": 1085
+ },
+ {
+  "lemma": "мясо",
+  "pos": "noun",
+  "rank": 1086
+ },
+ {
+  "lemma": "сожалеть",
+  "pos": "verb",
+  "rank": 1087
+ },
+ {
+  "lemma": "ублюдок",
+  "pos": "noun",
+  "rank": 1088
+ },
+ {
+  "lemma": "колледж",
+  "pos": "noun",
+  "rank": 1089
+ },
+ {
+  "lemma": "касаться",
+  "pos": "verb",
+  "rank": 1090
+ },
+ {
+  "lemma": "камень",
+  "pos": "noun",
+  "rank": 1091
+ },
+ {
+  "lemma": "объяснять",
+  "pos": "verb",
+  "rank": 1092
+ },
+ {
+  "lemma": "почувствовать",
+  "pos": "verb",
+  "rank": 1093
+ },
+ {
+  "lemma": "молоко",
+  "pos": "noun",
+  "rank": 1094
+ },
+ {
+  "lemma": "надежда",
+  "pos": "noun",
+  "rank": 1095
+ },
+ {
+  "lemma": "приготовить",
+  "pos": "verb",
+  "rank": 1096
+ },
+ {
+  "lemma": "проснуться",
+  "pos": "verb",
+  "rank": 1097
+ },
+ {
+  "lemma": "старик",
+  "pos": "noun",
+  "rank": 1098
+ },
+ {
+  "lemma": "солдат",
+  "pos": "noun",
+  "rank": 1099
+ },
+ {
+  "lemma": "вниз",
+  "pos": "adv",
+  "rank": 1100
+ },
+ {
+  "lemma": "бросать",
+  "pos": "verb",
+  "rank": 1101
+ },
+ {
+  "lemma": "убедиться",
+  "pos": "verb",
+  "rank": 1102
+ },
+ {
+  "lemma": "наверняка",
+  "pos": "adv",
+  "rank": 1103
+ },
+ {
+  "lemma": "покинуть",
+  "pos": "verb",
+  "rank": 1104
+ },
+ {
+  "lemma": "опаздывать",
+  "pos": "verb",
+  "rank": 1105
+ },
+ {
+  "lemma": "военный",
+  "pos": "adj",
+  "rank": 1106
+ },
+ {
+  "lemma": "сломать",
+  "pos": "verb",
+  "rank": 1107
+ },
+ {
+  "lemma": "особенный",
+  "pos": "adj",
+  "rank": 1108
+ },
+ {
+  "lemma": "цвет",
+  "pos": "noun",
+  "rank": 1109
+ },
+ {
+  "lemma": "здравствуй",
+  "pos": "intj",
+  "rank": 1110
+ },
+ {
+  "lemma": "рубашка",
+  "pos": "noun",
+  "rank": 1111
+ },
+ {
+  "lemma": "судить",
+  "pos": "verb",
+  "rank": 1112
+ },
+ {
+  "lemma": "весело",
+  "pos": "adv",
+  "rank": 1113
+ },
+ {
+  "lemma": "гораздо",
+  "pos": "adv",
+  "rank": 1114
+ },
+ {
+  "lemma": "ванная",
+  "pos": "noun",
+  "rank": 1115
+ },
+ {
+  "lemma": "впервые",
+  "pos": "adv",
+  "rank": 1116
+ },
+ {
+  "lemma": "получаться",
+  "pos": "verb",
+  "rank": 1117
+ },
+ {
+  "lemma": "дышать",
+  "pos": "verb",
+  "rank": 1118
+ },
+ {
+  "lemma": "чей",
+  "pos": "det",
+  "rank": 1119
+ },
+ {
+  "lemma": "бороться",
+  "pos": "verb",
+  "rank": 1120
+ },
+ {
+  "lemma": "отправляться",
+  "pos": "verb",
+  "rank": 1121
+ },
+ {
+  "lemma": "водитель",
+  "pos": "noun",
+  "rank": 1122
+ },
+ {
+  "lemma": "качество",
+  "pos": "noun",
+  "rank": 1123
+ },
+ {
+  "lemma": "фбр",
+  "pos": "noun",
+  "rank": 1124
+ },
+ {
+  "lemma": "местный",
+  "pos": "adj",
+  "rank": 1125
+ },
+ {
+  "lemma": "сигнал",
+  "pos": "noun",
+  "rank": 1126
+ },
+ {
+  "lemma": "остров",
+  "pos": "noun",
+  "rank": 1127
+ },
+ {
+  "lemma": "сынок",
+  "pos": "noun",
+  "rank": 1128
+ },
+ {
+  "lemma": "вызывать",
+  "pos": "verb",
+  "rank": 1129
+ },
+ {
+  "lemma": "решать",
+  "pos": "verb",
+  "rank": 1130
+ },
+ {
+  "lemma": "сексуальный",
+  "pos": "adj",
+  "rank": 1131
+ },
+ {
+  "lemma": "расслабиться",
+  "pos": "verb",
+  "rank": 1132
+ },
+ {
+  "lemma": "возраст",
+  "pos": "noun",
+  "rank": 1133
+ },
+ {
+  "lemma": "ошибаться",
+  "pos": "verb",
+  "rank": 1134
+ },
+ {
+  "lemma": "признать",
+  "pos": "verb",
+  "rank": 1135
+ },
+ {
+  "lemma": "научиться",
+  "pos": "verb",
+  "rank": 1136
+ },
+ {
+  "lemma": "совершить",
+  "pos": "verb",
+  "rank": 1137
+ },
+ {
+  "lemma": "гордиться",
+  "pos": "verb",
+  "rank": 1138
+ },
+ {
+  "lemma": "аэропорт",
+  "pos": "noun",
+  "rank": 1139
+ },
+ {
+  "lemma": "поверь",
+  "pos": "intj",
+  "rank": 1140
+ },
+ {
+  "lemma": "управлять",
+  "pos": "verb",
+  "rank": 1141
+ },
+ {
+  "lemma": "опасность",
+  "pos": "noun",
+  "rank": 1142
+ },
+ {
+  "lemma": "род",
+  "pos": "noun",
+  "rank": 1143
+ },
+ {
+  "lemma": "кольцо",
+  "pos": "noun",
+  "rank": 1144
+ },
+ {
+  "lemma": "линия",
+  "pos": "noun",
+  "rank": 1145
+ },
+ {
+  "lemma": "выбирать",
+  "pos": "verb",
+  "rank": 1146
+ },
+ {
+  "lemma": "поздравлять",
+  "pos": "verb",
+  "rank": 1147
+ },
+ {
+  "lemma": "многие",
+  "pos": "det",
+  "rank": 1148
+ },
+ {
+  "lemma": "приятный",
+  "pos": "adj",
+  "rank": 1149
+ },
+ {
+  "lemma": "королева",
+  "pos": "noun",
+  "rank": 1150
+ },
+ {
+  "lemma": "ложь",
+  "pos": "noun",
+  "rank": 1151
+ },
+ {
+  "lemma": "обсудить",
+  "pos": "verb",
+  "rank": 1152
+ },
+ {
+  "lemma": "продолжить",
+  "pos": "verb",
+  "rank": 1153
+ },
+ {
+  "lemma": "сезон",
+  "pos": "noun",
+  "rank": 1154
+ },
+ {
+  "lemma": "показаться",
+  "pos": "verb",
+  "rank": 1155
+ },
+ {
+  "lemma": "страх",
+  "pos": "noun",
+  "rank": 1156
+ },
+ {
+  "lemma": "никуда",
+  "pos": "adv",
+  "rank": 1157
+ },
+ {
+  "lemma": "зло",
+  "pos": "noun",
+  "rank": 1158
+ },
+ {
+  "lemma": "взгляд",
+  "pos": "noun",
+  "rank": 1159
+ },
+ {
+  "lemma": "большинство",
+  "pos": "noun",
+  "rank": 1160
+ },
+ {
+  "lemma": "сложный",
+  "pos": "adj",
+  "rank": 1161
+ },
+ {
+  "lemma": "открывать",
+  "pos": "verb",
+  "rank": 1162
+ },
+ {
+  "lemma": "подписать",
+  "pos": "verb",
+  "rank": 1163
+ },
+ {
+  "lemma": "пуля",
+  "pos": "noun",
+  "rank": 1164
+ },
+ {
+  "lemma": "оттуда",
+  "pos": "adv",
+  "rank": 1165
+ },
+ {
+  "lemma": "масло",
+  "pos": "noun",
+  "rank": 1166
+ },
+ {
+  "lemma": "нормальный",
+  "pos": "adj",
+  "rank": 1167
+ },
+ {
+  "lemma": "фото",
+  "pos": "noun",
+  "rank": 1168
+ },
+ {
+  "lemma": "мост",
+  "pos": "noun",
+  "rank": 1169
+ },
+ {
+  "lemma": "бомба",
+  "pos": "noun",
+  "rank": 1170
+ },
+ {
+  "lemma": "позвать",
+  "pos": "verb",
+  "rank": 1171
+ },
+ {
+  "lemma": "позволять",
+  "pos": "verb",
+  "rank": 1172
+ },
+ {
+  "lemma": "сцена",
+  "pos": "noun",
+  "rank": 1173
+ },
+ {
+  "lemma": "тест",
+  "pos": "noun",
+  "rank": 1174
+ },
+ {
+  "lemma": "никак",
+  "pos": "adv",
+  "rank": 1175
+ },
+ {
+  "lemma": "недавно",
+  "pos": "adv",
+  "rank": 1176
+ },
+ {
+  "lemma": "профессор",
+  "pos": "noun",
+  "rank": 1177
+ },
+ {
+  "lemma": "опоздать",
+  "pos": "verb",
+  "rank": 1178
+ },
+ {
+  "lemma": "несчастный",
+  "pos": "adj",
+  "rank": 1179
+ },
+ {
+  "lemma": "сержант",
+  "pos": "noun",
+  "rank": 1180
+ },
+ {
+  "lemma": "невероятно",
+  "pos": "adv",
+  "rank": 1181
+ },
+ {
+  "lemma": "наблюдать",
+  "pos": "verb",
+  "rank": 1182
+ },
+ {
+  "lemma": "вариант",
+  "pos": "noun",
+  "rank": 1183
+ },
+ {
+  "lemma": "суббота",
+  "pos": "noun",
+  "rank": 1184
+ },
+ {
+  "lemma": "газета",
+  "pos": "noun",
+  "rank": 1185
+ },
+ {
+  "lemma": "спальня",
+  "pos": "noun",
+  "rank": 1186
+ },
+ {
+  "lemma": "звук",
+  "pos": "noun",
+  "rank": 1187
+ },
+ {
+  "lemma": "злиться",
+  "pos": "verb",
+  "rank": 1188
+ },
+ {
+  "lemma": "значение",
+  "pos": "noun",
+  "rank": 1189
+ },
+ {
+  "lemma": "ручка",
+  "pos": "noun",
+  "rank": 1190
+ },
+ {
+  "lemma": "привезти",
+  "pos": "verb",
+  "rank": 1191
+ },
+ {
+  "lemma": "сожаление",
+  "pos": "noun",
+  "rank": 1192
+ },
+ {
+  "lemma": "угроза",
+  "pos": "noun",
+  "rank": 1193
+ },
+ {
+  "lemma": "придурок",
+  "pos": "noun",
+  "rank": 1194
+ },
+ {
+  "lemma": "парк",
+  "pos": "noun",
+  "rank": 1195
+ },
+ {
+  "lemma": "благодаря",
+  "pos": "prep",
+  "rank": 1196
+ },
+ {
+  "lemma": "навсегда",
+  "pos": "adv",
+  "rank": 1197
+ },
+ {
+  "lemma": "вполне",
+  "pos": "adv",
+  "rank": 1198
+ },
+ {
+  "lemma": "сок",
+  "pos": "noun",
+  "rank": 1199
+ },
+ {
+  "lemma": "ложиться",
+  "pos": "verb",
+  "rank": 1200
+ },
+ {
+  "lemma": "сюрприз",
+  "pos": "noun",
+  "rank": 1201
+ },
+ {
+  "lemma": "относиться",
+  "pos": "verb",
+  "rank": 1202
+ },
+ {
+  "lemma": "кабинет",
+  "pos": "noun",
+  "rank": 1203
+ },
+ {
+  "lemma": "напугать",
+  "pos": "verb",
+  "rank": 1204
+ },
+ {
+  "lemma": "лейтенант",
+  "pos": "noun",
+  "rank": 1205
+ },
+ {
+  "lemma": "задача",
+  "pos": "noun",
+  "rank": 1206
+ },
+ {
+  "lemma": "приходиться",
+  "pos": "verb",
+  "rank": 1207
+ },
+ {
+  "lemma": "ставить",
+  "pos": "verb",
+  "rank": 1208
+ },
+ {
+  "lemma": "закрытый",
+  "pos": "adj",
+  "rank": 1209
+ },
+ {
+  "lemma": "положение",
+  "pos": "noun",
+  "rank": 1210
+ },
+ {
+  "lemma": "взрослый",
+  "pos": "adj",
+  "rank": 1211
+ },
+ {
+  "lemma": "замуж",
+  "pos": "adv",
+  "rank": 1212
+ },
+ {
+  "lemma": "пустой",
+  "pos": "adj",
+  "rank": 1213
+ },
+ {
+  "lemma": "лошадь",
+  "pos": "noun",
+  "rank": 1214
+ },
+ {
+  "lemma": "определённо",
+  "pos": "adv",
+  "rank": 1215
+ },
+ {
+  "lemma": "холодный",
+  "pos": "adj",
+  "rank": 1216
+ },
+ {
+  "lemma": "охрана",
+  "pos": "noun",
+  "rank": 1217
+ },
+ {
+  "lemma": "установить",
+  "pos": "verb",
+  "rank": 1218
+ },
+ {
+  "lemma": "ученик",
+  "pos": "noun",
+  "rank": 1219
+ },
+ {
+  "lemma": "покончить",
+  "pos": "verb",
+  "rank": 1220
+ },
+ {
+  "lemma": "обожать",
+  "pos": "verb",
+  "rank": 1221
+ },
+ {
+  "lemma": "показание",
+  "pos": "noun",
+  "rank": 1222
+ },
+ {
+  "lemma": "всё-таки",
+  "pos": "part",
+  "rank": 1223
+ },
+ {
+  "lemma": "заслуживать",
+  "pos": "verb",
+  "rank": 1224
+ },
+ {
+  "lemma": "страшно",
+  "pos": "predic",
+  "rank": 1225
+ },
+ {
+  "lemma": "ад",
+  "pos": "noun",
+  "rank": 1226
+ },
+ {
+  "lemma": "испортить",
+  "pos": "verb",
+  "rank": 1227
+ },
+ {
+  "lemma": "радость",
+  "pos": "noun",
+  "rank": 1228
+ },
+ {
+  "lemma": "идеальный",
+  "pos": "adj",
+  "rank": 1229
+ },
+ {
+  "lemma": "заключить",
+  "pos": "verb",
+  "rank": 1230
+ },
+ {
+  "lemma": "живот",
+  "pos": "noun",
+  "rank": 1231
+ },
+ {
+  "lemma": "планировать",
+  "pos": "verb",
+  "rank": 1232
+ },
+ {
+  "lemma": "ресторан",
+  "pos": "noun",
+  "rank": 1233
+ },
+ {
+  "lemma": "замок",
+  "pos": "noun",
+  "rank": 1234
+ },
+ {
+  "lemma": "учить",
+  "pos": "verb",
+  "rank": 1235
+ },
+ {
+  "lemma": "близко",
+  "pos": "adv",
+  "rank": 1236
+ },
+ {
+  "lemma": "плевать",
+  "pos": "verb",
+  "rank": 1237
+ },
+ {
+  "lemma": "американский",
+  "pos": "adj",
+  "rank": 1238
+ },
+ {
+  "lemma": "чертовый",
+  "pos": "adj",
+  "rank": 1239
+ },
+ {
+  "lemma": "дурак",
+  "pos": "noun",
+  "rank": 1240
+ },
+ {
+  "lemma": "партнер",
+  "pos": "noun",
+  "rank": 1241
+ },
+ {
+  "lemma": "кой",
+  "pos": "pron",
+  "rank": 1242
+ },
+ {
+  "lemma": "мечтать",
+  "pos": "verb",
+  "rank": 1243
+ },
+ {
+  "lemma": "прощать",
+  "pos": "verb",
+  "rank": 1244
+ },
+ {
+  "lemma": "правительство",
+  "pos": "noun",
+  "rank": 1245
+ },
+ {
+  "lemma": "бой",
+  "pos": "noun",
+  "rank": 1246
+ },
+ {
+  "lemma": "научить",
+  "pos": "verb",
+  "rank": 1247
+ },
+ {
+  "lemma": "грудь",
+  "pos": "noun",
+  "rank": 1248
+ },
+ {
+  "lemma": "сохранить",
+  "pos": "verb",
+  "rank": 1249
+ },
+ {
+  "lemma": "событие",
+  "pos": "noun",
+  "rank": 1250
+ },
+ {
+  "lemma": "величество",
+  "pos": "noun",
+  "rank": 1251
+ },
+ {
+  "lemma": "гарри",
+  "pos": "noun",
+  "rank": 1252
+ },
+ {
+  "lemma": "постель",
+  "pos": "noun",
+  "rank": 1253
+ },
+ {
+  "lemma": "преступник",
+  "pos": "noun",
+  "rank": 1254
+ },
+ {
+  "lemma": "неправильно",
+  "pos": "adv",
+  "rank": 1255
+ },
+ {
+  "lemma": "горло",
+  "pos": "noun",
+  "rank": 1256
+ },
+ {
+  "lemma": "богатый",
+  "pos": "adj",
+  "rank": 1257
+ },
+ {
+  "lemma": "улика",
+  "pos": "noun",
+  "rank": 1258
+ },
+ {
+  "lemma": "разрешить",
+  "pos": "verb",
+  "rank": 1259
+ },
+ {
+  "lemma": "включить",
+  "pos": "verb",
+  "rank": 1260
+ },
+ {
+  "lemma": "рынок",
+  "pos": "noun",
+  "rank": 1261
+ },
+ {
+  "lemma": "лично",
+  "pos": "adv",
+  "rank": 1262
+ },
+ {
+  "lemma": "район",
+  "pos": "noun",
+  "rank": 1263
+ },
+ {
+  "lemma": "напасть",
+  "pos": "verb",
+  "rank": 1264
+ },
+ {
+  "lemma": "лодка",
+  "pos": "noun",
+  "rank": 1265
+ },
+ {
+  "lemma": "тема",
+  "pos": "noun",
+  "rank": 1266
+ },
+ {
+  "lemma": "кость",
+  "pos": "noun",
+  "rank": 1267
+ },
+ {
+  "lemma": "подать",
+  "pos": "verb",
+  "rank": 1268
+ },
+ {
+  "lemma": "прием",
+  "pos": "noun",
+  "rank": 1269
+ },
+ {
+  "lemma": "участок",
+  "pos": "noun",
+  "rank": 1270
+ },
+ {
+  "lemma": "выбраться",
+  "pos": "verb",
+  "rank": 1271
+ },
+ {
+  "lemma": "разумеется",
+  "pos": "adv",
+  "rank": 1272
+ },
+ {
+  "lemma": "восемь",
+  "pos": "num",
+  "rank": 1273
+ },
+ {
+  "lemma": "поступать",
+  "pos": "verb",
+  "rank": 1274
+ },
+ {
+  "lemma": "видимо",
+  "pos": "adv",
+  "rank": 1275
+ },
+ {
+  "lemma": "убедить",
+  "pos": "verb",
+  "rank": 1276
+ },
+ {
+  "lemma": "менее",
+  "pos": "adv",
+  "rank": 1277
+ },
+ {
+  "lemma": "студент",
+  "pos": "noun",
+  "rank": 1278
+ },
+ {
+  "lemma": "хм",
+  "pos": "intj",
+  "rank": 1279
+ },
+ {
+  "lemma": "рабочий",
+  "pos": "noun",
+  "rank": 1280
+ },
+ {
+  "lemma": "вкус",
+  "pos": "noun",
+  "rank": 1281
+ },
+ {
+  "lemma": "забирать",
+  "pos": "verb",
+  "rank": 1282
+ },
+ {
+  "lemma": "признаться",
+  "pos": "verb",
+  "rank": 1283
+ },
+ {
+  "lemma": "труп",
+  "pos": "noun",
+  "rank": 1284
+ },
+ {
+  "lemma": "среда",
+  "pos": "noun",
+  "rank": 1285
+ },
+ {
+  "lemma": "необходимо",
+  "pos": "predic",
+  "rank": 1286
+ },
+ {
+  "lemma": "генерал",
+  "pos": "noun",
+  "rank": 1287
+ },
+ {
+  "lemma": "беспокоить",
+  "pos": "verb",
+  "rank": 1288
+ },
+ {
+  "lemma": "записать",
+  "pos": "verb",
+  "rank": 1289
+ },
+ {
+  "lemma": "стоп",
+  "pos": "intj",
+  "rank": 1290
+ },
+ {
+  "lemma": "база",
+  "pos": "noun",
+  "rank": 1291
+ },
+ {
+  "lemma": "картина",
+  "pos": "noun",
+  "rank": 1292
+ },
+ {
+  "lemma": "сметь",
+  "pos": "verb",
+  "rank": 1293
+ },
+ {
+  "lemma": "граница",
+  "pos": "noun",
+  "rank": 1294
+ },
+ {
+  "lemma": "переехать",
+  "pos": "verb",
+  "rank": 1295
+ },
+ {
+  "lemma": "сумка",
+  "pos": "noun",
+  "rank": 1296
+ },
+ {
+  "lemma": "расти",
+  "pos": "verb",
+  "rank": 1297
+ },
+ {
+  "lemma": "вырасти",
+  "pos": "verb",
+  "rank": 1298
+ },
+ {
+  "lemma": "условие",
+  "pos": "noun",
+  "rank": 1299
+ },
+ {
+  "lemma": "марк",
+  "pos": "noun",
+  "rank": 1300
+ },
+ {
+  "lemma": "человеческий",
+  "pos": "adj",
+  "rank": 1301
+ },
+ {
+  "lemma": "хранить",
+  "pos": "verb",
+  "rank": 1302
+ },
+ {
+  "lemma": "медсестра",
+  "pos": "noun",
+  "rank": 1303
+ },
+ {
+  "lemma": "забывать",
+  "pos": "verb",
+  "rank": 1304
+ },
+ {
+  "lemma": "хлеб",
+  "pos": "noun",
+  "rank": 1305
+ },
+ {
+  "lemma": "пользоваться",
+  "pos": "verb",
+  "rank": 1306
+ },
+ {
+  "lemma": "тайна",
+  "pos": "noun",
+  "rank": 1307
+ },
+ {
+  "lemma": "вина",
+  "pos": "noun",
+  "rank": 1308
+ },
+ {
+  "lemma": "поесть",
+  "pos": "verb",
+  "rank": 1309
+ },
+ {
+  "lemma": "март",
+  "pos": "noun",
+  "rank": 1310
+ },
+ {
+  "lemma": "задать",
+  "pos": "verb",
+  "rank": 1311
+ },
+ {
+  "lemma": "отчет",
+  "pos": "noun",
+  "rank": 1312
+ },
+ {
+  "lemma": "угол",
+  "pos": "noun",
+  "rank": 1313
+ },
+ {
+  "lemma": "случайно",
+  "pos": "adv",
+  "rank": 1314
+ },
+ {
+  "lemma": "название",
+  "pos": "noun",
+  "rank": 1315
+ },
+ {
+  "lemma": "экзамен",
+  "pos": "noun",
+  "rank": 1316
+ },
+ {
+  "lemma": "месье",
+  "pos": "noun",
+  "rank": 1317
+ },
+ {
+  "lemma": "выше",
+  "pos": "adv",
+  "rank": 1318
+ },
+ {
+  "lemma": "однако",
+  "pos": "conj",
+  "rank": 1319
+ },
+ {
+  "lemma": "доставить",
+  "pos": "verb",
+  "rank": 1320
+ },
+ {
+  "lemma": "вовсе",
+  "pos": "adv",
+  "rank": 1321
+ },
+ {
+  "lemma": "ход",
+  "pos": "noun",
+  "rank": 1322
+ },
+ {
+  "lemma": "присоединиться",
+  "pos": "verb",
+  "rank": 1323
+ },
+ {
+  "lemma": "пьяный",
+  "pos": "adj",
+  "rank": 1324
+ },
+ {
+  "lemma": "запомнить",
+  "pos": "verb",
+  "rank": 1325
+ },
+ {
+  "lemma": "многий",
+  "pos": "det",
+  "rank": 1326
+ },
+ {
+  "lemma": "тупой",
+  "pos": "adj",
+  "rank": 1327
+ },
+ {
+  "lemma": "осторожно",
+  "pos": "adv",
+  "rank": 1328
+ },
+ {
+  "lemma": "сотня",
+  "pos": "noun",
+  "rank": 1329
+ },
+ {
+  "lemma": "правильный",
+  "pos": "adj",
+  "rank": 1330
+ },
+ {
+  "lemma": "попытка",
+  "pos": "noun",
+  "rank": 1331
+ },
+ {
+  "lemma": "успех",
+  "pos": "noun",
+  "rank": 1332
+ },
+ {
+  "lemma": "коробка",
+  "pos": "noun",
+  "rank": 1333
+ },
+ {
+  "lemma": "выпустить",
+  "pos": "verb",
+  "rank": 1334
+ },
+ {
+  "lemma": "нуждаться",
+  "pos": "verb",
+  "rank": 1335
+ },
+ {
+  "lemma": "разрушить",
+  "pos": "verb",
+  "rank": 1336
+ },
+ {
+  "lemma": "ездить",
+  "pos": "verb",
+  "rank": 1337
+ },
+ {
+  "lemma": "госпожа",
+  "pos": "noun",
+  "rank": 1338
+ },
+ {
+  "lemma": "сыр",
+  "pos": "noun",
+  "rank": 1339
+ },
+ {
+  "lemma": "находить",
+  "pos": "verb",
+  "rank": 1340
+ },
+ {
+  "lemma": "проиграть",
+  "pos": "verb",
+  "rank": 1341
+ },
+ {
+  "lemma": "понедельник",
+  "pos": "noun",
+  "rank": 1342
+ },
+ {
+  "lemma": "победа",
+  "pos": "noun",
+  "rank": 1343
+ },
+ {
+  "lemma": "заказать",
+  "pos": "verb",
+  "rank": 1344
+ },
+ {
+  "lemma": "поцелуй",
+  "pos": "noun",
+  "rank": 1345
+ },
+ {
+  "lemma": "требовать",
+  "pos": "verb",
+  "rank": 1346
+ },
+ {
+  "lemma": "ого",
+  "pos": "intj",
+  "rank": 1347
+ },
+ {
+  "lemma": "детский",
+  "pos": "adj",
+  "rank": 1348
+ },
+ {
+  "lemma": "кусок",
+  "pos": "noun",
+  "rank": 1349
+ },
+ {
+  "lemma": "волновать",
+  "pos": "verb",
+  "rank": 1350
+ },
+ {
+  "lemma": "ха",
+  "pos": "intj",
+  "rank": 1351
+ },
+ {
+  "lemma": "поддерживать",
+  "pos": "verb",
+  "rank": 1352
+ },
+ {
+  "lemma": "нечто",
+  "pos": "pron",
+  "rank": 1353
+ },
+ {
+  "lemma": "расстроить",
+  "pos": "verb",
+  "rank": 1354
+ },
+ {
+  "lemma": "лететь",
+  "pos": "verb",
+  "rank": 1355
+ },
+ {
+  "lemma": "кожа",
+  "pos": "noun",
+  "rank": 1356
+ },
+ {
+  "lemma": "роман",
+  "pos": "noun",
+  "rank": 1357
+ },
+ {
+  "lemma": "проверять",
+  "pos": "verb",
+  "rank": 1358
+ },
+ {
+  "lemma": "проект",
+  "pos": "noun",
+  "rank": 1359
+ },
+ {
+  "lemma": "освободить",
+  "pos": "verb",
+  "rank": 1360
+ },
+ {
+  "lemma": "нанять",
+  "pos": "verb",
+  "rank": 1361
+ },
+ {
+  "lemma": "помешать",
+  "pos": "verb",
+  "rank": 1362
+ },
+ {
+  "lemma": "энергия",
+  "pos": "noun",
+  "rank": 1363
+ },
+ {
+  "lemma": "исправить",
+  "pos": "verb",
+  "rank": 1364
+ },
+ {
+  "lemma": "опыт",
+  "pos": "noun",
+  "rank": 1365
+ },
+ {
+  "lemma": "обращаться",
+  "pos": "verb",
+  "rank": 1366
+ },
+ {
+  "lemma": "общество",
+  "pos": "noun",
+  "rank": 1367
+ },
+ {
+  "lemma": "перезвонить",
+  "pos": "verb",
+  "rank": 1368
+ },
+ {
+  "lemma": "скрывать",
+  "pos": "verb",
+  "rank": 1369
+ },
+ {
+  "lemma": "трубка",
+  "pos": "noun",
+  "rank": 1370
+ },
+ {
+  "lemma": "сыграть",
+  "pos": "verb",
+  "rank": 1371
+ },
+ {
+  "lemma": "танец",
+  "pos": "noun",
+  "rank": 1372
+ },
+ {
+  "lemma": "управление",
+  "pos": "noun",
+  "rank": 1373
+ },
+ {
+  "lemma": "реальный",
+  "pos": "adj",
+  "rank": 1374
+ },
+ {
+  "lemma": "стул",
+  "pos": "noun",
+  "rank": 1375
+ },
+ {
+  "lemma": "услуга",
+  "pos": "noun",
+  "rank": 1376
+ },
+ {
+  "lemma": "молчать",
+  "pos": "verb",
+  "rank": 1377
+ },
+ {
+  "lemma": "поддержка",
+  "pos": "noun",
+  "rank": 1378
+ },
+ {
+  "lemma": "доступ",
+  "pos": "noun",
+  "rank": 1379
+ },
+ {
+  "lemma": "париж",
+  "pos": "noun",
+  "rank": 1380
+ },
+ {
+  "lemma": "вау",
+  "pos": "intj",
+  "rank": 1381
+ },
+ {
+  "lemma": "часы",
+  "pos": "noun",
+  "rank": 1382
+ },
+ {
+  "lemma": "глава",
+  "pos": "noun",
+  "rank": 1383
+ },
+ {
+  "lemma": "русский",
+  "pos": "adj",
+  "rank": 1384
+ },
+ {
+  "lemma": "задание",
+  "pos": "noun",
+  "rank": 1385
+ },
+ {
+  "lemma": "крыша",
+  "pos": "noun",
+  "rank": 1386
+ },
+ {
+  "lemma": "уважение",
+  "pos": "noun",
+  "rank": 1387
+ },
+ {
+  "lemma": "наверно",
+  "pos": "adv",
+  "rank": 1388
+ },
+ {
+  "lemma": "озеро",
+  "pos": "noun",
+  "rank": 1389
+ },
+ {
+  "lemma": "сука",
+  "pos": "noun",
+  "rank": 1390
+ },
+ {
+  "lemma": "анна",
+  "pos": "noun",
+  "rank": 1391
+ },
+ {
+  "lemma": "дон",
+  "pos": "noun",
+  "rank": 1392
+ },
+ {
+  "lemma": "видео",
+  "pos": "noun",
+  "rank": 1393
+ },
+ {
+  "lemma": "участвовать",
+  "pos": "verb",
+  "rank": 1394
+ },
+ {
+  "lemma": "лаборатория",
+  "pos": "noun",
+  "rank": 1395
+ },
+ {
+  "lemma": "верный",
+  "pos": "adj",
+  "rank": 1396
+ },
+ {
+  "lemma": "обсуждать",
+  "pos": "verb",
+  "rank": 1397
+ },
+ {
+  "lemma": "вечно",
+  "pos": "adv",
+  "rank": 1398
+ },
+ {
+  "lemma": "запах",
+  "pos": "noun",
+  "rank": 1399
+ },
+ {
+  "lemma": "классный",
+  "pos": "adj",
+  "rank": 1400
+ },
+ {
+  "lemma": "тётя",
+  "pos": "noun",
+  "rank": 1401
+ },
+ {
+  "lemma": "поскольку",
+  "pos": "conj",
+  "rank": 1402
+ },
+ {
+  "lemma": "женатый",
+  "pos": "adj",
+  "rank": 1403
+ },
+ {
+  "lemma": "процесс",
+  "pos": "noun",
+  "rank": 1404
+ },
+ {
+  "lemma": "мешать",
+  "pos": "verb",
+  "rank": 1405
+ },
+ {
+  "lemma": "движение",
+  "pos": "noun",
+  "rank": 1406
+ },
+ {
+  "lemma": "темный",
+  "pos": "adj",
+  "rank": 1407
+ },
+ {
+  "lemma": "менять",
+  "pos": "verb",
+  "rank": 1408
+ },
+ {
+  "lemma": "весьма",
+  "pos": "adv",
+  "rank": 1409
+ },
+ {
+  "lemma": "оу",
+  "pos": "intj",
+  "rank": 1410
+ },
+ {
+  "lemma": "глупо",
+  "pos": "adv",
+  "rank": 1411
+ },
+ {
+  "lemma": "тратить",
+  "pos": "verb",
+  "rank": 1412
+ },
+ {
+  "lemma": "диван",
+  "pos": "noun",
+  "rank": 1413
+ },
+ {
+  "lemma": "отпечаток",
+  "pos": "noun",
+  "rank": 1414
+ },
+ {
+  "lemma": "неприятность",
+  "pos": "noun",
+  "rank": 1415
+ },
+ {
+  "lemma": "снаружи",
+  "pos": "adv",
+  "rank": 1416
+ },
+ {
+  "lemma": "подружка",
+  "pos": "noun",
+  "rank": 1417
+ },
+ {
+  "lemma": "сто",
+  "pos": "num",
+  "rank": 1418
+ },
+ {
+  "lemma": "исследование",
+  "pos": "noun",
+  "rank": 1419
+ },
+ {
+  "lemma": "общаться",
+  "pos": "verb",
+  "rank": 1420
+ },
+ {
+  "lemma": "кино",
+  "pos": "noun",
+  "rank": 1421
+ },
+ {
+  "lemma": "бутылка",
+  "pos": "noun",
+  "rank": 1422
+ },
+ {
+  "lemma": "сегодняшний",
+  "pos": "adj",
+  "rank": 1423
+ },
+ {
+  "lemma": "круг",
+  "pos": "noun",
+  "rank": 1424
+ },
+ {
+  "lemma": "прочитать",
+  "pos": "verb",
+  "rank": 1425
+ },
+ {
+  "lemma": "чудо",
+  "pos": "noun",
+  "rank": 1426
+ },
+ {
+  "lemma": "преследовать",
+  "pos": "verb",
+  "rank": 1427
+ },
+ {
+  "lemma": "семейный",
+  "pos": "adj",
+  "rank": 1428
+ },
+ {
+  "lemma": "особый",
+  "pos": "adj",
+  "rank": 1429
+ },
+ {
+  "lemma": "ранить",
+  "pos": "verb",
+  "rank": 1430
+ },
+ {
+  "lemma": "возможный",
+  "pos": "adj",
+  "rank": 1431
+ },
+ {
+  "lemma": "голодный",
+  "pos": "adj",
+  "rank": 1432
+ },
+ {
+  "lemma": "примерно",
+  "pos": "adv",
+  "rank": 1433
+ },
+ {
+  "lemma": "хозяин",
+  "pos": "noun",
+  "rank": 1434
+ },
+ {
+  "lemma": "лондон",
+  "pos": "noun",
+  "rank": 1435
+ },
+ {
+  "lemma": "погода",
+  "pos": "noun",
+  "rank": 1436
+ },
+ {
+  "lemma": "побрать",
+  "pos": "verb",
+  "rank": 1437
+ },
+ {
+  "lemma": "начинаться",
+  "pos": "verb",
+  "rank": 1438
+ },
+ {
+  "lemma": "когда-либо",
+  "pos": "adv",
+  "rank": 1439
+ },
+ {
+  "lemma": "зал",
+  "pos": "noun",
+  "rank": 1440
+ },
+ {
+  "lemma": "поездка",
+  "pos": "noun",
+  "rank": 1441
+ },
+ {
+  "lemma": "шлюха",
+  "pos": "noun",
+  "rank": 1442
+ },
+ {
+  "lemma": "сражаться",
+  "pos": "verb",
+  "rank": 1443
+ },
+ {
+  "lemma": "извиниться",
+  "pos": "verb",
+  "rank": 1444
+ },
+ {
+  "lemma": "страдать",
+  "pos": "verb",
+  "rank": 1445
+ },
+ {
+  "lemma": "собирать",
+  "pos": "verb",
+  "rank": 1446
+ },
+ {
+  "lemma": "видеться",
+  "pos": "verb",
+  "rank": 1447
+ },
+ {
+  "lemma": "подарить",
+  "pos": "verb",
+  "rank": 1448
+ },
+ {
+  "lemma": "шея",
+  "pos": "noun",
+  "rank": 1449
+ },
+ {
+  "lemma": "анализ",
+  "pos": "noun",
+  "rank": 1450
+ },
+ {
+  "lemma": "пережить",
+  "pos": "verb",
+  "rank": 1451
+ },
+ {
+  "lemma": "подняться",
+  "pos": "verb",
+  "rank": 1452
+ },
+ {
+  "lemma": "интерес",
+  "pos": "noun",
+  "rank": 1453
+ },
+ {
+  "lemma": "воспоминание",
+  "pos": "noun",
+  "rank": 1454
+ },
+ {
+  "lemma": "контролировать",
+  "pos": "verb",
+  "rank": 1455
+ },
+ {
+  "lemma": "вкусный",
+  "pos": "adj",
+  "rank": 1456
+ },
+ {
+  "lemma": "число",
+  "pos": "noun",
+  "rank": 1457
+ },
+ {
+  "lemma": "беременный",
+  "pos": "adj",
+  "rank": 1458
+ },
+ {
+  "lemma": "миля",
+  "pos": "noun",
+  "rank": 1459
+ },
+ {
+  "lemma": "сдать",
+  "pos": "verb",
+  "rank": 1460
+ },
+ {
+  "lemma": "слух",
+  "pos": "noun",
+  "rank": 1461
+ },
+ {
+  "lemma": "добиться",
+  "pos": "verb",
+  "rank": 1462
+ },
+ {
+  "lemma": "угадать",
+  "pos": "verb",
+  "rank": 1463
+ },
+ {
+  "lemma": "вера",
+  "pos": "noun",
+  "rank": 1464
+ },
+ {
+  "lemma": "прятаться",
+  "pos": "verb",
+  "rank": 1465
+ },
+ {
+  "lemma": "ценить",
+  "pos": "verb",
+  "rank": 1466
+ },
+ {
+  "lemma": "левый",
+  "pos": "adj",
+  "rank": 1467
+ },
+ {
+  "lemma": "продукт",
+  "pos": "noun",
+  "rank": 1468
+ },
+ {
+  "lemma": "устраивать",
+  "pos": "verb",
+  "rank": 1469
+ },
+ {
+  "lemma": "пустить",
+  "pos": "verb",
+  "rank": 1470
+ },
+ {
+  "lemma": "возражать",
+  "pos": "verb",
+  "rank": 1471
+ },
+ {
+  "lemma": "заявление",
+  "pos": "noun",
+  "rank": 1472
+ },
+ {
+  "lemma": "скорость",
+  "pos": "noun",
+  "rank": 1473
+ },
+ {
+  "lemma": "служить",
+  "pos": "verb",
+  "rank": 1474
+ },
+ {
+  "lemma": "воспользоваться",
+  "pos": "verb",
+  "rank": 1475
+ },
+ {
+  "lemma": "карьера",
+  "pos": "noun",
+  "rank": 1476
+ },
+ {
+  "lemma": "занятие",
+  "pos": "noun",
+  "rank": 1477
+ },
+ {
+  "lemma": "средство",
+  "pos": "noun",
+  "rank": 1478
+ },
+ {
+  "lemma": "видно",
+  "pos": "predic",
+  "rank": 1479
+ },
+ {
+  "lemma": "назначить",
+  "pos": "verb",
+  "rank": 1480
+ },
+ {
+  "lemma": "скажем",
+  "pos": "part",
+  "rank": 1481
+ },
+ {
+  "lemma": "извиняться",
+  "pos": "verb",
+  "rank": 1482
+ },
+ {
+  "lemma": "ящик",
+  "pos": "noun",
+  "rank": 1483
+ },
+ {
+  "lemma": "глубокий",
+  "pos": "adj",
+  "rank": 1484
+ },
+ {
+  "lemma": "разрешение",
+  "pos": "noun",
+  "rank": 1485
+ },
+ {
+  "lemma": "перевести",
+  "pos": "verb",
+  "rank": 1486
+ },
+ {
+  "lemma": "предупредить",
+  "pos": "verb",
+  "rank": 1487
+ },
+ {
+  "lemma": "температура",
+  "pos": "noun",
+  "rank": 1488
+ },
+ {
+  "lemma": "сукин",
+  "pos": "adj",
+  "rank": 1489
+ },
+ {
+  "lemma": "длинный",
+  "pos": "adj",
+  "rank": 1490
+ },
+ {
+  "lemma": "ранее",
+  "pos": "adv",
+  "rank": 1491
+ },
+ {
+  "lemma": "конченый",
+  "pos": "adj",
+  "rank": 1492
+ },
+ {
+  "lemma": "размер",
+  "pos": "noun",
+  "rank": 1493
+ },
+ {
+  "lemma": "рисковать",
+  "pos": "verb",
+  "rank": 1494
+ },
+ {
+  "lemma": "джентльмен",
+  "pos": "noun",
+  "rank": 1495
+ },
+ {
+  "lemma": "хрен",
+  "pos": "noun",
+  "rank": 1496
+ },
+ {
+  "lemma": "вызов",
+  "pos": "noun",
+  "rank": 1497
+ },
+ {
+  "lemma": "иисус",
+  "pos": "noun",
+  "rank": 1498
+ },
+ {
+  "lemma": "шкаф",
+  "pos": "noun",
+  "rank": 1499
+ },
+ {
+  "lemma": "источник",
+  "pos": "noun",
+  "rank": 1500
+ },
+ {
+  "lemma": "возвращение",
+  "pos": "noun",
+  "rank": 1501
+ },
+ {
+  "lemma": "код",
+  "pos": "noun",
+  "rank": 1502
+ },
+ {
+  "lemma": "полковник",
+  "pos": "noun",
+  "rank": 1503
+ },
+ {
+  "lemma": "забавно",
+  "pos": "adv",
+  "rank": 1504
+ },
+ {
+  "lemma": "зарплата",
+  "pos": "noun",
+  "rank": 1505
+ },
+ {
+  "lemma": "влюбить",
+  "pos": "verb",
+  "rank": 1506
+ },
+ {
+  "lemma": "одинокий",
+  "pos": "adj",
+  "rank": 1507
+ },
+ {
+  "lemma": "внизу",
+  "pos": "adv",
+  "rank": 1508
+ },
+ {
+  "lemma": "случаться",
+  "pos": "verb",
+  "rank": 1509
+ },
+ {
+  "lemma": "трава",
+  "pos": "noun",
+  "rank": 1510
+ },
+ {
+  "lemma": "зависеть",
+  "pos": "verb",
+  "rank": 1511
+ },
+ {
+  "lemma": "медицинский",
+  "pos": "adj",
+  "rank": 1512
+ },
+ {
+  "lemma": "деревня",
+  "pos": "noun",
+  "rank": 1513
+ },
+ {
+  "lemma": "предать",
+  "pos": "verb",
+  "rank": 1514
+ },
+ {
+  "lemma": "посадить",
+  "pos": "verb",
+  "rank": 1515
+ },
+ {
+  "lemma": "отдыхать",
+  "pos": "verb",
+  "rank": 1516
+ },
+ {
+  "lemma": "вряд",
+  "pos": "part",
+  "rank": 1517
+ },
+ {
+  "lemma": "ботинок",
+  "pos": "noun",
+  "rank": 1518
+ },
+ {
+  "lemma": "срок",
+  "pos": "noun",
+  "rank": 1519
+ },
+ {
+  "lemma": "построить",
+  "pos": "verb",
+  "rank": 1520
+ },
+ {
+  "lemma": "ответственность",
+  "pos": "noun",
+  "rank": 1521
+ },
+ {
+  "lemma": "детство",
+  "pos": "noun",
+  "rank": 1522
+ },
+ {
+  "lemma": "этаж",
+  "pos": "noun",
+  "rank": 1523
+ },
+ {
+  "lemma": "мария",
+  "pos": "noun",
+  "rank": 1524
+ },
+ {
+  "lemma": "слабый",
+  "pos": "adj",
+  "rank": 1525
+ },
+ {
+  "lemma": "малый",
+  "pos": "adj",
+  "rank": 1526
+ },
+ {
+  "lemma": "трое",
+  "pos": "num",
+  "rank": 1527
+ },
+ {
+  "lemma": "люк",
+  "pos": "noun",
+  "rank": 1528
+ },
+ {
+  "lemma": "напоминать",
+  "pos": "verb",
+  "rank": 1529
+ },
+ {
+  "lemma": "гей",
+  "pos": "noun",
+  "rank": 1530
+ },
+ {
+  "lemma": "пахнуть",
+  "pos": "verb",
+  "rank": 1531
+ },
+ {
+  "lemma": "зелёный",
+  "pos": "adj",
+  "rank": 1532
+ },
+ {
+  "lemma": "юный",
+  "pos": "adj",
+  "rank": 1533
+ },
+ {
+  "lemma": "обувь",
+  "pos": "noun",
+  "rank": 1534
+ },
+ {
+  "lemma": "запереть",
+  "pos": "verb",
+  "rank": 1535
+ },
+ {
+  "lemma": "воля",
+  "pos": "noun",
+  "rank": 1536
+ },
+ {
+  "lemma": "праздник",
+  "pos": "noun",
+  "rank": 1537
+ },
+ {
+  "lemma": "учитывать",
+  "pos": "verb",
+  "rank": 1538
+ },
+ {
+  "lemma": "количество",
+  "pos": "noun",
+  "rank": 1539
+ },
+ {
+  "lemma": "глупость",
+  "pos": "noun",
+  "rank": 1540
+ },
+ {
+  "lemma": "остановка",
+  "pos": "noun",
+  "rank": 1541
+ },
+ {
+  "lemma": "угрожать",
+  "pos": "verb",
+  "rank": 1542
+ },
+ {
+  "lemma": "взрыв",
+  "pos": "noun",
+  "rank": 1543
+ },
+ {
+  "lemma": "великолепный",
+  "pos": "adj",
+  "rank": 1544
+ },
+ {
+  "lemma": "несмотря",
+  "pos": "prep",
+  "rank": 1545
+ },
+ {
+  "lemma": "кое-кто",
+  "pos": "pron",
+  "rank": 1546
+ },
+ {
+  "lemma": "отдохнуть",
+  "pos": "verb",
+  "rank": 1547
+ },
+ {
+  "lemma": "умолять",
+  "pos": "verb",
+  "rank": 1548
+ },
+ {
+  "lemma": "беда",
+  "pos": "noun",
+  "rank": 1549
+ },
+ {
+  "lemma": "проклятие",
+  "pos": "noun",
+  "rank": 1550
+ },
+ {
+  "lemma": "помощник",
+  "pos": "noun",
+  "rank": 1551
+ },
+ {
+  "lemma": "открытый",
+  "pos": "adj",
+  "rank": 1552
+ },
+ {
+  "lemma": "чёртов",
+  "pos": "adj",
+  "rank": 1553
+ },
+ {
+  "lemma": "задний",
+  "pos": "adj",
+  "rank": 1554
+ },
+ {
+  "lemma": "колено",
+  "pos": "noun",
+  "rank": 1555
+ },
+ {
+  "lemma": "принцесса",
+  "pos": "noun",
+  "rank": 1556
+ },
+ {
+  "lemma": "док",
+  "pos": "noun",
+  "rank": 1557
+ },
+ {
+  "lemma": "роза",
+  "pos": "noun",
+  "rank": 1558
+ },
+ {
+  "lemma": "искусство",
+  "pos": "noun",
+  "rank": 1559
+ },
+ {
+  "lemma": "принц",
+  "pos": "noun",
+  "rank": 1560
+ },
+ {
+  "lemma": "сша",
+  "pos": "noun",
+  "rank": 1561
+ },
+ {
+  "lemma": "крупный",
+  "pos": "adj",
+  "rank": 1562
+ },
+ {
+  "lemma": "пожалуй",
+  "pos": "part",
+  "rank": 1563
+ },
+ {
+  "lemma": "домашний",
+  "pos": "adj",
+  "rank": 1564
+ },
+ {
+  "lemma": "мамочка",
+  "pos": "noun",
+  "rank": 1565
+ },
+ {
+  "lemma": "курить",
+  "pos": "verb",
+  "rank": 1566
+ },
+ {
+  "lemma": "лить",
+  "pos": "verb",
+  "rank": 1567
+ },
+ {
+  "lemma": "встречать",
+  "pos": "verb",
+  "rank": 1568
+ },
+ {
+  "lemma": "путешествовать",
+  "pos": "verb",
+  "rank": 1569
+ },
+ {
+  "lemma": "борьба",
+  "pos": "noun",
+  "rank": 1570
+ },
+ {
+  "lemma": "заслужить",
+  "pos": "verb",
+  "rank": 1571
+ },
+ {
+  "lemma": "инспектор",
+  "pos": "noun",
+  "rank": 1572
+ },
+ {
+  "lemma": "вверх",
+  "pos": "adv",
+  "rank": 1573
+ },
+ {
+  "lemma": "дойти",
+  "pos": "verb",
+  "rank": 1574
+ },
+ {
+  "lemma": "папочка",
+  "pos": "noun",
+  "rank": 1575
+ },
+ {
+  "lemma": "отвратительный",
+  "pos": "adj",
+  "rank": 1576
+ },
+ {
+  "lemma": "путешествие",
+  "pos": "noun",
+  "rank": 1577
+ },
+ {
+  "lemma": "приносить",
+  "pos": "verb",
+  "rank": 1578
+ },
+ {
+  "lemma": "наслаждаться",
+  "pos": "verb",
+  "rank": 1579
+ },
+ {
+  "lemma": "добавить",
+  "pos": "verb",
+  "rank": 1580
+ },
+ {
+  "lemma": "журнал",
+  "pos": "noun",
+  "rank": 1581
+ },
+ {
+  "lemma": "застрелить",
+  "pos": "verb",
+  "rank": 1582
+ },
+ {
+  "lemma": "давление",
+  "pos": "noun",
+  "rank": 1583
+ },
+ {
+  "lemma": "век",
+  "pos": "noun",
+  "rank": 1584
+ },
+ {
+  "lemma": "виновный",
+  "pos": "adj",
+  "rank": 1585
+ },
+ {
+  "lemma": "дешёвый",
+  "pos": "adj",
+  "rank": 1586
+ },
+ {
+  "lemma": "телевизор",
+  "pos": "noun",
+  "rank": 1587
+ },
+ {
+  "lemma": "безумие",
+  "pos": "noun",
+  "rank": 1588
+ },
+ {
+  "lemma": "днк",
+  "pos": "noun",
+  "rank": 1589
+ },
+ {
+  "lemma": "недостаточно",
+  "pos": "predic",
+  "rank": 1590
+ },
+ {
+  "lemma": "потратить",
+  "pos": "verb",
+  "rank": 1591
+ },
+ {
+  "lemma": "снег",
+  "pos": "noun",
+  "rank": 1592
+ },
+ {
+  "lemma": "грузовик",
+  "pos": "noun",
+  "rank": 1593
+ },
+ {
+  "lemma": "холодильник",
+  "pos": "noun",
+  "rank": 1594
+ },
+ {
+  "lemma": "птица",
+  "pos": "noun",
+  "rank": 1595
+ },
+ {
+  "lemma": "данный",
+  "pos": "adj",
+  "rank": 1596
+ },
+ {
+  "lemma": "проклятый",
+  "pos": "adj",
+  "rank": 1597
+ },
+ {
+  "lemma": "суп",
+  "pos": "noun",
+  "rank": 1598
+ },
+ {
+  "lemma": "перейти",
+  "pos": "verb",
+  "rank": 1599
+ },
+ {
+  "lemma": "шериф",
+  "pos": "noun",
+  "rank": 1600
+ },
+ {
+  "lemma": "коллега",
+  "pos": "noun",
+  "rank": 1601
+ },
+ {
+  "lemma": "когда-то",
+  "pos": "adv",
+  "rank": 1602
+ },
+ {
+  "lemma": "наверху",
+  "pos": "adv",
+  "rank": 1603
+ },
+ {
+  "lemma": "ангел",
+  "pos": "noun",
+  "rank": 1604
+ },
+ {
+  "lemma": "тёплый",
+  "pos": "adj",
+  "rank": 1605
+ },
+ {
+  "lemma": "едва",
+  "pos": "adv",
+  "rank": 1606
+ },
+ {
+  "lemma": "личность",
+  "pos": "noun",
+  "rank": 1607
+ },
+ {
+  "lemma": "заработать",
+  "pos": "verb",
+  "rank": 1608
+ },
+ {
+  "lemma": "мэр",
+  "pos": "noun",
+  "rank": 1609
+ },
+ {
+  "lemma": "спустя",
+  "pos": "prep",
+  "rank": 1610
+ },
+ {
+  "lemma": "отвести",
+  "pos": "verb",
+  "rank": 1611
+ },
+ {
+  "lemma": "младший",
+  "pos": "adj",
+  "rank": 1612
+ },
+ {
+  "lemma": "способность",
+  "pos": "noun",
+  "rank": 1613
+ },
+ {
+  "lemma": "появляться",
+  "pos": "verb",
+  "rank": 1614
+ },
+ {
+  "lemma": "зона",
+  "pos": "noun",
+  "rank": 1615
+ },
+ {
+  "lemma": "де",
+  "pos": "part",
+  "rank": 1616
+ },
+ {
+  "lemma": "чашка",
+  "pos": "noun",
+  "rank": 1617
+ },
+ {
+  "lemma": "опасно",
+  "pos": "adv",
+  "rank": 1618
+ },
+ {
+  "lemma": "нападение",
+  "pos": "noun",
+  "rank": 1619
+ },
+ {
+  "lemma": "четверг",
+  "pos": "noun",
+  "rank": 1620
+ },
+ {
+  "lemma": "невеста",
+  "pos": "noun",
+  "rank": 1621
+ },
+ {
+  "lemma": "прокурор",
+  "pos": "noun",
+  "rank": 1622
+ },
+ {
+  "lemma": "захватить",
+  "pos": "verb",
+  "rank": 1623
+ },
+ {
+  "lemma": "рана",
+  "pos": "noun",
+  "rank": 1624
+ },
+ {
+  "lemma": "привыкнуть",
+  "pos": "verb",
+  "rank": 1625
+ },
+ {
+  "lemma": "сахар",
+  "pos": "noun",
+  "rank": 1626
+ },
+ {
+  "lemma": "внутрь",
+  "pos": "adv",
+  "rank": 1627
+ },
+ {
+  "lemma": "выстрел",
+  "pos": "noun",
+  "rank": 1628
+ },
+ {
+  "lemma": "ошибиться",
+  "pos": "verb",
+  "rank": 1629
+ },
+ {
+  "lemma": "борт",
+  "pos": "noun",
+  "rank": 1630
+ },
+ {
+  "lemma": "призрак",
+  "pos": "noun",
+  "rank": 1631
+ },
+ {
+  "lemma": "злой",
+  "pos": "adj",
+  "rank": 1632
+ },
+ {
+  "lemma": "деталь",
+  "pos": "noun",
+  "rank": 1633
+ },
+ {
+  "lemma": "статья",
+  "pos": "noun",
+  "rank": 1634
+ },
+ {
+  "lemma": "бакс",
+  "pos": "noun",
+  "rank": 1635
+ },
+ {
+  "lemma": "убежать",
+  "pos": "verb",
+  "rank": 1636
+ },
+ {
+  "lemma": "обвинять",
+  "pos": "verb",
+  "rank": 1637
+ },
+ {
+  "lemma": "карман",
+  "pos": "noun",
+  "rank": 1638
+ },
+ {
+  "lemma": "подтвердить",
+  "pos": "verb",
+  "rank": 1639
+ },
+ {
+  "lemma": "смешной",
+  "pos": "adj",
+  "rank": 1640
+ },
+ {
+  "lemma": "чертовски",
+  "pos": "adv",
+  "rank": 1641
+ },
+ {
+  "lemma": "пугать",
+  "pos": "verb",
+  "rank": 1642
+ },
+ {
+  "lemma": "золотой",
+  "pos": "adj",
+  "rank": 1643
+ },
+ {
+  "lemma": "теория",
+  "pos": "noun",
+  "rank": 1644
+ },
+ {
+  "lemma": "таковой",
+  "pos": "pron",
+  "rank": 1645
+ },
+ {
+  "lemma": "уважать",
+  "pos": "verb",
+  "rank": 1646
+ },
+ {
+  "lemma": "мена",
+  "pos": "noun",
+  "rank": 1647
+ },
+ {
+  "lemma": "существо",
+  "pos": "noun",
+  "rank": 1648
+ },
+ {
+  "lemma": "сознание",
+  "pos": "noun",
+  "rank": 1649
+ },
+ {
+  "lemma": "английский",
+  "pos": "adj",
+  "rank": 1650
+ },
+ {
+  "lemma": "везде",
+  "pos": "adv",
+  "rank": 1651
+ },
+ {
+  "lemma": "подходящий",
+  "pos": "adj",
+  "rank": 1652
+ },
+ {
+  "lemma": "схватить",
+  "pos": "verb",
+  "rank": 1653
+ },
+ {
+  "lemma": "готовиться",
+  "pos": "verb",
+  "rank": 1654
+ },
+ {
+  "lemma": "сомнение",
+  "pos": "noun",
+  "rank": 1655
+ },
+ {
+  "lemma": "мм",
+  "pos": "intj",
+  "rank": 1656
+ },
+ {
+  "lemma": "сеть",
+  "pos": "noun",
+  "rank": 1657
+ },
+ {
+  "lemma": "рак",
+  "pos": "noun",
+  "rank": 1658
+ },
+ {
+  "lemma": "кошмар",
+  "pos": "noun",
+  "rank": 1659
+ },
+ {
+  "lemma": "девять",
+  "pos": "num",
+  "rank": 1660
+ },
+ {
+  "lemma": "побыть",
+  "pos": "verb",
+  "rank": 1661
+ },
+ {
+  "lemma": "фирма",
+  "pos": "noun",
+  "rank": 1662
+ },
+ {
+  "lemma": "поведение",
+  "pos": "noun",
+  "rank": 1663
+ },
+ {
+  "lemma": "мяч",
+  "pos": "noun",
+  "rank": 1664
+ },
+ {
+  "lemma": "ночной",
+  "pos": "adj",
+  "rank": 1665
+ },
+ {
+  "lemma": "потрясающе",
+  "pos": "adv",
+  "rank": 1666
+ },
+ {
+  "lemma": "двор",
+  "pos": "noun",
+  "rank": 1667
+ },
+ {
+  "lemma": "полно",
+  "pos": "adv",
+  "rank": 1668
+ },
+ {
+  "lemma": "неправда",
+  "pos": "noun",
+  "rank": 1669
+ },
+ {
+  "lemma": "товарищ",
+  "pos": "noun",
+  "rank": 1670
+ },
+ {
+  "lemma": "драться",
+  "pos": "verb",
+  "rank": 1671
+ },
+ {
+  "lemma": "честной",
+  "pos": "adj",
+  "rank": 1672
+ },
+ {
+  "lemma": "отменить",
+  "pos": "verb",
+  "rank": 1673
+ },
+ {
+  "lemma": "норма",
+  "pos": "noun",
+  "rank": 1674
+ },
+ {
+  "lemma": "почта",
+  "pos": "noun",
+  "rank": 1675
+ },
+ {
+  "lemma": "вторник",
+  "pos": "noun",
+  "rank": 1676
+ },
+ {
+  "lemma": "луна",
+  "pos": "noun",
+  "rank": 1677
+ },
+ {
+  "lemma": "настроение",
+  "pos": "noun",
+  "rank": 1678
+ },
+ {
+  "lemma": "секретный",
+  "pos": "adj",
+  "rank": 1679
+ },
+ {
+  "lemma": "польза",
+  "pos": "noun",
+  "rank": 1680
+ },
+ {
+  "lemma": "напомнить",
+  "pos": "verb",
+  "rank": 1681
+ },
+ {
+  "lemma": "поработать",
+  "pos": "verb",
+  "rank": 1682
+ },
+ {
+  "lemma": "потеря",
+  "pos": "noun",
+  "rank": 1683
+ },
+ {
+  "lemma": "предполагать",
+  "pos": "verb",
+  "rank": 1684
+ },
+ {
+  "lemma": "спешить",
+  "pos": "verb",
+  "rank": 1685
+ },
+ {
+  "lemma": "спрятать",
+  "pos": "verb",
+  "rank": 1686
+ },
+ {
+  "lemma": "задавать",
+  "pos": "verb",
+  "rank": 1687
+ },
+ {
+  "lemma": "пострадать",
+  "pos": "verb",
+  "rank": 1688
+ },
+ {
+  "lemma": "штаны",
+  "pos": "noun",
+  "rank": 1689
+ },
+ {
+  "lemma": "стиль",
+  "pos": "noun",
+  "rank": 1690
+ },
+ {
+  "lemma": "женский",
+  "pos": "adj",
+  "rank": 1691
+ },
+ {
+  "lemma": "природа",
+  "pos": "noun",
+  "rank": 1692
+ },
+ {
+  "lemma": "нервничать",
+  "pos": "verb",
+  "rank": 1693
+ },
+ {
+  "lemma": "присесть",
+  "pos": "verb",
+  "rank": 1694
+ },
+ {
+  "lemma": "притворяться",
+  "pos": "verb",
+  "rank": 1695
+ },
+ {
+  "lemma": "допустить",
+  "pos": "verb",
+  "rank": 1696
+ },
+ {
+  "lemma": "ужас",
+  "pos": "noun",
+  "rank": 1697
+ },
+ {
+  "lemma": "соль",
+  "pos": "noun",
+  "rank": 1698
+ },
+ {
+  "lemma": "похитить",
+  "pos": "verb",
+  "rank": 1699
+ },
+ {
+  "lemma": "прибыть",
+  "pos": "verb",
+  "rank": 1700
+ },
+ {
+  "lemma": "великолепно",
+  "pos": "adv",
+  "rank": 1701
+ },
+ {
+  "lemma": "безопасный",
+  "pos": "adj",
+  "rank": 1702
+ },
+ {
+  "lemma": "благодарный",
+  "pos": "adj",
+  "rank": 1703
+ },
+ {
+  "lemma": "по-прежнему",
+  "pos": "adv",
+  "rank": 1704
+ },
+ {
+  "lemma": "автомобиль",
+  "pos": "noun",
+  "rank": 1705
+ },
+ {
+  "lemma": "дождаться",
+  "pos": "verb",
+  "rank": 1706
+ },
+ {
+  "lemma": "модель",
+  "pos": "noun",
+  "rank": 1707
+ },
+ {
+  "lemma": "достигнуть",
+  "pos": "verb",
+  "rank": 1708
+ },
+ {
+  "lemma": "вовремя",
+  "pos": "adv",
+  "rank": 1709
+ },
+ {
+  "lemma": "интернет",
+  "pos": "noun",
+  "rank": 1710
+ },
+ {
+  "lemma": "причинить",
+  "pos": "verb",
+  "rank": 1711
+ },
+ {
+  "lemma": "выполнять",
+  "pos": "verb",
+  "rank": 1712
+ },
+ {
+  "lemma": "зато",
+  "pos": "conj",
+  "rank": 1713
+ },
+ {
+  "lemma": "застрять",
+  "pos": "verb",
+  "rank": 1714
+ },
+ {
+  "lemma": "контракт",
+  "pos": "noun",
+  "rank": 1715
+ },
+ {
+  "lemma": "плечо",
+  "pos": "noun",
+  "rank": 1716
+ },
+ {
+  "lemma": "выключить",
+  "pos": "verb",
+  "rank": 1717
+ },
+ {
+  "lemma": "сериал",
+  "pos": "noun",
+  "rank": 1718
+ },
+ {
+  "lemma": "данные",
+  "pos": "noun",
+  "rank": 1719
+ },
+ {
+  "lemma": "плюс",
+  "pos": "noun",
+  "rank": 1720
+ },
+ {
+  "lemma": "клетка",
+  "pos": "noun",
+  "rank": 1721
+ },
+ {
+  "lemma": "поцеловать",
+  "pos": "verb",
+  "rank": 1722
+ },
+ {
+  "lemma": "меч",
+  "pos": "noun",
+  "rank": 1723
+ },
+ {
+  "lemma": "ерунда",
+  "pos": "noun",
+  "rank": 1724
+ },
+ {
+  "lemma": "согласно",
+  "pos": "prep",
+  "rank": 1725
+ },
+ {
+  "lemma": "пример",
+  "pos": "noun",
+  "rank": 1726
+ },
+ {
+  "lemma": "тренер",
+  "pos": "noun",
+  "rank": 1727
+ },
+ {
+  "lemma": "предпочитать",
+  "pos": "verb",
+  "rank": 1728
+ },
+ {
+  "lemma": "падать",
+  "pos": "verb",
+  "rank": 1729
+ },
+ {
+  "lemma": "утверждать",
+  "pos": "verb",
+  "rank": 1730
+ },
+ {
+  "lemma": "чисто",
+  "pos": "adv",
+  "rank": 1731
+ },
+ {
+  "lemma": "срочно",
+  "pos": "adv",
+  "rank": 1732
+ },
+ {
+  "lemma": "вне",
+  "pos": "prep",
+  "rank": 1733
+ },
+ {
+  "lemma": "супер",
+  "pos": "adj",
+  "rank": 1734
+ },
+ {
+  "lemma": "приказать",
+  "pos": "verb",
+  "rank": 1735
+ },
+ {
+  "lemma": "двадцать",
+  "pos": "num",
+  "rank": 1736
+ },
+ {
+  "lemma": "предел",
+  "pos": "noun",
+  "rank": 1737
+ },
+ {
+  "lemma": "дурацкий",
+  "pos": "adj",
+  "rank": 1738
+ },
+ {
+  "lemma": "чудесный",
+  "pos": "adj",
+  "rank": 1739
+ },
+ {
+  "lemma": "спуститься",
+  "pos": "verb",
+  "rank": 1740
+ },
+ {
+  "lemma": "слегка",
+  "pos": "adv",
+  "rank": 1741
+ },
+ {
+  "lemma": "наверх",
+  "pos": "adv",
+  "rank": 1742
+ },
+ {
+  "lemma": "дьявол",
+  "pos": "noun",
+  "rank": 1743
+ },
+ {
+  "lemma": "куртка",
+  "pos": "noun",
+  "rank": 1744
+ },
+ {
+  "lemma": "чушь",
+  "pos": "noun",
+  "rank": 1745
+ },
+ {
+  "lemma": "расстаться",
+  "pos": "verb",
+  "rank": 1746
+ },
+ {
+  "lemma": "красиво",
+  "pos": "adv",
+  "rank": 1747
+ },
+ {
+  "lemma": "необходимый",
+  "pos": "adj",
+  "rank": 1748
+ },
+ {
+  "lemma": "сад",
+  "pos": "noun",
+  "rank": 1749
+ },
+ {
+  "lemma": "метр",
+  "pos": "noun",
+  "rank": 1750
+ },
+ {
+  "lemma": "владелец",
+  "pos": "noun",
+  "rank": 1751
+ },
+ {
+  "lemma": "лестница",
+  "pos": "noun",
+  "rank": 1752
+ },
+ {
+  "lemma": "золото",
+  "pos": "noun",
+  "rank": 1753
+ },
+ {
+  "lemma": "трудный",
+  "pos": "adj",
+  "rank": 1754
+ },
+ {
+  "lemma": "вселенная",
+  "pos": "noun",
+  "rank": 1755
+ },
+ {
+  "lemma": "обратиться",
+  "pos": "verb",
+  "rank": 1756
+ },
+ {
+  "lemma": "подниматься",
+  "pos": "verb",
+  "rank": 1757
+ },
+ {
+  "lemma": "морской",
+  "pos": "adj",
+  "rank": 1758
+ },
+ {
+  "lemma": "полдень",
+  "pos": "noun",
+  "rank": 1759
+ },
+ {
+  "lemma": "дважды",
+  "pos": "adv",
+  "rank": 1760
+ },
+ {
+  "lemma": "внутренний",
+  "pos": "adj",
+  "rank": 1761
+ },
+ {
+  "lemma": "дружище",
+  "pos": "noun",
+  "rank": 1762
+ },
+ {
+  "lemma": "потрясать",
+  "pos": "verb",
+  "rank": 1763
+ },
+ {
+  "lemma": "полезный",
+  "pos": "adj",
+  "rank": 1764
+ },
+ {
+  "lemma": "пушка",
+  "pos": "noun",
+  "rank": 1765
+ },
+ {
+  "lemma": "зрение",
+  "pos": "noun",
+  "rank": 1766
+ },
+ {
+  "lemma": "монстр",
+  "pos": "noun",
+  "rank": 1767
+ },
+ {
+  "lemma": "трус",
+  "pos": "noun",
+  "rank": 1768
+ },
+ {
+  "lemma": "болтать",
+  "pos": "verb",
+  "rank": 1769
+ },
+ {
+  "lemma": "прямой",
+  "pos": "adj",
+  "rank": 1770
+ },
+ {
+  "lemma": "сдаваться",
+  "pos": "verb",
+  "rank": 1771
+ },
+ {
+  "lemma": "скучный",
+  "pos": "adj",
+  "rank": 1772
+ },
+ {
+  "lemma": "разбить",
+  "pos": "verb",
+  "rank": 1773
+ },
+ {
+  "lemma": "кончиться",
+  "pos": "verb",
+  "rank": 1774
+ },
+ {
+  "lemma": "миссия",
+  "pos": "noun",
+  "rank": 1775
+ },
+ {
+  "lemma": "тарелка",
+  "pos": "noun",
+  "rank": 1776
+ },
+ {
+  "lemma": "вынудить",
+  "pos": "verb",
+  "rank": 1777
+ },
+ {
+  "lemma": "частный",
+  "pos": "adj",
+  "rank": 1778
+ },
+ {
+  "lemma": "повсюду",
+  "pos": "adv",
+  "rank": 1779
+ },
+ {
+  "lemma": "сдаться",
+  "pos": "verb",
+  "rank": 1780
+ },
+ {
+  "lemma": "выполнить",
+  "pos": "verb",
+  "rank": 1781
+ },
+ {
+  "lemma": "мелкий",
+  "pos": "adj",
+  "rank": 1782
+ },
+ {
+  "lemma": "упустить",
+  "pos": "verb",
+  "rank": 1783
+ },
+ {
+  "lemma": "интересовать",
+  "pos": "verb",
+  "rank": 1784
+ },
+ {
+  "lemma": "позиция",
+  "pos": "noun",
+  "rank": 1785
+ },
+ {
+  "lemma": "терпеть",
+  "pos": "verb",
+  "rank": 1786
+ },
+ {
+  "lemma": "ловушка",
+  "pos": "noun",
+  "rank": 1787
+ },
+ {
+  "lemma": "совпадение",
+  "pos": "noun",
+  "rank": 1788
+ },
+ {
+  "lemma": "похороны",
+  "pos": "noun",
+  "rank": 1789
+ },
+ {
+  "lemma": "практически",
+  "pos": "adv",
+  "rank": 1790
+ },
+ {
+  "lemma": "довольный",
+  "pos": "adj",
+  "rank": 1791
+ },
+ {
+  "lemma": "ведьма",
+  "pos": "noun",
+  "rank": 1792
+ },
+ {
+  "lemma": "авария",
+  "pos": "noun",
+  "rank": 1793
+ },
+ {
+  "lemma": "жестокий",
+  "pos": "adj",
+  "rank": 1794
+ },
+ {
+  "lemma": "политика",
+  "pos": "noun",
+  "rank": 1795
+ },
+ {
+  "lemma": "вампир",
+  "pos": "noun",
+  "rank": 1796
+ },
+ {
+  "lemma": "опустить",
+  "pos": "verb",
+  "rank": 1797
+ },
+ {
+  "lemma": "отдавать",
+  "pos": "verb",
+  "rank": 1798
+ },
+ {
+  "lemma": "одеваться",
+  "pos": "verb",
+  "rank": 1799
+ },
+ {
+  "lemma": "франция",
+  "pos": "noun",
+  "rank": 1800
+ },
+ {
+  "lemma": "мимо",
+  "pos": "adv",
+  "rank": 1801
+ },
+ {
+  "lemma": "повесить",
+  "pos": "verb",
+  "rank": 1802
+ },
+ {
+  "lemma": "школьный",
+  "pos": "adj",
+  "rank": 1803
+ },
+ {
+  "lemma": "лечение",
+  "pos": "noun",
+  "rank": 1804
+ },
+ {
+  "lemma": "битва",
+  "pos": "noun",
+  "rank": 1805
+ },
+ {
+  "lemma": "сотрудник",
+  "pos": "noun",
+  "rank": 1806
+ },
+ {
+  "lemma": "риск",
+  "pos": "noun",
+  "rank": 1807
+ },
+ {
+  "lemma": "грех",
+  "pos": "noun",
+  "rank": 1808
+ },
+ {
+  "lemma": "короткий",
+  "pos": "adj",
+  "rank": 1809
+ },
+ {
+  "lemma": "ощущение",
+  "pos": "noun",
+  "rank": 1810
+ },
+ {
+  "lemma": "винить",
+  "pos": "verb",
+  "rank": 1811
+ },
+ {
+  "lemma": "вход",
+  "pos": "noun",
+  "rank": 1812
+ },
+ {
+  "lemma": "завести",
+  "pos": "verb",
+  "rank": 1813
+ },
+ {
+  "lemma": "удобный",
+  "pos": "adj",
+  "rank": 1814
+ },
+ {
+  "lemma": "летать",
+  "pos": "verb",
+  "rank": 1815
+ },
+ {
+  "lemma": "лагерь",
+  "pos": "noun",
+  "rank": 1816
+ },
+ {
+  "lemma": "тень",
+  "pos": "noun",
+  "rank": 1817
+ },
+ {
+  "lemma": "территория",
+  "pos": "noun",
+  "rank": 1818
+ },
+ {
+  "lemma": "материал",
+  "pos": "noun",
+  "rank": 1819
+ },
+ {
+  "lemma": "лезть",
+  "pos": "verb",
+  "rank": 1820
+ },
+ {
+  "lemma": "проверка",
+  "pos": "noun",
+  "rank": 1821
+ },
+ {
+  "lemma": "радио",
+  "pos": "noun",
+  "rank": 1822
+ },
+ {
+  "lemma": "передумать",
+  "pos": "verb",
+  "rank": 1823
+ },
+ {
+  "lemma": "магия",
+  "pos": "noun",
+  "rank": 1824
+ },
+ {
+  "lemma": "образец",
+  "pos": "noun",
+  "rank": 1825
+ },
+ {
+  "lemma": "особо",
+  "pos": "adv",
+  "rank": 1826
+ },
+ {
+  "lemma": "отказываться",
+  "pos": "verb",
+  "rank": 1827
+ },
+ {
+  "lemma": "шум",
+  "pos": "noun",
+  "rank": 1828
+ },
+ {
+  "lemma": "арест",
+  "pos": "noun",
+  "rank": 1829
+ },
+ {
+  "lemma": "обстоятельство",
+  "pos": "noun",
+  "rank": 1830
+ },
+ {
+  "lemma": "чужой",
+  "pos": "adj",
+  "rank": 1831
+ },
+ {
+  "lemma": "молиться",
+  "pos": "verb",
+  "rank": 1832
+ },
+ {
+  "lemma": "остальное",
+  "pos": "pron",
+  "rank": 1833
+ },
+ {
+  "lemma": "возле",
+  "pos": "prep",
+  "rank": 1834
+ },
+ {
+  "lemma": "красота",
+  "pos": "noun",
+  "rank": 1835
+ },
+ {
+  "lemma": "фунт",
+  "pos": "noun",
+  "rank": 1836
+ },
+ {
+  "lemma": "справляться",
+  "pos": "verb",
+  "rank": 1837
+ },
+ {
+  "lemma": "торопиться",
+  "pos": "verb",
+  "rank": 1838
+ },
+ {
+  "lemma": "спорить",
+  "pos": "verb",
+  "rank": 1839
+ },
+ {
+  "lemma": "площадка",
+  "pos": "noun",
+  "rank": 1840
+ },
+ {
+  "lemma": "влюбиться",
+  "pos": "verb",
+  "rank": 1841
+ },
+ {
+  "lemma": "задержать",
+  "pos": "verb",
+  "rank": 1842
+ },
+ {
+  "lemma": "голубой",
+  "pos": "adj",
+  "rank": 1843
+ },
+ {
+  "lemma": "лед",
+  "pos": "noun",
+  "rank": 1844
+ },
+ {
+  "lemma": "продажа",
+  "pos": "noun",
+  "rank": 1845
+ },
+ {
+  "lemma": "удивительно",
+  "pos": "adv",
+  "rank": 1846
+ },
+ {
+  "lemma": "поблагодарить",
+  "pos": "verb",
+  "rank": 1847
+ },
+ {
+  "lemma": "лечить",
+  "pos": "verb",
+  "rank": 1848
+ },
+ {
+  "lemma": "прочесть",
+  "pos": "verb",
+  "rank": 1849
+ },
+ {
+  "lemma": "национальный",
+  "pos": "adj",
+  "rank": 1850
+ },
+ {
+  "lemma": "повторить",
+  "pos": "verb",
+  "rank": 1851
+ },
+ {
+  "lemma": "стыдно",
+  "pos": "adv",
+  "rank": 1852
+ },
+ {
+  "lemma": "американец",
+  "pos": "noun",
+  "rank": 1853
+ },
+ {
+  "lemma": "везти",
+  "pos": "verb",
+  "rank": 1854
+ },
+ {
+  "lemma": "контакт",
+  "pos": "noun",
+  "rank": 1855
+ },
+ {
+  "lemma": "лидер",
+  "pos": "noun",
+  "rank": 1856
+ },
+ {
+  "lemma": "южный",
+  "pos": "adj",
+  "rank": 1857
+ },
+ {
+  "lemma": "явно",
+  "pos": "adv",
+  "rank": 1858
+ },
+ {
+  "lemma": "подготовить",
+  "pos": "verb",
+  "rank": 1859
+ },
+ {
+  "lemma": "наблюдение",
+  "pos": "noun",
+  "rank": 1860
+ },
+ {
+  "lemma": "поддержать",
+  "pos": "verb",
+  "rank": 1861
+ },
+ {
+  "lemma": "столь",
+  "pos": "adv",
+  "rank": 1862
+ },
+ {
+  "lemma": "спасать",
+  "pos": "verb",
+  "rank": 1863
+ },
+ {
+  "lemma": "рассчитывать",
+  "pos": "verb",
+  "rank": 1864
+ },
+ {
+  "lemma": "чек",
+  "pos": "noun",
+  "rank": 1865
+ },
+ {
+  "lemma": "по-настоящему",
+  "pos": "adv",
+  "rank": 1866
+ },
+ {
+  "lemma": "пальто",
+  "pos": "noun",
+  "rank": 1867
+ },
+ {
+  "lemma": "разбираться",
+  "pos": "verb",
+  "rank": 1868
+ },
+ {
+  "lemma": "разум",
+  "pos": "noun",
+  "rank": 1869
+ },
+ {
+  "lemma": "ловить",
+  "pos": "verb",
+  "rank": 1870
+ },
+ {
+  "lemma": "итог",
+  "pos": "noun",
+  "rank": 1871
+ },
+ {
+  "lemma": "м-р",
+  "pos": "noun",
+  "rank": 1872
+ },
+ {
+  "lemma": "банда",
+  "pos": "noun",
+  "rank": 1873
+ },
+ {
+  "lemma": "майор",
+  "pos": "noun",
+  "rank": 1874
+ },
+ {
+  "lemma": "по-другому",
+  "pos": "adv",
+  "rank": 1875
+ },
+ {
+  "lemma": "выбросить",
+  "pos": "verb",
+  "rank": 1876
+ },
+ {
+  "lemma": "специальный",
+  "pos": "adj",
+  "rank": 1877
+ },
+ {
+  "lemma": "запретить",
+  "pos": "verb",
+  "rank": 1878
+ },
+ {
+  "lemma": "смена",
+  "pos": "noun",
+  "rank": 1879
+ },
+ {
+  "lemma": "вывести",
+  "pos": "verb",
+  "rank": 1880
+ },
+ {
+  "lemma": "округ",
+  "pos": "noun",
+  "rank": 1881
+ },
+ {
+  "lemma": "симпатичный",
+  "pos": "adj",
+  "rank": 1882
+ },
+ {
+  "lemma": "кусочек",
+  "pos": "noun",
+  "rank": 1883
+ },
+ {
+  "lemma": "безумный",
+  "pos": "adj",
+  "rank": 1884
+ },
+ {
+  "lemma": "представление",
+  "pos": "noun",
+  "rank": 1885
+ },
+ {
+  "lemma": "поиграть",
+  "pos": "verb",
+  "rank": 1886
+ },
+ {
+  "lemma": "фамилия",
+  "pos": "noun",
+  "rank": 1887
+ },
+ {
+  "lemma": "улыбаться",
+  "pos": "verb",
+  "rank": 1888
+ },
+ {
+  "lemma": "прочь",
+  "pos": "adv",
+  "rank": 1889
+ },
+ {
+  "lemma": "страница",
+  "pos": "noun",
+  "rank": 1890
+ },
+ {
+  "lemma": "пробовать",
+  "pos": "verb",
+  "rank": 1891
+ },
+ {
+  "lemma": "дерзить",
+  "pos": "verb",
+  "rank": 1892
+ },
+ {
+  "lemma": "травма",
+  "pos": "noun",
+  "rank": 1893
+ },
+ {
+  "lemma": "испытывать",
+  "pos": "verb",
+  "rank": 1894
+ },
+ {
+  "lemma": "кошка",
+  "pos": "noun",
+  "rank": 1895
+ },
+ {
+  "lemma": "по-твоему",
+  "pos": "adv",
+  "rank": 1896
+ },
+ {
+  "lemma": "неплохой",
+  "pos": "adj",
+  "rank": 1897
+ },
+ {
+  "lemma": "издеваться",
+  "pos": "verb",
+  "rank": 1898
+ },
+ {
+  "lemma": "достойный",
+  "pos": "adj",
+  "rank": 1899
+ },
+ {
+  "lemma": "отпуск",
+  "pos": "noun",
+  "rank": 1900
+ },
+ {
+  "lemma": "французский",
+  "pos": "adj",
+  "rank": 1901
+ },
+ {
+  "lemma": "пообещать",
+  "pos": "verb",
+  "rank": 1902
+ },
+ {
+  "lemma": "игрок",
+  "pos": "noun",
+  "rank": 1903
+ },
+ {
+  "lemma": "сценарий",
+  "pos": "noun",
+  "rank": 1904
+ },
+ {
+  "lemma": "атака",
+  "pos": "noun",
+  "rank": 1905
+ },
+ {
+  "lemma": "канал",
+  "pos": "noun",
+  "rank": 1906
+ },
+ {
+  "lemma": "впереди",
+  "pos": "adv",
+  "rank": 1907
+ },
+ {
+  "lemma": "реально",
+  "pos": "adv",
+  "rank": 1908
+ },
+ {
+  "lemma": "демон",
+  "pos": "noun",
+  "rank": 1909
+ },
+ {
+  "lemma": "пожениться",
+  "pos": "verb",
+  "rank": 1910
+ },
+ {
+  "lemma": "ужинать",
+  "pos": "verb",
+  "rank": 1911
+ },
+ {
+  "lemma": "зря",
+  "pos": "adv",
+  "rank": 1912
+ },
+ {
+  "lemma": "бегать",
+  "pos": "verb",
+  "rank": 1913
+ },
+ {
+  "lemma": "труд",
+  "pos": "noun",
+  "rank": 1914
+ },
+ {
+  "lemma": "устройство",
+  "pos": "noun",
+  "rank": 1915
+ },
+ {
+  "lemma": "северный",
+  "pos": "adj",
+  "rank": 1916
+ },
+ {
+  "lemma": "меняться",
+  "pos": "verb",
+  "rank": 1917
+ },
+ {
+  "lemma": "руль",
+  "pos": "noun",
+  "rank": 1918
+ },
+ {
+  "lemma": "создавать",
+  "pos": "verb",
+  "rank": 1919
+ },
+ {
+  "lemma": "копия",
+  "pos": "noun",
+  "rank": 1920
+ },
+ {
+  "lemma": "сладкий",
+  "pos": "adj",
+  "rank": 1921
+ },
+ {
+  "lemma": "наедине",
+  "pos": "adv",
+  "rank": 1922
+ },
+ {
+  "lemma": "ммм",
+  "pos": "intj",
+  "rank": 1923
+ },
+ {
+  "lemma": "отвалить",
+  "pos": "verb",
+  "rank": 1924
+ },
+ {
+  "lemma": "слеза",
+  "pos": "noun",
+  "rank": 1925
+ },
+ {
+  "lemma": "выступать",
+  "pos": "verb",
+  "rank": 1926
+ },
+ {
+  "lemma": "мастер",
+  "pos": "noun",
+  "rank": 1927
+ },
+ {
+  "lemma": "пожар",
+  "pos": "noun",
+  "rank": 1928
+ },
+ {
+  "lemma": "фабрика",
+  "pos": "noun",
+  "rank": 1929
+ },
+ {
+  "lemma": "собрание",
+  "pos": "noun",
+  "rank": 1930
+ },
+ {
+  "lemma": "организовать",
+  "pos": "verb",
+  "rank": 1931
+ },
+ {
+  "lemma": "перерыв",
+  "pos": "noun",
+  "rank": 1932
+ },
+ {
+  "lemma": "предоставить",
+  "pos": "verb",
+  "rank": 1933
+ },
+ {
+  "lemma": "направляться",
+  "pos": "verb",
+  "rank": 1934
+ },
+ {
+  "lemma": "медленно",
+  "pos": "adv",
+  "rank": 1935
+ },
+ {
+  "lemma": "извинение",
+  "pos": "noun",
+  "rank": 1936
+ },
+ {
+  "lemma": "талант",
+  "pos": "noun",
+  "rank": 1937
+ },
+ {
+  "lemma": "четвертый",
+  "pos": "adj",
+  "rank": 1938
+ },
+ {
+  "lemma": "яблоко",
+  "pos": "noun",
+  "rank": 1939
+ },
+ {
+  "lemma": "развод",
+  "pos": "noun",
+  "rank": 1940
+ },
+ {
+  "lemma": "изучать",
+  "pos": "verb",
+  "rank": 1941
+ },
+ {
+  "lemma": "поживать",
+  "pos": "verb",
+  "rank": 1942
+ },
+ {
+  "lemma": "вред",
+  "pos": "noun",
+  "rank": 1943
+ },
+ {
+  "lemma": "холодно",
+  "pos": "adv",
+  "rank": 1944
+ },
+ {
+  "lemma": "выслушать",
+  "pos": "verb",
+  "rank": 1945
+ },
+ {
+  "lemma": "насилие",
+  "pos": "noun",
+  "rank": 1946
+ },
+ {
+  "lemma": "множество",
+  "pos": "noun",
+  "rank": 1947
+ },
+ {
+  "lemma": "обедать",
+  "pos": "verb",
+  "rank": 1948
+ },
+ {
+  "lemma": "участие",
+  "pos": "noun",
+  "rank": 1949
+ },
+ {
+  "lemma": "ма",
+  "pos": "noun",
+  "rank": 1950
+ },
+ {
+  "lemma": "парочка",
+  "pos": "noun",
+  "rank": 1951
+ },
+ {
+  "lemma": "сигарета",
+  "pos": "noun",
+  "rank": 1952
+ },
+ {
+  "lemma": "жалкий",
+  "pos": "adj",
+  "rank": 1953
+ },
+ {
+  "lemma": "пирог",
+  "pos": "noun",
+  "rank": 1954
+ },
+ {
+  "lemma": "дикий",
+  "pos": "adj",
+  "rank": 1955
+ },
+ {
+  "lemma": "внезапно",
+  "pos": "adv",
+  "rank": 1956
+ },
+ {
+  "lemma": "англия",
+  "pos": "noun",
+  "rank": 1957
+ },
+ {
+  "lemma": "свинья",
+  "pos": "noun",
+  "rank": 1958
+ },
+ {
+  "lemma": "малышка",
+  "pos": "noun",
+  "rank": 1959
+ },
+ {
+  "lemma": "партия",
+  "pos": "noun",
+  "rank": 1960
+ },
+ {
+  "lemma": "чудесно",
+  "pos": "adv",
+  "rank": 1961
+ },
+ {
+  "lemma": "маска",
+  "pos": "noun",
+  "rank": 1962
+ },
+ {
+  "lemma": "специально",
+  "pos": "adv",
+  "rank": 1963
+ },
+ {
+  "lemma": "версия",
+  "pos": "noun",
+  "rank": 1964
+ },
+ {
+  "lemma": "самоубийство",
+  "pos": "noun",
+  "rank": 1965
+ },
+ {
+  "lemma": "наука",
+  "pos": "noun",
+  "rank": 1966
+ },
+ {
+  "lemma": "сумма",
+  "pos": "noun",
+  "rank": 1967
+ },
+ {
+  "lemma": "обмануть",
+  "pos": "verb",
+  "rank": 1968
+ },
+ {
+  "lemma": "сжечь",
+  "pos": "verb",
+  "rank": 1969
+ },
+ {
+  "lemma": "строить",
+  "pos": "verb",
+  "rank": 1970
+ },
+ {
+  "lemma": "направление",
+  "pos": "noun",
+  "rank": 1971
+ },
+ {
+  "lemma": "кот",
+  "pos": "noun",
+  "rank": 1972
+ },
+ {
+  "lemma": "творить",
+  "pos": "verb",
+  "rank": 1973
+ },
+ {
+  "lemma": "реальность",
+  "pos": "noun",
+  "rank": 1974
+ },
+ {
+  "lemma": "вновь",
+  "pos": "adv",
+  "rank": 1975
+ },
+ {
+  "lemma": "охотиться",
+  "pos": "verb",
+  "rank": 1976
+ },
+ {
+  "lemma": "пожелать",
+  "pos": "verb",
+  "rank": 1977
+ },
+ {
+  "lemma": "потребоваться",
+  "pos": "verb",
+  "rank": 1978
+ },
+ {
+  "lemma": "дыра",
+  "pos": "noun",
+  "rank": 1979
+ },
+ {
+  "lemma": "ордер",
+  "pos": "noun",
+  "rank": 1980
+ },
+ {
+  "lemma": "ворота",
+  "pos": "noun",
+  "rank": 1981
+ },
+ {
+  "lemma": "предупреждать",
+  "pos": "verb",
+  "rank": 1982
+ },
+ {
+  "lemma": "завод",
+  "pos": "noun",
+  "rank": 1983
+ },
+ {
+  "lemma": "очки",
+  "pos": "noun",
+  "rank": 1984
+ },
+ {
+  "lemma": "приближаться",
+  "pos": "verb",
+  "rank": 1985
+ },
+ {
+  "lemma": "фургон",
+  "pos": "noun",
+  "rank": 1986
+ },
+ {
+  "lemma": "совершать",
+  "pos": "verb",
+  "rank": 1987
+ },
+ {
+  "lemma": "мусор",
+  "pos": "noun",
+  "rank": 1988
+ },
+ {
+  "lemma": "выстрелить",
+  "pos": "verb",
+  "rank": 1989
+ },
+ {
+  "lemma": "берег",
+  "pos": "noun",
+  "rank": 1990
+ },
+ {
+  "lemma": "догадаться",
+  "pos": "verb",
+  "rank": 1991
+ },
+ {
+  "lemma": "облако",
+  "pos": "noun",
+  "rank": 1992
+ },
+ {
+  "lemma": "лишний",
+  "pos": "adj",
+  "rank": 1993
+ },
+ {
+  "lemma": "родственник",
+  "pos": "noun",
+  "rank": 1994
+ },
+ {
+  "lemma": "взяться",
+  "pos": "verb",
+  "rank": 1995
+ },
+ {
+  "lemma": "надоесть",
+  "pos": "verb",
+  "rank": 1996
+ },
+ {
+  "lemma": "газ",
+  "pos": "noun",
+  "rank": 1997
+ },
+ {
+  "lemma": "концерт",
+  "pos": "noun",
+  "rank": 1998
+ },
+ {
+  "lemma": "отстать",
+  "pos": "verb",
+  "rank": 1999
+ },
+ {
+  "lemma": "коп",
+  "pos": "noun",
+  "rank": 2000
+ },
+ {
+  "lemma": "толпа",
+  "pos": "noun",
+  "rank": 2001
+ },
+ {
+  "lemma": "крик",
+  "pos": "noun",
+  "rank": 2002
+ },
+ {
+  "lemma": "вор",
+  "pos": "noun",
+  "rank": 2003
+ },
+ {
+  "lemma": "значить",
+  "pos": "verb",
+  "rank": 2004
+ },
+ {
+  "lemma": "процент",
+  "pos": "noun",
+  "rank": 2005
+ },
+ {
+  "lemma": "раскрыть",
+  "pos": "verb",
+  "rank": 2006
+ },
+ {
+  "lemma": "найтись",
+  "pos": "verb",
+  "rank": 2007
+ },
+ {
+  "lemma": "напарник",
+  "pos": "noun",
+  "rank": 2008
+ },
+ {
+  "lemma": "выпивка",
+  "pos": "noun",
+  "rank": 2009
+ },
+ {
+  "lemma": "голый",
+  "pos": "adj",
+  "rank": 2010
+ },
+ {
+  "lemma": "тянуть",
+  "pos": "verb",
+  "rank": 2011
+ },
+ {
+  "lemma": "пляж",
+  "pos": "noun",
+  "rank": 2012
+ },
+ {
+  "lemma": "священник",
+  "pos": "noun",
+  "rank": 2013
+ },
+ {
+  "lemma": "превратиться",
+  "pos": "verb",
+  "rank": 2014
+ },
+ {
+  "lemma": "спасение",
+  "pos": "noun",
+  "rank": 2015
+ },
+ {
+  "lemma": "могила",
+  "pos": "noun",
+  "rank": 2016
+ },
+ {
+  "lemma": "шляпа",
+  "pos": "noun",
+  "rank": 2017
+ },
+ {
+  "lemma": "доверие",
+  "pos": "noun",
+  "rank": 2018
+ },
+ {
+  "lemma": "исключение",
+  "pos": "noun",
+  "rank": 2019
+ },
+ {
+  "lemma": "пресса",
+  "pos": "noun",
+  "rank": 2020
+ },
+ {
+  "lemma": "ставка",
+  "pos": "noun",
+  "rank": 2021
+ },
+ {
+  "lemma": "поискать",
+  "pos": "verb",
+  "rank": 2022
+ },
+ {
+  "lemma": "угу",
+  "pos": "intj",
+  "rank": 2023
+ },
+ {
+  "lemma": "синий",
+  "pos": "adj",
+  "rank": 2024
+ },
+ {
+  "lemma": "телефонный",
+  "pos": "adj",
+  "rank": 2025
+ },
+ {
+  "lemma": "псих",
+  "pos": "noun",
+  "rank": 2026
+ },
+ {
+  "lemma": "лорд",
+  "pos": "noun",
+  "rank": 2027
+ },
+ {
+  "lemma": "сменить",
+  "pos": "verb",
+  "rank": 2028
+ },
+ {
+  "lemma": "сучка",
+  "pos": "noun",
+  "rank": 2029
+ },
+ {
+  "lemma": "охранник",
+  "pos": "noun",
+  "rank": 2030
+ },
+ {
+  "lemma": "поторопиться",
+  "pos": "verb",
+  "rank": 2031
+ },
+ {
+  "lemma": "интервью",
+  "pos": "noun",
+  "rank": 2032
+ },
+ {
+  "lemma": "ученый",
+  "pos": "noun",
+  "rank": 2033
+ },
+ {
+  "lemma": "определенный",
+  "pos": "adj",
+  "rank": 2034
+ },
+ {
+  "lemma": "двойной",
+  "pos": "adj",
+  "rank": 2035
+ },
+ {
+  "lemma": "пост",
+  "pos": "noun",
+  "rank": 2036
+ },
+ {
+  "lemma": "организация",
+  "pos": "noun",
+  "rank": 2037
+ },
+ {
+  "lemma": "одолжение",
+  "pos": "noun",
+  "rank": 2038
+ },
+ {
+  "lemma": "удивить",
+  "pos": "verb",
+  "rank": 2039
+ },
+ {
+  "lemma": "грустный",
+  "pos": "adj",
+  "rank": 2040
+ },
+ {
+  "lemma": "пицца",
+  "pos": "noun",
+  "rank": 2041
+ },
+ {
+  "lemma": "присяжный",
+  "pos": "noun",
+  "rank": 2042
+ },
+ {
+  "lemma": "изменение",
+  "pos": "noun",
+  "rank": 2043
+ },
+ {
+  "lemma": "объявить",
+  "pos": "verb",
+  "rank": 2044
+ },
+ {
+  "lemma": "во-первых",
+  "pos": "adv",
+  "rank": 2045
+ },
+ {
+  "lemma": "пёс",
+  "pos": "noun",
+  "rank": 2046
+ },
+ {
+  "lemma": "продолжаться",
+  "pos": "verb",
+  "rank": 2047
+ },
+ {
+  "lemma": "житель",
+  "pos": "noun",
+  "rank": 2048
+ },
+ {
+  "lemma": "божий",
+  "pos": "adj",
+  "rank": 2049
+ },
+ {
+  "lemma": "передача",
+  "pos": "noun",
+  "rank": 2050
+ },
+ {
+  "lemma": "реклама",
+  "pos": "noun",
+  "rank": 2051
+ },
+ {
+  "lemma": "очнуться",
+  "pos": "verb",
+  "rank": 2052
+ },
+ {
+  "lemma": "королевский",
+  "pos": "adj",
+  "rank": 2053
+ },
+ {
+  "lemma": "охота",
+  "pos": "noun",
+  "rank": 2054
+ },
+ {
+  "lemma": "ура",
+  "pos": "intj",
+  "rank": 2055
+ },
+ {
+  "lemma": "необходимость",
+  "pos": "noun",
+  "rank": 2056
+ },
+ {
+  "lemma": "волна",
+  "pos": "noun",
+  "rank": 2057
+ },
+ {
+  "lemma": "вкусно",
+  "pos": "adv",
+  "rank": 2058
+ },
+ {
+  "lemma": "забавный",
+  "pos": "adj",
+  "rank": 2059
+ },
+ {
+  "lemma": "ферма",
+  "pos": "noun",
+  "rank": 2060
+ },
+ {
+  "lemma": "записка",
+  "pos": "noun",
+  "rank": 2061
+ },
+ {
+  "lemma": "край",
+  "pos": "noun",
+  "rank": 2062
+ },
+ {
+  "lemma": "север",
+  "pos": "noun",
+  "rank": 2063
+ },
+ {
+  "lemma": "гений",
+  "pos": "noun",
+  "rank": 2064
+ },
+ {
+  "lemma": "министр",
+  "pos": "noun",
+  "rank": 2065
+ },
+ {
+  "lemma": "крыса",
+  "pos": "noun",
+  "rank": 2066
+ },
+ {
+  "lemma": "гореть",
+  "pos": "verb",
+  "rank": 2067
+ },
+ {
+  "lemma": "оказать",
+  "pos": "verb",
+  "rank": 2068
+ },
+ {
+  "lemma": "поделиться",
+  "pos": "verb",
+  "rank": 2069
+ },
+ {
+  "lemma": "создание",
+  "pos": "noun",
+  "rank": 2070
+ },
+ {
+  "lemma": "жопа",
+  "pos": "noun",
+  "rank": 2071
+ },
+ {
+  "lemma": "обязанность",
+  "pos": "noun",
+  "rank": 2072
+ },
+ {
+  "lemma": "прибыль",
+  "pos": "noun",
+  "rank": 2073
+ },
+ {
+  "lemma": "основное",
+  "pos": "noun",
+  "rank": 2074
+ },
+ {
+  "lemma": "менеджер",
+  "pos": "noun",
+  "rank": 2075
+ },
+ {
+  "lemma": "вынести",
+  "pos": "verb",
+  "rank": 2076
+ },
+ {
+  "lemma": "губа",
+  "pos": "noun",
+  "rank": 2077
+ },
+ {
+  "lemma": "водить",
+  "pos": "verb",
+  "rank": 2078
+ },
+ {
+  "lemma": "мешок",
+  "pos": "noun",
+  "rank": 2079
+ },
+ {
+  "lemma": "поделать",
+  "pos": "verb",
+  "rank": 2080
+ },
+ {
+  "lemma": "глубоко",
+  "pos": "adv",
+  "rank": 2081
+ },
+ {
+  "lemma": "сзади",
+  "pos": "adv",
+  "rank": 2082
+ },
+ {
+  "lemma": "мальчишка",
+  "pos": "noun",
+  "rank": 2083
+ },
+ {
+  "lemma": "прикрытие",
+  "pos": "noun",
+  "rank": 2084
+ },
+ {
+  "lemma": "возникнуть",
+  "pos": "verb",
+  "rank": 2085
+ },
+ {
+  "lemma": "обойтись",
+  "pos": "verb",
+  "rank": 2086
+ },
+ {
+  "lemma": "еврей",
+  "pos": "noun",
+  "rank": 2087
+ },
+ {
+  "lemma": "одиночество",
+  "pos": "noun",
+  "rank": 2088
+ },
+ {
+  "lemma": "позади",
+  "pos": "adv",
+  "rank": 2089
+ },
+ {
+  "lemma": "идеально",
+  "pos": "adv",
+  "rank": 2090
+ },
+ {
+  "lemma": "забота",
+  "pos": "noun",
+  "rank": 2091
+ },
+ {
+  "lemma": "дружба",
+  "pos": "noun",
+  "rank": 2092
+ },
+ {
+  "lemma": "зарабатывать",
+  "pos": "verb",
+  "rank": 2093
+ },
+ {
+  "lemma": "игрушка",
+  "pos": "noun",
+  "rank": 2094
+ },
+ {
+  "lemma": "пятый",
+  "pos": "adj",
+  "rank": 2095
+ },
+ {
+  "lemma": "шевелиться",
+  "pos": "verb",
+  "rank": 2096
+ },
+ {
+  "lemma": "убегать",
+  "pos": "verb",
+  "rank": 2097
+ },
+ {
+  "lemma": "превратить",
+  "pos": "verb",
+  "rank": 2098
+ },
+ {
+  "lemma": "испугаться",
+  "pos": "verb",
+  "rank": 2099
+ },
+ {
+  "lemma": "файл",
+  "pos": "noun",
+  "rank": 2100
+ },
+ {
+  "lemma": "гулять",
+  "pos": "verb",
+  "rank": 2101
+ },
+ {
+  "lemma": "повредить",
+  "pos": "verb",
+  "rank": 2102
+ },
+ {
+  "lemma": "подвал",
+  "pos": "noun",
+  "rank": 2103
+ },
+ {
+  "lemma": "передавать",
+  "pos": "verb",
+  "rank": 2104
+ },
+ {
+  "lemma": "степень",
+  "pos": "noun",
+  "rank": 2105
+ },
+ {
+  "lemma": "убитый",
+  "pos": "adj",
+  "rank": 2106
+ },
+ {
+  "lemma": "городской",
+  "pos": "adj",
+  "rank": 2107
+ },
+ {
+  "lemma": "невинный",
+  "pos": "adj",
+  "rank": 2108
+ },
+ {
+  "lemma": "соединить",
+  "pos": "verb",
+  "rank": 2109
+ },
+ {
+  "lemma": "метро",
+  "pos": "noun",
+  "rank": 2110
+ },
+ {
+  "lemma": "доля",
+  "pos": "noun",
+  "rank": 2111
+ },
+ {
+  "lemma": "необычный",
+  "pos": "adj",
+  "rank": 2112
+ },
+ {
+  "lemma": "оказываться",
+  "pos": "verb",
+  "rank": 2113
+ },
+ {
+  "lemma": "средний",
+  "pos": "adj",
+  "rank": 2114
+ },
+ {
+  "lemma": "реакция",
+  "pos": "noun",
+  "rank": 2115
+ },
+ {
+  "lemma": "наказание",
+  "pos": "noun",
+  "rank": 2116
+ },
+ {
+  "lemma": "пацан",
+  "pos": "noun",
+  "rank": 2117
+ },
+ {
+  "lemma": "заменить",
+  "pos": "verb",
+  "rank": 2118
+ },
+ {
+  "lemma": "сбить",
+  "pos": "verb",
+  "rank": 2119
+ },
+ {
+  "lemma": "виктор",
+  "pos": "noun",
+  "rank": 2120
+ },
+ {
+  "lemma": "ограбление",
+  "pos": "noun",
+  "rank": 2121
+ },
+ {
+  "lemma": "прыгать",
+  "pos": "verb",
+  "rank": 2122
+ },
+ {
+  "lemma": "переспать",
+  "pos": "verb",
+  "rank": 2123
+ },
+ {
+  "lemma": "хан",
+  "pos": "noun",
+  "rank": 2124
+ },
+ {
+  "lemma": "древний",
+  "pos": "adj",
+  "rank": 2125
+ },
+ {
+  "lemma": "приглашение",
+  "pos": "noun",
+  "rank": 2126
+ },
+ {
+  "lemma": "урод",
+  "pos": "noun",
+  "rank": 2127
+ },
+ {
+  "lemma": "кресло",
+  "pos": "noun",
+  "rank": 2128
+ },
+ {
+  "lemma": "федеральный",
+  "pos": "adj",
+  "rank": 2129
+ },
+ {
+  "lemma": "субтитр",
+  "pos": "noun",
+  "rank": 2130
+ },
+ {
+  "lemma": "награда",
+  "pos": "noun",
+  "rank": 2131
+ },
+ {
+  "lemma": "останавливаться",
+  "pos": "verb",
+  "rank": 2132
+ },
+ {
+  "lemma": "одиночка",
+  "pos": "noun",
+  "rank": 2133
+ },
+ {
+  "lemma": "удивительный",
+  "pos": "adj",
+  "rank": 2134
+ },
+ {
+  "lemma": "океан",
+  "pos": "noun",
+  "rank": 2135
+ },
+ {
+  "lemma": "основание",
+  "pos": "noun",
+  "rank": 2136
+ },
+ {
+  "lemma": "разбудить",
+  "pos": "verb",
+  "rank": 2137
+ },
+ {
+  "lemma": "квартал",
+  "pos": "noun",
+  "rank": 2138
+ },
+ {
+  "lemma": "цру",
+  "pos": "noun",
+  "rank": 2139
+ },
+ {
+  "lemma": "уладить",
+  "pos": "verb",
+  "rank": 2140
+ },
+ {
+  "lemma": "обвинить",
+  "pos": "verb",
+  "rank": 2141
+ },
+ {
+  "lemma": "предмет",
+  "pos": "noun",
+  "rank": 2142
+ },
+ {
+  "lemma": "поступок",
+  "pos": "noun",
+  "rank": 2143
+ },
+ {
+  "lemma": "истинный",
+  "pos": "adj",
+  "rank": 2144
+ },
+ {
+  "lemma": "избежать",
+  "pos": "verb",
+  "rank": 2145
+ },
+ {
+  "lemma": "сенатор",
+  "pos": "noun",
+  "rank": 2146
+ },
+ {
+  "lemma": "заглянуть",
+  "pos": "verb",
+  "rank": 2147
+ },
+ {
+  "lemma": "приглашать",
+  "pos": "verb",
+  "rank": 2148
+ },
+ {
+  "lemma": "футбол",
+  "pos": "noun",
+  "rank": 2149
+ },
+ {
+  "lemma": "актер",
+  "pos": "noun",
+  "rank": 2150
+ },
+ {
+  "lemma": "заказ",
+  "pos": "noun",
+  "rank": 2151
+ },
+ {
+  "lemma": "определить",
+  "pos": "verb",
+  "rank": 2152
+ },
+ {
+  "lemma": "поднимать",
+  "pos": "verb",
+  "rank": 2153
+ },
+ {
+  "lemma": "должность",
+  "pos": "noun",
+  "rank": 2154
+ },
+ {
+  "lemma": "приступ",
+  "pos": "noun",
+  "rank": 2155
+ },
+ {
+  "lemma": "торт",
+  "pos": "noun",
+  "rank": 2156
+ },
+ {
+  "lemma": "посылать",
+  "pos": "verb",
+  "rank": 2157
+ },
+ {
+  "lemma": "впечатление",
+  "pos": "noun",
+  "rank": 2158
+ },
+ {
+  "lemma": "попрощаться",
+  "pos": "verb",
+  "rank": 2159
+ },
+ {
+  "lemma": "двигатель",
+  "pos": "noun",
+  "rank": 2160
+ },
+ {
+  "lemma": "мировой",
+  "pos": "adj",
+  "rank": 2161
+ },
+ {
+  "lemma": "мина",
+  "pos": "noun",
+  "rank": 2162
+ },
+ {
+  "lemma": "классно",
+  "pos": "adv",
+  "rank": 2163
+ },
+ {
+  "lemma": "мужской",
+  "pos": "adj",
+  "rank": 2164
+ },
+ {
+  "lemma": "кайло",
+  "pos": "noun",
+  "rank": 2165
+ },
+ {
+  "lemma": "крепкий",
+  "pos": "adj",
+  "rank": 2166
+ },
+ {
+  "lemma": "отправлять",
+  "pos": "verb",
+  "rank": 2167
+ },
+ {
+  "lemma": "жара",
+  "pos": "noun",
+  "rank": 2168
+ },
+ {
+  "lemma": "как-нибудь",
+  "pos": "adv",
+  "rank": 2169
+ },
+ {
+  "lemma": "работник",
+  "pos": "noun",
+  "rank": 2170
+ },
+ {
+  "lemma": "зеркало",
+  "pos": "noun",
+  "rank": 2171
+ },
+ {
+  "lemma": "бред",
+  "pos": "noun",
+  "rank": 2172
+ },
+ {
+  "lemma": "командир",
+  "pos": "noun",
+  "rank": 2173
+ },
+ {
+  "lemma": "институт",
+  "pos": "noun",
+  "rank": 2174
+ },
+ {
+  "lemma": "прежний",
+  "pos": "adj",
+  "rank": 2175
+ },
+ {
+  "lemma": "весна",
+  "pos": "noun",
+  "rank": 2176
+ },
+ {
+  "lemma": "обращать",
+  "pos": "verb",
+  "rank": 2177
+ },
+ {
+  "lemma": "окончить",
+  "pos": "verb",
+  "rank": 2178
+ },
+ {
+  "lemma": "замечать",
+  "pos": "verb",
+  "rank": 2179
+ },
+ {
+  "lemma": "вирус",
+  "pos": "noun",
+  "rank": 2180
+ },
+ {
+  "lemma": "грязь",
+  "pos": "noun",
+  "rank": 2181
+ },
+ {
+  "lemma": "настаивать",
+  "pos": "verb",
+  "rank": 2182
+ },
+ {
+  "lemma": "товар",
+  "pos": "noun",
+  "rank": 2183
+ },
+ {
+  "lemma": "наоборот",
+  "pos": "adv",
+  "rank": 2184
+ },
+ {
+  "lemma": "бассейн",
+  "pos": "noun",
+  "rank": 2185
+ },
+ {
+  "lemma": "глядеть",
+  "pos": "verb",
+  "rank": 2186
+ },
+ {
+  "lemma": "судебный",
+  "pos": "adj",
+  "rank": 2187
+ },
+ {
+  "lemma": "сосредоточиться",
+  "pos": "verb",
+  "rank": 2188
+ },
+ {
+  "lemma": "признак",
+  "pos": "noun",
+  "rank": 2189
+ },
+ {
+  "lemma": "отключить",
+  "pos": "verb",
+  "rank": 2190
+ },
+ {
+  "lemma": "навредить",
+  "pos": "verb",
+  "rank": 2191
+ },
+ {
+  "lemma": "обратный",
+  "pos": "adj",
+  "rank": 2192
+ },
+ {
+  "lemma": "составить",
+  "pos": "verb",
+  "rank": 2193
+ },
+ {
+  "lemma": "инструмент",
+  "pos": "noun",
+  "rank": 2194
+ },
+ {
+  "lemma": "поверьте",
+  "pos": "intj",
+  "rank": 2195
+ },
+ {
+  "lemma": "обещание",
+  "pos": "noun",
+  "rank": 2196
+ },
+ {
+  "lemma": "включая",
+  "pos": "prep",
+  "rank": 2197
+ },
+ {
+  "lemma": "живо",
+  "pos": "adv",
+  "rank": 2198
+ },
+ {
+  "lemma": "отделение",
+  "pos": "noun",
+  "rank": 2199
+ },
+ {
+  "lemma": "выступление",
+  "pos": "noun",
+  "rank": 2200
+ },
+ {
+  "lemma": "последствие",
+  "pos": "noun",
+  "rank": 2201
+ },
+ {
+  "lemma": "сухой",
+  "pos": "adj",
+  "rank": 2202
+ },
+ {
+  "lemma": "рай",
+  "pos": "noun",
+  "rank": 2203
+ },
+ {
+  "lemma": "предпочесть",
+  "pos": "verb",
+  "rank": 2204
+ },
+ {
+  "lemma": "починить",
+  "pos": "verb",
+  "rank": 2205
+ },
+ {
+  "lemma": "постоянный",
+  "pos": "adj",
+  "rank": 2206
+ },
+ {
+  "lemma": "нарушить",
+  "pos": "verb",
+  "rank": 2207
+ },
+ {
+  "lemma": "выборы",
+  "pos": "noun",
+  "rank": 2208
+ },
+ {
+  "lemma": "вспоминать",
+  "pos": "verb",
+  "rank": 2209
+ },
+ {
+  "lemma": "зима",
+  "pos": "noun",
+  "rank": 2210
+ },
+ {
+  "lemma": "присутствие",
+  "pos": "noun",
+  "rank": 2211
+ },
+ {
+  "lemma": "вес",
+  "pos": "noun",
+  "rank": 2212
+ },
+ {
+  "lemma": "выдать",
+  "pos": "verb",
+  "rank": 2213
+ },
+ {
+  "lemma": "драка",
+  "pos": "noun",
+  "rank": 2214
+ },
+ {
+  "lemma": "счастье",
+  "pos": "noun",
+  "rank": 2215
+ },
+ {
+  "lemma": "пакет",
+  "pos": "noun",
+  "rank": 2216
+ },
+ {
+  "lemma": "упоминать",
+  "pos": "verb",
+  "rank": 2217
+ },
+ {
+  "lemma": "рост",
+  "pos": "noun",
+  "rank": 2218
+ },
+ {
+  "lemma": "владеть",
+  "pos": "verb",
+  "rank": 2219
+ },
+ {
+  "lemma": "грёбаный",
+  "pos": "adj",
+  "rank": 2220
+ },
+ {
+  "lemma": "коридор",
+  "pos": "noun",
+  "rank": 2221
+ },
+ {
+  "lemma": "красавица",
+  "pos": "noun",
+  "rank": 2222
+ },
+ {
+  "lemma": "родить",
+  "pos": "verb",
+  "rank": 2223
+ },
+ {
+  "lemma": "лечь",
+  "pos": "verb",
+  "rank": 2224
+ },
+ {
+  "lemma": "жалеть",
+  "pos": "verb",
+  "rank": 2225
+ },
+ {
+  "lemma": "мотив",
+  "pos": "noun",
+  "rank": 2226
+ },
+ {
+  "lemma": "буквально",
+  "pos": "adv",
+  "rank": 2227
+ },
+ {
+  "lemma": "вчерашний",
+  "pos": "adj",
+  "rank": 2228
+ },
+ {
+  "lemma": "май",
+  "pos": "noun",
+  "rank": 2229
+ },
+ {
+  "lemma": "скучно",
+  "pos": "adv",
+  "rank": 2230
+ },
+ {
+  "lemma": "договор",
+  "pos": "noun",
+  "rank": 2231
+ },
+ {
+  "lemma": "солгать",
+  "pos": "verb",
+  "rank": 2232
+ },
+ {
+  "lemma": "иной",
+  "pos": "det",
+  "rank": 2233
+ },
+ {
+  "lemma": "колесо",
+  "pos": "noun",
+  "rank": 2234
+ },
+ {
+  "lemma": "покидать",
+  "pos": "verb",
+  "rank": 2235
+ },
+ {
+  "lemma": "естественно",
+  "pos": "adv",
+  "rank": 2236
+ },
+ {
+  "lemma": "ценный",
+  "pos": "adj",
+  "rank": 2237
+ },
+ {
+  "lemma": "сие",
+  "pos": "det",
+  "rank": 2238
+ },
+ {
+  "lemma": "беречь",
+  "pos": "verb",
+  "rank": 2239
+ },
+ {
+  "lemma": "репутация",
+  "pos": "noun",
+  "rank": 2240
+ },
+ {
+  "lemma": "допрос",
+  "pos": "noun",
+  "rank": 2241
+ },
+ {
+  "lemma": "площадь",
+  "pos": "noun",
+  "rank": 2242
+ },
+ {
+  "lemma": "ниже",
+  "pos": "adv",
+  "rank": 2243
+ },
+ {
+  "lemma": "визит",
+  "pos": "noun",
+  "rank": 2244
+ },
+ {
+  "lemma": "общественный",
+  "pos": "adj",
+  "rank": 2245
+ },
+ {
+  "lemma": "настать",
+  "pos": "verb",
+  "rank": 2246
+ },
+ {
+  "lemma": "ненадолго",
+  "pos": "adv",
+  "rank": 2247
+ },
+ {
+  "lemma": "сентябрь",
+  "pos": "noun",
+  "rank": 2248
+ },
+ {
+  "lemma": "попасться",
+  "pos": "verb",
+  "rank": 2249
+ },
+ {
+  "lemma": "полчаса",
+  "pos": "noun",
+  "rank": 2250
+ },
+ {
+  "lemma": "тайный",
+  "pos": "adj",
+  "rank": 2251
+ },
+ {
+  "lemma": "тревога",
+  "pos": "noun",
+  "rank": 2252
+ },
+ {
+  "lemma": "объект",
+  "pos": "noun",
+  "rank": 2253
+ },
+ {
+  "lemma": "продавец",
+  "pos": "noun",
+  "rank": 2254
+ },
+ {
+  "lemma": "гражданский",
+  "pos": "adj",
+  "rank": 2255
+ },
+ {
+  "lemma": "громкий",
+  "pos": "adj",
+  "rank": 2256
+ },
+ {
+  "lemma": "проследить",
+  "pos": "verb",
+  "rank": 2257
+ },
+ {
+  "lemma": "короче",
+  "pos": "adv",
+  "rank": 2258
+ },
+ {
+  "lemma": "давить",
+  "pos": "verb",
+  "rank": 2259
+ },
+ {
+  "lemma": "знаменитый",
+  "pos": "adj",
+  "rank": 2260
+ },
+ {
+  "lemma": "кормить",
+  "pos": "verb",
+  "rank": 2261
+ },
+ {
+  "lemma": "признание",
+  "pos": "noun",
+  "rank": 2262
+ },
+ {
+  "lemma": "технология",
+  "pos": "noun",
+  "rank": 2263
+ },
+ {
+  "lemma": "принцип",
+  "pos": "noun",
+  "rank": 2264
+ },
+ {
+  "lemma": "просыпаться",
+  "pos": "verb",
+  "rank": 2265
+ },
+ {
+  "lemma": "режиссер",
+  "pos": "noun",
+  "rank": 2266
+ },
+ {
+  "lemma": "невероятный",
+  "pos": "adj",
+  "rank": 2267
+ },
+ {
+  "lemma": "кое-какой",
+  "pos": "det",
+  "rank": 2268
+ },
+ {
+  "lemma": "дыхание",
+  "pos": "noun",
+  "rank": 2269
+ },
+ {
+  "lemma": "г-н",
+  "pos": "noun",
+  "rank": 2270
+ },
+ {
+  "lemma": "указывать",
+  "pos": "verb",
+  "rank": 2271
+ },
+ {
+  "lemma": "дед",
+  "pos": "noun",
+  "rank": 2272
+ },
+ {
+  "lemma": "крыло",
+  "pos": "noun",
+  "rank": 2273
+ },
+ {
+  "lemma": "прожить",
+  "pos": "verb",
+  "rank": 2274
+ },
+ {
+  "lemma": "полка",
+  "pos": "noun",
+  "rank": 2275
+ },
+ {
+  "lemma": "охотник",
+  "pos": "noun",
+  "rank": 2276
+ },
+ {
+  "lemma": "приготовиться",
+  "pos": "verb",
+  "rank": 2277
+ },
+ {
+  "lemma": "официально",
+  "pos": "adv",
+  "rank": 2278
+ },
+ {
+  "lemma": "козёл",
+  "pos": "noun",
+  "rank": 2279
+ },
+ {
+  "lemma": "медведь",
+  "pos": "noun",
+  "rank": 2280
+ },
+ {
+  "lemma": "фрукт",
+  "pos": "noun",
+  "rank": 2281
+ },
+ {
+  "lemma": "целое",
+  "pos": "noun",
+  "rank": 2282
+ },
+ {
+  "lemma": "подавать",
+  "pos": "verb",
+  "rank": 2283
+ },
+ {
+  "lemma": "заболеть",
+  "pos": "verb",
+  "rank": 2284
+ },
+ {
+  "lemma": "присмотреть",
+  "pos": "verb",
+  "rank": 2285
+ },
+ {
+  "lemma": "напиток",
+  "pos": "noun",
+  "rank": 2286
+ },
+ {
+  "lemma": "ну-ка",
+  "pos": "part",
+  "rank": 2287
+ },
+ {
+  "lemma": "приводить",
+  "pos": "verb",
+  "rank": 2288
+ },
+ {
+  "lemma": "столик",
+  "pos": "noun",
+  "rank": 2289
+ },
+ {
+  "lemma": "змея",
+  "pos": "noun",
+  "rank": 2290
+ },
+ {
+  "lemma": "лифт",
+  "pos": "noun",
+  "rank": 2291
+ },
+ {
+  "lemma": "замолчать",
+  "pos": "verb",
+  "rank": 2292
+ },
+ {
+  "lemma": "вдвоём",
+  "pos": "adv",
+  "rank": 2293
+ },
+ {
+  "lemma": "невиновный",
+  "pos": "adj",
+  "rank": 2294
+ },
+ {
+  "lemma": "статус",
+  "pos": "noun",
+  "rank": 2295
+ },
+ {
+  "lemma": "требоваться",
+  "pos": "verb",
+  "rank": 2296
+ },
+ {
+  "lemma": "зад",
+  "pos": "noun",
+  "rank": 2297
+ },
+ {
+  "lemma": "предыдущий",
+  "pos": "adj",
+  "rank": 2298
+ },
+ {
+  "lemma": "эфир",
+  "pos": "noun",
+  "rank": 2299
+ },
+ {
+  "lemma": "орган",
+  "pos": "noun",
+  "rank": 2300
+ },
+ {
+  "lemma": "отнести",
+  "pos": "verb",
+  "rank": 2301
+ },
+ {
+  "lemma": "студия",
+  "pos": "noun",
+  "rank": 2302
+ },
+ {
+  "lemma": "нарушение",
+  "pos": "noun",
+  "rank": 2303
+ },
+ {
+  "lemma": "художник",
+  "pos": "noun",
+  "rank": 2304
+ },
+ {
+  "lemma": "единый",
+  "pos": "adj",
+  "rank": 2305
+ },
+ {
+  "lemma": "просьба",
+  "pos": "noun",
+  "rank": 2306
+ },
+ {
+  "lemma": "склад",
+  "pos": "noun",
+  "rank": 2307
+ },
+ {
+  "lemma": "месть",
+  "pos": "noun",
+  "rank": 2308
+ },
+ {
+  "lemma": "хвост",
+  "pos": "noun",
+  "rank": 2309
+ },
+ {
+  "lemma": "победитель",
+  "pos": "noun",
+  "rank": 2310
+ },
+ {
+  "lemma": "эксперт",
+  "pos": "noun",
+  "rank": 2311
+ },
+ {
+  "lemma": "юг",
+  "pos": "noun",
+  "rank": 2312
+ },
+ {
+  "lemma": "честный",
+  "pos": "adj",
+  "rank": 2313
+ },
+ {
+  "lemma": "наступить",
+  "pos": "verb",
+  "rank": 2314
+ },
+ {
+  "lemma": "присматривать",
+  "pos": "verb",
+  "rank": 2315
+ },
+ {
+  "lemma": "нелегко",
+  "pos": "adv",
+  "rank": 2316
+ },
+ {
+  "lemma": "хрень",
+  "pos": "noun",
+  "rank": 2317
+ },
+ {
+  "lemma": "страсть",
+  "pos": "noun",
+  "rank": 2318
+ },
+ {
+  "lemma": "китайский",
+  "pos": "adj",
+  "rank": 2319
+ },
+ {
+  "lemma": "улыбка",
+  "pos": "noun",
+  "rank": 2320
+ },
+ {
+  "lemma": "метод",
+  "pos": "noun",
+  "rank": 2321
+ },
+ {
+  "lemma": "буква",
+  "pos": "noun",
+  "rank": 2322
+ },
+ {
+  "lemma": "заканчивать",
+  "pos": "verb",
+  "rank": 2323
+ },
+ {
+  "lemma": "говориться",
+  "pos": "verb",
+  "rank": 2324
+ },
+ {
+  "lemma": "клиника",
+  "pos": "noun",
+  "rank": 2325
+ },
+ {
+  "lemma": "сайт",
+  "pos": "noun",
+  "rank": 2326
+ },
+ {
+  "lemma": "одетый",
+  "pos": "adj",
+  "rank": 2327
+ },
+ {
+  "lemma": "волшебный",
+  "pos": "adj",
+  "rank": 2328
+ },
+ {
+  "lemma": "дракон",
+  "pos": "noun",
+  "rank": 2329
+ },
+ {
+  "lemma": "осмотреть",
+  "pos": "verb",
+  "rank": 2330
+ },
+ {
+  "lemma": "дата",
+  "pos": "noun",
+  "rank": 2331
+ },
+ {
+  "lemma": "прикрыть",
+  "pos": "verb",
+  "rank": 2332
+ },
+ {
+  "lemma": "куда-нибудь",
+  "pos": "adv",
+  "rank": 2333
+ },
+ {
+  "lemma": "привлечь",
+  "pos": "verb",
+  "rank": 2334
+ },
+ {
+  "lemma": "закрывать",
+  "pos": "verb",
+  "rank": 2335
+ },
+ {
+  "lemma": "испытание",
+  "pos": "noun",
+  "rank": 2336
+ },
+ {
+  "lemma": "дочка",
+  "pos": "noun",
+  "rank": 2337
+ },
+ {
+  "lemma": "направить",
+  "pos": "verb",
+  "rank": 2338
+ },
+ {
+  "lemma": "переговоры",
+  "pos": "noun",
+  "rank": 2339
+ },
+ {
+  "lemma": "отследить",
+  "pos": "verb",
+  "rank": 2340
+ },
+ {
+  "lemma": "ряд",
+  "pos": "noun",
+  "rank": 2341
+ },
+ {
+  "lemma": "лампа",
+  "pos": "noun",
+  "rank": 2342
+ },
+ {
+  "lemma": "пространство",
+  "pos": "noun",
+  "rank": 2343
+ },
+ {
+  "lemma": "одолжить",
+  "pos": "verb",
+  "rank": 2344
+ },
+ {
+  "lemma": "обманывать",
+  "pos": "verb",
+  "rank": 2345
+ },
+ {
+  "lemma": "профессия",
+  "pos": "noun",
+  "rank": 2346
+ },
+ {
+  "lemma": "область",
+  "pos": "noun",
+  "rank": 2347
+ },
+ {
+  "lemma": "частый",
+  "pos": "adj",
+  "rank": 2348
+ },
+ {
+  "lemma": "обмен",
+  "pos": "noun",
+  "rank": 2349
+ },
+ {
+  "lemma": "парка",
+  "pos": "noun",
+  "rank": 2350
+ },
+ {
+  "lemma": "брюки",
+  "pos": "noun",
+  "rank": 2351
+ },
+ {
+  "lemma": "бельё",
+  "pos": "noun",
+  "rank": 2352
+ },
+ {
+  "lemma": "гнев",
+  "pos": "noun",
+  "rank": 2353
+ },
+ {
+  "lemma": "оплатить",
+  "pos": "verb",
+  "rank": 2354
+ },
+ {
+  "lemma": "соглашение",
+  "pos": "noun",
+  "rank": 2355
+ },
+ {
+  "lemma": "пункт",
+  "pos": "noun",
+  "rank": 2356
+ },
+ {
+  "lemma": "перенести",
+  "pos": "verb",
+  "rank": 2357
+ },
+ {
+  "lemma": "поменять",
+  "pos": "verb",
+  "rank": 2358
+ },
+ {
+  "lemma": "август",
+  "pos": "noun",
+  "rank": 2359
+ },
+ {
+  "lemma": "замужем",
+  "pos": "adv",
+  "rank": 2360
+ },
+ {
+  "lemma": "отказать",
+  "pos": "verb",
+  "rank": 2361
+ },
+ {
+  "lemma": "официальный",
+  "pos": "adj",
+  "rank": 2362
+ },
+ {
+  "lemma": "подставить",
+  "pos": "verb",
+  "rank": 2363
+ },
+ {
+  "lemma": "знание",
+  "pos": "noun",
+  "rank": 2364
+ },
+ {
+  "lemma": "европа",
+  "pos": "noun",
+  "rank": 2365
+ },
+ {
+  "lemma": "туфля",
+  "pos": "noun",
+  "rank": 2366
+ },
+ {
+  "lemma": "бля",
+  "pos": "intj",
+  "rank": 2367
+ },
+ {
+  "lemma": "запустить",
+  "pos": "verb",
+  "rank": 2368
+ },
+ {
+  "lemma": "очередной",
+  "pos": "adj",
+  "rank": 2369
+ },
+ {
+  "lemma": "театр",
+  "pos": "noun",
+  "rank": 2370
+ },
+ {
+  "lemma": "высота",
+  "pos": "noun",
+  "rank": 2371
+ },
+ {
+  "lemma": "отдых",
+  "pos": "noun",
+  "rank": 2372
+ },
+ {
+  "lemma": "полюбить",
+  "pos": "verb",
+  "rank": 2373
+ },
+ {
+  "lemma": "считаться",
+  "pos": "verb",
+  "rank": 2374
+ },
+ {
+  "lemma": "внимательно",
+  "pos": "adv",
+  "rank": 2375
+ },
+ {
+  "lemma": "смех",
+  "pos": "noun",
+  "rank": 2376
+ },
+ {
+  "lemma": "сеньор",
+  "pos": "noun",
+  "rank": 2377
+ },
+ {
+  "lemma": "кафе",
+  "pos": "noun",
+  "rank": 2378
+ },
+ {
+  "lemma": "описать",
+  "pos": "verb",
+  "rank": 2379
+ },
+ {
+  "lemma": "признавать",
+  "pos": "verb",
+  "rank": 2380
+ },
+ {
+  "lemma": "подвести",
+  "pos": "verb",
+  "rank": 2381
+ },
+ {
+  "lemma": "жених",
+  "pos": "noun",
+  "rank": 2382
+ },
+ {
+  "lemma": "новенький",
+  "pos": "adj",
+  "rank": 2383
+ },
+ {
+  "lemma": "террорист",
+  "pos": "noun",
+  "rank": 2384
+ },
+ {
+  "lemma": "выгнать",
+  "pos": "verb",
+  "rank": 2385
+ },
+ {
+  "lemma": "обидеть",
+  "pos": "verb",
+  "rank": 2386
+ },
+ {
+  "lemma": "повар",
+  "pos": "noun",
+  "rank": 2387
+ },
+ {
+  "lemma": "виски",
+  "pos": "noun",
+  "rank": 2388
+ },
+ {
+  "lemma": "покупка",
+  "pos": "noun",
+  "rank": 2389
+ },
+ {
+  "lemma": "рейс",
+  "pos": "noun",
+  "rank": 2390
+ },
+ {
+  "lemma": "спускаться",
+  "pos": "verb",
+  "rank": 2391
+ },
+ {
+  "lemma": "дно",
+  "pos": "noun",
+  "rank": 2392
+ },
+ {
+  "lemma": "посидеть",
+  "pos": "verb",
+  "rank": 2393
+ },
+ {
+  "lemma": "июль",
+  "pos": "noun",
+  "rank": 2394
+ },
+ {
+  "lemma": "прятать",
+  "pos": "verb",
+  "rank": 2395
+ },
+ {
+  "lemma": "задумать",
+  "pos": "verb",
+  "rank": 2396
+ },
+ {
+  "lemma": "плач",
+  "pos": "noun",
+  "rank": 2397
+ },
+ {
+  "lemma": "поспать",
+  "pos": "verb",
+  "rank": 2398
+ },
+ {
+  "lemma": "сквозь",
+  "pos": "prep",
+  "rank": 2399
+ },
+ {
+  "lemma": "зверь",
+  "pos": "noun",
+  "rank": 2400
+ },
+ {
+  "lemma": "труба",
+  "pos": "noun",
+  "rank": 2401
+ },
+ {
+  "lemma": "ванна",
+  "pos": "noun",
+  "rank": 2402
+ },
+ {
+  "lemma": "заложник",
+  "pos": "noun",
+  "rank": 2403
+ },
+ {
+  "lemma": "ожидание",
+  "pos": "noun",
+  "rank": 2404
+ },
+ {
+  "lemma": "жаловаться",
+  "pos": "verb",
+  "rank": 2405
+ },
+ {
+  "lemma": "автор",
+  "pos": "noun",
+  "rank": 2406
+ },
+ {
+  "lemma": "шпион",
+  "pos": "noun",
+  "rank": 2407
+ },
+ {
+  "lemma": "выдержать",
+  "pos": "verb",
+  "rank": 2408
+ },
+ {
+  "lemma": "гражданин",
+  "pos": "noun",
+  "rank": 2409
+ },
+ {
+  "lemma": "проехать",
+  "pos": "verb",
+  "rank": 2410
+ },
+ {
+  "lemma": "свалить",
+  "pos": "verb",
+  "rank": 2411
+ },
+ {
+  "lemma": "ввести",
+  "pos": "verb",
+  "rank": 2412
+ },
+ {
+  "lemma": "гонка",
+  "pos": "noun",
+  "rank": 2413
+ },
+ {
+  "lemma": "бесплатный",
+  "pos": "adj",
+  "rank": 2414
+ },
+ {
+  "lemma": "эмоция",
+  "pos": "noun",
+  "rank": 2415
+ },
+ {
+  "lemma": "точный",
+  "pos": "adj",
+  "rank": 2416
+ },
+ {
+  "lemma": "надолго",
+  "pos": "adv",
+  "rank": 2417
+ },
+ {
+  "lemma": "открытие",
+  "pos": "noun",
+  "rank": 2418
+ },
+ {
+  "lemma": "мягкий",
+  "pos": "adj",
+  "rank": 2419
+ },
+ {
+  "lemma": "заявить",
+  "pos": "verb",
+  "rank": 2420
+ },
+ {
+  "lemma": "эксперимент",
+  "pos": "noun",
+  "rank": 2421
+ },
+ {
+  "lemma": "да-да",
+  "pos": "intj",
+  "rank": 2422
+ },
+ {
+  "lemma": "увести",
+  "pos": "verb",
+  "rank": 2423
+ },
+ {
+  "lemma": "характер",
+  "pos": "noun",
+  "rank": 2424
+ },
+ {
+  "lemma": "инженер",
+  "pos": "noun",
+  "rank": 2425
+ },
+ {
+  "lemma": "современный",
+  "pos": "adj",
+  "rank": 2426
+ },
+ {
+  "lemma": "мороженое",
+  "pos": "noun",
+  "rank": 2427
+ },
+ {
+  "lemma": "полет",
+  "pos": "noun",
+  "rank": 2428
+ },
+ {
+  "lemma": "выкинуть",
+  "pos": "verb",
+  "rank": 2429
+ },
+ {
+  "lemma": "отсутствие",
+  "pos": "noun",
+  "rank": 2430
+ },
+ {
+  "lemma": "алкоголь",
+  "pos": "noun",
+  "rank": 2431
+ },
+ {
+  "lemma": "повернуться",
+  "pos": "verb",
+  "rank": 2432
+ },
+ {
+  "lemma": "чудовище",
+  "pos": "noun",
+  "rank": 2433
+ },
+ {
+  "lemma": "смириться",
+  "pos": "verb",
+  "rank": 2434
+ },
+ {
+  "lemma": "остаток",
+  "pos": "noun",
+  "rank": 2435
+ },
+ {
+  "lemma": "библиотека",
+  "pos": "noun",
+  "rank": 2436
+ },
+ {
+  "lemma": "дополнительный",
+  "pos": "adj",
+  "rank": 2437
+ },
+ {
+  "lemma": "фигня",
+  "pos": "noun",
+  "rank": 2438
+ },
+ {
+  "lemma": "засранец",
+  "pos": "noun",
+  "rank": 2439
+ },
+ {
+  "lemma": "усилие",
+  "pos": "noun",
+  "rank": 2440
+ },
+ {
+  "lemma": "темнота",
+  "pos": "noun",
+  "rank": 2441
+ },
+ {
+  "lemma": "подросток",
+  "pos": "noun",
+  "rank": 2442
+ },
+ {
+  "lemma": "фонд",
+  "pos": "noun",
+  "rank": 2443
+ },
+ {
+  "lemma": "я-то",
+  "pos": "pron",
+  "rank": 2444
+ },
+ {
+  "lemma": "расстояние",
+  "pos": "noun",
+  "rank": 2445
+ },
+ {
+  "lemma": "обратить",
+  "pos": "verb",
+  "rank": 2446
+ },
+ {
+  "lemma": "шок",
+  "pos": "noun",
+  "rank": 2447
+ },
+ {
+  "lemma": "отрицать",
+  "pos": "verb",
+  "rank": 2448
+ },
+ {
+  "lemma": "стекло",
+  "pos": "noun",
+  "rank": 2449
+ },
+ {
+  "lemma": "потерпеть",
+  "pos": "verb",
+  "rank": 2450
+ },
+ {
+  "lemma": "уход",
+  "pos": "noun",
+  "rank": 2451
+ },
+ {
+  "lemma": "секундочка",
+  "pos": "noun",
+  "rank": 2452
+ },
+ {
+  "lemma": "достаться",
+  "pos": "verb",
+  "rank": 2453
+ },
+ {
+  "lemma": "волк",
+  "pos": "noun",
+  "rank": 2454
+ },
+ {
+  "lemma": "июнь",
+  "pos": "noun",
+  "rank": 2455
+ },
+ {
+  "lemma": "слепой",
+  "pos": "adj",
+  "rank": 2456
+ },
+ {
+  "lemma": "хуй",
+  "pos": "noun",
+  "rank": 2457
+ },
+ {
+  "lemma": "профессиональный",
+  "pos": "adj",
+  "rank": 2458
+ },
+ {
+  "lemma": "объяснение",
+  "pos": "noun",
+  "rank": 2459
+ },
+ {
+  "lemma": "ракета",
+  "pos": "noun",
+  "rank": 2460
+ },
+ {
+  "lemma": "наказать",
+  "pos": "verb",
+  "rank": 2461
+ },
+ {
+  "lemma": "одновременно",
+  "pos": "adv",
+  "rank": 2462
+ },
+ {
+  "lemma": "совесть",
+  "pos": "noun",
+  "rank": 2463
+ },
+ {
+  "lemma": "церемония",
+  "pos": "noun",
+  "rank": 2464
+ },
+ {
+  "lemma": "гараж",
+  "pos": "noun",
+  "rank": 2465
+ },
+ {
+  "lemma": "финансовый",
+  "pos": "adj",
+  "rank": 2466
+ },
+ {
+  "lemma": "веселиться",
+  "pos": "verb",
+  "rank": 2467
+ },
+ {
+  "lemma": "стакан",
+  "pos": "noun",
+  "rank": 2468
+ },
+ {
+  "lemma": "заговорить",
+  "pos": "verb",
+  "rank": 2469
+ },
+ {
+  "lemma": "тьма",
+  "pos": "noun",
+  "rank": 2470
+ },
+ {
+  "lemma": "представитель",
+  "pos": "noun",
+  "rank": 2471
+ },
+ {
+  "lemma": "куда-то",
+  "pos": "adv",
+  "rank": 2472
+ },
+ {
+  "lemma": "тренировка",
+  "pos": "noun",
+  "rank": 2473
+ },
+ {
+  "lemma": "натворить",
+  "pos": "verb",
+  "rank": 2474
+ },
+ {
+  "lemma": "порвать",
+  "pos": "verb",
+  "rank": 2475
+ },
+ {
+  "lemma": "дитя",
+  "pos": "noun",
+  "rank": 2476
+ },
+ {
+  "lemma": "навестить",
+  "pos": "verb",
+  "rank": 2477
+ },
+ {
+  "lemma": "взорваться",
+  "pos": "verb",
+  "rank": 2478
+ },
+ {
+  "lemma": "интересоваться",
+  "pos": "verb",
+  "rank": 2479
+ },
+ {
+  "lemma": "пристрелить",
+  "pos": "verb",
+  "rank": 2480
+ },
+ {
+  "lemma": "повеселиться",
+  "pos": "verb",
+  "rank": 2481
+ },
+ {
+  "lemma": "присутствовать",
+  "pos": "verb",
+  "rank": 2482
+ },
+ {
+  "lemma": "овощ",
+  "pos": "noun",
+  "rank": 2483
+ },
+ {
+  "lemma": "немножко",
+  "pos": "adv",
+  "rank": 2484
+ },
+ {
+  "lemma": "голод",
+  "pos": "noun",
+  "rank": 2485
+ },
+ {
+  "lemma": "пожалеть",
+  "pos": "verb",
+  "rank": 2486
+ },
+ {
+  "lemma": "флот",
+  "pos": "noun",
+  "rank": 2487
+ },
+ {
+  "lemma": "восторг",
+  "pos": "noun",
+  "rank": 2488
+ },
+ {
+  "lemma": "боевой",
+  "pos": "adj",
+  "rank": 2489
+ },
+ {
+  "lemma": "корова",
+  "pos": "noun",
+  "rank": 2490
+ },
+ {
+  "lemma": "побежать",
+  "pos": "verb",
+  "rank": 2491
+ },
+ {
+  "lemma": "отряд",
+  "pos": "noun",
+  "rank": 2492
+ },
+ {
+  "lemma": "удалить",
+  "pos": "verb",
+  "rank": 2493
+ },
+ {
+  "lemma": "кузен",
+  "pos": "noun",
+  "rank": 2494
+ },
+ {
+  "lemma": "центральный",
+  "pos": "adj",
+  "rank": 2495
+ },
+ {
+  "lemma": "херня",
+  "pos": "noun",
+  "rank": 2496
+ },
+ {
+  "lemma": "дворец",
+  "pos": "noun",
+  "rank": 2497
+ },
+ {
+  "lemma": "звёздный",
+  "pos": "adj",
+  "rank": 2498
+ },
+ {
+  "lemma": "пожарный",
+  "pos": "noun",
+  "rank": 2499
+ },
+ {
+  "lemma": "политический",
+  "pos": "adj",
+  "rank": 2500
+ },
+ {
+  "lemma": "дар",
+  "pos": "noun",
+  "rank": 2501
+ },
+ {
+  "lemma": "посреди",
+  "pos": "prep",
+  "rank": 2502
+ },
+ {
+  "lemma": "браво",
+  "pos": "intj",
+  "rank": 2503
+ },
+ {
+  "lemma": "повреждение",
+  "pos": "noun",
+  "rank": 2504
+ },
+ {
+  "lemma": "легенда",
+  "pos": "noun",
+  "rank": 2505
+ },
+ {
+  "lemma": "острый",
+  "pos": "adj",
+  "rank": 2506
+ },
+ {
+  "lemma": "заехать",
+  "pos": "verb",
+  "rank": 2507
+ },
+ {
+  "lemma": "карточка",
+  "pos": "noun",
+  "rank": 2508
+ },
+ {
+  "lemma": "нажать",
+  "pos": "verb",
+  "rank": 2509
+ },
+ {
+  "lemma": "присаживаться",
+  "pos": "verb",
+  "rank": 2510
+ },
+ {
+  "lemma": "где-нибудь",
+  "pos": "adv",
+  "rank": 2511
+ },
+ {
+  "lemma": "прям",
+  "pos": "part",
+  "rank": 2512
+ },
+ {
+  "lemma": "департамент",
+  "pos": "noun",
+  "rank": 2513
+ },
+ {
+  "lemma": "елена",
+  "pos": "noun",
+  "rank": 2514
+ },
+ {
+  "lemma": "проникнуть",
+  "pos": "verb",
+  "rank": 2515
+ },
+ {
+  "lemma": "лист",
+  "pos": "noun",
+  "rank": 2516
+ },
+ {
+  "lemma": "собственность",
+  "pos": "noun",
+  "rank": 2517
+ },
+ {
+  "lemma": "научный",
+  "pos": "adj",
+  "rank": 2518
+ },
+ {
+  "lemma": "диск",
+  "pos": "noun",
+  "rank": 2519
+ },
+ {
+  "lemma": "курица",
+  "pos": "noun",
+  "rank": 2520
+ },
+ {
+  "lemma": "эффект",
+  "pos": "noun",
+  "rank": 2521
+ },
+ {
+  "lemma": "солнечный",
+  "pos": "adj",
+  "rank": 2522
+ },
+ {
+  "lemma": "тащить",
+  "pos": "verb",
+  "rank": 2523
+ },
+ {
+  "lemma": "капля",
+  "pos": "noun",
+  "rank": 2524
+ },
+ {
+  "lemma": "воскресенье",
+  "pos": "noun",
+  "rank": 2525
+ },
+ {
+  "lemma": "том",
+  "pos": "noun",
+  "rank": 2526
+ },
+ {
+  "lemma": "дети",
+  "pos": "noun",
+  "rank": 2527
+ },
+ {
+  "lemma": "глянуть",
+  "pos": "verb",
+  "rank": 2528
+ },
+ {
+  "lemma": "родители",
+  "pos": "noun",
+  "rank": 2529
+ },
+ {
+  "lemma": "люди",
+  "pos": "noun",
+  "rank": 2530
+ },
+ {
+  "lemma": "деньги",
+  "pos": "noun",
+  "rank": 2531
+ },
+ {
+  "lemma": "крайне",
+  "pos": "adv",
+  "rank": 2532
+ },
+ {
+  "lemma": "минимум",
+  "pos": "noun",
+  "rank": 2533
+ },
+ {
+  "lemma": "троллейбус",
+  "pos": "noun",
+  "rank": 2534
+ },
+ {
+  "lemma": "толк",
+  "pos": "noun",
+  "rank": 2535
+ },
+ {
+  "lemma": "умываться",
+  "pos": "verb",
+  "rank": 2536
+ },
+ {
+  "lemma": "изменять",
+  "pos": "verb",
+  "rank": 2537
+ },
+ {
+  "lemma": "путём",
+  "pos": "prep",
+  "rank": 2538
+ },
+ {
+  "lemma": "грустно",
+  "pos": "adv",
+  "rank": 2539
+ },
+ {
+  "lemma": "восточный",
+  "pos": "adj",
+  "rank": 2540
+ },
+ {
+  "lemma": "некий",
+  "pos": "det",
+  "rank": 2541
+ },
+ {
+  "lemma": "мак",
+  "pos": "noun",
+  "rank": 2542
+ },
+ {
+  "lemma": "нижний",
+  "pos": "adj",
+  "rank": 2543
+ },
+ {
+  "lemma": "километр",
+  "pos": "noun",
+  "rank": 2544
+ },
+ {
+  "lemma": "кампания",
+  "pos": "noun",
+  "rank": 2545
+ },
+ {
+  "lemma": "воин",
+  "pos": "noun",
+  "rank": 2546
+ },
+ {
+  "lemma": "юбка",
+  "pos": "noun",
+  "rank": 2547
+ },
+ {
+  "lemma": "человечество",
+  "pos": "noun",
+  "rank": 2548
+ },
+ {
+  "lemma": "страховка",
+  "pos": "noun",
+  "rank": 2549
+ },
+ {
+  "lemma": "эпизод",
+  "pos": "noun",
+  "rank": 2550
+ },
+ {
+  "lemma": "соврать",
+  "pos": "verb",
+  "rank": 2551
+ },
+ {
+  "lemma": "сведение",
+  "pos": "noun",
+  "rank": 2552
+ },
+ {
+  "lemma": "правосудие",
+  "pos": "noun",
+  "rank": 2553
+ },
+ {
+  "lemma": "целоваться",
+  "pos": "verb",
+  "rank": 2554
+ },
+ {
+  "lemma": "алиби",
+  "pos": "noun",
+  "rank": 2555
+ },
+ {
+  "lemma": "оценка",
+  "pos": "noun",
+  "rank": 2556
+ },
+ {
+  "lemma": "предположить",
+  "pos": "verb",
+  "rank": 2557
+ },
+ {
+  "lemma": "космический",
+  "pos": "adj",
+  "rank": 2558
+ },
+ {
+  "lemma": "запад",
+  "pos": "noun",
+  "rank": 2559
+ },
+ {
+  "lemma": "налево",
+  "pos": "adv",
+  "rank": 2560
+ },
+ {
+  "lemma": "протокол",
+  "pos": "noun",
+  "rank": 2561
+ },
+ {
+  "lemma": "неудачник",
+  "pos": "noun",
+  "rank": 2562
+ },
+ {
+  "lemma": "яд",
+  "pos": "noun",
+  "rank": 2563
+ },
+ {
+  "lemma": "велосипед",
+  "pos": "noun",
+  "rank": 2564
+ },
+ {
+  "lemma": "кандидат",
+  "pos": "noun",
+  "rank": 2565
+ },
+ {
+  "lemma": "дура",
+  "pos": "noun",
+  "rank": 2566
+ },
+ {
+  "lemma": "состоять",
+  "pos": "verb",
+  "rank": 2567
+ },
+ {
+  "lemma": "включать",
+  "pos": "verb",
+  "rank": 2568
+ },
+ {
+  "lemma": "похоронить",
+  "pos": "verb",
+  "rank": 2569
+ },
+ {
+  "lemma": "осознать",
+  "pos": "verb",
+  "rank": 2570
+ },
+ {
+  "lemma": "довериться",
+  "pos": "verb",
+  "rank": 2571
+ },
+ {
+  "lemma": "кукла",
+  "pos": "noun",
+  "rank": 2572
+ },
+ {
+  "lemma": "техника",
+  "pos": "noun",
+  "rank": 2573
+ },
+ {
+  "lemma": "наделать",
+  "pos": "verb",
+  "rank": 2574
+ },
+ {
+  "lemma": "западный",
+  "pos": "adj",
+  "rank": 2575
+ },
+ {
+  "lemma": "восток",
+  "pos": "noun",
+  "rank": 2576
+ },
+ {
+  "lemma": "сказка",
+  "pos": "noun",
+  "rank": 2577
+ },
+ {
+  "lemma": "отличие",
+  "pos": "noun",
+  "rank": 2578
+ },
+ {
+  "lemma": "ай",
+  "pos": "intj",
+  "rank": 2579
+ },
+ {
+  "lemma": "снимок",
+  "pos": "noun",
+  "rank": 2580
+ },
+ {
+  "lemma": "войско",
+  "pos": "noun",
+  "rank": 2581
+ },
+ {
+  "lemma": "раб",
+  "pos": "noun",
+  "rank": 2582
+ },
+ {
+  "lemma": "кнопка",
+  "pos": "noun",
+  "rank": 2583
+ },
+ {
+  "lemma": "рисовать",
+  "pos": "verb",
+  "rank": 2584
+ },
+ {
+  "lemma": "проститутка",
+  "pos": "noun",
+  "rank": 2585
+ },
+ {
+  "lemma": "жуткий",
+  "pos": "adj",
+  "rank": 2586
+ },
+ {
+  "lemma": "кто-либо",
+  "pos": "pron",
+  "rank": 2587
+ },
+ {
+  "lemma": "восстановить",
+  "pos": "verb",
+  "rank": 2588
+ },
+ {
+  "lemma": "конь",
+  "pos": "noun",
+  "rank": 2589
+ },
+ {
+  "lemma": "обида",
+  "pos": "noun",
+  "rank": 2590
+ },
+ {
+  "lemma": "губернатор",
+  "pos": "noun",
+  "rank": 2591
+ },
+ {
+  "lemma": "выражение",
+  "pos": "noun",
+  "rank": 2592
+ },
+ {
+  "lemma": "нигде",
+  "pos": "adv",
+  "rank": 2593
+ },
+ {
+  "lemma": "приветствовать",
+  "pos": "verb",
+  "rank": 2594
+ },
+ {
+  "lemma": "переходить",
+  "pos": "verb",
+  "rank": 2595
+ },
+ {
+  "lemma": "сокровище",
+  "pos": "noun",
+  "rank": 2596
+ },
+ {
+  "lemma": "засунуть",
+  "pos": "verb",
+  "rank": 2597
+ },
+ {
+  "lemma": "комитет",
+  "pos": "noun",
+  "rank": 2598
+ },
+ {
+  "lemma": "пригодиться",
+  "pos": "verb",
+  "rank": 2599
+ },
+ {
+  "lemma": "заснуть",
+  "pos": "verb",
+  "rank": 2600
+ },
+ {
+  "lemma": "благодарность",
+  "pos": "noun",
+  "rank": 2601
+ },
+ {
+  "lemma": "вооруженный",
+  "pos": "adj",
+  "rank": 2602
+ },
+ {
+  "lemma": "пилот",
+  "pos": "noun",
+  "rank": 2603
+ },
+ {
+  "lemma": "блюдо",
+  "pos": "noun",
+  "rank": 2604
+ },
+ {
+  "lemma": "отстой",
+  "pos": "noun",
+  "rank": 2605
+ },
+ {
+  "lemma": "указать",
+  "pos": "verb",
+  "rank": 2606
+ },
+ {
+  "lemma": "вечный",
+  "pos": "adj",
+  "rank": 2607
+ },
+ {
+  "lemma": "ровно",
+  "pos": "adv",
+  "rank": 2608
+ },
+ {
+  "lemma": "мелочь",
+  "pos": "noun",
+  "rank": 2609
+ },
+ {
+  "lemma": "съёмка",
+  "pos": "noun",
+  "rank": 2610
+ },
+ {
+  "lemma": "юрист",
+  "pos": "noun",
+  "rank": 2611
+ },
+ {
+  "lemma": "подозрение",
+  "pos": "noun",
+  "rank": 2612
+ },
+ {
+  "lemma": "социальный",
+  "pos": "adj",
+  "rank": 2613
+ },
+ {
+  "lemma": "государственный",
+  "pos": "adj",
+  "rank": 2614
+ },
+ {
+  "lemma": "тишина",
+  "pos": "noun",
+  "rank": 2615
+ },
+ {
+  "lemma": "шар",
+  "pos": "noun",
+  "rank": 2616
+ },
+ {
+  "lemma": "октябрь",
+  "pos": "noun",
+  "rank": 2617
+ },
+ {
+  "lemma": "печение",
+  "pos": "noun",
+  "rank": 2618
+ },
+ {
+  "lemma": "аминь",
+  "pos": "intj",
+  "rank": 2619
+ },
+ {
+  "lemma": "наплевать",
+  "pos": "verb",
+  "rank": 2620
+ },
+ {
+  "lemma": "период",
+  "pos": "noun",
+  "rank": 2621
+ },
+ {
+  "lemma": "робот",
+  "pos": "noun",
+  "rank": 2622
+ },
+ {
+  "lemma": "сводить",
+  "pos": "verb",
+  "rank": 2623
+ },
+ {
+  "lemma": "неловко",
+  "pos": "adv",
+  "rank": 2624
+ },
+ {
+  "lemma": "уснуть",
+  "pos": "verb",
+  "rank": 2625
+ },
+ {
+  "lemma": "кража",
+  "pos": "noun",
+  "rank": 2626
+ },
+ {
+  "lemma": "образование",
+  "pos": "noun",
+  "rank": 2627
+ },
+ {
+  "lemma": "велеть",
+  "pos": "verb",
+  "rank": 2628
+ },
+ {
+  "lemma": "страдание",
+  "pos": "noun",
+  "rank": 2629
+ },
+ {
+  "lemma": "разочаровать",
+  "pos": "verb",
+  "rank": 2630
+ },
+ {
+  "lemma": "второе",
+  "pos": "noun",
+  "rank": 2631
+ },
+ {
+  "lemma": "чуть-чуть",
+  "pos": "adv",
+  "rank": 2632
+ },
+ {
+  "lemma": "чемодан",
+  "pos": "noun",
+  "rank": 2633
+ },
+ {
+  "lemma": "высоко",
+  "pos": "adv",
+  "rank": 2634
+ },
+ {
+  "lemma": "крошка",
+  "pos": "noun",
+  "rank": 2635
+ },
+ {
+  "lemma": "пища",
+  "pos": "noun",
+  "rank": 2636
+ },
+ {
+  "lemma": "сперва",
+  "pos": "adv",
+  "rank": 2637
+ },
+ {
+  "lemma": "твориться",
+  "pos": "verb",
+  "rank": 2638
+ },
+ {
+  "lemma": "миллиард",
+  "pos": "num",
+  "rank": 2639
+ },
+ {
+  "lemma": "существование",
+  "pos": "noun",
+  "rank": 2640
+ },
+ {
+  "lemma": "космос",
+  "pos": "noun",
+  "rank": 2641
+ },
+ {
+  "lemma": "упомянуть",
+  "pos": "verb",
+  "rank": 2642
+ },
+ {
+  "lemma": "выступить",
+  "pos": "verb",
+  "rank": 2643
+ },
+ {
+  "lemma": "традиция",
+  "pos": "noun",
+  "rank": 2644
+ },
+ {
+  "lemma": "задержаться",
+  "pos": "verb",
+  "rank": 2645
+ },
+ {
+  "lemma": "скрыть",
+  "pos": "verb",
+  "rank": 2646
+ },
+ {
+  "lemma": "проявить",
+  "pos": "verb",
+  "rank": 2647
+ },
+ {
+  "lemma": "чокнутый",
+  "pos": "adj",
+  "rank": 2648
+ },
+ {
+  "lemma": "спрятаться",
+  "pos": "verb",
+  "rank": 2649
+ },
+ {
+  "lemma": "кролик",
+  "pos": "noun",
+  "rank": 2650
+ },
+ {
+  "lemma": "низкий",
+  "pos": "adj",
+  "rank": 2651
+ },
+ {
+  "lemma": "столкнуться",
+  "pos": "verb",
+  "rank": 2652
+ },
+ {
+  "lemma": "спеть",
+  "pos": "verb",
+  "rank": 2653
+ },
+ {
+  "lemma": "гостиница",
+  "pos": "noun",
+  "rank": 2654
+ },
+ {
+  "lemma": "поколение",
+  "pos": "noun",
+  "rank": 2655
+ },
+ {
+  "lemma": "сволочь",
+  "pos": "noun",
+  "rank": 2656
+ },
+ {
+  "lemma": "открыться",
+  "pos": "verb",
+  "rank": 2657
+ },
+ {
+  "lemma": "попадать",
+  "pos": "verb",
+  "rank": 2658
+ },
+ {
+  "lemma": "разделить",
+  "pos": "verb",
+  "rank": 2659
+ },
+ {
+  "lemma": "сверху",
+  "pos": "adv",
+  "rank": 2660
+ },
+ {
+  "lemma": "журналист",
+  "pos": "noun",
+  "rank": 2661
+ },
+ {
+  "lemma": "сообщать",
+  "pos": "verb",
+  "rank": 2662
+ },
+ {
+  "lemma": "апрель",
+  "pos": "noun",
+  "rank": 2663
+ },
+ {
+  "lemma": "мадемуазель",
+  "pos": "noun",
+  "rank": 2664
+ },
+ {
+  "lemma": "что-либо",
+  "pos": "pron",
+  "rank": 2665
+ },
+ {
+  "lemma": "несомненно",
+  "pos": "adv",
+  "rank": 2666
+ },
+ {
+  "lemma": "рассказ",
+  "pos": "noun",
+  "rank": 2667
+ },
+ {
+  "lemma": "грант",
+  "pos": "noun",
+  "rank": 2668
+ },
+ {
+  "lemma": "похищение",
+  "pos": "noun",
+  "rank": 2669
+ },
+ {
+  "lemma": "заводить",
+  "pos": "verb",
+  "rank": 2670
+ },
+ {
+  "lemma": "заполучить",
+  "pos": "verb",
+  "rank": 2671
+ },
+ {
+  "lemma": "ответственный",
+  "pos": "adj",
+  "rank": 2672
+ },
+ {
+  "lemma": "катастрофа",
+  "pos": "noun",
+  "rank": 2673
+ },
+ {
+  "lemma": "оценить",
+  "pos": "verb",
+  "rank": 2674
+ },
+ {
+  "lemma": "физический",
+  "pos": "adj",
+  "rank": 2675
+ },
+ {
+  "lemma": "глубина",
+  "pos": "noun",
+  "rank": 2676
+ },
+ {
+  "lemma": "биться",
+  "pos": "verb",
+  "rank": 2677
+ },
+ {
+  "lemma": "чемпион",
+  "pos": "noun",
+  "rank": 2678
+ },
+ {
+  "lemma": "временной",
+  "pos": "adj",
+  "rank": 2679
+ },
+ {
+  "lemma": "избегать",
+  "pos": "verb",
+  "rank": 2680
+ },
+ {
+  "lemma": "вмешиваться",
+  "pos": "verb",
+  "rank": 2681
+ },
+ {
+  "lemma": "заново",
+  "pos": "adv",
+  "rank": 2682
+ },
+ {
+  "lemma": "напротив",
+  "pos": "adv",
+  "rank": 2683
+ },
+ {
+  "lemma": "плавать",
+  "pos": "verb",
+  "rank": 2684
+ },
+ {
+  "lemma": "заканчиваться",
+  "pos": "verb",
+  "rank": 2685
+ },
+ {
+  "lemma": "розовый",
+  "pos": "adj",
+  "rank": 2686
+ },
+ {
+  "lemma": "предатель",
+  "pos": "noun",
+  "rank": 2687
+ },
+ {
+  "lemma": "сердечный",
+  "pos": "adj",
+  "rank": 2688
+ },
+ {
+  "lemma": "ненависть",
+  "pos": "noun",
+  "rank": 2689
+ },
+ {
+  "lemma": "намерение",
+  "pos": "noun",
+  "rank": 2690
+ },
+ {
+  "lemma": "прогуляться",
+  "pos": "verb",
+  "rank": 2691
+ },
+ {
+  "lemma": "тридцать",
+  "pos": "num",
+  "rank": 2692
+ },
+ {
+  "lemma": "союз",
+  "pos": "noun",
+  "rank": 2693
+ },
+ {
+  "lemma": "процедура",
+  "pos": "noun",
+  "rank": 2694
+ },
+ {
+  "lemma": "обнять",
+  "pos": "verb",
+  "rank": 2695
+ },
+ {
+  "lemma": "облажаться",
+  "pos": "verb",
+  "rank": 2696
+ },
+ {
+  "lemma": "наружу",
+  "pos": "adv",
+  "rank": 2697
+ },
+ {
+  "lemma": "обеспечить",
+  "pos": "verb",
+  "rank": 2698
+ },
+ {
+  "lemma": "конкурс",
+  "pos": "noun",
+  "rank": 2699
+ },
+ {
+  "lemma": "мокрый",
+  "pos": "adj",
+  "rank": 2700
+ },
+ {
+  "lemma": "секретарь",
+  "pos": "noun",
+  "rank": 2701
+ },
+ {
+  "lemma": "подготовка",
+  "pos": "noun",
+  "rank": 2702
+ },
+ {
+  "lemma": "записывать",
+  "pos": "verb",
+  "rank": 2703
+ },
+ {
+  "lemma": "китай",
+  "pos": "noun",
+  "rank": 2704
+ },
+ {
+  "lemma": "нанести",
+  "pos": "verb",
+  "rank": 2705
+ },
+ {
+  "lemma": "немецкий",
+  "pos": "adj",
+  "rank": 2706
+ },
+ {
+  "lemma": "заполнить",
+  "pos": "verb",
+  "rank": 2707
+ },
+ {
+  "lemma": "вскоре",
+  "pos": "adv",
+  "rank": 2708
+ },
+ {
+  "lemma": "разбитый",
+  "pos": "adj",
+  "rank": 2709
+ },
+ {
+  "lemma": "германия",
+  "pos": "noun",
+  "rank": 2710
+ },
+ {
+  "lemma": "грубый",
+  "pos": "adj",
+  "rank": 2711
+ },
+ {
+  "lemma": "популярный",
+  "pos": "adj",
+  "rank": 2712
+ },
+ {
+  "lemma": "пятно",
+  "pos": "noun",
+  "rank": 2713
+ },
+ {
+  "lemma": "ложка",
+  "pos": "noun",
+  "rank": 2714
+ },
+ {
+  "lemma": "приключение",
+  "pos": "noun",
+  "rank": 2715
+ },
+ {
+  "lemma": "мсьё",
+  "pos": "noun",
+  "rank": 2716
+ },
+ {
+  "lemma": "агентство",
+  "pos": "noun",
+  "rank": 2717
+ },
+ {
+  "lemma": "палата",
+  "pos": "noun",
+  "rank": 2718
+ },
+ {
+  "lemma": "председатель",
+  "pos": "noun",
+  "rank": 2719
+ },
+ {
+  "lemma": "спорт",
+  "pos": "noun",
+  "rank": 2720
+ },
+ {
+  "lemma": "пасть",
+  "pos": "noun",
+  "rank": 2721
+ },
+ {
+  "lemma": "бесплатно",
+  "pos": "adv",
+  "rank": 2722
+ },
+ {
+  "lemma": "слуга",
+  "pos": "noun",
+  "rank": 2723
+ },
+ {
+  "lemma": "подпись",
+  "pos": "noun",
+  "rank": 2724
+ },
+ {
+  "lemma": "акция",
+  "pos": "noun",
+  "rank": 2725
+ },
+ {
+  "lemma": "поспорить",
+  "pos": "verb",
+  "rank": 2726
+ },
+ {
+  "lemma": "радоваться",
+  "pos": "verb",
+  "rank": 2727
+ },
+ {
+  "lemma": "дружок",
+  "pos": "noun",
+  "rank": 2728
+ },
+ {
+  "lemma": "железный",
+  "pos": "adj",
+  "rank": 2729
+ },
+ {
+  "lemma": "знакомство",
+  "pos": "noun",
+  "rank": 2730
+ },
+ {
+  "lemma": "неожиданно",
+  "pos": "adv",
+  "rank": 2731
+ },
+ {
+  "lemma": "дневник",
+  "pos": "noun",
+  "rank": 2732
+ },
+ {
+  "lemma": "домик",
+  "pos": "noun",
+  "rank": 2733
+ },
+ {
+  "lemma": "ткань",
+  "pos": "noun",
+  "rank": 2734
+ },
+ {
+  "lemma": "чей-то",
+  "pos": "det",
+  "rank": 2735
+ },
+ {
+  "lemma": "гордость",
+  "pos": "noun",
+  "rank": 2736
+ },
+ {
+  "lemma": "ноябрь",
+  "pos": "noun",
+  "rank": 2737
+ },
+ {
+  "lemma": "собачий",
+  "pos": "adj",
+  "rank": 2738
+ },
+ {
+  "lemma": "проваливать",
+  "pos": "verb",
+  "rank": 2739
+ },
+ {
+  "lemma": "красть",
+  "pos": "verb",
+  "rank": 2740
+ },
+ {
+  "lemma": "отметить",
+  "pos": "verb",
+  "rank": 2741
+ },
+ {
+  "lemma": "ревновать",
+  "pos": "verb",
+  "rank": 2742
+ },
+ {
+  "lemma": "благо",
+  "pos": "noun",
+  "rank": 2743
+ },
+ {
+  "lemma": "трахаться",
+  "pos": "verb",
+  "rank": 2744
+ },
+ {
+  "lemma": "основа",
+  "pos": "noun",
+  "rank": 2745
+ },
+ {
+  "lemma": "явиться",
+  "pos": "verb",
+  "rank": 2746
+ },
+ {
+  "lemma": "взорвать",
+  "pos": "verb",
+  "rank": 2747
+ },
+ {
+  "lemma": "новичок",
+  "pos": "noun",
+  "rank": 2748
+ },
+ {
+  "lemma": "удивлённый",
+  "pos": "adj",
+  "rank": 2749
+ },
+ {
+  "lemma": "писатель",
+  "pos": "noun",
+  "rank": 2750
+ },
+ {
+  "lemma": "бесполезный",
+  "pos": "adj",
+  "rank": 2751
+ },
+ {
+  "lemma": "беседа",
+  "pos": "noun",
+  "rank": 2752
+ },
+ {
+  "lemma": "жарко",
+  "pos": "adv",
+  "rank": 2753
+ },
+ {
+  "lemma": "комиссар",
+  "pos": "noun",
+  "rank": 2754
+ },
+ {
+  "lemma": "хмм",
+  "pos": "intj",
+  "rank": 2755
+ },
+ {
+  "lemma": "бокал",
+  "pos": "noun",
+  "rank": 2756
+ },
+ {
+  "lemma": "прогулка",
+  "pos": "noun",
+  "rank": 2757
+ },
+ {
+  "lemma": "неправильный",
+  "pos": "adj",
+  "rank": 2758
+ },
+ {
+  "lemma": "любовник",
+  "pos": "noun",
+  "rank": 2759
+ },
+ {
+  "lemma": "немец",
+  "pos": "noun",
+  "rank": 2760
+ },
+ {
+  "lemma": "империя",
+  "pos": "noun",
+  "rank": 2761
+ },
+ {
+  "lemma": "оборудование",
+  "pos": "noun",
+  "rank": 2762
+ },
+ {
+  "lemma": "пенни",
+  "pos": "noun",
+  "rank": 2763
+ },
+ {
+  "lemma": "предупреждение",
+  "pos": "noun",
+  "rank": 2764
+ },
+ {
+  "lemma": "лишить",
+  "pos": "verb",
+  "rank": 2765
+ },
+ {
+  "lemma": "соревнование",
+  "pos": "noun",
+  "rank": 2766
+ },
+ {
+  "lemma": "фраза",
+  "pos": "noun",
+  "rank": 2767
+ },
+ {
+  "lemma": "уверять",
+  "pos": "verb",
+  "rank": 2768
+ },
+ {
+  "lemma": "завидовать",
+  "pos": "verb",
+  "rank": 2769
+ },
+ {
+  "lemma": "заключение",
+  "pos": "noun",
+  "rank": 2770
+ },
+ {
+  "lemma": "мотоцикл",
+  "pos": "noun",
+  "rank": 2771
+ },
+ {
+  "lemma": "видение",
+  "pos": "noun",
+  "rank": 2772
+ },
+ {
+  "lemma": "впустить",
+  "pos": "verb",
+  "rank": 2773
+ },
+ {
+  "lemma": "соус",
+  "pos": "noun",
+  "rank": 2774
+ },
+ {
+  "lemma": "советовать",
+  "pos": "verb",
+  "rank": 2775
+ },
+ {
+  "lemma": "летний",
+  "pos": "adj",
+  "rank": 2776
+ },
+ {
+  "lemma": "посуда",
+  "pos": "noun",
+  "rank": 2777
+ },
+ {
+  "lemma": "нерв",
+  "pos": "noun",
+  "rank": 2778
+ },
+ {
+  "lemma": "цифра",
+  "pos": "noun",
+  "rank": 2779
+ },
+ {
+  "lemma": "переводить",
+  "pos": "verb",
+  "rank": 2780
+ },
+ {
+  "lemma": "выставить",
+  "pos": "verb",
+  "rank": 2781
+ },
+ {
+  "lemma": "музей",
+  "pos": "noun",
+  "rank": 2782
+ },
+ {
+  "lemma": "вертолёт",
+  "pos": "noun",
+  "rank": 2783
+ },
+ {
+  "lemma": "э-э",
+  "pos": "intj",
+  "rank": 2784
+ },
+ {
+  "lemma": "терапия",
+  "pos": "noun",
+  "rank": 2785
+ },
+ {
+  "lemma": "безусловно",
+  "pos": "adv",
+  "rank": 2786
+ },
+ {
+  "lemma": "беспокойство",
+  "pos": "noun",
+  "rank": 2787
+ },
+ {
+  "lemma": "голосовать",
+  "pos": "verb",
+  "rank": 2788
+ },
+ {
+  "lemma": "отличаться",
+  "pos": "verb",
+  "rank": 2789
+ },
+ {
+  "lemma": "какой-либо",
+  "pos": "det",
+  "rank": 2790
+ },
+ {
+  "lemma": "парковка",
+  "pos": "noun",
+  "rank": 2791
+ },
+ {
+  "lemma": "неизвестный",
+  "pos": "adj",
+  "rank": 2792
+ },
+ {
+  "lemma": "недалеко",
+  "pos": "adv",
+  "rank": 2793
+ },
+ {
+  "lemma": "орудие",
+  "pos": "noun",
+  "rank": 2794
+ },
+ {
+  "lemma": "класть",
+  "pos": "verb",
+  "rank": 2795
+ },
+ {
+  "lemma": "одинаковый",
+  "pos": "adj",
+  "rank": 2796
+ },
+ {
+  "lemma": "удобно",
+  "pos": "adv",
+  "rank": 2797
+ },
+ {
+  "lemma": "ведущий",
+  "pos": "adj",
+  "rank": 2798
+ },
+ {
+  "lemma": "иск",
+  "pos": "noun",
+  "rank": 2799
+ },
+ {
+  "lemma": "объявление",
+  "pos": "noun",
+  "rank": 2800
+ },
+ {
+  "lemma": "паспорт",
+  "pos": "noun",
+  "rank": 2801
+ },
+ {
+  "lemma": "влияние",
+  "pos": "noun",
+  "rank": 2802
+ },
+ {
+  "lemma": "башня",
+  "pos": "noun",
+  "rank": 2803
+ },
+ {
+  "lemma": "фу",
+  "pos": "intj",
+  "rank": 2804
+ },
+ {
+  "lemma": "истина",
+  "pos": "noun",
+  "rank": 2805
+ },
+ {
+  "lemma": "фанат",
+  "pos": "noun",
+  "rank": 2806
+ },
+ {
+  "lemma": "япония",
+  "pos": "noun",
+  "rank": 2807
+ },
+ {
+  "lemma": "продюсер",
+  "pos": "noun",
+  "rank": 2808
+ },
+ {
+  "lemma": "целовать",
+  "pos": "verb",
+  "rank": 2809
+ },
+ {
+  "lemma": "забить",
+  "pos": "verb",
+  "rank": 2810
+ },
+ {
+  "lemma": "специалист",
+  "pos": "noun",
+  "rank": 2811
+ },
+ {
+  "lemma": "направо",
+  "pos": "adv",
+  "rank": 2812
+ },
+ {
+  "lemma": "дорогуша",
+  "pos": "noun",
+  "rank": 2813
+ },
+ {
+  "lemma": "слышный",
+  "pos": "adj",
+  "rank": 2814
+ },
+ {
+  "lemma": "смотреться",
+  "pos": "verb",
+  "rank": 2815
+ },
+ {
+  "lemma": "доставать",
+  "pos": "verb",
+  "rank": 2816
+ },
+ {
+  "lemma": "символ",
+  "pos": "noun",
+  "rank": 2817
+ },
+ {
+  "lemma": "мобильный",
+  "pos": "adj",
+  "rank": 2818
+ },
+ {
+  "lemma": "торговый",
+  "pos": "adj",
+  "rank": 2819
+ },
+ {
+  "lemma": "бал",
+  "pos": "noun",
+  "rank": 2820
+ },
+ {
+  "lemma": "тепло",
+  "pos": "predic",
+  "rank": 2821
+ },
+ {
+  "lemma": "россия",
+  "pos": "noun",
+  "rank": 2822
+ },
+ {
+  "lemma": "высочество",
+  "pos": "noun",
+  "rank": 2823
+ },
+ {
+  "lemma": "некуда",
+  "pos": "adv",
+  "rank": 2824
+ },
+ {
+  "lemma": "практика",
+  "pos": "noun",
+  "rank": 2825
+ },
+ {
+  "lemma": "сердиться",
+  "pos": "verb",
+  "rank": 2826
+ },
+ {
+  "lemma": "поворот",
+  "pos": "noun",
+  "rank": 2827
+ },
+ {
+  "lemma": "из-под",
+  "pos": "prep",
+  "rank": 2828
+ },
+ {
+  "lemma": "альбом",
+  "pos": "noun",
+  "rank": 2829
+ },
+ {
+  "lemma": "сравнение",
+  "pos": "noun",
+  "rank": 2830
+ },
+ {
+  "lemma": "завтрашний",
+  "pos": "adj",
+  "rank": 2831
+ },
+ {
+  "lemma": "превосходно",
+  "pos": "adv",
+  "rank": 2832
+ },
+ {
+  "lemma": "захотеться",
+  "pos": "verb",
+  "rank": 2833
+ },
+ {
+  "lemma": "развлекаться",
+  "pos": "verb",
+  "rank": 2834
+ },
+ {
+  "lemma": "отомстить",
+  "pos": "verb",
+  "rank": 2835
+ },
+ {
+  "lemma": "верхний",
+  "pos": "adj",
+  "rank": 2836
+ },
+ {
+  "lemma": "спортивный",
+  "pos": "adj",
+  "rank": 2837
+ },
+ {
+  "lemma": "сбор",
+  "pos": "noun",
+  "rank": 2838
+ },
+ {
+  "lemma": "набрать",
+  "pos": "verb",
+  "rank": 2839
+ },
+ {
+  "lemma": "коктейль",
+  "pos": "noun",
+  "rank": 2840
+ },
+ {
+  "lemma": "хорошенько",
+  "pos": "adv",
+  "rank": 2841
+ },
+ {
+  "lemma": "экран",
+  "pos": "noun",
+  "rank": 2842
+ },
+ {
+  "lemma": "персонал",
+  "pos": "noun",
+  "rank": 2843
+ },
+ {
+  "lemma": "запас",
+  "pos": "noun",
+  "rank": 2844
+ },
+ {
+  "lemma": "справедливость",
+  "pos": "noun",
+  "rank": 2845
+ },
+ {
+  "lemma": "музыкальный",
+  "pos": "adj",
+  "rank": 2846
+ },
+ {
+  "lemma": "стрелка",
+  "pos": "noun",
+  "rank": 2847
+ },
+ {
+  "lemma": "завершить",
+  "pos": "verb",
+  "rank": 2848
+ },
+ {
+  "lemma": "подробность",
+  "pos": "noun",
+  "rank": 2849
+ },
+ {
+  "lemma": "заказывать",
+  "pos": "verb",
+  "rank": 2850
+ },
+ {
+  "lemma": "смелый",
+  "pos": "adj",
+  "rank": 2851
+ },
+ {
+  "lemma": "нападать",
+  "pos": "verb",
+  "rank": 2852
+ },
+ {
+  "lemma": "полгода",
+  "pos": "noun",
+  "rank": 2853
+ },
+ {
+  "lemma": "опухоль",
+  "pos": "noun",
+  "rank": 2854
+ },
+ {
+  "lemma": "кадр",
+  "pos": "noun",
+  "rank": 2855
+ },
+ {
+  "lemma": "сидение",
+  "pos": "noun",
+  "rank": 2856
+ },
+ {
+  "lemma": "осень",
+  "pos": "noun",
+  "rank": 2857
+ },
+ {
+  "lemma": "доска",
+  "pos": "noun",
+  "rank": 2858
+ },
+ {
+  "lemma": "вокзал",
+  "pos": "noun",
+  "rank": 2859
+ },
+ {
+  "lemma": "привлекательный",
+  "pos": "adj",
+  "rank": 2860
+ },
+ {
+  "lemma": "жёлтый",
+  "pos": "adj",
+  "rank": 2861
+ },
+ {
+  "lemma": "вот-вот",
+  "pos": "adv",
+  "rank": 2862
+ },
+ {
+  "lemma": "отпускать",
+  "pos": "verb",
+  "rank": 2863
+ },
+ {
+  "lemma": "смертный",
+  "pos": "adj",
+  "rank": 2864
+ },
+ {
+  "lemma": "мудак",
+  "pos": "noun",
+  "rank": 2865
+ },
+ {
+  "lemma": "далее",
+  "pos": "adv",
+  "rank": 2866
+ },
+ {
+  "lemma": "обезьяна",
+  "pos": "noun",
+  "rank": 2867
+ },
+ {
+  "lemma": "повернуть",
+  "pos": "verb",
+  "rank": 2868
+ },
+ {
+  "lemma": "налог",
+  "pos": "noun",
+  "rank": 2869
+ },
+ {
+  "lemma": "аптека",
+  "pos": "noun",
+  "rank": 2870
+ },
+ {
+  "lemma": "шестой",
+  "pos": "adj",
+  "rank": 2871
+ },
+ {
+  "lemma": "спятить",
+  "pos": "verb",
+  "rank": 2872
+ },
+ {
+  "lemma": "вывод",
+  "pos": "noun",
+  "rank": 2873
+ },
+ {
+  "lemma": "оправдание",
+  "pos": "noun",
+  "rank": 2874
+ },
+ {
+  "lemma": "делиться",
+  "pos": "verb",
+  "rank": 2875
+ },
+ {
+  "lemma": "суметь",
+  "pos": "verb",
+  "rank": 2876
+ },
+ {
+  "lemma": "плоть",
+  "pos": "noun",
+  "rank": 2877
+ },
+ {
+  "lemma": "декабрь",
+  "pos": "noun",
+  "rank": 2878
+ },
+ {
+  "lemma": "одеть",
+  "pos": "verb",
+  "rank": 2879
+ },
+ {
+  "lemma": "позор",
+  "pos": "noun",
+  "rank": 2880
+ },
+ {
+  "lemma": "советник",
+  "pos": "noun",
+  "rank": 2881
+ },
+ {
+  "lemma": "повести",
+  "pos": "verb",
+  "rank": 2882
+ },
+ {
+  "lemma": "разойтись",
+  "pos": "verb",
+  "rank": 2883
+ },
+ {
+  "lemma": "британский",
+  "pos": "adj",
+  "rank": 2884
+ },
+ {
+  "lemma": "сломаться",
+  "pos": "verb",
+  "rank": 2885
+ },
+ {
+  "lemma": "замешать",
+  "pos": "verb",
+  "rank": 2886
+ },
+ {
+  "lemma": "хирург",
+  "pos": "noun",
+  "rank": 2887
+ },
+ {
+  "lemma": "тошнить",
+  "pos": "verb",
+  "rank": 2888
+ },
+ {
+  "lemma": "обыскать",
+  "pos": "verb",
+  "rank": 2889
+ },
+ {
+  "lemma": "медленный",
+  "pos": "adj",
+  "rank": 2890
+ },
+ {
+  "lemma": "разрешать",
+  "pos": "verb",
+  "rank": 2891
+ },
+ {
+  "lemma": "терпение",
+  "pos": "noun",
+  "rank": 2892
+ },
+ {
+  "lemma": "очаровательный",
+  "pos": "adj",
+  "rank": 2893
+ },
+ {
+  "lemma": "сбросить",
+  "pos": "verb",
+  "rank": 2894
+ },
+ {
+  "lemma": "игнорировать",
+  "pos": "verb",
+  "rank": 2895
+ },
+ {
+  "lemma": "сдохнуть",
+  "pos": "verb",
+  "rank": 2896
+ },
+ {
+  "lemma": "сиська",
+  "pos": "noun",
+  "rank": 2897
+ },
+ {
+  "lemma": "окружный",
+  "pos": "adj",
+  "rank": 2898
+ },
+ {
+  "lemma": "связанный",
+  "pos": "adj",
+  "rank": 2899
+ },
+ {
+  "lemma": "шоколад",
+  "pos": "noun",
+  "rank": 2900
+ },
+ {
+  "lemma": "валить",
+  "pos": "verb",
+  "rank": 2901
+ },
+ {
+  "lemma": "жесткий",
+  "pos": "adj",
+  "rank": 2902
+ },
+ {
+  "lemma": "расписание",
+  "pos": "noun",
+  "rank": 2903
+ },
+ {
+  "lemma": "атаковать",
+  "pos": "verb",
+  "rank": 2904
+ },
+ {
+  "lemma": "убежище",
+  "pos": "noun",
+  "rank": 2905
+ },
+ {
+  "lemma": "синьор",
+  "pos": "noun",
+  "rank": 2906
+ },
+ {
+  "lemma": "уверенность",
+  "pos": "noun",
+  "rank": 2907
+ },
+ {
+  "lemma": "тост",
+  "pos": "noun",
+  "rank": 2908
+ },
+ {
+  "lemma": "освобождение",
+  "pos": "noun",
+  "rank": 2909
+ },
+ {
+  "lemma": "тварь",
+  "pos": "noun",
+  "rank": 2910
+ },
+ {
+  "lemma": "прикончить",
+  "pos": "verb",
+  "rank": 2911
+ },
+ {
+  "lemma": "слабость",
+  "pos": "noun",
+  "rank": 2912
+ },
+ {
+  "lemma": "надевать",
+  "pos": "verb",
+  "rank": 2913
+ },
+ {
+  "lemma": "очко",
+  "pos": "noun",
+  "rank": 2914
+ },
+ {
+  "lemma": "нарисовать",
+  "pos": "verb",
+  "rank": 2915
+ },
+ {
+  "lemma": "согласие",
+  "pos": "noun",
+  "rank": 2916
+ },
+ {
+  "lemma": "подушка",
+  "pos": "noun",
+  "rank": 2917
+ },
+ {
+  "lemma": "хреновый",
+  "pos": "adj",
+  "rank": 2918
+ },
+ {
+  "lemma": "выпускной",
+  "pos": "noun",
+  "rank": 2919
+ },
+ {
+  "lemma": "руководство",
+  "pos": "noun",
+  "rank": 2920
+ },
+ {
+  "lemma": "будущий",
+  "pos": "adj",
+  "rank": 2921
+ },
+ {
+  "lemma": "расследовать",
+  "pos": "verb",
+  "rank": 2922
+ },
+ {
+  "lemma": "опознать",
+  "pos": "verb",
+  "rank": 2923
+ },
+ {
+  "lemma": "поклясться",
+  "pos": "verb",
+  "rank": 2924
+ },
+ {
+  "lemma": "исключить",
+  "pos": "verb",
+  "rank": 2925
+ },
+ {
+  "lemma": "подержать",
+  "pos": "verb",
+  "rank": 2926
+ },
+ {
+  "lemma": "напиться",
+  "pos": "verb",
+  "rank": 2927
+ },
+ {
+  "lemma": "обучение",
+  "pos": "noun",
+  "rank": 2928
+ },
+ {
+  "lemma": "скрытый",
+  "pos": "adj",
+  "rank": 2929
+ },
+ {
+  "lemma": "январь",
+  "pos": "noun",
+  "rank": 2930
+ },
+ {
+  "lemma": "поместить",
+  "pos": "verb",
+  "rank": 2931
+ },
+ {
+  "lemma": "шина",
+  "pos": "noun",
+  "rank": 2932
+ },
+ {
+  "lemma": "деться",
+  "pos": "verb",
+  "rank": 2933
+ },
+ {
+  "lemma": "учёба",
+  "pos": "noun",
+  "rank": 2934
+ },
+ {
+  "lemma": "красавчик",
+  "pos": "noun",
+  "rank": 2935
+ },
+ {
+  "lemma": "государство",
+  "pos": "noun",
+  "rank": 2936
+ },
+ {
+  "lemma": "набор",
+  "pos": "noun",
+  "rank": 2937
+ },
+ {
+  "lemma": "сейф",
+  "pos": "noun",
+  "rank": 2938
+ },
+ {
+  "lemma": "поужинать",
+  "pos": "verb",
+  "rank": 2939
+ },
+ {
+  "lemma": "вероятность",
+  "pos": "noun",
+  "rank": 2940
+ },
+ {
+  "lemma": "жирный",
+  "pos": "adj",
+  "rank": 2941
+ },
+ {
+  "lemma": "поход",
+  "pos": "noun",
+  "rank": 2942
+ },
+ {
+  "lemma": "император",
+  "pos": "noun",
+  "rank": 2943
+ },
+ {
+  "lemma": "преимущество",
+  "pos": "noun",
+  "rank": 2944
+ },
+ {
+  "lemma": "решётка",
+  "pos": "noun",
+  "rank": 2945
+ },
+ {
+  "lemma": "внешний",
+  "pos": "adj",
+  "rank": 2946
+ },
+ {
+  "lemma": "расход",
+  "pos": "noun",
+  "rank": 2947
+ },
+ {
+  "lemma": "веселие",
+  "pos": "noun",
+  "rank": 2948
+ },
+ {
+  "lemma": "международный",
+  "pos": "adj",
+  "rank": 2949
+ },
+ {
+  "lemma": "мода",
+  "pos": "noun",
+  "rank": 2950
+ },
+ {
+  "lemma": "переезжать",
+  "pos": "verb",
+  "rank": 2951
+ },
+ {
+  "lemma": "подвезти",
+  "pos": "verb",
+  "rank": 2952
+ },
+ {
+  "lemma": "фальшивый",
+  "pos": "adj",
+  "rank": 2953
+ },
+ {
+  "lemma": "кататься",
+  "pos": "verb",
+  "rank": 2954
+ },
+ {
+  "lemma": "четверо",
+  "pos": "num",
+  "rank": 2955
+ },
+ {
+  "lemma": "отрезать",
+  "pos": "verb",
+  "rank": 2956
+ },
+ {
+  "lemma": "посетитель",
+  "pos": "noun",
+  "rank": 2957
+ },
+ {
+  "lemma": "славный",
+  "pos": "adj",
+  "rank": 2958
+ },
+ {
+  "lemma": "картинка",
+  "pos": "noun",
+  "rank": 2959
+ },
+ {
+  "lemma": "футболка",
+  "pos": "noun",
+  "rank": 2960
+ },
+ {
+  "lemma": "противник",
+  "pos": "noun",
+  "rank": 2961
+ },
+ {
+  "lemma": "покупатель",
+  "pos": "noun",
+  "rank": 2962
+ },
+ {
+  "lemma": "подход",
+  "pos": "noun",
+  "rank": 2963
+ },
+ {
+  "lemma": "причем",
+  "pos": "conj",
+  "rank": 2964
+ },
+ {
+  "lemma": "стремиться",
+  "pos": "verb",
+  "rank": 2965
+ },
+ {
+  "lemma": "ядерный",
+  "pos": "adj",
+  "rank": 2966
+ },
+ {
+  "lemma": "фантазия",
+  "pos": "noun",
+  "rank": 2967
+ },
+ {
+  "lemma": "производство",
+  "pos": "noun",
+  "rank": 2968
+ },
+ {
+  "lemma": "редкий",
+  "pos": "adj",
+  "rank": 2969
+ },
+ {
+  "lemma": "середина",
+  "pos": "noun",
+  "rank": 2970
+ },
+ {
+  "lemma": "основать",
+  "pos": "verb",
+  "rank": 2971
+ },
+ {
+  "lemma": "яркий",
+  "pos": "adj",
+  "rank": 2972
+ },
+ {
+  "lemma": "ясный",
+  "pos": "adj",
+  "rank": 2973
+ },
+ {
+  "lemma": "христос",
+  "pos": "noun",
+  "rank": 2974
+ },
+ {
+  "lemma": "использование",
+  "pos": "noun",
+  "rank": 2975
+ },
+ {
+  "lemma": "вступить",
+  "pos": "verb",
+  "rank": 2976
+ },
+ {
+  "lemma": "лев",
+  "pos": "noun",
+  "rank": 2977
+ },
+ {
+  "lemma": "дорого",
+  "pos": "adv",
+  "rank": 2978
+ },
+ {
+  "lemma": "поверхность",
+  "pos": "noun",
+  "rank": 2979
+ },
+ {
+  "lemma": "судно",
+  "pos": "noun",
+  "rank": 2980
+ },
+ {
+  "lemma": "пассажир",
+  "pos": "noun",
+  "rank": 2981
+ },
+ {
+  "lemma": "привычка",
+  "pos": "noun",
+  "rank": 2982
+ },
+ {
+  "lemma": "тон",
+  "pos": "noun",
+  "rank": 2983
+ },
+ {
+  "lemma": "вершина",
+  "pos": "noun",
+  "rank": 2984
+ },
+ {
+  "lemma": "персонаж",
+  "pos": "noun",
+  "rank": 2985
+ },
+ {
+  "lemma": "занимать",
+  "pos": "verb",
+  "rank": 2986
+ },
+ {
+  "lemma": "краска",
+  "pos": "noun",
+  "rank": 2987
+ },
+ {
+  "lemma": "равный",
+  "pos": "adj",
+  "rank": 2988
+ },
+ {
+  "lemma": "редко",
+  "pos": "adv",
+  "rank": 2989
+ },
+ {
+  "lemma": "развитие",
+  "pos": "noun",
+  "rank": 2990
+ },
+ {
+  "lemma": "трагедия",
+  "pos": "noun",
+  "rank": 2991
+ },
+ {
+  "lemma": "электричество",
+  "pos": "noun",
+  "rank": 2992
+ },
+ {
+  "lemma": "понимание",
+  "pos": "noun",
+  "rank": 2993
+ },
+ {
+  "lemma": "акт",
+  "pos": "noun",
+  "rank": 2994
+ },
+ {
+  "lemma": "культура",
+  "pos": "noun",
+  "rank": 2995
+ },
+ {
+  "lemma": "сорок",
+  "pos": "num",
+  "rank": 2996
+ },
+ {
+  "lemma": "книжка",
+  "pos": "noun",
+  "rank": 2997
+ },
+ {
+  "lemma": "молитва",
+  "pos": "noun",
+  "rank": 2998
+ },
+ {
+  "lemma": "нервный",
+  "pos": "adj",
+  "rank": 2999
+ },
+ {
+  "lemma": "падение",
+  "pos": "noun",
+  "rank": 3000
+ }
+]

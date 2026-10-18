@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "words_total": 3000,
+  "words_done": 100,
+  "words_last_rank": 100,
+  "sentences_total": 2135,
+  "sentences_done": 0,
+  "sentences_last_index": -1,
+  "started": "2026-10-18",
+  "last_updated": "2026-10-18",
+  "note": "words processed in rank order (word_order.json); sentences processed in id-sorted order (sentence_order.json). Resume by reading words_last_rank / sentences_last_index and continuing from the next item."
+}
