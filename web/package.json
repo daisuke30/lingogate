@@ -6,6 +6,7 @@
   "description": "LingoGate PWA — 脱スマホ中毒×ロシア語フラッシュカードのブラウザ版（高速反復テスト用）",
   "scripts": {
     "gen:content": "node scripts/build-content.mjs",
+    "gen:explain": "node scripts/build-explain.mjs",
     "gen:icons": "node scripts/gen-icons.mjs",
     "gen:version": "node scripts/gen-version.mjs",
     "prebuild": "npm run gen:content && npm run gen:icons && npm run gen:version",

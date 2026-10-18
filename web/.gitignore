@@ -6,6 +6,9 @@ src/content/deck.generated.json
 src/content/deck.*.json
 # Generated at build time (predev/prebuild) — git sha + timestamp stamp. Not source.
 src/content/version.generated.json
+# LINGO-056: lazy-loaded explain chunks, generated from pipeline/data/explain/*.jsonl
+# (the real source of truth, which IS committed) via `npm run gen:explain`. Not source.
+public/explain/
 public/icons/
 *.local
 .DS_Store
