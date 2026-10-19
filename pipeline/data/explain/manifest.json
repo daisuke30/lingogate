@@ -4,8 +4,8 @@
   "words_done": 2050,
   "words_last_rank": 2050,
   "sentences_total": 2135,
-  "sentences_done": 1550,
-  "sentences_last_index": 1549,
+  "sentences_done": 1600,
+  "sentences_last_index": 1599,
   "started": "2026-10-18",
   "last_updated": "2026-10-19",
   "note": "words processed in rank order (word_order.json); sentences processed in id-sorted order (sentence_order.json). Resume by reading words_last_rank / sentences_last_index and continuing from the next item."
