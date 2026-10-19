@@ -17,8 +17,8 @@
     "v2_words_done": 175,
     "v2_words_last_verb_index": 174,
     "v2_sentences_total": 2135,
-    "v2_sentences_done": 250,
-    "v2_sentences_last_index": 249,
+    "v2_sentences_done": 275,
+    "v2_sentences_last_index": 274,
     "note": "v2 fields are MERGED into existing v1 JSONL rows in place (not appended) — see pipeline/data/explain/verb_order.json for the verb-only rank-ordered list word-dict v2 walks, and sentence_order.json for the sentence v2 walk. v2_words_last_verb_index / v2_sentences_last_index are cursors into those two lists (-1 = not started; resume from index+1). казаться (verb_order idx 44) and T0138 (sentence_order idx 137, казаться benchmark sentence) plus выглядеть (verb_order idx 64) were done OUT OF ORDER as the quality-bar benchmark before the sequential walk began — when the cursor reaches their index, skip (already has v2 fields, verify with `казаться`/`grammarFocus` key presence) rather than regenerating."
   }
 }
