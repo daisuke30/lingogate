@@ -1598,6 +1598,26 @@ button {
   color: var(--ink-faint);
 }
 
+/* LINGO-059: the "詳細な解説" button closing the card back. Deliberately
+ * quieter than .btn — it is an offer, not a call to action, and it must not
+ * compete with the grading chips below the card. */
+.explain-cta {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-dim);
+  font-size: 13px;
+  font-weight: 650;
+  text-align: center;
+}
+.explain-cta:active {
+  background: var(--bg-elev-2);
+}
+
 /* 解説 sheet (LINGO-057) — a page of prose, so it is set like one: headings,
  * generous line-height, no decoration competing with the text. */
 .explain-body {

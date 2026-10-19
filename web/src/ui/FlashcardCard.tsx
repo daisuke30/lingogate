@@ -230,23 +230,6 @@ export function FlashcardCard({
           </div>
           <div className="face back">
             <span className="kicker">{NATIVE_LANG_NAME[targetLangTyped]}</span>
-            {/* LINGO-057: sits beside the speaker button, same weight — both
-                are optional aids the learner reaches for, neither competes
-                with the grading controls. Absent entirely when this sentence
-                has no commentary (every non-RU course today). */}
-            {showExplain && (
-              <button
-                className="iconbtn explain"
-                aria-label={t("explain.open")}
-                onPointerDown={(e) => e.stopPropagation()}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setExplainOpen(true);
-                }}
-              >
-                {t("explain.buttonGlyph")}
-              </button>
-            )}
             {hasVoice && tts?.enabled && (
               <button
                 className="iconbtn speaker"
@@ -302,6 +285,30 @@ export function FlashcardCard({
                 uiLang={uiLang}
                 targetLang={targetLangTyped}
               />
+            )}
+            {/* LINGO-059: the explanation now closes the back face rather than
+                sitting up by the speaker icon. It is the last thing on the
+                card for the same reason it is last in the sheet — you read the
+                sentence and its words first, and only then go deeper. Full
+                width and quiet, so it reads as "more if you want it" and not
+                as something to answer.
+
+                stopPropagation on pointerdown AND click: the card itself is a
+                flick-to-grade surface, so without the first a drag starting on
+                this button would be read as a swipe, and without the second a
+                tap would also flip the card. */}
+            {showExplain && (
+              <button
+                type="button"
+                className="explain-cta"
+                onPointerDown={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setExplainOpen(true);
+                }}
+              >
+                {t("explain.open")}
+              </button>
             )}
             {showOverlay && <RateOverlay color={overlayColor} text={overlayText} />}
             {!canEval && <div className="hint">…</div>}

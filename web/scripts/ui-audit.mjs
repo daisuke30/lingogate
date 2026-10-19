@@ -671,8 +671,43 @@ await page.waitForTimeout(1200);
   if (await card.count()) {
     await card.click(); // flip to the back
     await page.waitForTimeout(700);
-    const btn = page.locator(".iconbtn.explain").first();
+    const btn = page.locator(".explain-cta").first();
     if (await btn.count()) {
+      // LINGO-059: it is a full-width button at the BOTTOM of the card back
+      // now, not an icon by the speaker. Assert both, or a regression that
+      // moves it back up would still "pass" by finding some button.
+      const place = await page.evaluate(() => {
+        const el = document.querySelector(".explain-cta");
+        const face = el?.closest(".face.back");
+        const breakdown = face?.querySelector(".word-breakdown");
+        if (!el || !face) return null;
+        const r = el.getBoundingClientRect();
+        const f = face.getBoundingClientRect();
+        return {
+          w: Math.round(r.width),
+          faceW: Math.round(f.width),
+          h: Math.round(r.height),
+          belowBreakdown: breakdown
+            ? r.top >= breakdown.getBoundingClientRect().bottom - 1
+            : true,
+          // In the lower half of the face — i.e. it closes the card.
+          inLowerHalf: r.top > f.top + f.height / 2,
+          text: (el.textContent || "").trim(),
+        };
+      });
+      if (check(place !== null, "explain button: not found on the card back")) {
+        check(
+          place.w >= place.faceW * 0.7,
+          `explain button: ${place.w}px wide inside a ${place.faceW}px face — expected full width`,
+        );
+        check(place.h >= 36, `explain button: only ${place.h}px tall to tap`);
+        check(place.belowBreakdown, "explain button: not below the word breakdown");
+        check(place.inLowerHalf, "explain button: not at the bottom of the card back");
+        check(
+          place.text.length >= 2,
+          `explain button: label looks like a glyph, not words ("${place.text}")`,
+        );
+      }
       await btn.click();
       // The chunks are ~0.6MB gzipped on a cold cache; give the fetch room.
       const arrived = await page

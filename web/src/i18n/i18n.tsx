@@ -462,10 +462,7 @@ const M: Record<string, Entry> = {
 
   // -- flashcard ------------------------------------------------------------
   // -- 解説 sheet (LINGO-057) ------------------------------------------------
-  "explain.open": { ja: "解説を見る", en: "Show explanation", ru: "Показать разбор" },
-  // A glyph rather than a word: it sits next to 🔊 on a narrow card, and the
-  // aria-label above carries the meaning for anyone who needs it spoken.
-  "explain.buttonGlyph": { ja: "解", en: "?", ru: "?" },
+  "explain.open": { ja: "詳細な解説", en: "Full explanation", ru: "Подробный разбор" },
   "explain.title": { ja: "解説", en: "Explanation", ru: "Разбор" },
   "explain.loading": { ja: "解説を読み込んでいます…", en: "Loading the explanation…", ru: "Загружаем разбор…" },
   "explain.offline": {
