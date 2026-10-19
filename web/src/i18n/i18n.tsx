@@ -461,6 +461,29 @@ const M: Record<string, Entry> = {
   },
 
   // -- flashcard ------------------------------------------------------------
+  // -- 解説 sheet (LINGO-057) ------------------------------------------------
+  "explain.open": { ja: "解説を見る", en: "Show explanation", ru: "Показать разбор" },
+  // A glyph rather than a word: it sits next to 🔊 on a narrow card, and the
+  // aria-label above carries the meaning for anyone who needs it spoken.
+  "explain.buttonGlyph": { ja: "解", en: "?", ru: "?" },
+  "explain.title": { ja: "解説", en: "Explanation", ru: "Разбор" },
+  "explain.loading": { ja: "解説を読み込んでいます…", en: "Loading the explanation…", ru: "Загружаем разбор…" },
+  "explain.offline": {
+    ja: "解説はオンラインのときに読み込めます。接続してからもう一度開いてください。",
+    en: "Explanations load when you're online. Reconnect and open this again.",
+    ru: "Разборы загружаются при подключении к сети. Подключитесь и откройте снова.",
+  },
+  "explain.skeleton": { ja: "文の骨格", en: "How the sentence is built", ru: "Строение фразы" },
+  "explain.keyPoint": { ja: "学びどころ", en: "The thing to take away", ru: "Главное" },
+  "explain.replies": { ja: "会話での返し", en: "How you'd reply", ru: "Как ответить" },
+  "explain.words": { ja: "単語", en: "Words", ru: "Слова" },
+  "explain.target": { ja: "この文の新出語", en: "New in this sentence", ru: "Новое слово" },
+  "explain.aspect": { ja: "体の使い分け: ", en: "Aspect: ", ru: "Вид: " },
+  "explain.etymology": { ja: "語源: ", en: "Origin: ", ru: "Происхождение: " },
+  "explain.collocations": { ja: "よく使う形: ", en: "Common phrases: ", ru: "Частые сочетания: " },
+  "explain.related": { ja: "関連語: ", en: "Related: ", ru: "Связанные слова: " },
+  "explain.mistakes": { ja: "よくある間違い: ", en: "Common mistakes: ", ru: "Частые ошибки: " },
+
   "card.speak": { ja: "読み上げ", en: "Read aloud", ru: "Озвучить" },
   "card.tapToFlip": { ja: "タップして答えを見る", en: "Tap to see the answer", ru: "Нажмите, чтобы увидеть ответ" },
   "card.flick.again": { ja: "忘れた", en: "Forgot", ru: "Забыл" },

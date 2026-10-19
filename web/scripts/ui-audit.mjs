@@ -155,14 +155,20 @@ async function boxOf(selector) {
  * exists in the DOM but is clipped, collapsed or pushed off-screen is a broken
  * element, however correct its markup.
  */
-async function assertReallyVisible(selector, label, minHeight = 40) {
+async function assertReallyVisible(selector, label, minHeight = 40, opts = {}) {
   const b = await boxOf(selector);
   if (!check(b !== null, `${label}: '${selector}' not in the DOM`)) return null;
   check(b.h >= minHeight, `${label}: only ${b.h}px tall (expected >= ${minHeight}px)`);
-  check(
-    b.scrollH <= b.h + 2,
-    `${label}: content is clipped — scrollHeight ${b.scrollH}px inside a ${b.h}px box`,
-  );
+  // `scrolls: true` for containers that are MEANT to scroll (the bottom sheets
+  // cap at 75vh). Everywhere else, content taller than its box is the
+  // LINGO-040 bug — rows clipped to invisibility — so the check stays strict
+  // by default rather than being loosened for everyone.
+  if (!opts.scrolls) {
+    check(
+      b.scrollH <= b.h + 2,
+      `${label}: content is clipped — scrollHeight ${b.scrollH}px inside a ${b.h}px box`,
+    );
+  }
   check(b.w > 0 && b.visibility !== "hidden" && Number(b.opacity) > 0.01, `${label}: not painted`);
   check(b.left >= 0 && b.right <= VIEWPORT.width, `${label}: outside the viewport horizontally`);
   return b;
@@ -628,6 +634,80 @@ await dismissOnboarding();
     }
   } else {
     notes.push("level check CTA not on Home (already taken or deferred) — audio check skipped");
+  }
+}
+
+// ---------------------------------------- 4c. 解説 sheet (LINGO-057) ---------
+// The explanation sheet is the longest piece of prose in the app and the only
+// screen whose content arrives over the network after a tap. Both are ways for
+// it to look fine in a unit test and be unreadable on a phone.
+await open("/?skipOnboarding=1");
+await page.waitForTimeout(1200);
+{
+  const later = page.getByText("あとで", { exact: false }).first();
+  if (await later.count()) {
+    await later.click();
+    await page.waitForTimeout(1800);
+  }
+  const card = page.locator(".flashcard").first();
+  if (await card.count()) {
+    await card.click(); // flip to the back
+    await page.waitForTimeout(700);
+    const btn = page.locator(".iconbtn.explain").first();
+    if (await btn.count()) {
+      await btn.click();
+      // The chunks are ~0.6MB gzipped on a cold cache; give the fetch room.
+      const arrived = await page
+        .waitForSelector(".explain-body .explain-section", { timeout: 30000 })
+        .then(() => true)
+        .catch(() => false);
+      if (check(arrived, "explain sheet: never rendered any content after tapping 解説")) {
+        await shot("10-explain");
+        await assertReallyVisible(".sheet", "explain sheet", 200, { scrolls: true });
+        await assertHasSideMargin(".explain-section", "explain sheet: section");
+        await assertNoHorizontalOverflow("explain sheet");
+
+        const info = await page.evaluate(() => {
+          const body = document.querySelector(".explain-body");
+          const words = document.querySelectorAll(".explain-word");
+          return {
+            words: words.length,
+            targets: document.querySelectorAll(".explain-word.target").length,
+            openBodies: document.querySelectorAll(".explain-word-body").length,
+            // Long prose must SCROLL inside the sheet, never be silently cut off.
+            scrollable: body ? body.scrollHeight > body.clientHeight : false,
+            clipped: body ? body.clientHeight < 80 : true,
+          };
+        });
+        check(info.words > 0, "explain sheet: no word entries rendered");
+        check(
+          info.targets === 1,
+          `explain sheet: expected exactly 1 target word, found ${info.targets}`,
+        );
+        check(
+          info.openBodies >= 1,
+          "explain sheet: nothing is expanded — the target word must always be open",
+        );
+        check(!info.clipped, "explain sheet: body collapsed to nothing");
+        // Tapping a collapsed row must actually reveal its entry.
+        const caret = page.locator(".explain-caret").first();
+        if (await caret.count()) {
+          await caret.click();
+          await page.waitForTimeout(350);
+          const after = await page.evaluate(
+            () => document.querySelectorAll(".explain-word-body").length,
+          );
+          check(
+            after > info.openBodies,
+            `explain sheet: tapping a collapsed word did not expand it (${info.openBodies} -> ${after})`,
+          );
+        }
+      }
+    } else {
+      notes.push("解説 button absent on this card (no commentary for it) — sheet check skipped");
+    }
+  } else {
+    notes.push("no flashcard reachable — 解説 sheet check skipped");
   }
 }
 

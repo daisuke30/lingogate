@@ -1591,6 +1591,142 @@ button {
   color: var(--ink-faint);
 }
 
+/* 解説 sheet (LINGO-057) — a page of prose, so it is set like one: headings,
+ * generous line-height, no decoration competing with the text. */
+.explain-body {
+  padding: 4px 20px 8px;
+  max-height: 62vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.explain-status {
+  margin: 18px 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+.explain-section + .explain-section {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.explain-h {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.explain-prose {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink-dim);
+}
+.explain-k {
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+.explain-skeleton,
+.explain-replies {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.explain-skeleton li,
+.explain-replies li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+}
+.explain-skeleton li + li,
+.explain-replies li + li {
+  border-top: 1px solid var(--line);
+}
+.explain-surface,
+.explain-reply-ru {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.explain-note {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
+/* One word's dictionary entry. */
+.explain-word {
+  padding: 10px 0;
+}
+.explain-word + .explain-word {
+  border-top: 1px solid var(--line);
+}
+.explain-word.target .explain-lemma {
+  color: var(--indigo-bright);
+}
+.explain-word-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+.explain-lemma {
+  font-size: 17px;
+  font-weight: 800;
+}
+.explain-pos {
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+.explain-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--indigo-bright);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 2px 8px;
+}
+.explain-caret {
+  margin-left: auto;
+  color: var(--ink-faint);
+  font-size: 14px;
+}
+.explain-word-body {
+  margin-top: 8px;
+}
+.explain-forms {
+  margin-bottom: 10px;
+}
+.explain-forms-group + .explain-forms-group {
+  margin-top: 6px;
+}
+.explain-forms-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--ink-faint);
+  margin-bottom: 3px;
+}
+.explain-forms-cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.explain-form {
+  font-size: 13px;
+  color: var(--ink);
+}
+.explain-form-k {
+  color: var(--ink-faint);
+  font-size: 10px;
+  margin-right: 3px;
+}
+
 /* Diagnostics rows (LINGO-047) — dense, monospaced, meant to be screenshotted
  * and read, not admired. */
 .diag-hint {

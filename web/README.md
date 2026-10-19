@@ -140,9 +140,36 @@ web/
 
 ## 既知の制約
 
-- ブラウザ操作の自動テストは範囲外（フリップ / フリックの操作感は実機・実ブラウザで確認）。
 - LAN の素の http では iOS の Service Worker 登録がスキップされることがある（上記 A の注）。
-- デプロイ（外部公開）はしていない。公開は勝田の承認が必要。
+
+## デプロイ（現行の定常フロー）
+
+本番は Cloudflare Pages（https://lingogate.pages.dev）。**勝田承認済みの定常フロー**として、
+以下を満たしたら担当エージェントの裁量でデプロイしてよい:
+
+```bash
+npm test                                          # Vitest 全パス
+npx tsc -b                                        # 型エラーなし
+npm run build                                     # 本番ビルド成功
+npm run ui-audit                                  # ★視覚ゲート（両エンジン）合格
+npx wrangler pages deploy dist --project-name lingogate --branch main
+npm run ui-audit -- https://lingogate.pages.dev   # ★デプロイ後、本番でも再実行
+```
+
+**`ui-audit` 合格がデプロイの門番**（LINGO-042 で必須化）。スクショは自分の目でも確認する。
+
+> 旧注記「デプロイはしていない。公開は勝田の承認が必要」は LINGO-040 以降の
+> 実運用（視覚ゲート合格→デプロイ）と矛盾していたため、現行フローに更新した（LINGO-057）。
+> `npm run gen:explain` が生成する `public/explain/*.json`（約6MB・UI言語ごとgzip後 約0.6MB）は
+> gitignore 対象の生成物だが **dist には入るのでデプロイ対象**。生成元は
+> `pipeline/data/explain/*.jsonl`（これはコミット済みで、こちらが真実の情報源）。
+> LINGO-057 で `prebuild`/`predev` に `gen:explain` を追加したので、
+> `npm run build` すれば常に最新が入る（約0.5秒）。
+
+## 既知の制約（つづき）
+
+- ブラウザ操作の自動テストのうち、フリップ / フリックの「操作感」だけは実機確認が必要
+  （レイアウトと表示内容は `npm run ui-audit` が両エンジンで検証する）。
 
 ### 実機/シミュレータ計測用の隠しURL（LINGO-049）
 

@@ -15,7 +15,8 @@ import {
   readsJapanese,
   pronunciationReadable,
 } from "../engine/localizedText";
-import { WORD_BY_ID } from "../state/service";
+import { WORD_BY_ID, activeCourse } from "../state/service";
+import { ExplainSheet, explainAvailable } from "./ExplainSheet";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
 import { NATIVE_LANG_NAME, useI18n } from "../i18n/i18n";
 import type { Lang, TargetLang } from "../i18n/i18n";
@@ -84,9 +85,16 @@ export function FlashcardCard({
   const [canEval, setCanEval] = useState(false);
   const [drag, setDrag] = useState({ x: 0, y: 0, active: false });
   const [hasVoice, setHasVoice] = useState(false);
+  // LINGO-057: the 解説 sheet. `explainAvailable` only reads the in-memory
+  // cache, so this costs nothing until the learner actually opens one.
+  const [explainOpen, setExplainOpen] = useState(false);
   const start = useRef<{ x: number; y: number } | null>(null);
   // LINGO-012: word-by-word breakdown (原形・品詞・体と対・訳) for the back face.
   const breakdown = useMemo(() => buildWordBreakdown(sentence, WORD_BY_ID), [sentence]);
+  const showExplain = useMemo(
+    () => explainAvailable(sentence, activeCourse(), uiLang),
+    [sentence, uiLang],
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => setCanEval(true), FLICK_LOCK_MS);
@@ -222,6 +230,23 @@ export function FlashcardCard({
           </div>
           <div className="face back">
             <span className="kicker">{NATIVE_LANG_NAME[targetLangTyped]}</span>
+            {/* LINGO-057: sits beside the speaker button, same weight — both
+                are optional aids the learner reaches for, neither competes
+                with the grading controls. Absent entirely when this sentence
+                has no commentary (every non-RU course today). */}
+            {showExplain && (
+              <button
+                className="iconbtn explain"
+                aria-label={t("explain.open")}
+                onPointerDown={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setExplainOpen(true);
+                }}
+              >
+                {t("explain.buttonGlyph")}
+              </button>
+            )}
             {hasVoice && tts?.enabled && (
               <button
                 className="iconbtn speaker"
@@ -316,6 +341,17 @@ export function FlashcardCard({
           {t("card.flick.good")}<span className="dir">{t("card.dir.right")}</span>
         </button>
       </div>
+
+      {/* LINGO-057: rendered outside the card so the sheet is never clipped by
+          the flip container's 3D transform (which would otherwise become its
+          containing block). */}
+      {showExplain && (
+        <ExplainSheet
+          open={explainOpen}
+          sentence={sentence}
+          onClose={() => setExplainOpen(false)}
+        />
+      )}
     </>
   );
 }
