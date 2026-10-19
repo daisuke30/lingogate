@@ -19,6 +19,8 @@ import {
   wordDensity,
 } from "../engine/explain";
 import type { ExplainDensity, WordDictEntry } from "../engine/explain";
+import { aspectFormsNoteKey, formCellLabelKey, formGroupLabelKey } from "../engine/explainLabels";
+import type { Aspect } from "../engine/explainLabels";
 import type { ExplainData } from "../state/explain";
 import { loadExplain, peekExplain } from "../state/explain";
 import { loadKnowledgeMap } from "../state/calibration";
@@ -93,7 +95,8 @@ export function ExplainSheet({
   const words = useMemo(() => {
     if (!data) return [];
     const seen = new Set<string>();
-    const out: { entry: WordDictEntry; density: ExplainDensity; gloss: string }[] = [];
+    const out: { entry: WordDictEntry; density: ExplainDensity; gloss: string; aspect: Aspect }[] =
+      [];
     for (const id of sentence.wordIds) {
       const deckWord = WORD_BY_ID.get(id);
       if (!deckWord) continue;
@@ -107,6 +110,9 @@ export function ExplainSheet({
         // whatever language the prose is in. Both glosses come straight from
         // the deck, so this needs no regeneration and cannot go stale.
         gloss: bothGlosses(deckWord.enGloss, deckWord.jaGloss),
+        // Drives whether the conjugation table is headed "present" or
+        // "future" — see formGroupLabelKey.
+        aspect: (deckWord.aspect ?? null) as Aspect,
         density: wordDensity({
           lemma: deckWord.lemma,
           pos: deckWord.pos,
@@ -157,6 +163,27 @@ export function ExplainSheet({
               <p className="explain-prose">{commentary.keyPoint}</p>
             </section>
 
+            {words.length > 0 && (
+              <section className="explain-section">
+                <h3 className="explain-h">{t("explain.words")}</h3>
+                {words.map(({ entry, density, gloss, aspect }) => (
+                  <WordEntry
+                    key={entry.lemma}
+                    entry={entry}
+                    gloss={gloss}
+                    aspect={aspect}
+                    density={density}
+                    open={density !== "collapsed" || expanded.has(entry.lemma)}
+                    onToggle={() => toggle(entry.lemma)}
+                  />
+                ))}
+              </section>
+            )}
+
+            {/* LINGO-057 follow-up (勝田): the replies close the sheet rather
+                than sitting inside the sentence block. The reading order is
+                now structure → words in depth → and finally what you would
+                actually say back, which is the thing you leave with. */}
             {commentary.replies.length > 0 && (
               <section className="explain-section">
                 <h3 className="explain-h">{t("explain.replies")}</h3>
@@ -168,22 +195,6 @@ export function ExplainSheet({
                     </li>
                   ))}
                 </ul>
-              </section>
-            )}
-
-            {words.length > 0 && (
-              <section className="explain-section">
-                <h3 className="explain-h">{t("explain.words")}</h3>
-                {words.map(({ entry, density, gloss }) => (
-                  <WordEntry
-                    key={entry.lemma}
-                    entry={entry}
-                    gloss={gloss}
-                    density={density}
-                    open={density !== "collapsed" || expanded.has(entry.lemma)}
-                    onToggle={() => toggle(entry.lemma)}
-                  />
-                ))}
               </section>
             )}
           </>
@@ -208,6 +219,7 @@ function bothGlosses(enGloss: string | null | undefined, jaGloss: string | null 
 function WordEntry({
   entry,
   gloss,
+  aspect,
   density,
   open,
   onToggle,
@@ -215,6 +227,8 @@ function WordEntry({
   entry: WordDictEntry;
   /** Deck glosses (en / ja), shown on the heading in every density. */
   gloss: string;
+  /** Verb aspect, for naming the conjugation table correctly. */
+  aspect: Aspect;
   density: ExplainDensity;
   open: boolean;
   onToggle: () => void;
@@ -246,7 +260,7 @@ function WordEntry({
 
       {open && (
         <div className="explain-word-body">
-          {entry.forms && <FormsTable forms={entry.forms} />}
+          {entry.forms && <FormsTable forms={entry.forms} aspect={aspect} />}
           {entry.aspectUsage && (
             <p className="explain-prose">
               <span className="explain-k">{t("explain.aspect")}</span>
@@ -283,33 +297,55 @@ function WordEntry({
 
 /** The inflection table, rendered from whichever shape the part of speech
  * brought (verbs: past/nonpast/imperative; nouns: sg cases; adjectives: a flat
- * gender row) — see the LINGO-056 schema. */
-function FormsTable({ forms }: { forms: NonNullable<WordDictEntry["forms"]> }) {
-  const groups: { label: string; cells: [string, string][] }[] = [];
+ * gender row) — see the LINGO-056 schema.
+ *
+ * LINGO-057 follow-up: slot keys are translated rather than printed raw, so a
+ * noun's declension reads "1格・主格" like the card back does (LINGO-033) and
+ * not "nom". An unmapped key falls back to the raw string — visible, odd, and
+ * caught by explainLabels.test.ts rather than silently blank. */
+function FormsTable({
+  forms,
+  aspect,
+}: {
+  forms: NonNullable<WordDictEntry["forms"]>;
+  aspect: Aspect;
+}) {
+  const { t } = useI18n();
+  const groups: { group: string; cells: [string, string][] }[] = [];
   const flat: [string, string][] = [];
 
   for (const [key, value] of Object.entries(forms)) {
     if (value == null) continue;
     if (typeof value === "string") flat.push([key, value]);
-    else groups.push({ label: key, cells: Object.entries(value) });
+    else groups.push({ group: key, cells: Object.entries(value) });
   }
-  if (flat.length) groups.unshift({ label: "", cells: flat });
+  if (flat.length) groups.unshift({ group: "", cells: flat });
+
+  const label = (key: string | null, fallback: string) => (key ? t(key) : fallback);
+  // Perfectives have no present tense; say so under the table rather than
+  // leaving the learner to infer it from a heading.
+  const noteKey = forms.nonpast ? aspectFormsNoteKey(aspect) : null;
 
   return (
     <div className="explain-forms">
       {groups.map((g, i) => (
         <div className="explain-forms-group" key={i}>
-          {g.label && <div className="explain-forms-label">{g.label}</div>}
+          {g.group && (
+            <div className="explain-forms-label">
+              {label(formGroupLabelKey(g.group, aspect), g.group)}
+            </div>
+          )}
           <div className="explain-forms-cells">
             {g.cells.map(([k, v]) => (
               <span className="explain-form" key={k}>
-                <span className="explain-form-k">{k}</span>
+                <span className="explain-form-k">{label(formCellLabelKey(g.group, k), k)}</span>
                 {v}
               </span>
             ))}
           </div>
         </div>
       ))}
+      {noteKey && <p className="explain-forms-note">{t(noteKey)}</p>}
     </div>
   );
 }

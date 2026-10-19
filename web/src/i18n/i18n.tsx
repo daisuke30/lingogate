@@ -478,6 +478,35 @@ const M: Record<string, Entry> = {
   "explain.replies": { ja: "会話での返し", en: "How you'd reply", ru: "Как ответить" },
   "explain.words": { ja: "単語", en: "Words", ru: "Слова" },
   "explain.target": { ja: "この文の新出語", en: "New in this sentence", ru: "Новое слово" },
+  // Forms-table labels (LINGO-057 follow-up). The dictionary stores terse
+  // slots (nom / 1sg / ...); the screen uses the same numbered case names the
+  // card back has used since LINGO-033, so a learner meets one convention.
+  "explain.forms.past": { ja: "過去形", en: "past", ru: "прошедшее" },
+  // LINGO-057 follow-up: the schema's "nonpast" slot named the data model,
+  // not the language. Resolved per aspect — see formGroupLabelKey.
+  "explain.forms.nonpast": { ja: "現在・未来形", en: "present / future", ru: "настоящее / будущее" },
+  "explain.forms.present": { ja: "現在形", en: "present", ru: "настоящее время" },
+  "explain.forms.future": { ja: "未来形", en: "future", ru: "будущее время" },
+  "explain.forms.pfNote": {
+    ja: "完了体は現在形を持たず、この形が未来を表します。",
+    en: "Perfective verbs have no present tense — this conjugation is the future.",
+    ru: "У совершенного вида нет настоящего времени: эти формы выражают будущее.",
+  },
+  "explain.forms.imperative": { ja: "命令形", en: "imperative", ru: "повелительное" },
+  "explain.forms.sg": { ja: "単数の格変化", en: "singular declension", ru: "склонение (ед. ч.)" },
+  "explain.person.1sg": { ja: "1人称単数（я）", en: "1sg (я)", ru: "1-е ед. (я)" },
+  "explain.person.2sg": { ja: "2人称単数（ты）", en: "2sg (ты)", ru: "2-е ед. (ты)" },
+  "explain.person.3sg": { ja: "3人称単数（он/она）", en: "3sg (он/она)", ru: "3-е ед. (он/она)" },
+  "explain.person.1pl": { ja: "1人称複数（мы）", en: "1pl (мы)", ru: "1-е мн. (мы)" },
+  "explain.person.2pl": { ja: "2人称複数（вы）", en: "2pl (вы)", ru: "2-е мн. (вы)" },
+  "explain.person.3pl": { ja: "3人称複数（они）", en: "3pl (они)", ru: "3-е мн. (они)" },
+  "explain.gender.m": { ja: "男性", en: "masculine", ru: "мужской" },
+  "explain.gender.f": { ja: "女性", en: "feminine", ru: "женский" },
+  "explain.gender.n": { ja: "中性", en: "neuter", ru: "средний" },
+  "explain.gender.pl": { ja: "複数", en: "plural", ru: "множественное" },
+  "explain.number.sg": { ja: "単数", en: "singular", ru: "единственное" },
+  "explain.number.pl": { ja: "複数", en: "plural", ru: "множественное" },
+
   "explain.aspect": { ja: "体の使い分け: ", en: "Aspect: ", ru: "Вид: " },
   "explain.etymology": { ja: "語源: ", en: "Origin: ", ru: "Происхождение: " },
   "explain.collocations": { ja: "よく使う形: ", en: "Common phrases: ", ru: "Частые сочетания: " },

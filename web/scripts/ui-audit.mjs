@@ -264,7 +264,15 @@ function lastGradientColor(image) {
   return colors && colors.length ? colors[colors.length - 1] : null;
 }
 
-/** Compare colours written in different notations (#07070c vs rgb(7, 7, 12)). */
+/** rgb(0,0,0) / #000 / transparent-black, in any notation. */
+function isPureBlack(color) {
+  const rgb = /rgba?\((\d+)[,\s]+(\d+)[,\s]+(\d+)/.exec(color || "");
+  if (rgb) return rgb[1] === "0" && rgb[2] === "0" && rgb[3] === "0";
+  const hex = /^#(?:000|000000)$/i.test((color || "").trim());
+  return hex;
+}
+
+/** Compare colours written in different notations (#000 vs rgb(0, 0, 0)). */
 function sameColor(a, b) {
   const norm = (c) => {
     if (!c) return null;
@@ -317,6 +325,16 @@ async function assertBackgroundContinuity(label) {
   check(
     sameColor(barEnd, r.tabbarAfter),
     `${label}: the tab bar ends on ${barEnd} but the strip beneath it is ${r.tabbarAfter} — that boundary is a visible seam wherever the safe-area inset is non-zero`,
+  );
+  // LINGO-058: and that shared colour must be PURE BLACK. The band iOS paints
+  // below the web view is #000, and on an OLED #000 is an unlit pixel — a
+  // near-black like #07070c still read as an edge against it. Asserting the
+  // property (rather than a literal hex) is deliberate: this is exactly what
+  // silently broke in LINGO-045, when the palette was lifted off near-black
+  // and the footer was carried along with it.
+  check(
+    isPureBlack(r.tabbarAfter),
+    `${label}: the footer ends on ${r.tabbarAfter}, not pure black — on an OLED that is a visible seam against the band the OS paints below it`,
   );
   check(
     r.html === r.body && r.body === r.root,

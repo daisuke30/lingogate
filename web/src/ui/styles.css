@@ -23,8 +23,15 @@
   --footer-bg: #0b0b12;
   /* The colour the footer ends on, and therefore the colour of the safety
    * strip below it. Keeping these one token means the bar, the strip and
-   * whatever the OS paints under them form one continuous descent. */
-  --footer-bg-end: #07070c;
+   * whatever the OS paints under them form one continuous descent.
+   *
+   * LINGO-058: pure black, not #07070c. The previous near-black still left a
+   * visible seam on Katsuta's OLED, because the band iOS paints below the web
+   * view is apparently #000 — and on an OLED #000 is a genuinely unlit pixel,
+   * so even a 7/255 difference reads as an edge rather than as shading.
+   * Ending on #000 means the app's own last row of pixels is the same
+   * "nothing" the panel shows, whatever shade of black the OS chose. */
+  --footer-bg-end: #000;
   --footer-line: #26263a;
   --ink: #f2f2f7;
   --ink-dim: #a2a2b8;
@@ -1733,6 +1740,12 @@ button {
 .explain-form {
   font-size: 13px;
   color: var(--ink);
+}
+.explain-forms-note {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-faint);
 }
 .explain-form-k {
   color: var(--ink-faint);
