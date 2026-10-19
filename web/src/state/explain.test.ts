@@ -94,3 +94,26 @@ describe("peekExplain", () => {
     expect(peekExplain("ru", "ja")?.sentences).toEqual(SENTENCES);
   });
 });
+
+// LINGO-057 follow-up (Katsuta, 2026-10-19): the chunk is chosen by the
+// card-FRONT language, not the UI language. He runs UI=ja with front=en — he
+// learns Russian through English — and got Japanese explanations for words he
+// had learned in English. These pin his exact configuration.
+describe("chunk selection follows the FRONT language, not the UI language", () => {
+  it("Katsuta's setup (UI=ja, front=en) loads the EN chunks", () => {
+    // The selector takes the front language; passing "en" must yield en files
+    // even though his interface is Japanese.
+    expect(explainChunkUrls("ru", "en")).toEqual({
+      words: "/explain/explain.word.ru.en.json",
+      sentences: "/explain/explain.sentence.ru.en.json",
+    });
+  });
+
+  it("a ja-front learner still gets the JA chunks", () => {
+    expect(explainChunkUrls("ru", "ja")?.sentences).toBe("/explain/explain.sentence.ru.ja.json");
+  });
+
+  it("the two front languages never resolve to the same file", () => {
+    expect(explainChunkUrls("ru", "en")?.words).not.toBe(explainChunkUrls("ru", "ja")?.words);
+  });
+});

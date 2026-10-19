@@ -1675,9 +1675,22 @@ button {
   padding: 0;
   text-align: left;
 }
+.explain-head-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  min-width: 0;
+}
 .explain-lemma {
   font-size: 17px;
   font-weight: 800;
+}
+/* LINGO-057 follow-up: the deck's en + ja glosses, on every entry regardless
+ * of which language the prose below is in. */
+.explain-gloss {
+  font-size: 13px;
+  color: var(--ink-dim);
 }
 .explain-pos {
   font-size: 11px;

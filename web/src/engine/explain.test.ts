@@ -99,3 +99,22 @@ describe("hasExplanation (button visibility)", () => {
     expect(hasExplanation("toString", {} as SentenceCommentary)).toBe(false);
   });
 });
+
+// LINGO-057 follow-up: ordering must not drop the extra per-word display data
+// the sheet carries (the deck glosses), or the English meaning Katsuta
+// explicitly asked for would vanish on exactly the words that got reordered.
+describe("orderExplainWords preserves per-word payload", () => {
+  it("keeps every field on the reordered items", () => {
+    const words = [
+      { entry: "ты", density: "collapsed" as const, gloss: "you / あなた" },
+      { entry: "проверить", density: "target" as const, gloss: "to check / 確認する" },
+    ];
+    const out = orderExplainWords(words);
+    expect(out[0]).toEqual({
+      entry: "проверить",
+      density: "target",
+      gloss: "to check / 確認する",
+    });
+    expect(out[1].gloss).toBe("you / あなた");
+  });
+});

@@ -103,18 +103,17 @@ export function wordDensity(input: WordDensityInput): ExplainDensity {
   return "expanded";
 }
 
-export interface ExplainWord<T> {
-  entry: T;
-  density: ExplainDensity;
-}
-
 /**
  * Order the sentence's words for the sheet: the target word first, then the
  * rest in the order they appear in the sentence (so the list reads alongside
  * the sentence instead of being re-sorted into something the learner has to
  * re-find).
+ *
+ * Generic over the whole item, not just its entry, so a caller can carry extra
+ * per-word display data through (the deck glosses, for instance) without this
+ * function needing to know about it.
  */
-export function orderExplainWords<T>(words: ExplainWord<T>[]): ExplainWord<T>[] {
+export function orderExplainWords<T extends { density: ExplainDensity }>(words: T[]): T[] {
   const target = words.filter((w) => w.density === "target");
   const rest = words.filter((w) => w.density !== "target");
   return [...target, ...rest];

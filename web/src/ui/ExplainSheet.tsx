@@ -31,16 +31,28 @@ type Phase = "idle" | "loading" | "ready" | "offline";
 export function ExplainSheet({
   open,
   sentence,
+  frontLang,
   onClose,
 }: {
   open: boolean;
   sentence: Sentence;
+  /**
+   * The card-FRONT language — the one the learner reads the course in.
+   *
+   * LINGO-057 follow-up: this was `uiLang`, which is a different axis. Katsuta
+   * runs UI=ja with front=en (he learns Russian through English), so every
+   * explanation arrived in Japanese — prose about English-learned words, in a
+   * language he was not studying in. The commentary and dictionary are study
+   * material, so they follow the language he studies in; only this sheet's own
+   * labels (headings, buttons) follow the UI language.
+   */
+  frontLang: string;
   onClose: () => void;
 }) {
-  const { lang: uiLang, t } = useI18n();
+  const { t } = useI18n();
   const courseId = activeCourse();
   const [phase, setPhase] = useState<Phase>("idle");
-  const [data, setData] = useState<ExplainData | null>(() => peekExplain(courseId, uiLang));
+  const [data, setData] = useState<ExplainData | null>(() => peekExplain(courseId, frontLang));
   const [knowledge, setKnowledge] = useState<KnowledgeMap>(() => new Map());
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set());
 
@@ -49,7 +61,7 @@ export function ExplainSheet({
     setExpanded(new Set());
     loadKnowledgeMap().then(setKnowledge).catch(() => setKnowledge(new Map()));
 
-    const cached = peekExplain(courseId, uiLang);
+    const cached = peekExplain(courseId, frontLang);
     if (cached) {
       setData(cached);
       setPhase("ready");
@@ -57,7 +69,7 @@ export function ExplainSheet({
     }
     let alive = true;
     setPhase("loading");
-    loadExplain(courseId, uiLang)
+    loadExplain(courseId, frontLang)
       .then((d) => {
         if (!alive) return;
         setData(d);
@@ -73,7 +85,7 @@ export function ExplainSheet({
     return () => {
       alive = false;
     };
-  }, [open, courseId, uiLang]);
+  }, [open, courseId, frontLang]);
 
   const commentary = data?.sentences[sentence.id] ?? null;
 
@@ -81,7 +93,7 @@ export function ExplainSheet({
   const words = useMemo(() => {
     if (!data) return [];
     const seen = new Set<string>();
-    const out: { entry: WordDictEntry; density: ExplainDensity }[] = [];
+    const out: { entry: WordDictEntry; density: ExplainDensity; gloss: string }[] = [];
     for (const id of sentence.wordIds) {
       const deckWord = WORD_BY_ID.get(id);
       if (!deckWord) continue;
@@ -91,6 +103,10 @@ export function ExplainSheet({
       if (!entry) continue; // dictionary gap — show what we have, never a blank row
       out.push({
         entry,
+        // LINGO-057 follow-up (Katsuta): the English gloss must be on screen
+        // whatever language the prose is in. Both glosses come straight from
+        // the deck, so this needs no regeneration and cannot go stale.
+        gloss: bothGlosses(deckWord.enGloss, deckWord.jaGloss),
         density: wordDensity({
           lemma: deckWord.lemma,
           pos: deckWord.pos,
@@ -158,10 +174,11 @@ export function ExplainSheet({
             {words.length > 0 && (
               <section className="explain-section">
                 <h3 className="explain-h">{t("explain.words")}</h3>
-                {words.map(({ entry, density }) => (
+                {words.map(({ entry, density, gloss }) => (
                   <WordEntry
                     key={entry.lemma}
                     entry={entry}
+                    gloss={gloss}
                     density={density}
                     open={density !== "collapsed" || expanded.has(entry.lemma)}
                     onToggle={() => toggle(entry.lemma)}
@@ -176,13 +193,28 @@ export function ExplainSheet({
   );
 }
 
+/**
+ * "to check / 確認する" — both deck glosses, always, in that order.
+ *
+ * Katsuta learns Russian through English but runs the app in Japanese, so
+ * neither language alone is safely "the one he reads": the explanation prose
+ * follows his front language, and this line guarantees the English meaning is
+ * present regardless of which chunk that turns out to be.
+ */
+function bothGlosses(enGloss: string | null | undefined, jaGloss: string | null | undefined): string {
+  return [enGloss, jaGloss].filter((g): g is string => !!g && g.trim() !== "").join(" / ");
+}
+
 function WordEntry({
   entry,
+  gloss,
   density,
   open,
   onToggle,
 }: {
   entry: WordDictEntry;
+  /** Deck glosses (en / ja), shown on the heading in every density. */
+  gloss: string;
   density: ExplainDensity;
   open: boolean;
   onToggle: () => void;
@@ -199,7 +231,10 @@ function WordEntry({
         // A non-collapsible head is a heading, not a control.
         tabIndex={collapsible ? 0 : -1}
       >
-        <span className="explain-lemma">{entry.lemma}</span>
+        <span className="explain-head-main">
+          <span className="explain-lemma">{entry.lemma}</span>
+          {gloss && <span className="explain-gloss">{gloss}</span>}
+        </span>
         {density === "target" && <span className="explain-badge">{t("explain.target")}</span>}
         <span className="explain-pos">{entry.pos}</span>
         {collapsible && (
@@ -281,8 +316,8 @@ function FormsTable({ forms }: { forms: NonNullable<WordDictEntry["forms"]> }) {
 
 /** Should the card back offer a 解説 button at all? Cheap enough to call on
  * every render: it only consults the in-memory cache, never the network. */
-export function explainAvailable(sentence: Sentence, courseId: string, uiLang: string): boolean {
-  const cached = peekExplain(courseId, uiLang);
+export function explainAvailable(sentence: Sentence, courseId: string, frontLang: string): boolean {
+  const cached = peekExplain(courseId, frontLang);
   // Before the first load we cannot know whether THIS sentence has an entry,
   // so we offer the button whenever the course/language ships data at all and
   // the sentence is a core one (only core sentences got commentary). A gap is
@@ -290,12 +325,12 @@ export function explainAvailable(sentence: Sentence, courseId: string, uiLang: s
   if (!cached) {
     return (
       sentence.targetLemma != null &&
-      explainCourseHasData(courseId, uiLang)
+      explainCourseHasData(courseId, frontLang)
     );
   }
   return hasExplanation(sentence.id, cached.sentences);
 }
 
-function explainCourseHasData(courseId: string, uiLang: string): boolean {
-  return courseId === "ru" && (uiLang === "ja" || uiLang === "en");
+function explainCourseHasData(courseId: string, frontLang: string): boolean {
+  return courseId === "ru" && (frontLang === "ja" || frontLang === "en");
 }
