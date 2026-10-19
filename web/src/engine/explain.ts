@@ -32,6 +32,27 @@ export interface WordDictEntry {
   related: string[];
   collocations: string[];
   commonMistakes: string;
+
+  // MARK: v2 (LINGO-059) — additive, optional, verbs only. Absent on entries
+  // not yet enriched and on every non-verb entry (nouns/adjectives/etc. are
+  // out of LINGO-059's scope). A v1-only consumer ignores these safely.
+
+  /** Case/construction government, e.g. "+ instrumental", with an example. */
+  governance?: { pattern: string; example: { ru: string; gloss: string } }[];
+  /** Aspect-pair usage contrast, 2 examples per aspect side (1 side if the
+   * verb has no true perfective/imperfective partner). */
+  aspectExamples?: {
+    aspect: "impf" | "pf" | "both";
+    lemma: string;
+    examples: { ru: string; gloss: string }[];
+  }[];
+  /** Near-synonym comparison (e.g. казаться vs выглядеть). Omitted or empty
+   * when no comparison is applicable for this lemma. */
+  synonymComparison?: { lemma: string; note: string }[];
+  /** One short example per populated form in `forms`, keyed as
+   * "<group>.<key>" (e.g. "past.m", "nonpast.3sg", "imperative.sg").
+   * Defective forms (value "—" in `forms`) have no entry here. */
+  formExamples?: Record<string, { ru: string; gloss: string }>;
 }
 
 export interface SentenceCommentaryEntry {
@@ -39,6 +60,18 @@ export interface SentenceCommentaryEntry {
   skeleton: { surface: string; note: string }[];
   keyPoint: string;
   replies: { ru: string; gloss: string }[];
+
+  // MARK: v2 (LINGO-059) — additive, optional. Absent on sentences not yet
+  // enriched. A v1-only consumer ignores these safely.
+
+  /** The sentence's headline grammar point — case government / construction. */
+  grammarFocus?: { construction: string; note: string };
+  /** Gender/number variants of this same sentence (at least one). */
+  variations?: { ru: string; note: string }[];
+  /** 2-3 natural paraphrase options plus which one is simplest in conversation. */
+  paraphrases?: { options: { ru: string; note: string }[]; simplest: string };
+  /** The one high-frequency pattern worth memorizing from this sentence. */
+  takeaway?: { pattern: string; note: string };
 }
 
 export type WordDict = Record<string, WordDictEntry>;

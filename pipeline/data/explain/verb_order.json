@@ -1,0 +1,4357 @@
+[
+  {
+    "lemma": "быть",
+    "pos": "verb",
+    "rank": 9
+  },
+  {
+    "lemma": "мочь",
+    "pos": "verb",
+    "rank": 17
+  },
+  {
+    "lemma": "знать",
+    "pos": "verb",
+    "rank": 24
+  },
+  {
+    "lemma": "хотеть",
+    "pos": "verb",
+    "rank": 30
+  },
+  {
+    "lemma": "сказать",
+    "pos": "verb",
+    "rank": 33
+  },
+  {
+    "lemma": "думать",
+    "pos": "verb",
+    "rank": 37
+  },
+  {
+    "lemma": "есть",
+    "pos": "verb",
+    "rank": 41
+  },
+  {
+    "lemma": "говорить",
+    "pos": "verb",
+    "rank": 48
+  },
+  {
+    "lemma": "сделать",
+    "pos": "verb",
+    "rank": 65
+  },
+  {
+    "lemma": "делать",
+    "pos": "verb",
+    "rank": 69
+  },
+  {
+    "lemma": "видеть",
+    "pos": "verb",
+    "rank": 75
+  },
+  {
+    "lemma": "давать",
+    "pos": "verb",
+    "rank": 89
+  },
+  {
+    "lemma": "идти",
+    "pos": "verb",
+    "rank": 94
+  },
+  {
+    "lemma": "найти",
+    "pos": "verb",
+    "rank": 109
+  },
+  {
+    "lemma": "пойти",
+    "pos": "verb",
+    "rank": 111
+  },
+  {
+    "lemma": "дать",
+    "pos": "verb",
+    "rank": 117
+  },
+  {
+    "lemma": "понимать",
+    "pos": "verb",
+    "rank": 128
+  },
+  {
+    "lemma": "помочь",
+    "pos": "verb",
+    "rank": 130
+  },
+  {
+    "lemma": "смочь",
+    "pos": "verb",
+    "rank": 135
+  },
+  {
+    "lemma": "любить",
+    "pos": "verb",
+    "rank": 137
+  },
+  {
+    "lemma": "стать",
+    "pos": "verb",
+    "rank": 142
+  },
+  {
+    "lemma": "взять",
+    "pos": "verb",
+    "rank": 146
+  },
+  {
+    "lemma": "простить",
+    "pos": "verb",
+    "rank": 147
+  },
+  {
+    "lemma": "убить",
+    "pos": "verb",
+    "rank": 152
+  },
+  {
+    "lemma": "иметь",
+    "pos": "verb",
+    "rank": 153
+  },
+  {
+    "lemma": "вернуться",
+    "pos": "verb",
+    "rank": 157
+  },
+  {
+    "lemma": "работать",
+    "pos": "verb",
+    "rank": 158
+  },
+  {
+    "lemma": "стоить",
+    "pos": "verb",
+    "rank": 163
+  },
+  {
+    "lemma": "понять",
+    "pos": "verb",
+    "rank": 165
+  },
+  {
+    "lemma": "смотреть",
+    "pos": "verb",
+    "rank": 168
+  },
+  {
+    "lemma": "прийти",
+    "pos": "verb",
+    "rank": 169
+  },
+  {
+    "lemma": "посмотреть",
+    "pos": "verb",
+    "rank": 179
+  },
+  {
+    "lemma": "слышать",
+    "pos": "verb",
+    "rank": 180
+  },
+  {
+    "lemma": "собираться",
+    "pos": "verb",
+    "rank": 184
+  },
+  {
+    "lemma": "нравиться",
+    "pos": "verb",
+    "rank": 185
+  },
+  {
+    "lemma": "случиться",
+    "pos": "verb",
+    "rank": 188
+  },
+  {
+    "lemma": "жить",
+    "pos": "verb",
+    "rank": 193
+  },
+  {
+    "lemma": "пытаться",
+    "pos": "verb",
+    "rank": 194
+  },
+  {
+    "lemma": "получить",
+    "pos": "verb",
+    "rank": 195
+  },
+  {
+    "lemma": "поговорить",
+    "pos": "verb",
+    "rank": 197
+  },
+  {
+    "lemma": "просить",
+    "pos": "verb",
+    "rank": 201
+  },
+  {
+    "lemma": "остаться",
+    "pos": "verb",
+    "rank": 203
+  },
+  {
+    "lemma": "слушать",
+    "pos": "verb",
+    "rank": 205
+  },
+  {
+    "lemma": "узнать",
+    "pos": "verb",
+    "rank": 211
+  },
+  {
+    "lemma": "казаться",
+    "pos": "verb",
+    "rank": 212
+  },
+  {
+    "lemma": "увидеть",
+    "pos": "verb",
+    "rank": 213
+  },
+  {
+    "lemma": "заниматься",
+    "pos": "verb",
+    "rank": 217
+  },
+  {
+    "lemma": "уйти",
+    "pos": "verb",
+    "rank": 219
+  },
+  {
+    "lemma": "рассказать",
+    "pos": "verb",
+    "rank": 223
+  },
+  {
+    "lemma": "ждать",
+    "pos": "verb",
+    "rank": 226
+  },
+  {
+    "lemma": "оставить",
+    "pos": "verb",
+    "rank": 229
+  },
+  {
+    "lemma": "извинить",
+    "pos": "verb",
+    "rank": 230
+  },
+  {
+    "lemma": "умереть",
+    "pos": "verb",
+    "rank": 234
+  },
+  {
+    "lemma": "помнить",
+    "pos": "verb",
+    "rank": 238
+  },
+  {
+    "lemma": "подождать",
+    "pos": "verb",
+    "rank": 244
+  },
+  {
+    "lemma": "подумать",
+    "pos": "verb",
+    "rank": 251
+  },
+  {
+    "lemma": "чувствовать",
+    "pos": "verb",
+    "rank": 252
+  },
+  {
+    "lemma": "спать",
+    "pos": "verb",
+    "rank": 253
+  },
+  {
+    "lemma": "начать",
+    "pos": "verb",
+    "rank": 258
+  },
+  {
+    "lemma": "забыть",
+    "pos": "verb",
+    "rank": 264
+  },
+  {
+    "lemma": "позволить",
+    "pos": "verb",
+    "rank": 265
+  },
+  {
+    "lemma": "выйти",
+    "pos": "verb",
+    "rank": 266
+  },
+  {
+    "lemma": "надеяться",
+    "pos": "verb",
+    "rank": 274
+  },
+  {
+    "lemma": "прийтись",
+    "pos": "verb",
+    "rank": 276
+  },
+  {
+    "lemma": "выглядеть",
+    "pos": "verb",
+    "rank": 278
+  },
+  {
+    "lemma": "послушать",
+    "pos": "verb",
+    "rank": 280
+  },
+  {
+    "lemma": "искать",
+    "pos": "verb",
+    "rank": 282
+  },
+  {
+    "lemma": "решить",
+    "pos": "verb",
+    "rank": 285
+  },
+  {
+    "lemma": "послать",
+    "pos": "verb",
+    "rank": 287
+  },
+  {
+    "lemma": "бояться",
+    "pos": "verb",
+    "rank": 292
+  },
+  {
+    "lemma": "происходить",
+    "pos": "verb",
+    "rank": 293
+  },
+  {
+    "lemma": "позвонить",
+    "pos": "verb",
+    "rank": 294
+  },
+  {
+    "lemma": "считать",
+    "pos": "verb",
+    "rank": 296
+  },
+  {
+    "lemma": "звать",
+    "pos": "verb",
+    "rank": 298
+  },
+  {
+    "lemma": "верить",
+    "pos": "verb",
+    "rank": 303
+  },
+  {
+    "lemma": "пройти",
+    "pos": "verb",
+    "rank": 304
+  },
+  {
+    "lemma": "играть",
+    "pos": "verb",
+    "rank": 308
+  },
+  {
+    "lemma": "уходить",
+    "pos": "verb",
+    "rank": 310
+  },
+  {
+    "lemma": "держать",
+    "pos": "verb",
+    "rank": 319
+  },
+  {
+    "lemma": "показать",
+    "pos": "verb",
+    "rank": 321
+  },
+  {
+    "lemma": "хватить",
+    "pos": "verb",
+    "rank": 322
+  },
+  {
+    "lemma": "использовать",
+    "pos": "verb",
+    "rank": 326
+  },
+  {
+    "lemma": "поехать",
+    "pos": "verb",
+    "rank": 328
+  },
+  {
+    "lemma": "произойти",
+    "pos": "verb",
+    "rank": 336
+  },
+  {
+    "lemma": "спросить",
+    "pos": "verb",
+    "rank": 349
+  },
+  {
+    "lemma": "звонить",
+    "pos": "verb",
+    "rank": 358
+  },
+  {
+    "lemma": "забрать",
+    "pos": "verb",
+    "rank": 363
+  },
+  {
+    "lemma": "принять",
+    "pos": "verb",
+    "rank": 364
+  },
+  {
+    "lemma": "вести",
+    "pos": "verb",
+    "rank": 366
+  },
+  {
+    "lemma": "потерять",
+    "pos": "verb",
+    "rank": 370
+  },
+  {
+    "lemma": "принести",
+    "pos": "verb",
+    "rank": 371
+  },
+  {
+    "lemma": "купить",
+    "pos": "verb",
+    "rank": 372
+  },
+  {
+    "lemma": "бросить",
+    "pos": "verb",
+    "rank": 377
+  },
+  {
+    "lemma": "уверить",
+    "pos": "verb",
+    "rank": 382
+  },
+  {
+    "lemma": "приехать",
+    "pos": "verb",
+    "rank": 384
+  },
+  {
+    "lemma": "закончить",
+    "pos": "verb",
+    "rank": 388
+  },
+  {
+    "lemma": "оставаться",
+    "pos": "verb",
+    "rank": 406
+  },
+  {
+    "lemma": "сидеть",
+    "pos": "verb",
+    "rank": 407
+  },
+  {
+    "lemma": "спасти",
+    "pos": "verb",
+    "rank": 414
+  },
+  {
+    "lemma": "ходить",
+    "pos": "verb",
+    "rank": 416
+  },
+  {
+    "lemma": "написать",
+    "pos": "verb",
+    "rank": 417
+  },
+  {
+    "lemma": "открыть",
+    "pos": "verb",
+    "rank": 421
+  },
+  {
+    "lemma": "вернуть",
+    "pos": "verb",
+    "rank": 423
+  },
+  {
+    "lemma": "поверить",
+    "pos": "verb",
+    "rank": 426
+  },
+  {
+    "lemma": "проверить",
+    "pos": "verb",
+    "rank": 427
+  },
+  {
+    "lemma": "попробовать",
+    "pos": "verb",
+    "rank": 435
+  },
+  {
+    "lemma": "попасть",
+    "pos": "verb",
+    "rank": 437
+  },
+  {
+    "lemma": "провести",
+    "pos": "verb",
+    "rank": 438
+  },
+  {
+    "lemma": "продолжать",
+    "pos": "verb",
+    "rank": 440
+  },
+  {
+    "lemma": "начинать",
+    "pos": "verb",
+    "rank": 441
+  },
+  {
+    "lemma": "приходить",
+    "pos": "verb",
+    "rank": 442
+  },
+  {
+    "lemma": "отдать",
+    "pos": "verb",
+    "rank": 445
+  },
+  {
+    "lemma": "попросить",
+    "pos": "verb",
+    "rank": 449
+  },
+  {
+    "lemma": "ехать",
+    "pos": "verb",
+    "rank": 450
+  },
+  {
+    "lemma": "волноваться",
+    "pos": "verb",
+    "rank": 451
+  },
+  {
+    "lemma": "обещать",
+    "pos": "verb",
+    "rank": 455
+  },
+  {
+    "lemma": "брать",
+    "pos": "verb",
+    "rank": 459
+  },
+  {
+    "lemma": "следовать",
+    "pos": "verb",
+    "rank": 464
+  },
+  {
+    "lemma": "прислать",
+    "pos": "verb",
+    "rank": 467
+  },
+  {
+    "lemma": "встретиться",
+    "pos": "verb",
+    "rank": 470
+  },
+  {
+    "lemma": "платить",
+    "pos": "verb",
+    "rank": 471
+  },
+  {
+    "lemma": "встречаться",
+    "pos": "verb",
+    "rank": 475
+  },
+  {
+    "lemma": "перестать",
+    "pos": "verb",
+    "rank": 476
+  },
+  {
+    "lemma": "заставить",
+    "pos": "verb",
+    "rank": 477
+  },
+  {
+    "lemma": "прекратить",
+    "pos": "verb",
+    "rank": 478
+  },
+  {
+    "lemma": "называть",
+    "pos": "verb",
+    "rank": 479
+  },
+  {
+    "lemma": "ненавидеть",
+    "pos": "verb",
+    "rank": 481
+  },
+  {
+    "lemma": "оказаться",
+    "pos": "verb",
+    "rank": 486
+  },
+  {
+    "lemma": "выходить",
+    "pos": "verb",
+    "rank": 492
+  },
+  {
+    "lemma": "захотеть",
+    "pos": "verb",
+    "rank": 499
+  },
+  {
+    "lemma": "учиться",
+    "pos": "verb",
+    "rank": 502
+  },
+  {
+    "lemma": "находиться",
+    "pos": "verb",
+    "rank": 512
+  },
+  {
+    "lemma": "привести",
+    "pos": "verb",
+    "rank": 514
+  },
+  {
+    "lemma": "понравиться",
+    "pos": "verb",
+    "rank": 520
+  },
+  {
+    "lemma": "разговаривать",
+    "pos": "verb",
+    "rank": 521
+  },
+  {
+    "lemma": "выпить",
+    "pos": "verb",
+    "rank": 522
+  },
+  {
+    "lemma": "убивать",
+    "pos": "verb",
+    "rank": 524
+  },
+  {
+    "lemma": "возвращаться",
+    "pos": "verb",
+    "rank": 526
+  },
+  {
+    "lemma": "спрашивать",
+    "pos": "verb",
+    "rank": 528
+  },
+  {
+    "lemma": "уехать",
+    "pos": "verb",
+    "rank": 530
+  },
+  {
+    "lemma": "увидеться",
+    "pos": "verb",
+    "rank": 532
+  },
+  {
+    "lemma": "полагать",
+    "pos": "verb",
+    "rank": 533
+  },
+  {
+    "lemma": "получиться",
+    "pos": "verb",
+    "rank": 534
+  },
+  {
+    "lemma": "остановить",
+    "pos": "verb",
+    "rank": 535
+  },
+  {
+    "lemma": "услышать",
+    "pos": "verb",
+    "rank": 538
+  },
+  {
+    "lemma": "помогать",
+    "pos": "verb",
+    "rank": 543
+  },
+  {
+    "lemma": "пить",
+    "pos": "verb",
+    "rank": 546
+  },
+  {
+    "lemma": "бежать",
+    "pos": "verb",
+    "rank": 548
+  },
+  {
+    "lemma": "представлять",
+    "pos": "verb",
+    "rank": 554
+  },
+  {
+    "lemma": "ответить",
+    "pos": "verb",
+    "rank": 556
+  },
+  {
+    "lemma": "читать",
+    "pos": "verb",
+    "rank": 559
+  },
+  {
+    "lemma": "отправить",
+    "pos": "verb",
+    "rank": 564
+  },
+  {
+    "lemma": "справиться",
+    "pos": "verb",
+    "rank": 567
+  },
+  {
+    "lemma": "писать",
+    "pos": "verb",
+    "rank": 568
+  },
+  {
+    "lemma": "появиться",
+    "pos": "verb",
+    "rank": 574
+  },
+  {
+    "lemma": "остановиться",
+    "pos": "verb",
+    "rank": 577
+  },
+  {
+    "lemma": "принимать",
+    "pos": "verb",
+    "rank": 580
+  },
+  {
+    "lemma": "беспокоиться",
+    "pos": "verb",
+    "rank": 584
+  },
+  {
+    "lemma": "отпустить",
+    "pos": "verb",
+    "rank": 585
+  },
+  {
+    "lemma": "вставать",
+    "pos": "verb",
+    "rank": 588
+  },
+  {
+    "lemma": "хотеться",
+    "pos": "verb",
+    "rank": 594
+  },
+  {
+    "lemma": "бывать",
+    "pos": "verb",
+    "rank": 596
+  },
+  {
+    "lemma": "назвать",
+    "pos": "verb",
+    "rank": 597
+  },
+  {
+    "lemma": "выбрать",
+    "pos": "verb",
+    "rank": 600
+  },
+  {
+    "lemma": "готовить",
+    "pos": "verb",
+    "rank": 601
+  },
+  {
+    "lemma": "заметить",
+    "pos": "verb",
+    "rank": 602
+  },
+  {
+    "lemma": "представить",
+    "pos": "verb",
+    "rank": 610
+  },
+  {
+    "lemma": "объяснить",
+    "pos": "verb",
+    "rank": 611
+  },
+  {
+    "lemma": "познакомиться",
+    "pos": "verb",
+    "rank": 613
+  },
+  {
+    "lemma": "передать",
+    "pos": "verb",
+    "rank": 614
+  },
+  {
+    "lemma": "рассказывать",
+    "pos": "verb",
+    "rank": 620
+  },
+  {
+    "lemma": "заплатить",
+    "pos": "verb",
+    "rank": 626
+  },
+  {
+    "lemma": "держаться",
+    "pos": "verb",
+    "rank": 627
+  },
+  {
+    "lemma": "снять",
+    "pos": "verb",
+    "rank": 628
+  },
+  {
+    "lemma": "успокоиться",
+    "pos": "verb",
+    "rank": 632
+  },
+  {
+    "lemma": "поймать",
+    "pos": "verb",
+    "rank": 640
+  },
+  {
+    "lemma": "заняться",
+    "pos": "verb",
+    "rank": 645
+  },
+  {
+    "lemma": "звучать",
+    "pos": "verb",
+    "rank": 653
+  },
+  {
+    "lemma": "поставить",
+    "pos": "verb",
+    "rank": 662
+  },
+  {
+    "lemma": "зайти",
+    "pos": "verb",
+    "rank": 663
+  },
+  {
+    "lemma": "изменить",
+    "pos": "verb",
+    "rank": 664
+  },
+  {
+    "lemma": "доверять",
+    "pos": "verb",
+    "rank": 667
+  },
+  {
+    "lemma": "отвечать",
+    "pos": "verb",
+    "rank": 668
+  },
+  {
+    "lemma": "двигаться",
+    "pos": "verb",
+    "rank": 670
+  },
+  {
+    "lemma": "стрелять",
+    "pos": "verb",
+    "rank": 674
+  },
+  {
+    "lemma": "становиться",
+    "pos": "verb",
+    "rank": 676
+  },
+  {
+    "lemma": "стоять",
+    "pos": "verb",
+    "rank": 679
+  },
+  {
+    "lemma": "достать",
+    "pos": "verb",
+    "rank": 686
+  },
+  {
+    "lemma": "заткнуться",
+    "pos": "verb",
+    "rank": 691
+  },
+  {
+    "lemma": "разобраться",
+    "pos": "verb",
+    "rank": 693
+  },
+  {
+    "lemma": "проводить",
+    "pos": "verb",
+    "rank": 695
+  },
+  {
+    "lemma": "шутить",
+    "pos": "verb",
+    "rank": 697
+  },
+  {
+    "lemma": "погодить",
+    "pos": "verb",
+    "rank": 700
+  },
+  {
+    "lemma": "продавать",
+    "pos": "verb",
+    "rank": 705
+  },
+  {
+    "lemma": "войти",
+    "pos": "verb",
+    "rank": 707
+  },
+  {
+    "lemma": "положить",
+    "pos": "verb",
+    "rank": 710
+  },
+  {
+    "lemma": "проходить",
+    "pos": "verb",
+    "rank": 712
+  },
+  {
+    "lemma": "уметь",
+    "pos": "verb",
+    "rank": 716
+  },
+  {
+    "lemma": "украсть",
+    "pos": "verb",
+    "rank": 721
+  },
+  {
+    "lemma": "подойти",
+    "pos": "verb",
+    "rank": 723
+  },
+  {
+    "lemma": "следить",
+    "pos": "verb",
+    "rank": 724
+  },
+  {
+    "lemma": "закончиться",
+    "pos": "verb",
+    "rank": 725
+  },
+  {
+    "lemma": "получать",
+    "pos": "verb",
+    "rank": 727
+  },
+  {
+    "lemma": "устроить",
+    "pos": "verb",
+    "rank": 728
+  },
+  {
+    "lemma": "покупать",
+    "pos": "verb",
+    "rank": 734
+  },
+  {
+    "lemma": "понадобиться",
+    "pos": "verb",
+    "rank": 737
+  },
+  {
+    "lemma": "сходить",
+    "pos": "verb",
+    "rank": 739
+  },
+  {
+    "lemma": "умирать",
+    "pos": "verb",
+    "rank": 742
+  },
+  {
+    "lemma": "взглянуть",
+    "pos": "verb",
+    "rank": 746
+  },
+  {
+    "lemma": "пропасть",
+    "pos": "verb",
+    "rank": 748
+  },
+  {
+    "lemma": "выяснить",
+    "pos": "verb",
+    "rank": 750
+  },
+  {
+    "lemma": "поступить",
+    "pos": "verb",
+    "rank": 752
+  },
+  {
+    "lemma": "вызвать",
+    "pos": "verb",
+    "rank": 754
+  },
+  {
+    "lemma": "пригласить",
+    "pos": "verb",
+    "rank": 757
+  },
+  {
+    "lemma": "выиграть",
+    "pos": "verb",
+    "rank": 762
+  },
+  {
+    "lemma": "измениться",
+    "pos": "verb",
+    "rank": 766
+  },
+  {
+    "lemma": "сбежать",
+    "pos": "verb",
+    "rank": 770
+  },
+  {
+    "lemma": "убрать",
+    "pos": "verb",
+    "rank": 773
+  },
+  {
+    "lemma": "носить",
+    "pos": "verb",
+    "rank": 775
+  },
+  {
+    "lemma": "связать",
+    "pos": "verb",
+    "rank": 777
+  },
+  {
+    "lemma": "начаться",
+    "pos": "verb",
+    "rank": 778
+  },
+  {
+    "lemma": "уничтожить",
+    "pos": "verb",
+    "rank": 779
+  },
+  {
+    "lemma": "сообщить",
+    "pos": "verb",
+    "rank": 780
+  },
+  {
+    "lemma": "садиться",
+    "pos": "verb",
+    "rank": 781
+  },
+  {
+    "lemma": "сесть",
+    "pos": "verb",
+    "rank": 783
+  },
+  {
+    "lemma": "придумать",
+    "pos": "verb",
+    "rank": 786
+  },
+  {
+    "lemma": "предложить",
+    "pos": "verb",
+    "rank": 788
+  },
+  {
+    "lemma": "заходить",
+    "pos": "verb",
+    "rank": 792
+  },
+  {
+    "lemma": "согласиться",
+    "pos": "verb",
+    "rank": 793
+  },
+  {
+    "lemma": "встретить",
+    "pos": "verb",
+    "rank": 798
+  },
+  {
+    "lemma": "скучать",
+    "pos": "verb",
+    "rank": 806
+  },
+  {
+    "lemma": "врать",
+    "pos": "verb",
+    "rank": 809
+  },
+  {
+    "lemma": "попытаться",
+    "pos": "verb",
+    "rank": 810
+  },
+  {
+    "lemma": "болеть",
+    "pos": "verb",
+    "rank": 813
+  },
+  {
+    "lemma": "повезти",
+    "pos": "verb",
+    "rank": 815
+  },
+  {
+    "lemma": "подходить",
+    "pos": "verb",
+    "rank": 817
+  },
+  {
+    "lemma": "исчезнуть",
+    "pos": "verb",
+    "rank": 821
+  },
+  {
+    "lemma": "создать",
+    "pos": "verb",
+    "rank": 823
+  },
+  {
+    "lemma": "существовать",
+    "pos": "verb",
+    "rank": 826
+  },
+  {
+    "lemma": "подозревать",
+    "pos": "verb",
+    "rank": 834
+  },
+  {
+    "lemma": "ожидать",
+    "pos": "verb",
+    "rank": 837
+  },
+  {
+    "lemma": "желать",
+    "pos": "verb",
+    "rank": 838
+  },
+  {
+    "lemma": "являться",
+    "pos": "verb",
+    "rank": 845
+  },
+  {
+    "lemma": "означать",
+    "pos": "verb",
+    "rank": 848
+  },
+  {
+    "lemma": "продать",
+    "pos": "verb",
+    "rank": 849
+  },
+  {
+    "lemma": "встать",
+    "pos": "verb",
+    "rank": 854
+  },
+  {
+    "lemma": "арестовать",
+    "pos": "verb",
+    "rank": 856
+  },
+  {
+    "lemma": "стараться",
+    "pos": "verb",
+    "rank": 858
+  },
+  {
+    "lemma": "хватать",
+    "pos": "verb",
+    "rank": 860
+  },
+  {
+    "lemma": "вспомнить",
+    "pos": "verb",
+    "rank": 862
+  },
+  {
+    "lemma": "закрыть",
+    "pos": "verb",
+    "rank": 863
+  },
+  {
+    "lemma": "погибнуть",
+    "pos": "verb",
+    "rank": 867
+  },
+  {
+    "lemma": "устать",
+    "pos": "verb",
+    "rank": 872
+  },
+  {
+    "lemma": "позаботиться",
+    "pos": "verb",
+    "rank": 877
+  },
+  {
+    "lemma": "отказаться",
+    "pos": "verb",
+    "rank": 879
+  },
+  {
+    "lemma": "пропустить",
+    "pos": "verb",
+    "rank": 881
+  },
+  {
+    "lemma": "смеяться",
+    "pos": "verb",
+    "rank": 884
+  },
+  {
+    "lemma": "сойти",
+    "pos": "verb",
+    "rank": 887
+  },
+  {
+    "lemma": "добраться",
+    "pos": "verb",
+    "rank": 892
+  },
+  {
+    "lemma": "обнаружить",
+    "pos": "verb",
+    "rank": 893
+  },
+  {
+    "lemma": "удаться",
+    "pos": "verb",
+    "rank": 895
+  },
+  {
+    "lemma": "благодарить",
+    "pos": "verb",
+    "rank": 897
+  },
+  {
+    "lemma": "пожаловать",
+    "pos": "verb",
+    "rank": 902
+  },
+  {
+    "lemma": "поднять",
+    "pos": "verb",
+    "rank": 903
+  },
+  {
+    "lemma": "повторять",
+    "pos": "verb",
+    "rank": 904
+  },
+  {
+    "lemma": "клясться",
+    "pos": "verb",
+    "rank": 906
+  },
+  {
+    "lemma": "заставлять",
+    "pos": "verb",
+    "rank": 917
+  },
+  {
+    "lemma": "доказать",
+    "pos": "verb",
+    "rank": 918
+  },
+  {
+    "lemma": "защитить",
+    "pos": "verb",
+    "rank": 920
+  },
+  {
+    "lemma": "плакать",
+    "pos": "verb",
+    "rank": 930
+  },
+  {
+    "lemma": "занять",
+    "pos": "verb",
+    "rank": 933
+  },
+  {
+    "lemma": "снимать",
+    "pos": "verb",
+    "rank": 935
+  },
+  {
+    "lemma": "отправиться",
+    "pos": "verb",
+    "rank": 940
+  },
+  {
+    "lemma": "лежать",
+    "pos": "verb",
+    "rank": 941
+  },
+  {
+    "lemma": "сработать",
+    "pos": "verb",
+    "rank": 942
+  },
+  {
+    "lemma": "защищать",
+    "pos": "verb",
+    "rank": 943
+  },
+  {
+    "lemma": "вытащить",
+    "pos": "verb",
+    "rank": 948
+  },
+  {
+    "lemma": "победить",
+    "pos": "verb",
+    "rank": 950
+  },
+  {
+    "lemma": "уезжать",
+    "pos": "verb",
+    "rank": 951
+  },
+  {
+    "lemma": "упасть",
+    "pos": "verb",
+    "rank": 955
+  },
+  {
+    "lemma": "предлагать",
+    "pos": "verb",
+    "rank": 964
+  },
+  {
+    "lemma": "действовать",
+    "pos": "verb",
+    "rank": 965
+  },
+  {
+    "lemma": "собраться",
+    "pos": "verb",
+    "rank": 968
+  },
+  {
+    "lemma": "приезжать",
+    "pos": "verb",
+    "rank": 969
+  },
+  {
+    "lemma": "переживать",
+    "pos": "verb",
+    "rank": 973
+  },
+  {
+    "lemma": "жениться",
+    "pos": "verb",
+    "rank": 974
+  },
+  {
+    "lemma": "отвезти",
+    "pos": "verb",
+    "rank": 975
+  },
+  {
+    "lemma": "съесть",
+    "pos": "verb",
+    "rank": 989
+  },
+  {
+    "lemma": "называться",
+    "pos": "verb",
+    "rank": 991
+  },
+  {
+    "lemma": "петь",
+    "pos": "verb",
+    "rank": 993
+  },
+  {
+    "lemma": "сомневаться",
+    "pos": "verb",
+    "rank": 996
+  },
+  {
+    "lemma": "заботиться",
+    "pos": "verb",
+    "rank": 1003
+  },
+  {
+    "lemma": "лгать",
+    "pos": "verb",
+    "rank": 1006
+  },
+  {
+    "lemma": "узнавать",
+    "pos": "verb",
+    "rank": 1010
+  },
+  {
+    "lemma": "убираться",
+    "pos": "verb",
+    "rank": 1012
+  },
+  {
+    "lemma": "спасть",
+    "pos": "verb",
+    "rank": 1014
+  },
+  {
+    "lemma": "постараться",
+    "pos": "verb",
+    "rank": 1015
+  },
+  {
+    "lemma": "трогать",
+    "pos": "verb",
+    "rank": 1017
+  },
+  {
+    "lemma": "договориться",
+    "pos": "verb",
+    "rank": 1021
+  },
+  {
+    "lemma": "терять",
+    "pos": "verb",
+    "rank": 1028
+  },
+  {
+    "lemma": "входить",
+    "pos": "verb",
+    "rank": 1029
+  },
+  {
+    "lemma": "принадлежать",
+    "pos": "verb",
+    "rank": 1033
+  },
+  {
+    "lemma": "кричать",
+    "pos": "verb",
+    "rank": 1034
+  },
+  {
+    "lemma": "связаться",
+    "pos": "verb",
+    "rank": 1035
+  },
+  {
+    "lemma": "показывать",
+    "pos": "verb",
+    "rank": 1036
+  },
+  {
+    "lemma": "оставлять",
+    "pos": "verb",
+    "rank": 1039
+  },
+  {
+    "lemma": "ударить",
+    "pos": "verb",
+    "rank": 1044
+  },
+  {
+    "lemma": "собрать",
+    "pos": "verb",
+    "rank": 1051
+  },
+  {
+    "lemma": "бить",
+    "pos": "verb",
+    "rank": 1054
+  },
+  {
+    "lemma": "выжить",
+    "pos": "verb",
+    "rank": 1055
+  },
+  {
+    "lemma": "отойти",
+    "pos": "verb",
+    "rank": 1061
+  },
+  {
+    "lemma": "уволить",
+    "pos": "verb",
+    "rank": 1066
+  },
+  {
+    "lemma": "нести",
+    "pos": "verb",
+    "rank": 1068
+  },
+  {
+    "lemma": "успеть",
+    "pos": "verb",
+    "rank": 1070
+  },
+  {
+    "lemma": "постоять",
+    "pos": "verb",
+    "rank": 1072
+  },
+  {
+    "lemma": "надеть",
+    "pos": "verb",
+    "rank": 1073
+  },
+  {
+    "lemma": "избавиться",
+    "pos": "verb",
+    "rank": 1076
+  },
+  {
+    "lemma": "родиться",
+    "pos": "verb",
+    "rank": 1080
+  },
+  {
+    "lemma": "танцевать",
+    "pos": "verb",
+    "rank": 1083
+  },
+  {
+    "lemma": "сожалеть",
+    "pos": "verb",
+    "rank": 1087
+  },
+  {
+    "lemma": "касаться",
+    "pos": "verb",
+    "rank": 1090
+  },
+  {
+    "lemma": "объяснять",
+    "pos": "verb",
+    "rank": 1092
+  },
+  {
+    "lemma": "почувствовать",
+    "pos": "verb",
+    "rank": 1093
+  },
+  {
+    "lemma": "приготовить",
+    "pos": "verb",
+    "rank": 1096
+  },
+  {
+    "lemma": "проснуться",
+    "pos": "verb",
+    "rank": 1097
+  },
+  {
+    "lemma": "бросать",
+    "pos": "verb",
+    "rank": 1101
+  },
+  {
+    "lemma": "убедиться",
+    "pos": "verb",
+    "rank": 1102
+  },
+  {
+    "lemma": "покинуть",
+    "pos": "verb",
+    "rank": 1104
+  },
+  {
+    "lemma": "опаздывать",
+    "pos": "verb",
+    "rank": 1105
+  },
+  {
+    "lemma": "сломать",
+    "pos": "verb",
+    "rank": 1107
+  },
+  {
+    "lemma": "судить",
+    "pos": "verb",
+    "rank": 1112
+  },
+  {
+    "lemma": "получаться",
+    "pos": "verb",
+    "rank": 1117
+  },
+  {
+    "lemma": "дышать",
+    "pos": "verb",
+    "rank": 1118
+  },
+  {
+    "lemma": "бороться",
+    "pos": "verb",
+    "rank": 1120
+  },
+  {
+    "lemma": "отправляться",
+    "pos": "verb",
+    "rank": 1121
+  },
+  {
+    "lemma": "вызывать",
+    "pos": "verb",
+    "rank": 1129
+  },
+  {
+    "lemma": "решать",
+    "pos": "verb",
+    "rank": 1130
+  },
+  {
+    "lemma": "расслабиться",
+    "pos": "verb",
+    "rank": 1132
+  },
+  {
+    "lemma": "ошибаться",
+    "pos": "verb",
+    "rank": 1134
+  },
+  {
+    "lemma": "признать",
+    "pos": "verb",
+    "rank": 1135
+  },
+  {
+    "lemma": "научиться",
+    "pos": "verb",
+    "rank": 1136
+  },
+  {
+    "lemma": "совершить",
+    "pos": "verb",
+    "rank": 1137
+  },
+  {
+    "lemma": "гордиться",
+    "pos": "verb",
+    "rank": 1138
+  },
+  {
+    "lemma": "управлять",
+    "pos": "verb",
+    "rank": 1141
+  },
+  {
+    "lemma": "выбирать",
+    "pos": "verb",
+    "rank": 1146
+  },
+  {
+    "lemma": "поздравлять",
+    "pos": "verb",
+    "rank": 1147
+  },
+  {
+    "lemma": "обсудить",
+    "pos": "verb",
+    "rank": 1152
+  },
+  {
+    "lemma": "продолжить",
+    "pos": "verb",
+    "rank": 1153
+  },
+  {
+    "lemma": "показаться",
+    "pos": "verb",
+    "rank": 1155
+  },
+  {
+    "lemma": "открывать",
+    "pos": "verb",
+    "rank": 1162
+  },
+  {
+    "lemma": "подписать",
+    "pos": "verb",
+    "rank": 1163
+  },
+  {
+    "lemma": "позвать",
+    "pos": "verb",
+    "rank": 1171
+  },
+  {
+    "lemma": "позволять",
+    "pos": "verb",
+    "rank": 1172
+  },
+  {
+    "lemma": "опоздать",
+    "pos": "verb",
+    "rank": 1178
+  },
+  {
+    "lemma": "наблюдать",
+    "pos": "verb",
+    "rank": 1182
+  },
+  {
+    "lemma": "злиться",
+    "pos": "verb",
+    "rank": 1188
+  },
+  {
+    "lemma": "привезти",
+    "pos": "verb",
+    "rank": 1191
+  },
+  {
+    "lemma": "ложиться",
+    "pos": "verb",
+    "rank": 1200
+  },
+  {
+    "lemma": "относиться",
+    "pos": "verb",
+    "rank": 1202
+  },
+  {
+    "lemma": "напугать",
+    "pos": "verb",
+    "rank": 1204
+  },
+  {
+    "lemma": "приходиться",
+    "pos": "verb",
+    "rank": 1207
+  },
+  {
+    "lemma": "ставить",
+    "pos": "verb",
+    "rank": 1208
+  },
+  {
+    "lemma": "установить",
+    "pos": "verb",
+    "rank": 1218
+  },
+  {
+    "lemma": "покончить",
+    "pos": "verb",
+    "rank": 1220
+  },
+  {
+    "lemma": "обожать",
+    "pos": "verb",
+    "rank": 1221
+  },
+  {
+    "lemma": "заслуживать",
+    "pos": "verb",
+    "rank": 1224
+  },
+  {
+    "lemma": "испортить",
+    "pos": "verb",
+    "rank": 1227
+  },
+  {
+    "lemma": "заключить",
+    "pos": "verb",
+    "rank": 1230
+  },
+  {
+    "lemma": "планировать",
+    "pos": "verb",
+    "rank": 1232
+  },
+  {
+    "lemma": "учить",
+    "pos": "verb",
+    "rank": 1235
+  },
+  {
+    "lemma": "плевать",
+    "pos": "verb",
+    "rank": 1237
+  },
+  {
+    "lemma": "мечтать",
+    "pos": "verb",
+    "rank": 1243
+  },
+  {
+    "lemma": "прощать",
+    "pos": "verb",
+    "rank": 1244
+  },
+  {
+    "lemma": "научить",
+    "pos": "verb",
+    "rank": 1247
+  },
+  {
+    "lemma": "сохранить",
+    "pos": "verb",
+    "rank": 1249
+  },
+  {
+    "lemma": "разрешить",
+    "pos": "verb",
+    "rank": 1259
+  },
+  {
+    "lemma": "включить",
+    "pos": "verb",
+    "rank": 1260
+  },
+  {
+    "lemma": "напасть",
+    "pos": "verb",
+    "rank": 1264
+  },
+  {
+    "lemma": "подать",
+    "pos": "verb",
+    "rank": 1268
+  },
+  {
+    "lemma": "выбраться",
+    "pos": "verb",
+    "rank": 1271
+  },
+  {
+    "lemma": "поступать",
+    "pos": "verb",
+    "rank": 1274
+  },
+  {
+    "lemma": "убедить",
+    "pos": "verb",
+    "rank": 1276
+  },
+  {
+    "lemma": "забирать",
+    "pos": "verb",
+    "rank": 1282
+  },
+  {
+    "lemma": "признаться",
+    "pos": "verb",
+    "rank": 1283
+  },
+  {
+    "lemma": "беспокоить",
+    "pos": "verb",
+    "rank": 1288
+  },
+  {
+    "lemma": "записать",
+    "pos": "verb",
+    "rank": 1289
+  },
+  {
+    "lemma": "сметь",
+    "pos": "verb",
+    "rank": 1293
+  },
+  {
+    "lemma": "переехать",
+    "pos": "verb",
+    "rank": 1295
+  },
+  {
+    "lemma": "расти",
+    "pos": "verb",
+    "rank": 1297
+  },
+  {
+    "lemma": "вырасти",
+    "pos": "verb",
+    "rank": 1298
+  },
+  {
+    "lemma": "хранить",
+    "pos": "verb",
+    "rank": 1302
+  },
+  {
+    "lemma": "забывать",
+    "pos": "verb",
+    "rank": 1304
+  },
+  {
+    "lemma": "пользоваться",
+    "pos": "verb",
+    "rank": 1306
+  },
+  {
+    "lemma": "поесть",
+    "pos": "verb",
+    "rank": 1309
+  },
+  {
+    "lemma": "задать",
+    "pos": "verb",
+    "rank": 1311
+  },
+  {
+    "lemma": "доставить",
+    "pos": "verb",
+    "rank": 1320
+  },
+  {
+    "lemma": "присоединиться",
+    "pos": "verb",
+    "rank": 1323
+  },
+  {
+    "lemma": "запомнить",
+    "pos": "verb",
+    "rank": 1325
+  },
+  {
+    "lemma": "выпустить",
+    "pos": "verb",
+    "rank": 1334
+  },
+  {
+    "lemma": "нуждаться",
+    "pos": "verb",
+    "rank": 1335
+  },
+  {
+    "lemma": "разрушить",
+    "pos": "verb",
+    "rank": 1336
+  },
+  {
+    "lemma": "ездить",
+    "pos": "verb",
+    "rank": 1337
+  },
+  {
+    "lemma": "находить",
+    "pos": "verb",
+    "rank": 1340
+  },
+  {
+    "lemma": "проиграть",
+    "pos": "verb",
+    "rank": 1341
+  },
+  {
+    "lemma": "заказать",
+    "pos": "verb",
+    "rank": 1344
+  },
+  {
+    "lemma": "требовать",
+    "pos": "verb",
+    "rank": 1346
+  },
+  {
+    "lemma": "волновать",
+    "pos": "verb",
+    "rank": 1350
+  },
+  {
+    "lemma": "поддерживать",
+    "pos": "verb",
+    "rank": 1352
+  },
+  {
+    "lemma": "расстроить",
+    "pos": "verb",
+    "rank": 1354
+  },
+  {
+    "lemma": "лететь",
+    "pos": "verb",
+    "rank": 1355
+  },
+  {
+    "lemma": "проверять",
+    "pos": "verb",
+    "rank": 1358
+  },
+  {
+    "lemma": "освободить",
+    "pos": "verb",
+    "rank": 1360
+  },
+  {
+    "lemma": "нанять",
+    "pos": "verb",
+    "rank": 1361
+  },
+  {
+    "lemma": "помешать",
+    "pos": "verb",
+    "rank": 1362
+  },
+  {
+    "lemma": "исправить",
+    "pos": "verb",
+    "rank": 1364
+  },
+  {
+    "lemma": "обращаться",
+    "pos": "verb",
+    "rank": 1366
+  },
+  {
+    "lemma": "перезвонить",
+    "pos": "verb",
+    "rank": 1368
+  },
+  {
+    "lemma": "скрывать",
+    "pos": "verb",
+    "rank": 1369
+  },
+  {
+    "lemma": "сыграть",
+    "pos": "verb",
+    "rank": 1371
+  },
+  {
+    "lemma": "молчать",
+    "pos": "verb",
+    "rank": 1377
+  },
+  {
+    "lemma": "участвовать",
+    "pos": "verb",
+    "rank": 1394
+  },
+  {
+    "lemma": "обсуждать",
+    "pos": "verb",
+    "rank": 1397
+  },
+  {
+    "lemma": "мешать",
+    "pos": "verb",
+    "rank": 1405
+  },
+  {
+    "lemma": "менять",
+    "pos": "verb",
+    "rank": 1408
+  },
+  {
+    "lemma": "тратить",
+    "pos": "verb",
+    "rank": 1412
+  },
+  {
+    "lemma": "общаться",
+    "pos": "verb",
+    "rank": 1420
+  },
+  {
+    "lemma": "прочитать",
+    "pos": "verb",
+    "rank": 1425
+  },
+  {
+    "lemma": "преследовать",
+    "pos": "verb",
+    "rank": 1427
+  },
+  {
+    "lemma": "ранить",
+    "pos": "verb",
+    "rank": 1430
+  },
+  {
+    "lemma": "побрать",
+    "pos": "verb",
+    "rank": 1437
+  },
+  {
+    "lemma": "начинаться",
+    "pos": "verb",
+    "rank": 1438
+  },
+  {
+    "lemma": "сражаться",
+    "pos": "verb",
+    "rank": 1443
+  },
+  {
+    "lemma": "извиниться",
+    "pos": "verb",
+    "rank": 1444
+  },
+  {
+    "lemma": "страдать",
+    "pos": "verb",
+    "rank": 1445
+  },
+  {
+    "lemma": "собирать",
+    "pos": "verb",
+    "rank": 1446
+  },
+  {
+    "lemma": "видеться",
+    "pos": "verb",
+    "rank": 1447
+  },
+  {
+    "lemma": "подарить",
+    "pos": "verb",
+    "rank": 1448
+  },
+  {
+    "lemma": "пережить",
+    "pos": "verb",
+    "rank": 1451
+  },
+  {
+    "lemma": "подняться",
+    "pos": "verb",
+    "rank": 1452
+  },
+  {
+    "lemma": "контролировать",
+    "pos": "verb",
+    "rank": 1455
+  },
+  {
+    "lemma": "сдать",
+    "pos": "verb",
+    "rank": 1460
+  },
+  {
+    "lemma": "добиться",
+    "pos": "verb",
+    "rank": 1462
+  },
+  {
+    "lemma": "угадать",
+    "pos": "verb",
+    "rank": 1463
+  },
+  {
+    "lemma": "прятаться",
+    "pos": "verb",
+    "rank": 1465
+  },
+  {
+    "lemma": "ценить",
+    "pos": "verb",
+    "rank": 1466
+  },
+  {
+    "lemma": "устраивать",
+    "pos": "verb",
+    "rank": 1469
+  },
+  {
+    "lemma": "пустить",
+    "pos": "verb",
+    "rank": 1470
+  },
+  {
+    "lemma": "возражать",
+    "pos": "verb",
+    "rank": 1471
+  },
+  {
+    "lemma": "служить",
+    "pos": "verb",
+    "rank": 1474
+  },
+  {
+    "lemma": "воспользоваться",
+    "pos": "verb",
+    "rank": 1475
+  },
+  {
+    "lemma": "назначить",
+    "pos": "verb",
+    "rank": 1480
+  },
+  {
+    "lemma": "извиняться",
+    "pos": "verb",
+    "rank": 1482
+  },
+  {
+    "lemma": "перевести",
+    "pos": "verb",
+    "rank": 1486
+  },
+  {
+    "lemma": "предупредить",
+    "pos": "verb",
+    "rank": 1487
+  },
+  {
+    "lemma": "рисковать",
+    "pos": "verb",
+    "rank": 1494
+  },
+  {
+    "lemma": "влюбить",
+    "pos": "verb",
+    "rank": 1506
+  },
+  {
+    "lemma": "случаться",
+    "pos": "verb",
+    "rank": 1509
+  },
+  {
+    "lemma": "зависеть",
+    "pos": "verb",
+    "rank": 1511
+  },
+  {
+    "lemma": "предать",
+    "pos": "verb",
+    "rank": 1514
+  },
+  {
+    "lemma": "посадить",
+    "pos": "verb",
+    "rank": 1515
+  },
+  {
+    "lemma": "отдыхать",
+    "pos": "verb",
+    "rank": 1516
+  },
+  {
+    "lemma": "построить",
+    "pos": "verb",
+    "rank": 1520
+  },
+  {
+    "lemma": "напоминать",
+    "pos": "verb",
+    "rank": 1529
+  },
+  {
+    "lemma": "пахнуть",
+    "pos": "verb",
+    "rank": 1531
+  },
+  {
+    "lemma": "запереть",
+    "pos": "verb",
+    "rank": 1535
+  },
+  {
+    "lemma": "учитывать",
+    "pos": "verb",
+    "rank": 1538
+  },
+  {
+    "lemma": "угрожать",
+    "pos": "verb",
+    "rank": 1542
+  },
+  {
+    "lemma": "отдохнуть",
+    "pos": "verb",
+    "rank": 1547
+  },
+  {
+    "lemma": "умолять",
+    "pos": "verb",
+    "rank": 1548
+  },
+  {
+    "lemma": "курить",
+    "pos": "verb",
+    "rank": 1566
+  },
+  {
+    "lemma": "лить",
+    "pos": "verb",
+    "rank": 1567
+  },
+  {
+    "lemma": "встречать",
+    "pos": "verb",
+    "rank": 1568
+  },
+  {
+    "lemma": "путешествовать",
+    "pos": "verb",
+    "rank": 1569
+  },
+  {
+    "lemma": "заслужить",
+    "pos": "verb",
+    "rank": 1571
+  },
+  {
+    "lemma": "дойти",
+    "pos": "verb",
+    "rank": 1574
+  },
+  {
+    "lemma": "приносить",
+    "pos": "verb",
+    "rank": 1578
+  },
+  {
+    "lemma": "наслаждаться",
+    "pos": "verb",
+    "rank": 1579
+  },
+  {
+    "lemma": "добавить",
+    "pos": "verb",
+    "rank": 1580
+  },
+  {
+    "lemma": "застрелить",
+    "pos": "verb",
+    "rank": 1582
+  },
+  {
+    "lemma": "потратить",
+    "pos": "verb",
+    "rank": 1591
+  },
+  {
+    "lemma": "перейти",
+    "pos": "verb",
+    "rank": 1599
+  },
+  {
+    "lemma": "заработать",
+    "pos": "verb",
+    "rank": 1608
+  },
+  {
+    "lemma": "отвести",
+    "pos": "verb",
+    "rank": 1611
+  },
+  {
+    "lemma": "появляться",
+    "pos": "verb",
+    "rank": 1614
+  },
+  {
+    "lemma": "захватить",
+    "pos": "verb",
+    "rank": 1623
+  },
+  {
+    "lemma": "привыкнуть",
+    "pos": "verb",
+    "rank": 1625
+  },
+  {
+    "lemma": "ошибиться",
+    "pos": "verb",
+    "rank": 1629
+  },
+  {
+    "lemma": "убежать",
+    "pos": "verb",
+    "rank": 1636
+  },
+  {
+    "lemma": "обвинять",
+    "pos": "verb",
+    "rank": 1637
+  },
+  {
+    "lemma": "подтвердить",
+    "pos": "verb",
+    "rank": 1639
+  },
+  {
+    "lemma": "пугать",
+    "pos": "verb",
+    "rank": 1642
+  },
+  {
+    "lemma": "уважать",
+    "pos": "verb",
+    "rank": 1646
+  },
+  {
+    "lemma": "схватить",
+    "pos": "verb",
+    "rank": 1653
+  },
+  {
+    "lemma": "готовиться",
+    "pos": "verb",
+    "rank": 1654
+  },
+  {
+    "lemma": "побыть",
+    "pos": "verb",
+    "rank": 1661
+  },
+  {
+    "lemma": "драться",
+    "pos": "verb",
+    "rank": 1671
+  },
+  {
+    "lemma": "отменить",
+    "pos": "verb",
+    "rank": 1673
+  },
+  {
+    "lemma": "напомнить",
+    "pos": "verb",
+    "rank": 1681
+  },
+  {
+    "lemma": "поработать",
+    "pos": "verb",
+    "rank": 1682
+  },
+  {
+    "lemma": "предполагать",
+    "pos": "verb",
+    "rank": 1684
+  },
+  {
+    "lemma": "спешить",
+    "pos": "verb",
+    "rank": 1685
+  },
+  {
+    "lemma": "спрятать",
+    "pos": "verb",
+    "rank": 1686
+  },
+  {
+    "lemma": "задавать",
+    "pos": "verb",
+    "rank": 1687
+  },
+  {
+    "lemma": "пострадать",
+    "pos": "verb",
+    "rank": 1688
+  },
+  {
+    "lemma": "нервничать",
+    "pos": "verb",
+    "rank": 1693
+  },
+  {
+    "lemma": "присесть",
+    "pos": "verb",
+    "rank": 1694
+  },
+  {
+    "lemma": "притворяться",
+    "pos": "verb",
+    "rank": 1695
+  },
+  {
+    "lemma": "допустить",
+    "pos": "verb",
+    "rank": 1696
+  },
+  {
+    "lemma": "похитить",
+    "pos": "verb",
+    "rank": 1699
+  },
+  {
+    "lemma": "прибыть",
+    "pos": "verb",
+    "rank": 1700
+  },
+  {
+    "lemma": "дождаться",
+    "pos": "verb",
+    "rank": 1706
+  },
+  {
+    "lemma": "достигнуть",
+    "pos": "verb",
+    "rank": 1708
+  },
+  {
+    "lemma": "причинить",
+    "pos": "verb",
+    "rank": 1711
+  },
+  {
+    "lemma": "выполнять",
+    "pos": "verb",
+    "rank": 1712
+  },
+  {
+    "lemma": "застрять",
+    "pos": "verb",
+    "rank": 1714
+  },
+  {
+    "lemma": "выключить",
+    "pos": "verb",
+    "rank": 1717
+  },
+  {
+    "lemma": "поцеловать",
+    "pos": "verb",
+    "rank": 1722
+  },
+  {
+    "lemma": "предпочитать",
+    "pos": "verb",
+    "rank": 1728
+  },
+  {
+    "lemma": "падать",
+    "pos": "verb",
+    "rank": 1729
+  },
+  {
+    "lemma": "утверждать",
+    "pos": "verb",
+    "rank": 1730
+  },
+  {
+    "lemma": "приказать",
+    "pos": "verb",
+    "rank": 1735
+  },
+  {
+    "lemma": "спуститься",
+    "pos": "verb",
+    "rank": 1740
+  },
+  {
+    "lemma": "расстаться",
+    "pos": "verb",
+    "rank": 1746
+  },
+  {
+    "lemma": "обратиться",
+    "pos": "verb",
+    "rank": 1756
+  },
+  {
+    "lemma": "подниматься",
+    "pos": "verb",
+    "rank": 1757
+  },
+  {
+    "lemma": "потрясать",
+    "pos": "verb",
+    "rank": 1763
+  },
+  {
+    "lemma": "болтать",
+    "pos": "verb",
+    "rank": 1769
+  },
+  {
+    "lemma": "сдаваться",
+    "pos": "verb",
+    "rank": 1771
+  },
+  {
+    "lemma": "разбить",
+    "pos": "verb",
+    "rank": 1773
+  },
+  {
+    "lemma": "кончиться",
+    "pos": "verb",
+    "rank": 1774
+  },
+  {
+    "lemma": "вынудить",
+    "pos": "verb",
+    "rank": 1777
+  },
+  {
+    "lemma": "сдаться",
+    "pos": "verb",
+    "rank": 1780
+  },
+  {
+    "lemma": "выполнить",
+    "pos": "verb",
+    "rank": 1781
+  },
+  {
+    "lemma": "упустить",
+    "pos": "verb",
+    "rank": 1783
+  },
+  {
+    "lemma": "интересовать",
+    "pos": "verb",
+    "rank": 1784
+  },
+  {
+    "lemma": "терпеть",
+    "pos": "verb",
+    "rank": 1786
+  },
+  {
+    "lemma": "опустить",
+    "pos": "verb",
+    "rank": 1797
+  },
+  {
+    "lemma": "отдавать",
+    "pos": "verb",
+    "rank": 1798
+  },
+  {
+    "lemma": "одеваться",
+    "pos": "verb",
+    "rank": 1799
+  },
+  {
+    "lemma": "повесить",
+    "pos": "verb",
+    "rank": 1802
+  },
+  {
+    "lemma": "винить",
+    "pos": "verb",
+    "rank": 1811
+  },
+  {
+    "lemma": "завести",
+    "pos": "verb",
+    "rank": 1813
+  },
+  {
+    "lemma": "летать",
+    "pos": "verb",
+    "rank": 1815
+  },
+  {
+    "lemma": "лезть",
+    "pos": "verb",
+    "rank": 1820
+  },
+  {
+    "lemma": "передумать",
+    "pos": "verb",
+    "rank": 1823
+  },
+  {
+    "lemma": "отказываться",
+    "pos": "verb",
+    "rank": 1827
+  },
+  {
+    "lemma": "молиться",
+    "pos": "verb",
+    "rank": 1832
+  },
+  {
+    "lemma": "справляться",
+    "pos": "verb",
+    "rank": 1837
+  },
+  {
+    "lemma": "торопиться",
+    "pos": "verb",
+    "rank": 1838
+  },
+  {
+    "lemma": "спорить",
+    "pos": "verb",
+    "rank": 1839
+  },
+  {
+    "lemma": "влюбиться",
+    "pos": "verb",
+    "rank": 1841
+  },
+  {
+    "lemma": "задержать",
+    "pos": "verb",
+    "rank": 1842
+  },
+  {
+    "lemma": "поблагодарить",
+    "pos": "verb",
+    "rank": 1847
+  },
+  {
+    "lemma": "лечить",
+    "pos": "verb",
+    "rank": 1848
+  },
+  {
+    "lemma": "прочесть",
+    "pos": "verb",
+    "rank": 1849
+  },
+  {
+    "lemma": "повторить",
+    "pos": "verb",
+    "rank": 1851
+  },
+  {
+    "lemma": "везти",
+    "pos": "verb",
+    "rank": 1854
+  },
+  {
+    "lemma": "подготовить",
+    "pos": "verb",
+    "rank": 1859
+  },
+  {
+    "lemma": "поддержать",
+    "pos": "verb",
+    "rank": 1861
+  },
+  {
+    "lemma": "спасать",
+    "pos": "verb",
+    "rank": 1863
+  },
+  {
+    "lemma": "рассчитывать",
+    "pos": "verb",
+    "rank": 1864
+  },
+  {
+    "lemma": "разбираться",
+    "pos": "verb",
+    "rank": 1868
+  },
+  {
+    "lemma": "ловить",
+    "pos": "verb",
+    "rank": 1870
+  },
+  {
+    "lemma": "выбросить",
+    "pos": "verb",
+    "rank": 1876
+  },
+  {
+    "lemma": "запретить",
+    "pos": "verb",
+    "rank": 1878
+  },
+  {
+    "lemma": "вывести",
+    "pos": "verb",
+    "rank": 1880
+  },
+  {
+    "lemma": "поиграть",
+    "pos": "verb",
+    "rank": 1886
+  },
+  {
+    "lemma": "улыбаться",
+    "pos": "verb",
+    "rank": 1888
+  },
+  {
+    "lemma": "пробовать",
+    "pos": "verb",
+    "rank": 1891
+  },
+  {
+    "lemma": "дерзить",
+    "pos": "verb",
+    "rank": 1892
+  },
+  {
+    "lemma": "испытывать",
+    "pos": "verb",
+    "rank": 1894
+  },
+  {
+    "lemma": "издеваться",
+    "pos": "verb",
+    "rank": 1898
+  },
+  {
+    "lemma": "пообещать",
+    "pos": "verb",
+    "rank": 1902
+  },
+  {
+    "lemma": "пожениться",
+    "pos": "verb",
+    "rank": 1910
+  },
+  {
+    "lemma": "ужинать",
+    "pos": "verb",
+    "rank": 1911
+  },
+  {
+    "lemma": "бегать",
+    "pos": "verb",
+    "rank": 1913
+  },
+  {
+    "lemma": "меняться",
+    "pos": "verb",
+    "rank": 1917
+  },
+  {
+    "lemma": "создавать",
+    "pos": "verb",
+    "rank": 1919
+  },
+  {
+    "lemma": "отвалить",
+    "pos": "verb",
+    "rank": 1924
+  },
+  {
+    "lemma": "выступать",
+    "pos": "verb",
+    "rank": 1926
+  },
+  {
+    "lemma": "организовать",
+    "pos": "verb",
+    "rank": 1931
+  },
+  {
+    "lemma": "предоставить",
+    "pos": "verb",
+    "rank": 1933
+  },
+  {
+    "lemma": "направляться",
+    "pos": "verb",
+    "rank": 1934
+  },
+  {
+    "lemma": "изучать",
+    "pos": "verb",
+    "rank": 1941
+  },
+  {
+    "lemma": "поживать",
+    "pos": "verb",
+    "rank": 1942
+  },
+  {
+    "lemma": "выслушать",
+    "pos": "verb",
+    "rank": 1945
+  },
+  {
+    "lemma": "обедать",
+    "pos": "verb",
+    "rank": 1948
+  },
+  {
+    "lemma": "обмануть",
+    "pos": "verb",
+    "rank": 1968
+  },
+  {
+    "lemma": "сжечь",
+    "pos": "verb",
+    "rank": 1969
+  },
+  {
+    "lemma": "строить",
+    "pos": "verb",
+    "rank": 1970
+  },
+  {
+    "lemma": "творить",
+    "pos": "verb",
+    "rank": 1973
+  },
+  {
+    "lemma": "охотиться",
+    "pos": "verb",
+    "rank": 1976
+  },
+  {
+    "lemma": "пожелать",
+    "pos": "verb",
+    "rank": 1977
+  },
+  {
+    "lemma": "потребоваться",
+    "pos": "verb",
+    "rank": 1978
+  },
+  {
+    "lemma": "предупреждать",
+    "pos": "verb",
+    "rank": 1982
+  },
+  {
+    "lemma": "приближаться",
+    "pos": "verb",
+    "rank": 1985
+  },
+  {
+    "lemma": "совершать",
+    "pos": "verb",
+    "rank": 1987
+  },
+  {
+    "lemma": "выстрелить",
+    "pos": "verb",
+    "rank": 1989
+  },
+  {
+    "lemma": "догадаться",
+    "pos": "verb",
+    "rank": 1991
+  },
+  {
+    "lemma": "взяться",
+    "pos": "verb",
+    "rank": 1995
+  },
+  {
+    "lemma": "надоесть",
+    "pos": "verb",
+    "rank": 1996
+  },
+  {
+    "lemma": "отстать",
+    "pos": "verb",
+    "rank": 1999
+  },
+  {
+    "lemma": "значить",
+    "pos": "verb",
+    "rank": 2004
+  },
+  {
+    "lemma": "раскрыть",
+    "pos": "verb",
+    "rank": 2006
+  },
+  {
+    "lemma": "найтись",
+    "pos": "verb",
+    "rank": 2007
+  },
+  {
+    "lemma": "тянуть",
+    "pos": "verb",
+    "rank": 2011
+  },
+  {
+    "lemma": "превратиться",
+    "pos": "verb",
+    "rank": 2014
+  },
+  {
+    "lemma": "поискать",
+    "pos": "verb",
+    "rank": 2022
+  },
+  {
+    "lemma": "сменить",
+    "pos": "verb",
+    "rank": 2028
+  },
+  {
+    "lemma": "поторопиться",
+    "pos": "verb",
+    "rank": 2031
+  },
+  {
+    "lemma": "удивить",
+    "pos": "verb",
+    "rank": 2039
+  },
+  {
+    "lemma": "объявить",
+    "pos": "verb",
+    "rank": 2044
+  },
+  {
+    "lemma": "продолжаться",
+    "pos": "verb",
+    "rank": 2047
+  },
+  {
+    "lemma": "очнуться",
+    "pos": "verb",
+    "rank": 2052
+  },
+  {
+    "lemma": "гореть",
+    "pos": "verb",
+    "rank": 2067
+  },
+  {
+    "lemma": "оказать",
+    "pos": "verb",
+    "rank": 2068
+  },
+  {
+    "lemma": "поделиться",
+    "pos": "verb",
+    "rank": 2069
+  },
+  {
+    "lemma": "вынести",
+    "pos": "verb",
+    "rank": 2076
+  },
+  {
+    "lemma": "водить",
+    "pos": "verb",
+    "rank": 2078
+  },
+  {
+    "lemma": "поделать",
+    "pos": "verb",
+    "rank": 2080
+  },
+  {
+    "lemma": "возникнуть",
+    "pos": "verb",
+    "rank": 2085
+  },
+  {
+    "lemma": "обойтись",
+    "pos": "verb",
+    "rank": 2086
+  },
+  {
+    "lemma": "зарабатывать",
+    "pos": "verb",
+    "rank": 2093
+  },
+  {
+    "lemma": "шевелиться",
+    "pos": "verb",
+    "rank": 2096
+  },
+  {
+    "lemma": "убегать",
+    "pos": "verb",
+    "rank": 2097
+  },
+  {
+    "lemma": "превратить",
+    "pos": "verb",
+    "rank": 2098
+  },
+  {
+    "lemma": "испугаться",
+    "pos": "verb",
+    "rank": 2099
+  },
+  {
+    "lemma": "гулять",
+    "pos": "verb",
+    "rank": 2101
+  },
+  {
+    "lemma": "повредить",
+    "pos": "verb",
+    "rank": 2102
+  },
+  {
+    "lemma": "передавать",
+    "pos": "verb",
+    "rank": 2104
+  },
+  {
+    "lemma": "соединить",
+    "pos": "verb",
+    "rank": 2109
+  },
+  {
+    "lemma": "оказываться",
+    "pos": "verb",
+    "rank": 2113
+  },
+  {
+    "lemma": "заменить",
+    "pos": "verb",
+    "rank": 2118
+  },
+  {
+    "lemma": "сбить",
+    "pos": "verb",
+    "rank": 2119
+  },
+  {
+    "lemma": "прыгать",
+    "pos": "verb",
+    "rank": 2122
+  },
+  {
+    "lemma": "переспать",
+    "pos": "verb",
+    "rank": 2123
+  },
+  {
+    "lemma": "останавливаться",
+    "pos": "verb",
+    "rank": 2132
+  },
+  {
+    "lemma": "разбудить",
+    "pos": "verb",
+    "rank": 2137
+  },
+  {
+    "lemma": "уладить",
+    "pos": "verb",
+    "rank": 2140
+  },
+  {
+    "lemma": "обвинить",
+    "pos": "verb",
+    "rank": 2141
+  },
+  {
+    "lemma": "избежать",
+    "pos": "verb",
+    "rank": 2145
+  },
+  {
+    "lemma": "заглянуть",
+    "pos": "verb",
+    "rank": 2147
+  },
+  {
+    "lemma": "приглашать",
+    "pos": "verb",
+    "rank": 2148
+  },
+  {
+    "lemma": "определить",
+    "pos": "verb",
+    "rank": 2152
+  },
+  {
+    "lemma": "поднимать",
+    "pos": "verb",
+    "rank": 2153
+  },
+  {
+    "lemma": "посылать",
+    "pos": "verb",
+    "rank": 2157
+  },
+  {
+    "lemma": "попрощаться",
+    "pos": "verb",
+    "rank": 2159
+  },
+  {
+    "lemma": "отправлять",
+    "pos": "verb",
+    "rank": 2167
+  },
+  {
+    "lemma": "обращать",
+    "pos": "verb",
+    "rank": 2177
+  },
+  {
+    "lemma": "окончить",
+    "pos": "verb",
+    "rank": 2178
+  },
+  {
+    "lemma": "замечать",
+    "pos": "verb",
+    "rank": 2179
+  },
+  {
+    "lemma": "настаивать",
+    "pos": "verb",
+    "rank": 2182
+  },
+  {
+    "lemma": "глядеть",
+    "pos": "verb",
+    "rank": 2186
+  },
+  {
+    "lemma": "сосредоточиться",
+    "pos": "verb",
+    "rank": 2188
+  },
+  {
+    "lemma": "отключить",
+    "pos": "verb",
+    "rank": 2190
+  },
+  {
+    "lemma": "навредить",
+    "pos": "verb",
+    "rank": 2191
+  },
+  {
+    "lemma": "составить",
+    "pos": "verb",
+    "rank": 2193
+  },
+  {
+    "lemma": "предпочесть",
+    "pos": "verb",
+    "rank": 2204
+  },
+  {
+    "lemma": "починить",
+    "pos": "verb",
+    "rank": 2205
+  },
+  {
+    "lemma": "нарушить",
+    "pos": "verb",
+    "rank": 2207
+  },
+  {
+    "lemma": "вспоминать",
+    "pos": "verb",
+    "rank": 2209
+  },
+  {
+    "lemma": "выдать",
+    "pos": "verb",
+    "rank": 2213
+  },
+  {
+    "lemma": "упоминать",
+    "pos": "verb",
+    "rank": 2217
+  },
+  {
+    "lemma": "владеть",
+    "pos": "verb",
+    "rank": 2219
+  },
+  {
+    "lemma": "родить",
+    "pos": "verb",
+    "rank": 2223
+  },
+  {
+    "lemma": "лечь",
+    "pos": "verb",
+    "rank": 2224
+  },
+  {
+    "lemma": "жалеть",
+    "pos": "verb",
+    "rank": 2225
+  },
+  {
+    "lemma": "солгать",
+    "pos": "verb",
+    "rank": 2232
+  },
+  {
+    "lemma": "покидать",
+    "pos": "verb",
+    "rank": 2235
+  },
+  {
+    "lemma": "беречь",
+    "pos": "verb",
+    "rank": 2239
+  },
+  {
+    "lemma": "настать",
+    "pos": "verb",
+    "rank": 2246
+  },
+  {
+    "lemma": "попасться",
+    "pos": "verb",
+    "rank": 2249
+  },
+  {
+    "lemma": "проследить",
+    "pos": "verb",
+    "rank": 2257
+  },
+  {
+    "lemma": "давить",
+    "pos": "verb",
+    "rank": 2259
+  },
+  {
+    "lemma": "кормить",
+    "pos": "verb",
+    "rank": 2261
+  },
+  {
+    "lemma": "просыпаться",
+    "pos": "verb",
+    "rank": 2265
+  },
+  {
+    "lemma": "указывать",
+    "pos": "verb",
+    "rank": 2271
+  },
+  {
+    "lemma": "прожить",
+    "pos": "verb",
+    "rank": 2274
+  },
+  {
+    "lemma": "приготовиться",
+    "pos": "verb",
+    "rank": 2277
+  },
+  {
+    "lemma": "подавать",
+    "pos": "verb",
+    "rank": 2283
+  },
+  {
+    "lemma": "заболеть",
+    "pos": "verb",
+    "rank": 2284
+  },
+  {
+    "lemma": "присмотреть",
+    "pos": "verb",
+    "rank": 2285
+  },
+  {
+    "lemma": "приводить",
+    "pos": "verb",
+    "rank": 2288
+  },
+  {
+    "lemma": "замолчать",
+    "pos": "verb",
+    "rank": 2292
+  },
+  {
+    "lemma": "требоваться",
+    "pos": "verb",
+    "rank": 2296
+  },
+  {
+    "lemma": "отнести",
+    "pos": "verb",
+    "rank": 2301
+  },
+  {
+    "lemma": "наступить",
+    "pos": "verb",
+    "rank": 2314
+  },
+  {
+    "lemma": "присматривать",
+    "pos": "verb",
+    "rank": 2315
+  },
+  {
+    "lemma": "заканчивать",
+    "pos": "verb",
+    "rank": 2323
+  },
+  {
+    "lemma": "говориться",
+    "pos": "verb",
+    "rank": 2324
+  },
+  {
+    "lemma": "осмотреть",
+    "pos": "verb",
+    "rank": 2330
+  },
+  {
+    "lemma": "прикрыть",
+    "pos": "verb",
+    "rank": 2332
+  },
+  {
+    "lemma": "привлечь",
+    "pos": "verb",
+    "rank": 2334
+  },
+  {
+    "lemma": "закрывать",
+    "pos": "verb",
+    "rank": 2335
+  },
+  {
+    "lemma": "направить",
+    "pos": "verb",
+    "rank": 2338
+  },
+  {
+    "lemma": "отследить",
+    "pos": "verb",
+    "rank": 2340
+  },
+  {
+    "lemma": "одолжить",
+    "pos": "verb",
+    "rank": 2344
+  },
+  {
+    "lemma": "обманывать",
+    "pos": "verb",
+    "rank": 2345
+  },
+  {
+    "lemma": "оплатить",
+    "pos": "verb",
+    "rank": 2354
+  },
+  {
+    "lemma": "перенести",
+    "pos": "verb",
+    "rank": 2357
+  },
+  {
+    "lemma": "поменять",
+    "pos": "verb",
+    "rank": 2358
+  },
+  {
+    "lemma": "отказать",
+    "pos": "verb",
+    "rank": 2361
+  },
+  {
+    "lemma": "подставить",
+    "pos": "verb",
+    "rank": 2363
+  },
+  {
+    "lemma": "запустить",
+    "pos": "verb",
+    "rank": 2368
+  },
+  {
+    "lemma": "полюбить",
+    "pos": "verb",
+    "rank": 2373
+  },
+  {
+    "lemma": "считаться",
+    "pos": "verb",
+    "rank": 2374
+  },
+  {
+    "lemma": "описать",
+    "pos": "verb",
+    "rank": 2379
+  },
+  {
+    "lemma": "признавать",
+    "pos": "verb",
+    "rank": 2380
+  },
+  {
+    "lemma": "подвести",
+    "pos": "verb",
+    "rank": 2381
+  },
+  {
+    "lemma": "выгнать",
+    "pos": "verb",
+    "rank": 2385
+  },
+  {
+    "lemma": "обидеть",
+    "pos": "verb",
+    "rank": 2386
+  },
+  {
+    "lemma": "спускаться",
+    "pos": "verb",
+    "rank": 2391
+  },
+  {
+    "lemma": "посидеть",
+    "pos": "verb",
+    "rank": 2393
+  },
+  {
+    "lemma": "прятать",
+    "pos": "verb",
+    "rank": 2395
+  },
+  {
+    "lemma": "задумать",
+    "pos": "verb",
+    "rank": 2396
+  },
+  {
+    "lemma": "поспать",
+    "pos": "verb",
+    "rank": 2398
+  },
+  {
+    "lemma": "жаловаться",
+    "pos": "verb",
+    "rank": 2405
+  },
+  {
+    "lemma": "выдержать",
+    "pos": "verb",
+    "rank": 2408
+  },
+  {
+    "lemma": "проехать",
+    "pos": "verb",
+    "rank": 2410
+  },
+  {
+    "lemma": "свалить",
+    "pos": "verb",
+    "rank": 2411
+  },
+  {
+    "lemma": "ввести",
+    "pos": "verb",
+    "rank": 2412
+  },
+  {
+    "lemma": "заявить",
+    "pos": "verb",
+    "rank": 2420
+  },
+  {
+    "lemma": "увести",
+    "pos": "verb",
+    "rank": 2423
+  },
+  {
+    "lemma": "выкинуть",
+    "pos": "verb",
+    "rank": 2429
+  },
+  {
+    "lemma": "повернуться",
+    "pos": "verb",
+    "rank": 2432
+  },
+  {
+    "lemma": "смириться",
+    "pos": "verb",
+    "rank": 2434
+  },
+  {
+    "lemma": "обратить",
+    "pos": "verb",
+    "rank": 2446
+  },
+  {
+    "lemma": "отрицать",
+    "pos": "verb",
+    "rank": 2448
+  },
+  {
+    "lemma": "потерпеть",
+    "pos": "verb",
+    "rank": 2450
+  },
+  {
+    "lemma": "достаться",
+    "pos": "verb",
+    "rank": 2453
+  },
+  {
+    "lemma": "наказать",
+    "pos": "verb",
+    "rank": 2461
+  },
+  {
+    "lemma": "веселиться",
+    "pos": "verb",
+    "rank": 2467
+  },
+  {
+    "lemma": "заговорить",
+    "pos": "verb",
+    "rank": 2469
+  },
+  {
+    "lemma": "натворить",
+    "pos": "verb",
+    "rank": 2474
+  },
+  {
+    "lemma": "порвать",
+    "pos": "verb",
+    "rank": 2475
+  },
+  {
+    "lemma": "навестить",
+    "pos": "verb",
+    "rank": 2477
+  },
+  {
+    "lemma": "взорваться",
+    "pos": "verb",
+    "rank": 2478
+  },
+  {
+    "lemma": "интересоваться",
+    "pos": "verb",
+    "rank": 2479
+  },
+  {
+    "lemma": "пристрелить",
+    "pos": "verb",
+    "rank": 2480
+  },
+  {
+    "lemma": "повеселиться",
+    "pos": "verb",
+    "rank": 2481
+  },
+  {
+    "lemma": "присутствовать",
+    "pos": "verb",
+    "rank": 2482
+  },
+  {
+    "lemma": "пожалеть",
+    "pos": "verb",
+    "rank": 2486
+  },
+  {
+    "lemma": "побежать",
+    "pos": "verb",
+    "rank": 2491
+  },
+  {
+    "lemma": "удалить",
+    "pos": "verb",
+    "rank": 2493
+  },
+  {
+    "lemma": "заехать",
+    "pos": "verb",
+    "rank": 2507
+  },
+  {
+    "lemma": "нажать",
+    "pos": "verb",
+    "rank": 2509
+  },
+  {
+    "lemma": "присаживаться",
+    "pos": "verb",
+    "rank": 2510
+  },
+  {
+    "lemma": "проникнуть",
+    "pos": "verb",
+    "rank": 2515
+  },
+  {
+    "lemma": "тащить",
+    "pos": "verb",
+    "rank": 2523
+  },
+  {
+    "lemma": "глянуть",
+    "pos": "verb",
+    "rank": 2528
+  },
+  {
+    "lemma": "умываться",
+    "pos": "verb",
+    "rank": 2536
+  },
+  {
+    "lemma": "изменять",
+    "pos": "verb",
+    "rank": 2537
+  },
+  {
+    "lemma": "соврать",
+    "pos": "verb",
+    "rank": 2551
+  },
+  {
+    "lemma": "целоваться",
+    "pos": "verb",
+    "rank": 2554
+  },
+  {
+    "lemma": "предположить",
+    "pos": "verb",
+    "rank": 2557
+  },
+  {
+    "lemma": "состоять",
+    "pos": "verb",
+    "rank": 2567
+  },
+  {
+    "lemma": "включать",
+    "pos": "verb",
+    "rank": 2568
+  },
+  {
+    "lemma": "похоронить",
+    "pos": "verb",
+    "rank": 2569
+  },
+  {
+    "lemma": "осознать",
+    "pos": "verb",
+    "rank": 2570
+  },
+  {
+    "lemma": "довериться",
+    "pos": "verb",
+    "rank": 2571
+  },
+  {
+    "lemma": "наделать",
+    "pos": "verb",
+    "rank": 2574
+  },
+  {
+    "lemma": "рисовать",
+    "pos": "verb",
+    "rank": 2584
+  },
+  {
+    "lemma": "восстановить",
+    "pos": "verb",
+    "rank": 2588
+  },
+  {
+    "lemma": "приветствовать",
+    "pos": "verb",
+    "rank": 2594
+  },
+  {
+    "lemma": "переходить",
+    "pos": "verb",
+    "rank": 2595
+  },
+  {
+    "lemma": "засунуть",
+    "pos": "verb",
+    "rank": 2597
+  },
+  {
+    "lemma": "пригодиться",
+    "pos": "verb",
+    "rank": 2599
+  },
+  {
+    "lemma": "заснуть",
+    "pos": "verb",
+    "rank": 2600
+  },
+  {
+    "lemma": "указать",
+    "pos": "verb",
+    "rank": 2606
+  },
+  {
+    "lemma": "наплевать",
+    "pos": "verb",
+    "rank": 2620
+  },
+  {
+    "lemma": "сводить",
+    "pos": "verb",
+    "rank": 2623
+  },
+  {
+    "lemma": "уснуть",
+    "pos": "verb",
+    "rank": 2625
+  },
+  {
+    "lemma": "велеть",
+    "pos": "verb",
+    "rank": 2628
+  },
+  {
+    "lemma": "разочаровать",
+    "pos": "verb",
+    "rank": 2630
+  },
+  {
+    "lemma": "твориться",
+    "pos": "verb",
+    "rank": 2638
+  },
+  {
+    "lemma": "упомянуть",
+    "pos": "verb",
+    "rank": 2642
+  },
+  {
+    "lemma": "выступить",
+    "pos": "verb",
+    "rank": 2643
+  },
+  {
+    "lemma": "задержаться",
+    "pos": "verb",
+    "rank": 2645
+  },
+  {
+    "lemma": "скрыть",
+    "pos": "verb",
+    "rank": 2646
+  },
+  {
+    "lemma": "проявить",
+    "pos": "verb",
+    "rank": 2647
+  },
+  {
+    "lemma": "спрятаться",
+    "pos": "verb",
+    "rank": 2649
+  },
+  {
+    "lemma": "столкнуться",
+    "pos": "verb",
+    "rank": 2652
+  },
+  {
+    "lemma": "спеть",
+    "pos": "verb",
+    "rank": 2653
+  },
+  {
+    "lemma": "открыться",
+    "pos": "verb",
+    "rank": 2657
+  },
+  {
+    "lemma": "попадать",
+    "pos": "verb",
+    "rank": 2658
+  },
+  {
+    "lemma": "разделить",
+    "pos": "verb",
+    "rank": 2659
+  },
+  {
+    "lemma": "сообщать",
+    "pos": "verb",
+    "rank": 2662
+  },
+  {
+    "lemma": "заводить",
+    "pos": "verb",
+    "rank": 2670
+  },
+  {
+    "lemma": "заполучить",
+    "pos": "verb",
+    "rank": 2671
+  },
+  {
+    "lemma": "оценить",
+    "pos": "verb",
+    "rank": 2674
+  },
+  {
+    "lemma": "биться",
+    "pos": "verb",
+    "rank": 2677
+  },
+  {
+    "lemma": "избегать",
+    "pos": "verb",
+    "rank": 2680
+  },
+  {
+    "lemma": "вмешиваться",
+    "pos": "verb",
+    "rank": 2681
+  },
+  {
+    "lemma": "плавать",
+    "pos": "verb",
+    "rank": 2684
+  },
+  {
+    "lemma": "заканчиваться",
+    "pos": "verb",
+    "rank": 2685
+  },
+  {
+    "lemma": "прогуляться",
+    "pos": "verb",
+    "rank": 2691
+  },
+  {
+    "lemma": "обнять",
+    "pos": "verb",
+    "rank": 2695
+  },
+  {
+    "lemma": "облажаться",
+    "pos": "verb",
+    "rank": 2696
+  },
+  {
+    "lemma": "обеспечить",
+    "pos": "verb",
+    "rank": 2698
+  },
+  {
+    "lemma": "записывать",
+    "pos": "verb",
+    "rank": 2703
+  },
+  {
+    "lemma": "нанести",
+    "pos": "verb",
+    "rank": 2705
+  },
+  {
+    "lemma": "заполнить",
+    "pos": "verb",
+    "rank": 2707
+  },
+  {
+    "lemma": "поспорить",
+    "pos": "verb",
+    "rank": 2726
+  },
+  {
+    "lemma": "радоваться",
+    "pos": "verb",
+    "rank": 2727
+  },
+  {
+    "lemma": "проваливать",
+    "pos": "verb",
+    "rank": 2739
+  },
+  {
+    "lemma": "красть",
+    "pos": "verb",
+    "rank": 2740
+  },
+  {
+    "lemma": "отметить",
+    "pos": "verb",
+    "rank": 2741
+  },
+  {
+    "lemma": "ревновать",
+    "pos": "verb",
+    "rank": 2742
+  },
+  {
+    "lemma": "трахаться",
+    "pos": "verb",
+    "rank": 2744
+  },
+  {
+    "lemma": "явиться",
+    "pos": "verb",
+    "rank": 2746
+  },
+  {
+    "lemma": "взорвать",
+    "pos": "verb",
+    "rank": 2747
+  },
+  {
+    "lemma": "лишить",
+    "pos": "verb",
+    "rank": 2765
+  },
+  {
+    "lemma": "уверять",
+    "pos": "verb",
+    "rank": 2768
+  },
+  {
+    "lemma": "завидовать",
+    "pos": "verb",
+    "rank": 2769
+  },
+  {
+    "lemma": "впустить",
+    "pos": "verb",
+    "rank": 2773
+  },
+  {
+    "lemma": "советовать",
+    "pos": "verb",
+    "rank": 2775
+  },
+  {
+    "lemma": "переводить",
+    "pos": "verb",
+    "rank": 2780
+  },
+  {
+    "lemma": "выставить",
+    "pos": "verb",
+    "rank": 2781
+  },
+  {
+    "lemma": "голосовать",
+    "pos": "verb",
+    "rank": 2788
+  },
+  {
+    "lemma": "отличаться",
+    "pos": "verb",
+    "rank": 2789
+  },
+  {
+    "lemma": "класть",
+    "pos": "verb",
+    "rank": 2795
+  },
+  {
+    "lemma": "целовать",
+    "pos": "verb",
+    "rank": 2809
+  },
+  {
+    "lemma": "забить",
+    "pos": "verb",
+    "rank": 2810
+  },
+  {
+    "lemma": "смотреться",
+    "pos": "verb",
+    "rank": 2815
+  },
+  {
+    "lemma": "доставать",
+    "pos": "verb",
+    "rank": 2816
+  },
+  {
+    "lemma": "сердиться",
+    "pos": "verb",
+    "rank": 2826
+  },
+  {
+    "lemma": "захотеться",
+    "pos": "verb",
+    "rank": 2833
+  },
+  {
+    "lemma": "развлекаться",
+    "pos": "verb",
+    "rank": 2834
+  },
+  {
+    "lemma": "отомстить",
+    "pos": "verb",
+    "rank": 2835
+  },
+  {
+    "lemma": "набрать",
+    "pos": "verb",
+    "rank": 2839
+  },
+  {
+    "lemma": "завершить",
+    "pos": "verb",
+    "rank": 2848
+  },
+  {
+    "lemma": "заказывать",
+    "pos": "verb",
+    "rank": 2850
+  },
+  {
+    "lemma": "нападать",
+    "pos": "verb",
+    "rank": 2852
+  },
+  {
+    "lemma": "отпускать",
+    "pos": "verb",
+    "rank": 2863
+  },
+  {
+    "lemma": "повернуть",
+    "pos": "verb",
+    "rank": 2868
+  },
+  {
+    "lemma": "спятить",
+    "pos": "verb",
+    "rank": 2872
+  },
+  {
+    "lemma": "делиться",
+    "pos": "verb",
+    "rank": 2875
+  },
+  {
+    "lemma": "суметь",
+    "pos": "verb",
+    "rank": 2876
+  },
+  {
+    "lemma": "одеть",
+    "pos": "verb",
+    "rank": 2879
+  },
+  {
+    "lemma": "повести",
+    "pos": "verb",
+    "rank": 2882
+  },
+  {
+    "lemma": "разойтись",
+    "pos": "verb",
+    "rank": 2883
+  },
+  {
+    "lemma": "сломаться",
+    "pos": "verb",
+    "rank": 2885
+  },
+  {
+    "lemma": "замешать",
+    "pos": "verb",
+    "rank": 2886
+  },
+  {
+    "lemma": "тошнить",
+    "pos": "verb",
+    "rank": 2888
+  },
+  {
+    "lemma": "обыскать",
+    "pos": "verb",
+    "rank": 2889
+  },
+  {
+    "lemma": "разрешать",
+    "pos": "verb",
+    "rank": 2891
+  },
+  {
+    "lemma": "сбросить",
+    "pos": "verb",
+    "rank": 2894
+  },
+  {
+    "lemma": "игнорировать",
+    "pos": "verb",
+    "rank": 2895
+  },
+  {
+    "lemma": "сдохнуть",
+    "pos": "verb",
+    "rank": 2896
+  },
+  {
+    "lemma": "валить",
+    "pos": "verb",
+    "rank": 2901
+  },
+  {
+    "lemma": "атаковать",
+    "pos": "verb",
+    "rank": 2904
+  },
+  {
+    "lemma": "прикончить",
+    "pos": "verb",
+    "rank": 2911
+  },
+  {
+    "lemma": "надевать",
+    "pos": "verb",
+    "rank": 2913
+  },
+  {
+    "lemma": "нарисовать",
+    "pos": "verb",
+    "rank": 2915
+  },
+  {
+    "lemma": "расследовать",
+    "pos": "verb",
+    "rank": 2922
+  },
+  {
+    "lemma": "опознать",
+    "pos": "verb",
+    "rank": 2923
+  },
+  {
+    "lemma": "поклясться",
+    "pos": "verb",
+    "rank": 2924
+  },
+  {
+    "lemma": "исключить",
+    "pos": "verb",
+    "rank": 2925
+  },
+  {
+    "lemma": "подержать",
+    "pos": "verb",
+    "rank": 2926
+  },
+  {
+    "lemma": "напиться",
+    "pos": "verb",
+    "rank": 2927
+  },
+  {
+    "lemma": "поместить",
+    "pos": "verb",
+    "rank": 2931
+  },
+  {
+    "lemma": "деться",
+    "pos": "verb",
+    "rank": 2933
+  },
+  {
+    "lemma": "поужинать",
+    "pos": "verb",
+    "rank": 2939
+  },
+  {
+    "lemma": "переезжать",
+    "pos": "verb",
+    "rank": 2951
+  },
+  {
+    "lemma": "подвезти",
+    "pos": "verb",
+    "rank": 2952
+  },
+  {
+    "lemma": "кататься",
+    "pos": "verb",
+    "rank": 2954
+  },
+  {
+    "lemma": "отрезать",
+    "pos": "verb",
+    "rank": 2956
+  },
+  {
+    "lemma": "стремиться",
+    "pos": "verb",
+    "rank": 2965
+  },
+  {
+    "lemma": "основать",
+    "pos": "verb",
+    "rank": 2971
+  },
+  {
+    "lemma": "вступить",
+    "pos": "verb",
+    "rank": 2976
+  },
+  {
+    "lemma": "занимать",
+    "pos": "verb",
+    "rank": 2986
+  }
+]
