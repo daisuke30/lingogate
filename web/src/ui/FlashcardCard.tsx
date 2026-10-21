@@ -471,7 +471,7 @@ function WordBreakdownList({
         const posKey = "pos." + w.pos;
         const posText = t(posKey);
         return (
-          <div key={w.lemma} className={"wb-row" + (w.isTarget ? " target" : "")}>
+          <div key={w.lemma} className="wb-row">
             <div className="wb-head">
               <span className="wb-lemma">{w.lemma}</span>
               {/* LINGO-039: per-word pronunciation, immediately after the

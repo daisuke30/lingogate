@@ -474,15 +474,6 @@ button {
 .wb-row + .wb-row {
   border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
 }
-.wb-row.target {
-  background: color-mix(in srgb, var(--indigo) 14%, transparent);
-  margin: 0 -10px;
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-.wb-row.target + .wb-row {
-  border-top: none;
-}
 .wb-head {
   display: flex;
   align-items: baseline;
@@ -1691,9 +1682,6 @@ button {
 .explain-word + .explain-word {
   border-top: 1px solid var(--line);
 }
-.explain-word.target .explain-lemma {
-  color: var(--indigo-bright);
-}
 .explain-word-head {
   display: flex;
   align-items: baseline;
@@ -1722,14 +1710,6 @@ button {
 .explain-pos {
   font-size: 11px;
   color: var(--ink-faint);
-}
-.explain-badge {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--indigo-bright);
-  border: 1px solid var(--line);
-  border-radius: 99px;
-  padding: 2px 8px;
 }
 .explain-caret {
   margin-left: auto;
@@ -1771,6 +1751,43 @@ button {
   color: var(--ink-faint);
   font-size: 10px;
   margin-right: 3px;
+}
+
+/* Aspect partner inside a verb entry (LINGO-060). Indented and bordered so it
+ * reads as belonging to the verb above rather than as a sibling word. */
+.explain-pair {
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 2px solid var(--line);
+}
+.explain-pair-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  width: 100%;
+  padding: 4px 0;
+  text-align: left;
+}
+.explain-pair-k {
+  font-size: 11px;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+.explain-pair-lemma {
+  font-size: 15px;
+  font-weight: 800;
+}
+.explain-pair-aspect,
+.explain-pair-gloss {
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+.explain-pair-body {
+  margin-top: 6px;
+}
+.explain-pair-brief {
+  color: var(--ink-faint);
 }
 
 /* Diagnostics rows (LINGO-047) — dense, monospaced, meant to be screenshotted

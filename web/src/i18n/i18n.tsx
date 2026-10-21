@@ -474,7 +474,6 @@ const M: Record<string, Entry> = {
   "explain.keyPoint": { ja: "学びどころ", en: "The thing to take away", ru: "Главное" },
   "explain.replies": { ja: "会話での返し", en: "How you'd reply", ru: "Как ответить" },
   "explain.words": { ja: "単語", en: "Words", ru: "Слова" },
-  "explain.target": { ja: "この文の新出語", en: "New in this sentence", ru: "Новое слово" },
   // Forms-table labels (LINGO-057 follow-up). The dictionary stores terse
   // slots (nom / 1sg / ...); the screen uses the same numbered case names the
   // card back has used since LINGO-033, so a learner meets one convention.
@@ -503,6 +502,16 @@ const M: Record<string, Entry> = {
   "explain.gender.pl": { ja: "複数", en: "plural", ru: "множественное" },
   "explain.number.sg": { ja: "単数", en: "singular", ru: "единственное" },
   "explain.number.pl": { ja: "複数", en: "plural", ru: "множественное" },
+
+  // LINGO-060: the aspect partner. Collapsed by default — see AspectPairSection.
+  "explain.pair": { ja: "対の動詞", en: "Aspect partner", ru: "Видовая пара" },
+  "explain.aspectName.pf": { ja: "完了体", en: "perfective", ru: "совершенный вид" },
+  "explain.aspectName.impf": { ja: "不完了体", en: "imperfective", ru: "несовершенный вид" },
+  "explain.pairBrief": {
+    ja: "この語は辞典（頻出3000語）の範囲外のため、詳しい情報はまだありません。",
+    en: "This verb is outside the 3,000-word dictionary, so there is no detailed entry for it yet.",
+    ru: "Этот глагол вне словаря 3000 слов — подробной статьи пока нет.",
+  },
 
   "explain.aspect": { ja: "体の使い分け: ", en: "Aspect: ", ru: "Вид: " },
   "explain.etymology": { ja: "語源: ", en: "Origin: ", ru: "Происхождение: " },

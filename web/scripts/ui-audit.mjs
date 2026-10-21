@@ -725,8 +725,14 @@ await page.waitForTimeout(1200);
           const words = document.querySelectorAll(".explain-word");
           return {
             words: words.length,
-            targets: document.querySelectorAll(".explain-word.target").length,
+            // LINGO-061: the "target word" tier is gone — neither the class
+            // nor the badge may come back. targetLemma says what the sentence
+            // was generated for, not what this learner lacks.
+            targetMarks:
+              document.querySelectorAll(".explain-word.target, .explain-badge").length,
             openBodies: document.querySelectorAll(".explain-word-body").length,
+            pairs: document.querySelectorAll(".explain-pair").length,
+            openPairs: document.querySelectorAll(".explain-pair-body").length,
             // Long prose must SCROLL inside the sheet, never be silently cut off.
             scrollable: body ? body.scrollHeight > body.clientHeight : false,
             clipped: body ? body.clientHeight < 80 : true,
@@ -734,13 +740,26 @@ await page.waitForTimeout(1200);
         });
         check(info.words > 0, "explain sheet: no word entries rendered");
         check(
-          info.targets === 1,
-          `explain sheet: expected exactly 1 target word, found ${info.targets}`,
+          info.targetMarks === 0,
+          `explain sheet: ${info.targetMarks} "target word" marks present — that tier was removed in LINGO-061`,
         );
+        // LINGO-060: aspect partners start collapsed, however many there are.
         check(
-          info.openBodies >= 1,
-          "explain sheet: nothing is expanded — the target word must always be open",
+          info.openPairs === 0,
+          `explain sheet: ${info.openPairs} aspect partner(s) open by default — they must start collapsed`,
         );
+        if (info.pairs > 0) {
+          const before = info.openPairs;
+          await page.locator(".explain-pair-head").first().click();
+          await page.waitForTimeout(350);
+          const afterPairs = await page.evaluate(
+            () => document.querySelectorAll(".explain-pair-body").length,
+          );
+          check(
+            afterPairs > before,
+            `explain sheet: tapping an aspect partner did not expand it (${before} -> ${afterPairs})`,
+          );
+        }
         check(!info.clipped, "explain sheet: body collapsed to nothing");
         // Tapping a collapsed row must actually reveal its entry.
         const caret = page.locator(".explain-caret").first();

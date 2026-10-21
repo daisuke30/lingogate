@@ -304,15 +304,28 @@ export interface WordBreakdownEntry {
    * engine/localizedText.ts's pronunciationReadable(), same as
    * Sentence.kana — the script is the course's choice. */
   kana: string | null;
-  /** This is the sentence's target_lemma (LINGO-011) — the new element the
+  /** This is the sentence's target_lemma (LINGO-011) — the word the sentence
+   * was GENERATED for. LINGO-061: no longer used for ordering or emphasis (it
+   * is the generator's protagonist, not necessarily the learner's); it only
+   * keeps a function-word target from being filtered out. The new element the
    * card exists to teach. Always included and always sorted first. */
   isTarget: boolean;
 }
 
-/** Build the ordered breakdown list for one card's back face: the target
- * word (if any) first, then the remaining linked, non-function-word entries
- * in their original (roughly text) order — word-kind cards keep every linked
- * word, function words included, since there's no target/support split. */
+/** Build the breakdown list for one card's back face, in SENTENCE ORDER.
+ *
+ * LINGO-061 (Katsuta): the target word is no longer hoisted to the front.
+ * `targetLemma` records which word the sentence was GENERATED for, which is
+ * not the same as the word that is new to this learner — in "Ты проверил
+ * телефон?" the target is телефон, but the word Katsuta did not know was
+ * проверил. Promoting the generator's choice announced the wrong protagonist,
+ * so the list now simply reads in the order the sentence does, and the
+ * density rules (known → one line, unknown → open) let the learner's actual
+ * new word stand out on its own.
+ *
+ * `isTarget` is still computed, because it still decides one thing: a target
+ * that happens to be a function word is kept rather than filtered out with
+ * the other function words. Word-kind cards keep every linked word. */
 export function buildWordBreakdown(
   sentence: Pick<Sentence, "kind" | "targetLemma" | "wordIds" | "forms">,
   wordById: Map<number, DeckWord>,
@@ -353,7 +366,5 @@ export function buildWordBreakdown(
       isTarget,
     });
   }
-  // Stable sort: only reorders target-vs-rest, preserves original order within each group.
-  out.sort((a, b) => (a.isTarget === b.isTarget ? 0 : a.isTarget ? -1 : 1));
-  return out;
+  return out; // sentence order — see the doc comment above.
 }

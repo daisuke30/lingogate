@@ -88,9 +88,6 @@ export type SentenceCommentary = Record<string, SentenceCommentaryEntry>;
  * needle in a haystack. So the sheet opens showing only what this learner
  * plausibly does not know:
  *
- *  - `target`    the word this sentence exists to teach. Always fully open,
- *                always first: it is the answer to "why am I being shown this
- *                sentence at all".
  *  - `expanded`  words they have not judged as known. These are the ones a
  *                question is likely about.
  *  - `collapsed` words they told us they know, and the handful of ultra-high
@@ -98,8 +95,16 @@ export type SentenceCommentary = Record<string, SentenceCommentaryEntry>;
  *                meets in week one. One line each, tappable — never deleted,
  *                because "I know this word" is a claim that can be wrong and
  *                the entry has to stay reachable when it is.
+ *
+ * LINGO-061: there is no longer a `target` tier. `targetLemma` says which word
+ * the sentence was GENERATED for, which is not the same as the word that is
+ * new to this learner — "Ты проверил телефон?" was generated for телефон,
+ * but the unfamiliar word was проверил. Declaring the generator's choice as
+ * the protagonist told the learner something false about their own progress.
+ * With it gone, the words appear in sentence order and the density rules let
+ * whatever is genuinely new stand out by itself.
  */
-export type ExplainDensity = "target" | "expanded" | "collapsed";
+export type ExplainDensity = "expanded" | "collapsed";
 
 /**
  * Frequency rank at or below which a FUNCTION word is collapsed by default.
@@ -119,12 +124,10 @@ export interface WordDensityInput {
   pos: string;
   /** Frequency rank from the deck; null when unknown (never collapsed on rank). */
   rank: number | null;
-  isTarget: boolean;
   knowledge: KnowledgeMap;
 }
 
 export function wordDensity(input: WordDensityInput): ExplainDensity {
-  if (input.isTarget) return "target";
   if (input.knowledge.get(input.lemma) === "known") return "collapsed";
   if (
     FUNCTION_WORD_POS.has(input.pos) &&
@@ -134,22 +137,6 @@ export function wordDensity(input: WordDensityInput): ExplainDensity {
     return "collapsed";
   }
   return "expanded";
-}
-
-/**
- * Order the sentence's words for the sheet: the target word first, then the
- * rest in the order they appear in the sentence (so the list reads alongside
- * the sentence instead of being re-sorted into something the learner has to
- * re-find).
- *
- * Generic over the whole item, not just its entry, so a caller can carry extra
- * per-word display data through (the deck glosses, for instance) without this
- * function needing to know about it.
- */
-export function orderExplainWords<T extends { density: ExplainDensity }>(words: T[]): T[] {
-  const target = words.filter((w) => w.density === "target");
-  const rest = words.filter((w) => w.density !== "target");
-  return [...target, ...rest];
 }
 
 /** A sentence has an explanation only when a commentary entry exists for its

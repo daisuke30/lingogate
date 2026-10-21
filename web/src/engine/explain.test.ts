@@ -1,10 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  COLLAPSED_FUNCTION_WORD_RANK,
-  hasExplanation,
-  orderExplainWords,
-  wordDensity,
-} from "./explain";
+import { COLLAPSED_FUNCTION_WORD_RANK, hasExplanation, wordDensity } from "./explain";
 import type { SentenceCommentary } from "./explain";
 import type { KnowledgeMap } from "./calibration";
 
@@ -15,7 +10,6 @@ const input = (over: Partial<Parameters<typeof wordDensity>[0]> = {}) => ({
   lemma: "машина",
   pos: "noun",
   rank: 500,
-  isTarget: false,
   knowledge: km({}),
   ...over,
 });
@@ -25,13 +19,15 @@ const input = (over: Partial<Parameters<typeof wordDensity>[0]> = {}) => ({
 // wrong means the answer to the learner's actual question is buried.
 
 describe("wordDensity (LINGO-057 display density, Katsuta-approved)", () => {
-  it("always fully opens the word the sentence exists to teach", () => {
-    expect(wordDensity(input({ isTarget: true }))).toBe("target");
-    // Even if they already said they know it, and even if it is a top-rank
-    // function word — it is still why this card is on screen.
-    expect(
-      wordDensity(input({ isTarget: true, knowledge: km({ машина: "known" }), pos: "prep", rank: 3 })),
-    ).toBe("target");
+  // LINGO-061: the generator's target word gets no special tier. It is the
+  // word the SENTENCE was built for, not the word this learner lacks, and
+  // promoting it announced the wrong protagonist.
+  it("gives the sentence's target word no special treatment", () => {
+    // машина judged known → collapsed, exactly like any other known word,
+    // even though the sentence was generated for it.
+    expect(wordDensity(input({ knowledge: km({ машина: "known" }) }))).toBe("collapsed");
+    // And an unknown word is open whether or not it was the generator's pick.
+    expect(wordDensity(input({ lemma: "проверить", pos: "verb", rank: 800 }))).toBe("expanded");
   });
 
   it("opens words the learner has not judged as known", () => {
@@ -60,25 +56,6 @@ describe("wordDensity (LINGO-057 display density, Katsuta-approved)", () => {
   });
 });
 
-describe("orderExplainWords", () => {
-  it("puts the target first and otherwise keeps sentence order", () => {
-    const words = [
-      { entry: "ты", density: "collapsed" as const },
-      { entry: "продал", density: "target" as const },
-      { entry: "машину", density: "expanded" as const },
-    ];
-    expect(orderExplainWords(words).map((w) => w.entry)).toEqual(["продал", "ты", "машину"]);
-  });
-
-  it("is a no-op when there is no target (a notes sentence)", () => {
-    const words = [
-      { entry: "a", density: "expanded" as const },
-      { entry: "b", density: "collapsed" as const },
-    ];
-    expect(orderExplainWords(words).map((w) => w.entry)).toEqual(["a", "b"]);
-  });
-});
-
 describe("hasExplanation (button visibility)", () => {
   const commentary: SentenceCommentary = {
     T0164: { id: "T0164", skeleton: [], keyPoint: "", replies: [] },
@@ -100,21 +77,3 @@ describe("hasExplanation (button visibility)", () => {
   });
 });
 
-// LINGO-057 follow-up: ordering must not drop the extra per-word display data
-// the sheet carries (the deck glosses), or the English meaning Katsuta
-// explicitly asked for would vanish on exactly the words that got reordered.
-describe("orderExplainWords preserves per-word payload", () => {
-  it("keeps every field on the reordered items", () => {
-    const words = [
-      { entry: "ты", density: "collapsed" as const, gloss: "you / あなた" },
-      { entry: "проверить", density: "target" as const, gloss: "to check / 確認する" },
-    ];
-    const out = orderExplainWords(words);
-    expect(out[0]).toEqual({
-      entry: "проверить",
-      density: "target",
-      gloss: "to check / 確認する",
-    });
-    expect(out[1].gloss).toBe("you / あなた");
-  });
-});

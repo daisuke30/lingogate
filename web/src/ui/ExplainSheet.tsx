@@ -13,11 +13,9 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Sentence } from "../engine/content";
 import type { KnowledgeMap } from "../engine/calibration";
-import {
-  hasExplanation,
-  orderExplainWords,
-  wordDensity,
-} from "../engine/explain";
+import { hasExplanation, wordDensity } from "../engine/explain";
+import { resolveAspectPair } from "../engine/explainPair";
+import type { AspectPairRef } from "../engine/explainPair";
 import type { ExplainDensity, WordDictEntry } from "../engine/explain";
 import { aspectFormsNoteKey, formCellLabelKey, formGroupLabelKey } from "../engine/explainLabels";
 import type { Aspect } from "../engine/explainLabels";
@@ -95,8 +93,19 @@ export function ExplainSheet({
   const words = useMemo(() => {
     if (!data) return [];
     const seen = new Set<string>();
-    const out: { entry: WordDictEntry; density: ExplainDensity; gloss: string; aspect: Aspect }[] =
-      [];
+    const out: {
+      entry: WordDictEntry;
+      density: ExplainDensity;
+      gloss: string;
+      aspect: Aspect;
+      pair: AspectPairRef | null;
+    }[] = [];
+    const glossOf = (lemma: string): string | null => {
+      for (const w of WORD_BY_ID.values()) {
+        if (w.lemma === lemma) return bothGlosses(w.enGloss, w.jaGloss) || null;
+      }
+      return null;
+    };
     for (const id of sentence.wordIds) {
       const deckWord = WORD_BY_ID.get(id);
       if (!deckWord) continue;
@@ -113,16 +122,18 @@ export function ExplainSheet({
         // Drives whether the conjugation table is headed "present" or
         // "future" — see formGroupLabelKey.
         aspect: (deckWord.aspect ?? null) as Aspect,
+        // LINGO-060: the aspect partner, resolved from the same chunk.
+        pair: resolveAspectPair(deckWord, data.words, glossOf),
         density: wordDensity({
           lemma: deckWord.lemma,
           pos: deckWord.pos,
           rank: deckWord.rank ?? null,
-          isTarget: deckWord.lemma === sentence.targetLemma,
           knowledge,
         }),
       });
     }
-    return orderExplainWords(out);
+    // LINGO-061: sentence order, no target-first hoist.
+    return out;
   }, [data, sentence, knowledge]);
 
   const toggle = (lemma: string) =>
@@ -166,12 +177,13 @@ export function ExplainSheet({
             {words.length > 0 && (
               <section className="explain-section">
                 <h3 className="explain-h">{t("explain.words")}</h3>
-                {words.map(({ entry, density, gloss, aspect }) => (
+                {words.map(({ entry, density, gloss, aspect, pair }) => (
                   <WordEntry
                     key={entry.lemma}
                     entry={entry}
                     gloss={gloss}
                     aspect={aspect}
+                    pair={pair}
                     density={density}
                     open={density !== "collapsed" || expanded.has(entry.lemma)}
                     onToggle={() => toggle(entry.lemma)}
@@ -220,6 +232,7 @@ function WordEntry({
   entry,
   gloss,
   aspect,
+  pair,
   density,
   open,
   onToggle,
@@ -229,6 +242,8 @@ function WordEntry({
   gloss: string;
   /** Verb aspect, for naming the conjugation table correctly. */
   aspect: Aspect;
+  /** LINGO-060: the aspect partner to offer under this entry, if any. */
+  pair: AspectPairRef | null;
   density: ExplainDensity;
   open: boolean;
   onToggle: () => void;
@@ -236,7 +251,7 @@ function WordEntry({
   const { t } = useI18n();
   const collapsible = density === "collapsed";
   return (
-    <div className={"explain-word" + (density === "target" ? " target" : "")}>
+    <div className="explain-word">
       <button
         type="button"
         className="explain-word-head"
@@ -249,7 +264,6 @@ function WordEntry({
           <span className="explain-lemma">{entry.lemma}</span>
           {gloss && <span className="explain-gloss">{gloss}</span>}
         </span>
-        {density === "target" && <span className="explain-badge">{t("explain.target")}</span>}
         <span className="explain-pos">{entry.pos}</span>
         {collapsible && (
           <span className="explain-caret" aria-hidden="true">
@@ -288,6 +302,81 @@ function WordEntry({
               <span className="explain-k">{t("explain.mistakes")}</span>
               {entry.commonMistakes}
             </p>
+          )}
+          {pair && <AspectPairSection pair={pair} />}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/**
+ * LINGO-060 — the verb's aspect partner, offered under its entry.
+ *
+ * Russian aspect is learned as a pair: сказать only means what it means
+ * against говорить, so an entry that shows one half teaches half a word.
+ *
+ * Collapsed by default, always. The partner's full entry is as long as the
+ * one above it, and a sentence can hold two or three paired verbs — expanding
+ * them all by default would turn the sheet into something nobody scrolls to
+ * the end of. One line says what the partner is; a tap gets the rest.
+ */
+function AspectPairSection({ pair }: { pair: AspectPairRef }) {
+  const { t } = useI18n();
+  const [open, setOpen] = useState(false);
+  const aspectLabel = pair.aspect ? t(`explain.aspectName.${pair.aspect}`) : null;
+
+  return (
+    <div className="explain-pair">
+      <button
+        type="button"
+        className="explain-pair-head"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+      >
+        <span className="explain-pair-k">{t("explain.pair")}</span>
+        <span className="explain-pair-lemma">{pair.lemma}</span>
+        {aspectLabel && <span className="explain-pair-aspect">{aspectLabel}</span>}
+        {pair.gloss && <span className="explain-pair-gloss">{pair.gloss}</span>}
+        <span className="explain-caret" aria-hidden="true">
+          {open ? "−" : "＋"}
+        </span>
+      </button>
+
+      {open && (
+        <div className="explain-pair-body">
+          {pair.entry ? (
+            <>
+              {pair.entry.forms && (
+                <FormsTable
+                  forms={pair.entry.forms}
+                  aspect={(pair.aspect ?? null) as Aspect}
+                />
+              )}
+              {pair.entry.aspectUsage && (
+                <p className="explain-prose">
+                  <span className="explain-k">{t("explain.aspect")}</span>
+                  {pair.entry.aspectUsage}
+                </p>
+              )}
+              {pair.entry.collocations.length > 0 && (
+                <p className="explain-prose">
+                  <span className="explain-k">{t("explain.collocations")}</span>
+                  {pair.entry.collocations.join(" / ")}
+                </p>
+              )}
+              {pair.entry.commonMistakes && (
+                <p className="explain-prose">
+                  <span className="explain-k">{t("explain.mistakes")}</span>
+                  {pair.entry.commonMistakes}
+                </p>
+              )}
+            </>
+          ) : (
+            // The partner is outside the 3000-word dictionary. Say so plainly
+            // rather than showing an empty section — the learner should know
+            // the word exists and that we simply have nothing more on it yet.
+            <p className="explain-prose explain-pair-brief">{t("explain.pairBrief")}</p>
           )}
         </div>
       )}
