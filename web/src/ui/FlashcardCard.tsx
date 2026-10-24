@@ -92,8 +92,8 @@ export function FlashcardCard({
   // LINGO-012: word-by-word breakdown (原形・品詞・体と対・訳) for the back face.
   const breakdown = useMemo(() => buildWordBreakdown(sentence, WORD_BY_ID), [sentence]);
   const showExplain = useMemo(
-    () => explainAvailable(sentence, activeCourse(), frontLang),
-    [sentence, frontLang],
+    () => explainAvailable(sentence, activeCourse(), frontLang, uiLang),
+    [sentence, frontLang, uiLang],
   );
 
   useEffect(() => {

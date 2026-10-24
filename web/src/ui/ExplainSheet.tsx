@@ -20,13 +20,36 @@ import type { ExplainDensity, WordDictEntry } from "../engine/explain";
 import { aspectFormsNoteKey, formCellLabelKey, formGroupLabelKey } from "../engine/explainLabels";
 import type { Aspect } from "../engine/explainLabels";
 import type { ExplainData } from "../state/explain";
-import { loadExplain, peekExplain } from "../state/explain";
+import { explainLangAvailable, loadExplainLangs, peekExplain } from "../state/explain";
+import { mergeGlossLanguage, resolveExplainLangs } from "../engine/explainMerge";
+import type { ExplainLangs } from "../engine/explainMerge";
+import { getExplainLangMode } from "../state/settings";
 import { loadKnowledgeMap } from "../state/calibration";
 import { activeCourse, WORD_BY_ID } from "../state/service";
 import { useI18n } from "../i18n/i18n";
 import { SheetShell } from "./ListPicker";
 
 type Phase = "idle" | "loading" | "ready" | "offline";
+
+/** Merge two whole chunks entry-by-entry: prose from the first, `gloss`
+ * fields from the second (engine/explainMerge.ts). Only the entries actually
+ * rendered matter, so this is lazy per lookup rather than eager over 3000
+ * words + 2135 sentences. */
+function mergeExplainData(prose: ExplainData, gloss: ExplainData | null): ExplainData {
+  if (!gloss || gloss === prose) return prose;
+  return {
+    words: new Proxy(prose.words, {
+      get: (target, key: string) =>
+        key in target ? mergeGlossLanguage(target[key], gloss.words[key]) : undefined,
+      has: (target, key: string) => key in target,
+    }),
+    sentences: new Proxy(prose.sentences, {
+      get: (target, key: string) =>
+        key in target ? mergeGlossLanguage(target[key], gloss.sentences[key]) : undefined,
+      has: (target, key: string) => key in target,
+    }),
+  };
+}
 
 export function ExplainSheet({
   open,
@@ -49,10 +72,12 @@ export function ExplainSheet({
   frontLang: string;
   onClose: () => void;
 }) {
-  const { t } = useI18n();
+  const { lang: uiLang, t } = useI18n();
   const courseId = activeCourse();
   const [phase, setPhase] = useState<Phase>("idle");
-  const [data, setData] = useState<ExplainData | null>(() => peekExplain(courseId, frontLang));
+  // LINGO-062: the sheet reads from TWO chunks — one for prose, one for
+  // glosses — merged per entry. `data` is the merged result.
+  const [data, setData] = useState<ExplainData | null>(null);
   const [knowledge, setKnowledge] = useState<KnowledgeMap>(() => new Map());
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set());
 
@@ -61,31 +86,41 @@ export function ExplainSheet({
     setExpanded(new Set());
     loadKnowledgeMap().then(setKnowledge).catch(() => setKnowledge(new Map()));
 
-    const cached = peekExplain(courseId, frontLang);
-    if (cached) {
-      setData(cached);
-      setPhase("ready");
-      return;
-    }
     let alive = true;
-    setPhase("loading");
-    loadExplain(courseId, frontLang)
-      .then((d) => {
-        if (!alive) return;
-        setData(d);
+    (async () => {
+      const mode = await getExplainLangMode();
+      const langs: ExplainLangs = resolveExplainLangs(mode, frontLang, uiLang, (l) =>
+        explainLangAvailable(courseId, l),
+      );
+
+      // Both already in memory (any tap after the first this session)? Merge
+      // and render with no loading state at all.
+      const cachedProse = peekExplain(courseId, langs.prose);
+      const cachedGloss = peekExplain(courseId, langs.gloss);
+      if (cachedProse && cachedGloss) {
+        setData(mergeExplainData(cachedProse, cachedGloss));
         setPhase("ready");
-      })
-      .catch((err) => {
-        // The only realistic cause is no connection: the files are static and
-        // same-origin. Say that, and let them try again — don't dress a
-        // missing network up as a broken feature.
+        return;
+      }
+
+      setPhase("loading");
+      try {
+        const byLang = await loadExplainLangs(courseId, [langs.prose, langs.gloss]);
+        if (!alive) return;
+        const prose = byLang[langs.prose];
+        const gloss = byLang[langs.gloss];
+        setData(prose ? mergeExplainData(prose, gloss) : null);
+        setPhase("ready");
+      } catch (err) {
+        // Static same-origin files: realistically only a missing connection.
         console.error("explain fetch failed", err);
         if (alive) setPhase("offline");
-      });
+      }
+    })();
     return () => {
       alive = false;
     };
-  }, [open, courseId, frontLang]);
+  }, [open, courseId, frontLang, uiLang]);
 
   const commentary = data?.sentences[sentence.id] ?? null;
 
@@ -441,8 +476,16 @@ function FormsTable({
 
 /** Should the card back offer a 解説 button at all? Cheap enough to call on
  * every render: it only consults the in-memory cache, never the network. */
-export function explainAvailable(sentence: Sentence, courseId: string, frontLang: string): boolean {
-  const cached = peekExplain(courseId, frontLang);
+export function explainAvailable(
+  sentence: Sentence,
+  courseId: string,
+  frontLang: string,
+  uiLang?: string,
+): boolean {
+  // LINGO-062: in mixed mode the sheet may read prose from the UI language, so
+  // the button should appear whenever EITHER language has chunks.
+  const cached =
+    peekExplain(courseId, frontLang) ?? (uiLang ? peekExplain(courseId, uiLang) : null);
   // Before the first load we cannot know whether THIS sentence has an entry,
   // so we offer the button whenever the course/language ships data at all and
   // the sentence is a core one (only core sentences got commentary). A gap is
@@ -450,7 +493,8 @@ export function explainAvailable(sentence: Sentence, courseId: string, frontLang
   if (!cached) {
     return (
       sentence.targetLemma != null &&
-      explainCourseHasData(courseId, frontLang)
+      (explainCourseHasData(courseId, frontLang) ||
+        (uiLang != null && explainCourseHasData(courseId, uiLang)))
     );
   }
   return hasExplanation(sentence.id, cached.sentences);

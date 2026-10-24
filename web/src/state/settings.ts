@@ -5,6 +5,7 @@
 import { getMeta, setMeta } from "../db/idb";
 import { DEFAULT_COURSE_ID, resolveCourse } from "../content/courses";
 import type { Lang } from "../content/courses";
+import type { ExplainLangMode } from "../engine/explainMerge";
 
 export const UNLOCK_CHOICES = [5, 10, 15, 30] as const;
 export type QuizMode = "flashcard" | "strict";
@@ -33,6 +34,7 @@ const K = {
   onboardingSeen: "onboarding.seen", // global, not course-scoped (LINGO-017)
   unlockedBandPrefix: "course.unlockedBand.", // + courseId (LINGO-024)
   dailyGoal: "study.dailyGoal", // LINGO-046; global, not course-scoped
+  explainLangMode: "explain.langMode", // LINGO-062; global
   placementDeferredPrefix: "course.placementDeferred.", // + courseId (LINGO-046)
 };
 
@@ -149,6 +151,25 @@ export async function getDailyGoal(): Promise<number> {
 
 export function setDailyGoal(n: number): Promise<void> {
   return setMeta(K.dailyGoal, n);
+}
+
+/**
+ * LINGO-062: how the explanation sheet splits its two languages.
+ *
+ * Default `mixed` — translations in the language the learner studies the
+ * course in, grammar explained in the interface language. That is how someone
+ * studying a third language through a second one actually reads: the meaning
+ * of a word in the language they already think in for vocabulary, the grammar
+ * in their strongest one. `front` puts everything in the course's front
+ * language for anyone who prefers one language throughout.
+ */
+export async function getExplainLangMode(): Promise<ExplainLangMode> {
+  const v = await getMeta<ExplainLangMode>(K.explainLangMode, "mixed");
+  return v === "front" || v === "mixed" ? v : "mixed";
+}
+
+export function setExplainLangMode(mode: ExplainLangMode): Promise<void> {
+  return setMeta(K.explainLangMode, mode);
 }
 
 export async function getQuizMode(): Promise<QuizMode> {

@@ -7,6 +7,8 @@ import {
   setUnlockMinutes,
   getDailyGoal,
   setDailyGoal,
+  getExplainLangMode,
+  setExplainLangMode,
   getQuizMode,
   getTtsEnabled,
   setTtsEnabled,
@@ -18,6 +20,7 @@ import {
   setFrontLang,
 } from "../state/settings";
 import type { QuizMode } from "../state/settings";
+import type { ExplainLangMode } from "../engine/explainMerge";
 import { voiceAvailable, subscribeVoices } from "../state/tts";
 import { resolveCourse, selectableCourses } from "../content/courses";
 import type { Lang } from "../content/courses";
@@ -53,6 +56,7 @@ export function SettingsView({
   const { lang: uiLang, setLang, t } = useI18n();
   const [minutes, setMinutes] = useState(10);
   const [dailyGoal, setDailyGoalState] = useState(30); // LINGO-046
+  const [explainLang, setExplainLangState] = useState<ExplainLangMode>("mixed"); // LINGO-062
   const [quizMode, setQuizModeState] = useState<QuizMode>("flashcard");
   const [ttsOn, setTtsOn] = useState(true);
   const [ttsRate, setTtsRateState] = useState(1.0);
@@ -81,6 +85,7 @@ export function SettingsView({
   useEffect(() => {
     getUnlockMinutes().then(setMinutes);
     getDailyGoal().then(setDailyGoalState);
+    getExplainLangMode().then(setExplainLangState);
     getQuizMode().then(setQuizModeState);
     getTtsEnabled().then(setTtsOn);
     getTtsRate().then(setTtsRateState);
@@ -106,6 +111,12 @@ export function SettingsView({
     const n = Number(v);
     setDailyGoalState(n);
     void setDailyGoal(n);
+  }
+
+  function pickExplainLang(v: string) {
+    const m = v as ExplainLangMode;
+    setExplainLangState(m);
+    void setExplainLangMode(m);
   }
 
   function pickMinutes(v: string) {
@@ -302,6 +313,24 @@ export function SettingsView({
           }))}
           selected={String(dailyGoal)}
           onSelect={pickDailyGoal}
+          closeLabel={closeLabel}
+        />
+      </div>
+
+      {/* LINGO-062: the explanation sheet reads from two chunks — word
+          meanings in one language, grammar prose in another. Default is the
+          split; this row is for anyone who wants one language throughout. */}
+      <div className="section-title">{t("settings.section.explainLang")}</div>
+      <div className="list">
+        <ListPicker
+          label={t("settings.explainLang.label")}
+          sub={t("settings.explainLang.sub")}
+          options={[
+            { value: "mixed", label: t("settings.explainLang.mixed") },
+            { value: "front", label: t("settings.explainLang.front") },
+          ]}
+          selected={explainLang}
+          onSelect={pickExplainLang}
           closeLabel={closeLabel}
         />
       </div>

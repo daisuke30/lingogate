@@ -60,6 +60,28 @@ export function peekExplain(courseId: string, lang: string): ExplainData | null 
   return cache.get(`${courseId}.${lang}`) ?? null;
 }
 
+/** Does this course/language pair ship explanation chunks? */
+export function explainLangAvailable(courseId: string, lang: string): boolean {
+  return explainChunkUrls(courseId, lang) !== null;
+}
+
+/**
+ * LINGO-062: load every chunk the sheet needs, in parallel.
+ *
+ * In mixed mode that is two languages (~0.6MB gzipped each). They are fetched
+ * together rather than in sequence so the extra language costs latency only
+ * to the extent the connection is actually saturated — on any normal link the
+ * second request overlaps the first almost entirely.
+ */
+export async function loadExplainLangs(
+  courseId: string,
+  langs: string[],
+): Promise<Record<string, ExplainData | null>> {
+  const unique = [...new Set(langs)];
+  const loaded = await Promise.all(unique.map((l) => loadExplain(courseId, l)));
+  return Object.fromEntries(unique.map((l, i) => [l, loaded[i]]));
+}
+
 /**
  * Fetch (or return the cached) explanation data. Resolves null when this
  * course/language has no chunks; rejects only on a genuine network failure,

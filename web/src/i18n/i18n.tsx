@@ -870,6 +870,25 @@ const M: Record<string, Entry> = {
     ru: "Подсвеченная строка: значения, которые должны совпадать, различаются.",
   },
 
+  // -- 解説の表示言語 (LINGO-062) --------------------------------------------
+  "settings.section.explainLang": { ja: "解説の言語", en: "Explanation language", ru: "Язык разбора" },
+  "settings.explainLang.label": { ja: "解説の表示", en: "How explanations read", ru: "Как читается разбор" },
+  "settings.explainLang.sub": {
+    ja: "単語の訳と文法の説明を、別々の言語で読めます。",
+    en: "Word meanings and grammar explanations can be in different languages.",
+    ru: "Значения слов и объяснения грамматики могут быть на разных языках.",
+  },
+  "settings.explainLang.mixed": {
+    ja: "訳は表面の言語・説明はアプリの言語",
+    en: "Meanings in the prompt language, grammar in the app language",
+    ru: "Значения — на языке подсказок, грамматика — на языке приложения",
+  },
+  "settings.explainLang.front": {
+    ja: "すべて表面の言語で",
+    en: "Everything in the prompt language",
+    ru: "Всё на языке подсказок",
+  },
+
   // -- app lock (LINGO-040): the automation guide, moved off Home. It needs
   // iOS Shortcuts knowledge to act on, so it belongs where someone goes
   // looking for it — not next to the one button a first-time user must press.
