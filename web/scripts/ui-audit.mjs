@@ -715,6 +715,12 @@ await page.waitForTimeout(1200);
         .then(() => true)
         .catch(() => false);
       if (check(arrived, "explain sheet: never rendered any content after tapping 解説")) {
+        // LINGO-062: the word dictionary loads in a SECOND phase (the sheet
+        // opens on the sentence commentary first), so wait for it rather than
+        // sampling the moment the first section appears.
+        await page
+          .waitForSelector(".explain-word", { timeout: 40000 })
+          .catch(() => check(false, "explain sheet: word entries never arrived"));
         await shot("10-explain");
         await assertReallyVisible(".sheet", "explain sheet", 200, { scrolls: true });
         await assertHasSideMargin(".explain-section", "explain sheet: section");

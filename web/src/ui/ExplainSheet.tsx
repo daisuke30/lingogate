@@ -118,8 +118,9 @@ export function ExplainSheet({
         setCommentaryMap(prose ? (mergeGlossLanguage(prose, gloss) as SentenceCommentary) : null);
         setPhase("ready");
       } catch (err) {
+        if (!alive) return; // closed mid-request
         console.error("explain sentence fetch failed", err);
-        if (alive) setPhase("offline");
+        setPhase("offline");
         return;
       }
 
@@ -135,8 +136,10 @@ export function ExplainSheet({
         setWordMap(prose ? (mergeGlossLanguage(prose, gloss) as WordDict) : null);
       } catch (err) {
         // The sentence half is already on screen; a missing dictionary just
-        // means no word list, not a broken sheet.
-        console.error("explain word fetch failed", err);
+        // means no word list, not a broken sheet. Only report it if the sheet
+        // is still open: closing it mid-download aborts the request, and that
+        // is the learner's doing, not a fault worth logging.
+        if (alive) console.error("explain word fetch failed", err);
       } finally {
         if (alive) setWordsPending(false);
       }
