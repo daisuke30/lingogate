@@ -470,6 +470,11 @@ const M: Record<string, Entry> = {
     en: "Explanations load when you're online. Reconnect and open this again.",
     ru: "Разборы загружаются при подключении к сети. Подключитесь и откройте снова.",
   },
+  "explain.loadingWords": {
+    ja: "単語の辞典を読み込んでいます…",
+    en: "Loading the word dictionary…",
+    ru: "Загружаем словарь…",
+  },
   "explain.skeleton": { ja: "文の骨格", en: "How the sentence is built", ru: "Строение фразы" },
   "explain.keyPoint": { ja: "学びどころ", en: "The thing to take away", ru: "Главное" },
   "explain.replies": { ja: "会話での返し", en: "How you'd reply", ru: "Как ответить" },

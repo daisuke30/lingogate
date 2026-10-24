@@ -51,6 +51,65 @@ export function explainChunkUrls(
   };
 }
 
+/** LINGO-062: the two halves are cached and fetched SEPARATELY.
+ *
+ * v2 tripled the data — each chunk is now ~0.9MB gzipped, so mixed mode would
+ * pull ~3.6MB before showing anything, and a cold open measured 4-11s on a
+ * real connection. The sentence commentary is what the top of the sheet needs
+ * and it is half the bytes; the word dictionary fills in the section below.
+ * Splitting them lets the sheet open on the sentence while the dictionary is
+ * still arriving, instead of making the learner wait for all four files.
+ */
+export type ExplainPart = "words" | "sentences";
+
+const partCache = new Map<string, unknown>();
+const partInFlight = new Map<string, Promise<unknown>>();
+
+function partKey(courseId: string, lang: string, part: ExplainPart) {
+  return `${courseId}.${lang}.${part}`;
+}
+
+/** Fetch one half for one language. Cached for the session. */
+export async function loadExplainPart<T>(
+  courseId: string,
+  lang: string,
+  part: ExplainPart,
+): Promise<T | null> {
+  const urls = explainChunkUrls(courseId, lang);
+  if (!urls) return null;
+  const key = partKey(courseId, lang, part);
+
+  const cached = partCache.get(key);
+  if (cached) return cached as T;
+  const existing = partInFlight.get(key);
+  if (existing) return existing as Promise<T>;
+
+  const promise = fetch(part === "words" ? urls.words : urls.sentences)
+    .then((r) => {
+      if (!r.ok) throw new Error(`explain ${part} ${r.status}`);
+      return r.json();
+    })
+    .then((json) => {
+      partCache.set(key, json);
+      return json;
+    })
+    .finally(() => {
+      partInFlight.delete(key);
+    });
+
+  partInFlight.set(key, promise);
+  return promise as Promise<T>;
+}
+
+/** Already in memory? */
+export function peekExplainPart<T>(
+  courseId: string,
+  lang: string,
+  part: ExplainPart,
+): T | null {
+  return (partCache.get(partKey(courseId, lang, part)) as T) ?? null;
+}
+
 const cache = new Map<string, ExplainData>();
 const inFlight = new Map<string, Promise<ExplainData | null>>();
 
@@ -127,4 +186,6 @@ export async function loadExplain(courseId: string, lang: string): Promise<Expla
 export function resetExplainCache(): void {
   cache.clear();
   inFlight.clear();
+  partCache.clear();
+  partInFlight.clear();
 }

@@ -16,11 +16,15 @@ import type { KnowledgeMap } from "../engine/calibration";
 import { hasExplanation, wordDensity } from "../engine/explain";
 import { resolveAspectPair } from "../engine/explainPair";
 import type { AspectPairRef } from "../engine/explainPair";
-import type { ExplainDensity, WordDictEntry } from "../engine/explain";
+import type {
+  ExplainDensity,
+  SentenceCommentary,
+  WordDict,
+  WordDictEntry,
+} from "../engine/explain";
 import { aspectFormsNoteKey, formCellLabelKey, formGroupLabelKey } from "../engine/explainLabels";
 import type { Aspect } from "../engine/explainLabels";
-import type { ExplainData } from "../state/explain";
-import { explainLangAvailable, loadExplainLangs, peekExplain } from "../state/explain";
+import { explainLangAvailable, loadExplainPart, peekExplainPart } from "../state/explain";
 import { mergeGlossLanguage, resolveExplainLangs } from "../engine/explainMerge";
 import type { ExplainLangs } from "../engine/explainMerge";
 import { getExplainLangMode } from "../state/settings";
@@ -31,24 +35,17 @@ import { SheetShell } from "./ListPicker";
 
 type Phase = "idle" | "loading" | "ready" | "offline";
 
-/** Merge two whole chunks entry-by-entry: prose from the first, `gloss`
- * fields from the second (engine/explainMerge.ts). Only the entries actually
- * rendered matter, so this is lazy per lookup rather than eager over 3000
- * words + 2135 sentences. */
-function mergeExplainData(prose: ExplainData, gloss: ExplainData | null): ExplainData {
-  if (!gloss || gloss === prose) return prose;
-  return {
-    words: new Proxy(prose.words, {
-      get: (target, key: string) =>
-        key in target ? mergeGlossLanguage(target[key], gloss.words[key]) : undefined,
-      has: (target, key: string) => key in target,
-    }),
-    sentences: new Proxy(prose.sentences, {
-      get: (target, key: string) =>
-        key in target ? mergeGlossLanguage(target[key], gloss.sentences[key]) : undefined,
-      has: (target, key: string) => key in target,
-    }),
-  };
+/** Merge a cached prose half with its cached gloss counterpart, if both are
+ * already in memory (every tap after the first in a session). */
+function mergeFrom<T>(
+  prose: T,
+  courseId: string,
+  langs: ExplainLangs,
+  part: "words" | "sentences",
+): T {
+  if (langs.gloss === langs.prose) return prose;
+  const gloss = peekExplainPart<T>(courseId, langs.gloss, part);
+  return mergeGlossLanguage(prose, gloss);
 }
 
 export function ExplainSheet({
@@ -75,9 +72,14 @@ export function ExplainSheet({
   const { lang: uiLang, t } = useI18n();
   const courseId = activeCourse();
   const [phase, setPhase] = useState<Phase>("idle");
-  // LINGO-062: the sheet reads from TWO chunks — one for prose, one for
-  // glosses — merged per entry. `data` is the merged result.
-  const [data, setData] = useState<ExplainData | null>(null);
+  // LINGO-062: four files feed this sheet (prose + gloss, sentence + word) and
+  // v2 made them ~0.9MB gzipped each. Rather than wait for all of them, the
+  // sentence commentary — the top of the sheet, and half the bytes — renders
+  // as soon as it lands; the word dictionary fills the section below when it
+  // arrives. Nothing already on screen ever changes language afterwards.
+  const [commentaryMap, setCommentaryMap] = useState<SentenceCommentary | null>(null);
+  const [wordMap, setWordMap] = useState<WordDict | null>(null);
+  const [wordsPending, setWordsPending] = useState(false);
   const [knowledge, setKnowledge] = useState<KnowledgeMap>(() => new Map());
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set());
 
@@ -93,28 +95,50 @@ export function ExplainSheet({
         explainLangAvailable(courseId, l),
       );
 
-      // Both already in memory (any tap after the first this session)? Merge
-      // and render with no loading state at all.
-      const cachedProse = peekExplain(courseId, langs.prose);
-      const cachedGloss = peekExplain(courseId, langs.gloss);
-      if (cachedProse && cachedGloss) {
-        setData(mergeExplainData(cachedProse, cachedGloss));
+      const cachedSentence = peekExplainPart<SentenceCommentary>(courseId, langs.prose, "sentences");
+      const cachedWords = peekExplainPart<WordDict>(courseId, langs.prose, "words");
+      if (cachedSentence) {
+        setCommentaryMap(mergeFrom(cachedSentence, courseId, langs, "sentences"));
         setPhase("ready");
+      } else {
+        setPhase("loading");
+      }
+      if (cachedWords) setWordMap(mergeFrom(cachedWords, courseId, langs, "words"));
+      setWordsPending(!cachedWords);
+
+      // Sentence half first — it is what the sheet opens on.
+      try {
+        const [prose, gloss] = await Promise.all([
+          loadExplainPart<SentenceCommentary>(courseId, langs.prose, "sentences"),
+          langs.gloss === langs.prose
+            ? Promise.resolve(null)
+            : loadExplainPart<SentenceCommentary>(courseId, langs.gloss, "sentences"),
+        ]);
+        if (!alive) return;
+        setCommentaryMap(prose ? (mergeGlossLanguage(prose, gloss) as SentenceCommentary) : null);
+        setPhase("ready");
+      } catch (err) {
+        console.error("explain sentence fetch failed", err);
+        if (alive) setPhase("offline");
         return;
       }
 
-      setPhase("loading");
+      // Word half second — it renders below the fold.
       try {
-        const byLang = await loadExplainLangs(courseId, [langs.prose, langs.gloss]);
+        const [prose, gloss] = await Promise.all([
+          loadExplainPart<WordDict>(courseId, langs.prose, "words"),
+          langs.gloss === langs.prose
+            ? Promise.resolve(null)
+            : loadExplainPart<WordDict>(courseId, langs.gloss, "words"),
+        ]);
         if (!alive) return;
-        const prose = byLang[langs.prose];
-        const gloss = byLang[langs.gloss];
-        setData(prose ? mergeExplainData(prose, gloss) : null);
-        setPhase("ready");
+        setWordMap(prose ? (mergeGlossLanguage(prose, gloss) as WordDict) : null);
       } catch (err) {
-        // Static same-origin files: realistically only a missing connection.
-        console.error("explain fetch failed", err);
-        if (alive) setPhase("offline");
+        // The sentence half is already on screen; a missing dictionary just
+        // means no word list, not a broken sheet.
+        console.error("explain word fetch failed", err);
+      } finally {
+        if (alive) setWordsPending(false);
       }
     })();
     return () => {
@@ -122,11 +146,11 @@ export function ExplainSheet({
     };
   }, [open, courseId, frontLang, uiLang]);
 
-  const commentary = data?.sentences[sentence.id] ?? null;
+  const commentary = commentaryMap?.[sentence.id] ?? null;
 
   /** The sentence's words, each with its opening density. */
   const words = useMemo(() => {
-    if (!data) return [];
+    if (!wordMap) return [];
     const seen = new Set<string>();
     const out: {
       entry: WordDictEntry;
@@ -146,7 +170,7 @@ export function ExplainSheet({
       if (!deckWord) continue;
       if (seen.has(deckWord.lemma)) continue; // a word repeated in one sentence is one entry
       seen.add(deckWord.lemma);
-      const entry = data.words[deckWord.lemma];
+      const entry = wordMap[deckWord.lemma];
       if (!entry) continue; // dictionary gap — show what we have, never a blank row
       out.push({
         entry,
@@ -158,7 +182,7 @@ export function ExplainSheet({
         // "future" — see formGroupLabelKey.
         aspect: (deckWord.aspect ?? null) as Aspect,
         // LINGO-060: the aspect partner, resolved from the same chunk.
-        pair: resolveAspectPair(deckWord, data.words, glossOf),
+        pair: resolveAspectPair(deckWord, wordMap, glossOf),
         density: wordDensity({
           lemma: deckWord.lemma,
           pos: deckWord.pos,
@@ -169,7 +193,7 @@ export function ExplainSheet({
     }
     // LINGO-061: sentence order, no target-first hoist.
     return out;
-  }, [data, sentence, knowledge]);
+  }, [wordMap, sentence, knowledge]);
 
   const toggle = (lemma: string) =>
     setExpanded((prev) => {
@@ -209,9 +233,12 @@ export function ExplainSheet({
               <p className="explain-prose">{commentary.keyPoint}</p>
             </section>
 
-            {words.length > 0 && (
+            {(words.length > 0 || wordsPending) && (
               <section className="explain-section">
                 <h3 className="explain-h">{t("explain.words")}</h3>
+                {wordsPending && words.length === 0 && (
+                  <p className="explain-status">{t("explain.loadingWords")}</p>
+                )}
                 {words.map(({ entry, density, gloss, aspect, pair }) => (
                   <WordEntry
                     key={entry.lemma}
@@ -484,8 +511,10 @@ export function explainAvailable(
 ): boolean {
   // LINGO-062: in mixed mode the sheet may read prose from the UI language, so
   // the button should appear whenever EITHER language has chunks.
+  // Only the sentence half decides whether a sheet has anything to show.
   const cached =
-    peekExplain(courseId, frontLang) ?? (uiLang ? peekExplain(courseId, uiLang) : null);
+    peekExplainPart<SentenceCommentary>(courseId, frontLang, "sentences") ??
+    (uiLang ? peekExplainPart<SentenceCommentary>(courseId, uiLang, "sentences") : null);
   // Before the first load we cannot know whether THIS sentence has an entry,
   // so we offer the button whenever the course/language ships data at all and
   // the sentence is a core one (only core sentences got commentary). A gap is
@@ -497,7 +526,7 @@ export function explainAvailable(
         (uiLang != null && explainCourseHasData(courseId, uiLang)))
     );
   }
-  return hasExplanation(sentence.id, cached.sentences);
+  return hasExplanation(sentence.id, cached);
 }
 
 function explainCourseHasData(courseId: string, frontLang: string): boolean {
