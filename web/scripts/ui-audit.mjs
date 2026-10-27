@@ -407,6 +407,108 @@ async function assertBackgroundContinuity(label) {
   );
 }
 
+/**
+ * LINGO-063 — nothing readable may sit on top of anything else readable.
+ *
+ * The 🔊 button rendered over the Russian sentence for weeks without any check
+ * noticing, because every assertion so far asked "is this element the right
+ * size, in the right place?" — and both elements were. Overlap is a property
+ * of a PAIR, so it needs its own test.
+ *
+ * Compares the painted boxes of leaf content elements (text carriers and
+ * controls). Deliberately ignores:
+ *  - ancestor/descendant pairs, which overlap by definition;
+ *  - anything inside a container that is MEANT to cover the page (a sheet, a
+ *    modal, a rating overlay) — listed explicitly, so a new kind of overlay
+ *    has to be added here consciously rather than silently excusing itself.
+ */
+async function assertNoOverlap(label, opts = {}) {
+  const found = await page.evaluate((intentional) => {
+    const SELECTORS =
+      ".kicker, .ru, .ja, .kana, .note, .prompt, .hint, .wb-row, .explain-cta, " +
+      ".iconbtn, .btn, .chip, .today-headline, .today-sub, .progress-num, " +
+      ".progress-label, .course-chip, .streak-chip, .row .label, .row .sub, " +
+      ".row-value, .section-title, .tabbar-item, .explain-h, .explain-lemma";
+
+    const inIntentional = (el) => intentional.some((sel) => el.closest(sel));
+
+    /**
+     * The rectangle actually PAINTED for this element: its own box clipped by
+     * every scrolling/hidden ancestor.
+     *
+     * getBoundingClientRect reports the full box even for the part scrolled
+     * out of a container, so comparing raw boxes makes a half-scrolled word
+     * row "collide" with the button drawn below its container. Only the
+     * visible part can overlap anything, so only the visible part is compared.
+     */
+    const visibleRect = (el) => {
+      const r = el.getBoundingClientRect();
+      let top = r.top;
+      let bottom = r.bottom;
+      let left = r.left;
+      let right = r.right;
+      for (let n = el.parentElement; n; n = n.parentElement) {
+        const cs = getComputedStyle(n);
+        if (!/auto|scroll|hidden/.test(cs.overflowY + cs.overflowX)) continue;
+        const c = n.getBoundingClientRect();
+        top = Math.max(top, c.top);
+        bottom = Math.min(bottom, c.bottom);
+        left = Math.max(left, c.left);
+        right = Math.min(right, c.right);
+      }
+      return { top, bottom, left, right, width: right - left, height: bottom - top };
+    };
+
+    const els = [...document.querySelectorAll(SELECTORS)].filter((el) => {
+      if (inIntentional(el)) return false;
+      const cs = getComputedStyle(el);
+      if (cs.visibility === "hidden" || cs.display === "none" || Number(cs.opacity) < 0.05) {
+        return false;
+      }
+      const r = visibleRect(el);
+      return r.width > 1 && r.height > 1 && r.bottom > 0 && r.top < window.innerHeight;
+    });
+
+    const hits = [];
+    for (let i = 0; i < els.length; i++) {
+      for (let j = i + 1; j < els.length; j++) {
+        const a = els[i];
+        const b = els[j];
+        if (a.contains(b) || b.contains(a)) continue; // nesting is not collision
+        // The flashcard's two faces are stacked on purpose and only one is
+        // ever showing (backface-visibility), so a front/back pair is not a
+        // collision. Within ONE face it certainly is — which is the case this
+        // check exists for.
+        const fa = a.closest(".face");
+        const fb = b.closest(".face");
+        if (fa && fb && fa !== fb) continue;
+        if ((fa && !fb) || (fb && !fa)) continue; // card vs. page chrome
+        const ra = visibleRect(a);
+        const rb = visibleRect(b);
+        const ox = Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left);
+        const oy = Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top);
+        // 2px of tolerance for sub-pixel rounding and 1px borders.
+        if (ox > 2 && oy > 2) {
+          const name = (el) =>
+            `${el.tagName.toLowerCase()}.${(el.className || "").toString().split(" ")[0]}` +
+            `("${(el.textContent || "").trim().slice(0, 18)}")`;
+          hits.push(`${name(a)} x ${name(b)} by ${Math.round(ox)}x${Math.round(oy)}px`);
+        }
+      }
+    }
+    return hits;
+  }, opts.intentional ?? [
+    ".sheet-backdrop", // bottom sheets cover the page by design
+    ".pet-modal",
+    ".pet-event",
+    ".overlay-label", // the swipe-to-grade overlay sits ON the card deliberately
+    ".tabbar", // fixed chrome; content scrolling under it is covered by
+               // assertLastRowReachable / assertNoBottomBand instead
+  ]);
+
+  check(found.length === 0, `${label}: overlapping elements — ${found.slice(0, 4).join("; ")}`);
+}
+
 /** #root must be the only scroller: html/body never move (iOS bounce fix). */
 async function assertRootIsTheScroller(label) {
   const r = await page.evaluate(() => {
@@ -483,6 +585,7 @@ await assertReallyVisible(".home-progress", "home: progress block", 80);
 await assertReallyVisible(".btn.primary", "home: primary CTA", 44);
 await assertHasSideMargin(".home-progress", "home: progress block");
 await assertNoHorizontalOverflow("home");
+await assertNoOverlap("home");
 await assertNoBottomBand("home");
 await assertBackgroundContinuity("home");
 
@@ -561,6 +664,7 @@ rowStats.forEach((l, i) => {
   l.rows.forEach((h, j) => check(h >= 40, `settings: list #${i} row #${j} only ${h}px tall`));
 });
 await assertNoHorizontalOverflow("settings");
+await assertNoOverlap("settings");
 
 // A row must actually open its sheet when tapped.
 const firstRow = page.locator(".list .row-link").first();
@@ -608,6 +712,7 @@ if (check(await petTab.count(), "tab bar: 育成 tab missing")) {
   await page.waitForTimeout(400);
   await shot("06-pet");
   await assertNoHorizontalOverflow("pet");
+  await assertNoOverlap("pet");
   await assertNoBottomBand("pet");
 await assertBackgroundContinuity("pet");
   await assertRootIsTheScroller("pet");
@@ -671,6 +776,10 @@ await page.waitForTimeout(1200);
   if (await card.count()) {
     await card.click(); // flip to the back
     await page.waitForTimeout(700);
+    // LINGO-063: the card back is where the 🔊 button rendered over the
+    // sentence. Checked on the real card, at whatever length it happens to be.
+    await assertNoOverlap("card back");
+    await assertNoHorizontalOverflow("card back");
     const btn = page.locator(".explain-cta").first();
     if (await btn.count()) {
       // LINGO-059: it is a full-width button at the BOTTOM of the card back

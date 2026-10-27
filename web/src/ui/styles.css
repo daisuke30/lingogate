@@ -401,7 +401,20 @@ button {
   border-radius: 22px;
   border: 1px solid var(--line);
   background: linear-gradient(160deg, var(--bg-elev), var(--bg-elev-2));
-  padding: 28px 24px;
+  /* LINGO-063 — the top strip is RESERVED for the absolutely-positioned
+   * kicker (top-left) and 🔊 button (top-right).
+   *
+   * Both float over the flow, and the flow is vertically centred, so nothing
+   * ever stopped a long sentence from rising into their band and rendering
+   * underneath them. It only looked safe because some other element happened
+   * to sit there: until LINGO-059 the 解説 icon button was a flex child in
+   * exactly that gap, and moving it to the bottom of the card let the Russian
+   * text slide up under the speaker (Katsuta's report, 2026-10-27).
+   *
+   * 58px = the speaker's reach (14px offset + 36px tall) plus a little air.
+   * Padding shrinks the centring box, so no content length can enter the
+   * strip — the overflow lands in .word-breakdown, which already scrolls. */
+  padding: 58px 24px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
