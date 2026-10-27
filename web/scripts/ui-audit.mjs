@@ -53,6 +53,34 @@ if (!argBase) await ensureLocalServer(base + "/");
 
 const VIEWPORT = { width: 390, height: 844 }; // iPhone 14-ish, Katsuta's device class
 
+/**
+ * Speech is COUNTED but never produced (LINGO-064, Katsuta: "stop making noise
+ * every time you verify").
+ *
+ * The audit opens cards and flips them, and the app reads the back aloud by
+ * design — so a run used to say several hundred Russian words out loud on
+ * whoever's machine was verifying. Nothing the audit asserts needs audio to
+ * reach a speaker: `__speakCalls` is the assertion surface (see the
+ * level-check audio test). A recording no-op keeps every check working and
+ * makes a run silent. `cancel`/`pause`/`resume` are stubbed too, so app code
+ * calling them cannot throw on a queue that was never filled.
+ *
+ * Applied to the CONTEXT, so every page opened in it is silent — including
+ * the 320px pass, which would otherwise be a page nobody remembered.
+ */
+const SILENCE_SPEECH = () => {
+  window.__speakCalls = [];
+  const s = window.speechSynthesis;
+  if (!s) return;
+  s.speak = (u) => {
+    window.__speakCalls.push(String((u && u.text) || "").slice(0, 40));
+    // Deliberately no call-through: the audit must stay silent.
+  };
+  s.cancel = () => {};
+  s.pause = () => {};
+  s.resume = () => {};
+};
+
 const failures = [];
 const notes = [];
 
@@ -84,22 +112,10 @@ const context = await browser.newContext({
   viewport: VIEWPORT,
   serviceWorkers: "block",
 });
+await context.addInitScript(SILENCE_SPEECH);
 const page = await context.newPage();
 page.setDefaultNavigationTimeout(45_000);
 
-// LINGO-046: count every utterance the page starts, so the level check can be
-// held to "speaks only when the learner asks".
-await page.addInitScript(() => {
-  window.__speakCalls = [];
-  const s = window.speechSynthesis;
-  if (s && s.speak) {
-    const original = s.speak.bind(s);
-    s.speak = (u) => {
-      window.__speakCalls.push(String((u && u.text) || "").slice(0, 40));
-      return original(u);
-    };
-  }
-});
 
 const consoleErrors = [];
 page.on("console", (m) => {
@@ -919,6 +935,7 @@ check(
     deviceScaleFactor: 2,
     serviceWorkers: "block",
   });
+  await narrowCtx.addInitScript(SILENCE_SPEECH);
   const narrow = await narrowCtx.newPage();
   narrow.setDefaultNavigationTimeout(45_000);
   const narrowErrors = [];
