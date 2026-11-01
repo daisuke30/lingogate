@@ -14,7 +14,7 @@
 
 import type { ReviewState } from "./fsrs";
 import type { KnowledgeMap } from "./calibration";
-import type { Sentence } from "./content";
+import type { DeckWord, Sentence } from "./content";
 
 /** FSRS stability (days) at/above which a studied target word is counted as
  * mastered. §3: "対象文のFSRS安定度が閾値≧21日でマスター認定". */
@@ -105,12 +105,64 @@ export function masteryLevelThreshold(masteredCount: number): number | null {
  *      mastery threshold.
  * Restricted to `deckLemmas` so the count stays within the 3000-word universe
  * (a stray knowledge/state row for a non-deck lemma never inflates it). */
+/** LINGO-065: minimum number of DISTINCT durably-retained (stability >=
+ * threshold) sentences containing a word that must be found before the
+ * "incidental exposure" path (see masteredLemmaSet below) credits it as
+ * mastered. One durable sentence containing the word isn't enough evidence on
+ * its own — a learner can reliably recall a whole sentence from its OTHER,
+ * more salient word and barely register a secondary one riding along in the
+ * same sentence (a short function word especially). Two independent
+ * durably-retained sentences containing the same word is a materially
+ * stronger, still-conservative signal: it's no longer one sentence's specific
+ * phrasing being memorized, it's the word itself recurring and holding up
+ * across different contexts. This is deliberately NOT applied to a sentence's
+ * OWN designated target lemma (that path, below, still only needs ONE pass —
+ * unchanged) — it only widens how a word can ALSO be credited when it is
+ * merely a covered (non-target) word of sentences actually being studied. */
+export const MASTERY_MIN_INCIDENTAL_EXPOSURES = 2;
+
+/**
+ * The set of deck lemmas the learner has mastered:
+ *  (a) judged `known` (calibration/assumed, incl. review-promoted), plus
+ *  (b) the target lemma of any sentence whose review state has stability >=
+ *      the mastery threshold, plus
+ *  (c) LINGO-065 — any OTHER word a durably-retained sentence happens to
+ *      cover (via `wordIds`, not `targetLemma`), provided at least
+ *      `MASTERY_MIN_INCIDENTAL_EXPOSURES` distinct such sentences corroborate
+ *      it (see that constant's doc comment for why one sentence isn't enough
+ *      but two independently is).
+ *
+ * Why (c) exists: mastery.ts's original design assumed every lemma's
+ * designated target sentence would, eventually, actually get studied. In
+ * practice (LINGO-065, 2026-11-01) buildGateSession's due-review backlog can
+ * structurally crowd out new-card introduction for months at a time (see
+ * session.ts's "LINGO-065" doc comment + engine/session.test.ts's simulation
+ * suite) — so a word whose own target sentence never got a turn could sit at
+ * "unset" forever even after the learner has plainly internalized it through
+ * dozens of OTHER sentences that happen to contain it. (c) recovers exactly
+ * that case, without weakening (a)/(b) at all: it is a pure UNION addition —
+ * every lemma (a)/(b) already counted is still counted (those branches are
+ * untouched), so this can only ever ADD lemmas to the mastered set, never
+ * remove one. That additive-only property is deliberate (Katsuta, LINGO-065
+ * follow-up instruction): existing known/mastered data must never be
+ * destructively rewritten or have words fall OUT of mastery under a
+ * definition change — recomputing this pure function against the learner's
+ * existing wordKnowledge + ReviewState rows is automatically a safe,
+ * non-destructive "retroactive" application on next load — no migration, no
+ * write, nothing to repair, since the set is derived fresh every time rather
+ * than stored.
+ *
+ * `wordById` is optional (defaults to skipping (c) entirely) purely so every
+ * pre-existing caller/test of this function keeps compiling unchanged; real
+ * callers (ContentStore.masteryStats) always pass it.
+ */
 export function masteredLemmaSet(
   sentences: Sentence[],
   knowledge: KnowledgeMap,
   states: Iterable<ReviewState>,
   deckLemmas: Set<string>,
   stabilityThresholdDays: number = MASTERY_STABILITY_DAYS,
+  wordById?: Map<number, DeckWord>,
 ): Set<string> {
   const out = new Set<string>();
 
@@ -119,13 +171,36 @@ export function masteredLemmaSet(
   }
 
   const targetById = new Map<string, string>();
+  const wordIdsById = new Map<string, number[]>();
   for (const s of sentences) {
     if (s.targetLemma) targetById.set(s.id, s.targetLemma);
+    if (wordById) wordIdsById.set(s.id, s.wordIds);
   }
+
+  // (c) tally: lemma -> count of distinct durably-retained sentences that
+  // cover it incidentally (i.e. as a non-target wordId).
+  const incidentalSentenceCountByLemma = new Map<string, number>();
+
   for (const st of states) {
     if (st.stability == null || st.stability < stabilityThresholdDays) continue;
-    const lemma = targetById.get(st.sentenceId);
-    if (lemma && deckLemmas.has(lemma)) out.add(lemma);
+
+    // (b) the sentence's own designated target — unchanged, one pass suffices.
+    const targetLemma = targetById.get(st.sentenceId);
+    if (targetLemma && deckLemmas.has(targetLemma)) out.add(targetLemma);
+
+    // (c) every OTHER word this durably-retained sentence happens to cover.
+    if (!wordById) continue;
+    const wordIds = wordIdsById.get(st.sentenceId);
+    if (!wordIds) continue;
+    for (const wid of wordIds) {
+      const w = wordById.get(wid);
+      if (!w || !deckLemmas.has(w.lemma) || w.lemma === targetLemma) continue;
+      incidentalSentenceCountByLemma.set(w.lemma, (incidentalSentenceCountByLemma.get(w.lemma) ?? 0) + 1);
+    }
+  }
+
+  for (const [lemma, count] of incidentalSentenceCountByLemma) {
+    if (count >= MASTERY_MIN_INCIDENTAL_EXPOSURES) out.add(lemma);
   }
 
   return out;
@@ -162,6 +237,7 @@ export function masteryStats(
   states: Iterable<ReviewState>,
   deckLemmas: Set<string>,
   stabilityThresholdDays: number = MASTERY_STABILITY_DAYS,
+  wordById?: Map<number, DeckWord>,
 ): MasteryStats {
   const mastered = masteredLemmaSet(
     sentences,
@@ -169,6 +245,7 @@ export function masteryStats(
     states,
     deckLemmas,
     stabilityThresholdDays,
+    wordById,
   );
   const masteredCount = mastered.size;
   // LINGO-040: split the same set into "the learner told us" vs "the app saw

@@ -397,6 +397,7 @@ export class ContentStore {
       this.states.values(),
       deckLemmas,
       stabilityThresholdDays,
+      this.wordById,
     );
   }
 

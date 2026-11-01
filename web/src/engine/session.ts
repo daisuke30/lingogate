@@ -74,6 +74,14 @@ export function buildNotesSession(
   return { cards, direction: "en2ru", band: 1 };
 }
 
+/** LINGO-065: the minimum fraction of a session that must be reserved for
+ * new-card fill (step 2), not claimed by due reviews (step 1), whenever any
+ * new cards actually exist to fill it. See buildGateSession's doc comment for
+ * why this exists — without it, due-review backlog grows to permanently
+ * consume the entire daily quota and new-card (hence new-target-lemma, hence
+ * mastery) inflow silently stops forever. */
+const NEW_CARD_RESERVED_FRACTION = 0.3;
+
 export function buildGateSession(
   store: ContentStore,
   opts: { band: number; now: number; size?: number; direction?: string; rng: SeededRNG },
@@ -88,9 +96,26 @@ export function buildGateSession(
     used.add(sentence.id);
   };
 
-  // 1. Due reviews.
-  for (const { state, sentence } of store.dueReviews(opts.band, opts.now, size)) {
-    if (cards.length >= size) break;
+  // 1. Due reviews — LINGO-065: capped below `size` so step 2 always gets a
+  // real shot. Pre-fix, this step alone could (and, demonstrably, over weeks
+  // of real use, eventually always DOES) fill every slot: due-review load
+  // grows as more cards enter long-term rotation, while the daily budget
+  // stays fixed, so a session's entire 10 slots end up 100% review with zero
+  // new cards, FOREVER — no new target lemma can ever be introduced again,
+  // which freezes "覚えた語" even though the learner keeps studying correctly
+  // every day. Confirmed by direct simulation against the real RU deck
+  // (engine/session.test.ts's "LINGO-065" suite): a flawless fresh learner
+  // doing 10 Good-rated cards/day hits zero-new-card days more and more often
+  // (57% of days in month 1 -> 87% by month 5) and monthly mastery growth
+  // *declines* every month (+130/+90/+110/+70/+40) despite constant effort.
+  // Reserving a minimum new-card share breaks that asymptote without
+  // abandoning due reviews when there's genuinely nothing new to teach (see
+  // step 2b below, which reclaims any unused reserved slots for MORE due
+  // reviews rather than wasting them).
+  const reservedForNew = Math.min(size, Math.ceil(size * NEW_CARD_RESERVED_FRACTION));
+  const dueLimit = Math.max(0, size - reservedForNew);
+  for (const { state, sentence } of store.dueReviews(opts.band, opts.now, dueLimit)) {
+    if (cards.length >= dueLimit) break;
     push(sentence, state, true);
   }
 
@@ -119,6 +144,19 @@ export function buildGateSession(
         if (cards.length >= size) break;
         push(s, newReviewState(s.id, direction), false);
       }
+    }
+  }
+
+  // 2b. LINGO-065: if there weren't enough new cards to fill the slots
+  // reserved for them (small/exhausted new-card pool), don't waste that
+  // capacity — reclaim it for more due reviews instead of serving a session
+  // shorter than `size`. This is exactly step 1's old unlimited behaviour,
+  // just deferred until step 2 has had its guaranteed turn.
+  if (cards.length < size) {
+    for (const { state, sentence } of store.dueReviews(opts.band, opts.now, size)) {
+      if (cards.length >= size) break;
+      if (used.has(sentence.id)) continue;
+      push(sentence, state, true);
     }
   }
 

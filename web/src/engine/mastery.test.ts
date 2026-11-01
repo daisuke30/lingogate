@@ -7,8 +7,9 @@ import {
   approximateWordCount,
   MASTERY_STABILITY_DAYS,
   MASTERY_TARGET_WORDS,
+  MASTERY_MIN_INCIDENTAL_EXPOSURES,
 } from "./mastery";
-import type { Sentence } from "./content";
+import type { Sentence, DeckWord } from "./content";
 import type { KnowledgeMap } from "./calibration";
 import { CardState, newReviewState } from "./fsrs";
 import type { ReviewState } from "./fsrs";
@@ -138,6 +139,85 @@ describe("masteredLemmaSet", () => {
     const states = [stateWithStability("ghost", 60)];
     const set = masteredLemmaSet([], new Map(), states, DECK_LEMMAS);
     expect(set.size).toBe(0);
+  });
+
+  // LINGO-065 (2026-11-01): "incidental exposure" — a word covered by a
+  // durably-retained sentence it is NOT the designated target of. Added
+  // because buildGateSession's due-review backlog can structurally prevent a
+  // word's OWN target sentence from ever being studied for months (see
+  // session.ts/session.test.ts) — by the time that's fixed going forward,
+  // the learner may already have plenty of OTHER evidence this word stuck.
+  // This path requires >= MASTERY_MIN_INCIDENTAL_EXPOSURES distinct durable
+  // sentences (never just one) and is a pure ADDITION: every pre-existing
+  // test in this file above passes `wordById` as undefined (the default) and
+  // is completely unaffected by this branch's existence.
+  describe("LINGO-065: incidental-exposure union (wordById opt-in)", () => {
+    function wordOf(id: number, lemma: string): DeckWord {
+      return { id, lemma, rank: id, band: 1, pos: "noun" };
+    }
+    function sentenceWith(id: string, targetLemma: string | null, wordIds: number[]): Sentence {
+      return {
+        id,
+        ru: `ру ${id}`,
+        en: `en ${id}`,
+        ja: null,
+        kana: null,
+        note: null,
+        band: 1,
+        difficulty: 1,
+        source: "generated",
+        kind: "sentence",
+        targetLemma,
+        wordIds,
+        minRank: 1,
+        tokenCount: wordIds.length,
+      };
+    }
+
+    it("does nothing when wordById is omitted (back-compat, unchanged default)", () => {
+      // "город" (id 100) rides along in two durable sentences but is never
+      // anyone's target — without wordById this must NOT be counted.
+      const sentences = [sentenceWith("T1", "дом", [1, 100]), sentenceWith("T2", "рука", [2, 100])];
+      const states = [stateWithStability("T1", 30), stateWithStability("T2", 30)];
+      const set = masteredLemmaSet(sentences, new Map(), states, DECK_LEMMAS); // no wordById
+      expect(set.has("город")).toBe(false);
+      expect([...set].sort()).toEqual(["дом", "рука"]);
+    });
+
+    it(`credits a word covered by ${MASTERY_MIN_INCIDENTAL_EXPOSURES}+ distinct durable sentences, even though it's never the target`, () => {
+      const sentences = [sentenceWith("T1", "дом", [1, 100]), sentenceWith("T2", "рука", [2, 100])];
+      const wordById = new Map([[1, wordOf(1, "дом")], [2, wordOf(2, "рука")], [100, wordOf(100, "город")]]);
+      const states = [stateWithStability("T1", 30), stateWithStability("T2", 30)];
+      const set = masteredLemmaSet(sentences, new Map(), states, DECK_LEMMAS, MASTERY_STABILITY_DAYS, wordById);
+      expect([...set].sort()).toEqual(["город", "дом", "рука"]);
+    });
+
+    it("does NOT credit a word covered by only ONE durable sentence (needs corroboration)", () => {
+      const sentences = [sentenceWith("T1", "дом", [1, 100])]; // "город" appears exactly once
+      const wordById = new Map([[1, wordOf(1, "дом")], [100, wordOf(100, "город")]]);
+      const states = [stateWithStability("T1", 30)];
+      const set = masteredLemmaSet(sentences, new Map(), states, DECK_LEMMAS, MASTERY_STABILITY_DAYS, wordById);
+      expect(set.has("город")).toBe(false);
+      expect([...set]).toEqual(["дом"]); // the actual target still counts (unchanged, 1 pass suffices)
+    });
+
+    it("ignores a low-stability sentence entirely, even for incidental exposure", () => {
+      const sentences = [sentenceWith("T1", "дом", [1, 100]), sentenceWith("T2", "рука", [2, 100])];
+      const wordById = new Map([[1, wordOf(1, "дом")], [2, wordOf(2, "рука")], [100, wordOf(100, "город")]]);
+      const states = [stateWithStability("T1", 30), stateWithStability("T2", 1)]; // T2 not durable
+      const set = masteredLemmaSet(sentences, new Map(), states, DECK_LEMMAS, MASTERY_STABILITY_DAYS, wordById);
+      expect(set.has("город")).toBe(false);
+    });
+
+    it("is a pure UNION: adding wordById never removes a lemma the base rules already counted", () => {
+      const knowledge: KnowledgeMap = new Map([["дом", "known"]]);
+      const sentences = [sentenceWith("T1", "город", [100])];
+      const wordById = new Map([[100, wordOf(100, "город")]]);
+      const states = [stateWithStability("T1", 60)];
+      const withoutWordById = masteredLemmaSet(sentences, knowledge, states, DECK_LEMMAS);
+      const withWordById = masteredLemmaSet(sentences, knowledge, states, DECK_LEMMAS, MASTERY_STABILITY_DAYS, wordById);
+      for (const lemma of withoutWordById) expect(withWordById.has(lemma)).toBe(true);
+    });
   });
 });
 

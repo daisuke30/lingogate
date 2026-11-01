@@ -86,6 +86,77 @@ describe("buildGateSession", () => {
     const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
     expect(plan.cards.length).toBe(4);
   });
+
+  // LINGO-065 (2026-11-01): Katsuta reported "覚えた語が全く増えない" despite
+  // studying daily. Root cause, confirmed by direct simulation against the
+  // real RU deck: due reviews (step 1) had NO cap, so once a learner's
+  // review backlog reaches/exceeds the session size (which it eventually
+  // always does, since more cards keep entering long-term rotation while the
+  // daily budget stays fixed), 100% of every session becomes review and ZERO
+  // new target lemmas can ever be introduced again — permanently freezing
+  // "覚えた語" even though the learner keeps studying correctly every day.
+  // This suite pins the fix: a minimum share of each session must go to new
+  // cards whenever any exist, no matter how large the due-review backlog is.
+  describe("LINGO-065: due-review backlog never fully starves new-card inflow", () => {
+    it("a backlog far larger than the session size still yields new cards", () => {
+      const deck = makeDeck(100);
+      // Overdue review states for s001..s050 (a backlog 5x the session size).
+      const dueStates: ReviewState[] = Array.from({ length: 50 }, (_, k) => ({
+        ...newReviewState(`s${String(k + 1).padStart(3, "0")}`),
+        stability: 3,
+        difficulty: 5,
+        due: NOW - 2 * DAY,
+        reps: 1,
+        state: CardState.Review,
+        lastReview: NOW - 5 * DAY,
+      }));
+      const store = new ContentStore(deck, dueStates);
+      const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
+      expect(plan.cards.length).toBe(10);
+      const newCards = plan.cards.filter((c) => !c.isReview);
+      const reviewCards = plan.cards.filter((c) => c.isReview);
+      // Pre-fix this was 0 new / 10 review, every single day, forever.
+      expect(newCards.length).toBeGreaterThan(0);
+      expect(reviewCards.length).toBeLessThan(10);
+    });
+
+    it("falls back to filling with MORE due reviews when there are no new cards left (doesn't waste capacity)", () => {
+      const deck = makeDeck(5); // every sentence already reviewed, nothing new
+      const dueStates: ReviewState[] = Array.from({ length: 5 }, (_, k) => ({
+        ...newReviewState(`s${String(k + 1).padStart(3, "0")}`),
+        stability: 3,
+        difficulty: 5,
+        due: NOW - 2 * DAY,
+        reps: 1,
+        state: CardState.Review,
+        lastReview: NOW - 5 * DAY,
+      }));
+      const store = new ContentStore(deck, dueStates);
+      const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1), size: 10 });
+      // No new sentences exist at all -> the reserved slots must be reclaimed
+      // by due reviews rather than shrinking the session.
+      expect(plan.cards.length).toBe(5);
+      expect(plan.cards.every((c) => c.isReview)).toBe(true);
+    });
+
+    it("still puts due reviews first within the non-reserved portion", () => {
+      const deck = makeDeck(50);
+      const due: ReviewState = {
+        ...newReviewState("s005"),
+        stability: 3,
+        difficulty: 5,
+        due: NOW - 2 * DAY,
+        reps: 1,
+        state: CardState.Review,
+        lastReview: NOW - 5 * DAY,
+      };
+      const store = new ContentStore(deck, [due]);
+      const plan = buildGateSession(store, { band: 1, now: NOW, rng: new SeededRNG(1) });
+      expect(plan.cards[0].sentence.id).toBe("s005");
+      expect(plan.cards[0].isReview).toBe(true);
+      expect(plan.cards.length).toBe(10);
+    });
+  });
 });
 
 describe("GateSessionRunner (flashcard rating path)", () => {
