@@ -247,6 +247,10 @@ export function HomeView({
         open={detailsOpen}
         stats={stats}
         onClose={() => setDetailsOpen(false)}
+        onOpenVocabulary={() => {
+          setDetailsOpen(false);
+          navigate({ name: "vocabulary" });
+        }}
       />
     </div>
   );
@@ -423,10 +427,15 @@ function DetailsSheet({
   open,
   stats,
   onClose,
+  onOpenVocabulary,
 }: {
   open: boolean;
   stats: HomeStats | null;
   onClose: () => void;
+  /** LINGO-067: from the aggregate to the individual words behind it. This
+   * sheet says "412 declared, 180 learned, 2,368 undecided"; the only honest
+   * follow-up to those numbers is "which ones?". */
+  onOpenVocabulary: () => void;
 }) {
   const { t } = useI18n();
   return (
@@ -476,6 +485,17 @@ function DetailsSheet({
               {t("detail.speech.value", { pct: Math.round(stats.mastery.coveragePct) })}
             </strong>
           </div>
+          {/* LINGO-067: from the aggregate to the words behind it. At the FOOT
+              of the 覚えた語 group, not inside it — placed mid-group it read as
+              a heading for the row underneath. Not a block button either: one
+              at the foot of the sheet pushed it past its 75vh cap and started
+              hiding its own last row. */}
+          <button type="button" className="detail-link" onClick={onOpenVocabulary}>
+            {t("vocab.open")}
+            <span className="chevron" aria-hidden="true">
+              ›
+            </span>
+          </button>
 
           <div className="detail-group-title">
             {t("home.step.title", {
@@ -517,6 +537,7 @@ function DetailsSheet({
               </strong>
             </div>
           )}
+
         </div>
       )}
     </SheetShell>

@@ -286,6 +286,18 @@ export function SettingsView({
         />
       </div>
 
+      {/* LINGO-067: the whole word list. Sits directly under the level check
+          on purpose — "run a level check" and "see what the level check
+          decided" are two halves of the same question. */}
+      <div className="section-title">{t("settings.section.vocab")}</div>
+      <div className="list">
+        <ListRow
+          label={t("vocab.open")}
+          sub={t("vocab.open.sub")}
+          onClick={() => navigate({ name: "vocabulary" })}
+        />
+      </div>
+
       {/* LINGO-047: read-only viewport instrumentation. Lives in the shipped
           app on purpose — the layout bugs it diagnoses only happen on a real
           iPhone, where no debugger is attached. */}

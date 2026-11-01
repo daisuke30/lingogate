@@ -24,6 +24,28 @@ export const MASTERY_STABILITY_DAYS = 21;
  * currently ships (band2/3 generation can yield slightly fewer than 1000 each). */
 export const MASTERY_TARGET_WORDS = 3000;
 
+/** Highest band inside the 3000-word frame. Band 4 (added by the RU
+ * rebaseline) is the "retired but retained" pool — old band1-3 lemmas that
+ * fell out of the top-3000 spoken-frequency cut, kept in the Word table only
+ * so a learner's existing progress on them still resolves. */
+export const MASTERY_FRAME_MAX_BAND = 3;
+
+/**
+ * The lemmas the 3000-word frame consists of.
+ *
+ * LINGO-067: extracted from ContentStore.masteryStats, which had it inline.
+ * The vocabulary list enumerates exactly this set and partitions it into five
+ * states that must sum back to mastery's counts — so "which words are in the
+ * frame" has to be one definition rather than two that look alike.
+ */
+export function frameLemmas(words: Iterable<{ lemma: string; band: number }>): Set<string> {
+  const out = new Set<string>();
+  for (const w of words) {
+    if (w.band <= MASTERY_FRAME_MAX_BAND) out.add(w.lemma);
+  }
+  return out;
+}
+
 /**
  * LINGO-046: the home screen's headline word count, rounded DOWN to a round
  * ten — 275 becomes 270, shown as "約270語".

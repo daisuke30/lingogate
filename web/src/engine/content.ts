@@ -13,7 +13,12 @@ import {
   scoreSentence,
 } from "./calibration";
 import type { KnowledgeMap } from "./calibration";
-import { masteryStats as computeMasteryStats, MASTERY_STABILITY_DAYS } from "./mastery";
+import {
+  masteryStats as computeMasteryStats,
+  masteredLemmaSet,
+  frameLemmas,
+  MASTERY_STABILITY_DAYS,
+} from "./mastery";
 import type { MasteryStats } from "./mastery";
 
 export interface Sentence {
@@ -388,14 +393,32 @@ export class ContentStore {
    * would silently inflate the target and dilute the coverage-% curve, which
    * is calibrated to exactly a 3000-word scope). */
   masteryStats(stabilityThresholdDays: number = MASTERY_STABILITY_DAYS): MasteryStats {
-    const deckLemmas = new Set(
-      this.deck.words.filter((w) => w.band <= 3).map((w) => w.lemma),
-    );
+    const deckLemmas = frameLemmas(this.deck.words);
     return computeMasteryStats(
       this.deck.sentences,
       this.knowledge,
       this.states.values(),
       deckLemmas,
+      stabilityThresholdDays,
+      this.wordById,
+    );
+  }
+
+  /**
+   * LINGO-067 — the mastered-lemma set that masteryStats counts, exposed per
+   * lemma so the vocabulary list can label individual words with the SAME
+   * definition the home screen aggregates. Deliberately not a second
+   * implementation: masteredLemmaSet has three branches (declared known, the
+   * lemma's own target sentence matured, and enough incidental exposure in
+   * other durably-retained sentences), and a list that only knew about the
+   * first two would contradict the number one tap away.
+   */
+  masteredLemmas(stabilityThresholdDays: number = MASTERY_STABILITY_DAYS): Set<string> {
+    return masteredLemmaSet(
+      this.deck.sentences,
+      this.knowledge,
+      this.states.values(),
+      frameLemmas(this.deck.words),
       stabilityThresholdDays,
       this.wordById,
     );

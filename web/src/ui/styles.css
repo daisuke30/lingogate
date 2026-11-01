@@ -1960,3 +1960,225 @@ button {
   margin-top: 2px;
   margin-bottom: 6px;
 }
+
+/* ---- Vocabulary list (LINGO-067) --------------------------------------- *
+ * 3,000 rows in frequency order. Rows are a FIXED 60px tall and the view
+ * component windows them arithmetically from that number — change one and you
+ * must change the other (ui/VocabularyView.tsx ROW_H). */
+.vocab-head {
+  /* Sticky, not fixed: the filters must stay reachable at row 2,000 without
+   * scrolling 48,000px back up. It therefore sits ON TOP of rows while
+   * scrolled — the one case where that is intended, which is why the audit's
+   * overlap check lists it explicitly. Fully opaque for the same reason: a
+   * translucent header over moving rows is unreadable soup.
+   *
+   * It holds ONLY the controls. The first version pinned the title and the
+   * back link too and stood 310px tall — 37% of an iPhone screen, permanently,
+   * over a list that is the entire point of the screen. */
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  margin: 0 -20px 4px;
+  padding: 8px 20px 8px;
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+.vocab-title {
+  font-size: 22px;
+  margin: 6px 0 10px;
+}
+.vocab-search {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  padding: 11px 13px;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+}
+.vocab-search::placeholder {
+  color: var(--ink-faint);
+}
+.vocab-search:focus-visible {
+  /* The browser default is a bright blue ring that fights the palette. */
+  outline: 2px solid var(--indigo);
+  outline-offset: 0;
+  border-color: var(--indigo);
+}
+.vocab-filters {
+  /* A rail, not a wrapping grid: a chip that falls off the right edge costs a
+   * swipe, a chip that wraps to a fourth line costs 38px of list on every
+   * screen for the whole scroll. */
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 6px;
+  margin: 0 -20px 6px;
+  padding: 0 20px;
+}
+.vocab-filters::-webkit-scrollbar {
+  display: none;
+}
+.vocab-chip {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-dim);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 11px;
+  /* 32px of touch target on a 12px font. */
+  min-height: 32px;
+}
+.vocab-chip.on {
+  background: var(--indigo);
+  border-color: var(--indigo);
+  color: #fff;
+}
+.vocab-chip .vocab-chip-n {
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.vocab-chip.on .vocab-chip-n {
+  color: rgba(255, 255, 255, 0.78);
+}
+.vocab-count {
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin: 4px 0 0;
+}
+
+.vocab-list {
+  position: relative;
+  flex: none;
+}
+.vocab-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  padding: 0 2px;
+  border-bottom: 1px solid var(--line);
+  box-sizing: border-box;
+}
+.vocab-row:active {
+  background: var(--bg-elev);
+}
+.vocab-rank {
+  width: 40px;
+  flex: none;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+.vocab-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.vocab-lemma {
+  font-size: 16px;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vocab-gloss {
+  /* One ellipsised line, because the row height is fixed (see above). */
+  font-size: 12px;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vocab-badge {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 650;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+/* The five states. Colour is never the only carrier: every badge also shows
+ * its name in words, and each dot has a different SHAPE — so the list still
+ * reads correctly in greyscale, and for the ~8% of men with a red/green
+ * deficiency (Katsuta's first user is a man). */
+.vocab-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  box-sizing: border-box;
+  position: relative;
+}
+/* 申告済み — filled square: the learner's own claim. */
+.vocab-dot.declared {
+  background: var(--indigo-bright);
+  border-radius: 2px;
+}
+/* 定着 — filled circle: earned, and the most "complete" shape. */
+.vocab-dot.mastered {
+  background: var(--good);
+  border-radius: 50%;
+}
+/* 学習中 — open ring: started, not closed. */
+.vocab-dot.learning {
+  border: 2px solid var(--hard);
+  border-radius: 50%;
+}
+/* 未習 — bar: explicitly ruled out. */
+.vocab-dot.unknown {
+  background: var(--again);
+  border-radius: 2px;
+  height: 3px;
+  align-self: center;
+}
+/* 未判定 — hollow, dashed: nothing is known yet. */
+.vocab-dot.unjudged {
+  border: 1px dashed var(--ink-faint);
+  border-radius: 50%;
+}
+
+.vocab-empty {
+  font-size: 14px;
+  color: var(--ink-dim);
+  text-align: center;
+  padding: 28px 0;
+}
+
+/* The details sheet's drill-down into the individual words behind its counts
+ * (LINGO-067). A text link, not a block button: the sheet caps at 75vh and a
+ * 48px button at its foot pushed the last row out of sight. */
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--indigo-bright);
+  font-size: 13px;
+  font-weight: 650;
+  padding: 8px 0 2px;
+}
+.detail-link .chevron {
+  font-size: 15px;
+  line-height: 1;
+}

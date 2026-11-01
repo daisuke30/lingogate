@@ -1040,6 +1040,42 @@ const M: Record<string, Entry> = {
     en: "Needs looking after",
     ru: "Нужен уход",
   },
+
+  // -- Vocabulary list (LINGO-067) -------------------------------------------
+  // The five state names are the SAME vocabulary as the details sheet's
+  // breakdown (detail.learned.declared / .studied / detail.unjudged), shortened
+  // to fit a row badge. If one side is ever reworded the other must follow, or
+  // the learner meets two names for one thing.
+  "vocab.title": { ja: "語彙リスト", en: "Vocabulary", ru: "Список слов" },
+  "vocab.search": { ja: "単語・訳を検索", en: "Search word or meaning", ru: "Поиск слова или перевода" },
+  "vocab.recent": { ja: "最近変化した語", en: "Changed recently", ru: "Недавние изменения" },
+  "vocab.recent.note": {
+    ja: "直近7日に判定された、または復習した語です。",
+    en: "Words decided or reviewed in the last 7 days.",
+    ru: "Слова, определённые или повторённые за последние 7 дней.",
+  },
+  "vocab.status.all": { ja: "すべて", en: "All", ru: "Все" },
+  "vocab.status.declared": { ja: "申告済み", en: "Declared", ru: "Отмечено" },
+  "vocab.status.mastered": { ja: "定着", en: "Learned", ru: "Закреплено" },
+  "vocab.status.learning": { ja: "学習中", en: "Learning", ru: "Изучается" },
+  "vocab.status.unknown": { ja: "未習", en: "Not known", ru: "Не знаю" },
+  "vocab.status.unjudged": { ja: "未判定", en: "Undecided", ru: "Не оценено" },
+  "vocab.band.all": { ja: "全ステップ", en: "All steps", ru: "Все шаги" },
+  "vocab.band.n": { ja: "ステップ{n}", en: "Step {n}", ru: "Шаг {n}" },
+  "vocab.loading": { ja: "読み込んでいます…", en: "Loading…", ru: "Загружаем…" },
+  "vocab.showing": { ja: "{n}語", en: "{n} words", ru: "{n} слов" },
+  "vocab.empty": {
+    ja: "条件に合う語がありません。",
+    en: "No words match these filters.",
+    ru: "Нет слов по этим условиям.",
+  },
+  "settings.section.vocab": { ja: "語彙", en: "Vocabulary", ru: "Словарь" },
+  "vocab.open": { ja: "語彙リストを見る", en: "See the vocabulary list", ru: "Открыть список слов" },
+  "vocab.open.sub": {
+    ja: "3,000語を頻度順に、1語ずつ状態つきで",
+    en: "All 3,000 words by frequency, with their state",
+    ru: "Все 3 000 слов по частоте, с их состоянием",
+  },
 };
 
 /** Exposed for the completeness test only (every key must carry ja/en/ru). */

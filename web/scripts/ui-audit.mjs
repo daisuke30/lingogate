@@ -444,7 +444,11 @@ async function assertNoOverlap(label, opts = {}) {
       ".kicker, .ru, .ja, .kana, .note, .prompt, .hint, .wb-row, .explain-cta, " +
       ".iconbtn, .btn, .chip, .today-headline, .today-sub, .progress-num, " +
       ".progress-label, .course-chip, .streak-chip, .row .label, .row .sub, " +
-      ".row-value, .section-title, .tabbar-item, .explain-h, .explain-lemma";
+      ".row-value, .section-title, .tabbar-item, .explain-h, .explain-lemma, " +
+      // LINGO-067 — the vocabulary list's 3,000 windowed rows. Absolutely
+      // positioned from a row-height constant, so an off-by-one in that maths
+      // stacks rows on top of each other; this is the check that would see it.
+      ".vocab-lemma, .vocab-gloss, .vocab-badge, .vocab-rank, .vocab-chip, .vocab-count";
 
     const inIntentional = (el) => intentional.some((sel) => el.closest(sel));
 
@@ -520,9 +524,49 @@ async function assertNoOverlap(label, opts = {}) {
     ".overlay-label", // the swipe-to-grade overlay sits ON the card deliberately
     ".tabbar", // fixed chrome; content scrolling under it is covered by
                // assertLastRowReachable / assertNoBottomBand instead
+    // LINGO-067: the vocabulary list's sticky filter bar. Rows scroll UNDER
+    // it by design — the alternative is scrolling back past 2,000 rows to
+    // change a filter. The failure mode this exclusion gives up (unreadable
+    // text showing through the header) is covered instead by
+    // assertStickyHeaderIsOpaque below, which is called on that screen.
+    ".vocab-head",
   ]);
 
   check(found.length === 0, `${label}: overlapping elements — ${found.slice(0, 4).join("; ")}`);
+}
+
+/**
+ * LINGO-067 — a sticky header that content scrolls under must be OPAQUE.
+ *
+ * assertNoOverlap excuses `.vocab-head` (rows passing beneath it are the
+ * point of a sticky bar), so the one thing that exclusion would otherwise let
+ * through — a translucent or unpainted header, with word rows legible through
+ * the filter chips — is asserted here instead. Checked while actually
+ * scrolled, since that is the only moment it can happen.
+ */
+async function assertStickyHeaderIsOpaque(selector, label) {
+  const r = await page.evaluate((sel) => {
+    const el = document.querySelector(sel);
+    if (!el) return null;
+    const cs = getComputedStyle(el);
+    const bg = cs.backgroundColor;
+    const alpha = /rgba?\(([^)]+)\)/.exec(bg);
+    const parts = alpha ? alpha[1].split(",").map((n) => parseFloat(n)) : [];
+    return {
+      bg,
+      opacity: Number(cs.opacity),
+      alpha: parts.length === 4 ? parts[3] : 1,
+      position: cs.position,
+      zIndex: cs.zIndex,
+      top: Math.round(el.getBoundingClientRect().top),
+    };
+  }, selector);
+  if (!check(r !== null, `${label}: no '${selector}' to check`)) return;
+  check(r.position === "sticky" || r.position === "fixed", `${label}: not actually pinned (${r.position})`);
+  check(r.alpha === 1 && r.opacity === 1, `${label}: see-through header (${r.bg}, opacity ${r.opacity})`);
+  check(r.bg !== "rgba(0, 0, 0, 0)" && r.bg !== "transparent", `${label}: header paints no background`);
+  check(Number(r.zIndex) >= 1, `${label}: header z-index ${r.zIndex} — rows would paint over it`);
+  check(Math.abs(r.top) <= 1, `${label}: header is at y=${r.top} while scrolled, not pinned to the top`);
 }
 
 /** #root must be the only scroller: html/body never move (iOS bounce fix). */
@@ -703,6 +747,228 @@ await page.waitForTimeout(500);
 await shot("05-settings-bottom");
 await assertLastRowReachable(".list .row", "settings (scrolled)");
 await assertNoHorizontalOverflow("settings (scrolled)");
+
+// --------------------------------------------- 3b. Vocabulary list (067) ---
+// 3,000 rows, windowed. Two things can go wrong that no unit test sees: the
+// windowing maths can stack or gap rows, and the list can be janky on a phone.
+// Both are measured here.
+{
+  await open("/");
+  await page.waitForTimeout(1100);
+  await dismissOnboarding();
+  await page.locator('[aria-label*="設定"], [aria-label*="Settings" i]').first().click();
+  await page.waitForTimeout(900);
+
+  const entry = page
+    .locator(".list .row-link")
+    .filter({ hasText: /語彙リストを見る|See the vocabulary list|Открыть список слов/ })
+    .first();
+  if (check(await entry.count(), "vocabulary: no entry point in Settings")) {
+    const t0 = Date.now();
+    await entry.click();
+    // Wait for real rows, not just the shell: the list is assembled from
+    // IndexedDB + a pass over the whole deck, and "it rendered" must mean
+    // "there are words on screen".
+    await page
+      .waitForFunction(() => document.querySelectorAll(".vocab-row").length > 5, { timeout: 20000 })
+      .catch(() => check(false, "vocabulary: no rows ever rendered"));
+    const openMs = Date.now() - t0;
+    notes.push(`vocabulary: first rows on screen in ${openMs}ms`);
+    check(openMs < 4000, `vocabulary: took ${openMs}ms to show any rows`);
+
+    await page.waitForTimeout(400);
+    await shot("05b-vocabulary");
+
+    await assertReallyVisible(".vocab-search", "vocabulary: search box", 36);
+    await assertReallyVisible(".vocab-row", "vocabulary: first row", 40);
+    await assertHasSideMargin(".vocab-row", "vocabulary: row");
+    await assertNoHorizontalOverflow("vocabulary");
+    await assertNoOverlap("vocabulary");
+    await assertRootIsTheScroller("vocabulary");
+
+    // Windowing: the whole frame must be scrollable, but only a slice of it
+    // may exist in the DOM. Both halves matter — a list that rendered all
+    // 3,000 rows would pass every other check here and still be unusable.
+    const win = await page.evaluate(() => {
+      const root = document.querySelector("#root");
+      const list = document.querySelector(".vocab-list");
+      return {
+        rows: document.querySelectorAll(".vocab-row").length,
+        listH: Math.round(list?.getBoundingClientRect().height ?? 0),
+        scrollH: root.scrollHeight,
+        clientH: root.clientHeight,
+        nodes: document.querySelectorAll("*").length,
+      };
+    });
+    notes.push(
+      `vocabulary: ${win.rows} rows in the DOM, ${win.listH}px of list, ${win.nodes} DOM nodes total`,
+    );
+    check(win.listH > 20000, `vocabulary: the list is only ${win.listH}px — the frame is not all there`);
+    check(win.rows < 80, `vocabulary: ${win.rows} rows in the DOM — windowing is not working`);
+    check(win.rows > 5, `vocabulary: only ${win.rows} rows in the DOM`);
+
+    // No gaps and no stacking: consecutive rows must tile exactly.
+    const tiling = await page.evaluate(() => {
+      const tops = [...document.querySelectorAll(".vocab-row")]
+        .map((el) => el.getBoundingClientRect())
+        .sort((a, b) => a.top - b.top);
+      let worst = 0;
+      for (let i = 1; i < tops.length; i++) {
+        worst = Math.max(worst, Math.abs(tops[i].top - tops[i - 1].bottom));
+      }
+      return Math.round(worst);
+    });
+    check(tiling <= 1, `vocabulary: rows do not tile — ${tiling}px gap/overlap between neighbours`);
+
+    // Scroll performance, measured rather than assumed: 20 jumps of a screen
+    // each, timing the frames the browser actually produced.
+    const perf = await page.evaluate(async () => {
+      const root = document.querySelector("#root");
+      const step = root.clientHeight;
+      const frames = [];
+      let last = performance.now();
+      let running = true;
+      const tick = () => {
+        const now = performance.now();
+        frames.push(now - last);
+        last = now;
+        if (running) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      const t0 = performance.now();
+      for (let i = 1; i <= 20; i++) {
+        root.scrollTop = step * i * 2;
+        await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+      }
+      const elapsed = performance.now() - t0;
+      running = false;
+      frames.sort((a, b) => a - b);
+      return {
+        elapsed: Math.round(elapsed),
+        frames: frames.length,
+        median: Math.round(frames[Math.floor(frames.length / 2)] ?? 0),
+        p95: Math.round(frames[Math.floor(frames.length * 0.95)] ?? 0),
+        worst: Math.round(frames[frames.length - 1] ?? 0),
+      };
+    });
+    notes.push(
+      `vocabulary: 20 screen-jumps in ${perf.elapsed}ms — frame median ${perf.median}ms, ` +
+        `p95 ${perf.p95}ms, worst ${perf.worst}ms`,
+    );
+    // A frame budget, not a stopwatch: 32ms is two 60Hz frames, i.e. the point
+    // at which a scroll starts to read as stuttering rather than smooth.
+    check(perf.p95 <= 32, `vocabulary: p95 frame ${perf.p95}ms while scrolling (budget 32ms)`);
+
+    await page.waitForTimeout(300);
+    await shot("05c-vocabulary-scrolled");
+    // Scrolled is the only state in which a sticky header can betray itself.
+    await assertStickyHeaderIsOpaque(".vocab-head", "vocabulary: sticky filter bar");
+    await assertNoHorizontalOverflow("vocabulary (scrolled)");
+    await assertBackgroundContinuity("vocabulary (scrolled)");
+
+    // Still correct after a jump of 2,000 rows.
+    const deep = await page.evaluate(() => {
+      const rows = [...document.querySelectorAll(".vocab-row")];
+      return {
+        rows: rows.length,
+        firstRank: rows.length ? Number(rows[0].querySelector(".vocab-rank")?.textContent) : 0,
+        allHaveBadge: rows.every((r) => (r.querySelector(".vocab-badge")?.textContent ?? "").trim()),
+      };
+    });
+    check(deep.rows > 5, `vocabulary (deep scroll): only ${deep.rows} rows rendered`);
+    check(deep.firstRank > 100, `vocabulary (deep scroll): still showing rank ${deep.firstRank}`);
+    check(deep.allHaveBadge, "vocabulary: a row rendered without a state badge");
+
+    // Filters. Chips are addressed by what they ARE, never by index: the
+    // first attempt at this used nth(3) and silently left the "最近変化した語"
+    // toggle on, which emptied the list and broke every later step.
+    await page.evaluate(() => document.querySelector("#root").scrollTo({ top: 0 }));
+    await page.waitForTimeout(250);
+    const countText = () => page.locator(".vocab-count").first().innerText();
+    const unfiltered = await countText();
+
+    // Every status chip must deliver exactly the number it advertises, and the
+    // five must sum to the whole frame. That is the partition the home screen
+    // also counts, asserted end-to-end in a real browser — and it holds on any
+    // profile, including a fresh one where all 3,000 words are 未判定. (The
+    // first version of this check asserted "the list got shorter", which a
+    // fresh profile fails for the right reason: 未判定 IS everything.)
+    const statusChips = page.locator(".vocab-chip:has(.vocab-dot)");
+    const chipCount = await statusChips.count();
+    check(chipCount === 5, `vocabulary: ${chipCount} status chips, expected 5`);
+    const digits = (s2) => Number((s2.match(/\d[\d,  ]*/g) ?? ["0"]).pop().replace(/[^\d]/g, ""));
+    let sum = 0;
+    for (let i = 0; i < chipCount; i++) {
+      const chip = statusChips.nth(i);
+      const advertised = digits(await chip.innerText());
+      sum += advertised;
+      await chip.click();
+      await page.waitForTimeout(350);
+      const shown = digits(await countText());
+      check(
+        shown === advertised,
+        `vocabulary: chip "${(await chip.innerText()).replace(/\n/g, " ")}" advertises ` +
+          `${advertised} but the list shows ${shown}`,
+      );
+      check(
+        (await page.evaluate(() => document.querySelector("#root").scrollTop)) === 0,
+        "vocabulary: filtering left the list scrolled into the middle of the old result",
+      );
+      if (i === 0) {
+        await shot("05d-vocabulary-filtered");
+        await assertNoOverlap("vocabulary (filtered)");
+      }
+      // Tapping an active chip clears it.
+      await chip.click();
+      await page.waitForTimeout(300);
+      check(
+        (await countText()) === unfiltered,
+        "vocabulary: tapping an active chip again did not clear the filter",
+      );
+    }
+    check(
+      sum === digits(unfiltered),
+      `vocabulary: the five states sum to ${sum}, but the list holds ${digits(unfiltered)} words`,
+    );
+
+    // "最近変化した語" — the filter this screen exists for.
+    const recentChip = page.locator(".vocab-chip.wide").first();
+    if (check(await recentChip.count(), "vocabulary: no 最近変化した語 chip")) {
+      await recentChip.click();
+      await page.waitForTimeout(400);
+      check((await countText()) !== unfiltered, "vocabulary: the recent filter changed nothing");
+      // It must say what "changed" means, not leave the learner to guess.
+      const notes2 = await page.locator(".vocab-count").allInnerTexts();
+      check(notes2.length >= 2, "vocabulary: the recent filter shows no explanation of its window");
+      await recentChip.click();
+      await page.waitForTimeout(400);
+    }
+
+    // Search, on the lemma the learner is actually looking at.
+    await page.locator(".vocab-search").fill("а");
+    await page.waitForTimeout(500);
+    const searchRows = await page.locator(".vocab-row").count();
+    check(searchRows > 0, "vocabulary: searching a common letter matched nothing");
+    await page.locator(".vocab-search").fill("zzzzzz");
+    await page.waitForTimeout(500);
+    await assertReallyVisible(".vocab-empty", "vocabulary: empty state", 20);
+    await shot("05e-vocabulary-empty");
+    await page.locator(".vocab-search").fill("");
+    await page.waitForTimeout(500);
+
+    // A row tap must open the explanation sheet — the reason rows are tappable.
+    await page
+      .waitForFunction(() => document.querySelectorAll(".vocab-row").length > 0, { timeout: 10000 })
+      .catch(() => check(false, "vocabulary: the list did not come back after clearing the search"));
+    await page.locator(".vocab-row").first().click();
+    await page.waitForTimeout(2500);
+    const sheet = await page.locator(".sheet").count();
+    if (check(sheet > 0, "vocabulary: tapping a row opened no explanation sheet")) {
+      await shot("05f-vocabulary-explain");
+      await assertNoOverlap("vocabulary (explain open)");
+    }
+  }
+}
 
 // ----------------------------------------------------------------- 4. Pet ---
 await open("/");

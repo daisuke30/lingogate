@@ -16,6 +16,9 @@ import { PetView } from "./PetView";
 // screenshotted on a simulator/device without any tapping.
 import { DiagnosticsSheet } from "./DiagnosticsSheet";
 import { TabBar } from "./TabBar";
+// LINGO-067: the full vocabulary list (reached from Home's details sheet and
+// from Settings).
+import { VocabularyView } from "./VocabularyView";
 import { petAttention, showTabBar } from "../pet/petDisplay";
 // LINGO-040: the pet read-model is owned here now, not by HomeView. Two
 // consumers need it (Home's streak chip and the 育成 tab's attention dot), and
@@ -47,7 +50,11 @@ export type Route =
   // LINGO-028: dev-only art gallery (all 16 monsters × 4 faces + care props).
   | { name: "petGallery" }
   // LINGO-030: 育成 tab (the pet screen), reached from the bottom tab bar.
-  | { name: "pet" };
+  | { name: "pet" }
+  // LINGO-067: the whole course vocabulary, in frequency order, with each
+  // word's state. Not URL-addressable — it is a place you go from Home or
+  // Settings, not somewhere automation should ever land you.
+  | { name: "vocabulary" };
 
 /**
  * LINGO-049 — URL switches for measuring the app on a real device.
@@ -197,6 +204,8 @@ export function App() {
         return <PetGallery onBack={goHome} />;
       case "pet":
         return <PetView />;
+      case "vocabulary":
+        return <VocabularyView onBack={goHome} />;
       case "onboarding":
         return (
           <OnboardingFlow
