@@ -1803,6 +1803,41 @@ button {
   color: var(--ink-faint);
 }
 
+/* Placement result breakdown + details-sheet hint (LINGO-066). */
+.placement-breakdown {
+  width: 100%;
+  margin: 18px 0 4px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+.placement-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  font-size: 14px;
+  color: var(--ink-dim);
+}
+.placement-row strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+.placement-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--ink-faint);
+}
+.detail-hint {
+  margin: 2px 0 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+
 /* Diagnostics rows (LINGO-047) — dense, monospaced, meant to be screenshotted
  * and read, not admired. */
 .diag-hint {

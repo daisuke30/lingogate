@@ -10,7 +10,7 @@ import {
 } from "../engine/placement";
 import type { PlacementFit, PlacementResponse, RankedWord } from "../engine/placement";
 import { finalizeAndPersistPlacement, loadPlacementContext, targetSentenceByLemma } from "../state/placement";
-import type { PlacementContext } from "../state/placement";
+import type { FinalizePlacementResult, PlacementContext } from "../state/placement";
 import { masteryLevelThreshold } from "../engine/mastery";
 import type { DeckWord, Sentence } from "../engine/content";
 import { voiceAvailable, speak, subscribeVoices } from "../state/tts";
@@ -71,6 +71,8 @@ export function PlacementScreen({ onExit }: { onExit: () => void }) {
   const [blockIndex, setBlockIndex] = useState(0);
   const [idxInBlock, setIdxInBlock] = useState(0);
   const [fit, setFit] = useState<PlacementFit | null>(null);
+  // LINGO-066: what this run actually changed, so the result can say it.
+  const [result, setResult] = useState<FinalizePlacementResult | null>(null);
   const [hasVoice, setHasVoice] = useState(false);
 
   const responsesRef = useRef<PlacementResponse[]>([]);
@@ -105,8 +107,9 @@ export function PlacementScreen({ onExit }: { onExit: () => void }) {
   const finalize = useCallback(
     async (finalFit: PlacementFit) => {
       setPhase("finalizing");
-      await finalizeAndPersistPlacement(finalFit, responsesRef.current);
+      const res = await finalizeAndPersistPlacement(finalFit, responsesRef.current);
       if (!mountedRef.current) return;
+      setResult(res);
       setPhase("done");
     },
     [],
@@ -225,6 +228,29 @@ export function PlacementScreen({ onExit }: { onExit: () => void }) {
           <div className="big-emoji">🏁</div>
           <h1>{t("placement.result.title")}</h1>
           <p>{t("placement.result.summary", { n: n.toLocaleString(), level: levelLabel(t, n) })}</p>
+          {/* LINGO-066: a retake legitimately adds almost nothing — it cannot
+              re-decide words an earlier run already decided. Saying so turns
+              "the number barely moved, is it broken?" into a readable
+              outcome. */}
+          {result && (
+            <div className="placement-breakdown">
+              <div className="placement-row">
+                <span>{t("placement.result.judged")}</span>
+                <strong>{t("placement.result.words", { n: result.summary.judgedKnown + result.summary.judgedUnknown })}</strong>
+              </div>
+              <div className="placement-row">
+                <span>{t("placement.result.added")}</span>
+                <strong>{t("placement.result.words", { n: result.summary.newlyKnown })}</strong>
+              </div>
+              <div className="placement-row">
+                <span>{t("placement.result.unjudged")}</span>
+                <strong>{t("placement.result.words", { n: result.summary.leftUnjudged })}</strong>
+              </div>
+              {result.summary.newlyKnown === 0 && (
+                <p className="placement-note">{t("placement.result.nothingNew")}</p>
+              )}
+            </div>
+          )}
           <p className="muted">{t("placement.result.masteryUpdated")}</p>
           <button className="btn primary block" style={{ width: "100%", marginTop: 22 }} onClick={onExit}>
             {t("placement.result.startLearning")}

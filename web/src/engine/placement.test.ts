@@ -479,3 +479,66 @@ describe("Task Contract soft cap", () => {
     expect(MAX_QUESTIONS % BLOCK_SIZE).toBe(0);
   });
 });
+
+// LINGO-066 — why a RETAKE adds almost nothing.
+//
+// Katsuta ran a level check and watched his word count move by 10. These pin
+// that this is the no-overwrite guard working, not a reflection bug: a run
+// cannot re-decide words an earlier run already decided. The numbers here are
+// the evidence behind that answer.
+describe("a placement retake cannot re-add words already decided", () => {
+  const words = Array.from({ length: 600 }, (_, i) => ({
+    lemma: `w${i + 1}`,
+    rank: i + 1,
+    pos: "noun",
+  }));
+
+  const fit = {
+    theta: 300,
+    slope: 1,
+    ciLowRank: 280,
+    ciHighRank: 340,
+    ciHalfWidthWords: 30,
+    degenerate: false,
+  };
+  const responses = [
+    { lemma: "w100", rank: 100, known: true },
+    { lemma: "w500", rank: 500, known: false },
+  ];
+
+  it("a FIRST run writes the whole below-band population as known", () => {
+    const w = finalizePlacement(fit, responses, words);
+    const rows = resolvePlacementWriteRows(w, () => "unset");
+    const known = rows.filter((r) => r.status === "known");
+    // Everything below rank 280, minus the one judged there, plus that one.
+    expect(known.length).toBe(279);
+  });
+
+  it("a SECOND run with those results in place adds nothing new", () => {
+    const w = finalizePlacement(fit, responses, words);
+    const after = new Map<string, "known" | "unknown" | "unset">();
+    for (const r of resolvePlacementWriteRows(w, () => "unset")) after.set(r.lemma, r.status);
+
+    const rows2 = resolvePlacementWriteRows(w, (l) => after.get(l) ?? "unset");
+    const newlyKnown = rows2.filter(
+      (r) => r.status === "known" && after.get(r.lemma) !== "known",
+    );
+    // Only the directly-judged answers are rewritten, and they were already known.
+    expect(newlyKnown.length).toBe(0);
+  });
+
+  it("never downgrades a word a previous run judged known", () => {
+    const w = finalizePlacement(fit, responses, words);
+    // w400 sits above the band, so this run would call it assumed-unknown.
+    const rows = resolvePlacementWriteRows(w, (l) => (l === "w400" ? "known" : "unset"));
+    expect(rows.find((r) => r.lemma === "w400")).toBeUndefined();
+  });
+
+  it("leaves exactly the confidence band undecided — the retake's only headroom", () => {
+    const w = finalizePlacement(fit, responses, words);
+    const decided = new Set([...w.judgedKnown, ...w.judgedUnknown, ...w.assumedKnown, ...w.assumedUnknown]);
+    const undecided = words.filter((x) => !decided.has(x.lemma));
+    expect(undecided.every((x) => x.rank >= fit.ciLowRank && x.rank <= fit.ciHighRank)).toBe(true);
+    expect(undecided.length).toBe(61); // ranks 280..340
+  });
+});

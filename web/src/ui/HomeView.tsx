@@ -451,6 +451,19 @@ function DetailsSheet({
               {t("home.progress.words", { n: stats.mastery.learnedCount.toLocaleString() })}
             </strong>
           </div>
+          {/* LINGO-066: what is still undecided, and how to decide it. The
+              answer to "why didn't my count move after a level check?" is
+              usually "because there was little left to decide" — which the
+              learner can only see if we show it. */}
+          <div className="detail-row">
+            <span>{t("detail.unjudged")}</span>
+            <strong>
+              {t("home.progress.words", { n: stats.mastery.unjudgedCount.toLocaleString() })}
+            </strong>
+          </div>
+          {stats.mastery.unjudgedCount > 0 && (
+            <p className="detail-hint">{t("detail.unjudged.hint")}</p>
+          )}
           <div className="detail-row">
             <span>{t("detail.frame")}</span>
             <strong>

@@ -219,6 +219,12 @@ export interface MasteryStats {
   /** Of `masteredCount`, lemmas earned purely through study (review stability
    * reached the threshold) and NOT already declared known. */
   learnedCount: number;
+  /** LINGO-066: deck lemmas (within the 3000-word frame) the learner has
+   * neither judged nor learned — the pool a level check can still resolve.
+   * Shown in the details sheet so "why didn't my count move?" has a visible
+   * answer: a retake cannot add words that are already decided, and this is
+   * what is left to decide. Purely additive — nothing else is recomputed. */
+  unjudgedCount: number;
   /** The 3000-word frame target (scope figure — no longer a bar denominator). */
   targetWords: number;
   /** Estimated conversation coverage %, 1 decimal. */
@@ -256,10 +262,19 @@ export function masteryStats(
   for (const lemma of mastered) {
     if (knowledge.get(lemma) === "known") declaredCount++;
   }
+  // Judged either way (known OR unknown) counts as decided; only lemmas with
+  // no verdict at all are "unjudged".
+  let decided = 0;
+  for (const lemma of deckLemmas) {
+    const status = knowledge.get(lemma);
+    if (status === "known" || status === "unknown") decided++;
+  }
+
   return {
     masteredCount,
     declaredCount,
     learnedCount: masteredCount - declaredCount,
+    unjudgedCount: Math.max(0, deckLemmas.size - decided),
     targetWords: MASTERY_TARGET_WORDS,
     coveragePct: estimatedCoveragePct(masteredCount),
     level: masteryLevelLabel(masteredCount),

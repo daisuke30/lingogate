@@ -119,6 +119,27 @@ async function loadKnowledgeMap(courseId: string): Promise<KnowledgeMap> {
 
 export interface FinalizePlacementResult {
   written: number;
+  /**
+   * LINGO-066 — what this run actually changed, so the completion screen can
+   * say it.
+   *
+   * Katsuta ran a level check and watched his word count move by 10. The
+   * cause was not a bug: a retake cannot re-decide words a previous run
+   * already decided (resolvePlacementWriteRows never overwrites), so almost
+   * every word it would have added was already added. That is correct and
+   * protective — but it was completely invisible, which made a working system
+   * look broken. These numbers make the outcome legible.
+   */
+  summary: {
+    /** Words directly swiped in this run. */
+    judgedKnown: number;
+    judgedUnknown: number;
+    /** Words newly written as known by this run (judged + assumed, after the
+     * no-overwrite guard) — i.e. the real increase in the mastered count. */
+    newlyKnown: number;
+    /** Words this run left undecided: inside the confidence band. */
+    leftUnjudged: number;
+  };
 }
 
 /**
@@ -169,6 +190,18 @@ export async function finalizeAndPersistPlacement(
   // FSRS seed only the lemmas we actually wrote as known (post clobber-guard),
   // dispersed 30-120d for the assumed set, default 60d for directly-judged ones.
   const knownLemmasWritten = new Set(rows.filter((r) => r.status === "known").map((r) => r.lemma));
+  // LINGO-066: only lemmas that were NOT already known count as an increase —
+  // re-writing a word that was known before changes no total.
+  const newlyKnown = [...knownLemmasWritten].filter(
+    (l) => existingKnowledge.get(l) !== "known",
+  ).length;
+  const leftUnjudged = words.filter(
+    (w) =>
+      w.rank >= writeout.bandLowRank &&
+      w.rank <= writeout.bandHighRank &&
+      (existingKnowledge.get(w.lemma) ?? "unset") === "unset" &&
+      !knownLemmasWritten.has(w.lemma),
+  ).length;
   const stabilityByLemma = new Map<string, number>();
   for (const [lemma, days] of writeout.seedStabilityDaysByLemma) {
     if (knownLemmasWritten.has(lemma)) stabilityByLemma.set(lemma, days);
@@ -200,5 +233,13 @@ export async function finalizeAndPersistPlacement(
     band++;
   }
 
-  return { written: rows.length };
+  return {
+    written: rows.length,
+    summary: {
+      judgedKnown: writeout.judgedKnown.length,
+      judgedUnknown: writeout.judgedUnknown.length,
+      newlyKnown,
+      leftUnjudged,
+    },
+  };
 }

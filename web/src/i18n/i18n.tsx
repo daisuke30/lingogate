@@ -185,6 +185,12 @@ const M: Record<string, Entry> = {
     ru: "Отмечено на проверке уровня",
   },
   "detail.learned.studied": { ja: "学習で定着", en: "Learned through study", ru: "Закреплено занятиями" },
+  "detail.unjudged": { ja: "まだ未判定", en: "Not yet decided", ru: "Пока не определено" },
+  "detail.unjudged.hint": {
+    ja: "設定のレベルチェックで、これらの語を判定できます。",
+    en: "A level check (in Settings) can decide these words.",
+    ru: "Проверка уровня в настройках может определить эти слова.",
+  },
   "detail.frame": { ja: "よく使う3,000語のうち", en: "Of the 3,000 everyday words", ru: "Из 3 000 частотных слов" },
   "detail.speech": {
     ja: "日常会話でよく出る語",
@@ -657,6 +663,17 @@ const M: Record<string, Entry> = {
   // 2026-09-09 fix: confirms the estimate above already landed in Home's
   // mastery count (not just a preview) — most relevant right after a retake,
   // so the number visibly having moved isn't a mystery.
+  // LINGO-066: the result breakdown. A retake that adds nothing is the
+  // no-overwrite guard working, not a failure — say which, in words.
+  "placement.result.words": { ja: "{n}語", en: "{n} words", ru: "Слов: {n}" },
+  "placement.result.judged": { ja: "今回判定した語", en: "Judged in this check", ru: "Оценено в этой проверке" },
+  "placement.result.added": { ja: "覚えた語に新しく追加", en: "Newly added to your count", ru: "Добавлено к счёту" },
+  "placement.result.unjudged": { ja: "まだ未判定", en: "Still undecided", ru: "Пока не определено" },
+  "placement.result.nothingNew": {
+    ja: "今回は新しく追加された語はありません。前回までの判定結果がそのまま残っているためで、データが失われたわけではありません。",
+    en: "Nothing new was added this time — your earlier results are still in place, so there was nothing left for this check to decide.",
+    ru: "В этот раз ничего не добавлено: прежние результаты сохранены, и этой проверке нечего было решать заново.",
+  },
   "placement.result.masteryUpdated": {
     ja: "マスター指標に反映されました",
     en: "Reflected in your mastery count",

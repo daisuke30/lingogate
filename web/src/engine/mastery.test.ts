@@ -303,3 +303,33 @@ describe("approximateWordCount", () => {
     expect(approximateWordCount(12.9)).toEqual({ value: 10, isApproximate: true });
   });
 });
+
+// LINGO-066: the details sheet needs to say how many words are still
+// undecided — that is the answer to "why didn't my count move?".
+describe("unjudgedCount", () => {
+  it("counts deck lemmas with no verdict either way", () => {
+    const knowledge: KnowledgeMap = new Map([
+      ["дом", "known"],
+      ["рука", "unknown"], // decided, just not known
+    ]);
+    const stats = masteryStats([], knowledge, [], DECK_LEMMAS);
+    // DECK_LEMMAS has 5 entries; 2 are decided.
+    expect(stats.unjudgedCount).toBe(3);
+  });
+
+  it("is zero once every deck lemma has been judged", () => {
+    const knowledge: KnowledgeMap = new Map(
+      [...DECK_LEMMAS].map((l) => [l, "known" as const]),
+    );
+    expect(masteryStats([], knowledge, [], DECK_LEMMAS).unjudgedCount).toBe(0);
+  });
+
+  it("is the whole deck before any level check", () => {
+    expect(masteryStats([], new Map(), [], DECK_LEMMAS).unjudgedCount).toBe(DECK_LEMMAS.size);
+  });
+
+  it("ignores knowledge rows for lemmas outside the deck", () => {
+    const knowledge: KnowledgeMap = new Map([["notadeckword", "known"]]);
+    expect(masteryStats([], knowledge, [], DECK_LEMMAS).unjudgedCount).toBe(DECK_LEMMAS.size);
+  });
+});
