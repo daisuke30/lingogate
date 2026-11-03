@@ -21840,6 +21840,206 @@
     "reason": "explicit nominative pronoun 'вы'"
   },
   {
+    "id": "B5200",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я провёл важный эксперимент.",
+    "target_lemma": "эксперимент",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5201",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мне нравится его характер.",
+    "target_lemma": "характер",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B5202",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты работаешь инженером?",
+    "target_lemma": "инженер",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5203",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я не люблю долгие полёты.",
+    "target_lemma": "полет",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5204",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мы заметили его отсутствие.",
+    "target_lemma": "отсутствие",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B5205",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Повернись ко мне.",
+    "target_lemma": "повернуться",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5206",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я вернул остаток долга.",
+    "target_lemma": "остаток",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5207",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты был в библиотеке сегодня?",
+    "target_lemma": "библиотека",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5208",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Они дали дополнительный день.",
+    "target_lemma": "дополнительный",
+    "bucket": "они",
+    "reason": "explicit nominative pronoun 'они'"
+  },
+  {
+    "id": "B5209",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Вы сделали большое усилие.",
+    "target_lemma": "усилие",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B5210",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я боюсь темноты.",
+    "target_lemma": "темнота",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5211",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Он ещё подросток.",
+    "target_lemma": "подросток",
+    "bucket": "он",
+    "reason": "explicit nominative pronoun 'он'"
+  },
+  {
+    "id": "B5212",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Она создала свой фонд.",
+    "target_lemma": "фонд",
+    "bucket": "она",
+    "reason": "explicit nominative pronoun 'она'"
+  },
+  {
+    "id": "B5213",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я держу расстояние.",
+    "target_lemma": "расстояние",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5214",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты обратил внимание на это?",
+    "target_lemma": "обратить",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5215",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Не трогай стекло.",
+    "target_lemma": "стекло",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5216",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мы не заметили его уход.",
+    "target_lemma": "уход",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B5217",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я видел волка в лесу.",
+    "target_lemma": "волк",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5218",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мне нужно уехать в июне.",
+    "target_lemma": "июнь",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B5219",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты профессиональный водитель?",
+    "target_lemma": "профессиональный",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5220",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я жду твоё объяснение.",
+    "target_lemma": "объяснение",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5221",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Вы видели эту ракету?",
+    "target_lemma": "ракета",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B5222",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Не говори одновременно со мной.",
+    "target_lemma": "одновременно",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5223",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я поступил по совести.",
+    "target_lemma": "совесть",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5224",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты разбил стакан?",
+    "target_lemma": "стакан",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
     "id": "T0269",
     "file": "sentences_band4_core.jsonl",
     "ru": "Если бы я знал!",
