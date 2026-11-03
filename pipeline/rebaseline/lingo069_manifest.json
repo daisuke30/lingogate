@@ -1,9 +1,9 @@
 {
  "task": "LINGO-069",
  "total": 920,
- "sentences_done": 125,
- "sentences_last_index": 124,
- "commentary_done": 125,
- "commentary_last_index": 124,
+ "sentences_done": 225,
+ "sentences_last_index": 224,
+ "commentary_done": 225,
+ "commentary_last_index": 224,
  "note": "indexes are into lingo069_plan.json (0-based). -1 = not started; resume at index+1. sentences and commentary advance together, 25 rows per write."
 }
