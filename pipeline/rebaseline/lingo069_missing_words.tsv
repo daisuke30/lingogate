@@ -1,0 +1,921 @@
+id	band	rank	lemma	pos	target_bucket	gender	aspect	aspect_pair	pair_kind	en_gloss	ja_gloss
+B4001	2	1002	свобода	noun	я	f				freedom	自由
+B4002	2	1004	костюм	noun	ты	m				suit	スーツ
+B4003	2	1005	очередь	noun	no_subject	f				queue, turn	順番
+B4004	2	1007	знак	noun	вы	m				sign	記号
+B4005	2	1011	спокойно	adv	я					calmly	静かに
+B4006	2	1013	крутой	adj	мы					steep	急な
+B4007	2	1015	постараться	verb	mne_type		pf	стараться	pair	try	努力する
+B4008	2	1018	прошлое	noun	ты	n				past	過去
+B4009	2	1020	разница	noun	я	f				difference	違い
+B4010	2	1021	договориться	verb	она		pf	договариваться	pair	agree	合意する
+B4011	2	1022	контроль	noun	он	m				control	管理
+B4012	2	1023	серия	noun	я	f				series	シリーズ
+B4013	2	1031	главное	noun	no_subject	n				the main thing	主なこと
+B4014	2	1033	принадлежать	verb	они		impf		none	belong	属する
+B4015	2	1038	америка	noun	ты	f				America	アメリカ
+B4016	2	1039	оставлять	verb	я		impf	оставить	pair	leave	残す
+B4017	2	1040	обвинение	noun	вы	n				accusation	告発
+B4018	2	1044	ударить	verb	mne_type		pf	ударять	pair	hit	打つ
+B4019	2	1045	намного	adv	я					much	はるかに
+B4020	2	1047	тяжело	adv	мы					heavily	重く
+B4021	2	1049	пятница	noun	ты	f				Friday	金曜日
+B4022	2	1051	собрать	verb	no_subject		pf	собирать	pair	gather	集める
+B4023	2	1052	течение	noun	я	n				current, course	流れ
+B4024	2	1053	судьба	noun	вы	f				fate	運命
+B4025	2	1054	бить	verb	я		impf	побить	pair	beat	打つ
+B4026	2	1056	семь	num	ты					seven	七
+B4027	2	1057	долг	noun	она	m				debt	借金
+B4028	2	1058	бедный	adj	он					poor	貧しい
+B4029	2	1059	отдел	noun	я	m				department	部門
+B4030	2	1061	отойти	verb	no_subject		pf	отходить	pair	move away	離れる
+B4031	2	1063	тяжелый	adj	ты					heavy	重い
+B4032	2	1067	брак	noun	я	m				marriage	結婚
+B4033	2	1069	выходной	noun	mne_type	m				day off	休日
+B4034	2	1070	успеть	verb	мы		pf	успевать	pair	manage in time	間に合う
+B4035	2	1075	веселый	adj	вы					cheerful	陽気な
+B4036	2	1078	известный	adj	я					known, famous	有名な
+B4037	2	1085	действие	noun	ты	n				action	行動
+B4038	2	1090	касаться	verb	no_subject		impf	коснуться	pair	concern, touch	関わる
+B4039	2	1093	почувствовать	verb	я		pf	чувствовать	pair	feel	感じる
+B4040	2	1098	старик	noun	они	m				old man	老人
+B4041	2	1100	вниз	adv	ты					down	下へ
+B4042	2	1102	убедиться	verb	я		pf	убеждаться	pair	make sure	確かめる
+B4043	2	1103	наверняка	adv	mne_type					certainly	確実に
+B4044	2	1104	покинуть	verb	мы		pf	покидать	pair	leave	去る
+B4045	2	1108	особенный	adj	вы					special	特別な
+B4046	2	1112	судить	verb	я		impf	посудить	none	judge	判断する
+B4047	2	1114	гораздо	adv	no_subject					much (more)	はるかに
+B4048	2	1116	впервые	adv	ты					for the first time	初めて
+B4049	2	1117	получаться	verb	я		impf	получиться	pair	turn out, work out	うまくいく
+B4050	2	1119	чей	det	она					whose	誰の
+B4051	2	1121	отправляться	verb	он		impf	отправиться	pair	set off, depart	出発する
+B4052	2	1122	водитель	noun	я	m				driver	運転手
+B4053	2	1123	качество	noun	ты	n				quality	品質
+B4054	2	1126	сигнал	noun	no_subject	m				signal	信号
+B4055	2	1129	вызывать	verb	вы		impf	вызвать	pair	cause	引き起こす
+B4056	2	1131	сексуальный	adj	я					sexual	性的な
+B4057	2	1135	признать	verb	мы		pf	признавать	pair	recognize	認める
+B4058	2	1136	научиться	verb	mne_type		pf	учиться	pair	learn	学ぶ
+B4059	2	1137	совершить	verb	я		pf	совершать	pair	commit	行う
+B4060	2	1141	управлять	verb	ты		impf	поуправлять	none	manage	管理する
+B4061	2	1143	род	noun	они	m				kind, lineage	血統
+B4062	2	1148	многие	det	я					many	多くの
+B4063	2	1149	приятный	adj	no_subject					pleasant	心地よい
+B4064	2	1152	обсудить	verb	ты		pf	обсуждать	pair	discuss	話し合う
+B4065	2	1153	продолжить	verb	вы		pf	продолжать	pair	continue	続ける
+B4066	2	1154	сезон	noun	я	m				season	シーズン
+B4067	2	1155	показаться	verb	мы		pf	казаться	pair	seem	のように見える
+B4068	2	1158	зло	noun	mne_type	n				evil	悪
+B4069	2	1159	взгляд	noun	я	m				look, view	視線
+B4070	2	1160	большинство	noun	ты	n				majority	大多数
+B4071	2	1161	сложный	adj	она					complex	複雑な
+B4072	2	1163	подписать	verb	no_subject		pf	подписывать	pair	sign	署名する
+B4073	2	1164	пуля	noun	я	f				bullet	弾丸
+B4074	2	1165	оттуда	adv	он					from there	そこから
+B4075	2	1166	масло	noun	вы	n				oil	油
+B4076	2	1170	бомба	noun	я	f				bomb	爆弾
+B4077	2	1172	позволять	verb	ты		impf	позволить	pair	allow	許す
+B4078	2	1173	сцена	noun	я	f				stage, scene	舞台
+B4079	2	1174	тест	noun	no_subject	m				test	テスト
+B4080	2	1175	никак	adv	мы					in no way	決して〜ない
+B4081	2	1176	недавно	adv	ты					recently	最近
+B4082	2	1177	профессор	noun	я	m				professor	教授
+B4083	2	1179	несчастный	adj	mne_type					unhappy	不幸な
+B4084	2	1182	наблюдать	verb	вы		impf	понаблюдать	pair	observe	観察する
+B4085	2	1183	вариант	noun	я	m				variant	選択肢
+B4086	2	1184	суббота	noun	они	f				Saturday	土曜日
+B4087	2	1189	значение	noun	ты	n				meaning	意味
+B4088	2	1190	ручка	noun	no_subject	f				pen	ペン
+B4089	2	1191	привезти	verb	я		pf	привозить	pair	bring	持ってくる
+B4090	2	1192	сожаление	noun	он	n				regret	残念
+B4091	2	1193	угроза	noun	она	f				threat	脅威
+B4092	2	1197	навсегда	adv	я					forever	永遠に
+B4093	2	1198	вполне	adv	ты					quite, fully	十分に
+B4094	2	1202	относиться	verb	мы		impf		none	relate to	関係する
+B4095	2	1203	кабинет	noun	mne_type	m				office	事務室
+B4096	2	1205	лейтенант	noun	я	m				lieutenant	中尉
+B4097	2	1206	задача	noun	вы	f				task	課題
+B4098	2	1207	приходиться	verb	no_subject		impf	прийтись	pair	have to	せざるを得ない
+B4099	2	1210	положение	noun	ты	n				position, situation	状態
+B4100	2	1211	взрослый	adj	я					adult	大人の
+B4101	2	1212	замуж	adv	я					to marry (of a woman)	嫁に
+B4102	2	1217	охрана	noun	ты	f				security	警備
+B4103	2	1218	установить	verb	no_subject		pf	устанавливать	pair	establish	設置する
+B4104	2	1225	страшно	predic	вы					scary	怖い
+B4105	2	1229	идеальный	adj	я					ideal	理想的な
+B4106	2	1230	заключить	verb	мы		pf	заключать	pair	conclude	締結する
+B4107	2	1232	планировать	verb	mne_type		impf	спланировать	pair	plan	計画する
+B4108	2	1234	замок	noun	он	m				castle	城
+B4109	2	1238	американский	adj	я					American	アメリカの
+B4110	2	1240	дурак	noun	ты	m				fool	ばか
+B4111	2	1241	партнер	noun	она	m				partner	相手
+B4112	2	1242	кой	pron	я					which	どの
+B4113	2	1245	правительство	noun	они	n				government	政府
+B4114	2	1246	бой	noun	no_subject	m				battle	戦闘
+B4115	2	1247	научить	verb	ты		pf	учить	pair	teach	教える
+B4116	2	1249	сохранить	verb	я		pf	сохранять	pair	preserve	保存する
+B4117	2	1250	событие	noun	вы	n				event	出来事
+B4118	2	1252	гарри	noun	мы	m				Harry (name)	ハリー
+B4119	2	1253	постель	noun	я	f				bed	寝床
+B4120	2	1256	горло	noun	mne_type	n				throat	喉
+B4121	2	1257	богатый	adj	ты					rich	裕福な
+B4122	2	1262	лично	adv	я					personally	個人的に
+B4123	2	1265	лодка	noun	no_subject	f				boat	舟
+B4124	2	1266	тема	noun	вы	f				topic	テーマ
+B4125	2	1267	кость	noun	я	f				bone	骨
+B4126	2	1268	подать	verb	ты		pf	подавать	pair	submit	提出する
+B4127	2	1269	прием	noun	он	m				reception	受付
+B4128	2	1270	участок	noun	она	m				plot	区画
+B4129	2	1272	разумеется	adv	я					of course	もちろん
+B4130	2	1273	восемь	num	no_subject					eight	八
+B4131	2	1274	поступать	verb	мы		impf	поступить	pair	act	行動する
+B4132	2	1275	видимо	adv	ты					apparently	どうやら
+B4133	2	1276	убедить	verb	я		pf	убеждать	pair	convince	説得する
+B4134	2	1277	менее	adv	mne_type					less	より少なく
+B4135	2	1280	рабочий	noun	вы	m				worker	労働者
+B4136	2	1283	признаться	verb	я		pf	признаваться	pair	confess	告白する
+B4137	2	1284	труп	noun	ты	m				corpse	死体
+B4138	2	1285	среда	noun	они	f				environment	環境
+B4139	2	1286	необходимо	predic	я					necessary	必要である
+B4140	2	1287	генерал	noun	no_subject	m				general	将軍
+B4141	2	1291	база	noun	мы	f				base	基盤
+B4142	2	1300	марк	noun	я	m				Mark (name)	マルク(人名)
+B4143	2	1301	человеческий	adj	ты					human	人間の
+B4144	2	1302	хранить	verb	mne_type		impf	сохранить	pair	keep, store	保管する
+B4145	2	1306	пользоваться	verb	вы		impf	воспользоваться	pair	use	利用する
+B4146	2	1307	тайна	noun	я	f				secret	秘密
+B4147	2	1310	март	noun	no_subject	m				March	3月
+B4148	2	1311	задать	verb	ты		pf	задавать	pair	ask	尋ねる
+B4149	2	1312	отчет	noun	я	m				report	報告書
+B4150	2	1315	название	noun	он	n				name	名称
+B4151	2	1318	выше	adv	она					higher	より高く
+B4152	2	1319	однако	conj	я					however	しかし
+B4153	2	1320	доставить	verb	ты		pf	доставлять	pair	deliver	届ける
+B4154	2	1321	вовсе	adv	no_subject					at all	全く〜ない
+B4155	2	1322	ход	noun	вы	m				course, move	動き
+B4156	2	1325	запомнить	verb	я		pf	запоминать	pair	memorize	覚える
+B4157	2	1326	многий	det	mne_type					many	多くの
+B4158	2	1328	осторожно	adv	мы					carefully	慎重に
+B4159	2	1329	сотня	noun	я	f				hundred	百ほど
+B4160	2	1330	правильный	adj	ты					correct	正しい
+B4161	2	1331	попытка	noun	они	f				attempt	試み
+B4162	2	1332	успех	noun	я	m				success	成功
+B4163	2	1333	коробка	noun	no_subject	f				box	箱
+B4164	2	1334	выпустить	verb	ты		pf	выпускать	pair	release	発売する
+B4165	2	1336	разрушить	verb	вы		pf	разрушать	pair	destroy	破壊する
+B4166	2	1340	находить	verb	я		impf	найти	pair	find	見つける
+B4167	2	1342	понедельник	noun	mne_type	m				Monday	月曜日
+B4168	2	1348	детский	adj	мы					children's	子供の
+B4169	2	1349	кусок	noun	я	m				piece	一片
+B4170	2	1352	поддерживать	verb	он		impf	поддержать	pair	support	支える
+B4171	2	1353	нечто	pron	ты					something	何か
+B4172	2	1360	освободить	verb	она		pf	освобождать	pair	free, release	解放する
+B4173	2	1366	обращаться	verb	я		impf	обратиться	pair	turn to, address	訴える
+B4174	2	1367	общество	noun	no_subject	n				society	社会
+B4175	2	1369	скрывать	verb	вы		impf	скрыть	pair	hide	隠す
+B4176	2	1370	трубка	noun	я	f				tube	管
+B4177	2	1371	сыграть	verb	ты		pf	играть	pair	play	演じる
+B4178	2	1372	танец	noun	я	m				dance	踊り
+B4179	2	1373	управление	noun	no_subject	n				management	管理
+B4180	2	1374	реальный	adj	мы					real	現実の
+B4181	2	1377	молчать	verb	mne_type		impf	помолчать	none	be silent	黙る
+B4182	2	1378	поддержка	noun	ты	f				support	支援
+B4183	2	1379	доступ	noun	я	m				access	アクセス
+B4184	2	1380	париж	noun	вы	m				Paris	パリ
+B4185	2	1383	глава	noun	я	f				chapter, head	章
+B4186	2	1385	задание	noun	они	n				task	課題
+B4187	2	1388	наверно	adv	ты					probably	たぶん
+B4188	2	1391	анна	noun	no_subject	f				Anna	アンナ
+B4189	2	1392	дон	noun	я	m				Don (river)	ドン川
+B4190	2	1394	участвовать	verb	он		impf	поучаствовать	none	participate	参加する
+B4191	2	1395	лаборатория	noun	она	f				laboratory	研究室
+B4192	2	1397	обсуждать	verb	я		impf	обсудить	pair	discuss	話し合う
+B4193	2	1398	вечно	adv	ты					eternally, always	永遠に
+B4194	2	1399	запах	noun	мы	m				smell	匂い
+B4195	2	1402	поскольку	conj	mne_type					since, because	なので
+B4196	2	1404	процесс	noun	я	m				process	過程
+B4197	2	1405	мешать	verb	вы		impf	помешать	pair	hinder	妨げる
+B4198	2	1407	темный	adj	no_subject					dark	暗い
+B4199	2	1409	весьма	adv	я					very	非常に
+B4200	2	1412	тратить	verb	ты		impf	потратить	pair	spend	使う
+B4201	2	1413	диван	noun	я	m				sofa	ソファ
+B4202	2	1418	сто	num	мы					hundred	百
+B4203	2	1419	исследование	noun	ты	n				research	研究
+B4204	2	1420	общаться	verb	mne_type		impf	пообщаться	none	communicate	交流する
+B4205	2	1421	кино	noun	no_subject	n				cinema	映画
+B4206	2	1422	бутылка	noun	я	f				bottle	瓶
+B4207	2	1423	сегодняшний	adj	вы					today's	今日の
+B4208	2	1425	прочитать	verb	он		pf	читать	pair	read	読む
+B4209	2	1426	чудо	noun	я	n				miracle	奇跡
+B4210	2	1428	семейный	adj	ты					family	家族の
+B4211	2	1429	особый	adj	она					special	特別な
+B4212	2	1433	примерно	adv	я					approximately	だいたい
+B4213	2	1435	лондон	noun	они	m				London	ロンドン
+B4214	2	1438	начинаться	verb	no_subject		impf	начаться	pair	begin (intrans)	始まる
+B4215	2	1440	зал	noun	ты	m				hall	ホール
+B4216	2	1445	страдать	verb	я		impf	пострадать	related	suffer	苦しむ
+B4217	2	1446	собирать	verb	вы		impf	собрать	pair	collect	集める
+B4218	2	1448	подарить	verb	мы		pf	дарить	pair	give	贈る
+B4219	2	1450	анализ	noun	я	m				analysis	分析
+B4220	2	1451	пережить	verb	mne_type		pf	переживать	pair	survive, live through	生き延びる
+B4221	2	1452	подняться	verb	ты		pf	подниматься	pair	rise	上がる
+B4222	2	1454	воспоминание	noun	я	n				memory	記憶
+B4223	2	1455	контролировать	verb	no_subject		impf	проконтролировать	pair	control	管理する
+B4224	2	1457	число	noun	вы	n				number	数
+B4225	2	1460	сдать	verb	я		pf	сдавать	pair	hand in, pass	提出する
+B4226	2	1461	слух	noun	ты	m				rumor	噂
+B4227	2	1462	добиться	verb	он		pf	добиваться	pair	achieve	達成する
+B4228	2	1464	вера	noun	она	f				faith	信仰
+B4229	2	1468	продукт	noun	я	m				product	製品
+B4230	2	1469	устраивать	verb	no_subject		impf	устроить	pair	arrange	手配する
+B4231	2	1470	пустить	verb	мы		pf	пускать	pair	let go, let in	通す
+B4232	2	1472	заявление	noun	mne_type	n				statement	声明
+B4233	2	1474	служить	verb	я		impf	послужить	none	serve	仕える
+B4234	2	1475	воспользоваться	verb	ты		pf	пользоваться	pair	use	利用する
+B4235	2	1476	карьера	noun	вы	f				career	キャリア
+B4236	2	1477	занятие	noun	я	n				occupation, lesson	授業
+B4237	2	1478	средство	noun	они	n				means	手段
+B4238	2	1479	видно	predic	ты					visible, apparently	見える
+B4239	2	1480	назначить	verb	я		pf	назначать	pair	appoint	任命する
+B4240	2	1481	скажем	part	no_subject					let us say	例えば
+B4241	2	1483	ящик	noun	мы	m				box	箱
+B4242	2	1485	разрешение	noun	я	n				permission	許可
+B4243	2	1486	перевести	verb	ты		pf	переводить	pair	translate	翻訳する
+B4244	2	1491	ранее	adv	mne_type					earlier	以前
+B4245	2	1497	вызов	noun	вы	m				call, challenge	呼び出し
+B4246	2	1498	иисус	noun	я	m				Jesus	イエス
+B4247	2	1499	шкаф	noun	no_subject	m				wardrobe, cupboard	戸棚
+B4248	2	1500	источник	noun	ты	m				source	源
+B4249	2	1501	возвращение	noun	я	n				return	帰還
+B4250	2	1502	код	noun	он	m				code	コード
+B4251	2	1503	полковник	noun	она	m				colonel	大佐
+B4252	2	1505	зарплата	noun	я	f				salary	給料
+B4253	2	1507	одинокий	adj	ты					lonely	孤独な
+B4254	2	1509	случаться	verb	мы		impf	случиться	pair	happen	起こる
+B4255	2	1511	зависеть	verb	mne_type		impf		none	depend	依存する
+B4256	2	1515	посадить	verb	я		pf	сажать	pair	plant, seat	植える
+B4257	2	1516	отдыхать	verb	no_subject		impf	отдохнуть	pair	rest	休む
+B4258	2	1517	вряд	part	вы					unlikely	おそらくない
+B4259	2	1519	срок	noun	я	m				term, deadline	期限
+B4260	2	1520	построить	verb	ты		pf	строить	pair	build	建てる
+B4261	2	1521	ответственность	noun	они	f				responsibility	責任
+B4262	2	1522	детство	noun	я	n				childhood	幼年期
+B4263	2	1524	мария	noun	no_subject	f				Maria	マリア
+B4264	2	1526	малый	adj	вы					small	小さい
+B4265	2	1527	трое	num	ты					three people	三人
+B4266	2	1529	напоминать	verb	я		impf	напомнить	pair	remind	思い出させる
+B4267	2	1533	юный	adj	мы					young	若い
+B4268	2	1536	воля	noun	mne_type	f				will	意志
+B4269	2	1538	учитывать	verb	я		impf	учесть	pair	consider	考慮する
+B4270	2	1539	количество	noun	он	n				quantity	数量
+B4271	2	1540	глупость	noun	ты	f				stupidity	愚かさ
+B4272	2	1543	взрыв	noun	она	m				explosion	爆発
+B4273	2	1544	великолепный	adj	я					magnificent	素晴らしい
+B4274	2	1545	несмотря	prep	no_subject					despite	にもかかわらず
+B4275	2	1549	беда	noun	вы	f				trouble	災難
+B4276	2	1551	помощник	noun	я	m				assistant	助手
+B4277	2	1554	задний	adj	ты					rear	後ろの
+B4278	2	1555	колено	noun	я	n				knee	膝
+B4279	2	1558	роза	noun	мы	f				rose	バラ
+B4280	2	1561	сша	noun	mne_type	pl				USA	アメリカ合衆国
+B4281	2	1562	крупный	adj	no_subject					large	大きな
+B4282	2	1563	пожалуй	part	я					perhaps	たぶん
+B4283	2	1564	домашний	adj	ты					home	家庭の
+B4284	2	1566	курить	verb	они		impf	покурить	none	smoke	喫煙する
+B4285	2	1570	борьба	noun	вы	f				struggle	闘争
+B4286	2	1573	вверх	adv	я					upward	上へ
+B4287	2	1574	дойти	verb	ты		pf	доходить	pair	reach	たどり着く
+B4288	2	1578	приносить	verb	no_subject		impf	принести	pair	bring	持ってくる
+B4289	2	1580	добавить	verb	я		pf	добавлять	pair	add	加える
+B4290	2	1583	давление	noun	он	n				pressure	圧力
+B4291	2	1584	век	noun	она	m				century	世紀
+B4292	2	1590	недостаточно	predic	я					not enough	不十分だ
+B4293	2	1596	данный	adj	mne_type					given	この
+B4294	2	1599	перейти	verb	ты		pf	переходить	pair	cross over	移る
+B4295	2	1604	ангел	noun	мы	m				angel	天使
+B4296	2	1606	едва	adv	я					barely	かろうじて
+B4297	2	1607	личность	noun	вы	f				personality	人格
+B4298	2	1608	заработать	verb	no_subject		pf	зарабатывать	pair	earn	稼ぐ
+B4299	2	1610	спустя	prep	я					after	後に
+B4300	2	1612	младший	adj	ты					younger	年下の
+B4301	2	1613	способность	noun	я	f				ability	能力
+B4302	2	1615	зона	noun	mne_type	f				zone	区域
+B4303	2	1616	де	part	мы					they say	という
+B4304	2	1620	четверг	noun	ты	m				Thursday	木曜日
+B4305	2	1623	захватить	verb	вы		pf	захватывать	pair	capture	捕らえる
+B4306	2	1625	привыкнуть	verb	я		pf	привыкать	pair	get used	慣れる
+B4307	2	1628	выстрел	noun	no_subject	m				shot	発砲
+B4308	2	1630	борт	noun	он	m				board (of ship)	船側
+B4309	2	1633	деталь	noun	я	f				detail	詳細
+B4310	2	1634	статья	noun	ты	f				article	記事
+B4311	2	1638	карман	noun	она	m				pocket	ポケット
+B4312	2	1639	подтвердить	verb	я		pf	подтверждать	pair	confirm	確認する
+B4313	2	1643	золотой	adj	они					golden	金の
+B4314	2	1644	теория	noun	no_subject	f				theory	理論
+B4315	2	1645	таковой	pron	вы					such	そのような
+B4316	2	1646	уважать	verb	я		impf	зауважать	related	respect	尊敬する
+B4317	2	1648	существо	noun	ты	n				creature, being	生き物
+B4318	2	1649	сознание	noun	mne_type	n				consciousness	意識
+B4319	2	1651	везде	adv	я					everywhere	どこでも
+B4320	2	1653	схватить	verb	мы		pf	хватать	pair	grab	つかむ
+B4321	2	1654	готовиться	verb	ты		impf	подготовиться	pair	prepare	準備する
+B4322	2	1657	сеть	noun	я	f				network	ネットワーク
+B4323	2	1660	девять	num	no_subject					nine	九
+B4324	2	1662	фирма	noun	вы	f				firm	会社
+B4325	2	1663	поведение	noun	я	n				behavior	行動
+B4326	2	1665	ночной	adj	ты					nightly	夜の
+B4327	2	1670	товарищ	noun	он	m				comrade	同志
+B4328	2	1674	норма	noun	она	f				norm	規範
+B4329	2	1675	почта	noun	я	f				mail	郵便
+B4330	2	1676	вторник	noun	mne_type	m				Tuesday	火曜日
+B4331	2	1680	польза	noun	мы	f				benefit	利益
+B4332	2	1681	напомнить	verb	no_subject		pf	напоминать	pair	remind	思い出させる
+B4333	2	1683	потеря	noun	я	f				loss	損失
+B4334	2	1684	предполагать	verb	ты		impf	предположить	pair	assume	仮定する
+B4335	2	1685	спешить	verb	вы		impf	поспешить	pair	hurry	急ぐ
+B4336	2	1687	задавать	verb	я		impf	задать	pair	ask	尋ねる
+B4337	2	1690	стиль	noun	они	m				style	様式
+B4338	2	1691	женский	adj	ты					female	女性の
+B4339	2	1696	допустить	verb	я		pf	допускать	pair	allow	許す
+B4340	2	1697	ужас	noun	no_subject	m				horror	恐怖
+B4341	2	1700	прибыть	verb	mne_type		pf	прибывать	pair	arrive	到着する
+B4342	2	1705	автомобиль	noun	я	m				automobile	自動車
+B4343	2	1707	модель	noun	мы	f				model	モデル
+B4344	2	1708	достигнуть	verb	ты		pf	достигать	pair	reach	到達する
+B4345	2	1712	выполнять	verb	вы		impf	выполнить	pair	perform	実行する
+B4346	2	1713	зато	conj	я					but on the other hand	その代わり
+B4347	2	1719	данные	noun	no_subject	pl				data	データ
+B4348	2	1720	плюс	noun	ты	m				plus	プラス
+B4349	2	1721	клетка	noun	я	f				cell	細胞
+B4350	2	1723	меч	noun	он	m				sword	剣
+B4351	2	1725	согласно	prep	она					according to	によれば
+B4352	2	1728	предпочитать	verb	я		impf	предпочесть	pair	prefer	好む
+B4353	2	1730	утверждать	verb	mne_type		impf		none	assert	主張する
+B4354	2	1731	чисто	adv	ты					cleanly	きれいに
+B4355	2	1733	вне	prep	мы					outside	の外に
+B4356	2	1735	приказать	verb	я		pf	приказывать	pair	order	命じる
+B4357	2	1736	двадцать	num	вы					twenty	20
+B4358	2	1737	предел	noun	no_subject	m				limit	限界
+B4359	2	1740	спуститься	verb	я		pf	спускаться	pair	descend	降りる
+B4360	2	1741	слегка	adv	ты					slightly	少し
+B4361	2	1748	необходимый	adj	они					necessary	必要な
+B4362	2	1750	метр	noun	я	m				meter	メートル
+B4363	2	1751	владелец	noun	no_subject	m				owner	所有者
+B4364	2	1753	золото	noun	вы	n				gold	金
+B4365	2	1755	вселенная	noun	я	f				universe	宇宙
+B4366	2	1756	обратиться	verb	ты		pf	обращаться	pair	turn to, address	訴える
+B4367	2	1757	подниматься	verb	мы		impf	подняться	pair	rise	上がる
+B4368	2	1758	морской	adj	mne_type					marine	海の
+B4369	2	1761	внутренний	adj	я					internal	内部の
+B4370	2	1764	полезный	adj	он					useful	有用な
+B4371	2	1766	зрение	noun	она	n				eyesight	視力
+B4372	2	1770	прямой	adj	ты					straight, direct	まっすぐな
+B4373	2	1773	разбить	verb	я		pf	разбивать	pair	break, smash	割る
+B4374	2	1774	кончиться	verb	no_subject		pf	кончаться	pair	end	終わる
+B4375	2	1777	вынудить	verb	вы		pf	вынуждать	pair	force	強いる
+B4376	2	1781	выполнить	verb	я		pf	выполнять	pair	complete	完了する
+B4377	2	1782	мелкий	adj	ты					small	細かい
+B4378	2	1784	интересовать	verb	мы		impf	заинтересовать	related	interest	興味を持たせる
+B4379	2	1786	терпеть	verb	я		impf	вытерпеть	pair	endure	耐える
+B4380	2	1790	практически	adv	mne_type					practically	実質的に
+B4381	2	1791	довольный	adj	no_subject					satisfied	満足した
+B4382	2	1794	жестокий	adj	я					cruel	残酷な
+B4383	2	1795	политика	noun	ты	f				politics	政治
+B4384	2	1797	опустить	verb	они		pf	опускать	pair	lower, omit	下ろす
+B4385	2	1798	отдавать	verb	вы		impf	отдать	pair	give back	返す
+B4386	2	1800	франция	noun	я	f				France	フランス
+B4387	2	1803	школьный	adj	ты					school	学校の
+B4388	2	1804	лечение	noun	он	n				treatment	治療
+B4389	2	1806	сотрудник	noun	я	m				employee	職員
+B4390	2	1807	риск	noun	no_subject	m				risk	危険
+B4391	2	1808	грех	noun	она	m				sin	罪
+B4392	2	1810	ощущение	noun	я	n				feeling, sensation	感覚
+B4393	2	1812	вход	noun	mne_type	m				entrance	入口
+B4394	2	1814	удобный	adj	мы					convenient	便利な
+B4395	2	1815	летать	verb	ты		impf		none	fly	飛ぶ
+B4396	2	1816	лагерь	noun	я	m				camp	収容所
+B4397	2	1817	тень	noun	вы	f				shadow	影
+B4398	2	1818	территория	noun	no_subject	f				territory	領土
+B4399	2	1819	материал	noun	я	m				material	材料
+B4400	2	1820	лезть	verb	ты		impf	полезть	related	climb, meddle	這い出る
+B4401	2	1821	проверка	noun	я	f				check	検査
+B4402	2	1825	образец	noun	mne_type	m				sample	見本
+B4403	2	1826	особо	adv	мы					especially	特に
+B4404	2	1828	шум	noun	ты	m				noise	騒音
+B4405	2	1830	обстоятельство	noun	вы	n				circumstance	事情
+B4406	2	1833	остальное	pron	я					the rest	残り
+B4407	2	1834	возле	prep	no_subject					near	の近くに
+B4408	2	1835	красота	noun	они	f				beauty	美
+B4409	2	1839	спорить	verb	я		impf	поспорить	pair	argue	議論する
+B4410	2	1840	площадка	noun	ты	f				site	会場
+B4411	2	1843	голубой	adj	он					light blue	水色の
+B4412	2	1844	лед	noun	она	m				ice	氷
+B4413	2	1845	продажа	noun	я	f				sale	販売
+B4414	2	1849	прочесть	verb	no_subject		pf	читать	pair	read through	読む
+B4415	2	1853	американец	noun	вы	m				American	アメリカ人
+B4416	2	1855	контакт	noun	я	m				contact	接触
+B4417	2	1856	лидер	noun	ты	m				leader	指導者
+B4418	2	1858	явно	adv	mne_type					clearly	明らかに
+B4419	2	1859	подготовить	verb	мы		pf	подготавливать	pair	prepare	準備する
+B4420	2	1860	наблюдение	noun	я	n				observation	観察
+B4421	2	1861	поддержать	verb	ты		pf	поддерживать	pair	support	支持する
+B4422	2	1862	столь	adv	я					so (much)	それほど
+B4423	2	1864	рассчитывать	verb	no_subject		impf		none	count on	当てにする
+B4424	2	1869	разум	noun	вы	m				reason	理性
+B4425	2	1871	итог	noun	я	m				result	結果
+B4426	2	1874	майор	noun	ты	m				major (rank)	少佐
+B4427	2	1877	специальный	adj	он					special	特別な
+B4428	2	1879	смена	noun	mne_type	f				shift	交替
+B4429	2	1880	вывести	verb	я		pf	выводить	pair	bring out	外へ出す
+B4430	2	1881	округ	noun	мы	m				district	地区
+B4431	2	1885	представление	noun	она	n				idea, performance	概念
+B4432	2	1887	фамилия	noun	no_subject	f				surname	姓
+B4433	2	1891	пробовать	verb	я		impf	попробовать	pair	try	試す
+B4434	2	1894	испытывать	verb	ты		impf	испытать	pair	experience	経験する
+B4435	2	1899	достойный	adj	вы					worthy	ふさわしい
+B4436	2	1901	французский	adj	я					French	フランスの
+B4437	2	1903	игрок	noun	они	m				player	選手
+B4438	2	1904	сценарий	noun	ты	m				scenario, script	脚本
+B4439	2	1905	атака	noun	я	f				attack	攻撃
+B4440	2	1906	канал	noun	no_subject	m				channel	経路
+B4441	2	1908	реально	adv	mne_type					really	実際に
+B4442	2	1912	зря	adv	я					in vain	無駄に
+B4443	2	1913	бегать	verb	мы		impf		none	run	走る
+B4444	2	1914	труд	noun	ты	m				labor	労働
+B4445	2	1915	устройство	noun	вы	n				device	装置
+B4446	2	1920	копия	noun	я	f				copy	コピー
+B4447	2	1926	выступать	verb	no_subject		impf	выступить	pair	perform, speak	発言する
+B4448	2	1927	мастер	noun	он	m				master	達人
+B4449	2	1930	собрание	noun	я	n				meeting	会議
+B4450	2	1931	организовать	verb	ты		both		none	organize	組織する
+B4451	2	1933	предоставить	verb	она		pf	предоставлять	pair	provide	提供する
+B4452	2	1937	талант	noun	я	m				talent	才能
+B4453	2	1938	четвертый	adj	mne_type					fourth	第四の
+B4454	2	1943	вред	noun	мы	m				harm	害
+B4455	2	1946	насилие	noun	ты	n				violence	暴力
+B4456	2	1947	множество	noun	я	n				multitude	多数
+B4457	2	1949	участие	noun	вы	n				participation	参加
+B4458	2	1955	дикий	adj	no_subject					wild	野生の
+B4459	2	1956	внезапно	adv	я					suddenly	突然
+B4460	2	1957	англия	noun	ты	f				England	イングランド
+B4461	2	1960	партия	noun	они	f				party	党
+B4462	2	1964	версия	noun	я	f				version	バージョン
+B4463	2	1967	сумма	noun	no_subject	f				sum	合計
+B4464	2	1971	направление	noun	вы	n				direction	方向
+B4465	2	1972	кот	noun	я	m				cat	猫
+B4466	2	1974	реальность	noun	ты	f				reality	現実
+B4467	2	1975	вновь	adv	мы					again	再び
+B4468	2	1981	ворота	noun	mne_type	pl				gate	門
+B4469	2	1985	приближаться	verb	я		impf	приблизиться	pair	approach	近づく
+B4470	2	1987	совершать	verb	он		impf	совершить	pair	commit	行う
+B4471	2	1991	догадаться	verb	она		pf	догадываться	pair	guess	気づく
+B4472	2	1992	облако	noun	ты	n				cloud	雲
+B4473	2	1993	лишний	adj	я					extra	余分な
+B4474	2	1994	родственник	noun	no_subject	m				relative	親戚
+B4475	2	1995	взяться	verb	вы		pf	браться	pair	undertake	取りかかる
+B4476	2	1998	концерт	noun	я	m				concert	コンサート
+B5001	3	2001	толпа	noun	ты	f				crowd	群衆
+B5002	3	2005	процент	noun	мы	m				percent	パーセント
+B5003	3	2010	голый	adj	я					naked	裸の
+B5004	3	2011	тянуть	verb	mne_type		impf	потянуть	pair	pull	引く
+B5005	3	2013	священник	noun	no_subject	m				priest	司祭
+B5006	3	2014	превратиться	verb	я		pf	превращаться	pair	turn into	変わる
+B5007	3	2015	спасение	noun	ты	n				rescue, salvation	救助
+B5008	3	2016	могила	noun	они	f				grave	墓
+B5009	3	2019	исключение	noun	вы	n				exception	例外
+B5010	3	2020	пресса	noun	я	f				press	報道機関
+B5011	3	2021	ставка	noun	он	f				rate	率
+B5012	3	2025	телефонный	adj	ты					telephone	電話の
+B5013	3	2027	лорд	noun	я	m				lord	卿
+B5014	3	2032	интервью	noun	no_subject	n				interview	インタビュー
+B5015	3	2033	ученый	noun	она	m				scientist	学者
+B5016	3	2034	определенный	adj	я					certain	一定の
+B5017	3	2036	пост	noun	mne_type	m				post	役職
+B5018	3	2037	организация	noun	мы	f				organization	組織
+B5019	3	2039	удивить	verb	ты		pf	удивлять	pair	surprise	驚かせる
+B5020	3	2043	изменение	noun	я	n				change	変化
+B5021	3	2044	объявить	verb	вы		pf	объявлять	pair	announce	発表する
+B5022	3	2047	продолжаться	verb	no_subject		impf	продолжиться	pair	continue	続く
+B5023	3	2048	житель	noun	я	m				resident	住民
+B5024	3	2049	божий	adj	ты					God's	神の
+B5025	3	2050	передача	noun	я	f				transmission	伝達
+B5026	3	2051	реклама	noun	mne_type	f				advertisement	広告
+B5027	3	2054	охота	noun	мы	f				hunting	狩り
+B5028	3	2056	необходимость	noun	вы	f				necessity	必要性
+B5029	3	2057	волна	noun	ты	f				wave	波
+B5030	3	2061	записка	noun	я	f				note	メモ
+B5031	3	2067	гореть	verb	no_subject		impf	сгореть	pair	burn	燃える
+B5032	3	2068	оказать	verb	они		pf	оказывать	pair	provide	与える
+B5033	3	2070	создание	noun	я	n				creation	創造
+B5034	3	2072	обязанность	noun	он	f				duty	義務
+B5035	3	2073	прибыль	noun	ты	f				profit	利益
+B5036	3	2074	основное	noun	она	n				main thing	主要なもの
+B5037	3	2075	менеджер	noun	я	m				manager	管理者
+B5038	3	2076	вынести	verb	no_subject		pf	выносить	pair	carry out, endure	運び出す
+B5039	3	2077	губа	noun	вы	f				lip	唇
+B5040	3	2079	мешок	noun	я	m				sack, bag	袋
+B5041	3	2081	глубоко	adv	ты					deeply	深く
+B5042	3	2082	сзади	adv	mne_type					from behind	後ろから
+B5043	3	2083	мальчишка	noun	мы	m				boy (colloq)	少年
+B5044	3	2085	возникнуть	verb	я		pf	возникать	pair	arise	生じる
+B5045	3	2086	обойтись	verb	ты		pf	обходиться	pair	manage	済ませる
+B5046	3	2087	еврей	noun	я	m				Jew	ユダヤ人
+B5047	3	2088	одиночество	noun	no_subject	n				loneliness	孤独
+B5048	3	2091	забота	noun	вы	f				care	世話
+B5049	3	2092	дружба	noun	я	f				friendship	友情
+B5050	3	2094	игрушка	noun	ты	f				toy	おもちゃ
+B5051	3	2095	пятый	adj	mne_type					fifth	第五の
+B5052	3	2101	гулять	verb	мы		impf	погулять	pair	walk	散歩する
+B5053	3	2105	степень	noun	я	f				degree	程度
+B5054	3	2107	городской	adj	он					urban	都市の
+B5055	3	2109	соединить	verb	она		pf	соединять	pair	connect	つなぐ
+B5056	3	2111	доля	noun	no_subject	f				share	割合
+B5057	3	2112	необычный	adj	я					unusual	珍しい
+B5058	3	2113	оказываться	verb	ты		impf	оказаться	pair	turn out	判明する
+B5059	3	2114	средний	adj	они					average	平均の
+B5060	3	2115	реакция	noun	я	f				reaction	反応
+B5061	3	2116	наказание	noun	вы	n				punishment	罰
+B5062	3	2118	заменить	verb	ты		pf	заменять	pair	replace	取り替える
+B5063	3	2120	виктор	noun	я	m				Viktor	ヴィクトル
+B5064	3	2128	кресло	noun	no_subject	n				armchair	肘掛け椅子
+B5065	3	2129	федеральный	adj	mne_type					federal	連邦の
+B5066	3	2132	останавливаться	verb	я		impf	остановиться	pair	stop	止まる
+B5067	3	2134	удивительный	adj	мы					amazing	驚くべき
+B5068	3	2136	основание	noun	ты	n				foundation, reason	根拠
+B5069	3	2142	предмет	noun	вы	m				object, subject	科目
+B5070	3	2143	поступок	noun	я	m				deed	行為
+B5071	3	2144	истинный	adj	no_subject					true	真の
+B5072	3	2145	избежать	verb	он		pf	избегать	pair	avoid	避ける
+B5073	3	2147	заглянуть	verb	я		pf	заглядывать	pair	peek, drop by	のぞく
+B5074	3	2148	приглашать	verb	ты		impf	пригласить	pair	invite	招待する
+B5075	3	2150	актер	noun	она	m				actor	俳優
+B5076	3	2152	определить	verb	я		pf	определять	pair	determine	決定する
+B5077	3	2154	должность	noun	mne_type	f				position	職位
+B5078	3	2158	впечатление	noun	мы	n				impression	印象
+B5079	3	2160	двигатель	noun	ты	m				engine	エンジン
+B5080	3	2161	мировой	adj	я					world (adj)	世界の
+B5081	3	2162	мина	noun	вы	f				mine (explosive)	地雷
+B5082	3	2164	мужской	adj	no_subject					male	男性の
+B5083	3	2166	крепкий	adj	я					strong	丈夫な
+B5084	3	2170	работник	noun	они	m				worker	労働者
+B5085	3	2171	зеркало	noun	ты	n				mirror	鏡
+B5086	3	2173	командир	noun	я	m				commander	指揮官
+B5087	3	2174	институт	noun	no_subject	m				institute	研究所
+B5088	3	2175	прежний	adj	вы					former	以前の
+B5089	3	2176	весна	noun	я	f				spring	春
+B5090	3	2177	обращать	verb	mne_type		impf	обратить	pair	turn	向ける
+B5091	3	2181	грязь	noun	ты	f				dirt, mud	泥
+B5092	3	2184	наоборот	adv	мы					vice versa	逆に
+B5093	3	2186	глядеть	verb	я		impf	поглядеть	pair	look	見る
+B5094	3	2187	судебный	adj	он					judicial	司法の
+B5095	3	2189	признак	noun	она	m				sign	特徴
+B5096	3	2192	обратный	adj	я					reverse	逆の
+B5097	3	2193	составить	verb	ты		pf	составлять	pair	compose	作成する
+B5098	3	2194	инструмент	noun	no_subject	m				tool	道具
+B5099	3	2197	включая	prep	вы					including	含めて
+B5100	3	2199	отделение	noun	я	n				branch	支店
+B5101	3	2200	выступление	noun	ты	n				speech	演説
+B5102	3	2201	последствие	noun	mne_type	n				consequence	結果
+B5103	3	2206	постоянный	adj	я					constant	絶え間ない
+B5104	3	2208	выборы	noun	мы	pl				elections	選挙
+B5105	3	2210	зима	noun	no_subject	f				winter	冬
+B5106	3	2211	присутствие	noun	я	n				presence	存在
+B5107	3	2213	выдать	verb	ты		pf	выдавать	pair	issue	発行する
+B5108	3	2216	пакет	noun	они	m				package	小包
+B5109	3	2218	рост	noun	вы	m				growth	成長
+B5110	3	2219	владеть	verb	я		impf	овладеть	related	own	所有する
+B5111	3	2221	коридор	noun	он	m				corridor	廊下
+B5112	3	2225	жалеть	verb	ты		impf	пожалеть	pair	regret, pity	後悔する
+B5113	3	2226	мотив	noun	я	m				motive	動機
+B5114	3	2227	буквально	adv	no_subject					literally	文字通り
+B5115	3	2229	май	noun	она	m				May	5月
+B5116	3	2233	иной	det	мы					other	別の
+B5117	3	2234	колесо	noun	я	n				wheel	車輪
+B5118	3	2236	естественно	adv	mne_type					naturally	当然
+B5119	3	2237	ценный	adj	ты					valuable	貴重な
+B5120	3	2244	визит	noun	я	m				visit	訪問
+B5121	3	2248	сентябрь	noun	вы	m				September	9月
+B5122	3	2250	полчаса	noun	no_subject	n				half an hour	30分
+B5123	3	2251	тайный	adj	я					secret	秘密の
+B5124	3	2252	тревога	noun	ты	f				anxiety, alarm	不安
+B5125	3	2253	объект	noun	мы	m				object	対象
+B5126	3	2254	продавец	noun	я	m				salesperson	販売員
+B5127	3	2255	гражданский	adj	mne_type					civil	市民の
+B5128	3	2260	знаменитый	adj	вы					famous	有名な
+B5129	3	2261	кормить	verb	ты		impf	накормить	pair	feed	養う
+B5130	3	2262	признание	noun	я	n				recognition	承認
+B5131	3	2263	технология	noun	no_subject	f				technology	技術
+B5132	3	2264	принцип	noun	они	m				principle	原則
+B5133	3	2266	режиссер	noun	я	m				director	監督
+B5134	3	2269	дыхание	noun	он	n				breathing	呼吸
+B5135	3	2271	указывать	verb	ты		impf	указать	pair	indicate	示す
+B5136	3	2273	крыло	noun	она	n				wing	翼
+B5137	3	2274	прожить	verb	я		pf	проживать	pair	live through	生き抜く
+B5138	3	2275	полка	noun	no_subject	f				shelf	棚
+B5139	3	2282	целое	noun	вы	n				the whole	全体
+B5140	3	2283	подавать	verb	я		impf	подать	pair	serve, submit	出す
+B5141	3	2288	приводить	verb	ты		impf	привести	pair	lead to	導く
+B5142	3	2289	столик	noun	mne_type	m				small table	小さいテーブル
+B5143	3	2295	статус	noun	мы	m				status	地位
+B5144	3	2296	требоваться	verb	я		impf	потребоваться	pair	be required	必要とされる
+B5145	3	2298	предыдущий	adj	ты					previous	前の
+B5146	3	2299	эфир	noun	я	m				broadcast	放送
+B5147	3	2300	орган	noun	no_subject	m				organ	器官
+B5148	3	2303	нарушение	noun	вы	n				violation	違反
+B5149	3	2304	художник	noun	я	m				artist	芸術家
+B5150	3	2305	единый	adj	mne_type					unified	統一された
+B5151	3	2306	просьба	noun	ты	f				request	依頼
+B5152	3	2307	склад	noun	мы	m				warehouse	倉庫
+B5153	3	2309	хвост	noun	я	m				tail	尾
+B5154	3	2310	победитель	noun	он	m				winner	勝者
+B5155	3	2311	эксперт	noun	она	m				expert	専門家
+B5156	3	2314	наступить	verb	я		pf	наступать	pair	arrive	到着する
+B5157	3	2318	страсть	noun	no_subject	f				passion	情熱
+B5158	3	2319	китайский	adj	ты					Chinese	中国の
+B5159	3	2321	метод	noun	они	m				method	方法
+B5160	3	2324	говориться	verb	я		impf		none	be said	言われる
+B5161	3	2331	дата	noun	вы	f				date	日付
+B5162	3	2334	привлечь	verb	ты		pf	привлекать	pair	attract	引きつける
+B5163	3	2336	испытание	noun	я	n				test	試験
+B5164	3	2337	дочка	noun	no_subject	f				daughter	娘
+B5165	3	2338	направить	verb	mne_type		pf	направлять	pair	direct, send	向ける
+B5166	3	2339	переговоры	noun	мы	pl				negotiations	交渉
+B5167	3	2341	ряд	noun	я	m				row, series	一連
+B5168	3	2346	профессия	noun	ты	f				profession	職業
+B5169	3	2349	обмен	noun	вы	m				exchange	交換
+B5170	3	2355	соглашение	noun	я	n				agreement	合意
+B5171	3	2356	пункт	noun	no_subject	m				point, item	項目
+B5172	3	2357	перенести	verb	он		pf	переносить	pair	postpone, transfer	延期する
+B5173	3	2359	август	noun	я	m				August	8月
+B5174	3	2362	официальный	adj	ты					official	公式の
+B5175	3	2365	европа	noun	она	f				Europe	ヨーロッパ
+B5176	3	2369	очередной	adj	я					next in turn	次の
+B5177	3	2371	высота	noun	mne_type	f				height	高さ
+B5178	3	2372	отдых	noun	мы	m				rest	休息
+B5179	3	2374	считаться	verb	вы		impf		none	be considered	みなされる
+B5180	3	2378	кафе	noun	я	n				café	カフェ
+B5181	3	2379	описать	verb	ты		pf	описывать	pair	describe	記述する
+B5182	3	2380	признавать	verb	no_subject		impf	признать	pair	admit, recognize	認める
+B5183	3	2389	покупка	noun	я	f				purchase	購入
+B5184	3	2392	дно	noun	они	n				bottom	底
+B5185	3	2394	июль	noun	ты	m				July	7月
+B5186	3	2399	сквозь	prep	я					through	を通って
+B5187	3	2400	зверь	noun	mne_type	m				beast	獣
+B5188	3	2401	труба	noun	мы	f				pipe	管
+B5189	3	2404	ожидание	noun	no_subject	n				expectation	期待
+B5190	3	2405	жаловаться	verb	я		impf	пожаловаться	pair	complain	不平を言う
+B5191	3	2406	автор	noun	вы	m				author	著者
+B5192	3	2408	выдержать	verb	ты		pf	выдерживать	pair	withstand	耐える
+B5193	3	2409	гражданин	noun	я	m				citizen	市民
+B5194	3	2412	ввести	verb	он		pf	вводить	pair	introduce	導入する
+B5195	3	2414	бесплатный	adj	она					free of charge	無料の
+B5196	3	2415	эмоция	noun	я	f				emotion	感情
+B5197	3	2416	точный	adj	ты					exact	正確な
+B5198	3	2418	открытие	noun	no_subject	n				discovery	発見
+B5199	3	2420	заявить	verb	вы		pf	заявлять	pair	declare	宣言する
+B5200	3	2421	эксперимент	noun	я	m				experiment	実験
+B5201	3	2424	характер	noun	mne_type	m				character	性格
+B5202	3	2425	инженер	noun	ты	m				engineer	技師
+B5203	3	2428	полет	noun	я	m				flight	飛行
+B5204	3	2430	отсутствие	noun	мы	n				absence	不在
+B5205	3	2432	повернуться	verb	no_subject		pf	поворачиваться	pair	turn around	振り向く
+B5206	3	2435	остаток	noun	я	m				remainder	残り
+B5207	3	2436	библиотека	noun	ты	f				library	図書館
+B5208	3	2437	дополнительный	adj	они					additional	追加の
+B5209	3	2440	усилие	noun	вы	n				effort	努力
+B5210	3	2441	темнота	noun	я	f				darkness	暗闇
+B5211	3	2442	подросток	noun	он	m				teenager	十代の若者
+B5212	3	2443	фонд	noun	она	m				fund	基金
+B5213	3	2445	расстояние	noun	я	n				distance	距離
+B5214	3	2446	обратить	verb	ты		pf	обращать	pair	turn	向ける
+B5215	3	2449	стекло	noun	no_subject	n				glass	ガラス
+B5216	3	2451	уход	noun	мы	m				departure, care	退出
+B5217	3	2454	волк	noun	я	m				wolf	オオカミ
+B5218	3	2455	июнь	noun	mne_type	m				June	6月
+B5219	3	2458	профессиональный	adj	ты					professional	プロの
+B5220	3	2459	объяснение	noun	я	n				explanation	説明
+B5221	3	2460	ракета	noun	вы	f				rocket	ロケット
+B5222	3	2462	одновременно	adv	no_subject					simultaneously	同時に
+B5223	3	2463	совесть	noun	я	f				conscience	良心
+B5224	3	2468	стакан	noun	ты	m				glass	コップ
+B5225	3	2469	заговорить	verb	мы		pf	говорить	related	start speaking	話し出す
+B5226	3	2470	тьма	noun	я	f				darkness	闇
+B5227	3	2471	представитель	noun	mne_type	m				representative	代表者
+B5228	3	2479	интересоваться	verb	вы		impf	заинтересоваться	related	be interested in	興味を持つ
+B5229	3	2482	присутствовать	verb	я		impf	поприсутствовать	none	be present	出席する
+B5230	3	2485	голод	noun	ты	m				hunger	飢え
+B5231	3	2488	восторг	noun	no_subject	m				delight	歓喜
+B5232	3	2489	боевой	adj	они					combat	戦闘の
+B5233	3	2491	побежать	verb	я		pf	бежать	pair	start running	走り出す
+B5234	3	2492	отряд	noun	он	m				detachment	部隊
+B5235	3	2495	центральный	adj	она					central	中央の
+B5236	3	2497	дворец	noun	ты	m				palace	宮殿
+B5237	3	2501	дар	noun	я	m				gift	贈り物
+B5238	3	2508	карточка	noun	мы	f				card	カード
+B5239	3	2514	елена	noun	mne_type	f				Elena	エレナ
+B5240	3	2516	лист	noun	я	m				sheet	紙
+B5241	3	2517	собственность	noun	no_subject	f				property	財産
+B5242	3	2519	диск	noun	вы	m				disc	ディスク
+B5243	3	2521	эффект	noun	ты	m				effect	効果
+B5244	3	2522	солнечный	adj	я					sunny	晴れた
+B5245	3	2524	капля	noun	ты	f				drop	しずく
+B5246	3	2525	воскресенье	noun	я	n				Sunday	日曜日
+B5247	3	2526	том	noun	no_subject	m				volume	巻
+B5248	3	2532	крайне	adv	вы					extremely	極めて
+B5249	3	2533	минимум	noun	я	m				minimum	最小限
+B5250	3	2541	некий	det	мы					a certain	ある〜
+B5251	3	2543	нижний	adj	mne_type					lower	下の
+B5252	3	2544	километр	noun	ты	m				kilometer	キロメートル
+B5253	3	2545	кампания	noun	я	f				campaign	運動
+B5254	3	2546	воин	noun	он	m				warrior	戦士
+B5255	3	2548	человечество	noun	она	n				humanity	人類
+B5256	3	2550	эпизод	noun	я	m				episode	エピソード
+B5257	3	2552	сведение	noun	no_subject	n				information	情報
+B5258	3	2557	предположить	verb	ты		pf	предполагать	pair	suppose	推測する
+B5259	3	2558	космический	adj	они					space	宇宙の
+B5260	3	2561	протокол	noun	я	m				protocol, minutes	議事録
+B5261	3	2565	кандидат	noun	вы	m				candidate	候補者
+B5262	3	2567	состоять	verb	я		impf		none	consist of	成り立つ
+B5263	3	2573	техника	noun	ты	f				technology, machinery	技術
+B5264	3	2577	сказка	noun	mne_type	f				fairy tale	童話
+B5265	3	2578	отличие	noun	мы	n				difference	相違
+B5266	3	2581	войско	noun	no_subject	n				troops	軍隊
+B5267	3	2582	раб	noun	я	m				slave	奴隷
+B5268	3	2589	конь	noun	ты	m				horse	馬
+B5269	3	2591	губернатор	noun	вы	m				governor	知事
+B5270	3	2592	выражение	noun	я	n				expression	表現
+B5271	3	2593	нигде	adv	он					nowhere	どこにも~ない
+B5272	3	2595	переходить	verb	no_subject		impf	перейти	pair	cross	渡る
+B5273	3	2598	комитет	noun	я	m				committee	委員会
+B5274	3	2602	вооруженный	adj	ты					armed	武装した
+B5275	3	2606	указать	verb	она		pf	указывать	pair	indicate	示す
+B5276	3	2607	вечный	adj	я					eternal	永遠の
+B5277	3	2608	ровно	adv	mne_type					exactly, evenly	ちょうど
+B5278	3	2615	тишина	noun	мы	f				silence	静寂
+B5279	3	2616	шар	noun	вы	m				sphere, balloon	球
+B5280	3	2617	октябрь	noun	я	m				October	10月
+B5281	3	2621	период	noun	ты	m				period	期間
+B5282	3	2627	образование	noun	no_subject	n				education	教育
+B5283	3	2628	велеть	verb	я		both		none	order, command	命じる
+B5284	3	2629	страдание	noun	они	n				suffering	苦しみ
+B5285	3	2634	высоко	adv	ты					highly, high	高く
+B5286	3	2636	пища	noun	я	f				food	食べ物
+B5287	3	2639	миллиард	num	mne_type					billion	十億
+B5288	3	2640	существование	noun	мы	n				existence	存在
+B5289	3	2642	упомянуть	verb	вы		pf	упоминать	pair	mention	言及する
+B5290	3	2643	выступить	verb	я		pf	выступать	pair	perform	出演する
+B5291	3	2644	традиция	noun	no_subject	f				tradition	伝統
+B5292	3	2647	проявить	verb	ты		pf	проявлять	pair	display, show	示す
+B5293	3	2655	поколение	noun	я	n				generation	世代
+B5294	3	2657	открыться	verb	он		pf	открываться	pair	open	開く
+B5295	3	2658	попадать	verb	она		impf	попасть	pair	get into	入る
+B5296	3	2659	разделить	verb	я		pf	разделять	pair	divide	分ける
+B5297	3	2661	журналист	noun	ты	m				journalist	記者
+B5298	3	2662	сообщать	verb	no_subject		impf	сообщить	pair	report	報告する
+B5299	3	2663	апрель	noun	вы	m				April	4月
+B5300	3	2666	несомненно	adv	я					undoubtedly	間違いなく
+B5301	3	2667	рассказ	noun	mne_type	m				story	物語
+B5302	3	2672	ответственный	adj	мы					responsible	責任のある
+B5303	3	2674	оценить	verb	ты		pf	оценивать	pair	evaluate	評価する
+B5304	3	2675	физический	adj	я					physical	物理的な
+B5305	3	2676	глубина	noun	они	f				depth	深さ
+B5306	3	2686	розовый	adj	я					pink	ピンクの
+B5307	3	2690	намерение	noun	no_subject	n				intention	意図
+B5308	3	2692	тридцать	num	ты					thirty	三十
+B5309	3	2693	союз	noun	вы	m				union	同盟
+B5310	3	2694	процедура	noun	я	f				procedure	手順
+B5311	3	2698	обеспечить	verb	он		pf	обеспечивать	pair	provide	提供する
+B5312	3	2699	конкурс	noun	она	m				competition	競争
+B5313	3	2702	подготовка	noun	я	f				preparation	準備
+B5314	3	2704	китай	noun	ты	m				China	中国
+B5315	3	2705	нанести	verb	мы		pf	наносить	pair	inflict, apply	加える
+B5316	3	2706	немецкий	adj	mne_type					German	ドイツの
+B5317	3	2708	вскоре	adv	я					soon	まもなく
+B5318	3	2710	германия	noun	no_subject	f				Germany	ドイツ
+B5319	3	2711	грубый	adj	ты					rude, coarse	粗野な
+B5320	3	2712	популярный	adj	я					popular	人気の
+B5321	3	2713	пятно	noun	вы	n				stain, spot	しみ
+B5322	3	2717	агентство	noun	no_subject	n				agency	機関
+B5323	3	2718	палата	noun	я	f				chamber	議院
+B5324	3	2719	председатель	noun	ты	m				chairman	議長
+B5325	3	2720	спорт	noun	мы	m				sport	スポーツ
+B5326	3	2725	акция	noun	я	f				share, campaign	株式
+B5327	3	2727	радоваться	verb	mne_type		impf	обрадоваться	related	rejoice	喜ぶ
+B5328	3	2729	железный	adj	вы					iron	鉄の
+B5329	3	2730	знакомство	noun	я	n				acquaintance	知り合い
+B5330	3	2731	неожиданно	adv	ты					unexpectedly	突然
+B5331	3	2732	дневник	noun	no_subject	m				diary	日記
+B5332	3	2734	ткань	noun	они	f				fabric	布
+B5333	3	2737	ноябрь	noun	я	m				November	11月
+B5334	3	2741	отметить	verb	он		pf	отмечать	pair	note	指摘する
+B5335	3	2743	благо	noun	она	n				benefit	恩恵
+B5336	3	2745	основа	noun	ты	f				basis	基礎
+B5337	3	2746	явиться	verb	я		pf	являться	pair	appear	現れる
+B5338	3	2750	писатель	noun	мы	m				writer	作家
+B5339	3	2752	беседа	noun	mne_type	f				conversation	会話
+B5340	3	2760	немец	noun	я	m				German (person)	ドイツ人
+B5341	3	2761	империя	noun	вы	f				empire	帝国
+B5342	3	2762	оборудование	noun	no_subject	n				equipment	設備
+B5343	3	2765	лишить	verb	ты		pf	лишать	pair	deprive	奪う
+B5344	3	2766	соревнование	noun	я	n				competition (sport)	競技会
+B5345	3	2770	заключение	noun	я	n				conclusion	結論
+B5346	3	2775	советовать	verb	ты		impf	посоветовать	pair	advise	助言する
+B5347	3	2776	летний	adj	no_subject					summer	夏の
+B5348	3	2779	цифра	noun	вы	f				digit	数字
+B5349	3	2786	безусловно	adv	я					certainly	もちろん
+B5350	3	2789	отличаться	verb	мы		impf		none	differ	異なる
+B5351	3	2792	неизвестный	adj	mne_type					unknown	未知の
+B5352	3	2794	орудие	noun	ты	n				tool, instrument	道具
+B5353	3	2796	одинаковый	adj	я					identical	同じ
+B5354	3	2798	ведущий	adj	он					leading	主要な
+B5355	3	2800	объявление	noun	она	n				announcement	お知らせ
+B5356	3	2802	влияние	noun	я	n				influence	影響
+B5357	3	2803	башня	noun	no_subject	f				tower	塔
+B5358	3	2805	истина	noun	ты	f				truth	真実
+B5359	3	2807	япония	noun	они	f				Japan	日本
+B5360	3	2811	специалист	noun	я	m				specialist	専門家
+B5361	3	2817	символ	noun	вы	m				symbol	象徴
+B5362	3	2818	мобильный	adj	mne_type					mobile	携帯の
+B5363	3	2819	торговый	adj	я					commercial	商業の
+B5364	3	2821	тепло	predic	ты					warm	暖かい
+B5365	3	2822	россия	noun	мы	f				Russia	ロシア
+B5366	3	2825	практика	noun	no_subject	f				practice	実践
+B5367	3	2829	альбом	noun	я	m				album	アルバム
+B5368	3	2830	сравнение	noun	вы	n				comparison	比較
+B5369	3	2836	верхний	adj	ты					upper	上の
+B5370	3	2837	спортивный	adj	я					athletic	スポーツの
+B5371	3	2838	сбор	noun	он	m				collection, gathering	集金
+B5372	3	2839	набрать	verb	она		pf	набирать	pair	gain, accumulate	集める
+B5373	3	2843	персонал	noun	я	m				staff	職員
+B5374	3	2844	запас	noun	no_subject	m				reserve	備蓄
+B5375	3	2845	справедливость	noun	ты	f				justice	正義
+B5376	3	2846	музыкальный	adj	я					musical	音楽の
+B5377	3	2849	подробность	noun	mne_type	f				detail	詳細
+B5378	3	2855	кадр	noun	мы	m				frame	コマ
+B5379	3	2857	осень	noun	вы	f				autumn	秋
+B5380	3	2858	доска	noun	я	f				board	板
+B5381	3	2859	вокзал	noun	ты	m				train station	駅
+B5382	3	2866	далее	adv	no_subject					further	さらに
+B5383	3	2868	повернуть	verb	я		pf	поворачивать	pair	turn	曲がる
+B5384	3	2869	налог	noun	они	m				tax	税金
+B5385	3	2873	вывод	noun	ты	m				conclusion	結論
+B5386	3	2876	суметь	verb	я		pf	уметь	pair	manage	できる
+B5387	3	2878	декабрь	noun	mne_type	m				December	12月
+B5388	3	2884	британский	adj	мы					British	イギリスの
+B5389	3	2899	связанный	adj	вы					connected	関連した
+B5390	3	2902	жесткий	adj	я					hard	硬い
+B5391	3	2907	уверенность	noun	no_subject	f				confidence	自信
+B5392	3	2916	согласие	noun	ты	n				consent	同意
+B5393	3	2920	руководство	noun	я	n				leadership, guide	指導
+B5394	3	2925	исключить	verb	он		pf	исключать	pair	exclude	除外する
+B5395	3	2928	обучение	noun	она	n				training	教育
+B5396	3	2930	январь	noun	я	m				January	1月
+B5397	3	2936	государство	noun	ты	n				state	国家
+B5398	3	2937	набор	noun	no_subject	m				set	一式
+B5399	3	2940	вероятность	noun	вы	f				probability	確率
+B5400	3	2942	поход	noun	я	m				hike	遠足
+B5401	3	2943	император	noun	mne_type	m				emperor	皇帝
+B5402	3	2944	преимущество	noun	мы	n				advantage	利点
+B5403	3	2946	внешний	adj	я					external	外部の
+B5404	3	2947	расход	noun	ты	m				expense	支出
+B5405	3	2949	международный	adj	они					international	国際的な
+B5406	3	2957	посетитель	noun	я	m				visitor	訪問者
+B5407	3	2959	картинка	noun	no_subject	f				picture	絵
+B5408	3	2961	противник	noun	ты	m				opponent	敵
+B5409	3	2962	покупатель	noun	вы	m				buyer	買い手
+B5410	3	2963	подход	noun	я	m				approach	アプローチ
+B5411	3	2964	причем	conj	он					moreover	しかも
+B5412	3	2965	стремиться	verb	mne_type		impf	устремиться	related	strive	目指す
+B5413	3	2966	ядерный	adj	я					nuclear	核の
+B5414	3	2967	фантазия	noun	ты	f				fantasy	空想
+B5415	3	2968	производство	noun	мы	n				production	生産
+B5416	3	2969	редкий	adj	no_subject					rare	珍しい
+B5417	3	2971	основать	verb	я		pf	основывать	pair	found	設立する
+B5418	3	2972	яркий	adj	она					bright	明るい
+B5419	3	2973	ясный	adj	ты					clear	明確な
+B5420	3	2974	христос	noun	я	m				Christ	キリスト
+B5421	3	2975	использование	noun	вы	n				use	使用
+B5422	3	2976	вступить	verb	я		pf	вступать	pair	enter	入る
+B5423	3	2977	лев	noun	no_subject	m				lion	ライオン
+B5424	3	2978	дорого	adv	ты					expensively	高く
+B5425	3	2979	поверхность	noun	мы	f				surface	表面
+B5426	3	2980	судно	noun	я	n				vessel, ship	船
+B5427	3	2981	пассажир	noun	mne_type	m				passenger	乗客
+B5428	3	2982	привычка	noun	вы	f				habit	習慣
+B5429	3	2983	тон	noun	я	m				tone	調子
+B5430	3	2984	вершина	noun	ты	f				summit	頂上
+B5431	3	2985	персонаж	noun	они	m				character	登場人物
+B5432	3	2986	занимать	verb	no_subject		impf	занять	pair	occupy	占める
+B5433	3	2987	краска	noun	я	f				paint	塗料
+B5434	3	2988	равный	adj	он					equal	等しい
+B5435	3	2990	развитие	noun	она	n				development	発展
+B5436	3	2991	трагедия	noun	я	f				tragedy	悲劇
+B5437	3	2993	понимание	noun	ты	n				understanding	理解
+B5438	3	2994	акт	noun	мы	m				act	行為
+B5439	3	2995	культура	noun	mne_type	f				culture	文化
+B5440	3	2996	сорок	num	я					forty	四十
+B5441	3	2997	книжка	noun	вы	f				book	本
+B5442	3	2998	молитва	noun	no_subject	f				prayer	祈り
+B5443	3	2999	нервный	adj	ты					nervous	神経質な
+B5444	3	3000	падение	noun	я	n				fall	落下
