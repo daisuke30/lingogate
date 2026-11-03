@@ -12592,6 +12592,206 @@
     "reason": "explicit nominative pronoun 'она'"
   },
   {
+    "id": "B4051",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Он отправляется в путь завтра.",
+    "target_lemma": "отправляться",
+    "bucket": "он",
+    "reason": "explicit nominative pronoun 'он'"
+  },
+  {
+    "id": "B4052",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я спросил водителя о цене.",
+    "target_lemma": "водитель",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4053",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты проверил качество воды?",
+    "target_lemma": "качество",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4054",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Подожди сигнал, потом иди.",
+    "target_lemma": "сигнал",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B4055",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Вы вызываете врача?",
+    "target_lemma": "вызывать",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B4056",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я считаю это очень сексуальным.",
+    "target_lemma": "сексуальный",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4057",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мы должны признать свою ошибку.",
+    "target_lemma": "признать",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B4058",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мне надо этому научиться.",
+    "target_lemma": "научиться",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B4059",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я совершил большую ошибку.",
+    "target_lemma": "совершить",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4060",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты умеешь управлять машиной?",
+    "target_lemma": "управлять",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4061",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Они из очень старого рода.",
+    "target_lemma": "род",
+    "bucket": "они",
+    "reason": "explicit nominative pronoun 'они'"
+  },
+  {
+    "id": "B4062",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я видел многие страны.",
+    "target_lemma": "многие",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4063",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Выбери приятный подарок.",
+    "target_lemma": "приятный",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B4064",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты хочешь обсудить это сейчас?",
+    "target_lemma": "обсудить",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4065",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Вы хотите продолжить разговор?",
+    "target_lemma": "продолжить",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B4066",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я жду новый сезон.",
+    "target_lemma": "сезон",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4067",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мы показались в дверях.",
+    "target_lemma": "показаться",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B4068",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мне трудно забыть такое зло.",
+    "target_lemma": "зло",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B4069",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я помню его взгляд.",
+    "target_lemma": "взгляд",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4070",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты знаешь, что думает большинство?",
+    "target_lemma": "большинство",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4071",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Она выбрала сложный путь.",
+    "target_lemma": "сложный",
+    "bucket": "она",
+    "reason": "explicit nominative pronoun 'она'"
+  },
+  {
+    "id": "B4072",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Подпиши здесь, пожалуйста.",
+    "target_lemma": "подписать",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B4073",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я нашёл пулю в стене.",
+    "target_lemma": "пуля",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4074",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Он приехал оттуда вчера.",
+    "target_lemma": "оттуда",
+    "bucket": "он",
+    "reason": "explicit nominative pronoun 'он'"
+  },
+  {
+    "id": "B4075",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Вы уже купили масло?",
+    "target_lemma": "масло",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
     "id": "T0163",
     "file": "sentences_band3_core.jsonl",
     "ru": "У меня нет денег.",
