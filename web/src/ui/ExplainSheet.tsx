@@ -1,11 +1,20 @@
 // LINGO-057 — the "解説" sheet: why this sentence is built the way it is, and
 // what every word in it does.
 //
-// Two stacked sections, in the order a reader needs them: the sentence first
-// (skeleton → the one thing to take away → how you'd reply), then the words.
-// The words are density-filtered (engine/explain.ts wordDensity) so the sheet
-// opens on what this particular learner probably does not know, with
-// everything else one tap away.
+// LINGO-068 — it now has TWO modes, because the same sheet is reached from two
+// places that are asking different questions:
+//
+//   mode "sentence" (a flashcard)      the SENTENCE is the subject.
+//     skeleton → key point → this word in use → every word in it
+//
+//   mode "word" (the vocabulary list)  the WORD is the subject.
+//     the word's own entry → sentences using it → a brief note on the
+//     sentence it is taught in
+//
+// Before this split, tapping дом in the vocabulary list opened the commentary
+// for a sentence that happens to contain дом — leading with paragraphs about
+// four other words. The reader asked about one word and got someone else's
+// lesson. Same data, same components, different order of subject.
 //
 // Typography over decoration: this is a page of prose, so it gets headings,
 // line-height and breathing room rather than cards, borders and colour.
@@ -30,6 +39,9 @@ import type { ExplainLangs } from "../engine/explainMerge";
 import { getExplainLangMode } from "../state/settings";
 import { loadKnowledgeMap } from "../state/calibration";
 import { activeCourse, WORD_BY_ID } from "../state/service";
+import { collectWordExamples } from "../engine/wordExamples";
+import type { WordExample } from "../engine/wordExamples";
+import { deckSentencesForLemma } from "../state/wordExamples";
 import { useI18n } from "../i18n/i18n";
 import { SheetShell } from "./ListPicker";
 
@@ -48,14 +60,23 @@ function mergeFrom<T>(
   return mergeGlossLanguage(prose, gloss);
 }
 
+/**
+ * What the sheet is ABOUT. A discriminated union rather than two optional
+ * props, so a caller cannot open the sheet without saying which question it
+ * is answering — the bug LINGO-068 fixed was exactly that ambiguity.
+ */
+export type ExplainTarget =
+  | { mode: "sentence"; sentence: Sentence }
+  | { mode: "word"; lemma: string };
+
 export function ExplainSheet({
   open,
-  sentence,
+  target,
   frontLang,
   onClose,
 }: {
   open: boolean;
-  sentence: Sentence;
+  target: ExplainTarget;
   /**
    * The card-FRONT language — the one the learner reads the course in.
    *
@@ -149,11 +170,71 @@ export function ExplainSheet({
     };
   }, [open, courseId, frontLang, uiLang]);
 
-  const commentary = commentaryMap?.[sentence.id] ?? null;
+  /**
+   * The word this sheet is built around.
+   *
+   * In word mode it is what the learner tapped. In sentence mode it is the
+   * card's teaching target — the word the sentence exists to teach — which is
+   * what the "この語を使う例文" section is about.
+   */
+  const focusLemma =
+    target.mode === "word" ? target.lemma : (target.sentence.targetLemma ?? null);
 
-  /** The sentence's words, each with its opening density. */
+  // Deck sentences containing the focus word. Also supplies, in word mode, the
+  // sentence whose commentary the closing section summarises.
+  const deckExamples = useMemo(
+    () => (focusLemma ? deckSentencesForLemma(focusLemma, frontLang, uiLang) : []),
+    [focusLemma, frontLang, uiLang],
+  );
+
+  const sentenceId =
+    target.mode === "sentence"
+      ? target.sentence.id
+      : (deckExamples.find((d) => d.isTarget)?.id ?? deckExamples[0]?.id ?? null);
+  const commentary = sentenceId ? (commentaryMap?.[sentenceId] ?? null) : null;
+
+  const focusEntry = focusLemma ? (wordMap?.[focusLemma] ?? null) : null;
+  const examples = useMemo(() => {
+    // In sentence mode the card's own sentence is already on screen; offering
+    // it back as "an example of this word" is a tautology that reads like a
+    // bug. Word mode keeps it — there it IS the thing worth recognising.
+    const pool =
+      target.mode === "sentence"
+        ? deckExamples.filter((d) => d.id !== target.sentence.id)
+        : deckExamples;
+    return collectWordExamples({ deckSentences: pool, entry: focusEntry });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deckExamples, focusEntry, target]);
+
+  const glossOfLemma = (lemma: string): string | null => {
+    for (const w of WORD_BY_ID.values()) {
+      if (w.lemma === lemma) return bothGlosses(w.enGloss, w.jaGloss) || null;
+    }
+    return null;
+  };
+
+  /** The focus word rendered as a full entry — word mode's headline. */
+  const focusWord = useMemo(() => {
+    if (!focusEntry || !wordMap || !focusLemma) return null;
+    let deckWord = null;
+    for (const w of WORD_BY_ID.values()) {
+      if (w.lemma === focusLemma) {
+        deckWord = w;
+        break;
+      }
+    }
+    return {
+      entry: focusEntry,
+      gloss: deckWord ? bothGlosses(deckWord.enGloss, deckWord.jaGloss) : "",
+      aspect: (deckWord?.aspect ?? null) as Aspect,
+      pair: deckWord ? resolveAspectPair(deckWord, wordMap, glossOfLemma) : null,
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focusEntry, wordMap, focusLemma]);
+
+  /** The sentence's words, each with its opening density. Sentence mode only. */
   const words = useMemo(() => {
-    if (!wordMap) return [];
+    if (!wordMap || target.mode !== "sentence") return [];
     const seen = new Set<string>();
     const out: {
       entry: WordDictEntry;
@@ -162,13 +243,8 @@ export function ExplainSheet({
       aspect: Aspect;
       pair: AspectPairRef | null;
     }[] = [];
-    const glossOf = (lemma: string): string | null => {
-      for (const w of WORD_BY_ID.values()) {
-        if (w.lemma === lemma) return bothGlosses(w.enGloss, w.jaGloss) || null;
-      }
-      return null;
-    };
-    for (const id of sentence.wordIds) {
+    const glossOf = glossOfLemma;
+    for (const id of target.sentence.wordIds) {
       const deckWord = WORD_BY_ID.get(id);
       if (!deckWord) continue;
       if (seen.has(deckWord.lemma)) continue; // a word repeated in one sentence is one entry
@@ -196,7 +272,8 @@ export function ExplainSheet({
     }
     // LINGO-061: sentence order, no target-first hoist.
     return out;
-  }, [wordMap, sentence, knowledge]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wordMap, target, knowledge]);
 
   const toggle = (lemma: string) =>
     setExpanded((prev) => {
@@ -214,10 +291,60 @@ export function ExplainSheet({
       closeLabel={t("common.close")}
     >
       <div className="explain-body">
-        {phase === "loading" && <p className="explain-status">{t("explain.loading")}</p>}
+        {/* In word mode the dictionary half is the headline, and it is the one
+            that loads second — so the status line follows whichever half this
+            mode actually opens on. */}
+        {target.mode === "sentence" && phase === "loading" && (
+          <p className="explain-status">{t("explain.loading")}</p>
+        )}
+        {target.mode === "word" && !focusWord && wordsPending && (
+          <p className="explain-status">{t("explain.loading")}</p>
+        )}
         {phase === "offline" && <p className="explain-status">{t("explain.offline")}</p>}
 
-        {phase === "ready" && commentary && (
+        {/* ---------------------------------------------- word mode ---- */}
+        {target.mode === "word" && (
+          <>
+            {focusWord && (
+              <section className="explain-section">
+                <h3 className="explain-h">{t("explain.wordTitle")}</h3>
+                <WordEntry
+                  entry={focusWord.entry}
+                  gloss={focusWord.gloss}
+                  aspect={focusWord.aspect}
+                  pair={focusWord.pair}
+                  density="expanded"
+                  open
+                  onToggle={() => {}}
+                />
+              </section>
+            )}
+            {!focusWord && !wordsPending && (
+              <p className="explain-status">{t("explain.noWordEntry")}</p>
+            )}
+
+            <ExampleSection examples={examples} entry={focusEntry} />
+
+            {/* The sentence this word is taught on, kept SHORT: in word mode
+                it is context, not the subject. Full commentary is one tap
+                away on the card itself. */}
+            {commentary && (
+              <section className="explain-section">
+                <h3 className="explain-h">{t("explain.sentenceBrief")}</h3>
+                <p className="explain-prose">{commentary.keyPoint}</p>
+                {commentary.grammarFocus && (
+                  <p className="explain-prose">
+                    <span className="explain-k">{commentary.grammarFocus.construction}</span>
+                    {commentary.grammarFocus.note}
+                  </p>
+                )}
+              </section>
+            )}
+          </>
+        )}
+
+        {/* ------------------------------------------ sentence mode ---- */}
+        {target.mode === "sentence" && phase === "ready" && commentary && (
           <>
             <section className="explain-section">
               <h3 className="explain-h">{t("explain.skeleton")}</h3>
@@ -235,6 +362,17 @@ export function ExplainSheet({
               <h3 className="explain-h">{t("explain.keyPoint")}</h3>
               <p className="explain-prose">{commentary.keyPoint}</p>
             </section>
+
+            {/* LINGO-068 (勝田): 「会話での返し」より「その語の使い方」。
+                Examples take the slot; the replies survive only as the
+                fallback for a word we have no examples for, under their own
+                name — see the note on ExampleSection. */}
+            <ExampleSection
+              examples={examples}
+              entry={focusEntry}
+              replies={commentary.replies}
+              lemma={focusLemma}
+            />
 
             {(words.length > 0 || wordsPending) && (
               <section className="explain-section">
@@ -256,28 +394,87 @@ export function ExplainSheet({
                 ))}
               </section>
             )}
-
-            {/* LINGO-057 follow-up (勝田): the replies close the sheet rather
-                than sitting inside the sentence block. The reading order is
-                now structure → words in depth → and finally what you would
-                actually say back, which is the thing you leave with. */}
-            {commentary.replies.length > 0 && (
-              <section className="explain-section">
-                <h3 className="explain-h">{t("explain.replies")}</h3>
-                <ul className="explain-replies">
-                  {commentary.replies.map((r, i) => (
-                    <li key={i}>
-                      <span className="explain-reply-ru">{r.ru}</span>
-                      <span className="explain-note">{r.gloss}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            )}
           </>
         )}
       </div>
     </SheetShell>
+  );
+}
+
+/**
+ * LINGO-068 — "この語を使う例文".
+ *
+ * Katsuta asked for the word at work instead of 会話での返し: a reply tells
+ * you what to say back to one sentence, an example tells you how the word
+ * behaves. The picker (engine/wordExamples.ts) spends its three slots on
+ * three DIFFERENT things — the card it is taught on, then a different case,
+ * a different tense.
+ *
+ * The replies are not deleted, because the material does not cover every
+ * word: ~20% of the 3,000 have no glossed example anywhere (measured — see
+ * LINGO-068). Where there is nothing to show and a reply exists, the reply
+ * appears under its own old heading rather than leaving a hole. A section
+ * that silently changes meaning would be worse than two honest ones.
+ */
+function ExampleSection({
+  examples,
+  entry,
+  replies,
+  lemma,
+}: {
+  examples: WordExample[];
+  entry: WordDictEntry | null;
+  replies?: { ru: string; gloss: string }[];
+  /** Sentence mode only: names the word, since the sheet is full of words and
+   * "this word" would be ambiguous. Its presence also selects the "other
+   * examples" wording — the card's own sentence is excluded from the list. */
+  lemma?: string | null;
+}) {
+  const { t } = useI18n();
+  const heading = lemma ? t("explain.usage.of", { lemma }) : t("explain.usage");
+
+  if (examples.length > 0) {
+    return (
+      <section className="explain-section">
+        <h3 className="explain-h">{heading}</h3>
+        <ul className="explain-examples">
+          {examples.map((ex, i) => (
+            <li key={i}>
+              <span className="explain-example-ru">{ex.ru}</span>
+              <span className="explain-note">{ex.gloss}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
+
+  // Nothing with a translation. Collocations exist for every word but carry
+  // no gloss, so they are offered as what they are — set phrases — never
+  // dressed up as translated examples.
+  return (
+    <>
+      {entry && entry.collocations.length > 0 && (
+        <section className="explain-section">
+          <h3 className="explain-h">{heading}</h3>
+          <p className="explain-prose">{entry.collocations.join(" / ")}</p>
+          <p className="explain-forms-note">{t("explain.usage.phrasesOnly")}</p>
+        </section>
+      )}
+      {replies && replies.length > 0 && (
+        <section className="explain-section">
+          <h3 className="explain-h">{t("explain.replies")}</h3>
+          <ul className="explain-replies">
+            {replies.map((r, i) => (
+              <li key={i}>
+                <span className="explain-reply-ru">{r.ru}</span>
+                <span className="explain-note">{r.gloss}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </>
   );
 }
 

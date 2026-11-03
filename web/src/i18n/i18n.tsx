@@ -485,6 +485,30 @@ const M: Record<string, Entry> = {
   "explain.keyPoint": { ja: "学びどころ", en: "The thing to take away", ru: "Главное" },
   "explain.replies": { ja: "会話での返し", en: "How you'd reply", ru: "Как ответить" },
   "explain.words": { ja: "単語", en: "Words", ru: "Слова" },
+  // -- LINGO-068: word-first mode + 例文 ------------------------------------
+  "explain.wordTitle": { ja: "この単語", en: "This word", ru: "Это слово" },
+  "explain.noWordEntry": {
+    ja: "この語の辞典項目はまだありません。",
+    en: "No dictionary entry for this word yet.",
+    ru: "Для этого слова ещё нет словарной статьи.",
+  },
+  "explain.usage": { ja: "この語を使う例文", en: "The word in use", ru: "Слово в примерах" },
+  // Sentence mode: the card's own sentence is excluded, so say "other".
+  "explain.usage.of": {
+    ja: "{lemma} を使う他の例文",
+    en: "More examples with {lemma}",
+    ru: "Ещё примеры с «{lemma}»",
+  },
+  "explain.usage.phrasesOnly": {
+    ja: "この語の例文はまだありません。よく使う組み合わせだけ示しています。",
+    en: "No example sentences for this word yet — these are set phrases it appears in.",
+    ru: "Примеров для этого слова пока нет — это устойчивые сочетания с ним.",
+  },
+  "explain.sentenceBrief": {
+    ja: "この例文について",
+    en: "About that sentence",
+    ru: "Об этой фразе",
+  },
   // Forms-table labels (LINGO-057 follow-up). The dictionary stores terse
   // slots (nom / 1sg / ...); the screen uses the same numbered case names the
   // card back has used since LINGO-033, so a learner meets one convention.
@@ -1060,6 +1084,34 @@ const M: Record<string, Entry> = {
   "vocab.status.learning": { ja: "学習中", en: "Learning", ru: "Изучается" },
   "vocab.status.unknown": { ja: "未習", en: "Not known", ru: "Не знаю" },
   "vocab.status.unjudged": { ja: "未判定", en: "Undecided", ru: "Не оценено" },
+  // The legend exists because 申告済み and 定着 are both "I know it" to a
+  // reader — the difference is WHO decided, and that needs a sentence.
+  "vocab.legend": { ja: "凡例", en: "What these mean", ru: "Что это значит" },
+  "vocab.legend.unjudged": {
+    ja: "レベルチェックをまだ受けておらず、学習もしていない語。",
+    en: "Not seen in a level check and not studied yet.",
+    ru: "Не проверено и ещё не изучалось.",
+  },
+  "vocab.legend.learning": {
+    ja: "復習に出ていて、まだ記憶が固まっていない語。",
+    en: "In the review queue, not yet settled in memory.",
+    ru: "В очереди повторений, ещё не закрепилось.",
+  },
+  "vocab.legend.mastered": {
+    ja: "学習して記憶が定着した語。復習の安定度が21日を超えたか、複数の文で裏づけが取れたもの。",
+    en: "Learned and retained: review stability passed 21 days, or several sentences confirmed it.",
+    ru: "Выучено и закрепилось: стабильность повторений превысила 21 день либо подтверждено несколькими фразами.",
+  },
+  "vocab.legend.declared": {
+    ja: "レベルチェックで「知っている」と答えた語。アプリ内での学習実績はまだありません。",
+    en: "You said you knew it in a level check. No study history in the app yet.",
+    ru: "Вы отметили его как знакомое на проверке уровня. Занятий в приложении ещё не было.",
+  },
+  "vocab.legend.unknown": {
+    ja: "レベルチェックで「知らない」と答えた語。",
+    en: "You said you did not know it in a level check.",
+    ru: "Вы отметили его как незнакомое на проверке уровня.",
+  },
   "vocab.band.all": { ja: "全ステップ", en: "All steps", ru: "Все шаги" },
   "vocab.band.n": { ja: "ステップ{n}", en: "Step {n}", ru: "Шаг {n}" },
   "vocab.loading": { ja: "読み込んでいます…", en: "Loading…", ru: "Загружаем…" },

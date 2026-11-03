@@ -101,10 +101,3 @@ export async function loadVocabList(uiLang: Lang): Promise<VocabRow[]> {
   });
 }
 
-/** The target sentence that teaches a lemma, for opening its explanation. */
-export function targetSentenceIdFor(lemma: string): string | null {
-  for (const s of DECK.sentences) {
-    if (s.targetLemma === lemma) return s.id;
-  }
-  return null;
-}

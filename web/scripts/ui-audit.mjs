@@ -448,7 +448,9 @@ async function assertNoOverlap(label, opts = {}) {
       // LINGO-067 — the vocabulary list's 3,000 windowed rows. Absolutely
       // positioned from a row-height constant, so an off-by-one in that maths
       // stacks rows on top of each other; this is the check that would see it.
-      ".vocab-lemma, .vocab-gloss, .vocab-badge, .vocab-rank, .vocab-chip, .vocab-count";
+      ".vocab-lemma, .vocab-gloss, .vocab-badge, .vocab-rank, .vocab-chip, .vocab-count, " +
+      // LINGO-068
+      ".explain-example-ru, .notes-lane-label, .notes-lane-sub";
 
     const inIntentional = (el) => intentional.some((sel) => el.closest(sel));
 
@@ -644,6 +646,25 @@ await assertReallyVisible(".home-hero", "home: today block", 100);
 await assertReallyVisible(".home-progress", "home: progress block", 80);
 await assertReallyVisible(".btn.primary", "home: primary CTA", 44);
 await assertHasSideMargin(".home-progress", "home: progress block");
+// LINGO-068: the vocabulary lane sits between the 覚えた語 card and マイノート.
+{
+  const lanes = await page.locator(".notes-lane").count();
+  check(lanes >= 1, "home: no 語彙リスト lane");
+  const order = await page.evaluate(() => {
+    const prog = document.querySelector(".home-progress");
+    const lane = document.querySelector(".notes-lane");
+    if (!prog || !lane) return null;
+    return {
+      laneBelowProgress: lane.getBoundingClientRect().top >= prog.getBoundingClientRect().bottom - 1,
+      text: lane.innerText.replace(/\n/g, " ").slice(0, 40),
+      h: Math.round(lane.getBoundingClientRect().height),
+    };
+  });
+  if (check(order !== null, "home: could not measure the vocabulary lane")) {
+    check(order.laneBelowProgress, "home: the vocabulary lane is not below the 覚えた語 card");
+    check(order.h >= 44, `home: the vocabulary lane is only ${order.h}px tall`);
+  }
+}
 await assertNoHorizontalOverflow("home");
 await assertNoOverlap("home");
 await assertNoBottomBand("home");
@@ -695,6 +716,12 @@ if (check(await details.count(), "home: 'くわしく' button missing")) {
       .map(([label, value]) => `${label} / ${value}`),
   );
   check(dupes.length === 0, `details sheet: label duplicated in its value — ${dupes.join("; ")}`);
+  // LINGO-068: the 語彙リスト link moved to Home. Two entry points a couple of
+  // centimetres apart is the duplication LINGO-040 cleared off this screen.
+  check(
+    (await page.locator(".sheet .detail-link").count()) === 0,
+    "details sheet: still carries a 語彙リスト link that Home now owns",
+  );
 
   await page.keyboard.press("Escape").catch(() => {});
   await page.locator(".sheet-cancel").first().click().catch(() => {});
@@ -956,16 +983,65 @@ await assertNoHorizontalOverflow("settings (scrolled)");
     await page.locator(".vocab-search").fill("");
     await page.waitForTimeout(500);
 
-    // A row tap must open the explanation sheet — the reason rows are tappable.
+    // The 凡例 (LINGO-068): 申告済み vs 定着 must be explained in words
+    // somewhere, because the badges alone cannot carry the difference.
+    const legendBtn = page.locator(".vocab-legend-toggle").first();
+    if (check(await legendBtn.count(), "vocabulary: no 凡例 toggle")) {
+      await legendBtn.click();
+      await page.waitForTimeout(350);
+      const legend = await page.evaluate(() => {
+        const dl = document.querySelector(".vocab-legend");
+        if (!dl) return null;
+        return {
+          rows: dl.querySelectorAll("dt").length,
+          chars: Math.min(...[...dl.querySelectorAll("dd")].map((d) => d.textContent.trim().length)),
+        };
+      });
+      if (check(legend !== null, "vocabulary: the 凡例 toggle opened nothing")) {
+        check(legend.rows === 5, `vocabulary: 凡例 explains ${legend.rows} states, expected 5`);
+        check(legend.chars >= 10, "vocabulary: a 凡例 entry has no real explanation");
+      }
+      await assertNoOverlap("vocabulary (legend open)");
+      await shot("05g-vocabulary-legend");
+      await legendBtn.click();
+      await page.waitForTimeout(300);
+    }
+
+    // A row tap opens the WORD, not a sentence that happens to contain it
+    // (LINGO-068). This is the assertion the whole mode split exists for.
     await page
       .waitForFunction(() => document.querySelectorAll(".vocab-row").length > 0, { timeout: 10000 })
       .catch(() => check(false, "vocabulary: the list did not come back after clearing the search"));
+    const tappedLemma = await page.locator(".vocab-row .vocab-lemma").first().innerText();
     await page.locator(".vocab-row").first().click();
-    await page.waitForTimeout(2500);
+    await page.waitForTimeout(3000);
     const sheet = await page.locator(".sheet").count();
     if (check(sheet > 0, "vocabulary: tapping a row opened no explanation sheet")) {
       await shot("05f-vocabulary-explain");
       await assertNoOverlap("vocabulary (explain open)");
+      const shape = await page.evaluate(() => {
+        const heads = [...document.querySelectorAll(".sheet .explain-h")].map((h) =>
+          h.textContent.trim(),
+        );
+        const firstLemma =
+          document.querySelector(".sheet .explain-lemma")?.textContent.trim() ?? null;
+        return { heads, firstLemma, skeletons: document.querySelectorAll(".explain-skeleton").length };
+      });
+      check(
+        shape.firstLemma === tappedLemma,
+        `vocabulary: tapped "${tappedLemma}" but the sheet leads with "${shape.firstLemma}"`,
+      );
+      check(
+        shape.skeletons === 0,
+        "vocabulary: the word sheet still opens with a sentence breakdown (sentence mode leaked in)",
+      );
+      check(
+        shape.heads.length > 0 && !/返し|repl|ответ/i.test(shape.heads[0]),
+        `vocabulary: the word sheet opens on "${shape.heads[0]}"`,
+      );
+      notes.push(`vocabulary: word sheet sections — ${shape.heads.join(" / ")}`);
+      await page.locator(".sheet-cancel, .sheet .btn").first().click().catch(() => {});
+      await page.waitForTimeout(400);
     }
   }
 }
@@ -1158,17 +1234,47 @@ await page.waitForTimeout(1200);
           );
         }
         check(!info.clipped, "explain sheet: body collapsed to nothing");
+
+        // LINGO-068: the examples section must not hand the card's OWN
+        // sentence back as an example of itself.
+        const selfExample = await page.evaluate(() => {
+          const card = document.querySelector(".face.back .ru")?.textContent?.trim() ?? "";
+          const norm = (x) => x.toLowerCase().replace(/[\s.,!?;:—–-]+/g, " ").trim();
+          const hits = [...document.querySelectorAll(".explain-example-ru")]
+            .map((e) => e.textContent.trim())
+            .filter((e) => card && norm(e) === norm(card));
+          return { card, hits };
+        });
+        check(
+          selfExample.hits.length === 0,
+          `explain sheet: the card's own sentence is listed as an example of itself ("${selfExample.card}")`,
+        );
         // Tapping a collapsed row must actually reveal its entry.
-        const caret = page.locator(".explain-caret").first();
-        if (await caret.count()) {
-          await caret.click();
+        //
+        // Scoped to a WORD head. `.explain-caret` alone also matches the
+        // aspect-partner head, and since that head is clicked open a few
+        // lines above, the loose selector re-clicked it shut and then blamed
+        // the word rows for not expanding. The guard below keeps this a real
+        // check rather than one that quietly skips: a sentence always has at
+        // least one collapsed function word (и, в, не...).
+        const collapsedWords = page.locator(".explain-word-head .explain-caret");
+        const collapsedCount = await collapsedWords.count();
+        check(
+          collapsedCount > 0,
+          "explain sheet: no collapsed word rows at all — the density rule stopped collapsing",
+        );
+        if (collapsedCount > 0) {
+          const before = await page.evaluate(
+            () => document.querySelectorAll(".explain-word-body").length,
+          );
+          await collapsedWords.first().click();
           await page.waitForTimeout(350);
           const after = await page.evaluate(
             () => document.querySelectorAll(".explain-word-body").length,
           );
           check(
-            after > info.openBodies,
-            `explain sheet: tapping a collapsed word did not expand it (${info.openBodies} -> ${after})`,
+            after > before,
+            `explain sheet: tapping a collapsed word did not expand it (${before} -> ${after})`,
           );
         }
       }

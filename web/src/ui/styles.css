@@ -1660,12 +1660,18 @@ button {
   font-weight: 700;
 }
 .explain-skeleton,
-.explain-replies {
+/* LINGO-068: 「この語を使う例文」 is the same shape as a reply (a Russian line
+ * over its translation), so it shares the styling rather than inventing a
+ * second look for one idea. Separate class only because both can appear in
+ * one sheet when a word has no examples but its sentence has replies. */
+.explain-replies,
+.explain-examples {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .explain-skeleton li,
+.explain-examples li,
 .explain-replies li {
   display: flex;
   flex-direction: column;
@@ -1673,10 +1679,12 @@ button {
   padding: 8px 0;
 }
 .explain-skeleton li + li,
+.explain-examples li + li,
 .explain-replies li + li {
   border-top: 1px solid var(--line);
 }
 .explain-surface,
+.explain-example-ru,
 .explain-reply-ru {
   font-size: 16px;
   font-weight: 700;
@@ -2181,4 +2189,38 @@ button {
 .detail-link .chevron {
   font-size: 15px;
   line-height: 1;
+}
+
+
+/* LINGO-068 — the状態 legend. Folded away by default: it answers a question
+ * you have once ("what's the difference between 申告済み and 定着?"), so it
+ * must not cost header height on every visit afterwards. */
+.vocab-legend-toggle {
+  color: var(--indigo-bright);
+  font-size: 12px;
+  font-weight: 650;
+  padding: 2px 0 2px 10px;
+}
+.vocab-legend {
+  margin: 4px 0 2px;
+  padding: 10px 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.vocab-legend dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.vocab-legend dd {
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-dim);
 }

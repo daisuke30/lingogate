@@ -355,7 +355,7 @@ export function FlashcardCard({
       {showExplain && (
         <ExplainSheet
           open={explainOpen}
-          sentence={sentence}
+          target={{ mode: "sentence", sentence }}
           frontLang={frontLang}
           onClose={() => setExplainOpen(false)}
         />

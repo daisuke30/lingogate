@@ -205,6 +205,25 @@ export function HomeView({
         </button>
       </div>
 
+      {/* ---- 語彙リスト: between the 覚えた語 card and マイノート (LINGO-068) ----
+          Directly under the numbers it explains. Katsuta reached it from
+          Settings and from inside the くわしく sheet; neither is where you
+          are when the question ("which words?") actually occurs to you,
+          which is while looking at the count. */}
+      <button
+        type="button"
+        className="notes-lane"
+        onClick={() => navigate({ name: "vocabulary" })}
+      >
+        <span className="notes-lane-text">
+          <span className="notes-lane-label">{t("vocab.open")}</span>
+          <span className="notes-lane-sub">{t("vocab.open.sub")}</span>
+        </span>
+        <span className="chevron" aria-hidden="true">
+          ›
+        </span>
+      </button>
+
       {/* ---- マイノート: optional lane, below the main line (LINGO-050) ----
           Placed at the bottom of Home on purpose: it is subordinate to the
           core curriculum and must read that way, and it gives the empty lower
@@ -247,10 +266,6 @@ export function HomeView({
         open={detailsOpen}
         stats={stats}
         onClose={() => setDetailsOpen(false)}
-        onOpenVocabulary={() => {
-          setDetailsOpen(false);
-          navigate({ name: "vocabulary" });
-        }}
       />
     </div>
   );
@@ -427,16 +442,15 @@ function DetailsSheet({
   open,
   stats,
   onClose,
-  onOpenVocabulary,
 }: {
   open: boolean;
   stats: HomeStats | null;
   onClose: () => void;
-  /** LINGO-067: from the aggregate to the individual words behind it. This
-   * sheet says "412 declared, 180 learned, 2,368 undecided"; the only honest
-   * follow-up to those numbers is "which ones?". */
-  onOpenVocabulary: () => void;
 }) {
+  // LINGO-068: the 語彙リスト link that briefly lived here is gone. Home now
+  // carries a lane for it two centimetres above the button that opens this
+  // sheet, and two entry points to one screen that close together is the
+  // exact duplication LINGO-040 cleared off this page.
   const { t } = useI18n();
   return (
     <SheetShell open={open} title={t("home.details")} onClose={onClose} closeLabel={t("common.close")}>
@@ -485,17 +499,6 @@ function DetailsSheet({
               {t("detail.speech.value", { pct: Math.round(stats.mastery.coveragePct) })}
             </strong>
           </div>
-          {/* LINGO-067: from the aggregate to the words behind it. At the FOOT
-              of the 覚えた語 group, not inside it — placed mid-group it read as
-              a heading for the row underneath. Not a block button either: one
-              at the foot of the sheet pushed it past its 75vh cap and started
-              hiding its own last row. */}
-          <button type="button" className="detail-link" onClick={onOpenVocabulary}>
-            {t("vocab.open")}
-            <span className="chevron" aria-hidden="true">
-              ›
-            </span>
-          </button>
 
           <div className="detail-group-title">
             {t("home.step.title", {

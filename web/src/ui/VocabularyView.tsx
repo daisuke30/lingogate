@@ -22,10 +22,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useI18n } from "../i18n/i18n";
 import { filterVocab, countByStatus } from "../engine/vocabulary";
 import type { VocabRow, VocabStatus } from "../engine/vocabulary";
-import { loadVocabList, targetSentenceIdFor, VOCAB_BANDS } from "../state/vocabulary";
-import { DECK, activeFrontLanguage } from "../state/service";
+import { loadVocabList, VOCAB_BANDS } from "../state/vocabulary";
+import { activeFrontLanguage } from "../state/service";
 import { ExplainSheet } from "./ExplainSheet";
-import type { Sentence } from "../engine/content";
 
 /** Row height in px — must match .vocab-row in styles.css. */
 const ROW_H = 60;
@@ -46,7 +45,11 @@ export function VocabularyView({ onBack }: { onBack: () => void }) {
   const [band, setBand] = useState<number | "all">("all");
   const [query, setQuery] = useState("");
   const [recentOnly, setRecentOnly] = useState(false);
-  const [openSentence, setOpenSentence] = useState<Sentence | null>(null);
+  // LINGO-068: Katsuta asked what separates 申告済み from 定着. The badges are
+  // two words each; the difference needs a sentence, and a sentence does not
+  // fit in a badge. A legend it is — folded away, because it is read once.
+  const [legendOpen, setLegendOpen] = useState(false);
+  const [openLemma, setOpenLemma] = useState<string | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -86,12 +89,11 @@ export function VocabularyView({ onBack }: { onBack: () => void }) {
     document.querySelector("#root")?.scrollTo({ top: 0 });
   }, [filterKey]);
 
+  // LINGO-068: the sheet opens on the WORD now, not on a sentence that happens
+  // to contain it — so every row has something to show, including the ~930
+  // words no core sentence is built around.
   function openWord(row: VocabRow) {
-    const id = targetSentenceIdFor(row.lemma);
-    const sentence = id ? (DECK.sentences.find((s) => s.id === id) ?? null) : null;
-    // A word no core sentence teaches has no explanation to open. Rather than
-    // a dead tap, the row says so.
-    if (sentence) setOpenSentence(sentence);
+    setOpenLemma(row.lemma);
   }
 
   return (
@@ -179,12 +181,33 @@ export function VocabularyView({ onBack }: { onBack: () => void }) {
 
         <p className="vocab-count">
           {rows == null ? t("vocab.loading") : t("vocab.showing", { n: visible.length })}
+          <button
+            type="button"
+            className="vocab-legend-toggle"
+            onClick={() => setLegendOpen((v) => !v)}
+            aria-expanded={legendOpen}
+          >
+            {t("vocab.legend")}
+          </button>
         </p>
         {/* Says exactly what "changed" means, because it is not quite what the
             words promise: judgements are stamped precisely, but on the study
             side the app stores no transition log, so this includes a word that
             was reviewed without changing state. Better stated than implied. */}
         {recentOnly && <p className="vocab-count">{t("vocab.recent.note")}</p>}
+        {legendOpen && (
+          <dl className="vocab-legend">
+            {STATUS_CHIPS.map((s) => (
+              <div key={s}>
+                <dt>
+                  <span className={"vocab-dot " + s} aria-hidden="true" />
+                  {t(`vocab.status.${s}`)}
+                </dt>
+                <dd>{t(`vocab.legend.${s}`)}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
       </div>
 
       {/* The spacer carries the full height so the scrollbar and the rubber
@@ -219,12 +242,12 @@ export function VocabularyView({ onBack }: { onBack: () => void }) {
 
       {rows != null && visible.length === 0 && <p className="vocab-empty">{t("vocab.empty")}</p>}
 
-      {openSentence && (
+      {openLemma && (
         <ExplainSheet
           open
-          sentence={openSentence}
+          target={{ mode: "word", lemma: openLemma }}
           frontLang={activeFrontLanguage()}
-          onClose={() => setOpenSentence(null)}
+          onClose={() => setOpenLemma(null)}
         />
       )}
     </div>
