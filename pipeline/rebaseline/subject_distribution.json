@@ -22440,6 +22440,206 @@
     "reason": "explicit nominative pronoun 'ты'"
   },
   {
+    "id": "B5250",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мы ждём некий знак.",
+    "target_lemma": "некий",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B5251",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мне нужен нижний ящик.",
+    "target_lemma": "нижний",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B5252",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты прошёл десять километров?",
+    "target_lemma": "километр",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5253",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я начал новую кампанию.",
+    "target_lemma": "кампания",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5254",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Он настоящий воин.",
+    "target_lemma": "воин",
+    "bucket": "он",
+    "reason": "explicit nominative pronoun 'он'"
+  },
+  {
+    "id": "B5255",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Она верит в человечество.",
+    "target_lemma": "человечество",
+    "bucket": "она",
+    "reason": "explicit nominative pronoun 'она'"
+  },
+  {
+    "id": "B5256",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я помню этот эпизод.",
+    "target_lemma": "эпизод",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5257",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Проверь эти сведения.",
+    "target_lemma": "сведение",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5258",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты можешь предположить причину?",
+    "target_lemma": "предположить",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5259",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Они построили космический корабль.",
+    "target_lemma": "космический",
+    "bucket": "они",
+    "reason": "explicit nominative pronoun 'они'"
+  },
+  {
+    "id": "B5260",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я подписал протокол.",
+    "target_lemma": "протокол",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5261",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Вы наш лучший кандидат.",
+    "target_lemma": "кандидат",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B5262",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я состою в этой группе.",
+    "target_lemma": "состоять",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5263",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты любишь технику?",
+    "target_lemma": "техника",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5264",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мне нравится эта сказка.",
+    "target_lemma": "сказка",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B5265",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мы видим большое отличие.",
+    "target_lemma": "отличие",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B5266",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Веди войско на север.",
+    "target_lemma": "войско",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5267",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я тебе не раб.",
+    "target_lemma": "раб",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5268",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты видел моего коня?",
+    "target_lemma": "конь",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5269",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Вы знаете нашего губернатора?",
+    "target_lemma": "губернатор",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B5270",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я не понял это выражение.",
+    "target_lemma": "выражение",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5271",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Он нигде не работает.",
+    "target_lemma": "нигде",
+    "bucket": "он",
+    "reason": "explicit nominative pronoun 'он'"
+  },
+  {
+    "id": "B5272",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Здесь нельзя переходить дорогу.",
+    "target_lemma": "переходить",
+    "bucket": "no_subject",
+    "reason": "standalone modal predicative (no dative experiencer)"
+  },
+  {
+    "id": "B5273",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я работаю в этом комитете.",
+    "target_lemma": "комитет",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5274",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты видел вооруженных людей?",
+    "target_lemma": "вооруженный",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
     "id": "T0269",
     "file": "sentences_band4_core.jsonl",
     "ru": "Если бы я знал!",
