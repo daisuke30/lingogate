@@ -59,6 +59,12 @@ export function buildSentenceChunk(lang) {
 
 function main() {
   mkdirSync(OUT_DIR, { recursive: true });
+  // sentence_order.json is the authority on how many core sentences exist
+  // (2135 before LINGO-069, 3055 after it filled the band2/3 gap), so the
+  // progress denominator is read from it rather than hardcoded.
+  const expectedSentences = JSON.parse(
+    readFileSync(join(EXPLAIN_SRC, "sentence_order.json"), "utf-8"),
+  ).length;
   let totalWords = 0;
   let totalSentences = 0;
   for (const lang of ["ja", "en"]) {
@@ -73,7 +79,7 @@ function main() {
     totalSentences = Math.max(totalSentences, sentCount);
 
     console.log(`explain.word.ru.${lang}.json: ${wordCount}/3000 words`);
-    console.log(`explain.sentence.ru.${lang}.json: ${sentCount}/2135 sentences`);
+    console.log(`explain.sentence.ru.${lang}.json: ${sentCount}/${expectedSentences} sentences`);
   }
   console.log(`\n(partial coverage is expected and safe — LINGO-056 is still generating content)`);
 }

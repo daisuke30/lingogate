@@ -21,7 +21,9 @@ Checks:
       in words_aspects isn't referenced anywhere in aspectUsage text (loose
       heuristic, not a hard fail — phrasing varies).
   sentence_commentary (ja/en):
-    - every sentence in sentence_order.json (2135) has an entry in BOTH files
+    - every sentence in sentence_order.json has an entry in BOTH files
+      (the expected count is whatever that file holds — it grew from 2135 to
+      3055 in LINGO-069, so it is never hardcoded here)
     - skeleton non-empty, each item has surface+note
     - keyPoint non-empty
     - replies has 2-3 items, each with ru+gloss, ru non-empty and gloss non-empty
@@ -207,7 +209,7 @@ def validate_sentences():
         print("SENTENCE_COMMENTARY: no errors")
     ja_count = len(load_jsonl(os.path.join(EXPLAIN, "sentence_commentary_ja.jsonl")))
     en_count = len(load_jsonl(os.path.join(EXPLAIN, "sentence_commentary_en.jsonl")))
-    print(f"progress: ja={ja_count}/2135 en={en_count}/2135")
+    print(f"progress: ja={ja_count}/{len(expected)} en={en_count}/{len(expected)}")
     return len(errors) == 0
 
 
