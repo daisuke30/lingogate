@@ -23440,6 +23440,206 @@
     "reason": "imperative mood verb"
   },
   {
+    "id": "B5375",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты веришь в справедливость?",
+    "target_lemma": "справедливость",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5376",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я купил музыкальный инструмент.",
+    "target_lemma": "музыкальный",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5377",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мне нужны все подробности.",
+    "target_lemma": "подробность",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B5378",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мы сняли последний кадр.",
+    "target_lemma": "кадр",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B5379",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Вы приедете осенью?",
+    "target_lemma": "осень",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B5380",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я написал на доске.",
+    "target_lemma": "доска",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5381",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты был на вокзале?",
+    "target_lemma": "вокзал",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5382",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Смотри далее внизу.",
+    "target_lemma": "далее",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5383",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я повернул направо.",
+    "target_lemma": "повернуть",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5384",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Они платят большие налоги.",
+    "target_lemma": "налог",
+    "bucket": "они",
+    "reason": "explicit nominative pronoun 'они'"
+  },
+  {
+    "id": "B5385",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты сделал правильный вывод.",
+    "target_lemma": "вывод",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5386",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я не сумел ему помочь.",
+    "target_lemma": "суметь",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5387",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мне нужен отпуск в декабре.",
+    "target_lemma": "декабрь",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B5388",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Мы смотрим британские фильмы.",
+    "target_lemma": "британский",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B5389",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Вы видите связанные проблемы?",
+    "target_lemma": "связанный",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B5390",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я купил жесткий диск.",
+    "target_lemma": "жесткий",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5391",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Говори с уверенностью.",
+    "target_lemma": "уверенность",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5392",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты дал своё согласие?",
+    "target_lemma": "согласие",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5393",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я прочитал руководство.",
+    "target_lemma": "руководство",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5394",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Он исключил эту возможность.",
+    "target_lemma": "исключить",
+    "bucket": "он",
+    "reason": "explicit nominative pronoun 'он'"
+  },
+  {
+    "id": "B5395",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Она закончила обучение.",
+    "target_lemma": "обучение",
+    "bucket": "она",
+    "reason": "explicit nominative pronoun 'она'"
+  },
+  {
+    "id": "B5396",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Я вернусь в январе.",
+    "target_lemma": "январь",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B5397",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Ты платишь налоги государству?",
+    "target_lemma": "государство",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B5398",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Купи этот набор.",
+    "target_lemma": "набор",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B5399",
+    "file": "sentences_band3_core.jsonl",
+    "ru": "Вы понимаете вероятность ошибки?",
+    "target_lemma": "вероятность",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
     "id": "T0269",
     "file": "sentences_band4_core.jsonl",
     "ru": "Если бы я знал!",
