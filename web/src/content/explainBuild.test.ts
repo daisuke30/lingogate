@@ -6,8 +6,9 @@ import { buildWordChunk, buildSentenceChunk } from "../../scripts/build-explain.
 // build-content.mjs/deck.*.json (see build-explain.mjs's own header
 // comment — this is lazy-loaded chunk data for LINGO-057's UI, served from
 // public/explain/, never part of the initial app bundle). Generation is
-// INCREMENTAL — this task's contract is 3000 word entries + 2135 sentence
-// entries, produced over multiple sessions — so these tests assert
+// INCREMENTAL — this task's contract is 3000 word entries + one sentence
+// entry per core sentence (2135 at LINGO-056, 3055 once LINGO-069
+// fills the band2/3 gap), produced over multiple sessions — so these tests assert
 // STRUCTURAL correctness of whatever has been generated so far, not
 // completeness. A 100%-coverage assertion belongs to a later task once
 // generation actually finishes.

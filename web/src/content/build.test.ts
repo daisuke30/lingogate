@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 // @ts-expect-error — plain ESM build script, no type declarations.
 import { buildDeck } from "../../scripts/build-content.mjs";
+import lingo069Manifest from "../../../pipeline/rebaseline/lingo069_manifest.json";
 
 // Exercises the real pipeline data so the "band1 (+ imported if present)" glob
 // and lemma linking stay correct as LINGO-009/010/011 change the data.
@@ -158,7 +159,7 @@ describe("content build", () => {
       expect(leakedGenerated).toEqual([]);
     });
 
-    it("keeps exactly the core sentences (2135 post-LINGO-043) + マイノート notes/lessons rows + word cards", () => {
+    it("keeps exactly the core sentences (2135 baseline + every LINGO-069 row generated so far) + マイノート notes/lessons rows + word cards", () => {
       // LINGO-020: 1000 original T#### core sentences, retagged across bands
       // 1-4 by their target_lemma's new band (stage4a), plus 71 new T1001+
       // sentences for genuinely-new band1 words with no prior core sentence
@@ -176,10 +177,26 @@ describe("content build", () => {
       // LINGO-050/051: マイノート pool = sentences_imported.jsonl's + sentences_
       // imported_lessons.jsonl's kind="sentence" rows with no target_lemma,
       // minus the ones over MAX_SENTENCE_TOKENS(8) = 604.
+      //
+      // LINGO-069 is filling the band2/3 gap (920 words that had no core
+      // sentence at all, so they could never enter the study queue — see
+      // ai-org/Tasks/LINGO-069-band23-missing-sentences.md). It lands in
+      // 25-row batches across sessions, so a hardcoded total would break on
+      // every batch. The expected count is therefore DERIVED: the 2135
+      // post-LINGO-043 baseline plus however many LINGO-069 rows are on disk,
+      // read from that task's own progress manifest (whose cursors are
+      // recomputed from the data itself by lingo069_batch.py, never
+      // hand-edited). Asserting equality rather than a lower bound still
+      // catches both failure directions — a generated sentence that never
+      // reaches the deck, and anything extra leaking in. When LINGO-069
+      // finishes, sentences_done is 920 and this resolves to 3055.
+      const CORE_BASELINE_PRE_LINGO069 = 2135;
+      const expectedCore =
+        CORE_BASELINE_PRE_LINGO069 + (lingo069Manifest as { sentences_done: number }).sentences_done;
       const core = deck.sentences.filter((s: any) => s.kind === "sentence" && s.targetLemma != null);
       const notes = deck.sentences.filter((s: any) => s.kind === "sentence" && s.targetLemma == null);
       const words = deck.sentences.filter((s: any) => s.kind === "word");
-      expect(core.length).toBe(2135);
+      expect(core.length).toBe(expectedCore);
       expect(notes.length).toBe(604);
       expect(deck.sentences.length).toBe(core.length + notes.length + words.length);
     });
