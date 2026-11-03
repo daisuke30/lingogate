@@ -12192,6 +12192,206 @@
     "reason": "explicit nominative pronoun 'ты'"
   },
   {
+    "id": "B4001",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я выбрал свободу.",
+    "target_lemma": "свобода",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4002",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты купил новый костюм?",
+    "target_lemma": "костюм",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4003",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Подожди, тут очередь.",
+    "target_lemma": "очередь",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B4004",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Вы видели этот знак?",
+    "target_lemma": "знак",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B4005",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я спокойно жду тебя.",
+    "target_lemma": "спокойно",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4006",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мы шли по крутой улице.",
+    "target_lemma": "крутой",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B4007",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мне надо постараться.",
+    "target_lemma": "постараться",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B4008",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты думаешь про прошлое?",
+    "target_lemma": "прошлое",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4009",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я не вижу разницы.",
+    "target_lemma": "разница",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4010",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Она уже договорилась с ними.",
+    "target_lemma": "договориться",
+    "bucket": "она",
+    "reason": "explicit nominative pronoun 'она'"
+  },
+  {
+    "id": "B4011",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Он потерял контроль над машиной.",
+    "target_lemma": "контроль",
+    "bucket": "он",
+    "reason": "explicit nominative pronoun 'он'"
+  },
+  {
+    "id": "B4012",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я смотрю последнюю серию.",
+    "target_lemma": "серия",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4013",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Слушай, это главное.",
+    "target_lemma": "главное",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B4014",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Они принадлежат моей сестре.",
+    "target_lemma": "принадлежать",
+    "bucket": "они",
+    "reason": "explicit nominative pronoun 'они'"
+  },
+  {
+    "id": "B4015",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты был в Америке?",
+    "target_lemma": "америка",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4016",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я всегда оставляю ключи дома.",
+    "target_lemma": "оставлять",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4017",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Вы слышали это обвинение?",
+    "target_lemma": "обвинение",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B4018",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мне трудно его ударить.",
+    "target_lemma": "ударить",
+    "bucket": "mne_type",
+    "reason": "dative-experiencer predicative"
+  },
+  {
+    "id": "B4019",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я чувствую себя намного лучше.",
+    "target_lemma": "намного",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4020",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Мы тяжело работали весь день.",
+    "target_lemma": "тяжело",
+    "bucket": "мы",
+    "reason": "explicit nominative pronoun 'мы'"
+  },
+  {
+    "id": "B4021",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Ты придёшь в пятницу?",
+    "target_lemma": "пятница",
+    "bucket": "ты",
+    "reason": "explicit nominative pronoun 'ты'"
+  },
+  {
+    "id": "B4022",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Собери вещи, мы уходим.",
+    "target_lemma": "собрать",
+    "bucket": "no_subject",
+    "reason": "imperative mood verb"
+  },
+  {
+    "id": "B4023",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я сделаю это в течение дня.",
+    "target_lemma": "течение",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
+    "id": "B4024",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Вы верите в судьбу?",
+    "target_lemma": "судьба",
+    "bucket": "вы",
+    "reason": "explicit nominative pronoun 'вы'"
+  },
+  {
+    "id": "B4025",
+    "file": "sentences_band2_core.jsonl",
+    "ru": "Я не бью детей.",
+    "target_lemma": "бить",
+    "bucket": "я",
+    "reason": "explicit nominative pronoun 'я'"
+  },
+  {
     "id": "T0163",
     "file": "sentences_band3_core.jsonl",
     "ru": "У меня нет денег.",
